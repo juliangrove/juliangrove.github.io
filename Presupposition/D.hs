@@ -70,7 +70,7 @@ anaph :: NatWitness n
       -> D e b
 anaph i a m = D $ \j c -> preAnaph i a $ runD m j c
 
--- | Let's define a dynamic meaning for _the_.
+-- | Let's define a dynamic meaning for /the/.
 the :: Lift (Entity -> Bool) -> D (Lift Entity, ()) (Lift Entity)
 the = \p -> D $ \i c -> P $ \s -> isTrue (c $ p $ head s) ||- (head s, i)
 
