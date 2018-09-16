@@ -84,7 +84,7 @@ phi >@ psi = phi >>= \p -> D $ \i c -> runD psi i (c . (p =>>)) >>=
                        \(q, j) -> return (p >+ q, j)
 
 -- | We can 'reset' meanings by plugging in the identity context 'id' and
--- plugging any reference to an incoming state with '0'.
+-- plugging any reference to an incoming state with @0@.
 reset :: D e a -> D e a
 reset m = D $ \i c -> fmap (\(v, j) -> (v, i + j)) $ runD m 0 id
 
@@ -94,6 +94,6 @@ unWrap :: D () a -> Maybe a
 unWrap m = fmap fst $ runP (runD m 0 id) End
 
 -- | We define a function 'checkForTruth' to check whether or not a trivially
--- effectual information state is 'Just True', 'Just False', or 'Nothing'.
+-- effectual information state is @Just True@, @Just False@, or @Nothing@.
 checkForTruth :: D () InfoState -> Maybe Bool
 checkForTruth m = fmap (isTrue . (true =>>)) $ unWrap m
