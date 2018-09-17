@@ -16,13 +16,14 @@ import Model
 
 -- $intro
 -- This module defines a datatype constructor 'P' for representing
--- presupposition and defines from it an instance of the 'Effect' class of
+-- presupposition and defines from it an instance of the /Effect/ class of
 -- Orchard, Petricek, and Mycroft. The result is an implementation of the
 -- framework for presupposition of chapter 2 of Grove 2019.
 
--- | We introduce a datatype for heterogeneous sequences. The types of such
--- sequences are the types of the effects. This datatype comes with functions
--- 'head' and 'tail', extracting the head and tail of a sequence, respectively.
+-- | 'Seq' is datatype constructor for heterogeneous sequences. The type of its
+-- argument is the type of the effect. The resulting datatype comes with
+-- functions 'head' and 'tail' for extracting the head and tail of a sequence,
+-- respectively.
 data Seq p where
   End :: Seq ()
   (:+) :: a -> Seq p -> Seq (a, p)
@@ -106,11 +107,11 @@ instance (Read a, HelpReadSeq (Seq (b, p))) =>
                          ((helpReadSeq $ dropFirstOf f str)
                           :: HelpReadSeq (Seq (b, p)) => [(Seq (b, p), String)])
 
--- | We define a function for extracting the 'head' of a sequence.
+-- | A function for extracting the 'head' of a sequence.
 head :: Seq (a, p) -> a
 head (a :+ s) = a
 
--- | We define a function for extracting the 'tail' of a sequence.
+-- | A function for extracting the 'tail' of a sequence.
 tail :: Seq (a, p) -> Seq p
 tail (a :+ s) = s
 
@@ -134,8 +135,8 @@ data NatWitness n where
   ZeroW :: NatWitness Zero
   SuccW :: NatWitness n -> NatWitness (Succ n)
 
--- | We define a datatype for presuppositions. Its first parameter is the
--- effect, and the second is the type of the value.
+-- | A datatype for terms with presuppositions. Its first parameter is the
+-- effect, and its second is the type of the value.
 newtype P e a = P { runP :: Seq e -> Maybe a }
 
 -- | The type-level function to help type the function 'anaph'.
@@ -144,7 +145,7 @@ type family Insert i a e where
   Insert (NatWitness (Succ n)) a (b, p) = (b, Insert (NatWitness n) a p)
 
 -- | A function for inserting terms into sequences, used in the definition of
--- 'anaph'.
+-- 'D.anaph'.
 insert :: NatWitness n
        -> a
        -> Seq e
@@ -159,10 +160,10 @@ preAnaph :: NatWitness n
          -> P e b
 preAnaph i a m = P $ \s -> runP m $ insert i a s
 
--- | We include a class with a method 'seqSplit' for splitting sequences in a
--- way that depends on the desired type of the result. This trick echoes the
--- method defined by Orchard, Petricek, and Mycroft in their definition of
--- Reader. The main difference is that, here, the effects are given by
+-- | A class with a method 'seqSplit' for splitting sequences in a way that
+-- depends on the desired type of the result. This trick echoes the method
+-- defined by Orchard, Petricek, and Mycroft in their definition of the graded
+-- Reader monad. The main difference is that, here, the effects are given by
 -- sequences, whereas their effects are given by sets.
 class SeqSplit s t st where
   seqSplit :: Seq st -> (Seq s, Seq t)
@@ -180,18 +181,17 @@ instance SeqSplit p1 (b, p2) p3 => SeqSplit (a, p1) (b, p2) (a, p3) where
   seqSplit (a :+ s) = let (s1, s2) = seqSplit s
                       in (a :+ s1, s2)
 
--- | We make 'P' an instance of the 'Functor' class.
+-- | For any given effect, 'P' is an instance of the /Functor/ class.
 instance Functor (P e) where
   fmap f (P g) = P $ \s -> g s >>>>= \x -> Just $ f x
 
--- | Let's quickly redefine a '>>>>=' for Maybe, the original bind of which has
--- been hidden.
+-- | Let's quickly redefine a '>>>>=' for /Maybe/, the original bind of which
+-- has been hidden.
 (>>>>=) :: Maybe a -> (a -> Maybe b) -> Maybe b
 Nothing >>>>= f = Nothing
 Just a >>>>= f = f a
 
--- | We make 'P' an instance of the 'Effect' class of Orchard, Petricek,
--- and Mycroft.
+-- | 'P' is an instance of the /Effect/ class of Orchard, Petricek, and Mycroft.
 instance Effect P where
   type Inv P p1 p2 = SeqSplit p1 p2 (MonoidPlus p1 p2)
   
@@ -206,17 +206,17 @@ instance Effect P where
   m >>= k = P $ \xy -> let (x, y) = seqSplit xy
                        in runP m x >>>>= \z -> runP (k z) y
 
--- | The graded monad operator 'upP' is just 'return'.
+-- | The graded monad operator 'upP' is just @return@.
 upP :: a -> P () a
 upP a = return a
 
--- | The graded monad operator 'downP' is just sequential application.
+-- | The graded monad operator 'downP' is just @ap@.
 downP :: (SeqSplit e (MonoidPlus f ()) (MonoidPlus e (MonoidPlus f ())),
           SeqSplit f () (MonoidPlus f ())) =>
          P e (a -> b) -> P f a -> P (MonoidPlus e (MonoidPlus f ())) b
 downP u = \v -> u >>= \f -> v >>= \x -> return $ f x
 
--- | The graded monad operator 'joinP' is just join.
+-- | The graded monad operator 'joinP' is just @join@.
 joinP :: SeqSplit f g (MonoidPlus f g) => P f (P g b) -> P (MonoidPlus f g) b
 joinP m = m >>= id
 
