@@ -13,8 +13,8 @@ import Model
 -- operations on them, including update ('>+') and dynamic implication
 -- ('=>>').
 
--- | We define a type of sets so that we may construct sets of partial
--- assignments (i.e., lists of 'entities').
+-- | A type of sets so that we may construct sets of partial assignments (i.e.,
+-- lists of 'entities').
 newtype Set a = Setof { getList :: [a] }
 
 -- | Sets can be equated.
@@ -44,39 +44,39 @@ instance (Show a, Eq a) => Show (Set a) where
 instance Foldable Set where
   foldr f a s = foldr f a $ getList s
 
--- | 'Set' is a 'Functor'.
+-- | 'Set' is an instance of the /Functor/ class.
 instance Functor Set where
   fmap f s = Setof $ map f $ getList s
 
--- | 'Set' is 'Applicative'.
+-- | 'Set' is an instance of the /Applicative/.
 instance Applicative Set where
   pure a = Setof [a]
   u <*> v = Setof $ getList u <*> getList v
 
--- | 'Set' is a 'Monad'.
+-- | 'Set' is an instance of the /Monad/ class.
 instance Monad Set where
   return = pure
   m >>= f = Setof $ getList m >>= \x -> getList $ f x
 
--- | We define a predicate 'isEmpty' to check whether or not a set is empty.
+-- | A predicate 'isEmpty' to check whether or not a set is empty.
 isEmpty :: Eq a => Set a -> Bool
 isEmpty s = s == Setof []
 
--- | We define a type 'InfoState', inhabited by information states. These take
--- partial assignments (i.e., lists of 'entities') and return sets of such.
+-- | A type 'InfoState', inhabited by information states. These take partial
+-- assignments (i.e., lists of 'entities') and return sets of such.
 type InfoState = [Entity] -> Set [Entity]
 
--- | We define the type 'LiftedEntity', inhabited by functions from partial
--- assignments (i.e., lists of 'entities') to 'entities'.
+-- | A type 'LiftedEntity', inhabited by functions from partial assignments
+-- (i.e., lists of 'entities') to 'entities'.
 type LiftedEntity = [Entity] -> Entity
 
--- | We define the information state 'true', which returns the singleton set of
--- any partial assignment (i.e., list of 'entities') it is fed.
+-- | An information state 'true', which returns the singleton set of any partial
+-- assignment (i.e., list of 'entities') it is fed.
 true :: InfoState
 true a = Setof [a]
 
--- | We define a predicate on information states which checks whether or not
--- they are 'true' (by running them on the empty partial assignment).
+-- | A predicate on information states which checks whether or not they are
+-- 'true' (by running them on the empty partial assignment).
 isTrue :: InfoState -> Bool
 isTrue iState = iState [] == true []
 
@@ -88,15 +88,15 @@ p >+ q = \s -> [ u | t <- p s, u <- q t ]
 (=>>) :: InfoState -> InfoState -> InfoState
 p =>> q = \s -> Setof [ s | and $ fmap (\l -> not $ isEmpty $ q l) $ p s ]
 
--- | We define a type family 'Lift' for lifting arbitrary types into their
--- information state variants.
+-- | A type family 'Lift' for lifting arbitrary types into their information
+-- state variants.
 type family Lift a where
   Lift Bool = InfoState
   Lift Entity = LiftedEntity
   Lift (a -> b) = Lift a -> Lift b
 
--- | We define a class 'LiftPred' with a single method 'lift' for lifting
--- predicates into their information state variants.
+-- | A class 'LiftPred' with a single method 'lift' for lifting predicates into
+-- their information state variants.
 class LiftPred a where
   lift :: ([Entity] -> a) -> Lift a
 
