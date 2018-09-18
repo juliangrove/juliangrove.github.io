@@ -139,7 +139,7 @@ data NatWitness n where
 -- effect, and its second is the type of the value.
 newtype P e a = P { runP :: Seq e -> Maybe a }
 
--- | The type-level function to help type the function 'anaph'.
+-- | The type-level function to help type the function 'D.anaph'.
 type family Insert i a e where
   Insert (NatWitness Zero) a p = (a, p)
   Insert (NatWitness (Succ n)) a (b, p) = (b, Insert (NatWitness n) a p)
