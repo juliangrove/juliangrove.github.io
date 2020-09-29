@@ -1,0 +1,134 @@
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+#+HTML_HEAD: <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+#+HTML_HEAD: <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+#+HTML_HEAD: <script type="text/x-mathjax-config">
+#+HTML_HEAD: MathJax.Hub.Config({
+#+HTML_HEAD:  TeX: {
+#+HTML_HEAD:    Macros: {
+#+HTML_HEAD:      divd: "\\ |\\ ",
+#+HTML_HEAD:      IF: ["[\\![#1]\\!]",1],
+#+HTML_HEAD:      bind: ">\\!\\!>\\!\\!=",
+#+HTML_HEAD:      defeq: ":\\!=",
+#+HTML_HEAD:      append: ["#1\\!\\!::\\!\\!#2",2]
+#+HTML_HEAD:    }
+#+HTML_HEAD:  }
+#+HTML_HEAD: });
+#+HTML_HEAD: </script>
+
+#+Author: Julian Grove
+#+Title: Algebraic effects in Montague semantics
+
+Algebraic effects and handlers provide an approach to implementing computational side effects which has gained interest within the functional programming community, notably among users of Haskell.[fn:: Implementations in Haskell have generally gone by the title "extensible effects". See the libraries described in cite:kiselyov_extensible_2013 and cite:kiselyov_freer_2015, as well as the [[https://github.com/hasura/eff][eff]] library, for some examples.] Often, programmers wish to combine different notions of side effect within the same code; for example, one may wish to write a program that both reads the environment at various points, as well as logs output. In Haskell, one may use the Reader and Writer monads to accomplish these tasks, respectively. Combining notions of side effect is, in turn, usually a matter of invoking monad transformers, which furnish some underlying monad with the functionality of a new monad, yielding aspects of both (e.g., a Reader-transformed Writer monad). The use of transformers, however, generally implies that code is not totally extensible --- extra plumbing is required, for instance, for Reader code to exist peacefully in a Reader-Writer setting.[fn:: One can browse Haskell's popular [[http://hackage.haskell.org/package/mtl][Monad Transformers Library]] for more details.] Moreover, after extending previous monadic code into a setting in which new layers have been added to the transformer stack, its interpretation becomes fixed: if the old code involes Reader $s_1$, and the new code involves both Reader $s_1$ and Reader $s_2$, then the Reader $s_2$ layer is necessarily evaluated first.  The interest in the algebraic effects approach comes, in part, from the fact that it is designed around extensibility: multiple notions of side effect are combined algebraically and tracked within the types. The combination is relatively seamless, moreover, in the sense that no extra plumbing is required for multiple notions of effect; and it is flexible, insofar as decisions about interpretation may be delayed until a later stage --- in the definitions of handlers.
+
+In this post, I'll experiment a little bit with the algebraic approach in the context of modeling linguistic side effects. Jirka Maršík has done significant work studying semantic phenomena from the perspective of algebraic effects and handlers, culminating in his [[https://hal.inria.fr/tel-01417467][2016 PhD thesis]] (see cite:marsik_algebraic_2014,marsik_introducing_2016,marsik_effects_2016). This work, whose main features I'll briefly summarize in \S[[sec:algebraic effects]], is cast within a typed extension of the \lambda-calculus designed for algebraic effects. Maršík's work departs somewhat from the denotational view of meaning semanticists in the Montagovian tradition are typically accustomed to, at least on its face. He provides an operational semantics for the extended language, which includes operations and handlers, among other constructs. The semantics allows the representations provided in the extended language to be transformed into more familiar ones denoting ordinary truth-conditions (represented by simply typed \lambda-terms). The process of mapping expressions of the extended language into the STLC, however, involves sacrificing the usual Montagovian view of the meanings of their component parts.[fn:: Maršík also provides a set-theoretic denotational semantics for his calculus in chapter 3 of [[https://hal.inria.fr/tel-01417467][his thesis]]. It is not obvious, however, that this semantics can be given a simply typed encoding, at least not without additional axioms; his $\mathcal{C}$ combinator, for example, is a partial function.] 
+
+I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. \S[[sec:making it montagovian]] begins an attempt in this direction with a framework having much of the functionality of the algebraic effects approach, cast within the simply typed \lambda-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as \lambda-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available [[https://github.com/juliangrove/algebraic-effects-montague][here]].
+
+* Algebraic effects <<sec:algebraic effects>>
+
+The basic features of Maršík's approach can be found in the papers cite:marsik_algebraic_2014,marsik_introducing_2016, as well as in the first chapter of [[https://hal.inria.fr/tel-01417467][his thesis]]. In addition to the expressions of the simply typed \lambda-calculus, Maršík includes the constructs /injection/, /operation/, /handler/, /extraction/, and /exchange/. Unlike the simply typed fragment of his language, these constructs have types involving (for value types \alpha) the computation types $\mathcal{F}(\alpha)$, providing the types of expressions with algebraic effects. The type of any computation with algebraic effects is indexed by a signature; that is, a set of operation symbols, along with an assignment of types to these operation symbols that indicate any parameters the associated operation takes, as well as the operation's arity. The signature that indexes the type of a computation describes the collection of operations that /may/ be invoked in the computation. For example, the computation type $\mathcal{F}_{\{\mathtt{op} : p ⤚ a\}}(\alpha)$ is the type of computations which may invoke the operation $\mathtt{op}$ (which takes parameters of type $p$ and which has arity $a$), in order to return values of type $\alpha$.  
+
+$\begin{align*}
+  
+\end{align*}$
+
+* Making it Montagovian <<sec:making it montagovian>>
+
+#+BEGIN_SRC haskell
+{-# LANGUAGE
+    DataKinds,
+    FlexibleContexts,
+    FlexibleInstances,
+    GADTs,
+    InstanceSigs,
+    MultiParamTypeClasses,
+    RankNTypes,
+    TypeApplications,
+    TypeFamilies,
+    TypeOperators,
+    UnicodeSyntax #-}
+#+END_SRC
+
+$\begin{align*}
+\mathcal{F}_{\epsilon} v &= v\\
+\mathcal{F}_{p ⤚ a, l} v &= (p \rightarrow (a \rightarrow \mathcal{F}_l v) \rightarrow o) \rightarrow o
+\end{align*}$
+
+$\begin{align*}
+\eta &: v \rightarrow \mathcal{F}_\epsilon v\\
+\eta\ v &= v\\[2mm]
+\mathtt{op}_{p ⤚ a} &: p \rightarrow (a \rightarrow \mathcal{F}_l v) \rightarrow \mathcal{F}_{p ⤚ a, l} v\\
+\mathtt{op}_{p ⤚ a}(p; k) &= \lambda h.h p k
+\end{align*}$
+
+#+BEGIN_SRC haskell
+data F l v where
+  Pure :: v → F '[] v
+  Impure :: (∀o. (p → (a → F l v) → o) → o) → F ((p ⤚ a) ': l) v
+#+END_SRC
+
+* Graded monads
+  
+#+BEGIN_SRC haskell
+instance Effect F where
+  type Unit F = '[]
+  type Plus F l1 l2 = l1 :++ l2
+#+END_SRC
+
+$\begin{align*}
+\eta &: v \rightarrow \mathcal{F}_\epsilon v\\
+\eta\ v &= v
+\end{align*}$
+
+#+BEGIN_SRC haskell
+  return :: v → F '[] v
+  return  = Pure
+#+END_SRC
+
+$\begin{align*}
+(\bind) &: \mathcal{F}_{l_1} v \rightarrow (v \rightarrow \mathcal{F}_{l_2} w) \rightarrow \mathcal{F}_{l_1 l_2} w\\
+v \bind k &= k v& v &: \mathcal{F}_\epsilon v\\
+m \bind k &= \lambda h.m\ (\lambda p, k^\prime.h\ p\ (\lambda a.k^\prime a \bind k)) & m &: \mathcal{F}_{p ⤚ a, l} v
+\end{align*}$
+
+#+BEGIN_SRC haskell
+  (>>=) :: F l1 v → (v → F l2 w) → F (l1 :++ l2) w
+  Pure v >>= k = k v
+  Impure m >>= k = Impure $ \h → m $ \p k' → h p (\a → k' a >>= k)
+#+END_SRC
+
+* Examples
+
+$\begin{align*}
+\IF{\textit{some linguist}} &: \mathcal{F}_{((e \rightarrow t) \rightarrow t)⤚ e} e\\
+\IF{\textit{some linguist}} &= \mathtt{quant}_{((e \rightarrow t) \rightarrow t) ⤚ e}(\lambda P.\exists x : \textbf{ling} x\ \&\ P x; \eta)\\
+&= \lambda h.h\ (\lambda P.\exists x : \textbf{ling} x\ \&\ P x)\ (\lambda y.y)\\[2mm]
+\IF{\textit{her dog}} &: \mathcal{F}_{() ⤚ \gamma} e\\
+\IF{\textit{her dog}} &= \mathtt{get}_{() ⤚ \gamma}((); \lambda g.\eta (\textbf{dogOf} (\mathtt{sel} g)))\\
+&= \lambda h.h\ ()\ (\lambda g, k.k (\textbf{dogOf} (\mathtt{sel} g)))\\[2mm]
+(\cdot)^\triangleright &: \mathcal{F}_l e \rightarrow \mathcal{F}_{l, () ⤚ \gamma, \gamma ⤚ ()} e\\
+m^\triangleright &\defeq m \bind (\lambda x.\mathtt{get}_{() ⤚ \gamma}((); \lambda g.\mathtt{put}_{\gamma ⤚ ()}(\append{x}{g}; \lambda ().\eta x)))\\
+&= m \bind \lambda x, h.h\ ()\ (\lambda g, h^\prime.h^\prime\ (\append{x}{g})\ (\lambda ().x)) 
+\end{align*}$
+
+$\begin{align*}
+(\triangleright) &: \mathcal{F}_{l_1} (v \rightarrow w) \rightarrow \mathcal{F}_{l_2} v \rightarrow \mathcal{F}_{l_1, l_2} w\\
+m \triangleright n &\defeq \mu\ (\mathtt{map}\ (\lambda f.\mathtt{map}\ (\lambda x.f x)\ n)\ m)\\[2mm]
+(\triangleleft) &: \mathcal{F}_{l_1} v \rightarrow \mathcal{F}_{l_2} (v \rightarrow w) \rightarrow \mathcal{F}_{l_1, l_2} w\\
+m \triangleleft n &\defeq \mu\ (\mathtt{map}\ (\lambda x.\mathtt{map}\ (\lambda f.f x)\ n)\ m)
+\end{align*}$
+
+#+BEGIN_SRC haskell
+(▹) :: F l1 (v → w) → F l2 v → F (l1 :++ l2) w
+m ▹ n = join $ fmap (\f → fmap (\x → f x) n) m
+
+(◃) :: F l1 v → F l2 (v → w) → F (l1 :++ l2) w
+m ◃ n = join $ fmap (\x → fmap (\f → f x) n) m
+#+END_SRC
+
+* Quantifiers as handlers
+
+#+BIBLIOGRAPHY: algebraic_effects_montague apalike
