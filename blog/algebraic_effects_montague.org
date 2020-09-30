@@ -12,6 +12,7 @@
 #+HTML_HEAD:    Macros: {
 #+HTML_HEAD:      divd: "\\ |\\ ",
 #+HTML_HEAD:      IF: ["[\\![#1]\\!]",1],
+#+HTML_HEAD:      banana: ["(\\!|#1|\\!)",1],
 #+HTML_HEAD:      bind: ">\\!\\!>\\!\\!=",
 #+HTML_HEAD:      defeq: ":\\!=",
 #+HTML_HEAD:      append: ["#1\\!\\!::\\!\\!#2",2]
@@ -31,13 +32,16 @@ I will mainly use this post is to explore how similar ideas may be expressed in 
 
 * Algebraic effects<<sec:algebraic effects>>
 
-The basic features of Maršík's approach can be found in the papers cite:marsik_algebraic_2014,marsik_introducing_2016, as well as in the first chapter of [[https://hal.inria.fr/tel-01417467][his thesis]]. In addition to the expressions of the simply typed \lambda-calculus, Maršík includes the constructs /injection/, /operation/, /handler/, /extraction/, and /exchange/. Unlike the simply typed fragment of his language, these constructs have types involving (for value types \alpha) the computation types $\mathcal{F}(\alpha)$, providing the types of expressions with algebraic effects. The type of any computation with algebraic effects is indexed by an /effect signature/; that is, a set of operation symbols, along with an assignment of types to these operation symbols that indicate any parameters the associated operation takes, as well as the operation's arity. The signature that indexes the type of a computation describes the collection of operations that /may/ be invoked in the computation. For example, the computation type $\mathcal{F}_{\{\mathtt{op} : p ⤚ a\}}(\alpha)$ is the type of computations which may invoke the operation $\mathtt{op}$ (which takes parameters of type $p$ and which has arity $a$), in order to return values of type $\alpha$.  
+The basic features of Maršík's approach are presented in the papers cite:marsik_algebraic_2014,marsik_introducing_2016, as well as in the first chapter of [[https://hal.inria.fr/tel-01417467][his thesis]]. In addition to the expressions of the simply typed \lambda-calculus, Maršík includes the constructs /injection/, /operation/, /handler/, /extraction/, and /exchange/. Unlike the simply typed fragment of his language, these constructs have types involving (for value types $\alpha$) the computation types $\mathcal{F}(\alpha)$, providing the types of expressions with algebraic effects. The type of any computation with algebraic effects is indexed by an /effect signature/; that is, a set of operation symbols, along with an assignment of types to these operation symbols that indicate any parameters the associated operation takes, as well as the operation's arity. The signature that indexes the type of a computation describes the collection of operations that /may/ be invoked in the computation. For example, the computation type $\mathcal{F}_{\{\mathtt{op} : p ⤚ a\}}(\alpha)$ is the type of computations which may invoke the operation $\mathtt{op}$ (which takes parameters of type $p$ and which has arity $a$), in order to return values of type $\alpha$.  
 
 Where $E$ is an arbitrary effect signature and $\varnothing$ is the empty effect signature, the constructs of /injection/, /operation/, /handler/, /extraction/, and /exchange/ have the following types.
 
-\\[
-  $\cfrac{\Gamma \vdash M : \alpha}{\Gamma \vdash \eta M : \mathcal{F}_E(\alpha)}$
-\\]
+$\begin{align*}
+\cfrac{\Gamma \vdash M : \alpha}{\Gamma \vdash \eta M : \mathcal{F}_E(\alpha)}\eta\tag{injection}\\[3mm]
+\cfrac{\Gamma \vdash M : p\hspace{5mm}\Gamma, x : a \vdash N : \mathcal{F}_E(\gamma)\hspace{5mm}\mathtt{op} : p ⤚ a \in E}{\Gamma \vdash \mathtt{op} M (\lambda x. N) : \mathcal{F}_E(\gamma)}\mathtt{op}\tag{operation}\\[3mm]
+\cfrac{E = \{\mathtt{op}_i : p_i ⤚ a_i\}_{i \in I} \uplus E_f\\E^\prime = E^{\prime\prime} \uplus E_f\\{[}\Gamma \vdash M_i : p_i \rightarrow (a_i \rightarrow \mathcal{F}_{E^\prime}(\delta)) \rightarrow \mathcal{F}_{E^\prime}{]}_{i \in I}\\\Gamma \vdash N : \gamma \rightarrow \mathcal{F}_{E^\prime}(\delta)\\\Gamma \vdash O : \mathcal{F}_E(\gamma)}{\Gamma \vdash \banana{(\mathtt{op}_i : M_i)_{i \in I}, \eta : N} O : \mathcal{F}_{E^\prime}(\delta)}\banana{}\tag{handler}
+\end{align*}$
+
 
 * Making it Montagovian<<sec:making it montagovian>>
 
