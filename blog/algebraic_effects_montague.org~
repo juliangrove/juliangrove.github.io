@@ -27,15 +27,17 @@ In this post, I'll experiment a little bit with the algebraic approach in the co
 
 I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. \S[[sec:making it montagovian]] begins an attempt in this direction with a framework having much of the functionality of the algebraic effects approach, cast within the simply typed \lambda-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as \lambda-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available [[https://github.com/juliangrove/algebraic-effects-montague][here]].
 
-* Algebraic effects <<sec:algebraic effects>>
+* Algebraic effects<<sec:algebraic effects>>
 
-The basic features of Maršík's approach can be found in the papers cite:marsik_algebraic_2014,marsik_introducing_2016, as well as in the first chapter of [[https://hal.inria.fr/tel-01417467][his thesis]]. In addition to the expressions of the simply typed \lambda-calculus, Maršík includes the constructs /injection/, /operation/, /handler/, /extraction/, and /exchange/. Unlike the simply typed fragment of his language, these constructs have types involving (for value types \alpha) the computation types $\mathcal{F}(\alpha)$, providing the types of expressions with algebraic effects.
+The basic features of Maršík's approach can be found in the papers cite:marsik_algebraic_2014,marsik_introducing_2016, as well as in the first chapter of [[https://hal.inria.fr/tel-01417467][his thesis]]. In addition to the expressions of the simply typed \lambda-calculus, Maršík includes the constructs /injection/, /operation/, /handler/, /extraction/, and /exchange/. Unlike the simply typed fragment of his language, these constructs have types involving (for value types \alpha) the computation types $\mathcal{F}(\alpha)$, providing the types of expressions with algebraic effects. The type of any computation with algebraic effects is indexed by an /effect signature/; that is, a set of operation symbols, along with an assignment of types to these operation symbols that indicate any parameters the associated operation takes, as well as the operation's arity. The signature that indexes the type of a computation describes the collection of operations that /may/ be invoked in the computation. For example, the computation type $\mathcal{F}_{\{\mathtt{op} : p ⤚ a\}}(\alpha)$ is the type of computations which may invoke the operation $\mathtt{op}$ (which takes parameters of type $p$ and which has arity $a$), in order to return values of type $\alpha$.  
 
-$\begin{align*}
-  
-\end{align*}$
+Where $E$ is an arbitrary effect signature and $\varnothing$ is the empty effect signature, the constructs of /injection/, /operation/, /handler/, /extraction/, and /exchange/ have the following types.
 
-* Making it Montagovian <<sec:making it montagovian>>
+\\[
+  $\cfrac{\Gamma \vdash M : \alpha}{\Gamma \vdash \eta M : \mathcal{F}_E(\alpha)}$
+\\]
+
+* Making it Montagovian<<sec:making it montagovian>>
 
 #+BEGIN_SRC haskell
 {-# LANGUAGE
