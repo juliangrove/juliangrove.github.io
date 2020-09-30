@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-29 Tue 20:32 -->
+<!-- 2020-09-30 Wed 00:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraic effects in Montague semantics</title>
@@ -264,11 +264,11 @@ append: ["#1\\!\\!::\\!\\!#2",2]
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org55c554b">1. Algebraic effects</a></li>
-<li><a href="#orgabae52f">2. Making it Montagovian</a></li>
-<li><a href="#org15edaa6">3. Graded monads</a></li>
-<li><a href="#orgd8c7ec4">4. Examples</a></li>
-<li><a href="#org10b461d">5. Quantifiers as handlers</a></li>
+<li><a href="#orga3c4fb1">1. Algebraic effects</a></li>
+<li><a href="#org0992838">2. Making it Montagovian</a></li>
+<li><a href="#org74b0743">3. Graded monads</a></li>
+<li><a href="#org65485e3">4. Examples</a></li>
+<li><a href="#org7b09d3f">5. Quantifiers as handlers</a></li>
 </ul>
 </div>
 </div>
@@ -277,15 +277,15 @@ Algebraic effects and handlers provide an approach to implementing computational
 </p>
 
 <p>
-In this post, I'll experiment a little bit with the algebraic approach in the context of modeling linguistic side effects. Jirka Maršík has done significant work studying semantic phenomena from the perspective of algebraic effects and handlers, culminating in his <a href="https://hal.inria.fr/tel-01417467">2016 PhD thesis</a> (see [<a href="#marsik_algebraic_2014">Maršík and Amblard, 2014</a>,<a href="#marsik_introducing_2016">Maršík and Amblard, 2016</a>,<a href="#marsik_effects_2016">Maršík, 2016</a>]). This work, whose main features I'll briefly summarize in &sect;<a href="#orgf34e107">1</a>, is cast within a typed extension of the &lambda;-calculus designed for algebraic effects. Maršík's work departs somewhat from the denotational view of meaning semanticists in the Montagovian tradition are typically accustomed to, at least on its face. He provides an operational semantics for the extended language, which includes operations and handlers, among other constructs. The semantics allows the representations provided in the extended language to be transformed into more familiar ones denoting ordinary truth-conditions (represented by simply typed &lambda;-terms). The process of mapping expressions of the extended language into the STLC, however, involves sacrificing the usual Montagovian view of the meanings of their component parts.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 
+In this post, I'll experiment a little bit with the algebraic approach in the context of modeling linguistic side effects. Jirka Maršík has done significant work studying semantic phenomena from the perspective of algebraic effects and handlers, culminating in his <a href="https://hal.inria.fr/tel-01417467">2016 PhD thesis</a> (see [<a href="#marsik_algebraic_2014">Maršík and Amblard, 2014</a>,<a href="#marsik_introducing_2016">Maršík and Amblard, 2016</a>,<a href="#marsik_effects_2016">Maršík, 2016</a>]). This work, whose main features I'll briefly summarize in &sect;<a href="#org94a2a80">1</a>, is cast within a typed extension of the &lambda;-calculus designed for algebraic effects. Maršík's work departs somewhat from the denotational view of meaning semanticists in the Montagovian tradition are typically accustomed to, at least on its face. He provides an operational semantics for the extended language, which includes operations and handlers, among other constructs. The semantics allows the representations provided in the extended language to be transformed into more familiar ones denoting ordinary truth-conditions (represented by simply typed &lambda;-terms). The process of mapping expressions of the extended language into the STLC, however, involves sacrificing the usual Montagovian view of the meanings of their component parts.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 
 </p>
 
 <p>
-I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. &sect;<a href="#org94853a2">2</a> begins an attempt in this direction with a framework having much of the functionality of the algebraic effects approach, cast within the simply typed &lambda;-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as &lambda;-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available <a href="https://github.com/juliangrove/algebraic-effects-montague">here</a>.
+I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. &sect;<a href="#orgb8d1e84">2</a> begins an attempt in this direction with a framework having much of the functionality of the algebraic effects approach, cast within the simply typed &lambda;-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as &lambda;-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available <a href="https://github.com/juliangrove/algebraic-effects-montague">here</a>.
 </p>
 
-<div id="outline-container-org55c554b" class="outline-2">
-<h2 id="org55c554b"><span class="section-number-2">1</span> Algebraic effects<a id="orgf34e107"></a></h2>
+<div id="outline-container-orga3c4fb1" class="outline-2">
+<h2 id="orga3c4fb1"><span class="section-number-2">1</span> Algebraic effects<a id="org94a2a80"></a></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The basic features of Maršík's approach can be found in the papers [<a href="#marsik_algebraic_2014">Maršík and Amblard, 2014</a>,<a href="#marsik_introducing_2016">Maršík and Amblard, 2016</a>], as well as in the first chapter of <a href="https://hal.inria.fr/tel-01417467">his thesis</a>. In addition to the expressions of the simply typed &lambda;-calculus, Maršík includes the constructs <i>injection</i>, <i>operation</i>, <i>handler</i>, <i>extraction</i>, and <i>exchange</i>. Unlike the simply typed fragment of his language, these constructs have types involving (for value types &alpha;) the computation types \(\mathcal{F}(\alpha)\), providing the types of expressions with algebraic effects. The type of any computation with algebraic effects is indexed by an <i>effect signature</i>; that is, a set of operation symbols, along with an assignment of types to these operation symbols that indicate any parameters the associated operation takes, as well as the operation's arity. The signature that indexes the type of a computation describes the collection of operations that <i>may</i> be invoked in the computation. For example, the computation type \(\mathcal{F}_{\{\mathtt{op} : p ⤚ a\}}(\alpha)\) is the type of computations which may invoke the operation \(\mathtt{op}\) (which takes parameters of type \(p\) and which has arity \(a\)), in order to return values of type \(\alpha\).  
@@ -303,8 +303,8 @@ Where \(E\) is an arbitrary effect signature and \(\varnothing\) is the empty ef
 </div>
 </div>
 
-<div id="outline-container-orgabae52f" class="outline-2">
-<h2 id="orgabae52f"><span class="section-number-2">2</span> Making it Montagovian<a id="org94853a2"></a></h2>
+<div id="outline-container-org0992838" class="outline-2">
+<h2 id="org0992838"><span class="section-number-2">2</span> Making it Montagovian<a id="orgb8d1e84"></a></h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #fe8019;">{-# LANGUAGE</span>
@@ -347,8 +347,8 @@ Where \(E\) is an arbitrary effect signature and \(\varnothing\) is the empty ef
 </div>
 </div>
 
-<div id="outline-container-org15edaa6" class="outline-2">
-<h2 id="org15edaa6"><span class="section-number-2">3</span> Graded monads</h2>
+<div id="outline-container-org74b0743" class="outline-2">
+<h2 id="org74b0743"><span class="section-number-2">3</span> Graded monads</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #fb4933;">instance</span> <span style="color: #d3869b;">Effect</span> <span style="color: #d3869b;">F</span> <span style="color: #fb4933;">where</span>
@@ -387,8 +387,8 @@ m \bind k &= \lambda h.m\ (\lambda p, k^\prime.h\ p\ (\lambda a.k^\prime a \bind
 </div>
 </div>
 
-<div id="outline-container-orgd8c7ec4" class="outline-2">
-<h2 id="orgd8c7ec4"><span class="section-number-2">4</span> Examples</h2>
+<div id="outline-container-org65485e3" class="outline-2">
+<h2 id="org65485e3"><span class="section-number-2">4</span> Examples</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 \(\begin{align*}
@@ -424,8 +424,8 @@ m <span style="color: #fabd2f;">&#9667;</span> n <span style="color: #83a598;">=
 </div>
 </div>
 
-<div id="outline-container-org10b461d" class="outline-2">
-<h2 id="org10b461d"><span class="section-number-2">5</span> Quantifiers as handlers</h2>
+<div id="outline-container-org7b09d3f" class="outline-2">
+<h2 id="org7b09d3f"><span class="section-number-2">5</span> Quantifiers as handlers</h2>
 <div class="outline-text-2" id="text-5">
 <div id="bibliography">
 <h2>References</h2>
@@ -677,7 +677,7 @@ Keywords: Compositionality, Conventional implicature, Deixis, Handlers, Monads, 
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Julian Grove</p>
-<p class="date">Created: 2020-09-29 Tue 20:32</p>
+<p class="date">Created: 2020-09-30 Wed 00:41</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
