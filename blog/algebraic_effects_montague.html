@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-09-30 Wed 02:32 -->
+<!-- 2020-10-01 Thu 01:28 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Algebraic effects in Montague semantics</title>
@@ -265,11 +265,11 @@ append: ["#1\\!\\!::\\!\\!#2",2]
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org06dc2ab">1. Algebraic effects</a></li>
-<li><a href="#org518b417">2. Making it Montagovian</a></li>
-<li><a href="#org04f3e3b">3. Graded monads</a></li>
-<li><a href="#orgf26338a">4. Examples</a></li>
-<li><a href="#org76842e7">5. Quantifiers as handlers</a></li>
+<li><a href="#org695b116">1. Algebraic effects</a></li>
+<li><a href="#orgb2dd5c9">2. Making it Montagovian</a></li>
+<li><a href="#org560890d">3. Graded monads</a></li>
+<li><a href="#org46fe19b">4. Examples</a></li>
+<li><a href="#orgfd3b160">5. Quantifiers as handlers</a></li>
 </ul>
 </div>
 </div>
@@ -278,39 +278,48 @@ Algebraic effects and handlers provide an approach to implementing computational
 </p>
 
 <p>
-In this post, I'll experiment a little bit with the algebraic approach in the context of modeling linguistic side effects. Jirka Maršík has done significant work studying semantic phenomena from the perspective of algebraic effects and handlers, culminating in his <a href="https://hal.inria.fr/tel-01417467">2016 PhD thesis</a> (see [<a href="#marsik_algebraic_2014">Maršík and Amblard, 2014</a>,<a href="#marsik_introducing_2016">Maršík and Amblard, 2016</a>,<a href="#marsik_effects_2016">Maršík, 2016</a>]). This work, whose main features I'll briefly summarize in &sect;<a href="#org084ef11">1</a>, is cast within a typed extension of the &lambda;-calculus designed for algebraic effects. Maršík's work departs somewhat from the denotational view of meaning semanticists in the Montagovian tradition are typically accustomed to, at least on its face. He provides an operational semantics for the extended language, which includes operations and handlers, among other constructs. The semantics allows the representations provided in the extended language to be transformed into more familiar ones denoting ordinary truth-conditions (represented by simply typed &lambda;-terms). The process of mapping expressions of the extended language into the STLC, however, involves sacrificing the usual Montagovian view of the meanings of their component parts.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 
+In this post, I'll experiment a little bit with the algebraic approach in the context of modeling linguistic side effects. Jirka Maršík has done significant work studying semantic phenomena from the perspective of algebraic effects and handlers, culminating in his <a href="https://hal.inria.fr/tel-01417467">2016 PhD thesis</a> (see [<a href="#marsik_algebraic_2014">Maršík and Amblard, 2014</a>,<a href="#marsik_introducing_2016">Maršík and Amblard, 2016</a>,<a href="#marsik_effects_2016">Maršík, 2016</a>]). This work, whose main features I'll briefly summarize in &sect;<a href="#org04626c8">1</a>, is cast within a typed extension of the &lambda;-calculus designed for algebraic effects. Maršík's work departs somewhat from the denotational view of meaning semanticists in the Montagovian tradition are typically accustomed to, at least on its face. He provides an operational semantics for the extended language, which includes operations and handlers, among other constructs. The semantics allows the representations provided in the extended language to be transformed into more familiar ones denoting ordinary truth-conditions (represented by simply typed &lambda;-terms). The process of mapping expressions of the extended language into the STLC, however, involves sacrificing the usual Montagovian view of the meanings of their component parts.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 
 </p>
 
 <p>
-I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. &sect;<a href="#org896a0af">2</a> begins an attempt in this direction with a framework having much of the functionality of the algebraic effects approach, cast within the simply typed &lambda;-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as &lambda;-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available <a href="https://github.com/juliangrove/algebraic-effects-montague">here</a>.
+I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. &sect;<a href="#org2d14527">2</a> begins an attempt in this direction with a framework having much of the functionality of the algebraic effects approach, cast within the simply typed &lambda;-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as &lambda;-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available <a href="https://github.com/juliangrove/algebraic-effects-montague">here</a>.
 </p>
 
-<div id="outline-container-org06dc2ab" class="outline-2">
-<h2 id="org06dc2ab"><span class="section-number-2">1</span> Algebraic effects<a id="org084ef11"></a></h2>
+<div id="outline-container-org695b116" class="outline-2">
+<h2 id="org695b116"><span class="section-number-2">1</span> Algebraic effects<a id="org04626c8"></a></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 The basic features of Maršík's approach are presented in the papers [<a href="#marsik_algebraic_2014">Maršík and Amblard, 2014</a>,<a href="#marsik_introducing_2016">Maršík and Amblard, 2016</a>], as well as in the first chapter of <a href="https://hal.inria.fr/tel-01417467">his thesis</a>. In addition to the expressions of the simply typed &lambda;-calculus, Maršík includes the constructs <i>injection</i>, <i>operation</i>, <i>handler</i>, <i>extraction</i>, and <i>exchange</i>. Unlike the simply typed fragment of his language, these constructs have types involving (for value types \(\alpha\)) the computation types \(\mathcal{F}(\alpha)\), providing the types of expressions with algebraic effects. The type of any computation with algebraic effects is indexed by an <i>effect signature</i>; that is, a set of operation symbols, along with an assignment of types to these operation symbols that indicate any parameters the associated operation takes, as well as the operation's arity. The signature that indexes the type of a computation describes the collection of operations that <i>may</i> be invoked in the computation. For example, the computation type \(\mathcal{F}_{\{\mathtt{op} : p ⤚ a\}}(\alpha)\) is the type of computations which may invoke the operation \(\mathtt{op}\) (which takes parameters of type \(p\) and which has arity \(a\)), in order to return values of type \(\alpha\).  
 </p>
 
 <p>
-Where \(E\) is an arbitrary effect signature and \(\varnothing\) is the empty effect signature, the constructs of <i>injection</i>, <i>operation</i>, <i>handler</i>, <i>extraction</i>, and <i>exchange</i> have the following types. (I've changed some of the symbols from the original presentation so that they more easily render with <a href="https://www.mathjax.org/">MathJax</a>.)
+Where \(E\) is an arbitrary effect signature and \(\varnothing\) is the empty effect signature, the constructs of <i>injection</i>, <i>operation</i>, <i>handler</i>, <i>extraction</i>, and <i>exchange</i> have the following typing rules. (I've changed some of the symbols from the original presentation so that they more easily render with <a href="https://www.mathjax.org/">MathJax</a>.)
 </p>
 
 <p>
-\(\begin{align*}
-\cfrac{\Gamma \vdash M : \alpha}{\Gamma \vdash \eta M : \mathcal{F}_E(\alpha)}\eta\tag{injection}\\[3mm]
-\cfrac{\Gamma \vdash M : p\hspace{5mm}\Gamma, x : a \vdash N : \mathcal{F}_E(\gamma)\hspace{5mm}\mathtt{op} : p ⤚ a \in E}{\Gamma \vdash \mathtt{op} M (\lambda x. N) : \mathcal{F}_E(\gamma)}\mathtt{op}\tag{operation}\\[3mm]
-\cfrac{E = \{\mathtt{op}_i : p_i ⤚ a_i\}_{i \in I} \uplus E_f\\E^\prime = E^{\prime\prime} \uplus E_f\\{[}\Gamma \vdash M_i : p_i \rightarrow (a_i \rightarrow \mathcal{F}_{E^\prime}(\delta)) \rightarrow \mathcal{F}_{E^\prime}{]}_{i \in I}\\\Gamma \vdash N : \gamma \rightarrow \mathcal{F}_{E^\prime}(\delta)\\\Gamma \vdash O : \mathcal{F}_E(\gamma)}{\Gamma \vdash \banana{(\mathtt{op}_i : M_i)_{i \in I}, \eta : N} O : \mathcal{F}_{E^\prime}(\delta)}\banana{}\tag{handler}\\[3mm]
-\cfrac{\Gamma \vdash M : \mathcal{F}_\varnothing(\alpha)}{\Gamma \vdash ⇓ M : \alpha}⇓\tag{extraction}\\[3mm]
-\cfrac{\Gamma \vdash M : \alpha \rightarrow \mathcal{F}_E(\beta)}{\Gamma \vdash \mathcal{C} M : \mathcal{F}_E(\alpha \rightarrow \beta)}\mathcal{C}\tag{exchange}
-\end{align*}\)
+\[\cfrac{\Gamma \vdash M : \alpha}{\Gamma \vdash \eta M : \mathcal{F}_E(\alpha)}\eta\tag{injection}\\[3mm]\]
+\[\cfrac{\Gamma \vdash M : p\hspace{5mm}\Gamma, x : a \vdash N : \mathcal{F}_E(\gamma)\hspace{5mm}\mathtt{op} : p ⤚ a \in E}{\Gamma \vdash \mathtt{op} M (\lambda x. N) : \mathcal{F}_E(\gamma)}\mathtt{op}\tag{operation}\\[3mm]\]
+\[\cfrac{E = \{\mathtt{op}_i : p_i ⤚ a_i\}_{i \in I} \uplus E_f\\E^\prime = E^{\prime\prime} \uplus E_f\\{[}\Gamma \vdash M_i : p_i \rightarrow (a_i \rightarrow \mathcal{F}_{E^\prime}(\delta)) \rightarrow \mathcal{F}_{E^\prime}(\delta){]}_{i \in I}\\\Gamma \vdash N : \gamma \rightarrow \mathcal{F}_{E^\prime}(\delta)\\\Gamma \vdash O : \mathcal{F}_E(\gamma)}{\Gamma \vdash \banana{(\mathtt{op}_i : M_i)_{i \in I}, \eta : N} O : \mathcal{F}_{E^\prime}(\delta)}\banana{}\tag{handler}\\[3mm]\]
+\[\cfrac{\Gamma \vdash M : \mathcal{F}_\varnothing(\alpha)}{\Gamma \vdash ⇓ M : \alpha}⇓\tag{extraction}\\[3mm]\]
+\[\cfrac{\Gamma \vdash M : \alpha \rightarrow \mathcal{F}_E(\beta)}{\Gamma \vdash \mathcal{C} M : \mathcal{F}_E(\alpha \rightarrow \beta)}\mathcal{C}\tag{exchange}\]
+</p>
+
+<p>
+The type of an injection is such that it may be associated with any signature \(E\); in other words, values of type \(\alpha\) may be injected into any algebra, no matter what signature it has, as a trivial computation which simply returns that value.
+</p>
+
+<p>
+Explaining the typing rule for operations requires elaborating a few background conventions. The premise \(\mathtt{op} : p ⤚ a \in E\) indicates that operation \(\mathtt{op}\) takes a parameter of type \(p\) and has arity \(a\); that is, it first applies to a term of type \(p\) and then takes \(a\) -many elements of the algebra, i.e., \(a\) -many arguments of type \(\mathcal{F}_E(\gamma)\), for some value type \(\gamma\). As \(a\) is a type (rather than a cardinality), we simply follow the convention that having arity \(a\) is equivalent to being able to apply to an \(a\) -indexed family of elements of the algebra, or, in other words, to a function of type \(a \rightarrow \mathcal{F}_E(\gamma)\). Thus a binary operation, for example, may be thought of as one which applies to a \(\mathtt{Bool}\) -indexed family of elements, where \(\mathtt{Bool}\) is the type with two inhabitants: \(\mathtt{True}\) and \(\mathtt{False}\). And a unary operation may be thought of as one which applies to a \(\star\) -indexed family of elements, where \(\star\) is the unit type, having one element (also called \(\star\)). (See [<a href="#bauer_what_2019">Bauer, 2019</a>] for a really great, accessible introduction to the relationship between algebra, as traditionally conceived, and as a framework for theories of computation.) In these terms, the typing rule for operations may be read as saying that if \(\mathtt{op}\) takes a parameter of type \(p\), along with \(a\) -many arguments of an algebra with signature \(E\) containing the operation, and there is a term \(M\) of type \(p\), as well as a way of determining an element \(N\) of the algebra \(\mathcal{F}_E(\gamma)\) for each index \(x : a\), then one may apply the operation to the parameter \(M\) and the \(a\) -indexed family of elements \(\lambda x.N\) to get a new element of the algebra.
+</p>
+
+<p>
+The typing rule for handlers appears the most complex. In it, \(\uplus\) denotes disjoint union (of effect signatures), and \(I\) is some set indexing a set of judgments of the form presented in the third premise. In all, the typing rule says (approximately) that if there are terms \(M_i\) taking parameters of type \(p_i\) and \(a_i\) -many arguments from an algebra with some effect signature \(E^\prime\) (where \(E^\prime\) is required to contain any operations that will <i>not</i> be handled by the \(M_i\)), along with a term \(N\) mapping values of type \(\gamma\) into this algebra, then the handler that interprets operations \(\mathtt{op}_i\) with \(M_i\) and \(\eta x\) with \(N x\) can be applied to a computation \(O\) from an algebra which has the operations \(\mathtt{op}_i\) in its signature, in order to get an element of the new algebra with signature \(E^\prime\). In summary, handlers can apply to elements of one algebra to obtain elements of another algebra by providing terms to interpret the operations of the first as functions in the second.
 </p>
 </div>
 </div>
 
-
-<div id="outline-container-org518b417" class="outline-2">
-<h2 id="org518b417"><span class="section-number-2">2</span> Making it Montagovian<a id="org896a0af"></a></h2>
+<div id="outline-container-orgb2dd5c9" class="outline-2">
+<h2 id="orgb2dd5c9"><span class="section-number-2">2</span> Making it Montagovian<a id="org2d14527"></a></h2>
 <div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #fe8019;">{-# LANGUAGE</span>
@@ -353,8 +362,8 @@ Where \(E\) is an arbitrary effect signature and \(\varnothing\) is the empty ef
 </div>
 </div>
 
-<div id="outline-container-org04f3e3b" class="outline-2">
-<h2 id="org04f3e3b"><span class="section-number-2">3</span> Graded monads</h2>
+<div id="outline-container-org560890d" class="outline-2">
+<h2 id="org560890d"><span class="section-number-2">3</span> Graded monads</h2>
 <div class="outline-text-2" id="text-3">
 <div class="org-src-container">
 <pre class="src src-haskell"><span style="color: #fb4933;">instance</span> <span style="color: #d3869b;">Effect</span> <span style="color: #d3869b;">F</span> <span style="color: #fb4933;">where</span>
@@ -393,8 +402,8 @@ m \bind k &= \lambda h.m\ (\lambda p, k^\prime.h\ p\ (\lambda a.k^\prime a \bind
 </div>
 </div>
 
-<div id="outline-container-orgf26338a" class="outline-2">
-<h2 id="orgf26338a"><span class="section-number-2">4</span> Examples</h2>
+<div id="outline-container-org46fe19b" class="outline-2">
+<h2 id="org46fe19b"><span class="section-number-2">4</span> Examples</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 \(\begin{align*}
@@ -430,8 +439,8 @@ m <span style="color: #fabd2f;">&#9667;</span> n <span style="color: #83a598;">=
 </div>
 </div>
 
-<div id="outline-container-org76842e7" class="outline-2">
-<h2 id="org76842e7"><span class="section-number-2">5</span> Quantifiers as handlers</h2>
+<div id="outline-container-orgfd3b160" class="outline-2">
+<h2 id="orgfd3b160"><span class="section-number-2">5</span> Quantifiers as handlers</h2>
 <div class="outline-text-2" id="text-5">
 <div id="bibliography">
 <h2>References</h2>
@@ -683,7 +692,7 @@ Keywords: Compositionality, Conventional implicature, Deixis, Handlers, Monads, 
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Julian Grove</p>
-<p class="date">Created: 2020-09-30 Wed 02:32</p>
+<p class="date">Created: 2020-10-01 Thu 01:28</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
