@@ -25,9 +25,9 @@
 
 Algebraic effects and handlers provide an approach to implementing computational side effects which has gained interest within the functional programming community, notably among users of Haskell.[fn:: Implementations in Haskell have generally gone by the title "extensible effects". See the libraries described in cite:kiselyov_extensible_2013 and cite:kiselyov_freer_2015, as well as the [[https://github.com/hasura/eff][eff]] library, for some examples. Algebraic effects and handlers have received implementations in other languages too, both pure and impure; e.g., see cite:brady_programming_2013 for Idris.] Often, programmers wish to combine different notions of side effect within the same code; for example, one may wish to write a program that both reads the environment at various points, as well as logs output. In Haskell, one may use the Reader and Writer monads to accomplish these tasks, respectively. Combining notions of side effect is, in turn, usually a matter of invoking monad transformers, which furnish some underlying monad with the functionality of a new monad, yielding aspects of both (e.g., a Reader-transformed Writer monad). The use of transformers, however, generally implies that code is not totally extensible --- extra plumbing is required, for instance, for Reader code to exist peacefully in a Reader-Writer setting.[fn:: One can browse Haskell's popular [[http://hackage.haskell.org/package/mtl][Monad Transformers Library]] for more details.] Moreover, after extending previous monadic code into a setting in which new layers have been added to the transformer stack, its interpretation becomes fixed: if the old code involes Reader $s_1$, and the new code involves both Reader $s_1$ and Reader $s_2$, then the Reader $s_2$ layer is necessarily evaluated first.  The interest in the algebraic effects approach comes, in part, from the fact that it is designed around extensibility: multiple notions of side effect are combined algebraically and tracked within the types. The combination is relatively seamless, moreover, in the sense that no extra plumbing is required for multiple notions of effect; and it is flexible, insofar as decisions about interpretation may be delayed until a later stage --- in the definitions of handlers.
 
-In this post, I'll experiment a little bit with the algebraic approach in the context of modeling linguistic side effects. Jirka Maršík has done significant work studying semantic phenomena from the perspective of algebraic effects and handlers, culminating in his [[https://hal.inria.fr/tel-01417467][2016 PhD thesis]] (see cite:marsik_algebraic_2014,marsik_introducing_2016,marsik_effects_2016). This work, whose main features I'll briefly summarize in \S[[sec:algebraic effects]], is cast within a typed extension of the \lambda-calculus designed for algebraic effects. Maršík's work departs somewhat from the denotational view of meaning semanticists in the Montagovian tradition are typically accustomed to, at least on its face. He provides an operational semantics for the extended language, which includes operations and handlers, among other constructs. The semantics allows the representations provided in the extended language to be transformed into more familiar ones denoting ordinary truth-conditions (represented by simply typed \lambda-terms). The process of mapping expressions of the extended language into the STLC, however, involves sacrificing the usual Montagovian view of the meanings of their component parts.[fn:: Maršík also provides a set-theoretic denotational semantics for his calculus in chapter 3 of [[https://hal.inria.fr/tel-01417467][his thesis]]. It is not obvious, however, that this semantics can be given a simply typed encoding, at least not without special axioms; his $\mathcal{C}$ combinator, for instance, is a partial function.] 
+In this post, I'll experiment a little bit with the algebraic approach in the context of modeling linguistic side effects, in particular, anaphora and quantification. Jirka Maršík has done significant work studying semantic phenomena from the perspective of algebraic effects and handlers, culminating in his [[https://hal.inria.fr/tel-01417467][2016 PhD thesis]] (see cite:marsik_algebraic_2014,marsik_introducing_2016,marsik_effects_2016). This work, whose main features I'll briefly summarize in \S[[sec:algebraic effects]], is cast within a typed extension of the \lambda-calculus designed for algebraic effects. Maršík's work departs somewhat from the denotational view of meaning semanticists in the Montagovian tradition are typically accustomed to, at least on its face. He provides an operational semantics for the extended language, which includes operations and handlers, among other constructs. The semantics allows the representations provided in the extended language to be transformed into more familiar ones denoting ordinary truth-conditions (represented by simply typed \lambda-terms). The process of mapping expressions of the extended language into the STLC, however, involves sacrificing the usual Montagovian view of the meanings of their component parts.[fn:: Maršík also provides a set-theoretic denotational semantics for his calculus in chapter 3 of [[https://hal.inria.fr/tel-01417467][his thesis]]. It is not obvious, however, that this semantics can be given a simply typed encoding, at least not without special axioms; his $\mathcal{C}$ combinator, for instance, is a partial function.] 
 
-I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. \S[[sec:making it montagovian]] begins an attempt in this direction with a framework having much of the functionality of the algebraic effects approach, cast within the simply typed \lambda-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as \lambda-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available [[https://github.com/juliangrove/algebraic-effects-montague][here]].
+I will mainly use this post is to explore how similar ideas may be expressed in a more traditional Montagovian setting. \S[[sec:making it montagovian]] begins an attempt in this direction with a framework having the functionality of the algebraic effects approach, cast within the simply typed \lambda-calculus (including products). The basic strategy explored is one which views algebraic operations as variables bound (and thus given meaning) by their handlers. This view of operations allows them to be recast as \lambda-abstractions, giving rise to an interpretation scheme on which operations denote functions on their handlers. Along the way, I'll present algebraic effects for anaphora in terms of operations for State ($\mathtt{get}$ and $\mathtt{put}$), as well as algebraic effects for quantification. Designing a handler for the combined grammar will have an interesting consequence for their interaction --- in particular, having to do with the dynamic properties of quantifiers. The proposals have been implemented in Haskell, and relevant parts of the text are accompanied by their corresponding Haskell code. The full code is available [[https://github.com/juliangrove/algebraic-effects-montague][here]].
 
 * Algebraic effects<<sec:algebraic effects>>
 
@@ -106,7 +106,7 @@ What we end up with is a computation that returns a value of type $t$. In order 
 
 $$\begin{align*}
 \mathtt{handleScope} &: \mathcal{F}_{\{\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e}\}}(t) \rightarrow t\\
-\mathtt{handleScope} m &= \Downarrow (\banana{\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e} : \lambda Q, k.\eta (Q (\Downarrow (\mathcal{C} k))), \eta : \lambda x.\eta x} m)
+\mathtt{handleScope} m &= \Downarrow (\banana{\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e} : \lambda q, k.\eta (q (\Downarrow (\mathcal{C} k))), \eta : \lambda x.\eta x} m)
 \end{align*}$$
 
 Indeed, it can be deduced from the typing rules for /handler/, /extraction/, and /exchange/ that $\mathtt{handleScope}$ has the type indicated. What we're currently lacking is the relevant operational semantics for these constructs; let's provide it now (repeating Maršík's definitions).
@@ -144,9 +144,9 @@ Given these additions, we may handle the sentence /every dog barked/ using $\mat
 $$\begin{align*}
 &\mathtt{handleScope} \IF{\textit{every dog barked}}\\
 =\ &\mathtt{handleScope} (\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e} (\lambda k.\forall x.\textbf{dog} x \rightarrow k x) (\lambda x.\eta (\textbf{bark} x)))\\
-=\ &\Downarrow (\banana{\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e} : \lambda Q, k.\eta (Q (\Downarrow (\mathcal{C} k))), \eta : \lambda x.\eta x}\\
+=\ &\Downarrow (\banana{\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e} : \lambda q, k.\eta (q (\Downarrow (\mathcal{C} k))), \eta : \lambda x.\eta x}\\
 &\hspace{2cm}(\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e} (\lambda k.\forall x.\textbf{dog} x \rightarrow k x) (\lambda x.\eta (\textbf{bark} x))))\\
-=\ &\Downarrow ((\lambda Q, k^\prime.\eta (Q (\Downarrow (\mathcal{C} k^\prime)))) (\lambda k.\forall x.\textbf{dog} x \rightarrow k x) (\lambda x.\eta (\textbf{bark} x)))\\
+=\ &\Downarrow ((\lambda q, k^\prime.\eta (q (\Downarrow (\mathcal{C} k^\prime)))) (\lambda k.\forall x.\textbf{dog} x \rightarrow k x) (\lambda x.\eta (\textbf{bark} x)))\\
 =\ &\Downarrow ((\lambda k^\prime.\eta ((\lambda k.\forall x.\textbf{dog} x \rightarrow k x) (\Downarrow (\mathcal{C} k^\prime)))) (\lambda x.\eta (\textbf{bark} x)))\\
 =\ &\Downarrow (\eta ((\lambda k.\forall x.\textbf{dog} x \rightarrow k x) (\Downarrow (\mathcal{C} (\lambda x.\eta (\textbf{bark} x))))))\\
 =\ &\Downarrow (\eta ((\lambda k.\forall x.\textbf{dog} x \rightarrow k x) (\Downarrow (\eta (\lambda x.\textbf{bark} x)))))\\
@@ -166,6 +166,7 @@ We'll attempt here to render some of the ideas illustrated above in the more fam
 #+BEGIN_SRC haskell
 {-# LANGUAGE
     DataKinds,
+    FlexibleContexts,
     FlexibleInstances,
     GADTs,
     InstanceSigs,
@@ -377,9 +378,9 @@ m^\triangleright &= m \bind \lambda x.\mathtt{get}^\prime_{\star ⤚ \gamma} \st
 -- | Make a computation returning an 'Entity' live for anaphora.
 bind :: F l Entity -> F (l :++ [() >-- [Entity], [Entity] >-- ()]) Entity
 bind m = m >>= \x ->
-	   get' () >>= \g ->
-	   put' (x:g) >>
-	   return x
+	 get' () >>= \g ->
+	 put' (x:g) >>
+	 return x
 #+END_SRC
 
 Thus $(\cdot)^\triangleright$ reads in the entity returned by its input, gets the current environment, puts a new environment (consisting of the entity appended to the old environment), and, finally, returns the entity again. Note that the effect associated with the resulting computation is just whatever the effect $l$ associated with the input is, but concatenated on the left with the effect $\star ⤚ \gamma, \gamma ⤚ \star$.
@@ -454,7 +455,7 @@ $$\begin{align*}
 
 Such simpler computations are "fully interpreted", insofar as they correspond exactly to computations in the State monad. In particular, the above \lambda-term may be viewed as an alternative notation for the following Stateful program.
 
-$$\lambda g.(v, g^\prime)$$
+$$\lambda g.\langle v, g^\prime\rangle$$
 
 Accordingly, we will interpret values by simply returning them in (our encoding of) the State monad; that is, using the following interpreter.
 
@@ -469,13 +470,12 @@ type InterpretStVal v = InterpretVal '[() >-- [Entity], [Entity] >-- ()] v v
 
 -- | Interpret a value.
 interpretStVal :: InterpretStVal v
-interpretStVal
-  = \v -> Impure $ \h -> h () $ \g -> Impure $ \h' -> h' g $ \_ -> Pure v
+interpretStVal = \v -> get () (\g -> put g (\() -> return v))
 #+END_SRC
 
 That is, the interpreter for values yields a computation corresponding to the following program, given a value $v$.
 
-$$\lambda g.(v, g)$$
+$$\lambda g.\langle v, g\rangle$$
 
 Analogously, the interpreters for operations have the following types.
 
@@ -498,9 +498,8 @@ $$\begin{align*}
 #+BEGIN_SRC haskell
 -- | Interpret a 'get' occurrence.
 interpretStGet :: InterpretGet v
-interpretStGet
-  = \_ k -> Impure $ \h -> h () $ \g -> case k g of
-                                          Impure m -> m $ \_ k' -> k' g
+interpretStGet = \() k -> get () (\g -> case k g of
+                                          Impure m -> m $ \() k' -> k' g)
 #+END_SRC
 
 Thus we interpret a $\mathtt{get}_{\star ⤚ \gamma}$ by building a computation of type $\mathcal{F}_{\star ⤚ \gamma, \gamma ⤚ \star}(v)$ that feeds its (interpreted) continuation of type $\gamma \rightarrow \mathcal{F}_{\star ⤚ \gamma, \gamma ⤚ \star}(v)$ the first gotten environment of the computation, after which it, again, feeds this environment to the outer $\mathtt{get}_{\star ⤚ \gamma}$  of the result.
@@ -516,9 +515,8 @@ $$\begin{align*}
 #+BEGIN_SRC haskell
 -- | Interpret a 'put' occurrence.
 interpretStPut :: InterpretPut v
-interpretStPut
-  = \g k -> Impure $ \h -> h () $ \_ -> case k () of
-                                          Impure m -> m $ \_ k' -> k' g
+interpretStPut = \g k -> get () (\g' -> case k () of
+                                          Impure m -> m $ \() k' -> k' g)
 #+END_SRC
 
 In this case, the $\mathtt{put}_{\gamma ⤚ \star}$ occurrence is interpreted by plugging its (interpreted) continuation with $\star$ and then feeding the environment it puts to the outer $\mathtt{get}_{\star ⤚ \gamma}$ of the result. Doing so ensures that $\mathtt{put}_{\gamma ⤚ \star}$ has the required effect on the resulting computation; i.e., that of dictating its input.
@@ -534,16 +532,15 @@ $$\begin{align*}
 #+BEGIN_SRC haskell
 -- | Interpret a 'scope' occurrence.
 interpretStScope :: InterpretScope
-interpretStScope
-  = \q k ->
-  Impure $ \h -> h () $ \g ->
-  Impure $ \h' -> h' g $ \_ ->
-  Pure $ q $ \x -> case k x of
-                     Impure m -> m $ \_ k' ->
-                       case k' g of
-                         Impure m' -> m' $ \_ k'' ->
-                           case k'' () of
-                             Pure a -> a
+interpretStScope = \q k ->
+                 get () (\g ->
+                 put g (\() ->
+                 return (q $ \x -> case k x of
+                                     Impure m -> m $ \_ k' ->
+                                       case k' g of
+                                         Impure m' -> m' $ \_ k'' ->
+                                           case k'' () of
+                                             Pure a -> a)))
 #+END_SRC
 
 Thus, in order to interpret an occurrence of $\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e}$, we must essentially push the $(e \rightarrow t) \rightarrow t$ -type quantifier meaning down past the $\mathtt{get}_{\star ⤚ \gamma}$ and $\mathtt{put}_{\gamma ⤚ \star}$ of the resulting computation so that it may gain access to a continuation of type $e \rightarrow t$. The implication of using such an interpreter for $\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e}$ effects is that quantifier meanings may only be handled inside computations whose value type is $t$, i.e., at sentence boundaries. An immediate consequence of pushing quantifier meanings down past $\mathtt{get}_{\star ⤚ \gamma}$ and $\mathtt{put}_{\gamma ⤚ \star}$ (a maneuver which has been forced upon us by the types!) is that dynamic effects incurred within the quantifier's scope are lost outside of it. In other words, allowing quantifier meanings access to a scope of the right type forces a situation in which they may be live candidates for anaphora inside of their scope, but not outside of it. We have thus derived (from their types!) that quantifier meanings are internally dynamic, but externally static, with respect to anaphora. This situation does not hold for ordinary anaphora, i.e., to individual-denoting expressions, whose side effects are captured in the resulting State-monadic algebra, rendering them dynamic.[fn:: Such considerations suggest that indefinites, which give rise to exceptional scope, /should not/ be analyzed as generalized quantifiers within our fragment, but, rather, as something else. It might be beneficial to try to add a version of non-determinism to the signature, in the vein of cite:charlow_semantics_2014.]
@@ -719,33 +716,117 @@ so that the result type $o$ is fixed to $\mathcal{F}_{\star ⤚ \gamma, \gamma �
 
 * A linguistic example<<sec:a linguistic example>>
 
-$\begin{align*}
-\IF{\textit{every linguist}} &: \mathcal{F}_{((e \rightarrow t) \rightarrow t)⤚ e}(e)\\
-\IF{\textit{every linguist}} &= \mathtt{scope}^\prime_{((e \rightarrow t) \rightarrow t) ⤚ e} (\lambda k.\forall x : \textbf{ling} x\ \rightarrow\ k x)\\
-&= \lambda h.h\ (\lambda k.\forall x : \textbf{ling} x\ \rightarrow\ k x)\ (\lambda y.y)\\[2mm]
-\IF{\textit{her dog}} &: \mathcal{F}_{\star ⤚ \gamma}(e)\\
-\IF{\textit{her dog}} &= \mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\textbf{dogOf} (\mathtt{sel} g))\\
-&= \lambda h.h \star (\lambda g.\textbf{dogOf} (\mathtt{sel} g))\\[2mm]
-(\cdot)^\triangleright &: \mathcal{F}_l e \rightarrow \mathcal{F}_{l, \star ⤚ \gamma, \gamma ⤚ \star}(e)\\
-m^\triangleright &= m \bind \lambda x.\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\mathtt{put}_{\gamma ⤚ \star}(\append{x}{g}; \lambda\star.x))\\
-&= m \bind \lambda x, h.h \star (\lambda g, h^\prime.h^\prime (\append{x}{g}) (\lambda\star.x)) 
-\end{align*}$
+In this section, I'll present a small linguistic example to illustrate the algebraic effects approach and, crucially, the dynamic property of quantifiers mentioned. We'll consider, in particular, the following two sentences, which differ in their in their dynamic behavior.
 
-$\begin{align*}
-(\triangleright) &: \mathcal{F}_{l_1}(v \rightarrow w) \rightarrow \mathcal{F}_{l_2}(v) \rightarrow \mathcal{F}_{l_1, l_2}(w)\\
-m \triangleright n &= \mu\ (\mathtt{map}_{\mathcal{F}_{l_1}} (\lambda f.\mathtt{map}_{\mathcal{F}_{l_2}} (\lambda x.f x)\ n)\ m)\\[2mm]
-(\triangleleft) &: \mathcal{F}_{l_1}(v) \rightarrow \mathcal{F}_{l_2}(v \rightarrow w) \rightarrow \mathcal{F}_{l_1, l_2}(w)\\
-m \triangleleft n &= \mu\ (\mathtt{map}_{\mathcal{F}_{l_1}} (\lambda x.\mathtt{map}_{\mathcal{F}_{l_2}} (\lambda f.f x)\ n)\ m)
-\end{align*}$
+1. Every postdoc cited herself.<<ex1>>
+2. Ashley cited herself.<<ex2>>
+
+** Lexicon
+
+Let's first introduce a lexicon of English, complete with denotations as simply typed \lambda-terms. To analyze anaphora, we'll use the $\mathtt{sel}$ function of cite:degroote_towards_2006, which retrieves an individual from the environment (and is thus of type $\gamma \rightarrow e$).
+  
+$$\begin{align*}
+\mathtt{every} &: (e \rightarrow t) \rightarrow \mathcal{F}_{(e \rightarrow t) \rightarrow t ⤚ e}(e)\\
+\mathtt{every} &= \lambda p.\mathtt{scope}^\prime_{(e \rightarrow t) \rightarrow t ⤚ e} (\lambda k.\forall x : p x\ \rightarrow\ k x)\\
+&= \lambda p, h.h\ (\lambda k.\forall x : p x\ \rightarrow\ k x)\ (\lambda y.y)\\[3mm]
+\mathtt{herself} &: \mathcal{F}_{\star ⤚ \gamma}(e)\\
+\mathtt{herself} &= \mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\mathtt{sel} g)\\
+&= \lambda h.h \star (\lambda g.\mathtt{sel} g)\\[3mm]
+(\cdot)^\triangleright &: \mathcal{F}_l e \rightarrow \mathcal{F}_{l, \star ⤚ \gamma, \gamma ⤚ \star}(e)\tag{bind}\\
+m^\triangleright &= m \bind \lambda x.\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\mathtt{put}_{\gamma ⤚ \star}(\append{x}{g}; \lambda\star.x))\\
+&= m \bind \lambda x, h.h \star (\lambda g, h^\prime.h^\prime (\append{x}{g}) (\lambda\star.x))\\[3mm]
+\mathtt{postdoc} &: e \rightarrow t\\
+\mathtt{postdoc} &= \textbf{pd}\\[3mm]
+\mathtt{cited} &: \mathcal{F}_\epsilon(e \rightarrow e \rightarrow t)\\
+\mathtt{cited} &= \textbf{cite}^\eta\\[3mm]
+\mathtt{ashley} &: \mathcal{F}_\epsilon(e)\\
+\mathtt{ashley} &= \textbf{a}^\eta
+\end{align*}$$
+
+** Grammar
+
+Additionally, we'll need versions of forward and backward Functional Application, which we present in terms of $\mathtt{map}_{\mathcal{F}_l}$ and an operator $\mu$ (called 'join'). This presentation is necessary for Haskell to infer the correct type for the application combinators and is equivalent to the presentation in terms of $\bind$ and $(\cdot)^\eta$.
+
+$$\begin{align*}
+\mu &: \mathcal{F}_{l_1}(\mathcal{F}_{l_2}(v)) \rightarrow \mathcal{F}_{l_1,l_2}(v)\tag{join}\\
+\mu m &= m \bind \lambda n.n
+\end{align*}$$
 
 #+BEGIN_SRC haskell
+-- | Graded monadic 'join'.
+join :: F l1 (F l2 v) -> F (l1 :++ l2) v
+join m = m >>= id
+#+END_SRC
+
+$$\begin{align*}
+(\triangleright) &: \mathcal{F}_{l_1}(v \rightarrow w) \rightarrow \mathcal{F}_{l_2}(v) \rightarrow \mathcal{F}_{l_1, l_2}(w)\tag{forward application}\\
+m \triangleright n &= \mu\ (\mathtt{map}_{\mathcal{F}_{l_1}} (\lambda f.\mathtt{map}_{\mathcal{F}_{l_2}} (\lambda x.f x)\ n)\ m)\\[3mm]
+(\triangleleft) &: \mathcal{F}_{l_1}(v) \rightarrow \mathcal{F}_{l_2}(v \rightarrow w) \rightarrow \mathcal{F}_{l_1, l_2}(w)\tag{backward application}\\
+m \triangleleft n &= \mu\ (\mathtt{map}_{\mathcal{F}_{l_1}} (\lambda x.\mathtt{map}_{\mathcal{F}_{l_2}} (\lambda f.f x)\ n)\ m)
+\end{align*}$$
+
+#+BEGIN_SRC haskell
+-- | Forward application
 (|>) :: F l1 (v -> w) -> F l2 v -> F (l1 :++ l2) w
 m |> n = join $ fmap (\f -> fmap (\x -> f x) n) m
 
+-- | Backward application
 (<|) :: F l1 v -> F l2 (v -> w) -> F (l1 :++ l2) w
 m <| n = join $ fmap (\x -> fmap (\f -> f x) n) m
 #+END_SRC
 
+** Examples
+
+Let's first look at example [[ex1]].
+
+$$\begin{align*}
+&(\mathtt{every} \mathtt{postdoc})^\triangleright \triangleleft (\mathtt{cited} \triangleright \mathtt{herself})\\
+=\ \ &(\mathtt{scope}^\prime_{(e \rightarrow t) \rightarrow t ⤚ e} (\lambda k.\forall x : \textbf{pd} x\ \rightarrow\ k x))^\triangleright \triangleleft (\mathtt{cited} \triangleright \mathtt{herself})\\
+=\ \ &(\mathtt{scope}^\prime_{(e \rightarrow t) \rightarrow t ⤚ e} (\lambda k.\forall x : \textbf{pd} x\ \rightarrow k x))^\triangleright \triangleleft \mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\textbf{cite} (\mathtt{sel} g))\\
+=\ \ &\mathtt{scope}_{(e \rightarrow t) \rightarrow t ⤚ e} (\lambda k.\forall x : \textbf{pd} x\ \rightarrow k x)\\
+&\hspace{1cm}(\lambda y.\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\mathtt{put}_{\gamma ⤚ \star}(\append{y}{g}; \lambda\star.\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g^\prime.\textbf{cite} (\mathtt{sel} g^\prime) y))))
+\end{align*}$$
+
+As we can see by inspecting the operations present in the resulting \lambda-term, the semantic type of [[ex1]] is $\mathcal{F}_{(e \rightarrow t) \rightarrow t ⤚ e, \star ⤚ \gamma, \gamma ⤚ \star, \star ⤚ \gamma}\ \ (t)$. Its side effects are, in order, to invoke a quantifier meaning, read the environment, update the environment with the variable bound by the quantifier, and, finally, to read the environment again to do anaphora.
+
+Example [[ex2]] composes in a similar way.
+
+$$\begin{align*}
+&\mathtt{ashley}^\triangleright \triangleleft (\mathtt{cited} \triangleright \mathtt{herself})\\
+=\ \ &\mathtt{ashley}^\triangleright \triangleleft \mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\textbf{cite} (\mathtt{sel} g))\\
+=\ \ &\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\mathtt{put}_{\gamma ⤚ \star}(\append{\textbf{a}}{g}; \lambda\star.\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g^\prime.\textbf{cite} (\mathtt{sel} g^\prime) \textbf{a})))
+\end{align*}$$
+
+In this case, the resulting type is simpler --- $\mathcal{F}_{\star ⤚ \gamma, \gamma ⤚ \star, \star ⤚ \gamma}\ (t)$ --- as there is no quantifier. The environment is read, updated with $\textbf{a}$, and then read again for anaphora.
+
+Of course these "meanings" are not enough; we need to handle them! Doing so will produce ordinary State-monadic meanings, which we may associate with truth conditions. Fortunately, both sentences are of the right value type ($t$) to be handled. In the case of example [[ex1]], we wish to derive the following.
+
+$$\mathtt{handleSentence}_{(e \rightarrow t) \rightarrow t ⤚ e, \star ⤚ \gamma, \gamma ⤚ \star, \star ⤚ \gamma}\ \ ((\mathtt{every} \mathtt{postdoc})^\triangleright \triangleleft (\mathtt{cited} \triangleright \mathtt{herself}))$$
+
+There is not enough space here to show how the handler is computed, as well as provide the relevant \beta-reductions, so I'll leave that as an (extremely tedious) exercise for the reader. The simplified meaning which results, however, is the following one.
+
+$$\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\mathtt{put}_{\gamma ⤚ \star}(g; \lambda\star.\forall x.\textbf{pd} x \rightarrow \textbf{cite} (\mathtt{sel} (\append{x}{g})) x))$$
+
+This meaning is equivalent to the State monadic program $\lambda g.\langle\forall x.\textbf{pd} x \rightarrow \textbf{cite} (\mathtt{sel} (\append{x}{g})) x, g\rangle$; as required, it is externally static.
+
+Likewise, we wish to derive the following interpreted meaning for example [[ex2]].
+
+$$\mathtt{handleSentence}_{\star ⤚ \gamma, \gamma ⤚ \star, \star ⤚ \gamma}\ \ (\mathtt{ashley}^\triangleright \triangleleft (\mathtt{cited} \triangleright \mathtt{herself}))$$
+
+In this case, the simplified meaning which results is the following.
+
+$$\mathtt{get}_{\star ⤚ \gamma}(\star; \lambda g.\mathtt{put}_{\gamma ⤚ \star}(\append{\textbf{a}}{g}; \lambda\star.\textbf{cite} (\mathtt{sel} (\append{\textbf{a}}{g})) \textbf{a}))$$
+
+This meaning is equivalent to the State-monadic program $\lambda g.\langle\textbf{cite} (\mathtt{sel} (\append{\textbf{a}}{g})) \textbf{a}, \append{\textbf{a}}{g}\rangle$; it is thus externally dynamic, in contrast to the meaning of example [[ex1]].
+
 * Summary
+
+The first part of this post (\S[[sec:algebraic effects]]) was an attempt to present algebraic effects as an approach to natural language semantics, with special attention to Jirka Maršík's work. Maršík (as far as I know) has the most worked out, comprehensive framework for combining linguistic side effects from an algebraic perspective, as presented in [[https://hal.inria.fr/tel-01417467][his PhD thesis]]. Indeed, he treats an array of phenomena that haven't been mentioned here, including presupposition and implicature, along with quantification and the dynamics of anaphora and indefiniteness.
+
+The second part of the post (\S[[sec:making it montagovian]]) attempted to render the basic ideas behind these proposals in the simply typed \lambda-calculus, relying on recursive definitions for computations and their handlers. In doing so, we presented operations for both state and quantification, as well as a means of handling complex, uninterpreted computations in a simple State-monadic algebra. One interesting consequence of this attempt is the dynamic properties of quantifiers, which arise simply from their types ($(e \rightarrow t) \rightarrow t$), in combination with the choice of a State-monadic target algebra.
+
+There seem to be at least two features of the system presented that one could investigate. The first has to do with quantifier scope; in particular, why is it clause bounded? The answer which suggests itself (and which builds on Maršík's work, as well as cite:charlow_semantics_2014) is that sentence boundaries constitute domains for semantic evaluation. In cite:charlow_semantics_2014, for example, continuized meanings, which are used to analyze quantification, are reset. This has the effect that quantifiers have clause bounded scope, while other sentence-level side effects are allowed to percolate up. In the present system, a similar explanation may become available for the difference between quantifiers and other sorts of "scope-takers" if evaluation is forced at sentence boundaries; in particular, we need only ensure that the target algebra contains the effects registered by exceptional scope-takers (as we did for anaphora).
+
+The second feature has to do with the apparent independence between different side effects that the system makes available. In general, the source algebras in the algebraic effects framework are completely extensible; state and quantification, for example, were added to the grammar independently of each other, in terms of operations taking different parameters and arities. One may wonder what implications this observation has for semantic learning. Should different semantic phenomena (anaphora, quantification, etc.) be learnable independently of each other, such that, for example, the internal dynamism of quantifiers is predictable entirely by their type? Moreover, these issues seem to be complicated by the necessity for handlers, which may be what are truly being learned when one incorporates quantification into their grammar. The definitions of handlers do not always treat phenomena independently in the same way. 
 
 #+BIBLIOGRAPHY: algebraic_effects_montague apalike
