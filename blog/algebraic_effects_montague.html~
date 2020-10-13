@@ -3,25 +3,6 @@
 
 <tr valign="top">
 <td align="right" class="bibtexnumber">
-[<a name="atkey_parameterised_2009">Atkey, 2009</a>]
-</td>
-<td class="bibtexitem">
-Atkey, R. (2009).
- Parameterised notions of computation.
- <em>Journal of Functional Programming</em>, 19(3-4):335--376.
-[&nbsp;<a href="algebraic_effects_montague_bib.html#atkey_parameterised_2009">bib</a>&nbsp;| 
-<a href="http://dx.doi.org/10.1017/S095679680900728X">DOI</a>&nbsp;| 
-<a href="https://doi.org/10.1017/S095679680900728X">http</a>&nbsp;]
-<blockquote><font size="-1">
-Moggi's Computational Monads and Power et al.'s equivalent notion of Freyd category have captured a large range of computational effects present in programming languages. Examples include non-termination, non-determinism, exceptions, continuations, side effects and input/output. We present generalisations of both computational monads and Freyd categories, which we call parameterised monads and parameterised Freyd categories, that also capture computational effects with parameters. Examples of such are composable continuations, side effects where the type of the state varies and input/output where the range of inputs and outputs varies. By considering structured parameterisation also, we extend the range of effects to cover separated side effects and multiple independent streams of I/O. We also present two typed λ-calculi that soundly and completely model our categorical definitions – with and without symmetric monoidal parameterisation – and act as prototypical languages with parameterised effects.
-</font></blockquote>
-
-</td>
-</tr>
-
-
-<tr valign="top">
-<td align="right" class="bibtexnumber">
 [<a name="bauer_what_2019">Bauer, 2019</a>]
 </td>
 <td class="bibtexitem">
@@ -109,6 +90,26 @@ Charlow, S. (2020).
 <a href="https://doi.org/10.1007/s10988-019-09278-3">http</a>&nbsp;]
 <blockquote><font size="-1">
 I argue that alternative-denoting expressions interact with their semantic context by taking scope. With an empirical focus on indefinites in English, I show how this approach improves on standard alternative-semantic architectures that use point-wise composition to subvert islands, as well as on in situ approaches to indefinites more generally. Unlike grammars based on point-wise composition, scope-based alternative management is thoroughly categorematic, doesn’t under-generate readings when multiple sources of alternatives occur on an island, and is compatible with standard treatments of binding. Unlike all in situ (pseudo-scope) treatments of indefinites, relying on a true scope mechanism prevents over-generation when an operator binds into an indefinite. My account relies only on function application, some mechanism for scope-taking, and two freely-applying type-shifters: the first is Karttunen’s (Linguist Philos 1(1):3–44, 1977. https://doi.org/10.1007/BF00351935) proto-question operator, aka Partee’s (in: Groenendijk, de Jongh, Stokhof (eds) Studies in discourse representation theory and the theory of generalized quantifiers, Foris, Dordrecht, 1986) IDENT, and the second can be factored out of extant approaches to the semantics of questions in the tradition of Karttunen (1977). These type-shifters form a decomposition of LIFT, the familiar function mapping values into scope-takers. Exceptional scope of alternative-generating expressions arises via (snowballing) scopal pied-piping: indefinites take scope over their island, which then itself takes scope.
+</font></blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="groote_towards_2006">Groote, 2006</a>]
+</td>
+<td class="bibtexitem">
+Groote, P.&nbsp;d. (2006).
+ Towards a Montagovian Account of Dynamics.
+ <em>Semantics and Linguistic Theory</em>, 16(0):1--16.
+ Number: 0.
+[&nbsp;<a href="algebraic_effects_montague_bib.html#groote_towards_2006">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.3765/salt.v16i0.2952">DOI</a>&nbsp;| 
+<a href="https://journals.linguisticsociety.org/proceedings/index.php/SALT/article/view/2952">http</a>&nbsp;]
+<blockquote><font size="-1">
+No abstract.
 </font></blockquote>
 
 </td>
@@ -223,6 +224,50 @@ In compositional model-theoretic semantics, researchers assemble truth-condition
 </font></blockquote>
 <blockquote><font size="-1">
 Keywords: Compositionality, Conventional implicature, Deixis, Handlers, Monads, Side effects
+</font></blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="orchard_embedding_2014">Orchard and Petricek, 2014</a>]
+</td>
+<td class="bibtexitem">
+Orchard, D. and Petricek, T. (2014).
+ Embedding effect systems in Haskell.
+ <em>ACM SIGPLAN Notices</em>, 49(12):13--24.
+[&nbsp;<a href="algebraic_effects_montague_bib.html#orchard_embedding_2014">bib</a>&nbsp;| 
+<a href="http://dx.doi.org/10.1145/2775050.2633368">DOI</a>&nbsp;| 
+<a href="https://doi.org/10.1145/2775050.2633368">http</a>&nbsp;]
+<blockquote><font size="-1">
+Monads are now an everyday tool in functional programming for abstracting and delimiting effects. The link between monads and effect systems is well-known, but in their typical use, monads provide a much more coarse-grained view of effects. Effect systems capture fine-grained information about the effects, but monads provide only a binary view: effectful or pure. Recent theoretical work has unified fine-grained effect systems with monads using a monad-like structure indexed by a monoid of effect annotations (called parametric effect monads). This aligns the power of monads with the power of effect systems. This paper leverages recent advances in Haskell's type system (as provided by GHC) to embed this approach in Haskell, providing user-programmable effect systems. We explore a number of practical examples that make Haskell even better and safer for effectful programming. Along the way, we relate the examples to other concepts, such as Haskell's implicit parameters and coeffects.
+</font></blockquote>
+<blockquote><font size="-1">
+Keywords: effect systems, parametric effect monads, type systems
+</font></blockquote>
+
+</td>
+</tr>
+
+
+<tr valign="top">
+<td align="right" class="bibtexnumber">
+[<a name="shan_monads_2002">Shan, 2002</a>]
+</td>
+<td class="bibtexitem">
+Shan, C.-c. (2002).
+ Monads for natural language semantics.
+ <em>arXiv:cs/0205026</em>.
+ arXiv: cs/0205026.
+[&nbsp;<a href="algebraic_effects_montague_bib.html#shan_monads_2002">bib</a>&nbsp;| 
+<a href="http://arxiv.org/abs/cs/0205026">http</a>&nbsp;]
+<blockquote><font size="-1">
+Accounts of semantic phenomena often involve extending types of meanings and revising composition rules at the same time. The concept of monads allows many such accounts -- for intensionality, variable binding, quantification and focus -- to be stated uniformly and compositionally.
+</font></blockquote>
+<blockquote><font size="-1">
+Keywords: Computer Science - Programming Languages, Computer Science - Computation and Language, D.3.1, F.3.2, I.2.7
 </font></blockquote>
 
 </td>
