@@ -7,8 +7,9 @@ import Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-  match ("images/*"
-         .||. "blog/*"
+  match ("blog/*"
+         .||. "cv/grove_cv.pdf"
+         .||. "images/*"
          .||. "slides/*"
         ) $ do
     route idRoute
