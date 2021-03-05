@@ -7,8 +7,7 @@ import Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-  match ("blog/*"
-         .||. "cv/grove_cv.pdf"
+  match ("cv/grove_cv.pdf"
          .||. "images/*"
          .||. "slides/*"
         ) $ do
