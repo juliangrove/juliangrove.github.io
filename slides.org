@@ -6,5 +6,5 @@ pagetitle: slides
 * Slides
   [[./slides/linguaefeb252021.pdf][Presupposition projection as a scope phenomenon]] - February 25, 2021. LINGUAE
   seminar, Institut Jean-Nicod.\\
-  [[./slides/claspoct282020.pdf][Algebraic effects in Montague semantics]]- October 28, 2020. CLASP, University
+  [[./slides/claspoct282020.pdf][Algebraic effects in Montague semantics]] - October 28, 2020. CLASP, University
   of Gothenburg.
