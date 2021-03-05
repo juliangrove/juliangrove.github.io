@@ -1,0 +1,7 @@
+---
+sitetitle: julian grove
+pagetitle: cv
+---
+
+* CV
+  Available [[https://juliangrove.github.io/grove_cv.pdf][here]]. (Last updated May 25, 2020.)

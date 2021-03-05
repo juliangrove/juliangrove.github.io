@@ -1,0 +1,9 @@
+---
+sitetitle: julian grove
+pagetitle: papers
+---
+
+* Papers
+  Satisfaction without provisos. In prep. Current version available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].
+
+  More coming soon...

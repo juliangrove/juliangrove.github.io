@@ -1,0 +1,12 @@
+---
+sitetitle: julian grove
+pagetitle: code
+---
+
+* Code
+  [[https://github.com/juliangrove/presupposition][presupposition]]
+  - A Haskell implementation of a significant portion of the grammar fragment
+    described in [[https://semanticsarchive.net/Archive/TRmOTkzM][my dissertation]]
+  [[https://github.com/juliangrove/top-down-mg-parser][top-down-mg-parser]]
+  - A Haskell implementation of the top-down minimalist grammar parser described
+    in [[https://link.springer.com/chapter/10.1007/978-3-642-39998-5_3][Kobele, Gerth, and Hale 2013]]
