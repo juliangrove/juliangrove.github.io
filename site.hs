@@ -19,9 +19,8 @@ main = hakyll $ do
   match (fromList [ "blog.org"
                   , "code.org"
                   , "cv.org"
-                 
                   , "dissertation.org"
-                  ,  "index.org"
+                  , "index.org"
                   , "papers.org"
                   , "slides.org"
                   ]) $ do
