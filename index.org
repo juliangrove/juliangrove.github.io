@@ -11,5 +11,5 @@ pagetitle: about
   with a focus on ellipsis, and was affiliated with the University of Chicago's
   [[http://lucian.uchicago.edu/blogs/lpl/][Language Processing Lab]]. Recently, I've been investigating approaches to
   presupposition triggers that view them as scope-taking devices.
-  
+
   You can email me at julian.grove@{gmail.com, gu.se}.

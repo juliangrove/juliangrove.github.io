@@ -57,7 +57,7 @@ navString sitetitle
        ++ "<li><a href=\"slides.html\">slides</a></li>"
        ++ "<li><a href=\"dissertation.html\">dissertation</a></li>"
        ++ "</ul>"
-      , ["papers", "slides", "dissertation"])
+      , ["research"])
     , ("<a href=\"code.html\">code</a>", ["code"])
     , ("<a href=\"cv.html\">cv</a>", ["cv"])
     , ("<a href=\"blog.html\">blog</a>", ["blog"])
