@@ -1,7 +1,5 @@
 --------------------------------------------------------------------------------
-{-# LANGUAGE
-    OverloadedStrings
-#-}
+{-# LANGUAGE OverloadedStrings #-}
 
 import Data.Monoid (mappend)
 import Hakyll
