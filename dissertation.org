@@ -10,21 +10,21 @@ pagetitle: dissertation
   understood as arising from certain expressions taking scope over expressions
   that contain them. According to Barker (2015), an expression takes scope over
   another containing it "when the larger [(containing)] expression serves as the
-  smaller [(contained)] phrase's semantic argument." Specifically, it is
-  argued that presupposition projection occurs when a presupposition trigger
-  takes scope over the larger phrase containing it, while presupposition
-  filtering occurs when a presupposition trigger fails to take scope over the
-  larger phrase containing it. Building on the satisfaction account of
-  presupposition put forward by Karttunen (1973) and Heim (1983), this
-  perspective on presupposition is couched within the theory of graded monads,
-  which have recently been proposed, in functional programming languages such as
-  Haskell, as a means to structure the composition of functions and arguments
-  which incur side effects. According to this perspective, presupposition
-  projection is regarded as a side effect of the composition of at-issue
-  meaning. A presupposition trigger is then regarded as taking scope when it
-  incurs side effects. The graded monadic perspective is applied to a general
-  dynamic semantic account of presupposition and anaphora. Specific topics
-  treated include presupposition projection in conditionals, the complements of
+  smaller [(contained)] phrase's semantic argument." Specifically, it is argued
+  that presupposition projection occurs when a presupposition trigger takes
+  scope over the larger phrase containing it, while presupposition filtering
+  occurs when a presupposition trigger fails to take scope over the larger
+  phrase containing it. Building on the satisfaction account of presupposition
+  put forward by Karttunen (1973) and Heim (1983), this perspective on
+  presupposition is couched within the theory of graded monads, which have
+  recently been proposed, in functional programming languages such as Haskell,
+  as a means to structure the composition of functions and arguments which incur
+  side effects. According to this perspective, presupposition projection is
+  regarded as a side effect of the composition of at-issue meaning. A
+  presupposition trigger is then regarded as taking scope when it incurs side
+  effects. The graded monadic perspective is applied to a general dynamic
+  semantic account of presupposition and anaphora. Specific topics treated
+  include presupposition projection in conditionals, the complements of
   propositional attitude verbs, and the scopes of indefinites and distributive
   quantifiers, like every, as well as null complement anaphora and verb phrase
   ellipsis. The perspective is shown to offer natural accounts that make good

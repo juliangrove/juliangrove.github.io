@@ -4,6 +4,8 @@ pagetitle: code
 ---
 
 * Code
+  [[https://github.com/juliangrove/grove-bernardy-chatzikyriakidis-naloma2021][grove-bernardy-chatzikyriakidis-naloma2021]]
+  - Compositional probabilistic semantics and illustrative RSA model, in Haskell
   [[https://github.com/juliangrove/presupposition][presupposition]]
   - A Haskell implementation of a significant portion of the grammar fragment
     described in [[https://semanticsarchive.net/Archive/TRmOTkzM][my dissertation]]
