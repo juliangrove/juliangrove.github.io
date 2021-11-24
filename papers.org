@@ -4,6 +4,54 @@ pagetitle: papers
 ---
 
 * Papers
-  Satisfaction without provisos. In prep. Current version available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].
-
-  More coming soon...
+** In progress
+   *Presupposition projection as a scope phenomenon* \\
+   Under review (email me for a draft). (Update of manuscript 'Satisfaction
+   without provisos', available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
+** In progress
+   *Algebraic effects for extensible dynamic semantics* \\
+   With Jean-Philippe Bernardy. Under review.
+** 2021
+   *Probabilistic compositional semantics, purely* \\
+   With Jean-Philippe Bernardy. Paper presented at [[https://lenls.github.io/lenls18/][LENLS18]]. Available on
+   [[https://ling.auf.net/lingbuzz/006284][Lingbuzz]].
+** 2021
+   *From compositional semantics to Bayesian pragmatics via logical inference* \\
+   With Jean-Philippe Bernardy and Stergios Chatzikyriakidis. [[https://iwcs2021.github.io/proceedings/naloma/][Proceedings]] of
+   [[https://typo.uni-konstanz.de/naloma21/index.html][NALOMA II]].
+** 2019
+   *Structural priming in production through 'silence': An investigation of verb
+   phrase ellipsis and null complement anaphora* \\
+   Second author, with Ming Xiang and Jason Merchant. Glossa 4(1). 
+** 2017
+   *German relative clauses and the severed index hypothesis* \\
+   Second author, with Emily Hanink. [[http://www.lingref.com/cpp/wccfl/34/][Proceedings]] of WCCFL 34.
+** 2016
+   *Article selection and anaphora in the German relative clause* \\
+   With Emily Hanink. [[https://journals.linguisticsociety.org/proceedings/index.php/SALT/issue/view/154][Proceedings]] of Semantics and Linguistic Theory 26.
+** 2016
+   *Semantic and pragmatic processes in the comprehension of negation: An event
+   related potential study of negative polarity sensitivity* \\
+   Second author, with Ming Xiang and Anastasia Giannakidou. Journal of
+   Neurolinguistics 38.
+** 2015
+   *Singular count pseudo-partitives* \\
+   [[https://ojs.ub.uni-konstanz.de/sub/index.php/sub/issue/view/8][Proceedings]] of Sinn und Bedeutung 19.
+** 2013
+   *Dependency-dependent interference: NPI interference, agreement attraction,
+   and global pragmatic inferences* \\
+   Second author, with Ming Xiang and Anastasia Giannakidou. Frontiers in
+   Psychology 4.
+** 2013
+   *The lexical semantics of much: Conversion from intervals to degrees* \\
+   Proceedings of NELS 44.
+** 2011
+   *Effects of working memory capacity and “autistic” traits on phonotactic
+   effects in speech perception* \\
+   Second author, with Alan Yu, Martina Martinović, and Morgan
+   Sonderegger. Proceedings of the International Congress of the Phonetic
+   Sciences XVII.
+** 2011
+   *Effects of Speaker Evaluation on Phonetic Convergence* \\
+   Second author, with Carissa Abrego-Collier, Morgan Sonderegger, and Alan
+   Yu. Proceedings of the International Congress of the Phonetic Sciences XVII.

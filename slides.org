@@ -4,6 +4,8 @@ pagetitle: slides
 ---
 
 * Slides
+  [[https://juliangrove.github.io/slides/lenls18talk.pdf][Probabilistic compositional semantics, purely]] - November
+  14, 2021. LENLS18.\\
   [[./slides/linguaefeb252021.pdf][Presupposition projection as a scope phenomenon]] - February 25, 2021. LINGUAE
   seminar, Institut Jean-Nicod.\\
   [[./slides/claspoct282020.pdf][Algebraic effects in Montague semantics]] - October 28, 2020. CLASP, University

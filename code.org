@@ -4,6 +4,9 @@ pagetitle: code
 ---
 
 * Code
+  [[https://github.com/juliangrove/grove-bernardy-lenls18][grove-bernardy-lenls18]]
+  - General framework for compositional probabilistic semantics, with examples,
+    in Haskell
   [[https://github.com/juliangrove/grove-bernardy-chatzikyriakidis-naloma2021][grove-bernardy-chatzikyriakidis-naloma2021]]
   - Compositional probabilistic semantics and illustrative RSA model, in Haskell
   [[https://github.com/juliangrove/presupposition][presupposition]]
