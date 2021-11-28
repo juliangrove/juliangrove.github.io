@@ -6,8 +6,8 @@ pagetitle: papers
 * Papers
 ** In progress
    *Presupposition projection as a scope phenomenon* \\
-   Under review (email me for a draft). (Update of manuscript 'Satisfaction
-   without provisos', available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
+   Submitted (email me for a draft). (Update of manuscript 'Satisfaction without
+   provisos', available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
 ** In progress
    *Algebraic effects for extensible dynamic semantics* \\
    With Jean-Philippe Bernardy. Under review.
