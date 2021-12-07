@@ -17,8 +17,8 @@ pagetitle: papers
    [[https://ling.auf.net/lingbuzz/006284][Lingbuzz]].
 ** 2021
    *From compositional semantics to Bayesian pragmatics via logical inference* \\
-   With Jean-Philippe Bernardy and Stergios Chatzikyriakidis. [[https://iwcs2021.github.io/proceedings/naloma/][Proceedings]] of
-   [[https://typo.uni-konstanz.de/naloma21/index.html][NALOMA II]].
+   With Jean-Philippe Bernardy and Stergios Chatzikyriakidis. Proceedings of
+   [[https://typo.uni-konstanz.de/naloma21/index.html][NALOMA II]]. Available [[https://aclanthology.org/2021.naloma-1.8/][here]].
 ** 2019
    *Structural priming in production through 'silence': An investigation of verb
    phrase ellipsis and null complement anaphora* \\
