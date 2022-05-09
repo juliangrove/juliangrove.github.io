@@ -11,7 +11,8 @@ pagetitle: papers
    [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
 ** In progress
    *Algebraic effects for extensible dynamic semantics* \\
-   With Jean-Philippe Bernardy. Under review.
+   With Jean-Philippe Bernardy. Accepted pending minor revisions at Journal of
+   Logic, Language and Information.
 ** 2021
    *Probabilistic compositional semantics, purely* \\
    With Jean-Philippe Bernardy. Paper presented at [[https://lenls.github.io/lenls18/][LENLS18]]. Available on
