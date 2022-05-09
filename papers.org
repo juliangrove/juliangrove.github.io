@@ -5,14 +5,14 @@ pagetitle: papers
 
 * Papers
 ** In progress
+   *Algebraic effects for extensible dynamic semantics* \\
+   With Jean-Philippe Bernardy. Accepted pending minor revisions at Journal of
+   Logic, Language and Information.
+** In progress
    *Presupposition projection as a scope phenomenon* \\
    Accepted pending revisions at Semantics & Pragmatics (email me for a
    draft). (Update of manuscript 'Satisfaction without provisos', available on
    [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
-** In progress
-   *Algebraic effects for extensible dynamic semantics* \\
-   With Jean-Philippe Bernardy. Accepted pending minor revisions at Journal of
-   Logic, Language and Information.
 ** 2021
    *Probabilistic compositional semantics, purely* \\
    With Jean-Philippe Bernardy. Paper presented at [[https://lenls.github.io/lenls18/][LENLS18]]. Available on
