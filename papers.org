@@ -7,7 +7,7 @@ pagetitle: papers
 ** In progress
    *Algebraic effects for extensible dynamic semantics* \\
    With Jean-Philippe Bernardy. Accepted pending minor revisions at Journal of
-   Logic, Language and Information.
+   Logic, Language and Information. Available [[https://semanticsarchive.net/Archive/TMxNGE3M/][here]].
 ** In progress
    *Presupposition projection as a scope phenomenon* \\
    Accepted pending revisions at Semantics & Pragmatics (email me for a
