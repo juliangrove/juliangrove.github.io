@@ -4,7 +4,7 @@ pagetitle: dissertation
 ---
 
 * Dissertation
-  Available on the Semantics Archive [[https://semanticsarchive.net/Archive/TRmOTkzM/][here]].
+  Available on the [[https://semanticsarchive.net/Archive/TRmOTkzM/][Semantics Archive]].
 
   Abstract: I argue that presupposition projection and filtering are best
   understood as arising from certain expressions taking scope over expressions

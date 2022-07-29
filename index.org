@@ -5,11 +5,19 @@ pagetitle: about
 
 * About
   I'm currently a post-doctoral researcher at the [[https://gu-clasp.github.io/][Centre for Linguistic Theory
-  and Studies in Probability]] at the [[https://www.gu.se][University of Gothenburg]]. I'm interested in
-  type-theoretic approaches to semantics; my current research is mainly in the
-  semantics of presupposition and anaphora. I have also done experimental work,
-  with a focus on ellipsis, and was affiliated with the University of Chicago's
-  [[http://lucian.uchicago.edu/blogs/lpl/][Language Processing Lab]]. Recently, I've been investigating approaches to
-  presupposition triggers that view them as scope-taking devices.
+  and Studies in Probability]] at the [[https://www.gu.se][University of Gothenburg]]. I am generally
+  interested in type-theoretic approaches to natural language semantics, which
+  I've recently investigated with two research goals in mind:
+  - First, to help make theories of dynamic semantics more composable and
+    extensible. I've recently tried this using algebraic effects.
+  - Second, to connect type-theoretic semantics with the computational modeling
+    of human behavior, as in, e.g., RSA models. I aim to do this in a way that
+    preserves the tools, like λ-calculus, that semanticists are typically used
+    to.
+  Much of my current research is in the semantics of presupposition and
+  anaphora. I have also done experimental work, with a focus on ellipsis, and
+  was affiliated with the University of Chicago's [[http://lucian.uchicago.edu/blogs/lpl/][Language Processing Lab]].
+  Recently, I've been investigating approaches to presupposition triggers that
+  view them as scope-taking devices.
 
   You can email me at julian.grove@{gmail.com, gu.se}.
