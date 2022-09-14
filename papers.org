@@ -6,9 +6,9 @@ pagetitle: papers
 * Papers
 ** In progress
    *Presupposition projection as a scope phenomenon* \\
-   Accepted pending revisions at Semantics & Pragmatics (email me for a draft).
-   (Update of manuscript 'Satisfaction without provisos', available on
-   [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
+   Accepted pending revisions at Semantics & Pragmatics. Current draft available
+   on [[https://ling.auf.net/lingbuzz/006801][LingBuzz]]. (Update of manuscript 'Satisfaction without provisos', also
+   available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
 ** 2022
    *Algebraic effects for extensible dynamic semantics* \\
    With Jean-Philippe Bernardy. Journal of Logic, Language and Information.
@@ -17,7 +17,7 @@ pagetitle: papers
    *Rational Speech Act models are utterance-independent updates of world priors*
     \\
    Second author, with Jean-Philippe Bernardy and Christine Howes. Proceedings
-    of the 26th Workshop on the Semantics and Pragmatics of Dialogue.
+   of the 26th Workshop on the Semantics and Pragmatics of Dialogue.
 ** 2021
    *Probabilistic compositional semantics, purely* \\
    With Jean-Philippe Bernardy. Paper presented at [[https://lenls.github.io/lenls18/][LENLS18]]. Available on
