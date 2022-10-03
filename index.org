@@ -5,7 +5,7 @@ pagetitle: about
 
 * About
   I'm currently a post-doctoral researcher in the [[http://factslab.io/][FACTS.lab]] at the [[https://www.rochester.edu/][University of
-  Rochester]]. I was previously affiliated with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory
+  Rochester]]. Previously, I was affiliated with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory
   and Studies in Probability]] at the [[https://www.gu.se/en][University of Gothenburg]]. I am generally
   interested in type-theoretic approaches to natural language semantics, which
   I've recently investigated with two research goals in mind:
