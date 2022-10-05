@@ -22,4 +22,4 @@ pagetitle: about
   Recently, I've been investigating approaches to presupposition triggers that
   view them as scope-taking devices.
 
-  You can email me at julian.grove@{gmail.com, gu.se}.
+  You can email me at julian.grove@gmail.com.
