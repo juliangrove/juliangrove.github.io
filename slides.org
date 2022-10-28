@@ -4,6 +4,8 @@ pagetitle: slides
 ---
 
 * Slides
+  [[https://juliangrove.github.io/slides/factslaboct282022.pdf][Some questions about vagueness and metalinguistic uncertainty]] - October
+  28, 2022. FACTS.lab, University of Rochester. \\
   [[https://juliangrove.github.io/slides/semdial2022_talk.pdf][RSA models are utterance-independent updates of world priors]] - August
   23, 2022. SemDial 2022 - DubDial. With Jean-Philippe Bernardy and Christine
   Howes.\\
