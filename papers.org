@@ -4,18 +4,17 @@ pagetitle: papers
 ---
 
 * Papers
-** In progress
+** 2022
    *Presupposition projection as a scope phenomenon* \\
-   Accepted pending revisions at Semantics & Pragmatics. Current draft available
-   on [[https://ling.auf.net/lingbuzz/006801][LingBuzz]]. (Update of manuscript 'Satisfaction without provisos', also
-   available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
+   Semantics & Pragmatics 15(15). doi:[[https://doi.org/10.3765/sp.15.15][10.3765/sp.15.15]]. (Update of manuscript
+   'Satisfaction without provisos', available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].) 
 ** 2022
    *Algebraic effects for extensible dynamic semantics* \\
    With Jean-Philippe Bernardy. Journal of Logic, Language and Information.
    Preprint on the [[https://semanticsarchive.net/Archive/TMxNGE3M/][Semantics Archive]].
 ** 2022
    *Rational Speech Act models are utterance-independent updates of world priors*
-    \\
+   \\
    Second author, with Jean-Philippe Bernardy and Christine Howes. Proceedings
    of the 26th Workshop on the Semantics and Pragmatics of Dialogue.
 ** 2021
@@ -29,7 +28,8 @@ pagetitle: papers
 ** 2019
    *Structural priming in production through 'silence': An investigation of verb
    phrase ellipsis and null complement anaphora* \\
-   Second author, with Ming Xiang and Jason Merchant. Glossa 4(1). 
+   Second author, with Ming Xiang and Jason Merchant. Glossa
+   4(1). doi:[[http://doi.org/10.5334/gjgl.726][10.5334/gjgl.726]].
 ** 2017
    *German relative clauses and the severed index hypothesis* \\
    Second author, with Emily Hanink. [[http://www.lingref.com/cpp/wccfl/34/][Proceedings]] of WCCFL 34.
@@ -48,7 +48,7 @@ pagetitle: papers
    *Dependency-dependent interference: NPI interference, agreement attraction,
    and global pragmatic inferences* \\
    Second author, with Ming Xiang and Anastasia Giannakidou. Frontiers in
-   Psychology 4.
+   Psychology 4. doi:[[http://10.3389/fpsyg.2013.00708][10.3389/fpsyg.2013.00708]].
 ** 2013
    *The lexical semantics of much: Conversion from intervals to degrees* \\
    Proceedings of NELS 44.
