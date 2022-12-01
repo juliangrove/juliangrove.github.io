@@ -49,7 +49,7 @@ pagetitle: papers
    *Dependency-dependent interference: NPI interference, agreement attraction,
    and global pragmatic inferences* \\
    Second author, with Ming Xiang and Anastasia Giannakidou. Frontiers in
-   Psychology 4. doi:[[http://10.3389/fpsyg.2013.00708][10.3389/fpsyg.2013.00708]].
+   Psychology 4. doi:[[http://doi.org/10.3389/fpsyg.2013.00708][10.3389/fpsyg.2013.00708]].
 ** 2013
    *The lexical semantics of much: Conversion from intervals to degrees* \\
    Proceedings of NELS 44.
