@@ -5,8 +5,8 @@ pagetitle: papers
 
 * Papers
 ** 2022
-   *An alternative semantics for presupposition*
-   Proceedings of the Amsterdam Colloquium 2022. Available on [[https://ling.auf.net/lingbuzz/006976][Lingbuzz]]. \\
+   *An alternative semantics for presupposition* \\
+   Proceedings of the Amsterdam Colloquium 2022. Available on [[https://ling.auf.net/lingbuzz/006976][Lingbuzz]].
 ** 2022
    *Presupposition projection as a scope phenomenon* \\
    Semantics & Pragmatics 15(15). doi:[[https://doi.org/10.3765/sp.15.15][10.3765/sp.15.15]]. (Update of manuscript
