@@ -299,8 +299,8 @@ function make_slides(f) {
 function init() {
   exp.trials = [];
   exp.catch_trials = [];
-  //exp.all_stims = _.shuffle(_.shuffle([list1,list2])[0]); //can randomize between subject conditions here
-  exp.all_stims = _.shuffle(_.shuffle([list2])[0]); 
+  exp.all_stims = _.shuffle(_.shuffle([list1,list2])[0]); //can randomize between subject conditions here
+  // exp.all_stims = _.shuffle(_.shuffle([list2])[0]); 
   console.log(exp.all_stims);
   exp.system = {
       Browser : BrowserDetect.browser,
