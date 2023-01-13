@@ -38,8 +38,23 @@
 <body onload="init();">
   <noscript>This task requires JavaScript.</noscript>
 
-  <div class="slide" id="i0" > 
-  <p class="block-text" id="instruct-text"><br><br> Imagine you are at a party. You walk into the kitchen and overhear somebody ask somebody else a question. In addition to the question, we also tell you a fact to consider, as in this example:</p> 
+  <div class="slide" id="i0" >
+        <p class="lead" style="color:orange">
+      <span>You may do only one HIT in this batch. Submissions beyond the first will
+	be rejected.</span>
+    </p>
+    
+    <input type='hidden' value="${hid}" name='hid' id='hid'/>
+    
+    <span>
+      <p align="center"><u>I confirm that I have read the above message and have
+	  not completed an assigment in this HIT before. </u>
+	<input type="checkbox" id='checkbox' required value='Checkbox'/></p>
+    </span>
+	  <br>
+    <h3>Instructions</h3>
+	<p class="block-text" id="instruct-text">
+	  Imagine you are at a party. You walk into the kitchen and overhear somebody ask somebody else a question. In addition to the question, we also tell you a fact to consider, as in this example:</p> 
 <br>
 <b>Fact (which Bill knows):</b> Patty loves hockey.
 <br>
