@@ -269,7 +269,7 @@ function make_slides(f) {
 		gender : $("#gender").val(),
 		//education : $("#education").val(),
 		comments : $("#comments").val(),
-		singleHit : $("#checkbox").val(),
+		singleHit : $("#checkbox").checked(),
 		//problems: $("#problems").val(),
 		//fairprice: $("#fairprice").val()
 	    };
