@@ -6,32 +6,32 @@
     <!--JS-->
 
     <!-- external general utilities -->
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/jquery-1.11.1.min.js "></script>
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/underscore-min.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/jquery-1.11.1.min.js "></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/underscore-min.js"></script>
 
     <!-- cocolab experiment logic -->
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/exp-V2.js"></script>
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/stream-V2.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/exp-V2.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/stream-V2.js"></script>
 
     <!-- cocolab general utilities -->
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/mmturkey.js "></script>
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/browserCheck.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/mmturkey.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/browserCheck.js"></script>
     <!-- if you want to draw cute creatures (depends on raphael): -->
-    <!-- <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/ecosystem.js"></script> -->
+    <!-- <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/ecosystem.js"></script> -->
 
     <!-- experiment specific helper functions -->
-    <script src="https://juliangrove.github.io/experiments/projection-only/shared/js/utils.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/shared/js/utils.js"></script>
     <!-- <script src="js/local-utils.js"></script> -->
 
     <!--CSS-->
-    <link href="https://juliangrove.github.io/experiments/projection-only/shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
-    <link href="https://juliangrove.github.io/experiments/projection-only/shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
-    <link href="https://juliangrove.github.io/experiments/projection-only/experiment/css/local-style.css" rel="stylesheet" type="text/css"/>
-    <link href="https://juliangrove.github.io/experiments/projection-only/experiment/css/style.css" rel="stylesheet" type="text/css"/>    
+    <link href="https://juliangrove.github.io/experiments/templatic-only/shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://juliangrove.github.io/experiments/templatic-only/shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://juliangrove.github.io/experiments/templatic-only/experiment/css/local-style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://juliangrove.github.io/experiments/templatic-only/experiment/css/style.css" rel="stylesheet" type="text/css"/>    
 
     <!-- experiment file -->
-    <script src="https://juliangrove.github.io/experiments/projection-only/experiment/js/experiment.js"></script>
+    <script src="https://juliangrove.github.io/experiments/templatic-only/experiment/js/experiment.js"></script>
     
 </head>
 
@@ -39,7 +39,7 @@
   <noscript>This task requires JavaScript.</noscript>
 
   <div class="slide" id="i0" >
-        <p class="lead" style="color:orange">
+           <p class="lead" style="color:orange">
       <span>You may do only one HIT in this batch. Submissions beyond the first will
 	be rejected.</span>
     </p>
@@ -53,35 +53,39 @@
     </span>
 	  <br>
     <h3>Instructions</h3>
-	<p class="block-text" id="instruct-text">
-	  Imagine you are at a party. You walk into the kitchen and overhear somebody ask somebody else a question. In addition to the question, we also tell you a fact to consider, as in this example:</p> 
-<br>
-<b>Fact (which Bill knows):</b> Patty loves hockey.
-<br>
-<br>
-<b>Bill asks:</b> <i>"Does Drew believe that Patty lives in Canada?"</i>
-<br>
-<br>
-<br>
-<p class="block-text" id="instruct-text">We ask you: Given the fact about Patty and given what Bill says, is he certain that Patty lives in Canada? </p>
+    <p class="block-text" id="instruct-text">
+      Imagine you are at a party. You walk into the kitchen and overhear
+      somebody ask somebody else a question. The party is very noisy, and you
+      are only able to understand part of what is said. Here is an example:
+      <br>
+      <br>
+      <br>
+      <b>Bill asks:</b> <i>"Does Drew believe that X happened?"</i>
+      <br>
+      <br>
+    <p class="block-text" id="instruct-text">Here, 'X' stands for the part that
+    you couldn't hear. Now, we ask you: Given what you heard Bill say, is he
+    certain that X happened (whatever X is)?
+</p>
 
 <p class="block-text" id="instruct-text">You give your response on a sliding scale from 'no' to 'yes'.</p> 
 
-<p class="block-text" id="instruct-text">There are a total of 26 items. The task will take about 6 minutes and you will be paid 85 cents.</p>
+<p class="block-text" id="instruct-text">There are a total of 26 items. The task
+  will take about 6 minutes and you will be paid 85 cents. The instructions
+  will be included on each page as a reminder.</p>
 
 <p class="block-text" id="instruct-text">We have included some items for which we already know the answer. If you are paying attention, you are sure to get those right! At the end of the task, we will ask you four short questions about you and your language use. You will be paid no matter what you answer there, so please answer truthfully.</p>
 
 Thank you!
 
 <br>
-<br>
-
-    <button id="start_button" type="button">Start Experiment</button>
-  <p id="legal">
+    <p id="legal">
     This research is being carried out by Dr. Aaron White at the University of
     Rochester. You can read more about the
     study <a href="https://aaronstevenwhite.io/mturk/Information_Sheet_Turk.pdf">here</a>.
-  </p>
+    </p>
+<br>
+    <button id="start_button" type="button">Start Experiment</button>
   </div></p> </div>
 
   <!-- 
@@ -128,7 +132,7 @@ complete. <br> </p>
  <div class="slide" id="block1">
   <br> 
   	<br>
-  		<p class="utterance">{{}}</p> 
+  		<p class="utterance" id="instruct-text">{{}}</p> 
 	<p class="sentence">{{}}</p> 
 	<br> 
 	<br>
@@ -172,7 +176,8 @@ complete. <br> </p>
       <p align="left">Native language(s) (spoken at home when you were a child): <input type="text" id="language"/></p>
       <!-- <label>(the language(s) spoken at home when you were a child)</label> -->
 
-      <p align="left">If English is your native language, is it AMERICAN English, as opposed to e.g., INDIAN or AUSTRALIAN English?</p>
+      <p align="left">If English is your native language, is it AMERICAN
+      English, as opposed to, e.g., INDIAN or AUSTRALIAN English?</p>
       <!-- <select id="american"> -->
       <label><input type="radio"  name="american" value="m"/>Yes</label>
       <label><input type="radio"  name="american" value="f"/>No</label>
