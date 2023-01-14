@@ -6,42 +6,53 @@
     <!--JS-->
 
     <!-- external general utilities -->
-    <script src="../_shared/js/jquery-1.11.1.min.js "></script>
-    <script src="../_shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
-    <script src="../_shared/js/underscore-min.js"></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/jquery-1.11.1.min.js "></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/underscore-min.js"></script>
 
     <!-- cocolab experiment logic -->
-    <script src="../_shared/js/exp-V2.js"></script>
-    <script src="../_shared/js/stream-V2.js"></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/exp-V2.js"></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/stream-V2.js"></script>
 
     <!-- cocolab general utilities -->
-    <script src="../_shared/js/mmturkey.js "></script>
-    <script src="../_shared/js/browserCheck.js"></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/mmturkey.js "></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/browserCheck.js"></script>
     <!-- if you want to draw cute creatures (depends on raphael): -->
-    <!-- <script src="../_shared/js/ecosystem.js"></script> -->
+    <!-- <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/ecosystem.js"></script> -->
 
     <!-- experiment specific helper functions -->
-    <script src="../_shared/js/utils.js"></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/shared/js/utils.js"></script>
     <!-- <script src="js/local-utils.js"></script> -->
 
     <!--CSS-->
-    <link href="../_shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
-    <link href="../_shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
-    <link href="css/local-style.css" rel="stylesheet" type="text/css"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>    
+    <link href="https://juliangrove.github.io/experiments/bleached-only/shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://juliangrove.github.io/experiments/bleached-only/shared/css/cocolab-style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://juliangrove.github.io/experiments/bleached-only/experiment/css/local-style.css" rel="stylesheet" type="text/css"/>
+    <link href="https://juliangrove.github.io/experiments/bleached-only/experiment/css/style.css" rel="stylesheet" type="text/css"/>    
 
     <!-- experiment file -->
-    <script src="js/experiment.js"></script>
+    <script src="https://juliangrove.github.io/experiments/bleached-only/experiment/js/experiment.js"></script>
     
 </head>
 
 <body onload="init();">
   <noscript>This task requires JavaScript.</noscript>
 
-  <div class="slide" id="i0" > 
+  <div class="slide" id="i0" >
+  <p class="lead" style="color:orange">
+      <span>You may do only one HIT in this batch. Submissions beyond the first will
+	be rejected.</span>
+    </p>
+    
+    <input type='hidden' value="${hid}" name='hid' id='hid'/>
+        <span>
+      <p align="center"><u>I confirm that I have read the above message and have
+	  not completed an assigment in this HIT before. </u>
+	<input type="checkbox" id='checkbox' name='checkbox' value='checked'/></p>
+	</span>	
+      <br>
+    <h3>Instructions</h3>
     <p class="block-text" id="instruct-text">
-      <br>
-      <br>
       Imagine you are at a party. You walk into the kitchen and overhear
       somebody ask somebody else a question. The two people talking don't know
       you and want to be secretive, so they speak in somewhat coded
