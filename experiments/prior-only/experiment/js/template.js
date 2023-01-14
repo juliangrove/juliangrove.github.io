@@ -257,28 +257,29 @@ function make_slides(f) {
 //     },
 //   });
 
-  slides.subj_info =  slide({
-    name : "subj_info",
-    submit : function(e){
-      //if (e.preventDefault) e.preventDefault(); // I don't know what this means.
-      exp.subj_data = {
-        language : $("#language").val(),
-        american : $("#american").val(),
-        //asses : $('input[name="assess"]:checked').val(),
-        age : $("#age").val(),
-        gender : $("#gender").val(),
-        //education : $("#education").val(),
-        comments : $("#comments").val(),
-        //problems: $("#problems").val(),
-        //fairprice: $("#fairprice").val()
-      };
-      exp.go(); //use exp.go() if and only if there is no "present" data.
-    }
+    slides.subj_info =  slide({
+	name : "subj_info",
+	submit : function(e){
+	    //if (e.preventDefault) e.preventDefault(); // I don't know what this means.
+	    exp.subj_data = {
+		language : $("#language").val(),
+		american : $("#american").val(),
+		asses : $('input[name="assess"]:checked').val(),
+		age : $("#age").val(),
+		gender : $("#gender").val(),
+		//education : $("#education").val(),
+		comments : $("#comments").val(),
+		singleHit : $("#checkbox").val(),
+		//problems: $("#problems").val(),
+		//fairprice: $("#fairprice").val()
+	    };
+	    exp.go(); //use exp.go() if and only if there is no "present" data.
+	}
   });
-
-  slides.thanks = slide({
-    name : "thanks",
-    start : function() {
+    
+    slides.thanks = slide({
+	name : "thanks",
+	start : function() {
       exp.data= {
           "trials" : exp.data_trials,
           "catch_trials" : exp.catch_trials,
