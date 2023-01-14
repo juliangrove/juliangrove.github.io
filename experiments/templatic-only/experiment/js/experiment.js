@@ -53,7 +53,7 @@ function make_slides(f) {
 //       } else {
 //       	var utterance = "<strong>"+this.stim.name+":</strong> \"<i>"+this.stim.fact+". "+ this.stim.utterance+"</i>\"";
 //       }
-	var utterance = "You are at a party. You walk into the kitchen and overhear " + this.stim.name + " ask somebody else a question. The party is very noisy, however, and you are only able to understand part of what is said. The part you don't hear is represented by the 'X'.";
+	var utterance = "You are at a party. You walk into the kitchen and overhear " + this.stim.name + " ask somebody else a question. The party is very noisy, and you are only able to understand part of what is said. The part you don't hear is represented by the 'X'.";
       // var utterance = "<p>"+this.stim.name + ": \"<i>"+this.stim.utterance+"</i>\"</p>" +"<p>"+this.stim.name2 + ": \"<i>Are you sure?</i>\"</p>"+this.stim.name + ": \"<i>Yes, I'm sure that "+this.stim.question+".</i>\""
       //var sentence = "<strong>Fact (which"+this.stim.name+"knows):</strong> \"<i>"+this.stim.fact+"."</i>\"";
       var sentence = "<strong>"+this.stim.name+" asks:</strong> \"<i>"+ this.stim.utterance+"</i>\"";
