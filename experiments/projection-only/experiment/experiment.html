@@ -45,11 +45,22 @@
     </p>
     
     <input type='hidden' value="${hid}" name='hid' id='hid'/>
-    
+    <script>
+      function toggleStart()
+      {
+	  if (document.getElementById("checkbox").checked) {
+	      document.getElementById("start_button").disabled = false;
+	  } else {
+	      document.getElementById("start_button").disabled = true;
+	  }
+      }
+    </script>
     <span>
       <p align="center"><u>I confirm that I have read the above message and have
 	  not completed an assigment in this HIT before. </u>
-	<input type="checkbox" id='checkbox' name='checkbox' value='checked'/></p>
+	<input type="checkbox" id='checkbox' name='checkbox' value='checked'
+	       onchange="toggleStart()"/>
+      </p>
     </span>
 	  <br>
     <h3>Instructions</h3>
@@ -76,7 +87,7 @@ Thank you!
 <br>
 <br>
 
-    <button id="start_button" type="button">Start Experiment</button>
+    <button id="start_button" type="button" disabled>Start Experiment</button>
   <p id="legal">
     This research is being carried out by Dr. Aaron White at the University of
     Rochester. You can read more about the
