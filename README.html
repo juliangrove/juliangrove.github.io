@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-04-27 Thu 14:13 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>factive-projection</title>
+<meta name="author" content="Julian Grove" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="readtheorg.css"/>
+<script src="jquery.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script type="text/javascript" src="readtheorg.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">factive-projection</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org4606f1d">1. Replication of <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a></a>
+<ul>
+<li><a href="#org5138e2a">1.1. The norming experiment</a></li>
+<li><a href="#orgf8a1952">1.2. The projection experiment</a></li>
+</ul>
+</li>
+<li><a href="#org99410f2">2. Theories of gradience</a>
+<ul>
+<li><a href="#org0a44e6d">2.1. Probabilistic programs</a>
+<ul>
+<li><a href="#org8c4c3bb">2.1.1. Definition of a probabilistic program (<a href="#citeproc_bib_item_3">Grove and Bernardy 2022</a>)</a></li>
+<li><a href="#org1e64bc3">2.1.2. Assembling and using probabilistic programs</a></li>
+<li><a href="#org9fdb4a7">2.1.3. Some nice things about probabilistic programs (pt. 1)</a></li>
+<li><a href="#org5b666cb">2.1.4. Some nice things about probabilistic programs (pt. 2)</a></li>
+<li><a href="#org0a9402c">2.1.5. Computing probabilities</a></li>
+</ul>
+</li>
+<li><a href="#org6564091">2.2. Applicative functors</a></li>
+<li><a href="#orgc60b89a">2.3. Theories of projection</a>
+<ul>
+<li><a href="#org699cbec">2.3.1. The categorical-projection theory</a></li>
+<li><a href="#orgb620a6e">2.3.2. The gradient-projection theory</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2c93512">3. Implementation</a>
+<ul>
+<li><a href="#org3ca8633">3.1. Our models</a></li>
+<li><a href="#org19d0fc7">3.2. Posterior inferences</a>
+<ul>
+<li><a href="#org9ce9793">3.2.1. The norming experiment</a></li>
+<li><a href="#org696dc79">3.2.2. The projection experiment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org091e6d4">4. References</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4606f1d" class="outline-2">
+<h2 id="org4606f1d"><span class="section-number-2">1.</span> Replication of <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+We specifically replicated MTurk experiments 2a and 2b, which divided a
+norming task and a task assessing presupposition projection into two different
+experiments.
+</p>
+<ul class="org-ul">
+<li><a href="https://juliangrove.github.io/experiments/1/experiment.html">Norming task</a></li>
+<li><a href="https://juliangrove.github.io/experiments/2/experiment.html">Projection task</a></li>
+</ul>
+</div>
+
+<div id="outline-container-org5138e2a" class="outline-3">
+<h3 id="org5138e2a"><span class="section-number-3">1.1.</span> The norming experiment</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>The goal of this experiment, for Degen and Tonhauser (<a href="#citeproc_bib_item_1">2021</a>), was to gauge
+prior certainty about the truth of the complement clauses featured in their
+projection experiment.
+<ul class="org-ul">
+<li>20 clauses, each associated with 2 possible background facts: 40 items,
+divided into two 20-item lists.</li>
+</ul></li>
+<li><p>
+We replicated this experiment with 100 participants to obtain 50 data
+points per item. We are left with 93 after pre-processing data, for around
+46 or 47 data points per item. Degen and Tonhauser (<a href="#citeproc_bib_item_1">2021</a>) were left with 75
+participants after pre-processing.
+</p>
+
+<div id="orgabbf1bd" class="figure">
+<p><img src="./plots/prior_item_means.jpg" alt="prior_item_means.jpg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>By-item means for the <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a> complement-clause + fact norming experiment vs. our replication. Red indicates low-probability items, and green, high-probability items. Spearman's rank correlation of 0.98 (p &lt; 2.2e-16).</p>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf8a1952" class="outline-3">
+<h3 id="orgf8a1952"><span class="section-number-3">1.2.</span> The projection experiment</h3>
+<div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>This experiment aims to assess the degree to which a predicate's complement
+clause <i>projects</i> when embedded within a question.
+<ul class="org-ul">
+<li>20 predicates, each paired with one of the 40 contexts from the norming
+experiment (so, 800 items).</li>
+<li>The predicates tested are exactly those featured in
+<a href="#citeproc_bib_item_2">Degen and Tonhauser 2022</a>:
+<ul class="org-ul">
+<li>``canonically factive'': <i>be annoyed</i>, <i>discover</i>, <i>know</i>, <i>reveal</i>, <i>see</i></li>
+<li>``non-factive'': <i>pretend</i>, <i>say</i>, <i>suggest</i>, <i>think</i>, <i>be right</i>, <i>demonstrate</i></li>
+<li>``optionally factive'': <i>acknowledge</i>, <i>admit</i>, <i>announce</i>, <i>confess</i>,
+<i>confirm</i>, <i>establish</i>, <i>hear</i>, <i>inform</i>, <i>prove</i></li>
+</ul></li>
+</ul></li>
+<li><p>
+We are still in the process of replicating this experiment (going for 1000
+participants). Here is a plot comparing our by-item mean ratings with those
+of <a href="#citeproc_bib_item_2">Degen and Tonhauser 2022</a>, using a 750-participant subset of our data
+(yielded after data pre-processing). Degen and Tonhauser (<a href="#citeproc_bib_item_1">2021</a>) were left
+with 266 participants' worth of data after pre-processing. 
+</p>
+
+<div id="org41679ba" class="figure">
+<p><img src="./plots/projection_item_means.jpg" alt="projection_item_means.jpg" />
+</p>
+<p><span class="figure-number">Figure 2: </span>By-item means for the <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a> projection experiment vs. our replication. Spearman's rank correlation of 0.76 (p &lt; 2.2e-16).</p>
+</div></li>
+<li><p>
+By-predicate means for the same data:
+</p>
+
+<div id="orgb48a4b9" class="figure">
+<p><img src="./plots/projection_verbs_means.jpg" alt="projection_verbs_means.jpg" />
+</p>
+<p><span class="figure-number">Figure 3: </span>By-predicate means for the <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a> projection experiment vs. our replication. Red indicates ``non-factives'', blue, ``optional factives'', and green, ``canonical factives''. Spearman's rank correlation of 0.98 (p &lt; 2.2e-16).</p>
+</div></li>
+<li>All discussion to follow is based on the data from our replication.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org99410f2" class="outline-2">
+<h2 id="org99410f2"><span class="section-number-2">2.</span> Theories of gradience</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Due to the lack of any potential principled cut-off in projectivity ratings
+between factive and non-factive predicates, Degen and Tonhauser (<a href="#citeproc_bib_item_2">2022</a>) argue
+that their results make any theoretical distinction between the two
+arbitrary.</li>
+<li>Our study investigates the possibility that there is such a distinction to
+be made, and that factivity is still an essentially categorical phenomenon;
+that is, that a predicate, on some use, is either factive or non-factive.</li>
+<li>To investigate this possibility systematically, we need a theory of
+<i>gradience</i>: how could gradient inference-judgment data possibly arise from
+grammatical representations, e.g., determing a predicate's semantic
+properties?
+<ul class="org-ul">
+<li>How does gradient behavior manifest when these grammatical representations
+are <i>discrete</i> vs. when they are themselves <i>gradient</i> (in senses to be made
+precise).</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org0a44e6d" class="outline-3">
+<h3 id="org0a44e6d"><span class="section-number-3">2.1.</span> Probabilistic programs</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org8c4c3bb" class="outline-4">
+<h4 id="org8c4c3bb"><span class="section-number-4">2.1.1.</span> Definition of a probabilistic program (<a href="#citeproc_bib_item_3">Grove and Bernardy 2022</a>)</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>Let's say \(r\) is the type of real numbers.</li>
+<li>For any type \(α\), a probabilistic program \(m\) of type \((α → r) → r\) &#x2014;
+abbreviated \(\mathtt{P}(α)\) &#x2014; <i>returns values</i> of type \(α\).
+<ul class="org-ul">
+<li>\(m\) consumes a <i>projection function</i>: some \(f\) of type \(α → r\).</li>
+<li>\(m(f)\) is an \(r\); its meaning is the result of summing \(f\) over the
+possible values \(x\) of type \(α\), weighting each \(f(x)\) by the
+probability of \(x\).</li>
+</ul></li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org2f253c8"></a>Example<br />
+<div class="outline-text-5" id="text-2-1-1-1">
+<p>
+\[\begin{align*}
+     &\texttt{m} &&: e \tag{`Ming'}\\
+     &\texttt{ck} &&: e \tag{`Chris'}\\
+     =\ \ &λf.(0.3 * f(\texttt{m})) + (0.7 * f(\texttt{ck})) &&: \mathtt{P}(e) =
+     (e → r) → r
+     \end{align*}\]
+</p>
+<ul class="org-ul">
+<li>The probabilistic program that returns Ming with probability 0.3 and
+Chris with probability 0.7.</li>
+</ul>
+</div>
+</li>
+
+<li><a id="org57e6b8c"></a>Another example: \(\mathcal{N}(μ, σ) : \mathtt{P}(r) = (r → r) → r\)<br />
+<div class="outline-text-5" id="text-2-1-1-2">
+<ul class="org-ul">
+<li>Represents a normal distribution with mean \(μ\) and standard deviation
+\(σ\).
+\[\mathcal{N}(μ, σ) = λf.\int_{-∞}^∞\text{PDF}_{\mathcal{N}(μ, σ)}(x) *
+       f(x) dx\]
+<ul class="org-ul">
+<li><b>Result</b>: the weighted average (i.e., <i>expected value</i>) of \(f(x)\) across
+the normally distributed values \(x\).</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org1e64bc3" class="outline-4">
+<h4 id="org1e64bc3"><span class="section-number-4">2.1.2.</span> Assembling and using probabilistic programs</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+We would like to be able to build probabilistic programs representing
+natural language meanings. This requires:
+</p>
+<ul class="org-ul">
+<li>somehow turning ordinary logical meanings into probabilistic programs</li>
+<li>somehow composing probabilistic programs together, similar to how we
+compose ordinary natural language meanings (e.g., by functional
+application)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9fdb4a7" class="outline-4">
+<h4 id="org9fdb4a7"><span class="section-number-4">2.1.3.</span> Some nice things about probabilistic programs (pt. 1)</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<ul class="org-ul">
+<li>You can turn any value (of any type \(α\)) into a trivial probabilistic
+program that returns just that value:
+\[\begin{align*}
+      η &: α → \mathtt{P}(α) &\text{(`pure')} \\
+      η(a) &= λf.f(a)
+      \end{align*}\]</li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="org8cdd1d4"></a>Example:<br />
+<div class="outline-text-5" id="text-2-1-3-1">
+<p>
+\[\begin{align*}
+     &\texttt{m} &&: e \tag{`Ming'} \\
+     &η(\texttt{m}) &&: \texttt{P}(e) \\
+     =\ \ &λf.f(\texttt{m}) &&: \texttt{P}(e) 
+     \end{align*}\]
+</p>
+<div class="org-center">
+<p>
+``Return Ming with a probability of 1.''
+</p>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org5b666cb" class="outline-4">
+<h4 id="org5b666cb"><span class="section-number-4">2.1.4.</span> Some nice things about probabilistic programs (pt. 2)</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<ul class="org-ul">
+<li><p>
+Given programs
+</p>
+<ul class="org-ul">
+<li>\(m : \mathtt{P}(α → β)\)</li>
+<li>\(n : \mathtt{P}(α)\)</li>
+</ul>
+<p>
+You can compose \(m\) and \(n\) by feeding the values returned by \(n\) to the
+functions returned by \(m\).
+\[\begin{align*}
+      (⊛) :\  &\texttt{P}(α → β) → \texttt{P}(α) → \texttt{P}(β) \\
+      m ⊛ n =\ &λf.m(λx.n(λy.f(x(y))))
+      \end{align*}\]
+</p>
+<div class="org-center">
+<p>
+``Run \(m\) to compute \(x\). Then run \(n\) to compute \(y\). Then apply \(x\) to
+\(y\).''
+</p>
+</div></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0a9402c" class="outline-4">
+<h4 id="org0a9402c"><span class="section-number-4">2.1.5.</span> Computing probabilities</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<ul class="org-ul">
+<li>Given a probabilistic program \(m\) of type \(\mathtt{P}(t)\) (i.e., returning
+truth values), we may use it to compute a probability:
+\[\begin{align*}
+      Pr &: \mathtt{P}(r) → r \\
+      Pr(p) &= \frac {p(𝟙)} {p(λb.1)}
+      \end{align*}\]
+<ul class="org-ul">
+<li>\(𝟙 : t → r\) is an indicator function:
+<ul class="org-ul">
+<li>\(𝟙(⊤) = 1\)</li>
+<li>\(𝟙(⊥) = 0\)</li>
+</ul></li>
+<li>In the above, it picks out the mass assigned to \(⊤\).</li>
+<li>\(p(λb.1)\) is the <i>measure</i> of \(p\): it is \(p\)'s <i>total mass</i>.</li>
+<li>So, \(Pr(p)\) is the probability that \(p\) returns \(⊥\).</li>
+</ul></li>
+</ul>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgb459084"></a>Example: probabilistic semantics for vagueness<br />
+<div class="outline-text-5" id="text-2-1-5-1">
+<ul class="org-ul">
+<li>A degree-based semantics:
+<ul class="org-ul">
+<li>\(⟦\) <i>the coffee</i> \(⟧ = \texttt{coffee} : e\)</li>
+<li>\(⟦\) <i>is expensive</i> \(⟧ = λx.\texttt{cost}(x) ≥ d : e → t\)</li>
+<li>\(⟦\) <i>the coffee is expensive</i> \(⟧ = ⟦\) <i>is expensive</i> \(⟧(⟦\) <i>the coffee</i> \(⟧) =
+         \texttt{cost}(\texttt{coffee}) ≥ d : t\)</li>
+</ul></li>
+<li>Probabilistic upgrade:
+<ul class="org-ul">
+<li>\(\texttt{Costs} : \mathtt{P}(d)\)
+<ul class="org-ul">
+<li>Takes some function \(f\) mapping degrees of cost (say, dollar values)
+to real numbers, and integrates it over the (positive) real line,
+weighting each \(f(d)\) by the probability associated with degree \(d\).</li>
+<li>For simplicity, we can assume the possible values of cost are finite:
+\[\texttt{Costs} = λf.\sum_{d = 0}^\text{max cost}
+           \text{PMF}_{\texttt{Costs}}(d) * f(d)\]
+<ul class="org-ul">
+<li>Let's say \(\texttt{Costs}\) assigns non-zero probability to anything
+from $1 to $20:
+\[λf.\begin{cases}
+	     \frac{0.3}{20} * f(d) & d ∈ [1, 5] \\
+	     \frac{0.7}{20} * f(d) & d ∈ [6, 20] \\
+	     0 & \text{otherwise}
+	     \end{cases}\]
+\[= λf.(\sum_{d=1}^{5}\frac{0.3}{20} * f(d) +
+             \sum_{d=6}^{20}\frac{0.7}{20} * f(d))\]</li>
+</ul></li>
+<li>Say we want to know the mean cost (i.e., the expected value of
+\(x\)). We can feed \(\texttt{Costs}\) the identity function:
+\[\texttt{Costs}(λx.x) = \begin{cases}
+	   \frac{0.3}{20} * d & d ∈ [0, 5] \\
+	   \frac{0.7}{20} * d & d ∈ [6, 20] \\
+	   0 & \text{otherwise}
+	   \end{cases}\]
+\[= \frac{0.3}{20} * 15 + \frac{0.7}{20} * 195 = 7.05\]</li>
+<li>Let's say we want the probability that a cost is between 3 and 5
+(inclusive). We can feed \(\texttt{Costs}\) the function
+\[λd.𝟙(d ≥ 3 ∧ d ≤ 5)\]
+which is of type \(r → r\):
+\[\mathtt{Costs}(λd.𝟙(d ≥ 3 ∧ d ≤ 5)) =\]
+\[\begin{cases}
+	   \frac{0.3}{20} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [1, 5] \\
+	   \frac{0.7}{20} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [6, 20] \\
+	   0 & \text{otherwise}
+	   \end{cases}\]
+\[= \frac{0.3}{20} + \frac{0.3}{20} + \frac{0.3}{20} = 0.045\]</li>
+</ul></li>
+<li>\(⟦\) <i>the coffee</i> \(⟧ = η({\color{green}\texttt{coffee}}) : \mathtt{P}({\color{green}t})\)</li>
+<li>\(⟦\) <i>is expensive</i> \(⟧ = \texttt{Costs}(λd.η({\color{green}λx.\texttt{cost}(x) ≥ d})) :
+         \mathtt{P}({\color{green}e → t})\)</li>
+<li>\(⟦\) <i>is expensive</i> \(⟧ ⊛ ⟦\) <i>the coffee</i> \(⟧ =
+         \texttt{Costs}(λd.η({\color{green}\texttt{cost}(\texttt{coffee}) ≥ d})) :
+         \mathtt{P}({\color{green}t})\)</li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org6564091" class="outline-3">
+<h3 id="org6564091"><span class="section-number-3">2.2.</span> Applicative functors</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Viewed as a kind of type constructor (i.e., a map from types to types),
+\(\mathtt{P}\) is what is known as an <i>applicative functor</i>
+(<a href="#citeproc_bib_item_4">McBride and Paterson 2008</a>).
+<ul class="org-ul">
+<li>A map \(\mathtt{A}\) from types to types, equipped with two operators:
+<ul class="org-ul">
+<li>\(η : α → \mathtt{A}(α)\)</li>
+<li>\((⊛) : \mathtt{A}(α → β) → \mathtt{A}(α) → \mathtt{A}(β)\)</li>
+</ul></li>
+<li>These operators must satisfy <a href="https://en.wikipedia.org/wiki/Applicative_functor#Definition">certain laws</a>.</li>
+</ul></li>
+<li>The fact that \(\mathtt{P}\) is an applicative functor allows us to employ it
+in a theory of gradience, as observed in, e.g., experimental settings, like
+the Degen and Tonhauser (<a href="#citeproc_bib_item_1">2021</a>) one.</li>
+<li><p>
+Why? Because applicative functors <i>compose</i>! If \(\mathtt{A}(α)\) is an
+applicative functor, and \(\mathtt{B}(α)\) is an applicative functor, then
+\(\mathtt{A}(\mathtt{B}(α))\) is also an applicative functor.
+</p>
+<ul class="org-ul">
+<li>We may therefore compose \(\mathtt{P}(α)\) (our probability applicative
+functor) with itself, to get another applicative functor
+\(\mathtt{P}(\mathtt{P}(α))\).
+<ul class="org-ul">
+<li>\(\mathtt{P}(\mathtt{P}({\color{green}α}))\): the underlying type \(α\)
+still represents <i>values</i>.</li>
+<li>\(\mathtt{P}({\color{green}\mathtt{P}}(α))\): the <i>inner</i> \(\mathtt{P}\)
+represents a probability distribution over these values, which can be
+used to encode trial-level uncertainty; i.e. the values people enter on
+those sliders.</li>
+<li>\({\color{green}\mathtt{P}}(\mathtt{P}(α))\): the <i>outer</i> \(\mathtt{P}\)
+represents a probability distribution <i>over these probability
+distributions</i>. It can be used to encode population-level, or
+experiment-level, uncertainty; i.e., the <i>distribution</i> of values people
+enter on those sliders.</li>
+</ul></li>
+</ul>
+<ul class="org-ul">
+<li>We can thus develop &#x2014; and experimentally test &#x2014; theories that encode
+certain claims about experiment-level vs. trial-level uncertainty.</li>
+<li>Specifically, we can ask: is the phenomenon of gradient presupposition
+projection an artifact of experiment-level uncertainty combined with a
+non-gradient (i.e., binary) projection mechanism on individual trials? Or
+does the gradience observed reflect of a truly gradient underlying
+phenomenon?</li>
+<li>In practice, this means fitting models that encode each theory to the
+experimental data and then comparing them. For the Bayesian models under
+consideration, which produce posterior samples, we use the <a href="http://www.stat.columbia.edu/~gelman/research/published/waic_understand3.pdf">Widely
+Applicable Information Criterion (WAIC)</a>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc60b89a" class="outline-3">
+<h3 id="orgc60b89a"><span class="section-number-3">2.3.</span> Theories of projection</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>A bit of notation: instead of writing expressions like
+\[m ⊛ n\]
+I'll write them as
+\[\begin{align*}
+     &x ∼ m \\
+     &y ∼ n \\
+     &η(x(y))
+     \end{align*}\]
+to make it look like we are specifying a model (which we are!).</li>
+<li>The categorical-projection theory says that the complements of purportedly
+factive predicates either project or do not project on individual
+experimental trials.</li>
+<li>In addition, we should take into account the independent contribution of
+the prior distribution associated with the complement clause.</li>
+</ul>
+</div>
+
+<div id="outline-container-org699cbec" class="outline-4">
+<h4 id="org699cbec"><span class="section-number-4">2.3.1.</span> The categorical-projection theory</h4>
+<div class="outline-text-4" id="text-2-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="orge6ab9d5"></a>Example: X knows that Julian dances salsa (where Julian is Cuban/German).<br />
+<div class="outline-text-5" id="text-2-3-1-1">
+<ul class="org-ul">
+<li>\(\texttt{JDS} : \mathtt{P}(r)\)
+<ul class="org-ul">
+<li>Some prior probability over probabilities that Julian dances salsa
+(given that he is Cuban/German).</li>
+</ul></li>
+<li>\(\texttt{knowsJDS} : \mathtt{P}(r)\)
+<ul class="org-ul">
+<li>Some prior probability over probabilities that the complement of <i>know</i>
+(that is, <i>Julian dances salsa</i>) projects.</li>
+</ul></li>
+<li>Then the categorical-projection model can be given as:
+\[\begin{align*}
+       &c ∼ \texttt{JDS} \\
+       &p ∼ \texttt{knowsJDS} \\
+       &τₚ ∼ \texttt{Bernoulli}(p) \\
+       &η ( τ_c ∼ \texttt{Bernoulli}(c); η(τₚ ∨ τ_c) )
+       \end{align*}\]
+<ul class="org-ul">
+<li>This is just a probabilistic program of type
+\(\mathtt{P}(\mathtt{P}(t))\). It uses <a href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distributions</a>:
+\(\texttt{Bernoulli}(x)\) returns \(⊤\) with probability \(x\) and \(⊥\) with
+probability \(1 - x\).
+<ul class="org-ul">
+<li>The <i>outer</i> \(\mathtt{P}\) encodes experiment-level uncertainty. We don't
+know whether, on any given trial, the subject interpreted the
+predicate <i>know</i> as triggering a projective inference.</li>
+<li>The <i>inner</i> \(\mathtt{P}\) encodes trial-level uncertainty. We are
+assuming here that there is prior uncertainty for each subject,
+reflected on each trial, about whether Julian is likely to dance
+salsa, given that he is Cuban/German.</li>
+<li>Finally, all it takes to get the inference that Julian dances salsa
+is for the prior to make it true or for the predicate to trigger
+projection; thus the disjunction.</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgb620a6e" class="outline-4">
+<h4 id="orgb620a6e"><span class="section-number-4">2.3.2.</span> The gradient-projection theory</h4>
+<div class="outline-text-4" id="text-2-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="org7a4976e"></a>Example: X knows that Julian dances salsa (where Julian is Cuban/German).<br />
+<div class="outline-text-5" id="text-2-3-2-1">
+<ul class="org-ul">
+<li>The model here is very similar, except that we slide the projection
+sampling statement underneath the outer \(\mathtt{P}\).
+\[\begin{align*}
+       &c ∼ \texttt{JDS} \\
+       &p ∼ \texttt{knowsJDS} \\
+       &η ( τₚ ∼ \texttt{Bernoulli}(p); τ_c ∼ \texttt{Bernoulli}(c); η(τₚ ∨ τ_c)
+       )
+       \end{align*}\]</li>
+<li>This program is still of type \(\mathtt{P}(\mathtt{P}(t))\).</li>
+<li>Uncertainty about projection has just been downgraded to trial-level
+uncertainty.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2c93512" class="outline-2">
+<h2 id="org2c93512"><span class="section-number-2">3.</span> Implementation</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Our implementations of these models use the <a href="https://mc-stan.org/">Stan</a> programming language. We
+can actually encode them fairly directly, often in terms of sampling
+statements like the above.</li>
+<li>Stan uses Hamiltonian Monte-Carlo sampling to do Bayesian inference.</li>
+<li>Models like the above are specified.</li>
+<li>They may then be fit using experimental data, given some likelihood
+function.</li>
+</ul>
+</div>
+
+<div id="outline-container-org3ca8633" class="outline-3">
+<h3 id="org3ca8633"><span class="section-number-3">3.1.</span> Our models</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li><p>
+For both \(\texttt{JDS}\) and \(\texttt{knowsJDS}\) above, we assume
+<a href="https://en.wikipedia.org/wiki/Logit-normal_distribution">logit-Normal</a> distributions with fairly uninformative priors &#x2014;
+\(\texttt{LogitNormal}(0, 1)\) &#x2014; on their parameters. The prior means of
+these parameters give rise to the following distributions for both
+\(\texttt{JDS}\) and \(\texttt{knowsJDS}\):
+</p>
+
+<div id="org067dfb9" class="figure">
+<p><img src="./plots/prior_logit_normal.jpg" alt="prior_logit_normal.jpg" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Prior \(\texttt{LogitNormal}(0, 1)\) distribution for both \(\texttt{JDS}\) and \(\texttt{knowsJDS}\).</p>
+</div></li>
+<li><p>
+For the categorical model, the prior predictive response, before any Normal
+jittering is added, looks like this:
+</p>
+
+<div id="org0f0732f" class="figure">
+<p><img src="./plots/prior_predictive.jpg" alt="prior_predictive.jpg" />
+</p>
+<p><span class="figure-number">Figure 5: </span>Prior predictive response before jittering.</p>
+</div></li>
+
+<li>For each model, once a probability of Julian dancing salsa is determined,
+we use Normal distributions (truncated at 0 and 1) for our likelihood, with
+the justification that there is probably some random jittering noise in
+people's responses. These are given small &#x2014; \(\texttt{HalfNormal}(0.05)\)
+&#x2014; priors on their standard deviations (since we think people probably
+don't jitter <i>too</i> much).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org19d0fc7" class="outline-3">
+<h3 id="org19d0fc7"><span class="section-number-3">3.2.</span> Posterior inferences</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Nothing conclusive yet (unfortunately)!</li>
+<li>However, I will illustrate some of the posterior inferences made by the
+categorical model, in particular, about the distributions over the tested
+predicates' probabilities of triggering a projective inference.
+<ul class="org-ul">
+<li>This model was fit on 1000 data points from each of the two experiments.</li>
+</ul></li>
+</ul>
+</div>
+
+<div id="outline-container-org9ce9793" class="outline-4">
+<h4 id="org9ce9793"><span class="section-number-4">3.2.1.</span> The norming experiment</h4>
+<div class="outline-text-4" id="text-3-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org4ce3576"></a>Example: Isabella ate a steak on Sunday, given that Isabella is a vegetarian<br />
+<div class="outline-text-5" id="text-3-2-1-1">
+
+<div id="org945b11f" class="figure">
+<p><img src="./plots/isabella_vegetarian.jpg" alt="isabella_vegetarian.jpg" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Distribution of probabilities that Isabella ate a steak on Sunday, given that Isabella is a vegetarian. Based on the mean posterior logit-Normal parameters.</p>
+</div>
+</div>
+</li>
+
+<li><a id="org5c33adc"></a>Example: Isabella ate a steak on Sunday, given that Isabella is from Argentina<br />
+<div class="outline-text-5" id="text-3-2-1-2">
+
+<div id="orgfaf5f54" class="figure">
+<p><img src="./plots/isabella_argentina.jpg" alt="isabella_argentina.jpg" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Distribution of probabilities that Isabella ate a steak on Sunday, given that Isabella is from Argentina. Based on the mean posterior logit-Normal parameters.</p>
+</div>
+</div>
+</li>
+
+<li><a id="org4476871"></a>Example: Julian dances salsa, given that Julian is Cuban<br />
+<div class="outline-text-5" id="text-3-2-1-3">
+
+<div id="orgb12ed4f" class="figure">
+<p><img src="./plots/julian_cuban.jpg" alt="julian_cuban.jpg" />
+</p>
+<p><span class="figure-number">Figure 8: </span>Distribution of probabilities that Julian dances salsa, given that Julian is Cuban. Based on the mean posterior logit-Normal parameters.</p>
+</div>
+</div>
+</li>
+
+<li><a id="orgfd03d87"></a>Example: Julian dances salsa, given that Julian German<br />
+<div class="outline-text-5" id="text-3-2-1-4">
+
+<div id="orgfab742d" class="figure">
+<p><img src="./plots/julian_german.jpg" alt="julian_german.jpg" />
+</p>
+<p><span class="figure-number">Figure 9: </span>Distribution of probabilities that Julian dances salsa, given that Julian is German. Based on the mean posterior logit-Normal parameters.</p>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org696dc79" class="outline-4">
+<h4 id="org696dc79"><span class="section-number-4">3.2.2.</span> The projection experiment</h4>
+<div class="outline-text-4" id="text-3-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org399ffc7"></a>think<br />
+<div class="outline-text-5" id="text-3-2-2-1">
+
+<div id="org37d97e0" class="figure">
+<p><img src="./plots/think_distr.jpg" alt="think_distr.jpg" />
+</p>
+<p><span class="figure-number">Figure 10: </span>Distribution of probabilities that the complement of `think' projects.</p>
+</div>
+</div>
+</li>
+
+<li><a id="orgac7a509"></a>know<br />
+<div class="outline-text-5" id="text-3-2-2-2">
+
+<div id="org7f97480" class="figure">
+<p><img src="./plots/know_distr.jpg" alt="know_distr.jpg" />
+</p>
+<p><span class="figure-number">Figure 11: </span>Distribution of probabilities that the complement of `know' projects.</p>
+</div>
+</div>
+</li>
+
+<li><a id="org081e833"></a>acknowledge<br />
+<div class="outline-text-5" id="text-3-2-2-3">
+
+<div id="orgad5c59b" class="figure">
+<p><img src="./plots/acknowledge_distr.jpg" alt="acknowledge_distr.jpg" />
+</p>
+<p><span class="figure-number">Figure 12: </span>Distribution of probabilities that the complement of `acknowledge' projects.</p>
+</div>
+</div>
+</li>
+
+<li><a id="org294dda2"></a>be annoyed<br />
+<div class="outline-text-5" id="text-3-2-2-4">
+
+<div id="org7fe9517" class="figure">
+<p><img src="./plots/annoyed_distr.jpg" alt="annoyed_distr.jpg" />
+</p>
+<p><span class="figure-number">Figure 13: </span>Distribution of probabilities that the complement of `annoyed' projects.</p>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org091e6d4" class="outline-2">
+<h2 id="org091e6d4"><span class="section-number-2">4.</span> References</h2>
+<div class="outline-text-2" id="text-4">
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Degen, Judith, and Judith Tonhauser. 2021. “Prior Beliefs Modulate Projection.” <i>Open Mind</i> 5 (September): 59–70. <a href="https://doi.org/10.1162/opmi_a_00042">https://doi.org/10.1162/opmi_a_00042</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_2"></a>———. 2022. “Are There Factive Predicates? An Empirical Investigation.” <i>Language</i> 98 (3): 552–91. <a href="https://doi.org/10.1353/lan.0.0271">https://doi.org/10.1353/lan.0.0271</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_3"></a>Grove, Julian, and Jean-Philippe Bernardy. 2022. “Probabilistic Compositional Semantics, Purely.” LingBuzz. <a href="https://lingbuzz.net/lingbuzz/006284/">https://lingbuzz.net/lingbuzz/006284/</a>.</div>
+  <div class="csl-entry"><a id="citeproc_bib_item_4"></a>McBride, Conor, and Ross Paterson. 2008. “Applicative Programming with Effects.” <i>Journal of Functional Programming</i> 18 (1): 1–13. <a href="https://doi.org/10.1017/S0956796807006326">https://doi.org/10.1017/S0956796807006326</a>.</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Julian Grove</p>
+<p class="date">Created: 2023-04-27 Thu 14:13</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
