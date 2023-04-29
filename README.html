@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-04-27 Thu 14:13 -->
+<!-- 2023-04-29 Sat 15:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>factive-projection</title>
@@ -238,50 +238,50 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4606f1d">1. Replication of <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a></a>
+<li><a href="#orge9cef6d">1. Replication of <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a></a>
 <ul>
-<li><a href="#org5138e2a">1.1. The norming experiment</a></li>
-<li><a href="#orgf8a1952">1.2. The projection experiment</a></li>
+<li><a href="#orgabe10de">1.1. The norming experiment</a></li>
+<li><a href="#org2ecc6f7">1.2. The projection experiment</a></li>
 </ul>
 </li>
-<li><a href="#org99410f2">2. Theories of gradience</a>
+<li><a href="#orga34a97e">2. Theories of gradience</a>
 <ul>
-<li><a href="#org0a44e6d">2.1. Probabilistic programs</a>
+<li><a href="#org26cfce6">2.1. Probabilistic programs</a>
 <ul>
-<li><a href="#org8c4c3bb">2.1.1. Definition of a probabilistic program (<a href="#citeproc_bib_item_3">Grove and Bernardy 2022</a>)</a></li>
-<li><a href="#org1e64bc3">2.1.2. Assembling and using probabilistic programs</a></li>
-<li><a href="#org9fdb4a7">2.1.3. Some nice things about probabilistic programs (pt. 1)</a></li>
-<li><a href="#org5b666cb">2.1.4. Some nice things about probabilistic programs (pt. 2)</a></li>
-<li><a href="#org0a9402c">2.1.5. Computing probabilities</a></li>
+<li><a href="#orgd3e4d51">2.1.1. Definition of a probabilistic program (<a href="#citeproc_bib_item_3">Grove and Bernardy 2022</a>)</a></li>
+<li><a href="#org069551c">2.1.2. Assembling and using probabilistic programs</a></li>
+<li><a href="#org7ccc19d">2.1.3. Some nice things about probabilistic programs (pt. 1)</a></li>
+<li><a href="#org318e64f">2.1.4. Some nice things about probabilistic programs (pt. 2)</a></li>
+<li><a href="#org02dc3d6">2.1.5. Computing probabilities</a></li>
 </ul>
 </li>
-<li><a href="#org6564091">2.2. Applicative functors</a></li>
-<li><a href="#orgc60b89a">2.3. Theories of projection</a>
+<li><a href="#org87fccad">2.2. Applicative functors</a></li>
+<li><a href="#org1edb609">2.3. Theories of projection</a>
 <ul>
-<li><a href="#org699cbec">2.3.1. The categorical-projection theory</a></li>
-<li><a href="#orgb620a6e">2.3.2. The gradient-projection theory</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org2c93512">3. Implementation</a>
-<ul>
-<li><a href="#org3ca8633">3.1. Our models</a></li>
-<li><a href="#org19d0fc7">3.2. Posterior inferences</a>
-<ul>
-<li><a href="#org9ce9793">3.2.1. The norming experiment</a></li>
-<li><a href="#org696dc79">3.2.2. The projection experiment</a></li>
+<li><a href="#org306a2db">2.3.1. The categorical-projection theory</a></li>
+<li><a href="#orgb268d9d">2.3.2. The gradient-projection theory</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org091e6d4">4. References</a></li>
+<li><a href="#orge71cbb5">3. Implementation</a>
+<ul>
+<li><a href="#orgc61aa58">3.1. Our models</a></li>
+<li><a href="#org52c1669">3.2. Posterior inferences</a>
+<ul>
+<li><a href="#org55fca03">3.2.1. The norming experiment</a></li>
+<li><a href="#org467367c">3.2.2. The projection experiment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org68897e4">4. References</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org4606f1d" class="outline-2">
-<h2 id="org4606f1d"><span class="section-number-2">1.</span> Replication of <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a></h2>
+<div id="outline-container-orge9cef6d" class="outline-2">
+<h2 id="orge9cef6d"><span class="section-number-2">1.</span> Replication of <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a></h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We specifically replicated MTurk experiments 2a and 2b, which divided a
@@ -294,8 +294,8 @@ experiments.
 </ul>
 </div>
 
-<div id="outline-container-org5138e2a" class="outline-3">
-<h3 id="org5138e2a"><span class="section-number-3">1.1.</span> The norming experiment</h3>
+<div id="outline-container-orgabe10de" class="outline-3">
+<h3 id="orgabe10de"><span class="section-number-3">1.1.</span> The norming experiment</h3>
 <div class="outline-text-3" id="text-1-1">
 <ul class="org-ul">
 <li>The goal of this experiment, for Degen and Tonhauser (<a href="#citeproc_bib_item_1">2021</a>), was to gauge
@@ -312,7 +312,7 @@ points per item. We are left with 93 after pre-processing data, for around
 participants after pre-processing.
 </p>
 
-<div id="orgabbf1bd" class="figure">
+<div id="orgc1ec009" class="figure">
 <p><img src="./plots/prior_item_means.jpg" alt="prior_item_means.jpg" />
 </p>
 <p><span class="figure-number">Figure 1: </span>By-item means for the <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a> complement-clause + fact norming experiment vs. our replication. Red indicates low-probability items, and green, high-probability items. Spearman's rank correlation of 0.98 (p &lt; 2.2e-16).</p>
@@ -321,8 +321,8 @@ participants after pre-processing.
 </div>
 </div>
 
-<div id="outline-container-orgf8a1952" class="outline-3">
-<h3 id="orgf8a1952"><span class="section-number-3">1.2.</span> The projection experiment</h3>
+<div id="outline-container-org2ecc6f7" class="outline-3">
+<h3 id="org2ecc6f7"><span class="section-number-3">1.2.</span> The projection experiment</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>This experiment aims to assess the degree to which a predicate's complement
@@ -347,7 +347,7 @@ of <a href="#citeproc_bib_item_2">Degen and Tonhauser 2022</a>, using a 750-part
 with 266 participants' worth of data after pre-processing. 
 </p>
 
-<div id="org41679ba" class="figure">
+<div id="orge3777f5" class="figure">
 <p><img src="./plots/projection_item_means.jpg" alt="projection_item_means.jpg" />
 </p>
 <p><span class="figure-number">Figure 2: </span>By-item means for the <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a> projection experiment vs. our replication. Spearman's rank correlation of 0.76 (p &lt; 2.2e-16).</p>
@@ -356,7 +356,7 @@ with 266 participants' worth of data after pre-processing.
 By-predicate means for the same data:
 </p>
 
-<div id="orgb48a4b9" class="figure">
+<div id="org0e6837b" class="figure">
 <p><img src="./plots/projection_verbs_means.jpg" alt="projection_verbs_means.jpg" />
 </p>
 <p><span class="figure-number">Figure 3: </span>By-predicate means for the <a href="#citeproc_bib_item_1">Degen and Tonhauser 2021</a> projection experiment vs. our replication. Red indicates ``non-factives'', blue, ``optional factives'', and green, ``canonical factives''. Spearman's rank correlation of 0.98 (p &lt; 2.2e-16).</p>
@@ -367,8 +367,8 @@ By-predicate means for the same data:
 </div>
 </div>
 
-<div id="outline-container-org99410f2" class="outline-2">
-<h2 id="org99410f2"><span class="section-number-2">2.</span> Theories of gradience</h2>
+<div id="outline-container-orga34a97e" class="outline-2">
+<h2 id="orga34a97e"><span class="section-number-2">2.</span> Theories of gradience</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Due to the lack of any potential principled cut-off in projectivity ratings
@@ -390,12 +390,12 @@ precise).</li>
 </ul>
 </div>
 
-<div id="outline-container-org0a44e6d" class="outline-3">
-<h3 id="org0a44e6d"><span class="section-number-3">2.1.</span> Probabilistic programs</h3>
+<div id="outline-container-org26cfce6" class="outline-3">
+<h3 id="org26cfce6"><span class="section-number-3">2.1.</span> Probabilistic programs</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org8c4c3bb" class="outline-4">
-<h4 id="org8c4c3bb"><span class="section-number-4">2.1.1.</span> Definition of a probabilistic program (<a href="#citeproc_bib_item_3">Grove and Bernardy 2022</a>)</h4>
+<div id="outline-container-orgd3e4d51" class="outline-4">
+<h4 id="orgd3e4d51"><span class="section-number-4">2.1.1.</span> Definition of a probabilistic program (<a href="#citeproc_bib_item_3">Grove and Bernardy 2022</a>)</h4>
 <div class="outline-text-4" id="text-2-1-1">
 <ul class="org-ul">
 <li>Let's say \(r\) is the type of real numbers.</li>
@@ -411,7 +411,7 @@ probability of \(x\).</li>
 </div>
 
 <ol class="org-ol">
-<li><a id="org2f253c8"></a>Example<br />
+<li><a id="orge2657fc"></a>Example<br />
 <div class="outline-text-5" id="text-2-1-1-1">
 <p>
 \[\begin{align*}
@@ -428,7 +428,7 @@ Chris with probability 0.7.</li>
 </div>
 </li>
 
-<li><a id="org57e6b8c"></a>Another example: \(\mathcal{N}(μ, σ) : \mathtt{P}(r) = (r → r) → r\)<br />
+<li><a id="org8983c76"></a>Another example: \(\mathcal{N}(μ, σ) : \mathtt{P}(r) = (r → r) → r\)<br />
 <div class="outline-text-5" id="text-2-1-1-2">
 <ul class="org-ul">
 <li>Represents a normal distribution with mean \(μ\) and standard deviation
@@ -445,8 +445,8 @@ the normally distributed values \(x\).</li>
 </ol>
 </div>
 
-<div id="outline-container-org1e64bc3" class="outline-4">
-<h4 id="org1e64bc3"><span class="section-number-4">2.1.2.</span> Assembling and using probabilistic programs</h4>
+<div id="outline-container-org069551c" class="outline-4">
+<h4 id="org069551c"><span class="section-number-4">2.1.2.</span> Assembling and using probabilistic programs</h4>
 <div class="outline-text-4" id="text-2-1-2">
 <p>
 We would like to be able to build probabilistic programs representing
@@ -461,8 +461,8 @@ application)</li>
 </div>
 </div>
 
-<div id="outline-container-org9fdb4a7" class="outline-4">
-<h4 id="org9fdb4a7"><span class="section-number-4">2.1.3.</span> Some nice things about probabilistic programs (pt. 1)</h4>
+<div id="outline-container-org7ccc19d" class="outline-4">
+<h4 id="org7ccc19d"><span class="section-number-4">2.1.3.</span> Some nice things about probabilistic programs (pt. 1)</h4>
 <div class="outline-text-4" id="text-2-1-3">
 <ul class="org-ul">
 <li>You can turn any value (of any type \(α\)) into a trivial probabilistic
@@ -475,7 +475,7 @@ program that returns just that value:
 </div>
 
 <ol class="org-ol">
-<li><a id="org8cdd1d4"></a>Example:<br />
+<li><a id="org3ccc05e"></a>Example:<br />
 <div class="outline-text-5" id="text-2-1-3-1">
 <p>
 \[\begin{align*}
@@ -494,8 +494,8 @@ program that returns just that value:
 </ol>
 </div>
 
-<div id="outline-container-org5b666cb" class="outline-4">
-<h4 id="org5b666cb"><span class="section-number-4">2.1.4.</span> Some nice things about probabilistic programs (pt. 2)</h4>
+<div id="outline-container-org318e64f" class="outline-4">
+<h4 id="org318e64f"><span class="section-number-4">2.1.4.</span> Some nice things about probabilistic programs (pt. 2)</h4>
 <div class="outline-text-4" id="text-2-1-4">
 <ul class="org-ul">
 <li><p>
@@ -523,8 +523,8 @@ functions returned by \(m\).
 </div>
 </div>
 
-<div id="outline-container-org0a9402c" class="outline-4">
-<h4 id="org0a9402c"><span class="section-number-4">2.1.5.</span> Computing probabilities</h4>
+<div id="outline-container-org02dc3d6" class="outline-4">
+<h4 id="org02dc3d6"><span class="section-number-4">2.1.5.</span> Computing probabilities</h4>
 <div class="outline-text-4" id="text-2-1-5">
 <ul class="org-ul">
 <li>Given a probabilistic program \(m\) of type \(\mathtt{P}(t)\) (i.e., returning
@@ -547,7 +547,7 @@ truth values), we may use it to compute a probability:
 </div>
 
 <ol class="org-ol">
-<li><a id="orgb459084"></a>Example: probabilistic semantics for vagueness<br />
+<li><a id="orge786c2d"></a>Example: probabilistic semantics for vagueness<br />
 <div class="outline-text-5" id="text-2-1-5-1">
 <ul class="org-ul">
 <li>A degree-based semantics:
@@ -571,38 +571,38 @@ weighting each \(f(d)\) by the probability associated with degree \(d\).</li>
 <li>Let's say \(\texttt{Costs}\) assigns non-zero probability to anything
 from $1 to $20:
 \[λf.\begin{cases}
-	     \frac{0.3}{20} * f(d) & d ∈ [1, 5] \\
-	     \frac{0.7}{20} * f(d) & d ∈ [6, 20] \\
+	     \frac{0.3}{12} * f(d) & d ∈ [1, 5] \\
+	     \frac{0.7}{12} * f(d) & d ∈ [6, 20] \\
 	     0 & \text{otherwise}
 	     \end{cases}\]
-\[= λf.(\sum_{d=1}^{5}\frac{0.3}{20} * f(d) +
-             \sum_{d=6}^{20}\frac{0.7}{20} * f(d))\]</li>
+\[= λf.(\sum_{d=1}^{5}\frac{0.3}{12} * f(d) +
+             \sum_{d=6}^{20}\frac{0.7}{12} * f(d))\]</li>
 </ul></li>
 <li>Say we want to know the mean cost (i.e., the expected value of
 \(x\)). We can feed \(\texttt{Costs}\) the identity function:
 \[\texttt{Costs}(λx.x) = \begin{cases}
-	   \frac{0.3}{20} * d & d ∈ [0, 5] \\
-	   \frac{0.7}{20} * d & d ∈ [6, 20] \\
+	   \frac{0.3}{12} * d & d ∈ [0, 5] \\
+	   \frac{0.7}{12} * d & d ∈ [6, 20] \\
 	   0 & \text{otherwise}
 	   \end{cases}\]
-\[= \frac{0.3}{20} * 15 + \frac{0.7}{20} * 195 = 7.05\]</li>
+\[= \frac{0.3}{12} * 15 + \frac{0.7}{12} * 195 = 11.75\]</li>
 <li>Let's say we want the probability that a cost is between 3 and 5
 (inclusive). We can feed \(\texttt{Costs}\) the function
 \[λd.𝟙(d ≥ 3 ∧ d ≤ 5)\]
 which is of type \(r → r\):
 \[\mathtt{Costs}(λd.𝟙(d ≥ 3 ∧ d ≤ 5)) =\]
 \[\begin{cases}
-	   \frac{0.3}{20} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [1, 5] \\
-	   \frac{0.7}{20} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [6, 20] \\
+	   \frac{0.3}{12} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [1, 5] \\
+	   \frac{0.7}{12} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [6, 20] \\
 	   0 & \text{otherwise}
 	   \end{cases}\]
-\[= \frac{0.3}{20} + \frac{0.3}{20} + \frac{0.3}{20} = 0.045\]</li>
+\[= \frac{0.3}{12} + \frac{0.3}{12} + \frac{0.3}{12} = 0.075\]</li>
 </ul></li>
 <li>\(⟦\) <i>the coffee</i> \(⟧ = η({\color{green}\texttt{coffee}}) : \mathtt{P}({\color{green}t})\)</li>
-<li>\(⟦\) <i>is expensive</i> \(⟧ = \texttt{Costs}(λd.η({\color{green}λx.\texttt{cost}(x) ≥ d})) :
+<li>\(⟦\) <i>is expensive</i> \(⟧ = λf.\texttt{Costs}(λd.f({\color{green}λx.\texttt{cost}(x) ≥ d})) :
          \mathtt{P}({\color{green}e → t})\)</li>
 <li>\(⟦\) <i>is expensive</i> \(⟧ ⊛ ⟦\) <i>the coffee</i> \(⟧ =
-         \texttt{Costs}(λd.η({\color{green}\texttt{cost}(\texttt{coffee}) ≥ d})) :
+         λf.\texttt{Costs}(λd.f({\color{green}\texttt{cost}(\texttt{coffee}) ≥ d})) :
          \mathtt{P}({\color{green}t})\)</li>
 </ul></li>
 </ul>
@@ -612,8 +612,8 @@ which is of type \(r → r\):
 </div>
 </div>
 
-<div id="outline-container-org6564091" class="outline-3">
-<h3 id="org6564091"><span class="section-number-3">2.2.</span> Applicative functors</h3>
+<div id="outline-container-org87fccad" class="outline-3">
+<h3 id="org87fccad"><span class="section-number-3">2.2.</span> Applicative functors</h3>
 <div class="outline-text-3" id="text-2-2">
 <ul class="org-ul">
 <li>Viewed as a kind of type constructor (i.e., a map from types to types),
@@ -670,8 +670,8 @@ Applicable Information Criterion (WAIC)</a>.</li>
 </div>
 </div>
 
-<div id="outline-container-orgc60b89a" class="outline-3">
-<h3 id="orgc60b89a"><span class="section-number-3">2.3.</span> Theories of projection</h3>
+<div id="outline-container-org1edb609" class="outline-3">
+<h3 id="org1edb609"><span class="section-number-3">2.3.</span> Theories of projection</h3>
 <div class="outline-text-3" id="text-2-3">
 <ul class="org-ul">
 <li>A bit of notation: instead of writing expressions like
@@ -691,12 +691,12 @@ the prior distribution associated with the complement clause.</li>
 </ul>
 </div>
 
-<div id="outline-container-org699cbec" class="outline-4">
-<h4 id="org699cbec"><span class="section-number-4">2.3.1.</span> The categorical-projection theory</h4>
+<div id="outline-container-org306a2db" class="outline-4">
+<h4 id="org306a2db"><span class="section-number-4">2.3.1.</span> The categorical-projection theory</h4>
 <div class="outline-text-4" id="text-2-3-1">
 </div>
 <ol class="org-ol">
-<li><a id="orge6ab9d5"></a>Example: X knows that Julian dances salsa (where Julian is Cuban/German).<br />
+<li><a id="org6584fe0"></a>Example: X knows that Julian dances salsa (where Julian is Cuban/German).<br />
 <div class="outline-text-5" id="text-2-3-1-1">
 <ul class="org-ul">
 <li>\(\texttt{JDS} : \mathtt{P}(r)\)
@@ -740,12 +740,12 @@ projection; thus the disjunction.</li>
 </ol>
 </div>
 
-<div id="outline-container-orgb620a6e" class="outline-4">
-<h4 id="orgb620a6e"><span class="section-number-4">2.3.2.</span> The gradient-projection theory</h4>
+<div id="outline-container-orgb268d9d" class="outline-4">
+<h4 id="orgb268d9d"><span class="section-number-4">2.3.2.</span> The gradient-projection theory</h4>
 <div class="outline-text-4" id="text-2-3-2">
 </div>
 <ol class="org-ol">
-<li><a id="org7a4976e"></a>Example: X knows that Julian dances salsa (where Julian is Cuban/German).<br />
+<li><a id="orgde75eaa"></a>Example: X knows that Julian dances salsa (where Julian is Cuban/German).<br />
 <div class="outline-text-5" id="text-2-3-2-1">
 <ul class="org-ul">
 <li>The model here is very similar, except that we slide the projection
@@ -767,8 +767,8 @@ uncertainty.</li>
 </div>
 </div>
 
-<div id="outline-container-org2c93512" class="outline-2">
-<h2 id="org2c93512"><span class="section-number-2">3.</span> Implementation</h2>
+<div id="outline-container-orge71cbb5" class="outline-2">
+<h2 id="orge71cbb5"><span class="section-number-2">3.</span> Implementation</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Our implementations of these models use the <a href="https://mc-stan.org/">Stan</a> programming language. We
@@ -781,8 +781,8 @@ function.</li>
 </ul>
 </div>
 
-<div id="outline-container-org3ca8633" class="outline-3">
-<h3 id="org3ca8633"><span class="section-number-3">3.1.</span> Our models</h3>
+<div id="outline-container-orgc61aa58" class="outline-3">
+<h3 id="orgc61aa58"><span class="section-number-3">3.1.</span> Our models</h3>
 <div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li><p>
@@ -793,7 +793,7 @@ these parameters give rise to the following distributions for both
 \(\texttt{JDS}\) and \(\texttt{knowsJDS}\):
 </p>
 
-<div id="org067dfb9" class="figure">
+<div id="orge2eb922" class="figure">
 <p><img src="./plots/prior_logit_normal.jpg" alt="prior_logit_normal.jpg" />
 </p>
 <p><span class="figure-number">Figure 4: </span>Prior \(\texttt{LogitNormal}(0, 1)\) distribution for both \(\texttt{JDS}\) and \(\texttt{knowsJDS}\).</p>
@@ -803,7 +803,7 @@ For the categorical model, the prior predictive response, before any Normal
 jittering is added, looks like this:
 </p>
 
-<div id="org0f0732f" class="figure">
+<div id="orgbf699fc" class="figure">
 <p><img src="./plots/prior_predictive.jpg" alt="prior_predictive.jpg" />
 </p>
 <p><span class="figure-number">Figure 5: </span>Prior predictive response before jittering.</p>
@@ -819,8 +819,8 @@ don't jitter <i>too</i> much).</li>
 </div>
 </div>
 
-<div id="outline-container-org19d0fc7" class="outline-3">
-<h3 id="org19d0fc7"><span class="section-number-3">3.2.</span> Posterior inferences</h3>
+<div id="outline-container-org52c1669" class="outline-3">
+<h3 id="org52c1669"><span class="section-number-3">3.2.</span> Posterior inferences</h3>
 <div class="outline-text-3" id="text-3-2">
 <ul class="org-ul">
 <li>Nothing conclusive yet (unfortunately)!</li>
@@ -833,15 +833,15 @@ predicates' probabilities of triggering a projective inference.
 </ul>
 </div>
 
-<div id="outline-container-org9ce9793" class="outline-4">
-<h4 id="org9ce9793"><span class="section-number-4">3.2.1.</span> The norming experiment</h4>
+<div id="outline-container-org55fca03" class="outline-4">
+<h4 id="org55fca03"><span class="section-number-4">3.2.1.</span> The norming experiment</h4>
 <div class="outline-text-4" id="text-3-2-1">
 </div>
 <ol class="org-ol">
-<li><a id="org4ce3576"></a>Example: Isabella ate a steak on Sunday, given that Isabella is a vegetarian<br />
+<li><a id="org79c47df"></a>Example: Isabella ate a steak on Sunday, given that Isabella is a vegetarian<br />
 <div class="outline-text-5" id="text-3-2-1-1">
 
-<div id="org945b11f" class="figure">
+<div id="orgf16cf86" class="figure">
 <p><img src="./plots/isabella_vegetarian.jpg" alt="isabella_vegetarian.jpg" />
 </p>
 <p><span class="figure-number">Figure 6: </span>Distribution of probabilities that Isabella ate a steak on Sunday, given that Isabella is a vegetarian. Based on the mean posterior logit-Normal parameters.</p>
@@ -849,10 +849,10 @@ predicates' probabilities of triggering a projective inference.
 </div>
 </li>
 
-<li><a id="org5c33adc"></a>Example: Isabella ate a steak on Sunday, given that Isabella is from Argentina<br />
+<li><a id="org6bb24bd"></a>Example: Isabella ate a steak on Sunday, given that Isabella is from Argentina<br />
 <div class="outline-text-5" id="text-3-2-1-2">
 
-<div id="orgfaf5f54" class="figure">
+<div id="org219112e" class="figure">
 <p><img src="./plots/isabella_argentina.jpg" alt="isabella_argentina.jpg" />
 </p>
 <p><span class="figure-number">Figure 7: </span>Distribution of probabilities that Isabella ate a steak on Sunday, given that Isabella is from Argentina. Based on the mean posterior logit-Normal parameters.</p>
@@ -860,10 +860,10 @@ predicates' probabilities of triggering a projective inference.
 </div>
 </li>
 
-<li><a id="org4476871"></a>Example: Julian dances salsa, given that Julian is Cuban<br />
+<li><a id="org65c4d8f"></a>Example: Julian dances salsa, given that Julian is Cuban<br />
 <div class="outline-text-5" id="text-3-2-1-3">
 
-<div id="orgb12ed4f" class="figure">
+<div id="orgc124632" class="figure">
 <p><img src="./plots/julian_cuban.jpg" alt="julian_cuban.jpg" />
 </p>
 <p><span class="figure-number">Figure 8: </span>Distribution of probabilities that Julian dances salsa, given that Julian is Cuban. Based on the mean posterior logit-Normal parameters.</p>
@@ -871,10 +871,10 @@ predicates' probabilities of triggering a projective inference.
 </div>
 </li>
 
-<li><a id="orgfd03d87"></a>Example: Julian dances salsa, given that Julian German<br />
+<li><a id="orge1ac4ad"></a>Example: Julian dances salsa, given that Julian German<br />
 <div class="outline-text-5" id="text-3-2-1-4">
 
-<div id="orgfab742d" class="figure">
+<div id="org0dc3c54" class="figure">
 <p><img src="./plots/julian_german.jpg" alt="julian_german.jpg" />
 </p>
 <p><span class="figure-number">Figure 9: </span>Distribution of probabilities that Julian dances salsa, given that Julian is German. Based on the mean posterior logit-Normal parameters.</p>
@@ -884,15 +884,15 @@ predicates' probabilities of triggering a projective inference.
 </ol>
 </div>
 
-<div id="outline-container-org696dc79" class="outline-4">
-<h4 id="org696dc79"><span class="section-number-4">3.2.2.</span> The projection experiment</h4>
+<div id="outline-container-org467367c" class="outline-4">
+<h4 id="org467367c"><span class="section-number-4">3.2.2.</span> The projection experiment</h4>
 <div class="outline-text-4" id="text-3-2-2">
 </div>
 <ol class="org-ol">
-<li><a id="org399ffc7"></a>think<br />
+<li><a id="org6289a4e"></a>think<br />
 <div class="outline-text-5" id="text-3-2-2-1">
 
-<div id="org37d97e0" class="figure">
+<div id="org9bd1e52" class="figure">
 <p><img src="./plots/think_distr.jpg" alt="think_distr.jpg" />
 </p>
 <p><span class="figure-number">Figure 10: </span>Distribution of probabilities that the complement of `think' projects.</p>
@@ -900,10 +900,10 @@ predicates' probabilities of triggering a projective inference.
 </div>
 </li>
 
-<li><a id="orgac7a509"></a>know<br />
+<li><a id="org0cc0a7a"></a>know<br />
 <div class="outline-text-5" id="text-3-2-2-2">
 
-<div id="org7f97480" class="figure">
+<div id="orgf330c32" class="figure">
 <p><img src="./plots/know_distr.jpg" alt="know_distr.jpg" />
 </p>
 <p><span class="figure-number">Figure 11: </span>Distribution of probabilities that the complement of `know' projects.</p>
@@ -911,10 +911,10 @@ predicates' probabilities of triggering a projective inference.
 </div>
 </li>
 
-<li><a id="org081e833"></a>acknowledge<br />
+<li><a id="orgf2f217d"></a>acknowledge<br />
 <div class="outline-text-5" id="text-3-2-2-3">
 
-<div id="orgad5c59b" class="figure">
+<div id="org5032fdc" class="figure">
 <p><img src="./plots/acknowledge_distr.jpg" alt="acknowledge_distr.jpg" />
 </p>
 <p><span class="figure-number">Figure 12: </span>Distribution of probabilities that the complement of `acknowledge' projects.</p>
@@ -922,10 +922,10 @@ predicates' probabilities of triggering a projective inference.
 </div>
 </li>
 
-<li><a id="org294dda2"></a>be annoyed<br />
+<li><a id="orga862540"></a>be annoyed<br />
 <div class="outline-text-5" id="text-3-2-2-4">
 
-<div id="org7fe9517" class="figure">
+<div id="org6f495d3" class="figure">
 <p><img src="./plots/annoyed_distr.jpg" alt="annoyed_distr.jpg" />
 </p>
 <p><span class="figure-number">Figure 13: </span>Distribution of probabilities that the complement of `annoyed' projects.</p>
@@ -937,8 +937,8 @@ predicates' probabilities of triggering a projective inference.
 </div>
 </div>
 
-<div id="outline-container-org091e6d4" class="outline-2">
-<h2 id="org091e6d4"><span class="section-number-2">4.</span> References</h2>
+<div id="outline-container-org68897e4" class="outline-2">
+<h2 id="org68897e4"><span class="section-number-2">4.</span> References</h2>
 <div class="outline-text-2" id="text-4">
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
   <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Degen, Judith, and Judith Tonhauser. 2021. “Prior Beliefs Modulate Projection.” <i>Open Mind</i> 5 (September): 59–70. <a href="https://doi.org/10.1162/opmi_a_00042">https://doi.org/10.1162/opmi_a_00042</a>.</div>
@@ -951,7 +951,7 @@ predicates' probabilities of triggering a projective inference.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Julian Grove</p>
-<p class="date">Created: 2023-04-27 Thu 14:13</p>
+<p class="date">Created: 2023-04-29 Sat 15:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
