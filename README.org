@@ -145,7 +145,7 @@
     - Given a probabilistic program $m$ of type $\mathtt{P}(t)$ (i.e., returning
       truth values), we may use it to compute a probability:
       $$\begin{align*}
-      Pr &: \mathtt{P}(r) → r \\
+      Pr &: \mathtt{P}(t) → r \\
       Pr(p) &= \frac {p(𝟙)} {p(λb.1)}
       \end{align*}$$
       - $𝟙 : t → r$ is an indicator function:
@@ -172,36 +172,36 @@
 	   - Let's say $\texttt{Costs}$ assigns non-zero probability to anything
              from $1 to $20:
 	     $$λf.\begin{cases}
-	     \frac{0.3}{20} * f(d) & d ∈ [1, 5] \\
-	     \frac{0.7}{20} * f(d) & d ∈ [6, 20] \\
+	     \frac{0.3}{12} * f(d) & d ∈ [1, 5] \\
+	     \frac{0.7}{12} * f(d) & d ∈ [6, 20] \\
 	     0 & \text{otherwise}
 	     \end{cases}$$
-	     $$= λf.(\sum_{d=1}^{5}\frac{0.3}{20} * f(d) +
-             \sum_{d=6}^{20}\frac{0.7}{20} * f(d))$$
+	     $$= λf.(\sum_{d=1}^{5}\frac{0.3}{12} * f(d) +
+             \sum_{d=6}^{20}\frac{0.7}{12} * f(d))$$
 	 - Say we want to know the mean cost (i.e., the expected value of
            $x$). We can feed $\texttt{Costs}$ the identity function:
 	   $$\texttt{Costs}(λx.x) = \begin{cases}
-	   \frac{0.3}{20} * d & d ∈ [0, 5] \\
-	   \frac{0.7}{20} * d & d ∈ [6, 20] \\
+	   \frac{0.3}{12} * d & d ∈ [0, 5] \\
+	   \frac{0.7}{12} * d & d ∈ [6, 20] \\
 	   0 & \text{otherwise}
 	   \end{cases}$$
-	   $$= \frac{0.3}{20} * 15 + \frac{0.7}{20} * 195 = 7.05$$
+	   $$= \frac{0.3}{12} * 15 + \frac{0.7}{12} * 195 = 11.75$$
 	 - Let's say we want the probability that a cost is between 3 and 5
            (inclusive). We can feed $\texttt{Costs}$ the function
 	   $$λd.𝟙(d ≥ 3 ∧ d ≤ 5)$$
 	   which is of type $r → r$:
 	   $$\mathtt{Costs}(λd.𝟙(d ≥ 3 ∧ d ≤ 5)) =$$
 	   $$\begin{cases}
-	   \frac{0.3}{20} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [1, 5] \\
-	   \frac{0.7}{20} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [6, 20] \\
+	   \frac{0.3}{12} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [1, 5] \\
+	   \frac{0.7}{12} * 𝟙(d ≥ 3 ∧ d ≤ 5) & d ∈ [6, 20] \\
 	   0 & \text{otherwise}
 	   \end{cases}$$
-	   $$= \frac{0.3}{20} + \frac{0.3}{20} + \frac{0.3}{20} = 0.045$$
+	   $$= \frac{0.3}{12} + \frac{0.3}{12} + \frac{0.3}{12} = 0.075$$
        - $⟦$ /the coffee/ $⟧ = η({\color{green}\texttt{coffee}}) : \mathtt{P}({\color{green}t})$
-       - $⟦$ /is expensive/ $⟧ = \texttt{Costs}(λd.η({\color{green}λx.\texttt{cost}(x) ≥ d})) :
+       - $⟦$ /is expensive/ $⟧ = λf.\texttt{Costs}(λd.f({\color{green}λx.\texttt{cost}(x) ≥ d})) :
          \mathtt{P}({\color{green}e → t})$
        - $⟦$ /is expensive/ $⟧ ⊛ ⟦$ /the coffee/ $⟧ =
-         \texttt{Costs}(λd.η({\color{green}\texttt{cost}(\texttt{coffee}) ≥ d})) :
+         λf.\texttt{Costs}(λd.f({\color{green}\texttt{cost}(\texttt{coffee}) ≥ d})) :
          \mathtt{P}({\color{green}t})$
 
 ** Applicative functors
@@ -314,26 +314,29 @@
     function.
 
 ** Our models
+   - For each model, once a probability of Julian dancing salsa is determined by
+     the model, we use Normal distributions (truncated at 0 and 1) for our
+     likelihood, with the justification that there is probably some random
+     jittering noise in people's responses. These are given small ---
+     $\texttt{HalfNormal}(0.05)$ --- priors on their standard deviations (since
+     we think people probably don't jitter /too/ much).
    - For both $\texttt{JDS}$ and $\texttt{knowsJDS}$ above, we assume
-     [[https://en.wikipedia.org/wiki/Logit-normal_distribution][logit-Normal]] distributions with fairly uninformative priors ---
-     $\texttt{LogitNormal}(0, 1)$ --- on their parameters. The prior means of
-     these parameters give rise to the following distributions for both
-     $\texttt{JDS}$ and $\texttt{knowsJDS}$:
-     #+caption: Prior $\texttt{LogitNormal}(0, 1)$ distribution for both $\texttt{JDS}$ and $\texttt{knowsJDS}$. 
+     [[https://en.wikipedia.org/wiki/Logit-normal_distribution][logit-Normal]] distributions with fairly uninformative priors on their
+     parameters --- a $\texttt{Normal}(0, 1)$ prior on the means, and a
+     $\texttt{HalfNormal}(0.5)$ prior on the standard deviations. For reference,
+     a $\texttt{LogitNormal}$ distribution with underlying mean 0 and underlying
+     standard deviation 0.5 looks like this:
+     #+caption: A $\texttt{LogitNormal}(0, 0.5)$ distribution. 
      #+name:   fig:projection-means
      [[./data/analysis/our data/plots/prior_logit_normal.jpg]]
-   - For the categorical model, the prior predictive response, before any Normal
-     jittering is added, looks like this:
-     #+caption: Prior predictive response before jittering.
+   - Before any Normal jittering is added, the categorical model is a
+     spike-and-slab model with a spike at 1 and a slab constituted by the prior
+     distribution associated with the complement clause and background fact. For
+     reference, a spike-and-slab distribution with a $\textit{LogitNormal}(0,
+     1)$ slab and a spike at 1 looks like this:
+     #+caption: A spike-and-slab distribution with a spike at 1 and a $\texttt{LogitNormal}(0, 1)$ slab.
      #+name:   fig:projection-means
      [[./data/analysis/our data/plots/prior_predictive.jpg]]
-          
-   - For each model, once a probability of Julian dancing salsa is determined,
-     we use Normal distributions (truncated at 0 and 1) for our likelihood, with
-     the justification that there is probably some random jittering noise in
-     people's responses. These are given small --- $\texttt{HalfNormal}(0.05)$
-     --- priors on their standard deviations (since we think people probably
-     don't jitter /too/ much).
 
 ** Posterior inferences
    - Nothing conclusive yet (unfortunately)!
@@ -343,47 +346,64 @@
      - This model was fit on 1000 data points from each of the two experiments.
 
 *** The norming experiment
-**** Example: Isabella ate a steak on Sunday, given that Isabella is a vegetarian
-     #+caption:  Distribution of probabilities that Isabella ate a steak on Sunday, given that Isabella is a vegetarian. Based on the mean posterior logit-Normal parameters.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/isabella_vegetarian.jpg]]
-
-**** Example: Isabella ate a steak on Sunday, given that Isabella is from Argentina
-     #+caption:  Distribution of probabilities that Isabella ate a steak on Sunday, given that Isabella is from Argentina. Based on the mean posterior logit-Normal parameters.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/isabella_argentina.jpg]]
-     
-**** Example: Julian dances salsa, given that Julian is Cuban
-     #+caption:  Distribution of probabilities that Julian dances salsa, given that Julian is Cuban. Based on the mean posterior logit-Normal parameters.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/julian_cuban.jpg]]
- 
-**** Example: Julian dances salsa, given that Julian German
-     #+caption:  Distribution of probabilities that Julian dances salsa, given that Julian is German. Based on the mean posterior logit-Normal parameters.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/julian_german.jpg]]
-
+    #+caption:  Full posterior distributions over the probabilities of truth associated with each context.
+    #+name:   fig:projection-means
+    [[./data/analysis/our data/plots/context_posteriors.jpg]]
+    - 15L: Tony had a drink last night, given that Tony has been sober for 20
+      years.
+    - 14L: Jayden rented a car, given that Jayden doesn't have a driver's
+      license.
+    - 2L: Josie went on vacation to France, given that Josie doesn't have a
+      passport.
+    - 10L: Zoe calculated the tip, given that Zoe is 5 years old.
+    - 7L: Isabella ate a steak on Sunday, given that Isabella is a vegetarian.
+    - 8L: Emily bought a car yesterday, given that Emily never has any money.
+    - 4L: Olivia sleeps until noon, given that Olivia has two small children.
+    - 6L: Mia drank 2 cocktails last night, given that Mia is a nun.
+    - 12L: Frank got a cat, given that Frank is allergic to cats.
+    - 13L: Jackson ran 10 miles, given that Jackson is obese.
+    - 17L: Owen shoveled snow last winter, given that Owen lives in New
+      Orleans.
+    - 1L: Mary is pregnant, given that Mary is a middle school student.
+    - 19L: Jon walks to work, given that Jon lives 10 miles away from work.
+    - 16L: Josh learned to ride a bike yesterday, given that Josh is a 75-year
+      old man.
+    - 9L: Grace visited her sister, given that Grace hates her sister.
+    - 3L: Emma studied on Saturday morning, given that Emma is in first grade.
+    - 11L: Danny ate the last cupcake, given that Danny is a diabetic.
+    - 20L: Charley speaks Spanish, given that Charley lives in Korea.
+    - 5L: Sophia got a tatoo, given that Sophia is a fashion model.
+    - 18L: Julian dances salsa, given that Julian is German.
+    - 8H: Emily bought a car yesterday, given that Emily has been saving for a
+      year.
+    - 7H: Isabella ate a steak on Sunday, given that Isabella is from Argentina.
+    - 16H: Josh learned to ride a bike yesterday, given that Josh is a 5-year
+      old boy.
+    - 18H: Julian dances salsa, given that Julian is Cuban.
+    - 6H: Mia drank 2 cocktails last night, given that Mia is a college
+      student.
+    - 12H: Frank got a cat, given that Frank has always wanted a pet.
+    - 11H: Danny ate the last cupcake, given that Danny loves cake.
+    - 14H: Jayden rented a car, given that Jayden's car is in the shop.
+    - 3H: Emma studies on Saturday morning, given that Emma is in law school.
+    - 5H: Sophia got a tattoo, given that Sophia is a hipster.
+    - 15H: Tony had a drink last night, given that Tony really likes to party
+      with his friends.
+    - 4H: Olivia sleeps until noon, given that Olivia works the third shift.
+    - 2H: Josie went on vacation to France, given that Josie loves France.
+    - 9H: Grace visted her sister, given that Grace loves her sister.
+    - 19H: Jon walks to work, given that Jon lives 2 blocks away from work.
+    - 17H: Owen shoveled snow last winter, given that Owen lives in Chicago.
+    - 10H: Zoe calculated the tip, given that Zoe is a math major.
+    - 13H: Jackson ran 10 miles, given that Jackson is training for a marathon.
+    - 20H: Charley speaks Spanish, given that Charley lives in Mexico.
+    - 1H: Mary is pregnant, given that Mary is taking a prenatal yoga class.
+    
 *** The projection experiment
-**** think
-     #+caption: Distribution of probabilities that the complement of `think' projects.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/think_distr.jpg]]
-
-**** know
-     #+caption: Distribution of probabilities that the complement of `know' projects.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/know_distr.jpg]]
-     
-**** acknowledge
-     #+caption: Distribution of probabilities that the complement of `acknowledge' projects.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/acknowledge_distr.jpg]]
-
-**** be annoyed
-     #+caption: Distribution of probabilities that the complement of `annoyed' projects.
-     #+name:   fig:projection-means
-     [[./data/analysis/our data/plots/annoyed_distr.jpg]]
-     
+    #+caption:  Full posterior distributions over the probabilities of projection associated with each predicate.
+    #+name:   fig:projection-means
+    [[./data/analysis/our data/plots/predicate_posteriors.jpg]]
+    
 * References
   #+print_bibliography:docs/factive-projection.bib
    
