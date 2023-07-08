@@ -60,7 +60,7 @@ function make_slides(f) {
 	  $(".sentence").html(sentence);
 	  $(".utterance").html(utterance);
 	  var question = "";
-	  question = "How certain is "+this.stim.name+" that "+this.stim.question+"?";
+	  question = "How likely does "+this.stim.name+" think it is that "+this.stim.question+"?";
 	  // console.log(this.stim.block);
 // 	  if (this.stim.block == "ai") {
 // 	  		question = "Is "+this.stim.name+" asking whether "+this.stim.question+"?";
