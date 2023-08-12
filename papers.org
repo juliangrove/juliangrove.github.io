@@ -4,6 +4,14 @@ pagetitle: papers
 ---
 
 * Papers
+** 2023
+   *Factivity, presupposition projection, and the role of discrete knowledge in
+   gradience inference judgments* \\
+   With Aaron Steven White. Submitted. Available on [[https://ling.auf.net/lingbuzz/007450][Lingbuzz]].
+** 2023
+   *Probabilistic compositional semantics, purely* \\
+   With Jean-Philippe Bernardy. New Frontiers in Artificial Intelligence.
+   JSAI-isAI 2021. doi:[[https://doi.org/10.1007/978-3-031-36190-6_17][10.1007/978-3-031-36190-6_17]].
 ** 2022
    *An alternative semantics for presupposition* \\
    Proceedings of the Amsterdam Colloquium 2022. Available on [[https://ling.auf.net/lingbuzz/006976][Lingbuzz]].
@@ -21,10 +29,6 @@ pagetitle: papers
    Second author, with Jean-Philippe Bernardy and Christine Howes. Proceedings
    of the 26th Workshop on the Semantics and Pragmatics of Dialogue. Available
    [[http://semdial.org/anthology/papers/Z/Z22/Z22-3013/][here]].
-** 2021
-   *Probabilistic compositional semantics, purely* \\
-   With Jean-Philippe Bernardy. Paper presented at [[https://lenls.github.io/lenls18/][LENLS18]]. Available on
-   [[https://ling.auf.net/lingbuzz/006284][Lingbuzz]].
 ** 2021
    *From compositional semantics to Bayesian pragmatics via logical inference* \\
    With Jean-Philippe Bernardy and Stergios Chatzikyriakidis. Proceedings of
