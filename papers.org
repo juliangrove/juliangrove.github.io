@@ -11,7 +11,7 @@ pagetitle: papers
 ** 2023
    *Probabilistic compositional semantics, purely* \\
    With Jean-Philippe Bernardy. New Frontiers in Artificial Intelligence.
-   JSAI-isAI 2021. doi:[[https://doi.org/10.1007/978-3-031-36190-6_17][10.1007/978-3-031-36190-6\_17]]. Also available on
+   JSAI-isAI 2021. doi:[[https://doi.org/10.1007/978-3-031-36190-6_17][10.1007/978-3-031-36190-6_17]]. Also available on
    [[https://ling.auf.net/lingbuzz/006284][Lingbuzz]].
 ** 2022
    *An alternative semantics for presupposition* \\
