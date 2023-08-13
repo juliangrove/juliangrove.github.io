@@ -1,3 +1,6 @@
 [submodule "blog"]
 	path = blog
 	url = https://github.com/juliangrove/blog.git
+[submodule "ur-comp-sem-2023"]
+	path = ur-comp-sem-2023
+	url = https://github.com/juliangrove/ur-comp-sem-2023
