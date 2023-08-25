@@ -24,6 +24,7 @@ main = hakyll $ do
                   , "index.org"
                   , "papers.org"
                   , "slides.org"
+                  , "teaching.org"
                   ]) $ do
     route $ setExtension "html"
     compile $ do
@@ -59,6 +60,7 @@ navString sitetitle
     , ("<a href=\"code.html\">code</a>", ["code"])
     , ("<a href=\"cv.html\">cv</a>", ["cv"])
     , ("<a href=\"blog.html\">blog</a>", ["blog"])
+    , ("<a href=\"teaching.html\">teaching</a>", ["teaching"])
     , ("</ul>\n</div>", [])
     ]
 
