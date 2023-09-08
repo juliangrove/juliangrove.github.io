@@ -4,6 +4,9 @@ pagetitle: slides
 ---
 
 * Slides
+  [[https://juliangrove.github.io/slides/lime-lab-sept8.pdf][Factivity, presupposition projection, and the role of discrete knowledge in
+  gradient inference judgments]] - September 8, 2023. Linguistic Meaning Lab,
+  Cornell. \\
   [[https://juliangrove.github.io/slides/factslaboct282022.pdf][Some questions about vagueness and metalinguistic uncertainty]] - October
   28, 2022. FACTS.lab, University of Rochester. \\
   [[https://juliangrove.github.io/slides/semdial2022_talk.pdf][RSA models are utterance-independent updates of world priors]] - August
