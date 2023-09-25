@@ -9,7 +9,7 @@ pagetitle: about
   with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory and Studies in Probability]] at the
   [[https://www.gu.se/en][University of Gothenburg]]. I am generally interested in type-theoretic
   approaches to natural language semantics, which I've recently investigated
-  with the goal of connecting it with the computational modeling of human
+  with the goal of connecting them with the computational modeling of human
   behavior (as in, e.g., RSA models). I aim to do this in a way that preserves
   the tools, like λ-calculus, that semanticists are typically used to.
 
