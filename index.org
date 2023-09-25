@@ -16,7 +16,7 @@ pagetitle: about
   My recent work also focuses on on the semantics of presupposition and
   anaphora, and I've been investigating approaches to presupposition triggers
   that view them as scope-taking devices. I've also done experimental work that
-  focuses on ellipsis, and was I affiliated with the University of Chicago's
+  focuses on ellipsis, and I was affiliated with the University of Chicago's
   [[http://lucian.uchicago.edu/blogs/lpl/][Language Processing Lab]].
 
   You can email me at firstname.lastname@{gmail.com, rochester.edu}.
