@@ -8,7 +8,7 @@ pagetitle: about
   Steven White]], at the [[https://www.rochester.edu/][University of Rochester]]. Previously, I was affiliated
   with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory and Studies in Probability]] at the
   [[https://www.gu.se/en][University of Gothenburg]]. I am generally interested in type-theoretic
-  approaches to natural language semantics, which I am to connect with the
+  approaches to natural language semantics, which I aim to connect with the
   computational (Bayesian) modeling of human behavior. I aim to do this in a way
   that preserves the tools, like λ-calculus, that semanticists are typically
   used to.
