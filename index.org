@@ -8,12 +8,12 @@ pagetitle: about
   Steven White]], at the [[https://www.rochester.edu/][University of Rochester]]. Previously, I was affiliated
   with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory and Studies in Probability]] at the
   [[https://www.gu.se/en][University of Gothenburg]]. I am generally interested in type-theoretic
-  approaches to natural language semantics, which I've recently investigated
-  with the goal of connecting them with the computational modeling of human
-  behavior (as in, e.g., RSA models). I aim to do this in a way that preserves
-  the tools, like λ-calculus, that semanticists are typically used to.
+  approaches to natural language semantics, which I am to connect with the
+  computational (Bayesian) modeling of human behavior. I aim to do this in a way
+  that preserves the tools, like λ-calculus, that semanticists are typically
+  used to.
 
-  My recent work also focuses on on the semantics of presupposition and
+  My recent work has also focused on on the semantics of presupposition and
   anaphora, and I've been investigating approaches to presupposition triggers
   that view them as scope-taking devices. I've also done experimental work
   focusing on ellipsis, and I was affiliated with the University of Chicago's
