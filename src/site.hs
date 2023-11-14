@@ -18,7 +18,7 @@ main = hakyll $ do
     route idRoute
     compile compressCssCompiler
   match (fromList [ "blog.org"
-                  , "code.org"
+                  -- , "code.org"
                   , "cv.org"
                   , "dissertation.org"
                   , "index.org"
@@ -57,7 +57,7 @@ navString sitetitle
        ++ "<li><a href=\"dissertation.html\">dissertation</a></li>"
        ++ "</ul>"
       , ["research"])
-    , ("<a href=\"code.html\">code</a>", ["code"])
+    -- , ("<a href=\"code.html\">code</a>", ["code"])
     , ("<a href=\"cv.html\">cv</a>", ["cv"])
     , ("<a href=\"blog.html\">blog</a>", ["blog"])
     , ("<a href=\"teaching.html\">teaching</a>", ["teaching"])
