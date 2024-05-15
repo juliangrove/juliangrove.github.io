@@ -5,13 +5,10 @@ pagetitle: code
 
 * Code
   [[https://github.com/juliangrove/grove-bernardy-lenls18][grove-bernardy-lenls18]]
-  - General framework for compositional probabilistic semantics, with examples,
-    in Haskell
+  - General framework for compositional probabilistic semantics, with examples, in Haskell
   [[https://github.com/juliangrove/grove-bernardy-chatzikyriakidis-naloma2021][grove-bernardy-chatzikyriakidis-naloma2021]]
   - Compositional probabilistic semantics and illustrative RSA model, in Haskell
   [[https://github.com/juliangrove/presupposition][presupposition]]
-  - A Haskell implementation of a significant portion of the grammar fragment
-    described in [[https://semanticsarchive.net/Archive/TRmOTkzM][my dissertation]]
+  - A Haskell implementation of a significant portion of the grammar fragment described in [[https://semanticsarchive.net/Archive/TRmOTkzM][my dissertation]]
   [[https://github.com/juliangrove/top-down-mg-parser][top-down-mg-parser]]
-  - A Haskell implementation of the top-down minimalist grammar parser described
-    in [[https://link.springer.com/chapter/10.1007/978-3-642-39998-5_3][Kobele, Gerth, and Hale 2013]]
+  - A Haskell implementation of the top-down minimalist grammar parser described in [[https://link.springer.com/chapter/10.1007/978-3-642-39998-5_3][Kobele, Gerth, and Hale 2013]]

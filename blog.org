@@ -4,4 +4,4 @@ pagetitle: blog
 ---
 
 * Blog
-  [[./blog/algebraic_effects_montague.html][Algebraic effects in Montague semantics]] - October 13, 2020
+  [[./blog/algebraic_effects_montague.html][Algebraic effects in Montague semantics]] - October 13, 2020.

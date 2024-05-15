@@ -5,51 +5,60 @@ pagetitle: papers
 
 * Papers
 ** 2023
-   *Factivity, presupposition projection, and the role of discrete knowledge in
-   gradience inference judgments* \\
-   With Aaron Steven White. Submitted. Available on [[https://ling.auf.net/lingbuzz/007450][Lingbuzz]].
+   *Factivity, presupposition projection, and the role of discrete knowledge in gradience inference judgments* \\
+   With Aaron Steven White.
+   Submitted.
+   Available on [[https://ling.auf.net/lingbuzz/007450][Lingbuzz]].
 ** 2023
    *Probabilistic compositional semantics, purely* \\
-   With Jean-Philippe Bernardy. New Frontiers in Artificial Intelligence.
-   JSAI-isAI 2021. doi:[[https://doi.org/10.1007/978-3-031-36190-6_17][10.1007/978-3-031-36190-6_17]]. Also available on
-   [[https://ling.auf.net/lingbuzz/006284][Lingbuzz]].
+   With Jean-Philippe Bernardy.
+   New Frontiers in Artificial Intelligence.
+   JSAI-isAI 2021.
+   doi:[[https://doi.org/10.1007/978-3-031-36190-6_17][10.1007/978-3-031-36190-6_17]].
+   Also available on [[https://ling.auf.net/lingbuzz/006284][Lingbuzz]].
 ** 2022
    *An alternative semantics for presupposition* \\
-   Proceedings of the Amsterdam Colloquium 2022. Available on [[https://ling.auf.net/lingbuzz/006976][Lingbuzz]].
+   Proceedings of the Amsterdam Colloquium 2022.
+   Available on [[https://ling.auf.net/lingbuzz/006976][Lingbuzz]].
 ** 2022
    *Presupposition projection as a scope phenomenon* \\
-   Semantics & Pragmatics 15(15). doi:[[https://doi.org/10.3765/sp.15.15][10.3765/sp.15.15]]. (Update of manuscript
-   'Satisfaction without provisos', available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].) 
+   Semantics & Pragmatics 15(15).
+   doi:[[https://doi.org/10.3765/sp.15.15][10.3765/sp.15.15]].
+   (Update of manuscript 'Satisfaction without provisos', available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].) 
 ** 2022
    *Algebraic effects for extensible dynamic semantics* \\
-   With Jean-Philippe Bernardy. Journal of Logic, Language and Information.
+   With Jean-Philippe Bernardy.
+   Journal of Logic, Language and Information.
    Preprint on the [[https://semanticsarchive.net/Archive/TMxNGE3M/][Semantics Archive]].
 ** 2022
-   *Rational Speech Act models are utterance-independent updates of world priors*
-   \\
-   Second author, with Jean-Philippe Bernardy and Christine Howes. Proceedings
-   of the 26th Workshop on the Semantics and Pragmatics of Dialogue. Available
-   [[http://semdial.org/anthology/papers/Z/Z22/Z22-3013/][here]].
+   *Rational Speech Act models are utterance-independent updates of world priors* \\
+   Second author, with Jean-Philippe Bernardy and Christine Howes.
+   Proceedings of the 26th Workshop on the Semantics and Pragmatics of Dialogue.
+   Available [[http://semdial.org/anthology/papers/Z/Z22/Z22-3013/][here]].
 ** 2021
    *From compositional semantics to Bayesian pragmatics via logical inference* \\
-   With Jean-Philippe Bernardy and Stergios Chatzikyriakidis. Proceedings of
-   [[https://typo.uni-konstanz.de/naloma21/index.html][NALOMA II]]. Available [[https://aclanthology.org/2021.naloma-1.8/][here]].
+   With Jean-Philippe Bernardy and Stergios Chatzikyriakidis.
+   Proceedings of [[https://typo.uni-konstanz.de/naloma21/index.html][NALOMA II]].
+   Available [[https://aclanthology.org/2021.naloma-1.8/][here]].
 ** 2019
-   *Structural priming in production through 'silence': An investigation of verb
-   phrase ellipsis and null complement anaphora* \\
-   Second author, with Ming Xiang and Jason Merchant. Glossa
-   4(1). doi:[[http://doi.org/10.5334/gjgl.726][10.5334/gjgl.726]].
+   *Structural priming in production through 'silence':
+   An investigation of verb phrase ellipsis and null complement anaphora* \\
+   Second author, with Ming Xiang and Jason Merchant.
+   Glossa 4(1).
+   doi:[[http://doi.org/10.5334/gjgl.726][10.5334/gjgl.726]].
 ** 2017
    *German relative clauses and the severed index hypothesis* \\
-   Second author, with Emily Hanink. [[http://www.lingref.com/cpp/wccfl/34/][Proceedings]] of WCCFL 34.
+   Second author, with Emily Hanink.
+   [[http://www.lingref.com/cpp/wccfl/34/][Proceedings]] of WCCFL 34.
 ** 2016
    *Article selection and anaphora in the German relative clause* \\
-   With Emily Hanink. [[https://journals.linguisticsociety.org/proceedings/index.php/SALT/issue/view/154][Proceedings]] of Semantics and Linguistic Theory 26.
+   With Emily Hanink.
+   [[https://journals.linguisticsociety.org/proceedings/index.php/SALT/issue/view/154][Proceedings]] of Semantics and Linguistic Theory 26.
 ** 2016
-   *Semantic and pragmatic processes in the comprehension of negation: An event
-   related potential study of negative polarity sensitivity* \\
-   Second author, with Ming Xiang and Anastasia Giannakidou. Journal of
-   Neurolinguistics 38.
+   *Semantic and pragmatic processes in the comprehension of negation:
+   An event related potential study of negative polarity sensitivity* \\
+   Second author, with Ming Xiang and Anastasia Giannakidou.
+   Journal of Neurolinguistics 38.
 ** 2015
    *Singular count pseudo-partitives* \\
    [[https://ojs.ub.uni-konstanz.de/sub/index.php/sub/issue/view/8][Proceedings]] of Sinn und Bedeutung 19.
@@ -62,12 +71,10 @@ pagetitle: papers
    *The lexical semantics of much: Conversion from intervals to degrees* \\
    Proceedings of NELS 44.
 ** 2011
-   *Effects of working memory capacity and “autistic” traits on phonotactic
-   effects in speech perception* \\
-   Second author, with Alan Yu, Martina Martinović, and Morgan
-   Sonderegger. Proceedings of the International Congress of the Phonetic
-   Sciences XVII.
+   *Effects of working memory capacity and “autistic” traits on phonotactic effects in speech perception* \\
+   Second author, with Alan Yu, Martina Martinović, and Morgan Sonderegger.
+   Proceedings of the International Congress of the Phonetic Sciences XVII.
 ** 2011
    *Effects of Speaker Evaluation on Phonetic Convergence* \\
-   Second author, with Carissa Abrego-Collier, Morgan Sonderegger, and Alan
-   Yu. Proceedings of the International Congress of the Phonetic Sciences XVII.
+   Second author, with Carissa Abrego-Collier, Morgan Sonderegger, and Alan Yu.
+   Proceedings of the International Congress of the Phonetic Sciences XVII.

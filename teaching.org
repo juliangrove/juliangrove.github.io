@@ -4,4 +4,4 @@ pagetitle: teaching
 ---
 
 * Teaching
-  [[./ur-comp-sem-2023/README.html][Computational Semantics]] - University of Rochester (Fall, 2023)
+  [[./ur-comp-sem-2023/README.html][Computational Semantics]] - University of Rochester (Fall, 2023).
