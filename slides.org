@@ -5,13 +5,15 @@ pagetitle: slides
 
 * Slides
   [[https://juliangrove.github.io/slides/elm3talk.pdf][Modeling the prompt in inference judgment tasks]] - June 13, 2024.
-  [[https://www.elm-conference.net/archive/elm-3-2024/][ELM 3]]. \\
+  [[https://www.elm-conference.net/archive/elm-3-2024/][ELM 3]].
+  With [[http://aaronstevenwhite.io/][Aaron Steven White]]. \\
   [[https://juliangrove.github.io/slides/lime-lab-sept8.pdf][Factivity, presupposition projection, and the role of discrete knowledge in gradient inference judgments]] - September 8, 2023.
   Linguistic Meaning Lab, Cornell. \\
   [[https://juliangrove.github.io/slides/factslaboct282022.pdf][Some questions about vagueness and metalinguistic uncertainty]] - October 28, 2022.
   FACTS.lab, University of Rochester. \\
   [[https://juliangrove.github.io/slides/semdial2022_talk.pdf][RSA models are utterance-independent updates of world priors]] - August 23, 2022.
-  SemDial 2022 - DubDial. With Jean-Philippe Bernardy and Christine Howes. \\
+  SemDial 2022 - DubDial.
+  With Jean-Philippe Bernardy and Christine Howes. \\
   [[https://juliangrove.github.io/slides/lenls18talk.pdf][Probabilistic compositional semantics, purely]] - November 14, 2021.
   LENLS18. \\
   [[./slides/linguaefeb252021.pdf][Presupposition projection as a scope phenomenon]] - February 25, 2021.
