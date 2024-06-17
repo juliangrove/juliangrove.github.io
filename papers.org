@@ -4,10 +4,15 @@ pagetitle: papers
 ---
 
 * Papers
-** 2023
+** 2024
+   *Modeling the prompt in inference judgment tasks* \\
+   With [[http://aaronstevenwhite.io/][Aaron Steven White]].
+   To appear in the proceedings of ELM 3.
+   Available on [[https://ling.auf.net/lingbuzz/008196][Lingbuzz]].
+** 2024
    *Factivity, presupposition projection, and the role of discrete knowledge in gradience inference judgments* \\
-   With Aaron Steven White.
-   Submitted.
+   With [[http://aaronstevenwhite.io/][Aaron Steven White]]..
+   Under review.
    Available on [[https://ling.auf.net/lingbuzz/007450][Lingbuzz]].
 ** 2023
    *Probabilistic compositional semantics, purely* \\
