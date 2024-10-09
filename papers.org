@@ -5,6 +5,10 @@ pagetitle: papers
 
 * Papers
 ** 2024
+   *Probabilistic dynamic semantics* \\
+   With [[http://aaronstevenwhite.io/][Aaron Steven White]].
+   Available on [[https://ling.auf.net/lingbuzz/008478][Lingbuzz]].
+** 2024
    *Modeling the prompt in inference judgment tasks* \\
    With [[http://aaronstevenwhite.io/][Aaron Steven White]].
    To appear in the proceedings of ELM 3.
