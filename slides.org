@@ -4,6 +4,8 @@ pagetitle: slides
 ---
 
 * Slides
+  [[https://juliangrove.github.io/slides/leap-2024.pdf][Connecting probabilistic models and inference datasets to semantic theory]] - November 11, 2024.
+  Joing meeting between [[https://voices.uchicago.edu/leap/][LEAP]] and [[https://sites.northwestern.edu/xmean/][EMG]]. \\
   [[https://juliangrove.github.io/slides/elm3talk.pdf][Modeling the prompt in inference judgment tasks]] - June 13, 2024.
   [[https://www.elm-conference.net/archive/elm-3-2024/][ELM 3]].
   With [[http://aaronstevenwhite.io/][Aaron Steven White]]. \\
