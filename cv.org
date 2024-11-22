@@ -5,4 +5,4 @@ pagetitle: cv
 
 * CV
   Available [[./cv/grove_cv.pdf][here]].
-  (Last updated October 18, 2024.)
+  (Last updated November 21, 2024.)
