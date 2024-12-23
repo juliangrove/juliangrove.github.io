@@ -32,8 +32,8 @@
     <link href="https://juliangrove.github.io/experiments/prior-only/experiment/css/local-style.css" rel="stylesheet" type="text/css"/>
 
     <!-- experiment file -->
-    <script src="https://juliangrove.github.io/experiments/adjectives-prior/js/stims.js"></script>
-    <script src="https://juliangrove.github.io/experiments/adjectives-prior/js/template.js"></script>
+    <script src="https://juliangrove.github.io/experiments/adjectives-test/js/stims.js"></script>
+    <script src="https://juliangrove.github.io/experiments/adjectives-test/js/template.js"></script>
     <!-- <script src="https://juliangrove.github.io/experiments/prior-only/experiment/js/template.js"></script> -->
 
 </head>
@@ -66,16 +66,18 @@
     </span>
     <h3>Instructions</h3>
     <p align="left">
-      You will read a fact about the world and be asked to make a guess about something, given that fact.
+      You will read one or more sentences stating some facts, and then be asked to judge how likely something is, given the sentences.
       For example:
 
     </p>
-    Patty has a favorite opera.
+    Patty has a favorite opera, which is long. <br>
+    Susan has a favorite TV show episode, which is not long. <br> <br>
+    Joan has a favorite film.
 <br>
 <br>
-Guess how long it is.
+How likely is it that it is long?
 <br>
-<p align="left">You will give your answer on a sliding scale with labeled endpoints. For example, '0 hours' to '6 hours'.</p>
+<p align="left">You will give your answer on a sliding scale from 'extremely unlikely' to 'extremely likely'.</p>
 
 <p align="left">There are a total of 6 items. The task will take about 1 minute and you will be paid 50 cents.</p>
 
@@ -114,6 +116,10 @@ Thank you!
 
   <div class="slide" id="one_slider">
     <p class="prompt"></p>
+    <table id="slider_table" class="slider_table">
+      <tr><td class="left">extremely <br> unlikely</td><td class="right">extremely <br> &nbsp; &nbsp; &nbsp;likely</td></tr>
+      <tr><td colspan="2"><div id="single_slider" class="slider"></div></td></tr>
+    </table>
     <button onclick="_s.button()">Continue</button>
     <div class="err">Please adjust the slider before continuing.</div>
   </div>

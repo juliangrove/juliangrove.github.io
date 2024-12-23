@@ -3,56 +3,44 @@ var list1 = [
  	list: "1",
  	itemNr: "1",   
 	item: "1a", 
-	fact: "Mary is a basketball player.",
-	prompt: "Guess how tall she is.",
-	lower: "0 feet",
-	upper: "7 feet"
+	fact: "Joan is a soccer player.",
+	prompt: "How likely is it that she is tall?"
     },
     {
  	list: "1",
  	itemNr: "2",   
 	item: "2b",
-	fact: "Josie has a golf cart.",
-	prompt: "Guess how heavy it is.",
-	lower: "0 lbs",
-	upper: "10,000 lbs"
+	fact: "Anna has a pick-up truck, which is heavy. <br> Louis has a golf cart, which is not heavy. <br><br> Josie has a small hybrid car.",
+	prompt: "How likely is it that it is heavy?"
     },
     {
  	list: "1",
  	itemNr: "3",   
 	item: "3c",
-	fact: "Zoe has a pet dog.",
-	prompt: "Guess how old it is.",
-	lower: "0 years",
-	upper: "100 years"
+	fact: "Tina has a pet orangutan, which is old. <br> Emily has a pet hamster, which is not old. <br><br> Zoe has a pet dog.",
+	prompt: "How likely is it that it is old?"
     },
     {
  	list: "1",
  	itemNr: "4",   
 	item: "4a",
-	fact: "Danny has a counter for making bread.",
-	prompt: "Guess how wide it is.",
-	lower: "0 feet",
-	upper: "20 feet"
+	fact: "Fred has a dinner table.",
+	prompt: "How likely is it that it is wide?"
     },
     {
  	list: "1",
  	itemNr: "5",   
 	item: "5b",
-	fact: "Frank lives near a swimming pool.",
-	prompt: "Guess how deep it is.",
-	lower: "0 feet",
-	upper: "100 feet"
+	fact: "Frank lives near a river, which is deep. <br><br> Mark lives near a swimming pool.",
+	prompt: "How likely is it that it is deep?"
     },
     {
  	list: "1",
  	itemNr: "6",   
 	item: "6c",
-	fact: "Josh likes his favorite restaurant's cappuccino.",
-	prompt: "Guess how expensive it is.",
-	lower: "$0",
-	upper: "$20"
-    }
+	fact: "Doug likes his local artisan coffee shop's pourover, which is expensive. <br> Nick likes drip coffee from his next-door diner, which is not expensive. <br><br> Josh likes his favorite restaurant's cappuccino.",
+	prompt: "How likely is it that it is expensive?"
+		    }
 ];
 
 var list2 = [
@@ -60,112 +48,87 @@ var list2 = [
  	list: "2",
  	itemNr: "1",   
 	item: "1b", 
-	fact: "Mary is a jockey.",
-	prompt: "Guess how tall she is.",
-	lower: "0 feet",
-	upper: "7 feet"
+	fact: "Mary is a basketball player and is tall. <br><br> Joan is a soccer player.",
+	prompt: "How likely is it that she is tall?"
     },
     {
  	list: "2",
  	itemNr: "2",   
 	item: "2c",
-	fact: "Josie has a small hybrid car.",
-	prompt: "Guess how heavy it is.",
-	lower: "0 lbs",
-	upper: "10,000 lbs"
-    },
+	fact: "Anna has a pick-up truck, which is heavy. <br><br> Josie has a small hybrid car.",
+	prompt: "How likely is it that it is heavy?"
+		    },
     {
  	list: "2",
  	itemNr: "3",   
-	item: "3a",
-	fact: "Zoe has a pet orangutan.",
-	prompt: "Guess how old it is.",
-	lower: "0 years",
-	upper: "100 years"
-    },
+	item: "3c",
+	fact: "Tina has a pet orangutan, which is old. <br> Emily has a pet hamster, which is not old. <br><br> Zoe has a pet dog.",
+	prompt: "How likely is it that it is old?"
+		    },
     {
  	list: "2",
  	itemNr: "4",   
-	item: "4b",
-	fact: "Danny has a chest of drawers.",
-	prompt: "Guess how wide it is.",
-	lower: "0 feet",
-	upper: "20 feet"
-    },
+	item: "4a",
+	fact: "Fred has a dinner table.",
+	prompt: "How likely is it that it is wide?"
+		    },
     {
  	list: "2",
  	itemNr: "5",   
-	item: "5c",
-	fact: "Frank lives near a swimming pool.",
-	prompt: "Guess how deep it is.",
-	lower: "0 feet",
-	upper: "100 feet"
-    },
+	item: "5b",
+	fact: "Frank lives near a river, which is deep. <br><br> Mark lives near a swimming pool.",
+	prompt: "How likely is it that it is deep?"
+		    },
     {
  	list: "2",
  	itemNr: "6",   
-	item: "6a",
-	fact: "Josh likes his local artisan coffee shop's pourover made with beans roasted in-house.",
-	prompt: "Guess how expensive it is.",
-	lower: "$0",
-	upper: "$20"
-    }
+	item: "6c",
+	fact: "Doug likes his local artisan coffee shop's pourover, which is expensive. <br> Nick likes drip coffee from his next-door diner, which is not expensive. <br><br> Josh likes his favorite restaurant's cappuccino.",
+	prompt: "How likely is it that it is expensive?"
+		    }
 ];
 
-var list2 = [
+var list3 = [
     {
- 	list: "2",
+ 	list: "3",
  	itemNr: "1",   
-	item: "1b", 
-	fact: "Mary is a jockey.",
-	prompt: "Guess how tall she is.",
-	lower: "0 feet",
-	upper: "7 feet"
+	item: "1a", 
+	fact: "Joan is a soccer player.",
+	prompt: "How likely is it that she is tall?"
     },
     {
- 	list: "2",
+ 	list: "3",
  	itemNr: "2",   
-	item: "2c",
-	fact: "Josie has a small hybrid car.",
-	prompt: "Guess how heavy it is.",
-	lower: "0 lbs",
-	upper: "10,000 lbs"
+	item: "2b",
+	fact: "Anna has a pick-up truck, which is heavy. <br><br> Josie has a small hybrid car.",
+	prompt: "How likely is it that it is heavy?"
     },
     {
- 	list: "2",
+ 	list: "3",
  	itemNr: "3",   
-	item: "3a",
-	fact: "Zoe has a pet orangutan.",
-	prompt: "Guess how old it is.",
-	lower: "0 years",
-	upper: "100 years"
-    },
+	item: "3c",
+	fact: "Tina has a pet orangutan, which is old. <br> Emily has a pet hamster, which is not old. <br><br> Zoe has a pet dog.",
+	prompt: "How likely is it that it is old?"
+		    },
     {
- 	list: "2",
+ 	list: "3",
  	itemNr: "4",   
-	item: "4b",
-	fact: "Danny has a chest of drawers.",
-	prompt: "Guess how wide it is.",
-	lower: "0 feet",
-	upper: "20 feet"
-    },
+	item: "4a",
+	fact: "Fred has a dinner table.",
+	prompt: "How likely is it that it is wide?"
+		    },
     {
- 	list: "2",
+ 	list: "3",
  	itemNr: "5",   
-	item: "5c",
-	fact: "Frank lives near a swimming pool.",
-	prompt: "Guess how deep it is.",
-	lower: "0 feet",
-	upper: "100 feet"
-    },
+	item: "5b",
+	fact: "Frank lives near a river, which is deep. <br><br> Mark lives near a swimming pool.",
+	prompt: "How likely is it that it is deep?"
+		    },
     {
- 	list: "2",
+ 	list: "3",
  	itemNr: "6",   
-	item: "6a",
-	fact: "Josh likes his local artisan coffee shop's pourover made with beans roasted in-house.",
-	prompt: "Guess how expensive it is.",
-	lower: "$0",
-	upper: "$20"
-    }
+	item: "6c",
+	fact: "Doug likes his local artisan coffee shop's pourover, which is expensive. <br> Nick likes drip coffee from his next-door diner, which is not expensive. <br><br> Josh likes his favorite restaurant's cappuccino.",
+	prompt: "How likely is it that it is expensive?"
+		    }
 ];
-
