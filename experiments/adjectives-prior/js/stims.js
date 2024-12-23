@@ -87,7 +87,7 @@ var list2 = [
  	list: "2",
  	itemNr: "4",   
 	item: "4b",
-	fact: "Danny has a chest of drawers.",
+	fact: "Danny has a bed-stand to hold his lamp.",
 	prompt: "Guess how wide it is.",
 	lower: "0 feet",
 	upper: "15 feet"
@@ -143,8 +143,8 @@ var list3 = [
     {
  	list: "3",
  	itemNr: "4",   
-	item: "4a",
-	fact: "Danny has a round banquet table for twelve people.",
+	item: "4c",
+	fact: "Danny has a dinner table for his family of four.",
 	prompt: "Guess how wide it is.",
 	lower: "0 feet",
 	upper: "15 feet"
@@ -152,8 +152,8 @@ var list3 = [
     {
  	list: "3",
  	itemNr: "5",   
-	item: "5c",
-	fact: "Frank lives near a swimming pool.",
+	item: "5a",
+	fact: "Frank lives near a river.",
 	prompt: "Guess how deep it is.",
 	lower: "0 feet",
 	upper: "50 feet"
@@ -161,8 +161,8 @@ var list3 = [
     {
  	list: "3",
  	itemNr: "6",   
-	item: "6a",
-	fact: "Josh likes his local artisan coffee shop's pourover.",
+	item: "6b",
+	fact: "Josh likes the cup of drip coffee from his next-door diner.",
 	prompt: "Guess how expensive it is.",
 	lower: "$0",
 	upper: "$15"
