@@ -30,7 +30,7 @@ var list1 = [
  	list: "1",
  	itemNr: "4",   
 	item: "4a",
-	fact: "Danny has a round banquet table for ten people.",
+	fact: "Danny has a round banquet table for twelve people.",
 	prompt: "Guess how wide it is.",
 	lower: "0 feet",
 	upper: "15 feet"
