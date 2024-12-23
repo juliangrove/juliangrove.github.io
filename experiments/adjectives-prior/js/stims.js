@@ -24,7 +24,7 @@ var list1 = [
 	fact: "Zoe has a pet dog.",
 	prompt: "Guess how old it is.",
 	lower: "0 years",
-	upper: "50 years"
+	upper: "40 years"
     },
     {
  	list: "1",
@@ -81,7 +81,7 @@ var list2 = [
 	fact: "Zoe has a pet horse.",
 	prompt: "Guess how old it is.",
 	lower: "0 years",
-	upper: "50 years"
+	upper: "40 years"
     },
     {
  	list: "2",
@@ -138,7 +138,7 @@ var list3 = [
 	fact: "Zoe has a pet hamster.",
 	prompt: "Guess how old it is.",
 	lower: "0 years",
-	upper: "50 years"
+	upper: "40 years"
     },
     {
  	list: "3",
