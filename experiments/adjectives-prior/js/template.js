@@ -63,7 +63,12 @@ function make_slides(f) {
       this.stim = stim; //I like to store this information in the slide so I can record it later.
 
 
-	$(".prompt").html(stim.fact + "<br><br>" + stim.prompt + "<br><br><tr>");
+	$(".prompt").html(stim.fact + "<br><br>" + stim.prompt + "<br><br><tr>" +
+			  "<table id=\"slider_table\" class=\"slider_table\">" +
+			  "<tr><td class=\"left\">" + stim.lower + "</td><td class=\"right\">" + stim.upper + "</td></tr>" +
+			  "<tr><td colspan=\"2\"><div id=\"single_slider\" class=\"slider\"></div></td></tr>" +
+     "</table>"
+			 );
       this.init_sliders();
       exp.sliderPost = null; //erase current slider value
     },
@@ -94,6 +99,9 @@ function make_slides(f) {
               "item" : this.stim.item,
               "list" : this.stim.list,
               "itemNr" : this.stim.itemNr,
+	      "lower" : this.stim.lower,
+	      "middle" : this.stim.middle,
+	      "upper" : this.stim.upper,
               "rt" : Date.now() - _s.trial_start,
               "response" : exp.sliderPost
       });
