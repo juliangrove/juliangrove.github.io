@@ -24,7 +24,7 @@ var list1 = [
  	list: "1",
  	itemNr: "4",   
 	item: "4a",
-	fact: "Fred has a round banquet table for twelve people, which is wide, while Danny has a dinner table.",
+	fact: "Fred has a round banquet table for twelve people, which is wide, while Danny has a dinner table for his family of four.",
 	prompt: "How likely is it that it is wide?"
     },
     {
@@ -69,7 +69,7 @@ var list2 = [
  	list: "2",
  	itemNr: "4",   
 	item: "4b",
-	fact: "Fred has a round banquet table for twelve people, which is wide, while Lucas has a bed-stand for his lamp, which is not wide. Meanwhile, Danny has a dinner table.",
+	fact: "Fred has a round banquet table for twelve people, which is wide, while Lucas has a bed-stand for his lamp, which is not wide. Meanwhile, Danny has a dinner table for his family of four.",
 	prompt: "How likely is it that it is wide?"
     },
     {
@@ -114,7 +114,7 @@ var list3 = [
  	list: "3",
  	itemNr: "4",   
 	item: "4c",
-	fact: "Danny has a dinner table.",
+	fact: "Danny has a dinner table for his family of four.",
 	prompt: "How likely is it that it is wide?"
     },
     {
