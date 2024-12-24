@@ -48,7 +48,7 @@ var list2 = [
  	list: "2",
  	itemNr: "1",   
 	item: "1b", 
-	fact: "Susan is a basketball player - she is tall. <br><br> Joan is a jockey, and is not tall. <br><br> Mary is a soccer player.",
+	fact: "Susan is a basketball player - she is tall. <br><br> Joan is a jockey - she is not tall. <br><br> Mary is a soccer player.",
 	prompt: "How likely is it that she is tall?"
     },
     {
