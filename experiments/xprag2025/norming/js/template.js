@@ -98,10 +98,11 @@ function make_slides(f) {
               "prompt" : this.stim.prompt,
               "item" : this.stim.item,
               "list" : this.stim.list,
-              "itemNr" : this.stim.itemNr,
+              "item_nr" : this.stim.item_nr,
 	      "lower" : this.stim.lower,
-	      "middle" : this.stim.middle,
 	      "upper" : this.stim.upper,
+	      "adjective" : this.stim.adjective,
+	      "scale_type" : this.stim.scale_type,
               "rt" : Date.now() - _s.trial_start,
               "response" : exp.sliderPost
       });
