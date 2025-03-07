@@ -65,8 +65,8 @@ function make_slides(f) {
 
 	$(".prompt").html(stim.fact + "<br><br>" + stim.prompt + "<br><br><tr>" +
 			  "<table id=\"slider_table\" class=\"slider_table\">" +
-			  "<tr><td class=\"left\">" + stim.lower + "</td><td class=\"right\">" + stim.upper + "</td></tr>" +
 			  "<tr><td colspan=\"2\"><div id=\"single_slider\" class=\"slider\"></div></td></tr>" +
+			  "<tr><td class=\"left\">" + "as " + stim.adjective + " as<br>" + stim.lower + "</td><td class=\"right\">" + "as " + stim.adjective + " as<br>" + stim.upper + "</td></tr>" +
      "</table>"
 			 );
       this.init_sliders();
