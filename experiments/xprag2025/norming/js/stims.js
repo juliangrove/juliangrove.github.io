@@ -118,7 +118,7 @@ var list1 = [
 	prompt: "Guess how clean it is.",
         adjective: "clean",
 	lower: "a garbage dump",
-	upper: "a brand new whiteboard"
+	upper: "a freshly sterilized<br>laboratory beaker"
     },
     {
  	list: "1",
@@ -253,7 +253,7 @@ var list2 = [
         prompt: "Guess how clean it is.",
         adjective: "clean",
         lower: "a garbage dump",
-        upper: "a brand new whiteboard"
+        upper: "a freshly sterilized<br>laboratory beaker"
     },
     {
         list: "2",
@@ -388,7 +388,7 @@ var list3 = [
         prompt: "Guess how clean it is.",
         adjective: "clean",
         lower: "a garbage dump",
-        upper: "a brand new whiteboard"
+        upper: "a freshly sterilized<br>laboratory beaker"
     },
     {
         list: "3",
