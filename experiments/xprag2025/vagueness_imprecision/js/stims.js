@@ -1,4 +1,4 @@
-var lst1 = [
+var list1 = [
     {
  	list: "1",
  	item_nr: "1",

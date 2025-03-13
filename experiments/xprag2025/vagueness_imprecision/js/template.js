@@ -92,8 +92,10 @@ function make_slides(f) {
               "fact" : this.stim.fact,
               "prompt" : this.stim.prompt,
               "item" : this.stim.item,
+	      "adjective" : this.stim.adjective,
+	      "scale_type" : this.stim.scale_type,
               "list" : this.stim.list,
-              "itemNr" : this.stim.itemNr,
+              "item_nr" : this.stim.item_nr,
               "rt" : Date.now() - _s.trial_start,
               "response" : exp.sliderPost
       });
@@ -300,7 +302,7 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
     // exp.all_stims = _.shuffle(_.shuffle([list1,list2,list3])[0]); //can randomize between subject conditions here
-  exp.all_stims = _.shuffle(_.shuffle([list2])[0]); 
+    exp.all_stims = _.shuffle(_.shuffle([list1,list3])[0]); 
   console.log(exp.all_stims);
   exp.system = {
       Browser : BrowserDetect.browser,
