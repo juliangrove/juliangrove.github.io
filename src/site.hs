@@ -8,7 +8,8 @@ import Hakyll
 --------------------------------------------------------------------------------
 main :: IO ()
 main = hakyll $ do
-  match ("cv/grove_cv.pdf"
+  match ("css/styles.css"
+         .||. "cv/grove_cv.pdf"
          .||. "images/*"
          .||. "slides/*"
         ) $ do
@@ -39,12 +40,12 @@ main = hakyll $ do
 
 --------------------------------------------------------------------------------
 navString :: String -> String
-navString sitetitle
-  = concat $ map (\(str, labels) -> if sitetitle `elem` labels
+navString currentPage
+  = concat $ map (\(str, labels) -> if currentPage `elem` labels
                                    then "<li class=\"active\">"
                                                   ++ str
                                                   ++ "</li>"
-                                   else if labels == []
+                                   else if null labels
                                         then str
                                         else "<li>" ++ str ++ "</li>")
     [ ("<div class=\"navbar-collapse collapse\">\n"
