@@ -10,7 +10,7 @@
       
       gtag('config', 'G-W5NWCF9Y4X');
     </script>
-
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,42 +24,81 @@
     
     <link rel="stylesheet" type="text/css" href="./css/screen.css" />
     <link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
-</head>
-<body>
-  
-  <div class="container">
-    <nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+    
+    <!-- Abstract Reveal Functionality -->
+    <script>
+      // Toggle visibility of abstract divs
+      document.addEventListener('DOMContentLoaded', function() {
+	  document.querySelectorAll('.abstract-toggle').forEach(function(button) {
+	      button.addEventListener('click', function(e) {
+		  e.preventDefault();
+		  const targetId = this.getAttribute('data-target');
+		  const abstract = document.getElementById(targetId);
+		  if (abstract) {
+		      abstract.style.display = abstract.style.display === 'none' ? 'block' : 'none';
+		      this.textContent = abstract.style.display === 'none' ? 
+			  "Abstract" : "Abstract";
+		  }
+	      });
+	  });
+      });
+    </script>
+    
+    <body>
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-	<div class="navbar-collapse collapse">
+	<nav id="navbar" class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+              </button>
+            </div>
+	    <div class="navbar-collapse collapse">
 <ul class="nav navbar-nav"><li><a href="index.html">about</a></li><li><a data-toggle="dropdown" class="dropdown-toggle">research</a><ul class="dropdown-menu"><li><a href="papers.html">papers</a></li><li><a href="slides.html">slides</a></li><li><a href="dissertation.html">dissertation</a></li></ul></li><li><a href="cv.html">cv</a></li><li><a href="blog.html">blog</a></li><li><a href="teaching.html">teaching</a></li></ul>
 </div>
-      </div>
-    </nav>
-    <div class="row">
-      <main role="main" class="col-md-10">
-        <h1 id="papers">Papers</h1>
-<h2 id="section-1">2024</h2>
+	  </div>
+	</nav>
+	<div class="row">
+	  <main role="main" class="col-md-10">
+            <h1 id="papers">Papers</h1>
+<h2 id="section-1">2025</h2>
+<p><strong>Modeling the prompt in inference judgment tasks</strong><br />
+With <a href="http://aaronstevenwhite.io/">Aaron Steven White</a>.
+In the proceedings of ELM 3.
+doi:<a href="https://doi.org/10.3765/elm.3.5857">10.3765/elm.3.5857</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_modeling_2025">Abstract</a></p>
+<div id="grove_modeling_2025" class="paper-abstract">
+<p>
+We show that when analyzing data from inference judgment tasks, it can be important to incorporate into one's data analysis regime an explicit representation of the semantics of the natural language prompt used to guide participants on the task. To demonstrate this, we conduct two experiments within an existing experimental paradigm focused on measuring factive inferences, while manipulating the prompt participants receive in small but semantically potent ways. In statistical model comparisons couched within the framework of probabilistic dynamic semantics, we find that probabilistic models structured, in part, by the semantics of the prompt fit better to data collected using that prompt than models that ignore the semantics of the prompt.
+</p>
+</div>
+
+<h2 id="section-2">2024</h2>
 <p><strong>Probabilistic dynamic semantics</strong><br />
 With <a href="http://aaronstevenwhite.io/">Aaron Steven White</a>.
 Available on <a href="https://ling.auf.net/lingbuzz/008478">Lingbuzz</a>.</p>
-<h2 id="section-2">2024</h2>
-<p><strong>Modeling the prompt in inference judgment tasks</strong><br />
-With <a href="http://aaronstevenwhite.io/">Aaron Steven White</a>.
-To appear in the proceedings of ELM 3.
-Available on <a href="https://ling.auf.net/lingbuzz/008196">Lingbuzz</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_probabilistic_2024">Abstract</a></p>
+<div id="grove_probabilistic_2024" class="paper-abstract">
+<p>
+We introduce the framework of Probabilistic Dynamic Semantics (PDS), which we use to seamlessly integrate dynamic semantic analyses of lexical and discourse phenomena in the Montagovian tradition with probabilistic models of linguistic inference datasets. We show how PDS provides a general standpoint from which to understand uncertainty and context sensitivity in discourse and briefly illustrate applications to anaphora and vagueness.
+</p>
+</div>
+
 <h2 id="section-3">2024</h2>
 <p><strong>Factivity, presupposition projection, and the role of discrete knowledge in gradience inference judgments</strong><br />
 With <a href="http://aaronstevenwhite.io/">Aaron Steven White</a>.
 Under review.
 Available on <a href="https://ling.auf.net/lingbuzz/007450">Lingbuzz</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_factivity_2024">Abstract</a></p>
+<div id="grove_factivity_2024" class="paper-abstract">
+<p>
+We investigate whether the factive presuppositions associated with some clause-embedding predicates are fundamentally discrete in nature - as classically assumed - or fundamentally gradient - as recently proposed (Tonhauser, Beaver, and Degen 2018). To carry out this investigation, we develop statistical models of presupposition projection that implement these two hypotheses, fit these models to existing inference judgment data aimed at measuring factive presuppositions (Degen and Tonhauser 2021), and compare the models' fits to the data using standard statistical model comparison metrics. We find that models implementing the hypothesis that presupposition projection is fundamentally discrete fit the data better than models implementing the hypothesis that it is fundamentally gradient. To evaluate the robustness of this finding, we collect three additional datasets: a replication of the original dataset, as well as two datasets that modify the methodology of the original. Across the three datasets, we again find that models implementing the discreteness hypothesis fit the data better than models implementing the gradience hypothesis. We argue that these results favor an account on which factive presuppositions are fundamentally discrete in nature, and we discuss how this discreteness might be cashed out within both classical semantic accounts of factive predicates as well as accounts of presupposition projection that tie it to the question under discussion.
+</p>
+</div>
+
 <h2 id="section-4">2023</h2>
 <p><strong>Probabilistic compositional semantics, purely</strong><br />
 With Jean-Philippe Bernardy.
@@ -67,30 +106,72 @@ New Frontiers in Artificial Intelligence.
 JSAI-isAI 2021.
 doi:<a href="https://doi.org/10.1007/978-3-031-36190-6_17">10.1007/978-3-031-36190-6<sub>17</sub></a>.
 Also available on <a href="https://ling.auf.net/lingbuzz/006284">Lingbuzz</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_probabilistic_2023">Abstract</a></p>
+<div id="grove_probabilistic_2023" class="paper-abstract">
+<p>
+We provide a general framework for the integration of formal semantics with probabilistic reasoning. This framework is conservative, in the sense that it relies only on typed λ-calculus and is thus compatible with logical systems already in use. The framework is also presented modularly, in that it regards probabilistic effects (i.e., sampling and marginalization) as side effects, using continuations. We show how our framework may be used to build probabilistic programs compositionally within typed λ-calculus and then illustrate its use on two applications: semantic learning and pragmatic inference within the Rational Speech Act framework.
+</p>
+</div>
+
 <h2 id="section-5">2022</h2>
 <p><strong>An alternative semantics for presupposition</strong><br />
 Proceedings of the Amsterdam Colloquium 2022.
 Available on <a href="https://ling.auf.net/lingbuzz/006976">Lingbuzz</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_alternative_2022">Abstract</a></p>
+<div id="grove_alternative_2022" class="paper-abstract">
+<p>
+Charlow (2014, 2020a,b) develops a view of indefinites according to which they give rise to alternatives, an aspect of their meaning intended to explain the fact that they may generally take exceptional scope past scope islands. Charlow (2020a,b) proposes that exceptional scope arises from the confluence of two factors: two polymorphic type shifts that regulate how the alternative sets denoted by indefinites compose with other expressions, and the availability of roll-up pied piping as a scope-taking strategy. The current paper explores a related observation about presupposition triggers: they, too, involve a kind of exceptional scope, which is reflected in their projection behavior. I propose a move analogous to that of Heim (1982) by treating definite noun phrases (and other presupposition triggers) on a par with indefinites, but within a variant of the alternative semantics introduced by Charlow. The resulting interpretation scheme preserves the alternative-style analysis of indefinites, but integrates a novel analysis of presupposition triggers that accounts for their flexible projection behavior. It additionally yields a simple analysis of presupposition accommodation according to which denotations for presupposition triggers are mapped onto those for indefinites.
+</p>
+</div>
+
 <h2 id="section-6">2022</h2>
 <p><strong>Presupposition projection as a scope phenomenon</strong><br />
 Semantics &amp; Pragmatics 15(15).
 doi:<a href="https://doi.org/10.3765/sp.15.15">10.3765/sp.15.15</a>.
 (Update of manuscript ‘Satisfaction without provisos’, available on <a href="https://ling.auf.net/lingbuzz/004914">LingBuzz</a>.)</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_presupposition_2022">Abstract</a></p>
+<div id="grove_presupposition_2022" class="paper-abstract">
+<p>
+The satisfaction theory of presupposition projection found in Heim 1983 has paved the way for a successful research tradition within dynamic semantics which has given rise to compositional analyses of a variety of projection behaviors. Since Geurts 1996, however, the promise of this research program has been called into question due to what Geurts dubs the "proviso problem": satisfaction theory generates incorrect predictions in cases in which a presupposition ends up filtered which should not have been. I show that the satisfaction account of presupposition projection is nevertheless in good shape by revealing that the observations of Geurts are valid only under certain basic assumptions about how semantic composition works. To illustrate this, I present a satisfaction account of presupposition projection that incorporates a notion of scope-taking based on monads. The resulting composition scheme provides a setting in which the proviso problem does not arise, thus lending support to the scope theory of presupposition projection.
+</p>
+</div>
+
 <h2 id="section-7">2022</h2>
 <p><strong>Algebraic effects for extensible dynamic semantics</strong><br />
 With Jean-Philippe Bernardy.
 Journal of Logic, Language and Information.
 Preprint on the <a href="https://semanticsarchive.net/Archive/TMxNGE3M/">Semantics Archive</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_algebraic_2022">Abstract</a></p>
+<div id="grove_algebraic_2022" class="paper-abstract">
+<p>
+Research in dynamic semantics has made strides by studying various aspects of discourse in terms of computational effect systems, for example, monads (Shan, 2002; Unger, 2011; Charlow, 2014), continuations (de Groote, 2001; Barker and Shan, 2014), and general effect handlers (Maršik, 2016). We provide a system, based on graded monads, that synthesizes insights from these programs by formalizing individual discourse phenomena in terms of separate effects, or grades. Included are effects for introducing and retrieving discourse referents, non-determinism for indefiniteness, and generalized quantifier meanings. We formalize the behavior of individual effects, as well as the interactions between effects, in terms of algebraic laws tailored to the relevant discourse phenomena. The system we propose is thus modular and suggests a novel approach to integrating formal accounts of distinct semantic phenomena. Finally, we give an interpretation of the system into pure λ-calculus that respects the laws. Future work will aim to integrate more discourse phenomena using the same methodology, for example, presupposition and conventional implicature.
+</p>
+</div>
+
 <h2 id="section-8">2022</h2>
 <p><strong>Rational Speech Act models are utterance-independent updates of world priors</strong><br />
 Second author, with Jean-Philippe Bernardy and Christine Howes.
 Proceedings of the 26th Workshop on the Semantics and Pragmatics of Dialogue.
 Available <a href="http://semdial.org/anthology/papers/Z/Z22/Z22-3013/">here</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="bernardy_rational_2022">Abstract</a></p>
+<div id="bernardy_rational_2022" class="paper-abstract">
+<p>
+A popular framework for modelling pragmatic effects is the "rational speech act" (RSA) model introduced by Frank and Goodman (2012). The idea behind RSA is that, to interpret an utterance, a rational (pragmatic) listener reasons about a speaker who chooses their utterance by reasoning about the listener, using a literal semantic model. In the present work, we take the RSA model at face value, but we reformulate it in information-theoretic terms. We find that the pragmatic listener model can be reconceived as an update of the prior over worlds that can be provided independently of the speaker's actual utterance. This update consists in a preference for world states which are the most specific to a given utterance in the set of possible utterances given by the pragmatic context. Our reformulation allows us to deduce general properties of pragmatic reasoning problems. As an example, we show that RSA does not predict certain quantity implicatures in the presence of bell-curve priors.
+</p>
+</div>
+
 <h2 id="section-9">2021</h2>
 <p><strong>From compositional semantics to Bayesian pragmatics via logical inference</strong><br />
 With Jean-Philippe Bernardy and Stergios Chatzikyriakidis.
 Proceedings of <a href="https://typo.uni-konstanz.de/naloma21/index.html">NALOMA II</a>.
 Available <a href="https://aclanthology.org/2021.naloma-1.8/">here</a>.</p>
+<p><a href="#" class="abstract-toggle" data-target="grove_compositional_2021">Abstract</a></p>
+<div id="grove_compositional_2021" class="paper-abstract">
+<p>
+Formal semantics in the Montagovian tradition provides precise meaning characterisations, but usually without a formal theory of the pragmatics of contextual parameters and their sensitivity to background knowledge. Meanwhile, formal pragmatic theories make explicit predictions about meaning in context, but generally without a well-defined compositional semantics. We propose a combined framework for the semantic and pragmatic interpretation of sentences in the face of probabilistic knowledge. We do so by (1) extending a Montagovian interpretation scheme to generate a distribution over possible meanings, and (2) generating a posterior for this distribution using a variant of the Rational Speech Act (RSA) models, but generalised to arbitrary propositions. These aspects of our framework are tied together by evaluating entailment under probabilistic uncertainty. We apply our model to anaphora resolution and show that it provides expected biases under suitable assumptions about the distributions of lexical and world-knowledge. Further, we observe that the model’s output is robust to variations in its parameters within reasonable ranges.
+</p>
+</div>
+
 <h2 id="section-10">2019</h2>
 <p><strong>Structural priming in production through ‘silence’:
 An investigation of verb phrase ellipsis and null complement anaphora</strong><br />
@@ -129,13 +210,13 @@ Proceedings of the International Congress of the Phonetic Sciences XVII.</p>
 <p><strong>Effects of Speaker Evaluation on Phonetic Convergence</strong><br />
 Second author, with Carissa Abrego-Collier, Morgan Sonderegger, and Alan Yu.
 Proceedings of the International Congress of the Phonetic Sciences XVII.</p>
-	<br><a href="https://github.com/juliangrove" onclick="ga('send', 'event', 'link', 'click', 'github');"><img src="images/GitHub-Mark-32px.png"></a>
-      </main>
-    </div>
-    <footer class="text-muted small">
-      Site proudly generated by
-      <a href="http://jaspervdj.be/hakyll">Hakyll</a>
-    </footer>
-  </div>
-</body>
+	    <br><a href="https://github.com/juliangrove" onclick="ga('send', 'event', 'link', 'click', 'github');"><img src="images/GitHub-Mark-32px.png"></a>
+	  </main>
+	</div>
+	<footer class="text-muted small">
+	  Site proudly generated by
+	  <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+	</footer>
+      </div>
+    </body>
 </html>
