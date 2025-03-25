@@ -125,13 +125,13 @@ h3 {
 
 /* Link styles */
 a {
-    color: #458588; /* Soft blue */
+    color: #83a598; /* Lighter blue */
     text-decoration: none;
     transition: color 0.2s ease; /* Smooth hover effect */
 }
 
 a:hover {
-    color: #83a598; /* Lighter blue */
+    color: #458588; /* Soft blue */
     text-decoration: none;
 }
 
