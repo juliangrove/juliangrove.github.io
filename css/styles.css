@@ -1,0 +1,63 @@
+/* styles.css */
+.navbar-default {
+    background-color: #32302f;  /* Replace with your desired color */
+    border-color: #282828;    /* Optional: border color */
+}
+
+/* Change navbar link colors */
+.navbar-default .navbar-nav > li > a {
+    color: #fbf1c7;
+}
+
+/* Change hover/focus states */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fbf1c7;
+    background-color: #504945;
+}
+
+/* Change active item */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #928374;
+    background-color: #3c3836;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Regular weight */
+    background-color: #282828; /* Light gray example */
+    /* Or use a gradient: */
+    /* background: linear-gradient(to right, #f5f7fa, #c3cfe2); */
+    color: #928374;
+}
+
+/* Headings - Raleway */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 200; /* Semi-bold works well */
+    /* margin-top: 1.5em; */
+    /* margin-bottom: 0.5em; */
+    /* line-height: 1.2; */
+    /* letter-spacing: 0.03em; /\* Slight tracking for elegance *\/ */
+}
+
+/* Normal state */
+a {
+    color: #458588; /* Your preferred link color */
+    text-decoration: none; /* Remove underline if desired */
+}
+
+/* Hover state */
+a:hover,
+a:focus {
+    color: #83a598; /* Slightly darker shade */
+    text-decoration: none; /* Add underline on hover */
+}
+
+/* Active state (while being clicked) */
+a:active {
+    color: #689d6a; /* Even darker shade */
+}
