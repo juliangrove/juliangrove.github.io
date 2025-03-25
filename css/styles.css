@@ -1,0 +1,156 @@
+/* styles.css */
+
+/* Base styles */
+body {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
+    background-color: #282828;
+    /* color: #a89984; */
+    color: #d5c4a1; 
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Raleway for all headings - normal case */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.page-header h1,
+.panel-title,
+.modal-title {
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 500; /* Medium weight */
+    letter-spacing: 0.02em; /* Subtle tracking */
+    text-transform: none; /* Explicitly disable uppercase */
+}
+
+/* Heading-specific styles */
+h1 {
+    font-size: 2.2em;
+    font-weight: 600; /* Semi-bold */
+    margin: 1em 0 0.5em;
+    color: #d5c4a1; /* Light cream color for better contrast */
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 1.2em 0 0.6em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #504945; /* Subtle divider */
+}
+
+h3 {
+    font-size: 1.4em;
+    margin: 1em 0 0.5em;
+    color: #d5c4a1; /* Lighter text for hierarchy */
+}
+
+/* Navbar styles - normal case */
+.navbar-default {
+    background-color: #32302f;
+    border-color: #32302f;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #a89984;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
+    text-transform: none; /* Disabled uppercase */
+    /* letter-spacing: 0.03em; */
+    /* font-size: 0.9em; */
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fbf1c7;
+    /* background-color: #3c3836; */
+}
+
+/* Active navbar item styles */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fbf1c7 !important; /* Color for active item */
+    background-color: #32302f !important; /* Darker background */
+    /* font-weight: 600; /\* Make it bolder *\/ */
+}
+
+/* styles.css */
+
+/* Dropdown toggle when open/clicked */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #504945 !important;  /* Your desired clicked color */
+    color: #fbf1c7; !important;  /* Text color when open */
+}
+
+.navbar-default .dropdown-menu {
+    padding-top: 5px;    /* Space above first item */
+    padding-bottom: 5px; /* Space below last item */
+    background-color: #504945; /* This color will show in the padding areas */
+}
+/* Dropdown menu items */
+.navbar-default .navbar-nav .dropdown-menu > li > a {
+    background-color: #504945 !important;
+    color: #d5c4a1;; /* Light text color */
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300;
+}
+
+/* Dropdown hover/focus states */
+.navbar-default .navbar-nav .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .dropdown-menu > li > a:focus {
+    color: #fbf1c7; /* Yellow text on hover */
+    background-color: #32302f; /* Slightly lighter background */
+}
+
+/* Active dropdown item */
+.navbar-default .navbar-nav .dropdown-menu > .active > a,
+.navbar-default .navbar-nav .dropdown-menu > .active > a:hover,
+.navbar-default .navbar-nav .dropdown-menu > .active > a:focus {
+    color: #fabd2f; /* Yellow text */
+    background-color: #665c54; /* Active item background */
+    font-weight: 500;
+}
+
+/* Dropdown divider */
+.navbar-default .navbar-nav .dropdown-menu .divider {
+    background-color: #504945; /* Divider color */
+    margin: 5px 0;
+}
+
+/* Dropdown arrow color */
+.navbar-default .navbar-nav > .open > a:after {
+    border-top-color: #fbf1c7; /* Matches text color */
+}
+
+/* Link styles */
+a {
+    color: #458588; /* Soft blue */
+    text-decoration: none;
+    transition: color 0.2s ease; /* Smooth hover effect */
+}
+
+a:hover {
+    color: #83a598; /* Lighter blue */
+    text-decoration: none;
+}
+
+a:focus {
+    color: #98971a; /* Lighter blue */
+    text-decoration: none;
+}
+
+/* Content area adjustments */
+.container {
+    padding-top: 20px; /* Space for fixed navbar */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}
