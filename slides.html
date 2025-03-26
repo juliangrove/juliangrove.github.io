@@ -25,24 +25,24 @@
     <link rel="stylesheet" type="text/css" href="./css/screen.css" />
     <link rel="stylesheet" type="text/css" media="print" href="./css/print.css" />
     
-    <!-- Abstract Reveal Functionality -->
-    <script>
-      // Toggle visibility of abstract divs
-      document.addEventListener('DOMContentLoaded', function() {
-	  document.querySelectorAll('.abstract-toggle').forEach(function(button) {
-	      button.addEventListener('click', function(e) {
-		  e.preventDefault();
-		  const targetId = this.getAttribute('data-target');
-		  const abstract = document.getElementById(targetId);
-		  if (abstract) {
-		      abstract.style.display = abstract.style.display === 'none' ? 'block' : 'none';
-		      this.textContent = abstract.style.display === 'none' ? 
-			  "Abstract" : "Abstract";
-		  }
-	      });
-	  });
-      });
-    </script>
+    <!-- <\!-- Abstract Reveal Functionality -\-> -->
+    <!-- <script> -->
+    <!--   // Toggle visibility of abstract divs -->
+    <!--   document.addEventListener('DOMContentLoaded', function() { -->
+    <!-- 	  document.querySelectorAll('.abstract-toggle').forEach(function(button) { -->
+    <!-- 	      button.addEventListener('click', function(e) { -->
+    <!-- 		  e.preventDefault(); -->
+    <!-- 		  const targetId = this.getAttribute('data-target'); -->
+    <!-- 		  const abstract = document.getElementById(targetId); -->
+    <!-- 		  if (abstract) { -->
+    <!-- 		      abstract.style.display = abstract.style.display === 'none' ? 'block' : 'none'; -->
+    <!-- 		      this.textContent = abstract.style.display === 'none' ?  -->
+    <!-- 			  "Abstract" : "Abstract"; -->
+    <!-- 		  } -->
+    <!-- 	      }); -->
+    <!-- 	  }); -->
+    <!--   }); -->
+    <!-- </script> -->
     
     <body>
       <div class="container">
