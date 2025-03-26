@@ -208,9 +208,9 @@ summary:hover {
     color: #458588;
 }
 
-summary:focus {
-    color: #98971a;
-}
+/* summary:focus { */
+    /* color: #98971a; */
+/* } */
 
 
 /* details[open] { */
