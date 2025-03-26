@@ -8,5 +8,7 @@ executable site
   main-is:          site.hs
   build-depends:    base
                   , hakyll
+                  , pandoc
+                  , pandoc-types
   ghc-options:      -threaded
   default-language: Haskell2010

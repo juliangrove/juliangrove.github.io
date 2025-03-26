@@ -3,7 +3,8 @@
 
 import Data.Monoid (mappend)
 import Hakyll
-
+import Text.Pandoc
+import Text.Pandoc.Walk (walk)
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -29,7 +30,7 @@ main = hakyll $ do
                   ]) $ do
     route $ setExtension "html"
     compile $ do
-      item1 <- pandocCompiler
+      item1 <- pandocCompilerHandlingAbstract
       item2 <- loadAndApplyTemplate
                "templates/layout.html"
                (defaultContext `mappend` navContext)
@@ -68,3 +69,29 @@ navString currentPage
 navContext :: Context a
 navContext = functionField "nav" f
   where f [ttl] _ = return $ navString ttl
+
+pandocCompilerHandlingAbstract :: Compiler (Item String)
+pandocCompilerHandlingAbstract = do
+  let readerOpts = defaultHakyllReaderOptions 
+        { readerExtensions = enableExtension Ext_fenced_code_blocks 
+          $ readerExtensions defaultHakyllReaderOptions }
+  pandoc <- readPandocWith readerOpts =<< getResourceBody
+  let transformedPandoc = transformAbstract (itemBody pandoc)
+  return $ writePandocWith defaultHakyllWriterOptions (pandoc { itemBody = transformedPandoc })
+
+-- Transform `Div ("",["abstract"],[])` into `<details><summary>`
+transformAbstract :: Pandoc -> Pandoc
+transformAbstract = walk transformBlock
+  where
+    transformBlock :: Block -> Block
+    transformBlock (Div (_, classes, _) content)
+      | "abstract" `elem` classes =
+          let summary = [Para [Str "Abstract"]]
+              detailsContent = content
+              detailsHtml = RawBlock "html" "<details><summary>"
+                            : summary
+                            ++ RawBlock "html" "</summary>" 
+                            : detailsContent
+                            ++ [RawBlock "html" "</details>"]
+          in Div ("", [], []) detailsHtml
+    transformBlock block = block
