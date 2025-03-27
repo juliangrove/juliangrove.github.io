@@ -56,7 +56,6 @@ pagetitle: papers
     #+begin_div
    The satisfaction theory of presupposition projection found in Heim 1983 has paved the way for a successful research tradition within dynamic semantics which has given rise to compositional analyses of a variety of projection behaviors. Since Geurts 1996, however, the promise of this research program has been called into question due to what Geurts dubs the "proviso problem": satisfaction theory generates incorrect predictions in cases in which a presupposition ends up filtered which should not have been. I show that the satisfaction account of presupposition projection is nevertheless in good shape by revealing that the observations of Geurts are valid only under certain basic assumptions about how semantic composition works. To illustrate this, I present a satisfaction account of presupposition projection that incorporates a notion of scope-taking based on monads. The resulting composition scheme provides a setting in which the proviso problem does not arise, thus lending support to the scope theory of presupposition projection.
    #+end_div
-** 2022
    *Algebraic effects for extensible dynamic semantics* \\
    With Jean-Philippe Bernardy.
    Journal of Logic, Language and Information.
