@@ -12,8 +12,7 @@ pagetitle: papers
    #+attr_html: :class abstract
    #+begin_div
    We show that when analyzing data from inference judgment tasks, it can be important to incorporate into one's data analysis regime an explicit representation of the semantics of the natural language prompt used to guide participants on the task. To demonstrate this, we conduct two experiments within an existing experimental paradigm focused on measuring factive inferences, while manipulating the prompt participants receive in small but semantically potent ways. In statistical model comparisons couched within the framework of probabilistic dynamic semantics, we find that probabilistic models structured, in part, by the semantics of the prompt fit better to data collected using that prompt than models that ignore the semantics of the prompt.
-   #+end_div
-   
+   #+end_div  
 ** 2024
    *Probabilistic dynamic semantics* \\
    With [[http://aaronstevenwhite.io/][Aaron Steven White]].
@@ -22,7 +21,6 @@ pagetitle: papers
    #+begin_div
    We introduce the framework of Probabilistic Dynamic Semantics (PDS), which we use to seamlessly integrate dynamic semantic analyses of lexical and discourse phenomena in the Montagovian tradition with probabilistic models of linguistic inference datasets. We show how PDS provides a general standpoint from which to understand uncertainty and context sensitivity in discourse and briefly illustrate applications to anaphora and vagueness.
    #+end_div
-** 2024
    *Factivity, presupposition projection, and the role of discrete knowledge in gradience inference judgments* \\
    With [[http://aaronstevenwhite.io/][Aaron Steven White]].
    Under review.
@@ -31,7 +29,6 @@ pagetitle: papers
     #+begin_div
    We investigate whether the factive presuppositions associated with some clause-embedding predicates are fundamentally discrete in nature - as classically assumed - or fundamentally gradient - as recently proposed (Tonhauser, Beaver, and Degen 2018). To carry out this investigation, we develop statistical models of presupposition projection that implement these two hypotheses, fit these models to existing inference judgment data aimed at measuring factive presuppositions (Degen and Tonhauser 2021), and compare the models' fits to the data using standard statistical model comparison metrics. We find that models implementing the hypothesis that presupposition projection is fundamentally discrete fit the data better than models implementing the hypothesis that it is fundamentally gradient. To evaluate the robustness of this finding, we collect three additional datasets: a replication of the original dataset, as well as two datasets that modify the methodology of the original. Across the three datasets, we again find that models implementing the discreteness hypothesis fit the data better than models implementing the gradience hypothesis. We argue that these results favor an account on which factive presuppositions are fundamentally discrete in nature, and we discuss how this discreteness might be cashed out within both classical semantic accounts of factive predicates as well as accounts of presupposition projection that tie it to the question under discussion.
    #+end_div
-
 ** 2023
    *Probabilistic compositional semantics, purely* \\
    With Jean-Philippe Bernardy.
@@ -51,7 +48,6 @@ pagetitle: papers
     #+begin_div
    Charlow (2014, 2020a,b) develops a view of indefinites according to which they give rise to alternatives, an aspect of their meaning intended to explain the fact that they may generally take exceptional scope past scope islands. Charlow (2020a,b) proposes that exceptional scope arises from the confluence of two factors: two polymorphic type shifts that regulate how the alternative sets denoted by indefinites compose with other expressions, and the availability of roll-up pied piping as a scope-taking strategy. The current paper explores a related observation about presupposition triggers: they, too, involve a kind of exceptional scope, which is reflected in their projection behavior. I propose a move analogous to that of Heim (1982) by treating definite noun phrases (and other presupposition triggers) on a par with indefinites, but within a variant of the alternative semantics introduced by Charlow. The resulting interpretation scheme preserves the alternative-style analysis of indefinites, but integrates a novel analysis of presupposition triggers that accounts for their flexible projection behavior. It additionally yields a simple analysis of presupposition accommodation according to which denotations for presupposition triggers are mapped onto those for indefinites.
    #+end_div
-** 2022
    *Presupposition projection as a scope phenomenon* \\
    Semantics & Pragmatics 15(15).
    doi:[[https://doi.org/10.3765/sp.15.15][10.3765/sp.15.15]].
@@ -69,7 +65,6 @@ pagetitle: papers
     #+begin_div
    Research in dynamic semantics has made strides by studying various aspects of discourse in terms of computational effect systems, for example, monads (Shan, 2002; Unger, 2011; Charlow, 2014), continuations (de Groote, 2001; Barker and Shan, 2014), and general effect handlers (Maršik, 2016). We provide a system, based on graded monads, that synthesizes insights from these programs by formalizing individual discourse phenomena in terms of separate effects, or grades. Included are effects for introducing and retrieving discourse referents, non-determinism for indefiniteness, and generalized quantifier meanings. We formalize the behavior of individual effects, as well as the interactions between effects, in terms of algebraic laws tailored to the relevant discourse phenomena. The system we propose is thus modular and suggests a novel approach to integrating formal accounts of distinct semantic phenomena. Finally, we give an interpretation of the system into pure λ-calculus that respects the laws. Future work will aim to integrate more discourse phenomena using the same methodology, for example, presupposition and conventional implicature.
    #+end_div
-** 2022
    *Rational Speech Act models are utterance-independent updates of world priors* \\
    Second author, with Jean-Philippe Bernardy and Christine Howes.
    Proceedings of the 26th Workshop on the Semantics and Pragmatics of Dialogue.
@@ -85,7 +80,7 @@ pagetitle: papers
    Available [[https://aclanthology.org/2021.naloma-1.8/][here]].
    #+attr_html: :class abstract
     #+begin_div
-   Formal semantics in the Montagovian tradition provides precise meaning characterisations, but usually without a formal theory of the pragmatics of contextual parameters and their sensitivity to background knowledge. Meanwhile, formal pragmatic theories make explicit predictions about meaning in context, but generally without a well-defined compositional semantics. We propose a combined framework for the semantic and pragmatic interpretation of sentences in the face of probabilistic knowledge. We do so by (1) extending a Montagovian interpretation scheme to generate a distribution over possible meanings, and (2) generating a posterior for this distribution using a variant of the Rational Speech Act (RSA) models, but generalised to arbitrary propositions. These aspects of our framework are tied together by evaluating entailment under probabilistic uncertainty. We apply our model to anaphora resolution and show that it provides expected biases under suitable assumptions about the distributions of lexical and world-knowledge. Further, we observe that the model’s output is robust to variations in its parameters within reasonable ranges.
+   Formal semantics in the Montagovian tradition provides precise meaning characterisations, but usually without a formal theory of the pragmatics of contextual parameters and their sensitivity to background knowledge. Meanwhile, formal pragmatic theories make explicit predictions about meaning in context, but generally without a well-defined compositional semantics. We propose a combined framework for the semantic and pragmatic interpretation of sentences in the face of probabilistic knowledge. We do so by (1) extending a Montagovian interpretation scheme to generate a distribution over possible meanings, and (2) generating a posterior for this distribution using a variant of the Rational Speech Act (RSA) models, but generalised to arbitrary propositions. These aspects of our framework are tied together by evaluating entailment under probabilistic uncertainty. We apply our model to anaphora resolution and show that it provides expected biases under suitable assumptions about the distributions of lexical and world-knowledge. Further, we observe that the model's output is robust to variations in its parameters within reasonable ranges.
    #+end_div
 ** 2019
    *Structural priming in production through 'silence':
@@ -93,35 +88,67 @@ pagetitle: papers
    Second author, with Ming Xiang and Jason Merchant.
    Glossa 4(1).
    doi:[[http://doi.org/10.5334/gjgl.726][10.5334/gjgl.726]].
+   #+attr_html: :class abstract
+   #+begin_div
+   There are two common competing conceptions of how ellipsis can be resolved: in the first, ellipsis is resolved by constructing unpronounced syntactic representations at the ellipsis site; in the second, ellipsis can be resolved by consulting the semantic/discourse information present in the antecedent, without the mediation of any syntax at all. In four syntactic priming experiments, we examine whether resolving English VP ellipsis and Null Complement Anaphora involves accessing the syntactic representations, or only the semantic representations, of the antecedent clause. Our findings suggest both VPE and Null Complement Anaphora can trigger structural priming effects, but the conditions under which they trigger priming are different. These results have implications for both theories of structural priming mechanism and theories of ellipsis resolution.
+   #+end_div
 ** 2017
    *German relative clauses and the severed index hypothesis* \\
    Second author, with Emily Hanink.
    [[http://www.lingref.com/cpp/wccfl/34/][Proceedings]] of WCCFL 34.
+   #+attr_html: :class abstract
+   #+begin_div
+   German definite articles are able to contract with prepositions under certain conditions. When a noun phrase is discourse anaphoric, contraction is blocked. The paper presents a puzzle surrounding this generalization: restrictive relative clauses require the use of the non-contracted (strong) article form, despite their apparent lack of anaphoricity; both the determiner of the head noun and the relative pronoun (which is, in most cases, syncretic with the definite article) surface with the strong form. The account provides a uniform analysis of discourse anaphoric and relative clause uses that requires interpreting indices as features that may occupy their own projections in nominal structure. In this analysis, the distinction between the strong and weak form is structural; the strong form contains an additional projection, called 'idxP', that intervenes between the determiner and the noun in anaphoric contexts. idxP hosts an index feature that may act either as a bindee, in the relative-clause internal position, or as a binder, in the relative-clause external position. The proposal furthermore shows that when assignment functions are built into the semantic model, idx is able to compositionally bind elements within its scope. In sum, the analysis unites anaphoric and relative clause uses by showing that both require the same additional structure, which is absent in the contracted (weak) article form, for binding purposes.
+   #+end_div
 ** 2016
    *Article selection and anaphora in the German relative clause* \\
    With Emily Hanink.
    [[https://journals.linguisticsociety.org/proceedings/index.php/SALT/issue/view/154][Proceedings]] of Semantics and Linguistic Theory 26.
-** 2016
+   #+attr_html: :class abstract
+   #+begin_div
+  German definite articles are able to contract with prepositions under certain conditions. When a noun phrase is discourse anaphoric, contraction is blocked. In the current paper we present a puzzle: restrictive relative clauses require the use of the non-contracted (strong) article form, despite their apparent lack of anaphoricity; both the determiner of the head noun and the relative pronoun (which is, in most cases, syncretic with the definite article) surface with the strong form. We provide a uniform analysis of discourse anaphoric and relative clause uses that makes use of contexts, as defined in the dynamic framework of de Groote (2006). We argue that a lexical item, which we call "anaph", whose purpose is to make reference to an individual provided by the context, intervenes between the noun and the article in the strong form. anaph makes reference to an individual provided by the global context in cases of anaphora, and to an individual provided by an updated local context in the case of relative clauses. 
+   #+end_div
    *Semantic and pragmatic processes in the comprehension of negation:
    An event related potential study of negative polarity sensitivity* \\
    Second author, with Ming Xiang and Anastasia Giannakidou.
    Journal of Neurolinguistics 38.
+   #+attr_html: :class abstract
+   #+begin_div
+   Most previous studies on negation have generally only focused on sentential negation (not), but the time course of processing negative meaning from different sources remains poorly understood. In an ERP study (Experiment 1), we make use of the negation-sensitivity of negative polarity items (NPIs) and examine the time course of processing different kinds of negation. Four kinds of NPI-licensing environments were examined: the negative determiner no, the negative determiner few, the focus marker only, and emotive predicates (e.g., surprised). While the first three contribute a negative meaning via semantic assertion (explicit negation), the last gives rise to a pragmatic negative inference via non-asserted content (implicit negation). Under all these environments, an NPI elicited a smaller N400 compared to an unlicensed NPI, suggesting that negation, regardless of its source, is rapidly computed online. However, we also observed that explicit negative meaning (i.e., semantic, as contributed in the assertion) and implicit negative meaning (contributed by pragmatic inferences) were integrated into the grammatical representation in different ways, leading to a difference in the P600, and calling for a separation of semantic and pragmatic integration during sentence processing (and NPI licensing). The qualitative differences between these conditions were also replicated in a self-paced reading study (Experiment 2).
+   #+end_div
 ** 2015
    *Singular count pseudo-partitives* \\
    [[https://ojs.ub.uni-konstanz.de/sub/index.php/sub/issue/view/8][Proceedings]] of Sinn und Bedeutung 19.
+   #+attr_html: :class abstract
+   #+begin_div
+   Inversion-constructions, like too tasty of a cake and a disaster of a conference, have generally been treated separately from superficially similar-looking pseudo-partitives, like three gallons of water. I argue for an analysis that unifies the syntax and semantics of the two constructions through a proposal about the head of that appears in both. Both constructions involve the composition of two properties: one is contributed by the head noun; the other is contributed by the modifier, i.e., the measure-phrase in pseudo-partitives and the noun phrase or degree phrase in inversion-constructions. Moreover, while pseudo-partitives involve the composition of two properties of individuals, inversion-constructions involve the composition of two properties of states. A single semantic constraint—non-divisiveness of the property denoted by the modifier—is seen to play a role in both types of constructions, and, in particular, to predict both the monotonicity of modifiers in pseudo-partitives and the gradability of modifiers in inversion-constructions.
+   #+end_div
 ** 2013
    *Dependency-dependent interference: NPI interference, agreement attraction,
    and global pragmatic inferences* \\
    Second author, with Ming Xiang and Anastasia Giannakidou. Frontiers in
    Psychology 4. doi:[[http://doi.org/10.3389/fpsyg.2013.00708][10.3389/fpsyg.2013.00708]].
-** 2013
+   #+attr_html: :class abstract
+   #+begin_div
+   Previous psycholinguistics studies have shown that when forming a long distance dependency in online processing, the parser sometimes accepts a sentence even though the required grammatical constraints are only partially met. A mechanistic account of how such errors arise sheds light on both the underlying linguistic representations involved and the processing mechanisms that put such representations together. In the current study, we contrast the negative polarity items (NPI) interference effect, as shown by the acceptance of an ungrammatical sentence like "The bills that democratic senators have voted for will ever become law," with the well-known phenomenon of agreement attraction ("The key to the cabinets are … "). On the surface, these two types of errors look alike and thereby can be explained as being driven by the same source: similarity based memory interference. However, we argue that the linguistic representations involved in NPI licensing are substantially different from those of subject-verb agreement, and therefore the interference effects in each domain potentially arise from distinct sources. In particular, we show that NPI interference at least partially arises from pragmatic inferences. In a self-paced reading study with an acceptability judgment task, we showed NPI interference was modulated by participants' general pragmatic communicative skills, as quantified by the Autism-Spectrum Quotient (AQ, Baron-Cohen et al., 2001), especially in offline tasks. Participants with more autistic traits were actually less prone to the NPI interference effect than those with fewer autistic traits. This result contrasted with agreement attraction conditions, which were not influenced by individual pragmatic skill differences. We also show that different NPI licensors seem to have distinct interference profiles. We discuss two kinds of interference effects for NPI licensing: memory-retrieval based and pragmatically triggered.
+   #+end_div
    *The lexical semantics of much: Conversion from intervals to degrees* \\
    Proceedings of NELS 44.
+   #+attr_html: :class abstract
+   #+begin_div
+   #+end_div
 ** 2011
-   *Effects of working memory capacity and “autistic” traits on phonotactic effects in speech perception* \\
+   *Effects of working memory capacity and "autistic" traits on phonotactic effects in speech perception* \\
    Second author, with Alan Yu, Martina Martinović, and Morgan Sonderegger.
    Proceedings of the International Congress of the Phonetic Sciences XVII.
-** 2011
+   #+attr_html: :class abstract
+   #+begin_div
+   Individual differences in cognitive processing style have recently been hypothesized as an important source of systematic variability in speech processing. This study offers further evidence in support of this hypothesis by showing that variability in cognitive processing style, as measured by differences in working memory capacity and "autistic" traits, significantly influences listeners' response to the effect of phonotactics in speech perception. As listeners' failure to properly normalize for context-induced variation has been taken to be a major source of innovative linguistic variants, individual variability in cognitive processing style stands to be a significant source of systematic variation in language.
+   #+end_div
    *Effects of Speaker Evaluation on Phonetic Convergence* \\
    Second author, with Carissa Abrego-Collier, Morgan Sonderegger, and Alan Yu.
    Proceedings of the International Congress of the Phonetic Sciences XVII.
+   #+attr_html: :class abstract
+   #+begin_div
+   Numerous studies have documented the phenomenon of phonetic convergence: the process by which speakers alter their productions to become more similar on some phonetic or acoustic dimension to those of their interlocutor. Though social factors have been suggested as a motivator for imitation, a relatively smaller body of studies has established a tight connection between extralinguistic factors and a speaker's likelihood to imitate. The present study explores the effects of a speaker's attitude toward an interlocutor on the likelihood of imitation for extended VOT. Experimental results show that the extent of phonetic convergence (and divergence) depends on the speaker's disposition towards an interlocutor, but not on more "macro" social variables, such as the speaker's gender.
+   #+end_div
