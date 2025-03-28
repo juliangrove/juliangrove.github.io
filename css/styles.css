@@ -6,7 +6,7 @@ body {
     font-weight: 300;
     background-color: #282828;
     /* color: #a89984; */
-    color: #d5c4a1; 
+    color: #fbf1c7; 
     line-height: 1.6; /* Improved readability */
 }
 
@@ -27,7 +27,7 @@ h1 {
     font-size: 2.2em;
     font-weight: 600; /* Semi-bold */
     margin: 1em 0 0.5em;
-    color: #d5c4a1; /* Light cream color for better contrast */
+    color: #fbf1c7; /* Light cream color for better contrast */
 }
 
 h2 {
@@ -40,7 +40,7 @@ h2 {
 h3 {
     font-size: 1.4em;
     margin: 1em 0 0.5em;
-    color: #d5c4a1; /* Lighter text for hierarchy */
+    color: #fbf1c7; /* Lighter text for hierarchy */
 }
 
 /* Navbar styles - normal case */
