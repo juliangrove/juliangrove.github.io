@@ -26,7 +26,7 @@ pagetitle: papers
    Under review.
    Available on [[https://ling.auf.net/lingbuzz/007450][Lingbuzz]].
    #+attr_html: :class abstract
-    #+begin_div
+   #+begin_div
    We investigate whether the factive presuppositions associated with some clause-embedding predicates are fundamentally discrete in nature - as classically assumed - or fundamentally gradient - as recently proposed (Tonhauser, Beaver, and Degen 2018). To carry out this investigation, we develop statistical models of presupposition projection that implement these two hypotheses, fit these models to existing inference judgment data aimed at measuring factive presuppositions (Degen and Tonhauser 2021), and compare the models' fits to the data using standard statistical model comparison metrics. We find that models implementing the hypothesis that presupposition projection is fundamentally discrete fit the data better than models implementing the hypothesis that it is fundamentally gradient. To evaluate the robustness of this finding, we collect three additional datasets: a replication of the original dataset, as well as two datasets that modify the methodology of the original. Across the three datasets, we again find that models implementing the discreteness hypothesis fit the data better than models implementing the gradience hypothesis. We argue that these results favor an account on which factive presuppositions are fundamentally discrete in nature, and we discuss how this discreteness might be cashed out within both classical semantic accounts of factive predicates as well as accounts of presupposition projection that tie it to the question under discussion.
    #+end_div
 ** 2023
@@ -37,7 +37,7 @@ pagetitle: papers
    doi:[[https://doi.org/10.1007/978-3-031-36190-6_17][10.1007/978-3-031-36190-6_17]].
    Also available on [[https://ling.auf.net/lingbuzz/006284][Lingbuzz]].
    #+attr_html: :class abstract
-    #+begin_div
+   #+begin_div
    We provide a general framework for the integration of formal semantics with probabilistic reasoning. This framework is conservative, in the sense that it relies only on typed λ-calculus and is thus compatible with logical systems already in use. The framework is also presented modularly, in that it regards probabilistic effects (i.e., sampling and marginalization) as side effects, using continuations. We show how our framework may be used to build probabilistic programs compositionally within typed λ-calculus and then illustrate its use on two applications: semantic learning and pragmatic inference within the Rational Speech Act framework.
    #+end_div
 ** 2022
@@ -53,7 +53,7 @@ pagetitle: papers
    doi:[[https://doi.org/10.3765/sp.15.15][10.3765/sp.15.15]].
    (Update of manuscript 'Satisfaction without provisos', available on [[https://ling.auf.net/lingbuzz/004914][LingBuzz]].)
    #+attr_html: :class abstract
-    #+begin_div
+   #+begin_div
    The satisfaction theory of presupposition projection found in Heim 1983 has paved the way for a successful research tradition within dynamic semantics which has given rise to compositional analyses of a variety of projection behaviors. Since Geurts 1996, however, the promise of this research program has been called into question due to what Geurts dubs the "proviso problem": satisfaction theory generates incorrect predictions in cases in which a presupposition ends up filtered which should not have been. I show that the satisfaction account of presupposition projection is nevertheless in good shape by revealing that the observations of Geurts are valid only under certain basic assumptions about how semantic composition works. To illustrate this, I present a satisfaction account of presupposition projection that incorporates a notion of scope-taking based on monads. The resulting composition scheme provides a setting in which the proviso problem does not arise, thus lending support to the scope theory of presupposition projection.
    #+end_div
    *Algebraic effects for extensible dynamic semantics* \\
@@ -61,7 +61,7 @@ pagetitle: papers
    Journal of Logic, Language and Information.
    Preprint on the [[https://semanticsarchive.net/Archive/TMxNGE3M/][Semantics Archive]].
    #+attr_html: :class abstract
-    #+begin_div
+   #+begin_div
    Research in dynamic semantics has made strides by studying various aspects of discourse in terms of computational effect systems, for example, monads (Shan, 2002; Unger, 2011; Charlow, 2014), continuations (de Groote, 2001; Barker and Shan, 2014), and general effect handlers (Maršik, 2016). We provide a system, based on graded monads, that synthesizes insights from these programs by formalizing individual discourse phenomena in terms of separate effects, or grades. Included are effects for introducing and retrieving discourse referents, non-determinism for indefiniteness, and generalized quantifier meanings. We formalize the behavior of individual effects, as well as the interactions between effects, in terms of algebraic laws tailored to the relevant discourse phenomena. The system we propose is thus modular and suggests a novel approach to integrating formal accounts of distinct semantic phenomena. Finally, we give an interpretation of the system into pure λ-calculus that respects the laws. Future work will aim to integrate more discourse phenomena using the same methodology, for example, presupposition and conventional implicature.
    #+end_div
    *Rational Speech Act models are utterance-independent updates of world priors* \\
