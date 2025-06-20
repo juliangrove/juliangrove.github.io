@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE LambdaCase #-}</span><span>
+</span><span id="line-2"></span><span>
+</span><span id="line-3"></span><span class="annot"><span class="hs-comment">{-|
+Module      : Grammar.Lexica.SynSem
+Description : Components for defining CCG lexica with catogories and &#955;-terms.
+Copyright   : (c) Julian Grove and Aaron Steven White, 2025
+License     : MIT
+Maintainer  : julian.grove@gmail.com
+-}</span></span><span>
+</span><span id="line-10"></span><span>
+</span><span id="line-11"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Grammar.Lexica.SynSem</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-12"></span><span>
+</span><span id="line-13"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Grammar.CCG.html"><span class="hs-identifier">Grammar.CCG</span></a></span><span>
+</span><span id="line-14"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Lambda.html"><span class="hs-identifier">Lambda</span></a></span><span>
+</span><span id="line-15"></span><span>
+</span><span id="line-16"></span><span class="hs-comment">--------------------------------------------------------------------------------</span><span>
+</span><span id="line-17"></span><span class="annot"><span class="hs-comment">-- * Lexica with syntax and semantics</span></span><span>
+</span><span id="line-18"></span><span>
+</span><span id="line-19"></span><span class="hs-comment">-- | A representation for expressions having both a category (@syn@) and a typed</span><span>
+</span><span id="line-20"></span><span class="hs-comment">-- &#955;-term (@sem@).</span><span>
+</span><span id="line-21"></span><span class="hs-keyword">data</span><span> </span><span id="SynSem"><span class="annot"><a href="Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-var">SynSem</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="SynSem"><span class="annot"><a href="Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-var">SynSem</span></a></span></span><span> </span><span class="hs-special">{</span><span> </span><span id="syn"><span class="annot"><span class="annottext">SynSem -&gt; Cat
+</span><a href="Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var hs-var">syn</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Grammar.CCG.html#Cat"><span class="hs-identifier hs-type">Cat</span></a></span><span class="hs-special">,</span><span> </span><span id="sem"><span class="annot"><span class="annottext">SynSem -&gt; Typed
+</span><a href="Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var hs-var">sem</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Lambda.Types.html#Typed"><span class="hs-identifier hs-type">Typed</span></a></span><span> </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679076629"><span id="local-6989586621679076635"><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; Bool
+(SynSem -&gt; SynSem -&gt; Bool)
+-&gt; (SynSem -&gt; SynSem -&gt; Bool) -&gt; Eq SynSem
+forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
+$c== :: SynSem -&gt; SynSem -&gt; Bool
+== :: SynSem -&gt; SynSem -&gt; Bool
+$c/= :: SynSem -&gt; SynSem -&gt; Bool
+/= :: SynSem -&gt; SynSem -&gt; Bool
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679076640"><span id="local-6989586621679076648"><span id="local-6989586621679076652"><span class="annot"><span class="annottext">Int -&gt; SynSem -&gt; ShowS
+[SynSem] -&gt; ShowS
+SynSem -&gt; String
+(Int -&gt; SynSem -&gt; ShowS)
+-&gt; (SynSem -&gt; String) -&gt; ([SynSem] -&gt; ShowS) -&gt; Show SynSem
+forall a.
+(Int -&gt; a -&gt; ShowS) -&gt; (a -&gt; String) -&gt; ([a] -&gt; ShowS) -&gt; Show a
+$cshowsPrec :: Int -&gt; SynSem -&gt; ShowS
+showsPrec :: Int -&gt; SynSem -&gt; ShowS
+$cshow :: SynSem -&gt; String
+show :: SynSem -&gt; String
+$cshowList :: [SynSem] -&gt; ShowS
+showList :: [SynSem] -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var hs-var hs-var">Show</span></span></span></span></span><span class="hs-special">)</span><span>
+</span><span id="line-22"></span></pre></body></html>
