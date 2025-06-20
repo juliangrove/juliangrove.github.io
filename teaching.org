@@ -4,5 +4,5 @@ pagetitle: teaching
 ---
 
 * Teaching
-  [[https://juliangrove.github.io/nasslli-2025/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]]) - [[https://nasslli25.shane.st/][NASSLLI '25]] at the University of Washington (June 23-27, 2025)
+  [[https://juliangrove.github.io/nasslli-2025/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]]) - [[https://nasslli25.shane.st/][NASSLLI '25]] at the University of Washington (June 23-27, 2025) \\
   [[./ur-comp-sem-2023/README.html][Computational Semantics]] - University of Rochester (Fall, 2023).
