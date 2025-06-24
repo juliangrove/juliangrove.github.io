@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes – Probabilistic dynamic semantics</title>
+<title>The experimental turn: new opportunities for semantic theory – Probabilistic dynamic semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../factivity/index.html" rel="next">
-<link href="../pds-intro/index.html" rel="prev">
+<link href="../background/understanding-gradience.html" rel="next">
+<link href="../background/traditional-methodology.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -105,6 +125,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -118,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/index.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/index.html">Notes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../background/traditional-methodology.html">Background</a></li><li class="breadcrumb-item"><a href="../background/experimental-turn.html">The experimental turn: new opportunities for semantic theory</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -172,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">The experimental turn: new opportunities for semantic theory</span></a>
   </div>
 </li>
@@ -236,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../adjectives/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../adjectives/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes</span></a>
   </div>
 </li>
@@ -281,15 +330,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#scaling-semantic-investigation" id="toc-scaling-semantic-investigation" class="nav-link active" data-scroll-target="#scaling-semantic-investigation">Scaling Semantic Investigation</a></li>
+  <li><a href="#teasing-apart-contributing-factors" id="toc-teasing-apart-contributing-factors" class="nav-link" data-scroll-target="#teasing-apart-contributing-factors">Teasing Apart Contributing Factors</a></li>
+  <li><a href="#making-linking-hypotheses-explicit" id="toc-making-linking-hypotheses-explicit" class="nav-link" data-scroll-target="#making-linking-hypotheses-explicit">Making Linking Hypotheses Explicit</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/index.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/index.html">Notes</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../background/traditional-methodology.html">Background</a></li><li class="breadcrumb-item"><a href="../background/experimental-turn.html">The experimental turn: new opportunities for semantic theory</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Notes</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">The experimental turn: new opportunities for semantic theory</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -306,25 +363,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These notes will become available on June 25.</p>
-</div>
-</div>
+<p>The traditional methodology’s success has created a foundation solid enough to support exciting new extensions. Experimental semantics brings the tools of behavioral experimentation to bear on questions about meaning, allowing us to test and refine theoretical insights at unprecedented scale.</p>
+<section id="scaling-semantic-investigation" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-semantic-investigation">Scaling Semantic Investigation</h3>
+<p>Where traditional methods might examine a handful of predicates, experimental approaches can investigate entire lexical domains. Extending our example involving the verb <em>love</em>: English has thousands of similar clause-embedding predicates, each potentially varying in its inferential properties. We can now test whether generalizations based on canonical examples extend across these vast lexicons.</p>
+<p>The MegaAttitude project <span class="citation" data-cites="white_computational_2016 white_role_2018 white_lexicosyntactic_2018 white_frequency_2020 an_lexical_2020 moon_source_2020 kane_intensional_2022">(<a href="#ref-white_computational_2016" role="doc-biblioref">White and Rawlins 2016</a>, <a href="#ref-white_role_2018" role="doc-biblioref">2018</a>, <a href="#ref-white_frequency_2020" role="doc-biblioref">2020</a>; <a href="#ref-white_lexicosyntactic_2018" role="doc-biblioref">White et al. 2018</a>; <a href="#ref-an_lexical_2020" role="doc-biblioref">An and White 2020</a>; <a href="#ref-moon_source_2020" role="doc-biblioref">Moon and White 2020</a>; <a href="#ref-kane_intensional_2022" role="doc-biblioref">Kane, Gantt, and White 2022</a>)</span> is one example of this approach. This project aims to collect inference judgments for hundreds of predicates across multiple contexts and inference types. This scale reveals patterns that are very difficult to see and evaluate the quality of using traditional methods—subtle distinctions between near-synonyms, unexpected predicate clusters, and systematic variation across semantic domains.</p>
+</section>
+<section id="teasing-apart-contributing-factors" class="level3">
+<h3 class="anchored" data-anchor-id="teasing-apart-contributing-factors">Teasing Apart Contributing Factors</h3>
+<p>Experimental methods also allow us to investigate the rich array of factors that influence inference judgments:</p>
+<ul>
+<li><strong>Semantic knowledge</strong>: The core meanings of expressions</li>
+<li><strong>World knowledge</strong>: Prior beliefs about plausibility<br>
+</li>
+<li><strong>Contextual factors</strong>: The discourse context and QUD</li>
+<li><strong>Individual differences</strong>: Variation in how speakers interpret expressions</li>
+<li><strong>Response strategies</strong>: How participants use rating scales</li>
+</ul>
+<p>Rather than viewing these as confounds, we can see them as windows into the cognitive processes underlying semantic interpretation. For instance, <span class="citation" data-cites="degen_prior_2021">Degen and Tonhauser (<a href="#ref-degen_prior_2021" role="doc-biblioref">2021</a>)</span> systematically manipulated world knowledge to show how prior beliefs modulate the strength of factive inferences, revealing the interplay between semantic and pragmatic factors.</p>
+</section>
+<section id="making-linking-hypotheses-explicit" class="level3">
+<h3 class="anchored" data-anchor-id="making-linking-hypotheses-explicit">Making Linking Hypotheses Explicit</h3>
+<p>Perhaps most importantly, experimental approaches force us to make explicit what traditional methods leave implicit: the link between semantic representations and behavioral responses <span class="citation" data-cites="jasbi_linking_2019 waldon_modeling_2020 phillips_theories_2021">(<a href="#ref-jasbi_linking_2019" role="doc-biblioref">Jasbi, Waldon, and Degen 2019</a>; <a href="#ref-waldon_modeling_2020" role="doc-biblioref">Waldon and Degen 2020</a>; <a href="#ref-phillips_theories_2021" role="doc-biblioref">Phillips et al. 2021</a>)</span>. When we say speakers judge that an inference follows, what cognitive processes produce that judgment? How do abstract semantic representations map onto the responses on some scale?</p>
+<p>This is not merely a methodological detail—it’s a substantive theoretical question. Different linking hypotheses make different predictions about response patterns, allowing us to test not just our semantic theories but our assumptions about how those theories connect to behavior. Even if our real interest is in characterizing the semantic representations of speakers, we can’t ignore the way those representations map onto their responses in some task.</p>
 
 
 <!-- -->
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-an_lexical_2020" class="csl-entry" role="listitem">
+An, Hannah, and Aaron White. 2020. <span>“The Lexical and Grammatical Sources of Neg-Raising Inferences.”</span> <em>Proceedings of the Society for Computation in Linguistics</em> 3 (1): 220–33. https://doi.org/<a href="https://doi.org/10.7275/yts0-q989">https://doi.org/10.7275/yts0-q989</a>.
+</div>
+<div id="ref-degen_prior_2021" class="csl-entry" role="listitem">
+Degen, Judith, and Judith Tonhauser. 2021. <span>“Prior <span>Beliefs</span> <span>Modulate</span> <span>Projection</span>.”</span> <em>Open Mind</em> 5 (September): 59–70. <a href="https://doi.org/10.1162/opmi_a_00042">https://doi.org/10.1162/opmi_a_00042</a>.
+</div>
+<div id="ref-jasbi_linking_2019" class="csl-entry" role="listitem">
+Jasbi, Masoud, Brandon Waldon, and Judith Degen. 2019. <span>“Linking <span>Hypothesis</span> and <span>Number</span> of <span>Response</span> <span>Options</span> <span>Modulate</span> <span>Inferred</span> <span>Scalar</span> <span>Implicature</span> <span>Rate</span>.”</span> <em>Frontiers in Psychology</em> 10 (February). <a href="https://doi.org/10.3389/fpsyg.2019.00189">https://doi.org/10.3389/fpsyg.2019.00189</a>.
+</div>
+<div id="ref-kane_intensional_2022" class="csl-entry" role="listitem">
+Kane, Benjamin, Will Gantt, and Aaron Steven White. 2022. <span>“Intensional <span>Gaps</span>: <span>Relating</span> Veridicality, Factivity, Doxasticity, Bouleticity, and Neg-Raising.”</span> <em>Semantics and Linguistic Theory</em> 31 (0): 570–605. <a href="https://doi.org/10.3765/salt.v31i0.5137">https://doi.org/10.3765/salt.v31i0.5137</a>.
+</div>
+<div id="ref-moon_source_2020" class="csl-entry" role="listitem">
+Moon, Ellise, and Aaron White. 2020. <span>“The Source of Nonfinite Temporal Interpretation.”</span> In <em>Proceedings of the 50th <span>Annual</span> <span>Meeting</span> of the <span>North</span> <span>East</span> <span>Linguistic</span> <span>Society</span></em>, edited by Mariam Asatryan, Yixiao Song, and Ayana Whitmal, 3:11–24. Amherst: GLSA Publications.
+</div>
+<div id="ref-phillips_theories_2021" class="csl-entry" role="listitem">
+Phillips, Colin, Phoebe Gaston, Nick Huang, and Hanna Muller. 2021. <span>“Theories <span>All</span> the <span>Way</span> <span>Down</span>: <span>Remarks</span> on <span>‘<span>Theoretical</span>’</span> and <span>‘<span>Experimental</span>’</span> <span>Linguistics</span>.”</span> In <em>The <span>Cambridge</span> <span>Handbook</span> of <span>Experimental</span> <span>Syntax</span></em>, edited by Grant Goodall, 587–616. Cambridge <span>Handbooks</span> in <span>Language</span> and <span>Linguistics</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/9781108569620.023">https://doi.org/10.1017/9781108569620.023</a>.
+</div>
+<div id="ref-waldon_modeling_2020" class="csl-entry" role="listitem">
+Waldon, Brandon, and Judith Degen. 2020. <span>“Modeling <span>Behavior</span> in <span>Truth</span> <span>Value</span> <span>Judgment</span> <span>Task</span> <span>Experiments</span>.”</span> In <em>Proceedings of the <span>Society</span> for <span>Computation</span> in <span>Linguistics</span> 2020</em>, edited by Allyson Ettinger, Gaja Jarosz, and Joe Pater, 238–47. New York, New York: Association for Computational Linguistics. <a href="https://aclanthology.org/2020.scil-1.29/">https://aclanthology.org/2020.scil-1.29/</a>.
+</div>
+<div id="ref-white_computational_2016" class="csl-entry" role="listitem">
+White, Aaron Steven, and Kyle Rawlins. 2016. <span>“A Computational Model of <span>S</span>-Selection.”</span> <em>Semantics and Linguistic Theory</em> 26 (0): 641–63. <a href="https://doi.org/10.3765/salt.v26i0.3819">https://doi.org/10.3765/salt.v26i0.3819</a>.
+</div>
+<div id="ref-white_role_2018" class="csl-entry" role="listitem">
+———. 2018. <span>“The Role of Veridicality and Factivity in Clause Selection.”</span> In <em><span>NELS</span> 48: <span>Proceedings</span> of the <span>Forty</span>-<span>Eighth</span> <span>Annual</span> <span>Meeting</span> of the <span>North</span> <span>East</span> <span>Linguistic</span> <span>Society</span></em>, edited by Sherry Hucklebridge and Max Nelson, 48:221–34. University of Iceland: GLSA (Graduate Linguistics Student Association), Department of Linguistics, University of Massachusetts.
+</div>
+<div id="ref-white_frequency_2020" class="csl-entry" role="listitem">
+———. 2020. <span>“Frequency, Acceptability, and Selection: <span>A</span> Case Study of Clause-Embedding.”</span> <em>Glossa: A Journal of General Linguistics</em> 5 (1). <a href="https://doi.org/10.5334/gjgl.1001">https://doi.org/10.5334/gjgl.1001</a>.
+</div>
+<div id="ref-white_lexicosyntactic_2018" class="csl-entry" role="listitem">
+White, Aaron Steven, Rachel Rudinger, Kyle Rawlins, and Benjamin Van Durme. 2018. <span>“Lexicosyntactic <span>Inference</span> in <span>Neural</span> <span>Models</span>.”</span> In <em>Proceedings of the 2018 <span>Conference</span> on <span>Empirical</span> <span>Methods</span> in <span>Natural</span> <span>Language</span> <span>Processing</span></em>, 4717–24. Brussels, Belgium: Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/D18-1501">https://doi.org/10.18653/v1/D18-1501</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -777,24 +899,74 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../pds-intro/index.html" class="pagination-link" aria-label="Notes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes</span>
+      <a href="../background/traditional-methodology.html" class="pagination-link" aria-label="The bridge from theory to data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The bridge from theory to data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../factivity/index.html" class="pagination-link" aria-label="Notes">
-        <span class="nav-page-text">Notes</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../background/understanding-gradience.html" class="pagination-link" aria-label="Understanding gradience: a taxonomy of uncertainty">
+        <span class="nav-page-text">Understanding gradience: a taxonomy of uncertainty</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Notes"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The experimental turn: new opportunities for semantic theory"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>These notes will become available on June 25.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\updct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\ct{upd<span class="sc">\_</span>#1}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\pure}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid orange</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\return}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid black</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>\def\P{\mathtt{P}}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\def\Q{\mathtt{Q}}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>\def\ite{\ct{if<span class="sc">\_</span>then<span class="sc">\_</span>else}}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\def\Do{\abbr{do}}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The traditional methodology's success has created a foundation solid enough to support exciting new extensions. Experimental semantics brings the tools of behavioral experimentation to bear on questions about meaning, allowing us to test and refine theoretical insights at unprecedented scale.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scaling Semantic Investigation</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Where traditional methods might examine a handful of predicates, experimental approaches can investigate entire lexical domains. Extending our example involving the verb *love*: English has thousands of similar clause-embedding predicates, each potentially varying in its inferential properties. We can now test whether generalizations based on canonical examples extend across these vast lexicons.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>The MegaAttitude project <span class="co">[</span><span class="ot">@white_computational_2016; @white_role_2018; @white_lexicosyntactic_2018; @white_frequency_2020; @an_lexical_2020; @moon_source_2020; @kane_intensional_2022</span><span class="co">]</span> is one example of this approach. This project aims to collect inference judgments for hundreds of predicates across multiple contexts and inference types. This scale reveals patterns that are very difficult to see and evaluate the quality of using traditional methods—subtle distinctions between near-synonyms, unexpected predicate clusters, and systematic variation across semantic domains.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Teasing Apart Contributing Factors</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Experimental methods also allow us to investigate the rich array of factors that influence inference judgments:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Semantic knowledge**: The core meanings of expressions</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**World knowledge**: Prior beliefs about plausibility  </span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contextual factors**: The discourse context and QUD</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Individual differences**: Variation in how speakers interpret expressions</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Response strategies**: How participants use rating scales</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Rather than viewing these as confounds, we can see them as windows into the cognitive processes underlying semantic interpretation. For instance, @degen_prior_2021 systematically manipulated world knowledge to show how prior beliefs modulate the strength of factive inferences, revealing the interplay between semantic and pragmatic factors.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### Making Linking Hypotheses Explicit</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Perhaps most importantly, experimental approaches force us to make explicit what traditional methods leave implicit: the link between semantic representations and behavioral responses <span class="co">[</span><span class="ot">@jasbi_linking_2019; @waldon_modeling_2020; @phillips_theories_2021</span><span class="co">]</span>. When we say speakers judge that an inference follows, what cognitive processes produce that judgment? How do abstract semantic representations map onto the responses on some scale?</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>This is not merely a methodological detail—it's a substantive theoretical question. Different linking hypotheses make different predictions about response patterns, allowing us to test not just our semantic theories but our assumptions about how those theories connect to behavior. Even if our real interest is in characterizing the semantic representations of speakers, we can't ignore the way those representations map onto their responses in some task.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
