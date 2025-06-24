@@ -1,0 +1,401 @@
+[
+  {
+    "objectID": "pds-intro/pds-intro.html#motivation",
+    "href": "pds-intro/pds-intro.html#motivation",
+    "title": "PDS Introduction",
+    "section": "Motivation",
+    "text": "Motivation\nSemantic frameworks provide powerful tools for characterizing what we can and cannot mean in using linguistic expressions.\n\nImportant properties: compositional and modular.\n\nCompositional: the meanings of complex expressions systematically computed from the meanings of smaller expressions, how they are assembled.\nModular: we can analyze one linguistic phenomenon at a time (e.g., anaphora, vagueness)… then use a systematic recipe for putting the analyses together (e.g., anaphora and vagueness)."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#prior-approach-1",
+    "href": "pds-intro/pds-intro.html#prior-approach-1",
+    "title": "PDS Introduction",
+    "section": "Prior approach #1",
+    "text": "Prior approach #1\nChallenge: semantic frameworks don’t generally provide an apparatus for characterizing uncertainty about what we can mean in using linguistic expressions.\n\nResult: they have great difficulty characterizing:\n\nthe actual inferences that a language-comprehender draws;\nthe statistical patterns exhibited by these inferences (e.g., in a human inference dataset)."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-1",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-1",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-2",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-2",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-3",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-3",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-4",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-4",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-5",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-5",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?\n\n\nAverage response:"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-6",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-6",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?\n\n\nAverage response:"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#prior-approach-2",
+    "href": "pds-intro/pds-intro.html#prior-approach-2",
+    "title": "PDS Introduction",
+    "section": "Prior approach #2",
+    "text": "Prior approach #2\nFrameworks for probabilistic semantics and pragmatics provide powerful tools for characterizing uncertainty about what we can mean in using linguistics expressions:\n\nsampling from and querying arbitrary probability distributions\nrelating the output to (e.g., human) data\nformal model comparison\n\n\nChallenge: no general structure-preserving method for mapping between semantic analyses and probabilistic analyses."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#probabilistic-dynamic-semantics",
+    "href": "pds-intro/pds-intro.html#probabilistic-dynamic-semantics",
+    "title": "PDS Introduction",
+    "section": "“Probabilistic Dynamic Semantics”",
+    "text": "“Probabilistic Dynamic Semantics”\nGoal: framework where probabilistic reasoning can be added to a semantic analysis without changing its structure.\n\nResult:\n\ncharacterize and distinguish difference sources of uncertainty\nuse existing semantic theories by plugging them into the framework\nformally compare different semantic theories with each other"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#a-general-goal",
+    "href": "pds-intro/pds-intro.html#a-general-goal",
+    "title": "PDS Introduction",
+    "section": "A general goal",
+    "text": "A general goal\n\nHave a methodology that is widely available to linguists working on meaning.\n\n\nLarge-scale inference datasets are becoming more and more central to linguistic methodology, and semantic theory should keep up!\n\nTools to render semantic theories as probabilistic models can help catalyze things."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#the-basic-idea",
+    "href": "pds-intro/pds-intro.html#the-basic-idea",
+    "title": "PDS Introduction",
+    "section": "The basic idea",
+    "text": "The basic idea\nWe should think of an experimental trial as a little discourse."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#the-basic-idea-1",
+    "href": "pds-intro/pds-intro.html#the-basic-idea-1",
+    "title": "PDS Introduction",
+    "section": "The basic idea",
+    "text": "The basic idea\n\nSentences: Start with a prior distribution over parameters some kind (e.g., encoding world knowledge, basic meanings). Update this prior with \\(⟦\\textit{s1}⟧\\), then \\(⟦\\textit{s2}⟧\\), etc.\nQuestion: Add \\(⟦\\textit{q}⟧\\) to the stack of questions under discussion (Ginzburg 1996; Farkas and Bruce 2010).\nAnswer: Retrieve \\(⟦\\textit{q}⟧\\) from the question stack; respond (i.e., query an inference distribution)."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#upshot",
+    "href": "pds-intro/pds-intro.html#upshot",
+    "title": "PDS Introduction",
+    "section": "Upshot",
+    "text": "Upshot\nOnce we have modeled the entire discourse in terms of some semantic analysis, we end up with a distribution over answers to the question prompt.\n\nA distribution we can learn about from data."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#two-kinds-of-uncertainty",
+    "href": "pds-intro/pds-intro.html#two-kinds-of-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Two kinds of uncertainty",
+    "text": "Two kinds of uncertainty\n\nresolved (or type-level) uncertainty\n\nlexical, structural, or semantic (e.g., scopal) ambiguity\n\nunresolved (or token-level) uncertainty\n\npresent on individual occasions of language use"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#example-of-resolved-uncertainty",
+    "href": "pds-intro/pds-intro.html#example-of-resolved-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Example of resolved uncertainty",
+    "text": "Example of resolved uncertainty\n\nJo ran a race.\n\n\n\nlocomotion sense of ran\nmanagement/organizational sense of ran\n\n\nAbout nature of speech act."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#example-of-unresolved-uncertainty",
+    "href": "pds-intro/pds-intro.html#example-of-unresolved-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Example of unresolved uncertainty",
+    "text": "Example of unresolved uncertainty\n\nJo is tall.\n\n\n\nuncertainty about Jo’s height\n\n\nIn some sense, independent of speech act."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#uncertainty-in-pds",
+    "href": "pds-intro/pds-intro.html#uncertainty-in-pds",
+    "title": "PDS Introduction",
+    "section": "Uncertainty in PDS",
+    "text": "Uncertainty in PDS\n\nProbability distributions may be “stacked”; this stacking is reflected in the types of semantic values.\n\nE.g., \\(\\P e\\) vs. \\(\\P (\\P e)\\).\n\nResolved uncertainty: about the state of some discourse.\n\n\\(\\P σ\\)\n\nUnresolved uncertainty: encoded in the common ground.\n\n\\(\\P ι\\) (\\(ι\\) the type of possible worlds)\nThe common ground is an aspect of the state! \\(\\P σ = \\P (… \\P ι …)\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#discourse-states",
+    "href": "pds-intro/pds-intro.html#discourse-states",
+    "title": "PDS Introduction",
+    "section": "Discourse states",
+    "text": "Discourse states\n\nLists of parameters - can be arbitrarily complex.\n\nThe common ground (or context set; Stalnaker (1978))\nThe question under discussion (Roberts 2012; Ginzburg 1996)\nFarkas and Bruce (2010) stuff (e.g., projected sets)\n(Whatever you want)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#common-grounds",
+    "href": "pds-intro/pds-intro.html#common-grounds",
+    "title": "PDS Introduction",
+    "section": "Common grounds",
+    "text": "Common grounds\n\nProbability distributions over indices of some type\n\nencode what is true “in the world”  e.g., \\(\\ct{height}(i) : e → r\\) returns people’s heights\nmaybe certain linguistic parameters\n\ne.g., the height threshold for tall: \\(\\ct{d}_{\\textit{tall}}(i) : r\\)\n\n\n\n\nStates vs. indices of the common ground\nWhat kind of thing goes where?\n\nUltimately, an empirical question."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#expressions-and-discourses",
+    "href": "pds-intro/pds-intro.html#expressions-and-discourses",
+    "title": "PDS Introduction",
+    "section": "Expressions and discourses",
+    "text": "Expressions and discourses\n\nmap discourse states onto probability distributions over new discourse states: \\(σ → \\P (α × σ^{\\prime})\\)\ncomplex linguistic acts may be sequenced\n\nan operation, bind, native to the probability monad\n\n\n\nFor instance\n\n\\(\\abbr{assert}(⟦\\textit{Jo is tall}⟧) : σ → \\P (⋄ × σ)\\)\n\\(\\abbr{ask}(⟦\\textit{how tall?}⟧) : σ → \\P (⋄ × \\Q ι r σ)\\)\n\\(\\abbr{assert}(⟦\\textit{Jo is tall}⟧) &gt;&gt; \\abbr{ask}(⟦\\textit{how tall?}⟧) : σ → \\P (⋄ × \\Q ι r σ)\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#response-functionslinking-models",
+    "href": "pds-intro/pds-intro.html#response-functionslinking-models",
+    "title": "PDS Introduction",
+    "section": "Response functions/linking models",
+    "text": "Response functions/linking models\n\nTake a discourse, together with a prior distribution over states…\nGive back a distribution over responses to the last question asked (given some testing instrument).\n\n\n\\[\n\\begin{align*}\n\\ct{respond} &: \\P σ → (σ → \\P (⋄ × \\Q ι α σ^{\\prime})) → \\P ρ\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#examples-of-linking-models",
+    "href": "pds-intro/pds-intro.html#examples-of-linking-models",
+    "title": "PDS Introduction",
+    "section": "Examples of linking models",
+    "text": "Examples of linking models\n\\[\n\\begin{align*}\n\\ct{respond} &: \\P σ → (σ → \\P (⋄ × \\Q ι α σ^{\\prime})) → \\P ρ\n\\end{align*}\n\\]\n\nLikert scale (categorical distribution); e.g., \\(ρ = \\{\\textit{yes}, \\textit{maybe}, \\textit{no}\\}\\)\nSlider scale (truncated normal distribution);  \\(ρ = r\\)\nBinary forced choice (Bernoulli distribution);  \\(ρ = t\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#ccg",
+    "href": "pds-intro/pds-intro.html#ccg",
+    "title": "PDS Introduction",
+    "section": "CCG",
+    "text": "CCG\nAtomic types\n\\[\n\\begin{align*}\n\\mathcal{A} &\\Coloneqq np ∣ n ∣ s\n\\end{align*}\n\\] Noun phrases (\\(np\\)), nouns (\\(n\\)), and sentences (\\(s\\)).\n\nComplex types\n\\[\n\\begin{align*}\n\\mathcal{C}_{\\mathcal{A}} &\\Coloneqq \\mathcal{A} ∣ \\mathcal{C}_{\\mathcal{A}}/\\mathcal{C}_{\\mathcal{A}} ∣ \\mathcal{C}_{\\mathcal{A}}\\backslash\\mathcal{C}_{\\mathcal{A}}\n\\end{align*}\n\\]\nE.g., \\(s/np, s\\backslash np, np/n, (np\\backslash n)/ np, (s\\backslash s)/s\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell",
+    "href": "pds-intro/pds-intro.html#haskell",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\n\ndata Cat = NP | N | S  -- atomic categories\n         | Cat :/: Cat -- the forward slash\n         | Cat :\\: Cat -- the backward slash\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#ccg-expressions",
+    "href": "pds-intro/pds-intro.html#ccg-expressions",
+    "title": "PDS Introduction",
+    "section": "CCG expressions",
+    "text": "CCG expressions\nAn expression:\n\\[\\Large\n\\begin{align*}\n  \\expr{\\textit{dog}}{λx, i.\\ct{dog}(i)(x)}{n}\n\\end{align*}\n\\]\n\n\\(\\textit{dog}\\) is a string.\n\\(λx, i.\\ct{dog}(i)(x)\\) is a meaning (reprented in the λ-calculus).\n\nIts type is \\(e → ι → t\\).\n\n\\(n\\) is a CCG category."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#semantic-types-in-detail",
+    "href": "pds-intro/pds-intro.html#semantic-types-in-detail",
+    "title": "PDS Introduction",
+    "section": "Semantic types (in detail)",
+    "text": "Semantic types (in detail)\n\nAtomic types\n\\[\n\\begin{align*}\nA \\Coloneqq e ∣ t\n\\end{align*}\n\\]\n\n\nComplex types\n\\[\n\\begin{align*}\n   \\mathcal{T}_{A} \\Coloneqq A ∣ \\mathcal{T}_{A} → \\mathcal{T}_{A} ∣ \\mathcal{T}_{A} × \\mathcal{T}_{A} ∣ ⋄\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-1",
+    "href": "pds-intro/pds-intro.html#haskell-1",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\n-- | Atomic types for entities and truth values.\ndata Atom = E | T deriving (Eq, Show)\n\n-- | Arrows, and products, as well as type variables for encoding polymorphism.\ndata Type = At Atom\n          | Type :→ Type\n          | Unit\n          | Type :× Type\n          | TyVar String\n  deriving (Eq)\n\nNote the type variables!"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#hindley-milner-style-polymorphism",
+    "href": "pds-intro/pds-intro.html#hindley-milner-style-polymorphism",
+    "title": "PDS Introduction",
+    "section": "Hindley-Milner style polymorphism",
+    "text": "Hindley-Milner style polymorphism\n\nGood:\n\n\\(λx^{α}.x^{α} : α → α\\)    🥰\n\\(λx^{α → β}, y^{α}.x(y)^{β} : (α → β) → α → β\\)    🥰\n\n\n\nBad:\n\n\\(λf^{α → t}.f(λy^{β}.y^{β}) ∧ f(λx^{β}, y^{γ}.x^{γ})\\)    🙁"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#typing-rules",
+    "href": "pds-intro/pds-intro.html#typing-rules",
+    "title": "PDS Introduction",
+    "section": "Typing rules",
+    "text": "Typing rules\n \\[ \\scriptsize\n\\begin{array}{c}\n\\begin{prooftree}\n\\AxiomC{}\n\\RightLabel{$\\mathtt{Ax}$}\\UnaryInfC{$Γ, x : α ⊢ x : α$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ, x : α ⊢ t : β$}\n\\RightLabel{${→}\\mathtt{I}$}\\UnaryInfC{$Γ ⊢ λx.t : α → β$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α → β$}\n\\AxiomC{$Γ ⊢ u : α$}\n\\RightLabel{${→}\\mathtt{E}$}\\BinaryInfC{$Γ ⊢ t(u) : β$}\n\\end{prooftree} \\\\[2mm]\n\\begin{prooftree}\n\\AxiomC{}\n\\RightLabel{$⋄\\mathtt{I}$}\\UnaryInfC{$Γ ⊢ ⋄ : ⋄$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α$}\n\\AxiomC{$Γ ⊢ u : β$}\n\\RightLabel{$×\\mathtt{I}$}\\BinaryInfC{$Γ ⊢ ⟨t, u⟩ : α × β$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α_1 × α_2$}\n\\RightLabel{$×\\mathtt{E}_{j}$}\\UnaryInfC{$Γ ⊢ π_{j}(t) : α_{j}$}\n\\end{prooftree}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#typing-rules-1",
+    "href": "pds-intro/pds-intro.html#typing-rules-1",
+    "title": "PDS Introduction",
+    "section": "Typing rules",
+    "text": "Typing rules\n\\(→\\mathtt{E}\\)\n \\[\n\\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α → β$}\n\\AxiomC{$Γ ⊢ u : α$}\n\\RightLabel{${→}\\mathtt{E}$}\\BinaryInfC{$Γ ⊢ t(u) : β$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-vanilla-terms",
+    "href": "pds-intro/pds-intro.html#haskell-vanilla-terms",
+    "title": "PDS Introduction",
+    "section": "Haskell: vanilla terms",
+    "text": "Haskell: vanilla terms\n-- | Untyped λ-terms. Types are assigned separately (i.e., \"extrinsically\").\ndata Term = Var VarName           -- Variables.\n          | Con Constant          -- Constants.\n          | Lam VarName Term      -- Abstractions.\n          | App Term Term         -- Applications.\n          | TT                    -- The 0-tuple.\n          | Pair Term Term        -- Pairing.\n          | Pi1 Term              -- First projection.\n          | Pi2 Term              -- Second projection.\n\nTerms are “Curry-typed”.\n\n\nConstants:\n-- | Constants are indexed by either strings or real numbers.\ntype Constant = Either String Double"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#deriving-meanings",
+    "href": "pds-intro/pds-intro.html#deriving-meanings",
+    "title": "PDS Introduction",
+    "section": "Deriving meanings",
+    "text": "Deriving meanings\n\nType homomorphism\n\n\\(\\small ⟦np⟧ = e \\hspace{2cm} ⟦n⟧ = e → ι → t \\hspace{2cm} ⟦s⟧ = ι → t\\) \n\\(\\small ⟦b / a⟧ = ⟦b \\backslash a⟧ = ⟦a⟧ → ⟦b⟧\\)\n\n\n\nExample: application\n\n\\[\\scriptsize\n\\frac{\\expr{\\textit{every}}{λp^{e → ι → t}, q^{e → ι → t}, i^{ι}.(∀y.p(y)(i) → q(y)(i))^{t}}{s}/(s\\backslash np)/ n \\hspace{1cm} \\expr{\\textit{linguist}}{λx^{e}, i^{ι}.(\\ct{ling}(i)(x))^{t}}{n}}{\n\\expr{\\textit{every linguist}}{λq^{e → ι → t}, i^{ι}.(∀y.\\ct{ling}(i)(y) → q(y)(i))^{t}}{s}/(s\\backslash np)\n}&gt;\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#adding-probabilistic-types",
+    "href": "pds-intro/pds-intro.html#adding-probabilistic-types",
+    "title": "PDS Introduction",
+    "section": "Adding probabilistic types",
+    "text": "Adding probabilistic types\n\nNew atomic types\n\\[\nA \\Coloneqq e ∣ t ∣ r\n\\]\n\n\nNew complex types\n\\[\n\\mathcal{T}_{A} \\Coloneqq A ∣ \\mathcal{T}_{A} → \\mathcal{T}_{A} ∣ \\mathcal{T}_{A} × \\mathcal{T}_{A} ∣ ⋄ ∣ \\P \\mathcal{T}_{A}\n\\]\n\n\\(\\P t\\): a Bernoulli distribution—probabilistically True or False.\n\\(\\P r\\): e.g., a normal distribution."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-2",
+    "href": "pds-intro/pds-intro.html#haskell-2",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\n-- | Atomic types for entities, truth values, and real numbers.\ndata Atom = E | T | R deriving (Eq, Show)\n\n-- | Arrows, products, and probabilistic types, as well as type variables for\n-- encoding polymorphism.\ndata Type = At Atom\n          | Type :→ Type\n          | Unit\n          | Type :× Type\n          | P Type\n          | TyVar String\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#probabilistic-typing-rules",
+    "href": "pds-intro/pds-intro.html#probabilistic-typing-rules",
+    "title": "PDS Introduction",
+    "section": "Probabilistic typing rules",
+    "text": "Probabilistic typing rules\n \\[\n\\begin{array}{c}\n\\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α$}\n\\RightLabel{$\\mathtt{Return}$}\\UnaryInfC{$Γ ⊢ \\pure{t} : \\P α$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : \\P α$}\n\\AxiomC{$Γ, x : α ⊢ u : \\P β$}\n\\RightLabel{$\\mathtt{Bind}$}\\BinaryInfC{$Γ ⊢ \\left(\\begin{array}{l} x ∼ t \\\\ u\\end{array}\\right) : \\P β$}\n\\end{prooftree}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-probabilistic-programs",
+    "href": "pds-intro/pds-intro.html#haskell-probabilistic-programs",
+    "title": "PDS Introduction",
+    "section": "Haskell: probabilistic programs",
+    "text": "Haskell: probabilistic programs\n-- | Untyped λ-terms. Types are assigned separately (i.e., \"extrinsically\").\ndata Term = Var VarName           -- Variables.\n          | Con Constant          -- Constants.\n          | Lam VarName Term      -- Abstractions.\n          | App Term Term         -- Applications.\n          | TT                    -- The 0-tuple.\n          | Pair Term Term        -- Pairing.\n          | Pi1 Term              -- First projection.\n          | Pi2 Term              -- Second projection.\n          | Return Term           -- Construct a degenerate distribution.\n          | Let VarName Term Term -- Sample from a distribution and continue.\n\nLet x t u    =    \\(\\begin{array}[t]{l}\nx ∼ t \\\\\nu\n\\end{array}\\)\nReturn t    =    \\(\\pure{t}\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#reweighting-distributions",
+    "href": "pds-intro/pds-intro.html#reweighting-distributions",
+    "title": "PDS Introduction",
+    "section": "Reweighting distributions",
+    "text": "Reweighting distributions\n\\[\\ct{factor} : r → \\P ⋄\\]\n\n\\[\\begin{array}[t]{l}\nx ∼ \\ct{mammal} \\\\\n\\ct{factor}(\\ct{hungry}(x)) \\\\\n\\pure{\\ct{mother}(x)}\n\\end{array}\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#making-observations",
+    "href": "pds-intro/pds-intro.html#making-observations",
+    "title": "PDS Introduction",
+    "section": "Making observations",
+    "text": "Making observations\n\\[\n\\begin{align*}\n\\ct{observe}\\ \\ &:\\ \\ t → \\P ⋄ \\\\\n\\ct{observe}(p)\\ \\ &=\\ \\ \\ct{factor}(𝟙(p))\n\\end{align*}\n\\]\n\n\\[\n\\begin{array}[t]{l}\nx ∼ \\ct{mammal} \\\\\n\\ct{observe}(\\ct{dog}(x)) \\\\\n\\pure{\\ct{mother}(x)}\n\\end{array}\n\\]\n\nDistribution over mothers of mammals which are also dogs."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-typing-constants",
+    "href": "pds-intro/pds-intro.html#haskell-typing-constants",
+    "title": "PDS Introduction",
+    "section": "Haskell: typing constants",
+    "text": "Haskell: typing constants\n-- | Assign types to constants.\ntype Sig = Constant -&gt; Maybe Type\n\n\nAn example signature\nt, r :: Type\nt = At T\nr = At R\n\ntau :: Sig\ntau = \\case\n  Left  \"factor\"  -&gt; Just (r :→ P Unit)\n  Left  \"observe\" -&gt; Just (t :→ P Unit)\n  Right _         -&gt; Just r"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#intensionality",
+    "href": "pds-intro/pds-intro.html#intensionality",
+    "title": "PDS Introduction",
+    "section": "Intensionality",
+    "text": "Intensionality\nSome intensional constants:\n\\[\n\\begin{align*}\n\\ct{see} &: ι → e → e → t \\\\\n\\ct{ling} &: ι → e → t\n\\end{align*}\n\\]\n\nWe require other constants:\n\\[\n\\begin{align*}\n\\updct{see} &: (e → e → t) → ι → ι \\\\\n\\updct{ling} &: (e → t) → ι → ι\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#how-intensional-constants-interact",
+    "href": "pds-intro/pds-intro.html#how-intensional-constants-interact",
+    "title": "PDS Introduction",
+    "section": "How intensional constants interact",
+    "text": "How intensional constants interact\n\n\\[\n\\ct{see}(\\updct{see}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{see}(\\updct{ling}(p)(i)) = \\ct{see}(i)\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{ling}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{see}(p)(i)) = \\ct{ling}(i)\n\\]\n\nCan be seen as a theory of states and locations.\n\nIndices are states.\n(Pairs of) constants are “locations”."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#the-common-ground",
+    "href": "pds-intro/pds-intro.html#the-common-ground",
+    "title": "PDS Introduction",
+    "section": "The common ground",
+    "text": "The common ground\nDefinition\nA common ground is a probabilistic program of type \\(\\P ι\\).\n\n\\(ι\\), a variable over types.\n\n\nA “starting” index\n\\[\\ct{@} : ι\\]\n\nConstants that update indices can add information, to be later retrieved by intensional constants."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#states",
+    "href": "pds-intro/pds-intro.html#states",
+    "title": "PDS Introduction",
+    "section": "States",
+    "text": "States\nSome state-sensitive constants:\n\n\\[\n\\ct{CG} : σ → \\P ι \\\\\n\\]\n\n\n\\[\n\\updct{CG} : \\P ι → σ → σ \\\\\n\\]\n\n\n\\[\n\\ct{QUD} : \\Q ι α σ → α → ι → t\n\\]\n\n\n\\[\n\\updct{QUD} : (α → ι → t) → σ → \\Q ι α σ\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-the-q-constructor",
+    "href": "pds-intro/pds-intro.html#haskell-the-q-constructor",
+    "title": "PDS Introduction",
+    "section": "Haskell: the \\(\\Q\\) constructor",
+    "text": "Haskell: the \\(\\Q\\) constructor\n\n-- | Arrows, products, and probabilistic types, as well as (a) abstract types\n-- representing the addition of a new Q, and (b) type variables for encoding\n-- polymorphism.\ndata Type = At Atom\n          | Type :→ Type\n          | Unit\n          | Type :× Type\n          | P Type\n          | Q Type Type Type\n          | TyVar String\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#how-stateful-constants-interact",
+    "href": "pds-intro/pds-intro.html#how-stateful-constants-interact",
+    "title": "PDS Introduction",
+    "section": "How stateful constants interact",
+    "text": "How stateful constants interact\n\\[\n\\ct{CG}(\\updct{CG}(cg)(s)) = cg\n\\]\n\n\\[\n\\ct{CG}(\\updct{QUD}(q)(s)) = \\ct{CG}(s)\n\\]\n\n\n\\[\n\\ct{QUD}(\\updct{QUD}(q)(s)) = q \\\\\n\\]\n\n\n\\[\n\\ct{QUD}(\\updct{CG}(cg)(s)) = \\ct{QUD}(s)\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#expression-meanings",
+    "href": "pds-intro/pds-intro.html#expression-meanings",
+    "title": "PDS Introduction",
+    "section": "Expression meanings",
+    "text": "Expression meanings\n\\[\nℙ^{σ}_{σ^{\\prime}} α ≝ σ → \\P (α × σ^{\\prime})\n\\]\n\nNew type for, e.g., noun phrases: \\[\nℙ^{σ}_{σ^{\\prime}}(⟦np⟧) \\,\\, = \\,\\, ℙ^{σ}_{σ^{\\prime}} e \\,\\, = \\,\\, σ → \\P (e × σ^{\\prime})\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#program-composition-via-parameterized-monads",
+    "href": "pds-intro/pds-intro.html#program-composition-via-parameterized-monads",
+    "title": "PDS Introduction",
+    "section": "Program composition via parameterized monads",
+    "text": "Program composition via parameterized monads\n\\[\n\\begin{align*}\nℙ^{σ}_{σ^{\\prime}} α\\ \\ &=\\ \\ σ → \\P (α × σ^{\\prime})\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\return{v}_{σ}\\ \\ &=\\ \\ λs.\\pure{⟨v, s⟩} : ℙ^{σ}_{σ}\n\\end{align*}\n\\]\n\n\n\\[\n\\begin{align*}\n\\begin{array}{rl}\n\\Do_{σ, σ^{\\prime}, σ^{\\prime\\prime}} & x ← m : ℙ^{σ}_{σ^{\\prime}} \\\\\n& k(x) : ℙ^{σ^{\\prime}}_{σ^{\\prime\\prime}}\n\\end{array}\\ \\\n&=\\ \\ λs.\\left(\\begin{array}{l}\n⟨x, s^{\\prime}⟩ ∼ m(s) \\\\\nk(x)(s^{\\prime})\n\\end{array}\\right) : ℙ^{σ}_{σ^{\\prime\\prime}}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#manipulating-stateful-programs",
+    "href": "pds-intro/pds-intro.html#manipulating-stateful-programs",
+    "title": "PDS Introduction",
+    "section": "Manipulating stateful programs",
+    "text": "Manipulating stateful programs\n\\(\\ct{get}\\) and \\(\\ct{put}\\)\n\\[\n\\begin{align*}\n\\abbr{get} &: ℙ^{σ}_{σ} σ\n\\end{align*}\n\\]\n\nGets the current state.\n\n\n\\[\n\\begin{align*}\n\\abbr{put} &: σ^{\\prime} → ℙ^{σ}_{σ^{\\prime}} ⋄ \\\\\n\\end{align*}\n\\]\n\nOverwrites the current state with a new one."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-3",
+    "href": "pds-intro/pds-intro.html#haskell-3",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\n\ngetPP :: Term\ngetPP = lam' s (Return (s & s))\n\nputPP :: Term -&gt; Term\nputPP s = Lam fr (Return (TT & s))\n  where fr:esh = fresh [s]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#pds-rules",
+    "href": "pds-intro/pds-intro.html#pds-rules",
+    "title": "PDS Introduction",
+    "section": "PDS Rules",
+    "text": "PDS Rules\nExample: rightward application/composition\n\\[ \\scriptsize\n\\begin{prooftree}\n\\AxiomC{$\\expr{s_{1}}{M_{1}}{c/ b}$}\n\\AxiomC{$\\expr{s_{2}}{M_{2}}{b∣_{n}a_{n}\\,\\,⋯∣_{1}a_{1}}$}\n\\RightLabel{${&gt;}\\textbf{B}_{n}$}\\BinaryInfC{\\(\\expr{s_{1}\\,s_{2}}{\n\\begin{array}{rl}\n\\Do & \\{\\,m_{1} ← M_{1};\\,m_{2} ← M_{2}; \\\\\n& \\return{λx_{1}, …, x_{n}.m_{1}(m_{2}(x_{1})…(x_{n}))}\\,\\}\n\\end{array}\n}{c∣_{n}a_{n}\\,\\,⋯∣_{1}a_{1}}\\)}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#asking-a-question",
+    "href": "pds-intro/pds-intro.html#asking-a-question",
+    "title": "PDS Introduction",
+    "section": "Asking a question",
+    "text": "Asking a question\n\\[\n\\begin{align*}\n\\abbr{ask} &: ℙ^{σ}_{σ^{\\prime}} (α → ι → t) → ℙ^{σ}_{\\Q ι α σ^{\\prime}} ⋄\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\abbr{ask}(⟦\\textit{how tall?}⟧) &= \\begin{array}[t]{rl}\n\\Do & q^{r → ι → t} ← ⟦\\textit{how tall?}⟧^{ℙ^{σ}_{σ}(r → ι → t)} \\\\\n& s ← \\abbr{get} \\\\\n& \\abbr{put}(\\updct{QUD}(q)(s))\n\\end{array}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#responding-to-a-question",
+    "href": "pds-intro/pds-intro.html#responding-to-a-question",
+    "title": "PDS Introduction",
+    "section": "Responding to a question",
+    "text": "Responding to a question\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ} &: \\P σ → ℙ^{σ}_{\\Q ι r σ^{\\prime}} ⋄ → \\P ρ\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ}(bg)(m) &= \\begin{array}[t]{l}\ns ∼ bg \\\\\n⟨⋄, s^{\\prime}⟩ ∼ m(s) \\\\\ni ∼ \\ct{CG}(s^{\\prime}) \\\\\nf(\\ct{max}(λd.\\ct{QUD}(s)(d)(i)), Φ)\n\\end{array}\n\\end{align*}\n\\]\n\n\nExample \\(f_{Φ}\\)\n\n\\(f(x, Φ) = \\abbr{Normal}(x, 1)\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#how-do-we-actually-compute-this-stuff",
+    "href": "pds-intro/pds-intro.html#how-do-we-actually-compute-this-stuff",
+    "title": "PDS Introduction",
+    "section": "How do we actually compute this stuff?",
+    "text": "How do we actually compute this stuff?\n\n\nDelta-rules.\n-- | The type of Delta-rules.\ntype DeltaRule = Term -&gt; Maybe Term"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#summing-up",
+    "href": "pds-intro/pds-intro.html#summing-up",
+    "title": "PDS Introduction",
+    "section": "Summing up",
+    "text": "Summing up\n\nWe have a computational framework for:\n\nencoding grammar fragments\nrepresenting speech acts (assertions, questions)\nrepresenting theories linking inferences to behavior (as response functions)\ncomputing with the resulting probabilistic programs (via delta-rules)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#references",
+    "href": "pds-intro/pds-intro.html#references",
+    "title": "PDS Introduction",
+    "section": "",
+    "text": "References\n\n\n\n\nFarkas, Donka F., and Kim B. Bruce. 2010. “On Reacting to Assertions and Polar Questions.” Journal of Semantics 27 (1): 81–118. https://doi.org/10.1093/jos/ffp010.\n\n\nGinzburg, Jonathan. 1996. “Dynamics and the Semantics of Dialogue.” In Logic, Language, and Computation, edited by Jerry Seligman and Dag Westerståhl, 1:221–37. Stanford: CSLI Publications.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6.\n\n\nStalnaker, Robert. 1978. “Assertion.” In Pragmatics, edited by Peter Cole, 9:315–32. New York: Academic Press."
+  }
+]
