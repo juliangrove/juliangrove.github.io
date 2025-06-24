@@ -216,25 +216,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../background/traditional-methodology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The bridge from theory to data</span></a>
+ <span class="menu-text">From theory to data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The experimental turn: new opportunities for semantic theory</span></a>
+ <span class="menu-text">The experimental turn</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../background/understanding-gradience.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Understanding gradience: a taxonomy of uncertainty</span></a>
+ <span class="menu-text">Understanding gradience</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../background/case-studies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Case studies: testing semantic theory at scale</span></a>
+ <span class="menu-text">Two case studies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -246,7 +246,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../background/theoretically-oriented-approach.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">A theoretically-oriented approach: RSA models</span></a>
+ <span class="menu-text">Rational Speech Act models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -420,7 +420,7 @@ window.Quarto = {
 \def\Do{\abbr{do}}
 \]</span></p>
 </div>
-<p>Compositional dynamic semantic theories often model utterance meanings as maps from discourse states into sets of discourse states.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> PDS inherits this functional view of utterances; but following much work in the probabilistic semantics and pragmatics literature <span class="citation" data-cites="van_benthem_dynamic_2009 lassiter_vagueness_2011 frank_predicting_2012 zeevat_implicit_2013 lassiter_adjectival_2017 bergen_pragmatic_2016">(<a href="#ref-van_benthem_dynamic_2009" role="doc-biblioref">Benthem, Gerbrandy, and Kooi 2009</a>; <a href="#ref-lassiter_vagueness_2011" role="doc-biblioref">Lassiter 2011</a>; <a href="#ref-frank_predicting_2012" role="doc-biblioref">Frank and Goodman 2012</a>; <a href="#ref-zeevat_implicit_2013" role="doc-biblioref">Zeevat 2013</a>; <a href="#ref-lassiter_adjectival_2017" role="doc-biblioref">Lassiter and Goodman 2017</a>; <a href="#ref-bergen_pragmatic_2016" role="doc-biblioref">Bergen, Levy, and Goodman 2016</a>, i.a.)</span>, it translates this idea into a probabilistic setting: in PDS, utterances denote maps from discourse states to <em>probability distributions</em> over discourse states. Thus in comparison to traditional dynamic semantics, PDS introduces a weighting on discourse states, allowing one to model preferences for certain resolutions of ambiguity over others.</p>
+<p>Compositional dynamic semantic theories often model utterance meanings as maps from discourse states into sets of discourse states.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> PDS inherits this functional view of utterances; but following much work in the probabilistic semantics and pragmatics literature <span class="citation" data-cites="van_benthem_dynamic_2009 lassiter_vagueness_2011 frank_predicting_2012 zeevat_implicit_2013 lassiter_adjectival_2017 bergen_pragmatic_2016">(<a href="#ref-van_benthem_dynamic_2009" role="doc-biblioref">van Benthem, Gerbrandy, and Kooi 2009</a>; <a href="#ref-lassiter_vagueness_2011" role="doc-biblioref">Lassiter 2011</a>; <a href="#ref-frank_predicting_2012" role="doc-biblioref">Frank and Goodman 2012</a>; <a href="#ref-zeevat_implicit_2013" role="doc-biblioref">Zeevat 2013</a>; <a href="#ref-lassiter_adjectival_2017" role="doc-biblioref">Lassiter and Goodman 2017</a>; <a href="#ref-bergen_pragmatic_2016" role="doc-biblioref">Bergen, Levy, and Goodman 2016</a>, i.a.)</span>, it translates this idea into a probabilistic setting: in PDS, utterances denote maps from discourse states to <em>probability distributions</em> over discourse states. Thus in comparison to traditional dynamic semantics, PDS introduces a weighting on discourse states, allowing one to model preferences for certain resolutions of ambiguity over others.</p>
 <section id="probability-distributions-as-monadic-values" class="level2">
 <h2 class="anchored" data-anchor-id="probability-distributions-as-monadic-values">Probability distributions as monadic values</h2>
 <p>In and of itself, this extension is not novel. More novel is that we view probability distributions as <em>monadic values</em> that inhabit types arising from a <em>probability monad</em> <span class="citation" data-cites="giorgolo_one_2014 bernardy_predicates_2019 grove_probabilistic_2023">(see, e.g., <a href="#ref-giorgolo_one_2014" role="doc-biblioref">Giorgolo and Asudeh 2014</a>; <a href="#ref-bernardy_predicates_2019" role="doc-biblioref">Bernardy et al. 2019</a>; <a href="#ref-grove_probabilistic_2023" role="doc-biblioref">Grove and Bernardy 2023</a>)</span>. We formalize this view soon; but the gist is that viewing probability distributions this way allows PDS (i) to map linguistic expressions of a particular type to probability distributions over objects of that type so that the usual compositional structure of semantic analyses is retained; and thereby (ii) to compose probabilistic analyses with other analyses of, say, anaphora; as well as (iii) to define explicit <em>linking models</em> that map probability distributions over discourse states to probability distributions over judgments recorded using some response instrument.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
@@ -467,9 +467,6 @@ Beaver, David I. 1999. <span>“Presupposition <span>Accomodation</span>: <span>
 </div>
 <div id="ref-beaver_presupposition_2001" class="csl-entry" role="listitem">
 ———. 2001. <em>Presupposition and <span>Assertion</span> in <span>Dynamic</span> <span>Semantics</span></em>. Studies in <span>Logic</span>, <span>Language</span> and <span>Information</span>. Stanford: CSLI Publications. <a href="https://semanticsarchive.net/Archive/jU1MDVmZ">https://semanticsarchive.net/Archive/jU1MDVmZ</a>.
-</div>
-<div id="ref-van_benthem_dynamic_2009" class="csl-entry" role="listitem">
-Benthem, Johan van, Jelle Gerbrandy, and Barteld Kooi. 2009. <span>“Dynamic <span>Update</span> with <span>Probabilities</span>.”</span> <em>Studia Logica</em> 93 (1): 67–96. <a href="https://doi.org/10.1007/s11225-009-9209-y">https://doi.org/10.1007/s11225-009-9209-y</a>.
 </div>
 <div id="ref-bergen_pragmatic_2016" class="csl-entry" role="listitem">
 Bergen, Leon, Roger Levy, and Noah Goodman. 2016. <span>“Pragmatic Reasoning Through Semantic Inference.”</span> <em>Semantics and Pragmatics</em> 9 (May): ACCESS–. <a href="https://doi.org/10.3765/sp.9.20">https://doi.org/10.3765/sp.9.20</a>.
@@ -518,6 +515,9 @@ Roberts, Craige. 2012. <span>“Information <span>Structure</span>: <span>Toward
 </div>
 <div id="ref-stalnaker_assertion_1978" class="csl-entry" role="listitem">
 Stalnaker, Robert. 1978. <span>“Assertion.”</span> In <em>Pragmatics</em>, edited by Peter Cole, 9:315–32. New York: Academic Press.
+</div>
+<div id="ref-van_benthem_dynamic_2009" class="csl-entry" role="listitem">
+van Benthem, Johan, Jelle Gerbrandy, and Barteld Kooi. 2009. <span>“Dynamic <span>Update</span> with <span>Probabilities</span>.”</span> <em>Studia Logica</em> 93 (1): 67–96. <a href="https://doi.org/10.1007/s11225-009-9209-y">https://doi.org/10.1007/s11225-009-9209-y</a>.
 </div>
 <div id="ref-zeevat_implicit_2013" class="csl-entry" role="listitem">
 Zeevat, Henk. 2013. <span>“Implicit <span>Probabilities</span> in <span>Update</span> <span>Semantics</span>.”</span> In <em>The Dynamic, Inquisitive, and Visionary Life of φ, ?φ, and ⋄φ: <span>A</span> Festschrift for <span>Jeroen</span> <span>Groenendijk</span>, <span>Martin</span> <span>Stokhof</span>, and <span>Frank</span> <span>Veltman</span></em>, 319–24. Amsterdam: ILLC.
