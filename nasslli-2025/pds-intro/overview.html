@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Overview – Probabilistic dynamic semantics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../pds-intro/ccg.html" rel="next">
+<link href="../background/setting-stage.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ec59717222d4d18488216d07f8bb4c3b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3c5b3ed224f457cdcbda003fac2adf13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Introduction to probabilistic dynamic semantics</a></li><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Overview</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Probabilistic dynamic semantics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilistic dynamic semantics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Background</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/traditional-methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The bridge from theory to data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The experimental turn: new opportunities for semantic theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/understanding-gradience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding gradience: a taxonomy of uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case studies: testing semantic theory at scale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/new-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The need for new frameworks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/theoretically-oriented-approach.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A theoretically-oriented approach: RSA models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/setting-stage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting the stage</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction to probabilistic dynamic semantics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/overview.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/ccg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Combinatory Categorial Grammar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/adding-probabilistic-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adding probabilistic types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/common-ground.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The common ground</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/expressions-and-discourses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Expressions and discourses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/delta-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Delta rules</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Vagueness and imprecision</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Factivity inferences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../factivity/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Modeling the question prompt</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qud/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#probability-distributions-as-monadic-values" id="toc-probability-distributions-as-monadic-values" class="nav-link active" data-scroll-target="#probability-distributions-as-monadic-values">Probability distributions as monadic values</a></li>
+  <li><a href="#two-kinds-of-uncertainty" id="toc-two-kinds-of-uncertainty" class="nav-link" data-scroll-target="#two-kinds-of-uncertainty">Two kinds of uncertainty</a></li>
+  <li><a href="#discourse-states" id="toc-discourse-states" class="nav-link" data-scroll-target="#discourse-states">Discourse states</a></li>
+  <li><a href="#linking-models" id="toc-linking-models" class="nav-link" data-scroll-target="#linking-models">Linking models</a></li>
+  <li><a href="#haskell" id="toc-haskell" class="nav-link" data-scroll-target="#haskell">Haskell</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Introduction to probabilistic dynamic semantics</a></li><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Overview</a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Overview</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
+</div>
+<p>Compositional dynamic semantic theories often model utterance meanings as maps from discourse states into sets of discourse states.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> PDS inherits this functional view of utterances; but following much work in the probabilistic semantics and pragmatics literature <span class="citation" data-cites="van_benthem_dynamic_2009 lassiter_vagueness_2011 frank_predicting_2012 zeevat_implicit_2013 lassiter_adjectival_2017 bergen_pragmatic_2016">(<a href="#ref-van_benthem_dynamic_2009" role="doc-biblioref">Benthem, Gerbrandy, and Kooi 2009</a>; <a href="#ref-lassiter_vagueness_2011" role="doc-biblioref">Lassiter 2011</a>; <a href="#ref-frank_predicting_2012" role="doc-biblioref">Frank and Goodman 2012</a>; <a href="#ref-zeevat_implicit_2013" role="doc-biblioref">Zeevat 2013</a>; <a href="#ref-lassiter_adjectival_2017" role="doc-biblioref">Lassiter and Goodman 2017</a>; <a href="#ref-bergen_pragmatic_2016" role="doc-biblioref">Bergen, Levy, and Goodman 2016</a>, i.a.)</span>, it translates this idea into a probabilistic setting: in PDS, utterances denote maps from discourse states to <em>probability distributions</em> over discourse states. Thus in comparison to traditional dynamic semantics, PDS introduces a weighting on discourse states, allowing one to model preferences for certain resolutions of ambiguity over others.</p>
+<section id="probability-distributions-as-monadic-values" class="level2">
+<h2 class="anchored" data-anchor-id="probability-distributions-as-monadic-values">Probability distributions as monadic values</h2>
+<p>In and of itself, this extension is not novel. More novel is that we view probability distributions as <em>monadic values</em> that inhabit types arising from a <em>probability monad</em> <span class="citation" data-cites="giorgolo_one_2014 bernardy_predicates_2019 grove_probabilistic_2023">(see, e.g., <a href="#ref-giorgolo_one_2014" role="doc-biblioref">Giorgolo and Asudeh 2014</a>; <a href="#ref-bernardy_predicates_2019" role="doc-biblioref">Bernardy et al. 2019</a>; <a href="#ref-grove_probabilistic_2023" role="doc-biblioref">Grove and Bernardy 2023</a>)</span>. We formalize this view soon; but the gist is that viewing probability distributions this way allows PDS (i) to map linguistic expressions of a particular type to probability distributions over objects of that type so that the usual compositional structure of semantic analyses is retained; and thereby (ii) to compose probabilistic analyses with other analyses of, say, anaphora; as well as (iii) to define explicit <em>linking models</em> that map probability distributions over discourse states to probability distributions over judgments recorded using some response instrument.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Crucial for PDS is that because probability distributions are characterized by a monad, they may themselves be <em>stacked</em> while retaining properties important for semantic composition.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> That is, the types derived from a probability monad may be inhabited by distributions over familiar types of objects—entities, truth values, functions from entities to truth values, and the like—or they may be inhabited by distributions <em>over</em> such distributions. And this stacking can be as deep as is necessary to model the sorts of uncertainty of interest to the analyst.</p>
+</section>
+<section id="two-kinds-of-uncertainty" class="level2">
+<h2 class="anchored" data-anchor-id="two-kinds-of-uncertainty">Two kinds of uncertainty</h2>
+<p>We argue here that at least two levels of stacking are necessary in order to appropriately model two kinds of interpretive uncertainty, respectively, which we refer to as <em>resolved</em> (or <em>type-level</em>) <em>uncertainty</em> and <em>unresolved</em> (or <em>token-level</em>) <em>uncertainty</em>. Resolved uncertainty is any kind of uncertainty which relates to lexical, structural, or semantic (e.g., scopal) ambiguity. For example, a polysemous word gives rise to resolved uncertainty. Based on the content of its direct object, <em>ran</em> in (1) seems likely to take on its locomotion sense, though it remains plausible that it has a management sense if Jo is understood to be the race’s organizer.</p>
+<ol class="example" type="1">
+<li>Jo ran a race.</li>
+</ol>
+<p>In contrast, unresolved uncertainty is that which is associated with an expression in view of some <em>fixed</em> meaning it has. Vague adjectives may give rise to unresolved uncertainty, for example, as witnessed by the vague inferences they support: the minimum degree of height <em>tall</em> requires to hold of entities of which it is true remains uncertain on any use of (2), even while the adjective’s meaning plausibly does not always vary across such uses.</p>
+<ol start="2" class="example" type="1">
+<li>Jo is tall.</li>
+</ol>
+<p>In general, we conceptualize unresolved uncertainty as reflecting the uncertainty that one has about a given inference at a particular point in some discourse, having fixed the meanings of the linguistic expressions.</p>
+<p>Put slightly differently, resolved uncertainty is a property of one’s knowledge about the meanings of expressions <em>qua</em> expressions. Sometimes <em>run</em> means this; sometimes it means that. Thus, any analysis of the uncertainty about the meaning of <em>run</em> should capture that it is uncertainty about <em>types</em> of utterance act. In contrast, unresolved uncertainty encompasses any semantic uncertainty which remains, having fixed the type of utterance act—it is uncertainty pertaining to the semantically licensed inferences themselves.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>To capture this idea, our approach regards these types of uncertainty as interacting with each other in a restricted fashion by taking advantage of the fact that distributions may be stacked. Because resolved uncertainty must be resolved in order for one to draw semantically licensed inferences from uses of particular expressions, we take resolved parameters to be <em>fixed</em> in the computation of unresolved uncertainty. This rigid connection among sources of uncertainty is a natural consequence of structuring probabilistic reasoning in terms of stacked probability distributions.</p>
+</section>
+<section id="discourse-states" class="level2">
+<h2 class="anchored" data-anchor-id="discourse-states">Discourse states</h2>
+<p>We follow a common in dynamic semantics practice by regarding discourse states as lists of parameters. We depart slightly from the usual assumption that these lists are homogenous by treating them as potentially arbitrarily complex, i.e., <em>heterogeneous</em> <span class="citation" data-cites="bumford_dynamic_2022">(though see <a href="#ref-bumford_dynamic_2022" role="doc-biblioref">Bumford and Charlow 2022</a>)</span>. As such, they could be structured according to a variety of models sometimes employed in formal pragmatics <span class="citation" data-cites="farkas_reacting_2010">(e.g., <a href="#ref-farkas_reacting_2010" role="doc-biblioref">Farkas and Bruce 2010</a>)</span>. For example, we will define one parameter of this list to be a representation of the Stalnakerian common ground <span class="citation" data-cites="stalnaker_assertion_1978">(or more aptly, the “context set”: <a href="#ref-stalnaker_assertion_1978" role="doc-biblioref">Stalnaker 1978</a> et seq.)</span> and another parameter to be a stack of Questions Under Discussion <span class="citation" data-cites="ginzburg_dynamics_1996 roberts_information_2012">(QUDs: <a href="#ref-ginzburg_dynamics_1996" role="doc-biblioref">Ginzburg 1996</a>; <a href="#ref-roberts_information_2012" role="doc-biblioref">Roberts 2012</a>)</span>.</p>
+<p>We represent common grounds as probability distributions over indices encoding information about possible worlds, as well as what we call <em>contexts</em>. The possible world part of an index represents facts about how the (non-linguistic) world is—e.g., a particular individual’s height—while the context part encodes certain facts about lexical meaning—e.g., the identity of the height threshold conveyed by a vague adjective, such as <em>tall</em> <span class="citation" data-cites="kennedy_scale_2005 kennedy_vagueness_2007 lassiter_vagueness_2011">(see, i.a.: <a href="#ref-kennedy_scale_2005" role="doc-biblioref">Kennedy and McNally 2005</a>; <a href="#ref-kennedy_vagueness_2007" role="doc-biblioref">Kennedy 2007</a>; <a href="#ref-lassiter_vagueness_2011" role="doc-biblioref">Lassiter 2011</a>)</span>.</p>
+<p>Utterances—and more broadly, discourses—map tuples of parameters onto probability distributions over new tuples of parameters. Moreover, complex linguistic acts may be <em>sequenced</em>; in general, the effect on an ongoing discourse of multiple linguistic acts may be computed by using the sequencing operation (<em>bind</em>) native to the probability monad. In this sense, compositionality of interpretation obtains in PDS from the level of individual morphemes all the way up to the level of complex exchanges. For example, a discourse may consist in (i) making an assertion, which (perhaps, under a simplified model) modifies the common ground; (ii) asking a question, which adds a QUD to the top of the QUD stack; or (iii) a sequence of these. Regardless, we require the functions encoding discourses to return probabilistic values, in order to capture their inherent uncertainty.</p>
+</section>
+<section id="linking-models" class="level2">
+<h2 class="anchored" data-anchor-id="linking-models">Linking models</h2>
+<p>A linking model takes a discourse as conceived above, together with an initial probability distribution over discourse states, and links them to a distribution over responses to the current QUD. The possible responses to the QUD are determined by a data collection instrument, which could be a Likert scale, a slider scale, or something else. Furthermore, the <em>distribution</em> over responses is fixed by a likelihood function whose choice is constrained by the nature of the values encoded by the instrument. Thus a Bernoulli distribution for instruments that produce binary values; a categorical distribution for instruments that produce unordered, multivalued discrete responses; a linked logit distribution for instruments that produce ordered, multivalued discrete responses; and so on.</p>
+</section>
+<section id="haskell" class="level2">
+<h2 class="anchored" data-anchor-id="haskell">Haskell</h2>
+<p>Throughout these sets of notes, we include code snippets in the <a href="https://www.haskell.org/">Haskell</a> programming language to illustrate concepts that we introduce. There is a working Haskell implementation of PDS, which is currently undergoing further development, and which can translate PDS models into minimal pieces of code in the <a href="https://mc-stan.org/">Stan</a> programming language for several of the example modeling cases that we will discuss. Since the components of PDS are presented with their computational implementation in mind, we think it is particularly revealing to see the code itself. Thus we will interleave relevant code with the prose and semantic formulae.</p>
+
+
+<!-- -->
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-beaver_presupposition_1999" class="csl-entry" role="listitem">
+Beaver, David I. 1999. <span>“Presupposition <span>Accomodation</span>: <span>A</span> <span>Plea</span> for <span>Common</span> <span>Sense</span>.”</span> In <em>Logic, Language, and Computation</em>, edited by Lawrence S. Moss, Jonathan Ginzburg, and Rijke de Maarten, 2:21–44. Stanford: CSLI Publications.
+</div>
+<div id="ref-beaver_presupposition_2001" class="csl-entry" role="listitem">
+———. 2001. <em>Presupposition and <span>Assertion</span> in <span>Dynamic</span> <span>Semantics</span></em>. Studies in <span>Logic</span>, <span>Language</span> and <span>Information</span>. Stanford: CSLI Publications. <a href="https://semanticsarchive.net/Archive/jU1MDVmZ">https://semanticsarchive.net/Archive/jU1MDVmZ</a>.
+</div>
+<div id="ref-van_benthem_dynamic_2009" class="csl-entry" role="listitem">
+Benthem, Johan van, Jelle Gerbrandy, and Barteld Kooi. 2009. <span>“Dynamic <span>Update</span> with <span>Probabilities</span>.”</span> <em>Studia Logica</em> 93 (1): 67–96. <a href="https://doi.org/10.1007/s11225-009-9209-y">https://doi.org/10.1007/s11225-009-9209-y</a>.
+</div>
+<div id="ref-bergen_pragmatic_2016" class="csl-entry" role="listitem">
+Bergen, Leon, Roger Levy, and Noah Goodman. 2016. <span>“Pragmatic Reasoning Through Semantic Inference.”</span> <em>Semantics and Pragmatics</em> 9 (May): ACCESS–. <a href="https://doi.org/10.3765/sp.9.20">https://doi.org/10.3765/sp.9.20</a>.
+</div>
+<div id="ref-bernardy_predicates_2019" class="csl-entry" role="listitem">
+Bernardy, Jean-Philippe, Rasmus Blanck, Stergios Chatzikyriakidis, Shalom Lappin, and Aleksandre Maskharashvili. 2019. <span>“Predicates as <span>Boxes</span> in <span>Bayesian</span> <span>Semantics</span> for <span>Natural</span> <span>Language</span>.”</span> In <em>Proceedings of the 22nd <span>Nordic</span> <span>Conference</span> on <span>Computational</span> <span>Linguistics</span></em>, 333–37. Turku, Finland: Linköping University Electronic Press. <a href="https://www.aclweb.org/anthology/W19-6137">https://www.aclweb.org/anthology/W19-6137</a>.
+</div>
+<div id="ref-bumford_dynamic_2022" class="csl-entry" role="listitem">
+Bumford, Dylan, and Simon Charlow. 2022. <span>“Dynamic Semantics with Static Types.”</span> LingBuzz. <a href="https://ling.auf.net/lingbuzz/006884">https://ling.auf.net/lingbuzz/006884</a>.
+</div>
+<div id="ref-charlow_where_2019" class="csl-entry" role="listitem">
+Charlow, Simon. 2019. <span>“Where Is the Destructive Update Problem?”</span> <em>Semantics and Pragmatics</em> 12 (November): 10:1–24. <a href="https://doi.org/10.3765/sp.12.10">https://doi.org/10.3765/sp.12.10</a>.
+</div>
+<div id="ref-farkas_reacting_2010" class="csl-entry" role="listitem">
+Farkas, Donka F., and Kim B. Bruce. 2010. <span>“On <span>Reacting</span> to <span>Assertions</span> and <span>Polar</span> <span>Questions</span>.”</span> <em>Journal of Semantics</em> 27 (1): 81–118. <a href="https://doi.org/10.1093/jos/ffp010">https://doi.org/10.1093/jos/ffp010</a>.
+</div>
+<div id="ref-frank_predicting_2012" class="csl-entry" role="listitem">
+Frank, Michael C., and Noah D. Goodman. 2012. <span>“Predicting <span>Pragmatic</span> <span>Reasoning</span> in <span>Language</span> <span>Games</span>.”</span> <em>Science</em> 336 (6084): 998–98. <a href="https://doi.org/10.1126/science.1218633">https://doi.org/10.1126/science.1218633</a>.
+</div>
+<div id="ref-ginzburg_dynamics_1996" class="csl-entry" role="listitem">
+Ginzburg, Jonathan. 1996. <span>“Dynamics and the Semantics of Dialogue.”</span> In <em>Logic, <span>Language</span>, and <span>Computation</span></em>, edited by Jerry Seligman and Dag Westerståhl, 1:221–37. Stanford: CSLI Publications.
+</div>
+<div id="ref-giorgolo_one_2014" class="csl-entry" role="listitem">
+Giorgolo, Gianluca, and Ash Asudeh. 2014. <span>“One <span>Semiring</span> to <span>Rule</span> <span>Them</span> <span>All</span>.”</span> In <em><span>CogSci</span> 2014 <span>Proceedings</span></em>. <a href="https://cogsci.mindmodeling.org/2014/papers/031/">https://cogsci.mindmodeling.org/2014/papers/031/</a>.
+</div>
+<div id="ref-grove_probabilistic_2023" class="csl-entry" role="listitem">
+Grove, Julian, and Jean-Philippe Bernardy. 2023. <span>“Probabilistic <span>Compositional</span> <span>Semantics</span>, <span>Purely</span>.”</span> In <em>New <span>Frontiers</span> in <span>Artificial</span> <span>Intelligence</span></em>, edited by Katsutoshi Yada, Yasufumi Takama, Koji Mineshima, and Ken Satoh, 242–56. Lecture <span>Notes</span> in <span>Computer</span> <span>Science</span>. Cham: Springer Nature Switzerland. <a href="https://doi.org/10.1007/978-3-031-36190-6_17">https://doi.org/10.1007/978-3-031-36190-6_17</a>.
+</div>
+<div id="ref-kennedy_vagueness_2007" class="csl-entry" role="listitem">
+Kennedy, Christopher. 2007. <span>“Vagueness and Grammar: The Semantics of Relative and Absolute Gradable Adjectives.”</span> <em>Linguistics and Philosophy</em> 30 (1): 1–45. <a href="https://doi.org/10.1007/s10988-006-9008-0">https://doi.org/10.1007/s10988-006-9008-0</a>.
+</div>
+<div id="ref-kennedy_scale_2005" class="csl-entry" role="listitem">
+Kennedy, Christopher, and Louise McNally. 2005. <span>“Scale <span>Structure</span>, <span>Degree</span> <span>Modification</span>, and the <span>Semantics</span> of <span>Gradable</span> <span>Predicates</span>.”</span> <em>Language</em> 81 (2): 345–81. <a href="https://doi.org/10.1353/lan.2005.0071">https://doi.org/10.1353/lan.2005.0071</a>.
+</div>
+<div id="ref-lassiter_vagueness_2011" class="csl-entry" role="listitem">
+Lassiter, Daniel. 2011. <span>“Vagueness as <span>Probabilistic</span> <span>Linguistic</span> <span>Knowledge</span>.”</span> In <em>Vagueness in <span>Communication</span></em>, edited by Rick Nouwen, Robert van Rooij, Uli Sauerland, and Hans-Christian Schmitz, 127–50. Lecture <span>Notes</span> in <span>Computer</span> <span>Science</span>. Berlin, Heidelberg: Springer. <a href="https://doi.org/10.1007/978-3-642-18446-8_8">https://doi.org/10.1007/978-3-642-18446-8_8</a>.
+</div>
+<div id="ref-lassiter_adjectival_2017" class="csl-entry" role="listitem">
+Lassiter, Daniel, and Noah D. Goodman. 2017. <span>“Adjectival Vagueness in a <span>Bayesian</span> Model of Interpretation.”</span> <em>Synthese</em> 194 (10): 3801–36. <a href="https://doi.org/10.1007/s11229-015-0786-1">https://doi.org/10.1007/s11229-015-0786-1</a>.
+</div>
+<div id="ref-phillips_theories_2021" class="csl-entry" role="listitem">
+Phillips, Colin, Phoebe Gaston, Nick Huang, and Hanna Muller. 2021. <span>“Theories <span>All</span> the <span>Way</span> <span>Down</span>: <span>Remarks</span> on <span>‘<span>Theoretical</span>’</span> and <span>‘<span>Experimental</span>’</span> <span>Linguistics</span>.”</span> In <em>The <span>Cambridge</span> <span>Handbook</span> of <span>Experimental</span> <span>Syntax</span></em>, edited by Grant Goodall, 587–616. Cambridge <span>Handbooks</span> in <span>Language</span> and <span>Linguistics</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/9781108569620.023">https://doi.org/10.1017/9781108569620.023</a>.
+</div>
+<div id="ref-roberts_information_2012" class="csl-entry" role="listitem">
+Roberts, Craige. 2012. <span>“Information <span>Structure</span>: <span>Towards</span> an Integrated Formal Theory of Pragmatics.”</span> <em>Semantics and Pragmatics</em> 5 (December): 6:1–69. <a href="https://doi.org/10.3765/sp.5.6">https://doi.org/10.3765/sp.5.6</a>.
+</div>
+<div id="ref-stalnaker_assertion_1978" class="csl-entry" role="listitem">
+Stalnaker, Robert. 1978. <span>“Assertion.”</span> In <em>Pragmatics</em>, edited by Peter Cole, 9:315–32. New York: Academic Press.
+</div>
+<div id="ref-zeevat_implicit_2013" class="csl-entry" role="listitem">
+Zeevat, Henk. 2013. <span>“Implicit <span>Probabilities</span> in <span>Update</span> <span>Semantics</span>.”</span> In <em>The Dynamic, Inquisitive, and Visionary Life of φ, ?φ, and ⋄φ: <span>A</span> Festschrift for <span>Jeroen</span> <span>Groenendijk</span>, <span>Martin</span> <span>Stokhof</span>, and <span>Frank</span> <span>Veltman</span></em>, 319–24. Amsterdam: ILLC.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p> In its distributive implementations, that is. For a discussion of distributive vs.&nbsp;non-distributive variants of dynamic semantics, see, e.g., <span class="citation" data-cites="charlow_where_2019">Charlow (<a href="#ref-charlow_where_2019" role="doc-biblioref">2019</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p> This type of capability is often discussed in the experimental linguistics literature under the heading of <em>linking hypotheses</em> or <em>linking assumptions</em> (see <span class="citation" data-cites="phillips_theories_2021">Phillips et al. (<a href="#ref-phillips_theories_2021" role="doc-biblioref">2021</a>)</span>). For our purposes, we define linking models to be statistical models that relate a PDS analysis (which determines a probability distribution over the inferences supported by a linguistic expression) to comprehenders’ judgments, as recorded using a particular instrument.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p> More to the point, monads give rise to <em>functors</em>, which are composable, giving rise to the “stacking”.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p> See <span class="citation" data-cites="beaver_presupposition_1999">Beaver (<a href="#ref-beaver_presupposition_1999" role="doc-biblioref">1999</a>)</span> and <span class="citation" data-cites="beaver_presupposition_2001">Beaver (<a href="#ref-beaver_presupposition_2001" role="doc-biblioref">2001</a>)</span>, which describe an analogous bifurcation of orders of pragmatic reasoning in the representation of the common ground.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../background/setting-stage.html" class="pagination-link" aria-label="Setting the stage">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Setting the stage</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../pds-intro/ccg.html" class="pagination-link" aria-label="Combinatory Categorial Grammar">
+        <span class="nav-page-text">Combinatory Categorial Grammar</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Overview"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\updct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\ct{upd<span class="sc">\_</span>#1}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\pure}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid orange</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\return}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid black</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>\def\P{\mathtt{P}}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\def\Q{\mathtt{Q}}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>\def\ite{\ct{if<span class="sc">\_</span>then<span class="sc">\_</span>else}}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\def\Do{\abbr{do}}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Compositional dynamic semantic theories often model utterance meanings as maps from discourse states into sets of discourse states.^[</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    In its distributive implementations, that is.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    For a discussion of distributive vs. non-distributive variants of dynamic semantics, see, e.g., @charlow_where_2019.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>PDS inherits this functional view of utterances; </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>but following much work in the probabilistic semantics and pragmatics literature <span class="co">[</span><span class="ot">@van_benthem_dynamic_2009; @lassiter_vagueness_2011; @frank_predicting_2012; @zeevat_implicit_2013; @lassiter_adjectival_2017; @bergen_pragmatic_2016, i.a.</span><span class="co">]</span>, it translates this idea into a probabilistic setting:</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>in PDS, utterances denote maps from discourse states to *probability distributions* over discourse states.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Thus in comparison to traditional dynamic semantics, PDS introduces a weighting on discourse states, allowing one to model preferences for certain resolutions of ambiguity over others.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Probability distributions as monadic values</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>In and of itself, this extension is not novel.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>More novel is that we view probability distributions as *monadic values* that inhabit types arising from a *probability monad* <span class="co">[</span><span class="ot">see, e.g., @giorgolo_one_2014; @bernardy_predicates_2019; @grove_probabilistic_2023</span><span class="co">]</span>.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>We formalize this view soon;</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>but the gist is that viewing probability distributions this way allows PDS (i) to map linguistic expressions of a particular type to probability distributions over objects of that type so that the usual compositional structure of semantic analyses is retained;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>and thereby (ii) to compose probabilistic analyses with other analyses of, say, anaphora;</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>as well as (iii) to define explicit *linking models* that map probability distributions over discourse states to probability distributions over judgments recorded using some response instrument.^[</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  This type of capability is often discussed in the experimental linguistics literature under the heading of *linking hypotheses* or *linking assumptions* (see @phillips_theories_2021).</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  For our purposes, we define linking models to be statistical models that relate a PDS analysis (which determines a probability distribution over the inferences supported by a linguistic expression) to comprehenders' judgments, as recorded using a particular instrument.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Crucial for PDS is that because probability distributions are characterized by a monad, they may themselves be *stacked* while retaining properties important for semantic composition.^[</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>  More to the point, monads give rise to *functors*, which are composable, giving rise to the "stacking".</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>That is, the types derived from a probability monad may be inhabited by distributions over familiar types of objects---entities, truth values, functions from entities to truth values, and the like---or they may be inhabited by distributions *over* such distributions.</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>And this stacking can be as deep as is necessary to model the sorts of uncertainty of interest to the analyst.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">## Two kinds of uncertainty</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>We argue here that at least two levels of stacking are necessary in order to appropriately model two kinds of interpretive uncertainty, respectively, which we refer to as *resolved* (or *type-level*) *uncertainty* and *unresolved* (or *token-level*) *uncertainty*.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Resolved uncertainty is any kind of uncertainty which relates to lexical, structural, or semantic (e.g., scopal) ambiguity.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>For example, a polysemous word gives rise to resolved uncertainty.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Based on the content of its direct object, *ran* in (@ex-run-sketch) seems likely to take on its locomotion sense, though it remains plausible that it has a management sense if Jo is understood to be the race's organizer.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>(@ex-run-sketch) Jo ran a race.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>In contrast, unresolved uncertainty is that which is associated with an expression in view of some *fixed* meaning it has.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Vague adjectives may give rise to unresolved uncertainty, for example, as witnessed by the vague inferences they support:</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>the minimum degree of height *tall* requires to hold of entities of which it is true remains uncertain on any use of (@ex-tall-sketch), even while the adjective's meaning plausibly does not always vary across such uses.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>(@ex-tall-sketch) Jo is tall.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>In general, we conceptualize unresolved uncertainty as reflecting the uncertainty that one has about a given inference at a particular point in some discourse, having fixed the meanings of the linguistic expressions.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>Put slightly differently, resolved uncertainty is a property of one's knowledge about the meanings of expressions *qua* expressions.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Sometimes *run* means this;</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>sometimes it means that.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>Thus, any analysis of the uncertainty about the meaning of *run* should capture that it is uncertainty about *types* of utterance act.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>In contrast, unresolved uncertainty encompasses any semantic uncertainty which remains, having fixed the type of utterance act---it is uncertainty pertaining to the semantically licensed inferences themselves.^[</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>  See @beaver_presupposition_1999 and @beaver_presupposition_2001, which describe an analogous bifurcation of orders of pragmatic reasoning in the representation of the common ground.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>To capture this idea, our approach regards these types of uncertainty as interacting with each other in a restricted fashion by taking advantage of the fact that distributions may be stacked.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>Because resolved uncertainty must be resolved in order for one to draw semantically licensed inferences from uses of particular expressions, we take resolved parameters to be *fixed* in the computation of unresolved uncertainty.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>This rigid connection among sources of uncertainty is a natural consequence of structuring probabilistic reasoning in terms of stacked probability distributions.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Discourse states</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>We follow a common in dynamic semantics practice by regarding discourse states as lists of parameters.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>We depart slightly from the usual assumption that these lists are homogenous by treating them as potentially arbitrarily complex, i.e., *heterogeneous* <span class="co">[</span><span class="ot">though see @bumford_dynamic_2022</span><span class="co">]</span>.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>As such, they could be structured according to a variety of models sometimes employed in formal pragmatics <span class="co">[</span><span class="ot">e.g., @farkas_reacting_2010</span><span class="co">]</span>.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>For example, we will define one parameter of this list to be a representation of the Stalnakerian common ground <span class="co">[</span><span class="ot">or more aptly, the "context set": @stalnaker_assertion_1978 et seq.</span><span class="co">]</span> and another parameter to be a stack of Questions Under Discussion <span class="co">[</span><span class="ot">QUDs: @ginzburg_dynamics_1996; @roberts_information_2012</span><span class="co">]</span>.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>We represent common grounds as probability distributions over indices encoding information about possible worlds, as well as what we call *contexts*.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>The possible world part of an index represents facts about how the (non-linguistic) world is---e.g., a particular individual's height---while the context part encodes certain facts about lexical meaning---e.g., the identity of the height threshold conveyed by a vague adjective, such as *tall* <span class="co">[</span><span class="ot">see, i.a.: @kennedy_scale_2005; @kennedy_vagueness_2007; @lassiter_vagueness_2011</span><span class="co">]</span>.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Utterances---and more broadly, discourses---map tuples of parameters onto probability distributions over new tuples of parameters.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Moreover, complex linguistic acts may be *sequenced*;</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>in general, the effect on an ongoing discourse of multiple linguistic acts may be computed by using the sequencing operation (*bind*) native to the probability monad.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>In this sense, compositionality of interpretation obtains in PDS from the level of individual morphemes all the way up to the level of complex exchanges.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>For example, a discourse may consist in (i) making an assertion, which (perhaps, under a simplified model) modifies the common ground; </span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>(ii) asking a question, which adds a QUD to the top of the QUD stack;</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>or (iii) a sequence of these.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>Regardless, we require the functions encoding discourses to return probabilistic values, in order to capture their inherent uncertainty.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="fu">## Linking models</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>A linking model takes a discourse as conceived above, together with an initial probability distribution over discourse states, and links them to a distribution over responses to the current QUD.</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>The possible responses to the QUD are determined by a data collection instrument, which could be a Likert scale, a slider scale, or something else.</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>Furthermore, the *distribution* over responses is fixed by a likelihood function whose choice is constrained by the nature of the values encoded by the instrument. </span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>Thus a Bernoulli distribution for instruments that produce binary values; </span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>a categorical distribution for instruments that produce unordered, multivalued discrete responses;</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>a linked logit distribution for instruments that produce ordered, multivalued discrete responses;</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>and so on.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="fu">## Haskell</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>Throughout these sets of notes, we include code snippets in the <span class="co">[</span><span class="ot">Haskell</span><span class="co">](https://www.haskell.org/)</span> programming language to illustrate concepts that we introduce.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>There is a working Haskell implementation of PDS, which is currently undergoing further development, and which can translate PDS models into minimal pieces of code in the <span class="co">[</span><span class="ot">Stan</span><span class="co">](https://mc-stan.org/)</span> programming language for several of the example modeling cases that we will discuss.</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Since the components of PDS are presented with their computational implementation in mind, we think it is particularly revealing to see the code itself.</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Thus we will interleave relevant code with the prose and semantic formulae.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

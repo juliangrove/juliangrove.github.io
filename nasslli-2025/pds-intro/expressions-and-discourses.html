@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Expressions and discourses – Probabilistic dynamic semantics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../pds-intro/constants.html" rel="next">
+<link href="../pds-intro/common-ground.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ec59717222d4d18488216d07f8bb4c3b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3c5b3ed224f457cdcbda003fac2adf13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Introduction to probabilistic dynamic semantics</a></li><li class="breadcrumb-item"><a href="../pds-intro/expressions-and-discourses.html">Expressions and discourses</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Probabilistic dynamic semantics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilistic dynamic semantics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Background</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/traditional-methodology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The bridge from theory to data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The experimental turn: new opportunities for semantic theory</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/understanding-gradience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding gradience: a taxonomy of uncertainty</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case studies: testing semantic theory at scale</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/new-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The need for new frameworks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/theoretically-oriented-approach.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A theoretically-oriented approach: RSA models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/setting-stage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting the stage</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction to probabilistic dynamic semantics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/ccg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Combinatory Categorial Grammar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/adding-probabilistic-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adding probabilistic types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/common-ground.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The common ground</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/expressions-and-discourses.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Expressions and discourses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/delta-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Delta rules</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Vagueness and imprecision</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Factivity inferences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../factivity/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Modeling the question prompt</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qud/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#expression-meanings" id="toc-expression-meanings" class="nav-link active" data-scroll-target="#expression-meanings">Expression meanings</a>
+  <ul class="collapse">
+  <li><a href="#program-composition-via-parameterized-monads" id="toc-program-composition-via-parameterized-monads" class="nav-link" data-scroll-target="#program-composition-via-parameterized-monads">Program composition via parameterized monads</a></li>
+  <li><a href="#state.probability" id="toc-state.probability" class="nav-link" data-scroll-target="#state.probability">State.Probability</a></li>
+  </ul></li>
+  <li><a href="#pds-rules" id="toc-pds-rules" class="nav-link" data-scroll-target="#pds-rules">PDS Rules</a></li>
+  <li><a href="#making-an-assertion" id="toc-making-an-assertion" class="nav-link" data-scroll-target="#making-an-assertion">Making an assertion</a></li>
+  <li><a href="#asking-a-question" id="toc-asking-a-question" class="nav-link" data-scroll-target="#asking-a-question">Asking a question</a></li>
+  <li><a href="#responding-to-a-question" id="toc-responding-to-a-question" class="nav-link" data-scroll-target="#responding-to-a-question">Responding to a question</a>
+  <ul class="collapse">
+  <li><a href="#linking-assumptions" id="toc-linking-assumptions" class="nav-link" data-scroll-target="#linking-assumptions">Linking assumptions</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Introduction to probabilistic dynamic semantics</a></li><li class="breadcrumb-item"><a href="../pds-intro/expressions-and-discourses.html">Expressions and discourses</a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Expressions and discourses</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
+</div>
+<p>We now turn to discourse states. These, like indices, are understood in terms of a theory of states and locations (and similarly, as having some polymorphic type <span class="math inline">\(σ\)</span>). We generally refer to the values stored in discourse states as <em>metalinguistic parameters</em>. These include, e.g., the common ground and the QUD, along with other conversationally relevant features of discourse (e.g., representations of the entities to which pronouns can refer, the available antecedents for ellipsis, etc.). One can view a discourse state as akin to the context state of <span class="citation" data-cites="farkas_reacting_2010">Farkas and Bruce (<a href="#ref-farkas_reacting_2010" role="doc-biblioref">2010</a>)</span>, though the type of state we employ is in principle less constrained, insofar as the type of individual parameters is open ended. Since discourse states provide access to the common ground and the QUD, they are associated with constants and equations like the following:</p>
+<ol class="example" type="1">
+<li><span class="math display">\[
+\begin{align*}
+\ct{CG}(\updct{CG}(cg)(s)) &amp;= cg \\
+\ct{CG}(\updct{QUD}(q)(s)) &amp;= \ct{CG}(s) \\[2mm]
+\ct{QUD}(\updct{QUD}(q)(s)) &amp;= q \\
+\ct{QUD}(\updct{CG}(cg)(s)) &amp;= \ct{QUD}(s)
+\end{align*}
+\]</span></li>
+</ol>
+<p>Though we haven’t yet discussed the types we take to be associated with QUDs, note that <span class="math inline">\(\ct{CG}\)</span> and <span class="math inline">\(\updct{CG}\)</span> ought to have the following types:</p>
+<ol start="2" class="example" type="1">
+<li><span class="math display">\[
+\begin{align*}
+\ct{CG} &amp;: σ → \P ι \\
+\updct{CG} &amp;: \P ι → σ → σ
+\end{align*}
+\]</span></li>
+</ol>
+<p>Finally, as for indices, we provide a constant <span class="math inline">\(\ct{ϵ}\)</span> representing a “starting” state:</p>
+<ol start="3" class="example" type="1">
+<li><span class="math display">\[
+\ct{ϵ} : σ
+\]</span></li>
+</ol>
+<section id="expression-meanings" class="level2">
+<h2 class="anchored" data-anchor-id="expression-meanings">Expression meanings</h2>
+<p>We regard expressions’ probabilistic semantic values as functions of type <span class="math inline">\(σ → \P (α × σ^{\prime})\)</span>, where <span class="math inline">\(σ\)</span> and <span class="math inline">\(σ^{\prime}\)</span> should be understood to represent the types of discourse states. We abbreviate this type as <span class="math inline">\(ℙ^{σ}_{σ^{\prime}} α\)</span>:</p>
+<ol start="4" class="example" type="1">
+<li><span class="math display">\[
+ℙ^{σ}_{σ^{\prime}} α ≝ σ → \P (α × σ^{\prime})
+\]</span></li>
+</ol>
+<p>Thus given an input state <span class="math inline">\(s : σ\)</span>, the semantic value of an expression produces a probability distribution over pairs of ordinary semantic values of type <span class="math inline">\(α\)</span> and possible output states <span class="math inline">\(s^{\prime} : σ^{\prime}\)</span>. An expression of category <span class="math inline">\(np\)</span>, for instance, now has the <em>probabilistic</em> type <span class="math inline">\(ℙ^{σ}_{σ^{\prime}}(⟦np⟧) \,\, = \,\, ℙ^{σ}_{σ^{\prime}} e \,\, = \,\, σ → \P (e × σ^{\prime})\)</span>.</p>
+<p>Building on this view of expressions, we regard an ongoing discourse as a function of type <span class="math inline">\(ℙ^{σ}_{σ^{\prime}} ⋄\)</span>. The effects that both expressions and discourses have are therefore <em>stateful-probabilistic</em>: they map input states to probability distributions over output states. Discourses differ from expressions in that the value discourses compute is trivial: it is invariably the empty tuple <span class="math inline">\(⋄\)</span>, as determined by its type. Thus while expressions produce both stateful-probabilistic effects <em>and</em> values, discourses have <em>only</em> effects, i.e., they merely update the state.</p>
+<section id="program-composition-via-parameterized-monads" class="level3">
+<h3 class="anchored" data-anchor-id="program-composition-via-parameterized-monads">Program composition via parameterized monads</h3>
+<p>The setup we have introduced allows for the possibility that the state parameter <span class="math inline">\(σ\)</span> <em>changes</em> in the course of evaluating an expression’s probabilistic semantic value. Such a value may map an input state <span class="math inline">\(s : σ\)</span> onto a probability distribution over outputs states of type <span class="math inline">\(σ^{\prime}\)</span> (<span class="math inline">\(σ^{\prime} ≠ σ\)</span>). This flexibility is useful to capture the changing nature of certain components of the discourse state. For example, the QUDs stored in a state may consist of questions of different types—e.g., degree questions, individual questions, etc. Thus whenever an utterance functions to add a QUD to the state, the input state’s type may not match the output state’s type.</p>
+<p>To countenance such type-level flexibility, we view the types <span class="math inline">\(ℙ^{σ}_{σ^{\prime}} α\)</span> as arising from a <em>parameterized</em> State.Probability monad, given the set <span class="math inline">\(\mathcal{T}_{A}\)</span> of types as the relevant collection of parameters.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Parameterized monads are associated with their own definitions of (parameterized) return and bind. To increase clarity, while distinguishing the notations for parameterized and vanilla monads, we present the bind statements of a parameterized monad <span class="math inline">\(ℙ\)</span> using Haskell’s <span class="math inline">\(\Do\)</span>-notation.</p>
+<ol start="5" class="example" type="1">
+<li>Given a collection <span class="math inline">\(\mathcal{S}\)</span> of parameters, a parameterized monad is a map <span class="math inline">\(ℙ\)</span> from triples consisting of two parameters and a type onto types (i.e., given parameters <span class="math inline">\(p, q ∈ \mathcal{S}\)</span> and a type <span class="math inline">\(α\)</span>, <span class="math inline">\(ℙ^{p}_{q} α\)</span> is some new type), equipped with two operators satisfying the parameterized monad laws in (6). <span class="math display">\[
+\begin{align*}
+\return{(·)}_{p}\ \ &amp;:\ \ α → ℙ^{p}_{p} α \tag{`return'} \\
+\begin{array}{rl}
+\Do_{p, q, r} &amp; x ← \_\_ \\
+&amp; \_\_(x)
+\end{array}\ \
+&amp;:\ \ ℙ^{p}_{q} α → (α → ℙ^{q}_{r} β) → ℙ^{p}_{r} β \tag{`bind'}
+\end{align*}
+\]</span></li>
+</ol>
+<p>The parameterized monad laws themselves appear formally identical to the ordinary monad laws (see (6)); the crucial difference is their implicit manipulation of parameters moving from the left-hand side of each equality to the right-hand side.</p>
+<ol start="6" class="example" type="1">
+<li><span class="math display">\[
+\begin{array}{c}
+\textit{Left identity} &amp; \textit{Right identity} \\[1mm]
+\begin{array}{rl}
+\Do_{p, p, q} &amp; x ← \return{v}_{p} \\
+&amp; k(x)
+\end{array}\ \ =\ \ \ k(v)
+&amp; \begin{array}{rl}
+\Do_{p, q, q} &amp; x ← m \\
+&amp; \return{x}_{q}
+\end{array} \ \ =\ \ \ m
+\end{array}
+\]</span> <span class="math display">\[
+\begin{array}{c}
+\textit{Associativity} \\[1mm]
+\begin{array}{rl}
+\Do_{p, r, s} &amp; y ← \left(\begin{array}{rl}
+\Do_{p, q, r} &amp; x ← m \\
+&amp; n(x)
+\end{array}\right) \\
+&amp; o(y)
+\end{array}\ \ =\ \ \begin{array}{rl}
+\Do_{p, q, s} &amp; x ← m \\
+&amp; \begin{array}{rl}
+    \Do_{q, r, s} &amp; y ← n(x) \\
+    &amp; o(y)
+\end{array}
+\end{array}
+\end{array}
+\]</span></li>
+</ol>
+<p>The <span class="math inline">\(\Do\)</span>-notation in the above should be read as saying, “first bind the variable <span class="math inline">\(x\)</span> to the program <span class="math inline">\(m\)</span>, and then do <span class="math inline">\(k(x)\)</span>’’. Indeed, this statement gives an intuitive summary of what the definition of State.Probability accomplishes: to bind <span class="math inline">\(m\)</span> to the continuation <span class="math inline">\(k\)</span>, one must abstract over an input state <span class="math inline">\(s\)</span> and feed it to <span class="math inline">\(m\)</span>, sample a value <span class="math inline">\(x\)</span> paired with an output state <span class="math inline">\(s^{\prime}\)</span> from the result, and finally, feed <span class="math inline">\(x\)</span>, along with <span class="math inline">\(s^{\prime}\)</span>, to <span class="math inline">\(k\)</span>.</p>
+<p>In practice, we will leave the parameters implicit when we use this notation. We also suppress superfluous uses of <span class="math inline">\(\Do\)</span>-notation, writing</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+\Do &amp; x ← m \\
+    &amp; y → m \\
+    &amp; n
+\end{array}
+\]</span></p>
+<p>for</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+\Do &amp; x ← m \\
+    &amp; \begin{array}{rl}
+    \Do &amp; y → m \\
+    &amp; n
+    \end{array}
+\end{array}
+\]</span></p>
+<p>We will also sometimes use a “bracket” notation, writing one-liners such as</p>
+<p><span class="math display">\[
+\Do \{x ← m; n\}
+\]</span></p>
+<p>instead of</p>
+<p><span class="math display">\[
+\begin{array}{rl}
+\Do &amp; x ← m \\
+    &amp; n
+\end{array}
+\]</span></p>
+<p>to save space.</p>
+</section>
+<section id="state.probability" class="level3">
+<h3 class="anchored" data-anchor-id="state.probability">State.Probability</h3>
+<p>The particular parameterized monad we employ is State.Probability, where the relevant collection of parameters is <span class="math inline">\(\mathcal{T}_{A}\)</span>.</p>
+<ol start="7" class="example" type="1">
+<li><span class="math display">\[
+\begin{align*}
+ℙ^{σ}_{σ^{\prime}} α\ \ &amp;=\ \ σ → \P (α × σ^{\prime}) \\[2mm]
+\return{v}_{σ}\ \ &amp;=\ \ λs.\pure{⟨v, s⟩} \\[2mm]
+\begin{array}{rl}
+\Do_{σ, σ^{\prime}, σ^{\prime\prime}} &amp; x ← m \\
+&amp; k(x)
+\end{array}\ \
+&amp;=\ \ λs.\left(\begin{array}{l}
+⟨x, s^{\prime}⟩ ∼ m(s) \\
+k(x)(s^{\prime})
+\end{array}\right)
+\end{align*}
+\]</span></li>
+</ol>
+<p>These definitions can be encoded in Haskell as functions that manipulate terms (ensuring that fresh variables are used when necessary):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- | ** Some convience functions</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Variable names are represented by strings.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">VarName</span> <span class="ot">=</span> <span class="dt">String</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Generate an infinite list of variable names fresh for some list of terms.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ot">fresh ::</span> [<span class="dt">Term</span>] <span class="ot">-&gt;</span> [<span class="dt">VarName</span>]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Smart(-ish) constructor for abstractions.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ot">lam ::</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>lam (<span class="dt">Var</span> v) <span class="ot">=</span> <span class="dt">Lam</span> v</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Smart(-ish) constructor for bind.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ot">let' ::</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>let' (<span class="dt">Var</span> v) <span class="ot">=</span> <span class="dt">Let</span> v</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Paramterized return.</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="ot">purePP ::</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>purePP t <span class="ot">=</span> lam fr (<span class="dt">Return</span> (t <span class="op">&amp;</span> fr))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">where</span> fr<span class="op">:</span>esh <span class="ot">=</span> <span class="fu">map</span> <span class="dt">Var</span> <span class="op">$</span> fresh [t]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Parameterized bind.</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ot">(&gt;&gt;&gt;=) ::</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>t <span class="op">&gt;&gt;&gt;=</span> u <span class="ot">=</span> lam fr (let' e (t <span class="op">@@</span> fr) (u <span class="op">@@</span> <span class="dt">Pi1</span> e <span class="op">@@</span> <span class="dt">Pi2</span> e))</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="kw">where</span> fr<span class="op">:</span>e<span class="op">:</span>sh <span class="ot">=</span> <span class="fu">map</span> <span class="dt">Var</span> <span class="op">$</span> fresh [t, u]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In general, it will be useful to have access to a couple of basic operations for retrieving (<span class="math inline">\(\abbr{get}\)</span>) and updating (<span class="math inline">\(\abbr{put}\)</span>) the state of an ongoing discourse:</p>
+<ol start="8" class="example" type="1">
+<li><span class="math display">\[
+\begin{align*}
+\abbr{get} &amp;: ℙ^{σ}_{σ} σ \\
+\abbr{get} &amp;= λs.\pure{⟨s, s⟩} \\[2mm]
+\abbr{put} &amp;: σ^{\prime} → ℙ^{σ}_{σ^{\prime}} \\
+\abbr{put}(s^{\prime}) &amp;= λs.\pure{⟨⋄, s^{\prime}⟩}
+\end{align*}
+\]</span></li>
+</ol>
+<p>Now, the current state of a given discourse can be retrieved (as <span class="math inline">\(s\)</span>) by writing the statement <span class="math inline">\(s ← \abbr{get}\)</span> inside of a <span class="math inline">\(\Do\)</span>-block; meanwhile, writing the statement <span class="math inline">\(\abbr{put}(s)\)</span> updates this state so that it <em>becomes</em> <span class="math inline">\(s\)</span>.</p>
+<p>These two operators can also be given the following Haskell encodings <code>getPP</code> and <code>putPP</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ot">getPP ::</span> <span class="dt">Term</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>getPP <span class="ot">=</span> lam' s (<span class="dt">Return</span> (s <span class="op">&amp;</span> s))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ot">putPP ::</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>putPP s <span class="ot">=</span> <span class="dt">Lam</span> fr (<span class="dt">Return</span> (<span class="dt">TT</span> <span class="op">&amp;</span> s))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">where</span> fr<span class="op">:</span>esh <span class="ot">=</span> fresh [s]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="pds-rules" class="level2">
+<h2 class="anchored" data-anchor-id="pds-rules">PDS Rules</h2>
+<p>We provide our probabilistic CCG rule schemata in (9). These schemata mimic the definitions of ordinary CCG rules, but now semantic values are considered to be of type <span class="math inline">\(ℙ^{σ}_{σ^{\prime}} α\)</span> now, rather than simply of type <span class="math inline">\(α\)</span>. Thus rather than apply CCG operations to semantic values directly, we must bind these semantic values to variables of type <span class="math inline">\(α\)</span> and apply the operations to <em>those</em>.</p>
+<ol start="9" class="example" type="1">
+<li><span class="math display">\[ \small
+\begin{array}{c}
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{M_{1}}{c/ b}$}
+\AxiomC{$\expr{s_{2}}{M_{2}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\RightLabel{${&gt;}\textbf{B}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do &amp; \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+&amp; \return{λx_{1}, …, x_{n}.m_{1}(m_{2}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree} \\[50pt]
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{m_{1}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\AxiomC{$\expr{s_{1}}{m_{2}}{c\backslash b}$}
+\RightLabel{${&lt;}\textbf{B}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do &amp; \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+&amp; \return{λx_{1}, …, x_{n}.m_{2}(m_{1}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree} \\[50pt]
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{M_{1}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\AxiomC{$\expr{s_{2}}{M_{2}}{c\backslash b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}⋯∣_{1}a_{1}}$}
+\RightLabel{${&lt;}\textbf{S}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do &amp; \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+&amp; \return{λx_{1}, …, x_{n}.m_{1}(x_{1})…(x_{n})(m_{2}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree} \\[50pt]
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{M_{1}}{c/ b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\AxiomC{$\expr{s_{2}}{M_{2}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\RightLabel{${&gt;}\textbf{S}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do &amp; \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+&amp; \return{λx_{1}, …, x_{n}.m_{2}(x_{1})…(x_{n})(m_{1}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree}
+\end{array}
+\]</span></li>
+</ol>
+<p>The upshot is that, while an expression’s syntactic type continues to determine its compositional properties, its probabilistic, dynamic effects can be stated fairly independently.</p>
+</section>
+<section id="making-an-assertion" class="level2">
+<h2 class="anchored" data-anchor-id="making-an-assertion">Making an assertion</h2>
+<p>Recall that we represent the meanings of expressions as functions of type <span class="math inline">\(ℙ^{σ}_{σ^{\prime}}\)</span>: given an input state of type <span class="math inline">\(σ\)</span>, the meaning of an expression produces a probability distribution over <em>pairs</em> of ordinary meanings of type <span class="math inline">\(α\)</span> and possible output states of type <span class="math inline">\(σ^{\prime}\)</span>. Furthermore, given a sentence whose probabilistic dynamic meaning <span class="math inline">\(φ\)</span> is of type <span class="math inline">\(ℙ^{σ}_{σ^{\prime}} (ι → t)\)</span>, we can represent an <em>assertion</em> of that sentence as a discourse which updates the common ground. Specifically, we have a function <span class="math inline">\(\abbr{assert}\)</span>:</p>
+<ol start="10" class="example" type="1">
+<li><span class="math display">\[
+\begin{align*}
+  \abbr{assert} &amp;: ℙ^{σ}_{σ^{\prime}} (ι → t) → ℙ^{σ}_{σ^{\prime}} ⋄ \\
+  \abbr{assert}(φ) &amp;= \begin{array}[t]{rl}
+\Do &amp; p ← φ \\
+    &amp; s ← \abbr{get} \\
+    &amp; c ← \return{\ct{CG}(s)} \\
+    &amp; c^{\prime} ← \return{\left(\begin{array}{l}
+    i ∼ c \\
+    \ct{observe}(p(i)) \\
+    \pure{i}
+    \end{array}\right)} \\
+    &amp; \abbr{put}(\updct{CG}(c^{\prime})(s))
+\end{array}
+\end{align*}
+\]</span></li>
+</ol>
+<p>Given such a <span class="math inline">\(φ\)</span>, <span class="math inline">\(\abbr{assert}(φ)\)</span> is a discourse of type <span class="math inline">\(\P^{σ}_{σ^{\prime}} ⋄\)</span> representing an assertion of <span class="math inline">\(φ\)</span>. In plain English, <span class="math inline">\(\abbr{assert}(φ\)</span>) samples a proposition <span class="math inline">\(p\)</span>, given <span class="math inline">\(φ\)</span>, and then updates the common ground of the current state with <span class="math inline">\(p\)</span>. Ultimately, assertions modify an ongoing discourse so that its probability distribution over output states involves common grounds in which the proposition returned by <span class="math inline">\(φ\)</span> has been observed to hold true.</p>
+<p>Using a few new convenience functions, along with some new short-hands for named variables, <span class="math inline">\(\abbr{assert}\)</span> can be encoded in Haskell:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ot">assert ::</span> <span class="dt">Term</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>assert <span class="ot">=</span> lam φ (φ <span class="op">&gt;&gt;&gt;=</span> lam p (getPP <span class="op">&gt;&gt;&gt;=</span> lam s (purePP (cg s) <span class="op">&gt;&gt;&gt;=</span> lam c (purePP (let' i c (let' _' (observe (p <span class="op">@@</span> i)) (<span class="dt">Return</span> i))) <span class="op">&gt;&gt;&gt;=</span> lam d (putPP (upd_CG d s))))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="asking-a-question" class="level2">
+<h2 class="anchored" data-anchor-id="asking-a-question">Asking a question</h2>
+<p>We follow a categorial tradition by analyzing questions as denoting—given an index—sets of true short answer meanings <span class="citation" data-cites="hausser_questions_1978 hausser_syntax_1983 xiang_hybrid_2021 karttunen_syntax_1977 groenendijk_studies_1984">(see <a href="#ref-hausser_questions_1978" role="doc-biblioref">R. Hausser and Zaefferer 1978</a>; <a href="#ref-hausser_syntax_1983" role="doc-biblioref">R. R. Hausser 1983</a>; <a href="#ref-xiang_hybrid_2021" role="doc-biblioref">Xiang 2021</a>; cf. <a href="#ref-karttunen_syntax_1977" role="doc-biblioref">Karttunen 1977</a>; <a href="#ref-groenendijk_studies_1984" role="doc-biblioref">Groenendijk and Stokhof 1984</a>)</span>. Given some type <span class="math inline">\(α\)</span> as the type of the short answer, a question therefore has a probabilistic dynamic meaning of type <span class="math inline">\(ℙ^{σ}_{σ^{\prime}} (α → ι → t)\)</span>.</p>
+<p>Asking a question is a matter of pushing a question meaning onto the QUD stack <span class="citation" data-cites="ginzburg_dynamics_1996 farkas_reacting_2010">(<a href="#ref-ginzburg_dynamics_1996" role="doc-biblioref">Ginzburg 1996</a>; <a href="#ref-farkas_reacting_2010" role="doc-biblioref">Farkas and Bruce 2010</a>)</span>. Reflecting this, we recruit another operation, <span class="math inline">\(\abbr{ask}\)</span>: <span class="math display">\[\begin{align*}
+  \abbr{ask} &amp;: ℙ^{σ}_{σ^{\prime}} (α → ι → t) → ℙ^{σ}_{\Q ι α σ^{\prime}} ⋄ \\
+  \abbr{ask}(κ) &amp;= \begin{array}[t]{rl}
+    \Do &amp; q ← κ \\
+        &amp; s ← \abbr{get} \\
+        &amp; \abbr{put}(\updct{QUD}(q)(s))
+    \end{array}
+\end{align*}\]</span> Given a probabilistic dynamic question meaning <span class="math inline">\(κ\)</span>, <span class="math inline">\(\abbr{ask}(κ)\)</span> samples a question meaning <span class="math inline">\(q : α → ι → t\)</span>, given <span class="math inline">\(κ\)</span>, and then adds <span class="math inline">\(q\)</span> as a new QUD to the outgoing state. Note the type of the output state that <span class="math inline">\(\abbr{ask}\)</span> returns: <span class="math inline">\(\Q ι α σ^{\prime}\)</span>. <span class="math inline">\(\Q\)</span> is a new map from types to types which, like <span class="math inline">\(\P\)</span>, we leave abstract; given a state type <span class="math inline">\(σ^{\prime}\)</span>, the meaning of <span class="math inline">\(\Q ι α σ^{\prime}\)</span> is the type of a new state with a question of type <span class="math inline">\(α → ι → t\)</span> added to the QUD stack. Thus the type of <span class="math inline">\(\updct{QUD}\)</span> should be as in (11).</p>
+<ol start="11" class="example" type="1">
+<li><span class="math display">\[
+\begin{align*}
+\updct{QUD} : (α → ι → t) → σ → \Q ι α σ
+\end{align*}
+\]</span></li>
+</ol>
+<p>Indeed, we should update the set of types in our Haskell encoding to accommodate the new operator:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Arrows, products, and probabilistic types, as well as (a) abstract types</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- representing the addition of a new Q, and (b) type variables for encoding</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- polymorphism.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Type</span> <span class="ot">=</span> <span class="dt">At</span> <span class="dt">Atom</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Type</span> <span class="op">:</span>→ <span class="dt">Type</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Unit</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Type</span> <span class="op">:</span>× <span class="dt">Type</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">P</span> <span class="dt">Type</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Q</span> <span class="dt">Type</span> <span class="dt">Type</span> <span class="dt">Type</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">TyVar</span> <span class="dt">String</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">deriving</span> (<span class="dt">Eq</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Finally, we can also provide an implementation of <span class="math inline">\(\abbr{ask}\)</span>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ot">ask ::</span> <span class="dt">Term</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ask <span class="ot">=</span> lam κ' (κ' <span class="op">&gt;&gt;&gt;=</span> lam q (getPP <span class="op">&gt;&gt;&gt;=</span> lam s (putPP (upd_QUD q s))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="responding-to-a-question" class="level2">
+<h2 class="anchored" data-anchor-id="responding-to-a-question">Responding to a question</h2>
+<p>PDS also models responses to questions; at any point in an ongoing discourse, one can respond to the QUD at the top of the current QUD stack based on one’s prior knowledge. Concretely, a given responder has some background knowledge <span class="math inline">\(bg : \P σ\)</span> constituting a prior distribution over <em>starting</em> states. The responder uses this prior, in conjuction with the interim updates to the discourse, to derive a probability distribution over answers to the QUD. If the set of possible answers are real numbers (e.g., representing degrees of likelihood), this answer distribution is gotten by retrieving the QUD of any given state <span class="math inline">\(s^{\prime}\)</span>—resulting in a distribution over QUDs—and then taking the maximum value of which it is true at an index sampled from the common ground—resulting, finally, in a distribution over real numbers.</p>
+<section id="linking-assumptions" class="level3">
+<h3 class="anchored" data-anchor-id="linking-assumptions">Linking assumptions</h3>
+<p>In practice (e.g., in the setting of a formal experiment), an answer needs to be given using a particular testing instrument. We assume that a given testing instrument may be modeled by a family <span class="math inline">\(f\)</span> of distributions representing the likelihood, which is then fixed by a collection <span class="math inline">\(Φ\)</span> of nuisance parameters. For the purposes of the implementation, we assume answers to the current QUD are real numbers, so that for fixed likelihood <span class="math inline">\(f_{Φ}\)</span>, <span class="math inline">\(f_{Φ} : r → \P ρ\)</span>, for the type <span class="math inline">\(ρ\)</span> of responses; this is not necessary, however, and the types of such functions could be generalized.</p>
+<p>Thus we may define a family of <em>response functions</em>, parametric in the testing instrument (i.e., likelihood function), each of which takes a distribution <span class="math inline">\(bg\)</span> representing one’s background knowledge, along with an ongoing discourse <span class="math inline">\(m\)</span>: <span class="math display">\[\begin{align*}
+  \abbr{respond}^{f_Φ : r → \P ρ} &amp;: \P σ → ℙ^{σ}_{\Q ι r σ^{\prime}} ⋄ → \P ρ \\
+  \abbr{respond}^{f_Φ : r → \P ρ}(bg)(m) &amp;= \begin{array}[t]{l}
+    s ∼ bg \\
+    ⟨⋄, s^{\prime}⟩ ∼ m(s) \\
+    i ∼ \ct{CG}(s^{\prime}) \\
+    f(\ct{max}(λd.\ct{QUD}(s)(d)(i)), Φ)
+    \end{array}
+\end{align*}\]</span> For a fixed likelihood function <span class="math inline">\(f_{Φ}\)</span> mapping any given real number answer onto a distribution over possible responses of type <span class="math inline">\(ρ\)</span> (for some <span class="math inline">\(ρ\)</span>), the response function takes a distribution representing background knowledge and a discourse to produce a response distribution. It does this by composing the discourse with background knowledge, as above, and then obtaining the maximum degree (i.e., real number) answer to the current QUD, before applying the likelihood function <span class="math inline">\(f_{Φ}\)</span> to this degree.</p>
+<p>The testing instrument employed in the studies we describe in the next few days, for example, is always a slider scale that records responses on the unit interval <span class="math inline">\([0, 1]\)</span>. A suitable likelihood might therefore be a truncated normal distribution: <span class="math inline">\(f(x, Φ) = \mathcal{N}(x, σ)\,\ct{T}[0, 1]\)</span> (so that <span class="math inline">\(f = \mathcal{N}\)</span> and <span class="math inline">\(Φ = σ\)</span>). This likelihood—which <span class="citation" data-cites="grove_factivity_2024">Grove and White (<a href="#ref-grove_factivity_2024" role="doc-biblioref">2024</a>)</span> employ in their models of factivity—can be viewed as allowing some distribution of response errors, given the intended target response (i.e., the answer to the question).</p>
+<p>Before moving onto some further implementation details, we can also show the Haskell encoding of <span class="math inline">\(\abbr{respond}\)</span>, which follows the description above:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ot">respond ::</span> <span class="dt">Term</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>respond <span class="ot">=</span> lam f (lam bg (lam m (let' s bg m')))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">where</span> m'          <span class="ot">=</span> let' _s' (m <span class="op">@@</span> s) (let' i (cg (<span class="dt">Pi2</span> _s')) (f <span class="op">@@</span> max' (lam x (qud (<span class="dt">Pi2</span> _s') <span class="op">@@</span> x <span class="op">@@</span> i))))</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        s<span class="op">:</span>_s'<span class="op">:</span>i<span class="op">:</span>x<span class="op">:</span>_ <span class="ot">=</span> <span class="fu">map</span> <span class="dt">Var</span> <span class="op">$</span> fresh [bg, m]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+<!-- -->
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-atkey_parameterised_2009" class="csl-entry" role="listitem">
+Atkey, Robert. 2009. <span>“Parameterised Notions of Computation.”</span> <em>Journal of Functional Programming</em> 19 (3-4): 335–76. <a href="https://doi.org/10.1017/S095679680900728X">https://doi.org/10.1017/S095679680900728X</a>.
+</div>
+<div id="ref-farkas_reacting_2010" class="csl-entry" role="listitem">
+Farkas, Donka F., and Kim B. Bruce. 2010. <span>“On <span>Reacting</span> to <span>Assertions</span> and <span>Polar</span> <span>Questions</span>.”</span> <em>Journal of Semantics</em> 27 (1): 81–118. <a href="https://doi.org/10.1093/jos/ffp010">https://doi.org/10.1093/jos/ffp010</a>.
+</div>
+<div id="ref-ginzburg_dynamics_1996" class="csl-entry" role="listitem">
+Ginzburg, Jonathan. 1996. <span>“Dynamics and the Semantics of Dialogue.”</span> In <em>Logic, <span>Language</span>, and <span>Computation</span></em>, edited by Jerry Seligman and Dag Westerståhl, 1:221–37. Stanford: CSLI Publications.
+</div>
+<div id="ref-groenendijk_studies_1984" class="csl-entry" role="listitem">
+Groenendijk, Jeroen, and Martin Stokhof. 1984. <span>“Studies on the Semantics of Questions and the Pragmatics of Answers.”</span> PhD thesis, Amsterdam: University of Amsterdam. <a href="https://stokhof.org/wp-content/uploads/2020/09/groenendijk-stokhof_ssqpa.pdf">https://stokhof.org/wp-content/uploads/2020/09/groenendijk-stokhof_ssqpa.pdf</a>.
+</div>
+<div id="ref-grove_factivity_2024" class="csl-entry" role="listitem">
+Grove, Julian, and Aaron Steven White. 2024. <span>“Factivity, Presupposition Projection, and the Role of Discrete Knowlege in Gradient Inference Judgments.”</span> LingBuzz. <a href="https://ling.auf.net/lingbuzz/007450">https://ling.auf.net/lingbuzz/007450</a>.
+</div>
+<div id="ref-hausser_syntax_1983" class="csl-entry" role="listitem">
+Hausser, Roland R. 1983. <span>“The <span>Syntax</span> and <span>Semantics</span> of <span>English</span> <span>Mood</span>.”</span> In <em>Questions and <span>Answers</span></em>, edited by Ferenc Kiefer, 97–158. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-009-7016-8_6">https://doi.org/10.1007/978-94-009-7016-8_6</a>.
+</div>
+<div id="ref-hausser_questions_1978" class="csl-entry" role="listitem">
+Hausser, Roland, and Dietmar Zaefferer. 1978. <span>“Questions and <span>Answers</span> in a <span>Context</span>-<span>Dependent</span> <span>Montague</span> <span>Grammar</span>.”</span> In <em>Formal <span>Semantics</span> and <span>Pragmatics</span> for <span>Natural</span> <span>Languages</span></em>, edited by F. Guenthner and S. J. Schmidt, 339–58. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-009-9775-2_12">https://doi.org/10.1007/978-94-009-9775-2_12</a>.
+</div>
+<div id="ref-karttunen_syntax_1977" class="csl-entry" role="listitem">
+Karttunen, Lauri. 1977. <span>“Syntax and <span>Semantics</span> of <span>Questions</span>.”</span> <em>Linguistics and Philosophy</em> 1 (1): 3–44. <a href="https://www.jstor.org/stable/25000027">https://www.jstor.org/stable/25000027</a>.
+</div>
+<div id="ref-liang_monad_1995" class="csl-entry" role="listitem">
+Liang, Shen, Paul Hudak, and Mark Jones. 1995. <span>“Monad Transformers and Modular Interpreters.”</span> In <em><span>POPL</span> ’95 <span>Proceedings</span> of the 22nd <span>ACM</span> <span>SIGPLAN</span>-<span>SIGACT</span> Symposium on <span>Principles</span> of Programming Languages</em>, 333–43. New York. <a href="https://doi.org/10.1145/199448.199528">https://doi.org/10.1145/199448.199528</a>.
+</div>
+<div id="ref-xiang_hybrid_2021" class="csl-entry" role="listitem">
+Xiang, Yimei. 2021. <span>“A Hybrid Categorial Approach to Question Composition.”</span> <em>Linguistics and Philosophy</em> 44 (3): 587–647. <a href="https://doi.org/10.1007/s10988-020-09294-8">https://doi.org/10.1007/s10988-020-09294-8</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p> See <span class="citation" data-cites="atkey_parameterised_2009">Atkey (<a href="#ref-atkey_parameterised_2009" role="doc-biblioref">2009</a>)</span> on the parameterized State monad and parameterized monads more generally. The current parameterized monad can be viewed as applying a parameterized State monad <em>transformer</em> to the underlying probability monad <span class="math inline">\(\P\)</span>; see <span class="citation" data-cites="liang_monad_1995">Liang, Hudak, and Jones (<a href="#ref-liang_monad_1995" role="doc-biblioref">1995</a>)</span> on monad transformers.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../pds-intro/common-ground.html" class="pagination-link" aria-label="The common ground">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The common ground</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../pds-intro/constants.html" class="pagination-link" aria-label="Constants">
+        <span class="nav-page-text">Constants</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Expressions and discourses"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\updct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\ct{upd<span class="sc">\_</span>#1}}</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\pure}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid orange</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\return}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid black</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>\def\P{\mathtt{P}}</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>\def\Q{\mathtt{Q}}</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>\def\ite{\ct{if<span class="sc">\_</span>then<span class="sc">\_</span>else}}</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>\def\Do{\abbr{do}}</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>We now turn to discourse states.</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>These, like indices, are understood in terms of a theory of states and locations (and similarly, as having some polymorphic type $σ$).</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>We generally refer to the values stored in discourse states as *metalinguistic parameters*.</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>These include, e.g., the common ground and the QUD, along with other conversationally relevant features of discourse (e.g., representations of the entities to which pronouns can refer, the available antecedents for ellipsis, etc.).</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>One can view a discourse state as akin to the context state of @farkas_reacting_2010, though the type of state we employ is in principle less constrained, insofar as the type of individual parameters is open ended.</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>Since discourse states provide access to the common ground and the QUD, they are associated with constants and equations like the following:</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>(@ex-states-eqs)</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>\ct{CG}(\updct{CG}(cg)(s)) &amp;= cg <span class="sc">\\</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>\ct{CG}(\updct{QUD}(q)(s)) &amp;= \ct{CG}(s) <span class="sc">\\</span><span class="co">[</span><span class="ot">2mm</span><span class="co">]</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>\ct{QUD}(\updct{QUD}(q)(s)) &amp;= q <span class="sc">\\</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>\ct{QUD}(\updct{CG}(cg)(s)) &amp;= \ct{QUD}(s)</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>Though we haven't yet discussed the types we take to be associated with QUDs, note that $\ct{CG}$ and $\updct{CG}$ ought to have the following types:</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>(@ex-cg-types)</span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>\ct{CG} &amp;: σ → \P ι <span class="sc">\\</span></span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>\updct{CG} &amp;: \P ι → σ → σ</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>Finally, as for indices, we provide a constant $\ct{ϵ}$ representing a "starting" state:</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>(@ex-epsilon)</span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>\ct{ϵ} : σ</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Expression meanings</span></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>We regard expressions' probabilistic semantic values as functions of type $σ → \P (α × σ^{\prime})$, where $σ$ and $σ^{\prime}$ should be understood to represent the types of discourse states.</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>We abbreviate this type as $ℙ^{σ}_{σ^{\prime}} α$:</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>(@ex-p-abbrev)</span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>ℙ^{σ}_{σ^{\prime}} α ≝ σ → \P (α × σ^{\prime})</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>Thus given an input state $s : σ$, the semantic value of an expression produces a probability distribution over pairs of ordinary semantic values of type $α$ and possible output states $s^{\prime} : σ^{\prime}$.</span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>An expression of category $np$, for instance, now has the *probabilistic* type $ℙ^{σ}_{σ^{\prime}}(⟦np⟧) \,\, = \,\, ℙ^{σ}_{σ^{\prime}} e \,\, = \,\, σ → \P (e × σ^{\prime})$.</span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a>Building on this view of expressions, we regard an ongoing discourse as a function of type $ℙ^{σ}_{σ^{\prime}} ⋄$.</span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a>The effects that both expressions and discourses have are therefore *stateful-probabilistic*:</span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>they map input states to probability distributions over output states.</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>Discourses differ from expressions in that the value discourses compute is trivial:</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>it is invariably the empty tuple $⋄$, as determined by its type.</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>Thus while expressions produce both stateful-probabilistic effects *and* values, discourses have *only* effects, i.e., they merely update the state.</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### Program composition via parameterized monads</span></span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>The setup we have introduced allows for the possibility that the state parameter $σ$ *changes* in the course of evaluating an expression's probabilistic semantic value.</span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>Such a value may map an input state $s : σ$ onto a probability distribution over outputs states of type $σ^{\prime}$ ($σ^{\prime} ≠ σ$).</span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>This flexibility is useful to capture the changing nature of certain components of the discourse state.</span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>For example, the QUDs stored in a state may consist of questions of different types---e.g., degree questions, individual questions, etc.</span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>Thus whenever an utterance functions to add a QUD to the state, the input state's type may not match the output state's type.</span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>To countenance such type-level flexibility, we view the types $ℙ^{σ}_{σ^{\prime}} α$ as arising from a *parameterized* State.Probability monad, given the set $\mathcal{T}_{A}$ of types as the relevant collection of parameters.^[ </span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a>  See @atkey_parameterised_2009 on the parameterized State monad and parameterized monads more generally.</span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>  The current parameterized monad can be viewed as applying a parameterized State monad *transformer* to the underlying probability monad $\P$;</span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>  see @liang_monad_1995 on monad transformers.</span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a>Parameterized monads are associated with their own definitions of (parameterized) return and bind.</span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>To increase clarity, while distinguishing the notations for parameterized and vanilla monads, we present the bind statements of a parameterized monad $ℙ$ using Haskell's $\Do$-notation.</span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>(@ex-parameterized-monads)</span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>Given a collection $\mathcal{S}$ of parameters, a parameterized monad is a map $ℙ$ from triples consisting of two parameters and a type onto types (i.e., given parameters $p, q ∈ \mathcal{S}$ and a type $α$, $ℙ^{p}_{q} α$ is some new type), equipped with two operators satisfying the parameterized monad laws in (@ex-p-monad-laws).</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>\return{(·)}_{p}\ \ &amp;:\ \ α → ℙ^{p}_{p} α \tag{`return'} <span class="sc">\\</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>\Do_{p, q, r} &amp; x ← <span class="sc">\_\_</span> <span class="sc">\\</span></span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a> &amp; <span class="sc">\_\_</span>(x)</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>\end{array}\ \</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>&amp;:\ \ ℙ^{p}_{q} α → (α → ℙ^{q}_{r} β) → ℙ^{p}_{r} β \tag{`bind'}</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>The parameterized monad laws themselves appear formally identical to the ordinary monad laws (see (@ex-p-monad-laws));</span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>the crucial difference is their implicit manipulation of parameters moving from the left-hand side of each equality to the right-hand side.</span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a>(@ex-p-monad-laws)</span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>\begin{array}{c}</span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>\textit{Left identity} &amp; \textit{Right identity} <span class="sc">\\</span><span class="co">[</span><span class="ot">1mm</span><span class="co">]</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>\Do_{p, p, q} &amp; x ← \return{v}_{p} <span class="sc">\\</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a>&amp; k(x)</span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>\end{array}\ \ =\ \ \ k(v)</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>&amp; \begin{array}{rl}</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>\Do_{p, q, q} &amp; x ← m <span class="sc">\\</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>&amp; \return{x}_{q}</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>\end{array} \ \ =\ \ \ m</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>\begin{array}{c}</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>\textit{Associativity} <span class="sc">\\</span><span class="co">[</span><span class="ot">1mm</span><span class="co">]</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>\Do_{p, r, s} &amp; y ← \left(\begin{array}{rl}</span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>    \Do_{p, q, r} &amp; x ← m <span class="sc">\\</span></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>    &amp; n(x)</span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>    \end{array}\right) <span class="sc">\\</span></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>    &amp; o(y)</span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>\end{array}\ \ =\ \ \begin{array}{rl}</span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>    \Do_{p, q, s} &amp; x ← m <span class="sc">\\</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>    &amp; \begin{array}{rl} </span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>        \Do_{q, r, s} &amp; y ← n(x) <span class="sc">\\</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>        &amp; o(y)</span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>    \end{array}</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>The $\Do$-notation in the above should be read as saying, "first bind the variable $x$ to the program $m$, and then do $k(x)$''.</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a>Indeed, this statement gives an intuitive summary of what the definition of State.Probability accomplishes:</span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>to bind $m$ to the continuation $k$, one must abstract over an input state $s$ and feed it to $m$, sample a value $x$ paired with an output state $s^{\prime}$ from the result, and finally, feed $x$, along with $s^{\prime}$, to $k$.</span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>In practice, we will leave the parameters implicit when we use this notation.</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>We also suppress superfluous uses of $\Do$-notation, writing</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>\Do &amp; x ← m <span class="sc">\\</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>    &amp; y → m <span class="sc">\\</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>    &amp; n</span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>for</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>\Do &amp; x ← m <span class="sc">\\</span></span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>    &amp; \begin{array}{rl}</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>    \Do &amp; y → m <span class="sc">\\</span></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>    &amp; n</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>    \end{array}</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>We will also sometimes use a "bracket" notation, writing one-liners such as</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>\Do <span class="sc">\{</span>x ← m; n<span class="sc">\}</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>instead of</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>\Do &amp; x ← m <span class="sc">\\</span></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>    &amp; n</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>to save space.</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a><span class="fu">### State.Probability</span></span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>The particular parameterized monad we employ is State.Probability, where the relevant collection of parameters is $\mathcal{T}_{A}$.</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>(@ex-state-prob)</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>ℙ^{σ}_{σ^{\prime}} α\ \ &amp;=\ \ σ → \P (α × σ^{\prime}) <span class="sc">\\</span><span class="co">[</span><span class="ot">2mm</span><span class="co">]</span></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>\return{v}_{σ}\ \ &amp;=\ \ λs.\pure{⟨v, s⟩} <span class="sc">\\</span><span class="co">[</span><span class="ot">2mm</span><span class="co">]</span></span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>\Do_{σ, σ^{\prime}, σ^{\prime\prime}} &amp; x ← m <span class="sc">\\</span></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>&amp; k(x)</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>\end{array}\ \ </span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>&amp;=\ \ λs.\left(\begin{array}{l}</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>⟨x, s^{\prime}⟩ ∼ m(s) <span class="sc">\\</span></span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>k(x)(s^{\prime})</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>\end{array}\right)</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>These definitions can be encoded in Haskell as functions that manipulate terms (ensuring that fresh variables are used when necessary):</span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> <span class="op">**</span> Some convience functions</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Variable names are represented by strings<span class="op">.</span></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>type VarName <span class="op">=</span> String</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Generate an infinite list of variable names fresh <span class="cf">for</span> some list of terms<span class="op">.</span></span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>fresh <span class="op">::</span> <span class="op">[</span>Term<span class="op">]</span> <span class="op">-&gt;</span> <span class="op">[</span>VarName<span class="op">]</span></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Smart<span class="op">(-</span>ish<span class="op">)</span> constructor <span class="cf">for</span> abstractions<span class="op">.</span></span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a>lam <span class="op">::</span> Term <span class="op">-&gt;</span> Term <span class="op">-&gt;</span> Term</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>lam <span class="op">(</span>Var v<span class="op">)</span> <span class="op">=</span> Lam v</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Smart<span class="op">(-</span>ish<span class="op">)</span> constructor <span class="cf">for</span> bind<span class="op">.</span></span>
+<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>let<span class="ch">' </span><span class="er">:: Term -&gt; Term -&gt; Term -&gt; Term</span></span>
+<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>let<span class="ch">' </span><span class="er">(Var v) = Let v</span></span>
+<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Paramterized <span class="cf">return</span><span class="op">.</span></span>
+<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a>purePP <span class="op">::</span> Term <span class="op">-&gt;</span> Term</span>
+<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a>purePP t <span class="op">=</span> lam fr <span class="op">(</span>Return <span class="op">(</span>t <span class="op">&amp;</span> fr<span class="op">))</span></span>
+<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a>  where fr<span class="op">:</span>esh <span class="op">=</span> map Var $ fresh <span class="op">[</span>t<span class="op">]</span></span>
+<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Parameterized bind<span class="op">.</span></span>
+<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="op">(&gt;&gt;&gt;=)</span> <span class="op">::</span> Term <span class="op">-&gt;</span> Term <span class="op">-&gt;</span> Term</span>
+<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a>t <span class="op">&gt;&gt;&gt;=</span> u <span class="op">=</span> lam fr <span class="op">(</span>let<span class="ch">' </span><span class="er">e (t @@ fr) (u @@ Pi1 e @@ Pi2 e))</span></span>
+<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a>  where fr<span class="op">:</span>e<span class="op">:</span>sh <span class="op">=</span> map Var $ fresh <span class="op">[</span>t<span class="op">,</span> u<span class="op">]</span></span>
+<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-247"><a href="#cb7-247" aria-hidden="true" tabindex="-1"></a>In general, it will be useful to have access to a couple of basic operations for retrieving ($\abbr{get}$) and updating ($\abbr{put}$) the state of an ongoing discourse:</span>
+<span id="cb7-248"><a href="#cb7-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a>(@ex-get-put)</span>
+<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a>\abbr{get} &amp;: ℙ^{σ}_{σ} σ <span class="sc">\\</span></span>
+<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a>\abbr{get} &amp;= λs.\pure{⟨s, s⟩} <span class="sc">\\</span><span class="co">[</span><span class="ot">2mm</span><span class="co">]</span></span>
+<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a>\abbr{put} &amp;: σ^{\prime} → ℙ^{σ}_{σ^{\prime}} <span class="sc">\\</span></span>
+<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>\abbr{put}(s^{\prime}) &amp;= λs.\pure{⟨⋄, s^{\prime}⟩}</span>
+<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a>Now, the current state of a given discourse can be retrieved (as $s$) by writing the statement $s ← \abbr{get}$ inside of a $\Do$-block;</span>
+<span id="cb7-260"><a href="#cb7-260" aria-hidden="true" tabindex="-1"></a>meanwhile, writing the statement $\abbr{put}(s)$ updates this state so that it *becomes* $s$.</span>
+<span id="cb7-261"><a href="#cb7-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-262"><a href="#cb7-262" aria-hidden="true" tabindex="-1"></a>These two operators can also be given the following Haskell encodings <span class="in">`getPP`</span> and <span class="in">`putPP`</span>:</span>
+<span id="cb7-263"><a href="#cb7-263" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb7-264"><a href="#cb7-264" aria-hidden="true" tabindex="-1"></a>getPP <span class="op">::</span> Term</span>
+<span id="cb7-265"><a href="#cb7-265" aria-hidden="true" tabindex="-1"></a>getPP <span class="op">=</span> lam<span class="ch">' </span><span class="er">s (Return (s &amp; s))</span></span>
+<span id="cb7-266"><a href="#cb7-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-267"><a href="#cb7-267" aria-hidden="true" tabindex="-1"></a>putPP <span class="op">::</span> Term <span class="op">-&gt;</span> Term</span>
+<span id="cb7-268"><a href="#cb7-268" aria-hidden="true" tabindex="-1"></a>putPP s <span class="op">=</span> Lam fr <span class="op">(</span>Return <span class="op">(</span>TT <span class="op">&amp;</span> s<span class="op">))</span></span>
+<span id="cb7-269"><a href="#cb7-269" aria-hidden="true" tabindex="-1"></a>  where fr<span class="op">:</span>esh <span class="op">=</span> fresh <span class="op">[</span>s<span class="op">]</span></span>
+<span id="cb7-270"><a href="#cb7-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-271"><a href="#cb7-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-272"><a href="#cb7-272" aria-hidden="true" tabindex="-1"></a><span class="fu">## PDS Rules</span></span>
+<span id="cb7-273"><a href="#cb7-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a>We provide our probabilistic CCG rule schemata in (@ex-pds-rules).</span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a>These schemata mimic the definitions of ordinary CCG rules, but now semantic values are considered to be of type $ℙ^{σ}_{σ^{\prime}} α$ now, rather than simply of type $α$.</span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a>Thus rather than apply CCG operations to semantic values directly, we must bind these semantic values to variables of type $α$ and apply the operations to *those*.</span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a>(@ex-pds-rules)</span>
+<span id="cb7-279"><a href="#cb7-279" aria-hidden="true" tabindex="-1"></a>$$ \small</span>
+<span id="cb7-280"><a href="#cb7-280" aria-hidden="true" tabindex="-1"></a>\begin{array}{c}</span>
+<span id="cb7-281"><a href="#cb7-281" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb7-282"><a href="#cb7-282" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{1}}{M_{1}}{c/ b}$}</span>
+<span id="cb7-283"><a href="#cb7-283" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{2}}{M_{2}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}</span>
+<span id="cb7-284"><a href="#cb7-284" aria-hidden="true" tabindex="-1"></a>\RightLabel{${&gt;}\textbf{B}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{</span>
+<span id="cb7-285"><a href="#cb7-285" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-286"><a href="#cb7-286" aria-hidden="true" tabindex="-1"></a>\Do &amp; <span class="sc">\{</span>\,m_{1} ← M_{1};\,m_{2} ← M_{2}; <span class="sc">\\</span></span>
+<span id="cb7-287"><a href="#cb7-287" aria-hidden="true" tabindex="-1"></a>&amp; \return{λx_{1}, …, x_{n}.m_{1}(m_{2}(x_{1})…(x_{n}))}\,<span class="sc">\}</span></span>
+<span id="cb7-288"><a href="#cb7-288" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-289"><a href="#cb7-289" aria-hidden="true" tabindex="-1"></a>}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}<span class="sc">\)</span>}</span>
+<span id="cb7-290"><a href="#cb7-290" aria-hidden="true" tabindex="-1"></a>\end{prooftree} <span class="sc">\\</span><span class="co">[</span><span class="ot">50pt</span><span class="co">]</span></span>
+<span id="cb7-291"><a href="#cb7-291" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb7-292"><a href="#cb7-292" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{1}}{m_{1}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}</span>
+<span id="cb7-293"><a href="#cb7-293" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{1}}{m_{2}}{c\backslash b}$}</span>
+<span id="cb7-294"><a href="#cb7-294" aria-hidden="true" tabindex="-1"></a>\RightLabel{${&lt;}\textbf{B}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{</span>
+<span id="cb7-295"><a href="#cb7-295" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-296"><a href="#cb7-296" aria-hidden="true" tabindex="-1"></a>\Do &amp; <span class="sc">\{</span>\,m_{1} ← M_{1};\,m_{2} ← M_{2}; <span class="sc">\\</span></span>
+<span id="cb7-297"><a href="#cb7-297" aria-hidden="true" tabindex="-1"></a>    &amp; \return{λx_{1}, …, x_{n}.m_{2}(m_{1}(x_{1})…(x_{n}))}\,<span class="sc">\}</span></span>
+<span id="cb7-298"><a href="#cb7-298" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-299"><a href="#cb7-299" aria-hidden="true" tabindex="-1"></a>}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}<span class="sc">\)</span>}</span>
+<span id="cb7-300"><a href="#cb7-300" aria-hidden="true" tabindex="-1"></a>\end{prooftree} <span class="sc">\\</span><span class="co">[</span><span class="ot">50pt</span><span class="co">]</span></span>
+<span id="cb7-301"><a href="#cb7-301" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb7-302"><a href="#cb7-302" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{1}}{M_{1}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}</span>
+<span id="cb7-303"><a href="#cb7-303" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{2}}{M_{2}}{c\backslash b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}⋯∣_{1}a_{1}}$}</span>
+<span id="cb7-304"><a href="#cb7-304" aria-hidden="true" tabindex="-1"></a>\RightLabel{${&lt;}\textbf{S}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{</span>
+<span id="cb7-305"><a href="#cb7-305" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-306"><a href="#cb7-306" aria-hidden="true" tabindex="-1"></a>\Do &amp; <span class="sc">\{</span>\,m_{1} ← M_{1};\,m_{2} ← M_{2}; <span class="sc">\\</span></span>
+<span id="cb7-307"><a href="#cb7-307" aria-hidden="true" tabindex="-1"></a>&amp; \return{λx_{1}, …, x_{n}.m_{1}(x_{1})…(x_{n})(m_{2}(x_{1})…(x_{n}))}\,<span class="sc">\}</span></span>
+<span id="cb7-308"><a href="#cb7-308" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-309"><a href="#cb7-309" aria-hidden="true" tabindex="-1"></a>}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}<span class="sc">\)</span>}</span>
+<span id="cb7-310"><a href="#cb7-310" aria-hidden="true" tabindex="-1"></a>\end{prooftree} <span class="sc">\\</span><span class="co">[</span><span class="ot">50pt</span><span class="co">]</span></span>
+<span id="cb7-311"><a href="#cb7-311" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb7-312"><a href="#cb7-312" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{1}}{M_{1}}{c/ b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}</span>
+<span id="cb7-313"><a href="#cb7-313" aria-hidden="true" tabindex="-1"></a>\AxiomC{$\expr{s_{2}}{M_{2}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}</span>
+<span id="cb7-314"><a href="#cb7-314" aria-hidden="true" tabindex="-1"></a>\RightLabel{${&gt;}\textbf{S}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{</span>
+<span id="cb7-315"><a href="#cb7-315" aria-hidden="true" tabindex="-1"></a>\begin{array}{rl}</span>
+<span id="cb7-316"><a href="#cb7-316" aria-hidden="true" tabindex="-1"></a>\Do &amp; <span class="sc">\{</span>\,m_{1} ← M_{1};\,m_{2} ← M_{2}; <span class="sc">\\</span></span>
+<span id="cb7-317"><a href="#cb7-317" aria-hidden="true" tabindex="-1"></a>    &amp; \return{λx_{1}, …, x_{n}.m_{2}(x_{1})…(x_{n})(m_{1}(x_{1})…(x_{n}))}\,<span class="sc">\}</span></span>
+<span id="cb7-318"><a href="#cb7-318" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-319"><a href="#cb7-319" aria-hidden="true" tabindex="-1"></a>}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}<span class="sc">\)</span>}</span>
+<span id="cb7-320"><a href="#cb7-320" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb7-321"><a href="#cb7-321" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb7-322"><a href="#cb7-322" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-323"><a href="#cb7-323" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-324"><a href="#cb7-324" aria-hidden="true" tabindex="-1"></a>The upshot is that, while an expression's syntactic type continues to determine its compositional properties, its probabilistic, dynamic effects can be stated fairly independently.</span>
+<span id="cb7-325"><a href="#cb7-325" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-326"><a href="#cb7-326" aria-hidden="true" tabindex="-1"></a><span class="fu">## Making an assertion</span></span>
+<span id="cb7-327"><a href="#cb7-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-328"><a href="#cb7-328" aria-hidden="true" tabindex="-1"></a>Recall that we represent the meanings of expressions as functions of type $ℙ^{σ}_{σ^{\prime}}$:</span>
+<span id="cb7-329"><a href="#cb7-329" aria-hidden="true" tabindex="-1"></a>given an input state of type $σ$, the meaning of an expression produces a probability distribution over *pairs* of ordinary meanings of type $α$ and possible output states of type $σ^{\prime}$.</span>
+<span id="cb7-330"><a href="#cb7-330" aria-hidden="true" tabindex="-1"></a>Furthermore, given a sentence whose probabilistic dynamic meaning $φ$ is of type $ℙ^{σ}_{σ^{\prime}} (ι → t)$, we can represent an *assertion* of that sentence as a discourse which updates the common ground.</span>
+<span id="cb7-331"><a href="#cb7-331" aria-hidden="true" tabindex="-1"></a>Specifically, we have a function $\abbr{assert}$:</span>
+<span id="cb7-332"><a href="#cb7-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-333"><a href="#cb7-333" aria-hidden="true" tabindex="-1"></a>(@ex-assert)</span>
+<span id="cb7-334"><a href="#cb7-334" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-335"><a href="#cb7-335" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-336"><a href="#cb7-336" aria-hidden="true" tabindex="-1"></a>  \abbr{assert} &amp;: ℙ^{σ}_{σ^{\prime}} (ι → t) → ℙ^{σ}_{σ^{\prime}} ⋄ <span class="sc">\\</span></span>
+<span id="cb7-337"><a href="#cb7-337" aria-hidden="true" tabindex="-1"></a>  \abbr{assert}(φ) &amp;= \begin{array}<span class="co">[</span><span class="ot">t</span><span class="co">]</span>{rl}</span>
+<span id="cb7-338"><a href="#cb7-338" aria-hidden="true" tabindex="-1"></a>    \Do &amp; p ← φ <span class="sc">\\</span></span>
+<span id="cb7-339"><a href="#cb7-339" aria-hidden="true" tabindex="-1"></a>        &amp; s ← \abbr{get} <span class="sc">\\</span></span>
+<span id="cb7-340"><a href="#cb7-340" aria-hidden="true" tabindex="-1"></a>        &amp; c ← \return{\ct{CG}(s)} <span class="sc">\\</span></span>
+<span id="cb7-341"><a href="#cb7-341" aria-hidden="true" tabindex="-1"></a>        &amp; c^{\prime} ← \return{\left(\begin{array}{l}</span>
+<span id="cb7-342"><a href="#cb7-342" aria-hidden="true" tabindex="-1"></a>        i ∼ c <span class="sc">\\</span></span>
+<span id="cb7-343"><a href="#cb7-343" aria-hidden="true" tabindex="-1"></a>        \ct{observe}(p(i)) <span class="sc">\\</span></span>
+<span id="cb7-344"><a href="#cb7-344" aria-hidden="true" tabindex="-1"></a>        \pure{i}</span>
+<span id="cb7-345"><a href="#cb7-345" aria-hidden="true" tabindex="-1"></a>        \end{array}\right)} <span class="sc">\\</span></span>
+<span id="cb7-346"><a href="#cb7-346" aria-hidden="true" tabindex="-1"></a>        &amp; \abbr{put}(\updct{CG}(c^{\prime})(s))</span>
+<span id="cb7-347"><a href="#cb7-347" aria-hidden="true" tabindex="-1"></a>    \end{array}</span>
+<span id="cb7-348"><a href="#cb7-348" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-349"><a href="#cb7-349" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-350"><a href="#cb7-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-351"><a href="#cb7-351" aria-hidden="true" tabindex="-1"></a>Given such a $φ$, $\abbr{assert}(φ)$ is a discourse of type $\P^{σ}_{σ^{\prime}} ⋄$ representing an assertion of $φ$.</span>
+<span id="cb7-352"><a href="#cb7-352" aria-hidden="true" tabindex="-1"></a>In plain English, $\abbr{assert}(φ$) samples a proposition $p$, given $φ$, and then updates the common ground of the current state with $p$.</span>
+<span id="cb7-353"><a href="#cb7-353" aria-hidden="true" tabindex="-1"></a>Ultimately, assertions modify an ongoing discourse so that its probability distribution over output states involves common grounds in which the proposition returned by $φ$ has been observed to hold true.</span>
+<span id="cb7-354"><a href="#cb7-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-355"><a href="#cb7-355" aria-hidden="true" tabindex="-1"></a>Using a few new convenience functions, along with some new short-hands for named variables, $\abbr{assert}$ can be encoded in Haskell:</span>
+<span id="cb7-356"><a href="#cb7-356" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb7-357"><a href="#cb7-357" aria-hidden="true" tabindex="-1"></a>assert <span class="op">::</span> Term</span>
+<span id="cb7-358"><a href="#cb7-358" aria-hidden="true" tabindex="-1"></a>assert <span class="op">=</span> lam φ <span class="op">(</span>φ <span class="op">&gt;&gt;&gt;=</span> lam p <span class="op">(</span>getPP <span class="op">&gt;&gt;&gt;=</span> lam s <span class="op">(</span>purePP <span class="op">(</span>cg s<span class="op">)</span> <span class="op">&gt;&gt;&gt;=</span> lam c <span class="op">(</span>purePP <span class="op">(</span>let<span class="ch">' </span><span class="er">i c (let</span><span class="ch">'</span> _<span class="ch">' </span><span class="er">(observe (p @@ i)) (Return i))) &gt;&gt;&gt;= lam d (putPP (upd_CG d s))))))</span></span>
+<span id="cb7-359"><a href="#cb7-359" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-360"><a href="#cb7-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-361"><a href="#cb7-361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-362"><a href="#cb7-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-363"><a href="#cb7-363" aria-hidden="true" tabindex="-1"></a><span class="fu">## Asking a question</span></span>
+<span id="cb7-364"><a href="#cb7-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-365"><a href="#cb7-365" aria-hidden="true" tabindex="-1"></a>We follow a categorial tradition by analyzing questions as denoting---given an index---sets of true short answer meanings <span class="co">[</span><span class="ot">see @hausser_questions_1978; @hausser_syntax_1983; @xiang_hybrid_2021; cf. @karttunen_syntax_1977; @groenendijk_studies_1984</span><span class="co">]</span>.</span>
+<span id="cb7-366"><a href="#cb7-366" aria-hidden="true" tabindex="-1"></a>Given some type $α$ as the type of the short answer, a question therefore has a probabilistic dynamic meaning of type $ℙ^{σ}_{σ^{\prime}} (α → ι → t)$.</span>
+<span id="cb7-367"><a href="#cb7-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-368"><a href="#cb7-368" aria-hidden="true" tabindex="-1"></a>Asking a question is a matter of pushing a question meaning onto the QUD stack <span class="co">[</span><span class="ot">@ginzburg_dynamics_1996;@farkas_reacting_2010</span><span class="co">]</span>.</span>
+<span id="cb7-369"><a href="#cb7-369" aria-hidden="true" tabindex="-1"></a>Reflecting this, we recruit another operation, $\abbr{ask}$:</span>
+<span id="cb7-370"><a href="#cb7-370" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-371"><a href="#cb7-371" aria-hidden="true" tabindex="-1"></a>  \abbr{ask} &amp;: ℙ^{σ}_{σ^{\prime}} (α → ι → t) → ℙ^{σ}_{\Q ι α σ^{\prime}} ⋄ <span class="sc">\\</span></span>
+<span id="cb7-372"><a href="#cb7-372" aria-hidden="true" tabindex="-1"></a>  \abbr{ask}(κ) &amp;= \begin{array}<span class="co">[</span><span class="ot">t</span><span class="co">]</span>{rl}</span>
+<span id="cb7-373"><a href="#cb7-373" aria-hidden="true" tabindex="-1"></a>    \Do &amp; q ← κ <span class="sc">\\</span></span>
+<span id="cb7-374"><a href="#cb7-374" aria-hidden="true" tabindex="-1"></a>        &amp; s ← \abbr{get} <span class="sc">\\</span></span>
+<span id="cb7-375"><a href="#cb7-375" aria-hidden="true" tabindex="-1"></a>        &amp; \abbr{put}(\updct{QUD}(q)(s))</span>
+<span id="cb7-376"><a href="#cb7-376" aria-hidden="true" tabindex="-1"></a>    \end{array}</span>
+<span id="cb7-377"><a href="#cb7-377" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-378"><a href="#cb7-378" aria-hidden="true" tabindex="-1"></a>Given a probabilistic dynamic question meaning $κ$, $\abbr{ask}(κ)$ samples a question meaning $q : α → ι → t$, given $κ$, and then adds $q$ as a new QUD to the outgoing state.</span>
+<span id="cb7-379"><a href="#cb7-379" aria-hidden="true" tabindex="-1"></a>Note the type of the output state that $\abbr{ask}$ returns:</span>
+<span id="cb7-380"><a href="#cb7-380" aria-hidden="true" tabindex="-1"></a>$\Q ι α σ^{\prime}$.</span>
+<span id="cb7-381"><a href="#cb7-381" aria-hidden="true" tabindex="-1"></a>$\Q$ is a new map from types to types which, like $\P$, we leave abstract;</span>
+<span id="cb7-382"><a href="#cb7-382" aria-hidden="true" tabindex="-1"></a>given a state type $σ^{\prime}$, the meaning of $\Q ι α σ^{\prime}$ is the type of a new state with a question of type $α → ι → t$ added to the QUD stack.</span>
+<span id="cb7-383"><a href="#cb7-383" aria-hidden="true" tabindex="-1"></a>Thus the type of $\updct{QUD}$ should be as in (@ex-upd-qud-type).</span>
+<span id="cb7-384"><a href="#cb7-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-385"><a href="#cb7-385" aria-hidden="true" tabindex="-1"></a>(@ex-upd-qud-type)</span>
+<span id="cb7-386"><a href="#cb7-386" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-387"><a href="#cb7-387" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-388"><a href="#cb7-388" aria-hidden="true" tabindex="-1"></a>\updct{QUD} : (α → ι → t) → σ → \Q ι α σ</span>
+<span id="cb7-389"><a href="#cb7-389" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-390"><a href="#cb7-390" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-391"><a href="#cb7-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-392"><a href="#cb7-392" aria-hidden="true" tabindex="-1"></a>Indeed, we should update the set of types in our Haskell encoding to accommodate the new operator:</span>
+<span id="cb7-393"><a href="#cb7-393" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb7-394"><a href="#cb7-394" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Arrows<span class="op">,</span> products<span class="op">,</span> and probabilistic types<span class="op">,</span> as well as <span class="op">(</span>a<span class="op">)</span> abstract types</span>
+<span id="cb7-395"><a href="#cb7-395" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> representing the addition of a new Q<span class="op">,</span> and <span class="op">(</span>b<span class="op">)</span> type variables <span class="cf">for</span> encoding</span>
+<span id="cb7-396"><a href="#cb7-396" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> polymorphism<span class="op">.</span></span>
+<span id="cb7-397"><a href="#cb7-397" aria-hidden="true" tabindex="-1"></a>data Type <span class="op">=</span> At Atom</span>
+<span id="cb7-398"><a href="#cb7-398" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Type <span class="op">:</span>→ Type</span>
+<span id="cb7-399"><a href="#cb7-399" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Unit</span>
+<span id="cb7-400"><a href="#cb7-400" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Type <span class="op">:</span>× Type</span>
+<span id="cb7-401"><a href="#cb7-401" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> P Type</span>
+<span id="cb7-402"><a href="#cb7-402" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Q Type Type Type</span>
+<span id="cb7-403"><a href="#cb7-403" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> TyVar String</span>
+<span id="cb7-404"><a href="#cb7-404" aria-hidden="true" tabindex="-1"></a>  deriving <span class="op">(</span>Eq<span class="op">)</span></span>
+<span id="cb7-405"><a href="#cb7-405" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-406"><a href="#cb7-406" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-407"><a href="#cb7-407" aria-hidden="true" tabindex="-1"></a>Finally, we can also provide an implementation of $\abbr{ask}$:</span>
+<span id="cb7-408"><a href="#cb7-408" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb7-409"><a href="#cb7-409" aria-hidden="true" tabindex="-1"></a>ask <span class="op">::</span> Term</span>
+<span id="cb7-410"><a href="#cb7-410" aria-hidden="true" tabindex="-1"></a>ask <span class="op">=</span> lam κ<span class="ch">' </span><span class="er">(κ</span><span class="ch">'</span> <span class="op">&gt;&gt;&gt;=</span> lam q <span class="op">(</span>getPP <span class="op">&gt;&gt;&gt;=</span> lam s <span class="op">(</span>putPP <span class="op">(</span>upd_QUD q s<span class="op">))))</span></span>
+<span id="cb7-411"><a href="#cb7-411" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-412"><a href="#cb7-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-413"><a href="#cb7-413" aria-hidden="true" tabindex="-1"></a><span class="fu">## Responding to a question</span></span>
+<span id="cb7-414"><a href="#cb7-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-415"><a href="#cb7-415" aria-hidden="true" tabindex="-1"></a>PDS also models responses to questions;</span>
+<span id="cb7-416"><a href="#cb7-416" aria-hidden="true" tabindex="-1"></a>at any point in an ongoing discourse, one can respond to the QUD at the top of the current QUD stack based on one's prior knowledge.</span>
+<span id="cb7-417"><a href="#cb7-417" aria-hidden="true" tabindex="-1"></a>Concretely, a given responder has some background knowledge $bg : \P σ$ constituting a prior distribution over *starting* states.</span>
+<span id="cb7-418"><a href="#cb7-418" aria-hidden="true" tabindex="-1"></a>The responder uses this prior, in conjuction with the interim updates to the discourse, to derive a probability distribution over answers to the QUD.</span>
+<span id="cb7-419"><a href="#cb7-419" aria-hidden="true" tabindex="-1"></a>If the set of possible answers are real numbers (e.g., representing degrees of likelihood), this answer distribution is gotten by retrieving the QUD of any given state $s^{\prime}$---resulting in a distribution over QUDs---and then taking the maximum value of which it is true at an index sampled from the common ground---resulting, finally, in a distribution over real numbers.</span>
+<span id="cb7-420"><a href="#cb7-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-421"><a href="#cb7-421" aria-hidden="true" tabindex="-1"></a><span class="fu">### Linking assumptions</span></span>
+<span id="cb7-422"><a href="#cb7-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-423"><a href="#cb7-423" aria-hidden="true" tabindex="-1"></a>In practice (e.g., in the setting of a formal experiment), an answer needs to be given using a particular testing instrument.</span>
+<span id="cb7-424"><a href="#cb7-424" aria-hidden="true" tabindex="-1"></a>We assume that a given testing instrument may be modeled by a family $f$ of distributions representing the likelihood, which is then fixed by a collection $Φ$ of nuisance parameters.</span>
+<span id="cb7-425"><a href="#cb7-425" aria-hidden="true" tabindex="-1"></a>For the purposes of the implementation, we assume answers to the current QUD are real numbers, so that for fixed likelihood $f_{Φ}$, $f_{Φ} : r → \P ρ$, for the type $ρ$ of responses;</span>
+<span id="cb7-426"><a href="#cb7-426" aria-hidden="true" tabindex="-1"></a>this is not necessary, however, and the types of such functions could be generalized.</span>
+<span id="cb7-427"><a href="#cb7-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-428"><a href="#cb7-428" aria-hidden="true" tabindex="-1"></a>Thus we may define a family of *response functions*, parametric in the testing instrument (i.e., likelihood function), each of which takes a distribution $bg$ representing one's background knowledge, along with an ongoing discourse $m$:</span>
+<span id="cb7-429"><a href="#cb7-429" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb7-430"><a href="#cb7-430" aria-hidden="true" tabindex="-1"></a>  \abbr{respond}^{f_Φ : r → \P ρ} &amp;: \P σ → ℙ^{σ}_{\Q ι r σ^{\prime}} ⋄ → \P ρ <span class="sc">\\</span></span>
+<span id="cb7-431"><a href="#cb7-431" aria-hidden="true" tabindex="-1"></a>  \abbr{respond}^{f_Φ : r → \P ρ}(bg)(m) &amp;= \begin{array}<span class="co">[</span><span class="ot">t</span><span class="co">]</span>{l}</span>
+<span id="cb7-432"><a href="#cb7-432" aria-hidden="true" tabindex="-1"></a>    s ∼ bg <span class="sc">\\</span></span>
+<span id="cb7-433"><a href="#cb7-433" aria-hidden="true" tabindex="-1"></a>    ⟨⋄, s^{\prime}⟩ ∼ m(s) <span class="sc">\\</span></span>
+<span id="cb7-434"><a href="#cb7-434" aria-hidden="true" tabindex="-1"></a>    i ∼ \ct{CG}(s^{\prime}) <span class="sc">\\</span></span>
+<span id="cb7-435"><a href="#cb7-435" aria-hidden="true" tabindex="-1"></a>    f(\ct{max}(λd.\ct{QUD}(s)(d)(i)), Φ)</span>
+<span id="cb7-436"><a href="#cb7-436" aria-hidden="true" tabindex="-1"></a>    \end{array}</span>
+<span id="cb7-437"><a href="#cb7-437" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb7-438"><a href="#cb7-438" aria-hidden="true" tabindex="-1"></a>For a fixed likelihood function $f_{Φ}$ mapping any given real number answer onto a distribution over possible responses of type $ρ$ (for some $ρ$), the response function takes a distribution representing background knowledge and a discourse to produce a response distribution.</span>
+<span id="cb7-439"><a href="#cb7-439" aria-hidden="true" tabindex="-1"></a>It does this by composing the discourse with background knowledge, as above, and then obtaining the maximum degree (i.e., real number) answer to the current QUD, before applying the likelihood function $f_{Φ}$ to this degree.</span>
+<span id="cb7-440"><a href="#cb7-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-441"><a href="#cb7-441" aria-hidden="true" tabindex="-1"></a>The testing instrument employed in the studies we describe in the next few days, for example, is always a slider scale that records responses on the unit interval $<span class="co">[</span><span class="ot">0, 1</span><span class="co">]</span>$.</span>
+<span id="cb7-442"><a href="#cb7-442" aria-hidden="true" tabindex="-1"></a>A suitable likelihood might therefore be a truncated normal distribution:</span>
+<span id="cb7-443"><a href="#cb7-443" aria-hidden="true" tabindex="-1"></a>$f(x, Φ) = \mathcal{N}(x, σ)\,\ct{T}<span class="co">[</span><span class="ot">0, 1</span><span class="co">]</span>$ (so that $f = \mathcal{N}$ and $Φ = σ$).</span>
+<span id="cb7-444"><a href="#cb7-444" aria-hidden="true" tabindex="-1"></a>This likelihood---which @grove_factivity_2024 employ in their models of factivity---can be viewed as allowing some distribution of response errors, given the intended target response (i.e., the answer to the question).</span>
+<span id="cb7-445"><a href="#cb7-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-446"><a href="#cb7-446" aria-hidden="true" tabindex="-1"></a>Before moving onto some further implementation details, we can also show the Haskell encoding of $\abbr{respond}$, which follows the description above:</span>
+<span id="cb7-447"><a href="#cb7-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-448"><a href="#cb7-448" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb7-449"><a href="#cb7-449" aria-hidden="true" tabindex="-1"></a>respond <span class="op">::</span> Term</span>
+<span id="cb7-450"><a href="#cb7-450" aria-hidden="true" tabindex="-1"></a>respond <span class="op">=</span> lam f <span class="op">(</span>lam bg <span class="op">(</span>lam m <span class="op">(</span>let<span class="ch">' </span><span class="er">s bg m</span><span class="ch">'</span><span class="op">)))</span></span>
+<span id="cb7-451"><a href="#cb7-451" aria-hidden="true" tabindex="-1"></a>  where m<span class="ch">' </span><span class="er">         = let</span><span class="ch">'</span> _s<span class="ch">' </span><span class="er">(m @@ s) (let</span><span class="ch">'</span> i <span class="op">(</span>cg <span class="op">(</span>Pi2 _s<span class="ch">')</span><span class="er">) (f @@ max</span><span class="ch">'</span> <span class="op">(</span>lam x <span class="op">(</span>qud <span class="op">(</span>Pi2 _s<span class="ch">')</span><span class="er"> @@ x @@ i))))</span></span>
+<span id="cb7-452"><a href="#cb7-452" aria-hidden="true" tabindex="-1"></a>        s<span class="op">:</span>_s<span class="ch">':</span><span class="er">i:x:_ = map Var $ fresh [bg, m]</span></span>
+<span id="cb7-453"><a href="#cb7-453" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
