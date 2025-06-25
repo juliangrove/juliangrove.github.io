@@ -1,0 +1,191 @@
+[
+  {
+    "objectID": "pds-intro/continued.html#adding-probabilistic-types",
+    "href": "pds-intro/continued.html#adding-probabilistic-types",
+    "title": "PDS intro continued",
+    "section": "Adding probabilistic types",
+    "text": "Adding probabilistic types\n\nAtomic types\n\\[\nA \\Coloneqq e ∣ t ∣ r\n\\]\n\n\nComplex types\n\\[\n\\mathcal{T}_{A} \\Coloneqq A ∣ \\mathcal{T}_{A} → \\mathcal{T}_{A} ∣ \\mathcal{T}_{A} × \\mathcal{T}_{A} ∣ ⋄ ∣ \\P \\mathcal{T}_{A}\n\\]\n\n\\(\\P t\\): a Bernoulli distribution—probabilistically True or False.\n\\(\\P r\\): e.g., a normal distribution."
+  },
+  {
+    "objectID": "pds-intro/continued.html#haskell",
+    "href": "pds-intro/continued.html#haskell",
+    "title": "PDS intro continued",
+    "section": "Haskell",
+    "text": "Haskell\n-- | Atomic types for entities, truth values, and real numbers.\ndata Atom = E | T | R deriving (Eq, Show)\n\n-- | Arrows, products, and probabilistic types, as well as type variables for\n-- encoding polymorphism.\ndata Type = At Atom\n          | Type :→ Type\n          | Unit\n          | Type :× Type\n          | P Type\n          | TyVar String\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/continued.html#probabilistic-typing-rules",
+    "href": "pds-intro/continued.html#probabilistic-typing-rules",
+    "title": "PDS intro continued",
+    "section": "Probabilistic typing rules",
+    "text": "Probabilistic typing rules\n \\[\n\\begin{array}{c}\n\\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α$}\n\\RightLabel{$\\mathtt{Return}$}\\UnaryInfC{$Γ ⊢ \\pure{t} : \\P α$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : \\P α$}\n\\AxiomC{$Γ, x : α ⊢ u : \\P β$}\n\\RightLabel{$\\mathtt{Bind}$}\\BinaryInfC{$Γ ⊢ \\left(\\begin{array}{l} x ∼ t \\\\ u\\end{array}\\right) : \\P β$}\n\\end{prooftree}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#haskell-probabilistic-programs",
+    "href": "pds-intro/continued.html#haskell-probabilistic-programs",
+    "title": "PDS intro continued",
+    "section": "Haskell: probabilistic programs",
+    "text": "Haskell: probabilistic programs\n-- | Untyped λ-terms. Types are assigned separately (i.e., \"extrinsically\").\ndata Term = Var VarName           -- Variables.\n          | Con Constant          -- Constants.\n          | Lam VarName Term      -- Abstractions.\n          | App Term Term         -- Applications.\n          | TT                    -- The 0-tuple.\n          | Pair Term Term        -- Pairing.\n          | Pi1 Term              -- First projection.\n          | Pi2 Term              -- Second projection.\n          | Return Term           -- Construct a degenerate distribution.\n          | Let VarName Term Term -- Sample from a distribution and continue.\n\nLet x t u    =    \\(\\begin{array}[t]{l}\nx ∼ t \\\\\nu\n\\end{array}\\)\nReturn t    =    \\(\\pure{t}\\)"
+  },
+  {
+    "objectID": "pds-intro/continued.html#making-observations",
+    "href": "pds-intro/continued.html#making-observations",
+    "title": "PDS intro continued",
+    "section": "Making observations",
+    "text": "Making observations\n\\[\n\\begin{align*}\n\\ct{observe}\\ \\ &:\\ \\ t → \\P ⋄ \\\\\n\\end{align*}\n\\]\n\n\\[\n\\begin{array}[t]{l}\nx ∼ \\ct{Normal}(0, 1) \\\\\n\\ct{observe}(-1 ≤ x ≤ 1) \\\\\n\\pure{x}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#making-observations-1",
+    "href": "pds-intro/continued.html#making-observations-1",
+    "title": "PDS intro continued",
+    "section": "Making observations",
+    "text": "Making observations\n\\[\n\\begin{align*}\n\\ct{observe}\\ \\ &:\\ \\ t → \\P ⋄ \\\\\n\\end{align*}\n\\]\n\\[\n\\begin{array}[t]{l}\nx ∼ \\ct{Normal}(0, 1) \\\\\n\\ct{observe}(-1 ≤ x ≤ 1) \\\\\n\\pure{x}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#haskell-typing-constants",
+    "href": "pds-intro/continued.html#haskell-typing-constants",
+    "title": "PDS intro continued",
+    "section": "Haskell: typing constants",
+    "text": "Haskell: typing constants\n-- | Assign types to constants.\ntype Sig = Constant -&gt; Maybe Type\n\n\nAn example signature\ne, t, r :: Type\ne = At E\nt = At T\nr = At R\n\ntau :: Sig\ntau = \\case\n  Left  \"observe\"   -&gt; Just (t :→ P Unit)\n  Left  \"Normal\"    -&gt; Just (r :× r → P r)\n  Left  \"Bernoulli\" -&gt; Just (r :→ P t)\n  Left  \"mother\"    -&gt; Just (e :→ e)\n  Right _           -&gt; Just r"
+  },
+  {
+    "objectID": "pds-intro/continued.html#types-of-expressions",
+    "href": "pds-intro/continued.html#types-of-expressions",
+    "title": "PDS intro continued",
+    "section": "Types of expressions",
+    "text": "Types of expressions\n\\[\\Large\nσ → \\P (α × σ^{\\prime})\n\\]\n\n\\(α\\) could be:\n\n\\(e → ι → t \\hspace{2cm}\\) (a predicate meaning)\n\\(e \\hspace{7cm}\\) (a np meaning)\netc."
+  },
+  {
+    "objectID": "pds-intro/continued.html#an-interface-for-meaning-composition",
+    "href": "pds-intro/continued.html#an-interface-for-meaning-composition",
+    "title": "PDS intro continued",
+    "section": "An interface for meaning composition",
+    "text": "An interface for meaning composition\n\\[\n\\begin{align*}\nℙ^{σ}_{σ^{\\prime}} α\\ \\ &=\\ \\ σ → \\P (α × σ^{\\prime})\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\return{v}\\ \\ &=\\ \\ λs.\\pure{⟨v, s⟩} : ℙ^{σ}_{σ}\n\\end{align*}\n\\]\n\n\n\\[\n\\begin{align*}\n\\begin{array}{rl}\n\\Do & x ← m : ℙ^{σ}_{σ^{\\prime}} \\\\\n& k(x) : ℙ^{σ^{\\prime}}_{σ^{\\prime\\prime}}\n\\end{array}\\ \\\n&=\\ \\ λs.\\left(\\begin{array}{l}\n⟨x, s^{\\prime}⟩ ∼ m(s) \\\\\nk(x)(s^{\\prime})\n\\end{array}\\right) : ℙ^{σ}_{σ^{\\prime\\prime}}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#types-of-expressions-1",
+    "href": "pds-intro/continued.html#types-of-expressions-1",
+    "title": "PDS intro continued",
+    "section": "Types of expressions",
+    "text": "Types of expressions\n\nJo ran a race.\n\n\n\\(⟦\\textit{run}⟧ : ℙ^{σ}_{σ} (e → ι → t)\\)\n\n\n\\[\n\\expr{\\textit{run}}{λs.\\pure{⟨λx, i.\\ct{if\\_then\\_else}(τ_{\\textit{run}}(s))(\\ct{run}_{loc.}(i)(x), \\ct{run}_{org.}(i)(x)), s⟩}}{s \\backslash np}\n\\]\n\n\nDepends on the state.\nDoesn’t update it.\nNot very probabilistic."
+  },
+  {
+    "objectID": "pds-intro/continued.html#pds-rules",
+    "href": "pds-intro/continued.html#pds-rules",
+    "title": "PDS intro continued",
+    "section": "PDS Rules",
+    "text": "PDS Rules\nExample: leftward application\n\\[\n\\begin{prooftree}\n\\AxiomC{$\\expr{s_{1}}{M_{1}}{b}$}\n\\AxiomC{$\\expr{s_{2}}{M_{2}}{c\\backslash b}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{s_{1}\\,s_{2}}{\n\\begin{array}{rl}\n\\Do & m_{1} ← M_{1} \\\\\n& m_{2} ← M_{2}; \\\\\n& \\return{m_{2}(m_{1})}\n\\end{array}\n}{c}$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#a-sentence-meaning",
+    "href": "pds-intro/continued.html#a-sentence-meaning",
+    "title": "PDS intro continued",
+    "section": "A sentence meaning",
+    "text": "A sentence meaning\n\nA linguist saw a philosopher.\n\n\n\\[\\tiny\\hspace{-6cm}\n\\begin{prooftree}\n\\AxiomC{$\\expr{\\textit{a ling.}}{λs.\\pure{⟨λi, k.∃x.\\ct{ling}(i)(x) ∧ k(i)(x), s⟩}}{s/(s\\backslash np)}$}\n\\AxiomC{$\\expr{\\textit{saw}}{λs.\\pure{⟨λi, y, x.\\ct{see}(i)(y)(x), s⟩}}{s\\backslash np/ np}$}\n\\AxiomC{$\\expr{\\textit{a phil.}}{λs.\\pure{⟨λi, k, x.∃y.\\ct{phil}(i)(y) ∧ k(i)(y)(x), s⟩}}{s\\backslash np/(s\\backslash np/np)}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{\\textit{saw a phil.}}{λs.\\pure{⟨λx, i.∃y.\\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s \\backslash np}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{\\textit{a linguist saw a philosopher}}{λs.\\pure{⟨λi.∃x, y.\\ct{ling}(i)(x) ∧ \\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s}$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#a-sentence-meaning-1",
+    "href": "pds-intro/continued.html#a-sentence-meaning-1",
+    "title": "PDS intro continued",
+    "section": "A sentence meaning",
+    "text": "A sentence meaning\n\n\\[\n\\expr{\\textit{a linguist saw a philosopher}}{λs.\\pure{⟨λi.∃x, y.\\ct{ling}(i)(x) ∧ \\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#intensionality",
+    "href": "pds-intro/continued.html#intensionality",
+    "title": "PDS intro continued",
+    "section": "Intensionality",
+    "text": "Intensionality\nIntensional constants:\n\\[\n\\begin{align*}\n\\ct{see} &: ι → e → e → t \\\\\n\\ct{ling} &: ι → e → t\n\\end{align*}\n\\]\n\nWe require other constants:\n\\[\n\\begin{align*}\n\\updct{see} &: (e → e → t) → ι → ι \\\\\n\\updct{ling} &: (e → t) → ι → ι\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#how-intensional-constants-interact",
+    "href": "pds-intro/continued.html#how-intensional-constants-interact",
+    "title": "PDS intro continued",
+    "section": "How intensional constants interact",
+    "text": "How intensional constants interact\n\n\\[\n\\ct{see}(\\updct{see}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{see}(\\updct{ling}(p)(i)) = \\ct{see}(i)\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{ling}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{see}(p)(i)) = \\ct{ling}(i)\n\\]\n\nCan be seen as a theory of states and locations.\n\nIndices are “states”.\n(Pairs of) constants correspond to “locations”."
+  },
+  {
+    "objectID": "pds-intro/continued.html#the-common-ground",
+    "href": "pds-intro/continued.html#the-common-ground",
+    "title": "PDS intro continued",
+    "section": "The common ground",
+    "text": "The common ground\nDefinition\nA common ground is a probabilistic program of type \\(\\P ι\\).\n\n\\(ι\\), a variable over types.\n\n\nA “starting” index\n\\[\\ct{@} : ι\\]\n\nConstants that update indices can add information, to be later retrieved by intensional constants."
+  },
+  {
+    "objectID": "pds-intro/continued.html#states",
+    "href": "pds-intro/continued.html#states",
+    "title": "PDS intro continued",
+    "section": "States",
+    "text": "States\nSome state-sensitive constants:\n\n\\[\n\\ct{CG} : σ → \\P ι \\\\\n\\]\n\n\n\\[\n\\updct{CG} : \\P ι → σ → σ \\\\\n\\]\n\n\n\\[\n\\ct{QUD} : \\Q ι α σ → α → ι → t\n\\]\n\n\n\\[\n\\updct{QUD} : (α → ι → t) → σ → \\Q ι α σ\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#haskell-the-q-constructor",
+    "href": "pds-intro/continued.html#haskell-the-q-constructor",
+    "title": "PDS intro continued",
+    "section": "Haskell: the \\(\\Q\\) constructor",
+    "text": "Haskell: the \\(\\Q\\) constructor\n\n-- | Arrows, products, and probabilistic types, as well as (a) abstract types\n-- representing the addition of a new Q, and (b) type variables for encoding\n-- polymorphism.\ndata Type = At Atom\n          | Type :→ Type\n          | Unit\n          | Type :× Type\n          | P Type\n          | Q Type Type Type\n          | TyVar String\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/continued.html#how-stateful-constants-interact",
+    "href": "pds-intro/continued.html#how-stateful-constants-interact",
+    "title": "PDS intro continued",
+    "section": "How stateful constants interact",
+    "text": "How stateful constants interact\n\\[\n\\ct{CG}(\\updct{CG}(cg)(s)) = cg\n\\]\n\n\\[\n\\ct{CG}(\\updct{QUD}(q)(s)) = \\ct{CG}(s)\n\\]\n\n\n\\[\n\\ct{QUD}(\\updct{QUD}(q)(s)) = q \\\\\n\\]\n\n\n\\[\n\\ct{QUD}(\\updct{CG}(cg)(s)) = \\ct{QUD}(s)\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#manipulating-stateful-programs",
+    "href": "pds-intro/continued.html#manipulating-stateful-programs",
+    "title": "PDS intro continued",
+    "section": "Manipulating stateful programs",
+    "text": "Manipulating stateful programs\n\\(\\ct{get}\\) and \\(\\ct{put}\\)\n\\[\n\\begin{align*}\n\\abbr{get} &: ℙ^{σ}_{σ} σ\n\\end{align*}\n\\]\n\nGets the current state.\n\n\n\\[\n\\begin{align*}\n\\abbr{put} &: σ^{\\prime} → ℙ^{σ}_{σ^{\\prime}} ⋄ \\\\\n\\end{align*}\n\\]\n\nOverwrites the current state with a new one."
+  },
+  {
+    "objectID": "pds-intro/continued.html#haskell-1",
+    "href": "pds-intro/continued.html#haskell-1",
+    "title": "PDS intro continued",
+    "section": "Haskell",
+    "text": "Haskell\n\ngetPP :: Term\ngetPP = lam' s (Return (s & s))\n\nputPP :: Term -&gt; Term\nputPP s = Lam fr (Return (TT & s))\n  where fr:esh = fresh [s]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#asking-a-question",
+    "href": "pds-intro/continued.html#asking-a-question",
+    "title": "PDS intro continued",
+    "section": "Asking a question",
+    "text": "Asking a question\n\\[\n\\begin{align*}\n\\abbr{ask} &: ℙ^{σ}_{σ^{\\prime}} (α → ι → t) → ℙ^{σ}_{\\Q ι α σ^{\\prime}} ⋄\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\abbr{ask}(⟦\\textit{how tall?}⟧) &= \\begin{array}[t]{rl}\n\\Do & q^{r → ι → t} ← ⟦\\textit{how tall?}⟧^{ℙ^{σ}_{σ}(r → ι → t)} \\\\\n& s ← \\abbr{get} \\\\\n& \\abbr{put}(\\updct{QUD}(q)(s))\n\\end{array}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#responding-to-a-question",
+    "href": "pds-intro/continued.html#responding-to-a-question",
+    "title": "PDS intro continued",
+    "section": "Responding to a question",
+    "text": "Responding to a question\n\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ} &: \\P σ → ℙ^{σ}_{\\Q ι r σ^{\\prime}} ⋄ → \\P ρ\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#responding-to-a-question-1",
+    "href": "pds-intro/continued.html#responding-to-a-question-1",
+    "title": "PDS intro continued",
+    "section": "Responding to a question",
+    "text": "Responding to a question\n\\[\n\\begin{align*}\n&\\abbr{respond}^{f_Φ : r → \\P ρ}(prior)(discourse) \\\\[5mm]\n&= \\begin{array}[t]{l}\ns ∼ prior \\\\\n⟨⋄, s^{\\prime}⟩ ∼ discourse(s)\\\\\ni ∼ \\ct{CG}(s^{\\prime}) \\\\\nf(\\ct{max}(λd.\\ct{QUD}(s^{\\prime})(d)(i)), Φ)\n\\end{array}\n\\end{align*}\n\\]\n\nExample \\(f_{Φ}\\)\n\n\\(f(x, Φ) = \\ct{Normal}(x, 1)\\)"
+  },
+  {
+    "objectID": "pds-intro/continued.html#a-probabilistic-model",
+    "href": "pds-intro/continued.html#a-probabilistic-model",
+    "title": "PDS intro continued",
+    "section": "A probabilistic model",
+    "text": "A probabilistic model\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ} &: \\P σ → ℙ^{σ}_{\\Q ι r σ^{\\prime}} ⋄ → \\P ρ\n\\end{align*}\n\\]\n\\[\n\\abbr{respond}^{λx.\\ct{Normal}(x, 1)}(prior)\\left(\n\\begin{array}{rl}\n\\Do & \\abbr{assert}(⟦\\textit{Jo is tall}⟧) \\\\\n& \\abbr{ask}(⟦\\textit{how tall?}⟧)\n\\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "pds-intro/continued.html#how-do-we-actually-compute-this-stuff",
+    "href": "pds-intro/continued.html#how-do-we-actually-compute-this-stuff",
+    "title": "PDS intro continued",
+    "section": "How do we actually compute this stuff?",
+    "text": "How do we actually compute this stuff?\n\n\nDelta-rules.\n-- | The type of Delta-rules.\ntype DeltaRule = Term -&gt; Maybe Term"
+  },
+  {
+    "objectID": "pds-intro/continued.html#summing-up",
+    "href": "pds-intro/continued.html#summing-up",
+    "title": "PDS intro continued",
+    "section": "Summing up",
+    "text": "Summing up\n\nWe have a computational framework for:\n\nencoding grammar fragments\nrepresenting speech acts (assertions, questions)\nrepresenting theories linking inferences to behavior (as response functions)\ncomputing with the resulting probabilistic programs (via delta-rules)"
+  }
+]
