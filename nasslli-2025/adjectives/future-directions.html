@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The experimental turn – Probabilistic dynamic semantics</title>
+<title>Future directions – Probabilistic dynamic semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -85,8 +65,6 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../background/understanding-gradience.html" rel="next">
-<link href="../background/traditional-methodology.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -167,7 +145,9 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../background/traditional-methodology.html">Background</a></li><li class="breadcrumb-item"><a href="../background/experimental-turn.html">The experimental turn</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Probabilistic dynamic semantics
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -221,7 +201,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link active">
+  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The experimental turn</span></a>
   </div>
 </li>
@@ -373,23 +353,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#scaling-semantic-investigation" id="toc-scaling-semantic-investigation" class="nav-link active" data-scroll-target="#scaling-semantic-investigation">Scaling Semantic Investigation</a></li>
-  <li><a href="#teasing-apart-contributing-factors" id="toc-teasing-apart-contributing-factors" class="nav-link" data-scroll-target="#teasing-apart-contributing-factors">Teasing Apart Contributing Factors</a></li>
-  <li><a href="#making-linking-hypotheses-explicit" id="toc-making-linking-hypotheses-explicit" class="nav-link" data-scroll-target="#making-linking-hypotheses-explicit">Making Linking Hypotheses Explicit</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../background/traditional-methodology.html">Background</a></li><li class="breadcrumb-item"><a href="../background/experimental-turn.html">The experimental turn</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">The experimental turn</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Future directions</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -425,71 +397,21 @@ window.Quarto = {
 \def\Do{\abbr{do}}
 \]</span></p>
 </div>
-<p>The traditional methodology’s success has created a foundation solid enough to support exciting new extensions. Experimental semantics brings the tools of behavioral experimentation to bear on questions about meaning, allowing us to test and refine theoretical insights at unprecedented scale.</p>
-<section id="scaling-semantic-investigation" class="level3">
-<h3 class="anchored" data-anchor-id="scaling-semantic-investigation">Scaling Semantic Investigation</h3>
-<p>Where traditional methods might examine a handful of predicates, experimental approaches can investigate entire lexical domains. Extending our example involving the verb <em>love</em>: English has thousands of similar clause-embedding predicates, each potentially varying in its inferential properties. We can now test whether generalizations based on canonical examples extend across these vast lexicons.</p>
-<p>The MegaAttitude project <span class="citation" data-cites="white_computational_2016 white_role_2018 white_lexicosyntactic_2018 white_frequency_2020 an_lexical_2020 moon_source_2020 kane_intensional_2022">(<a href="#ref-white_computational_2016" role="doc-biblioref">White and Rawlins 2016</a>, <a href="#ref-white_role_2018" role="doc-biblioref">2018</a>, <a href="#ref-white_frequency_2020" role="doc-biblioref">2020</a>; <a href="#ref-white_lexicosyntactic_2018" role="doc-biblioref">White et al. 2018</a>; <a href="#ref-an_lexical_2020" role="doc-biblioref">An and White 2020</a>; <a href="#ref-moon_source_2020" role="doc-biblioref">Moon and White 2020</a>; <a href="#ref-kane_intensional_2022" role="doc-biblioref">Kane, Gantt, and White 2022</a>)</span> is one example of this approach. This project aims to collect inference judgments for hundreds of predicates across multiple contexts and inference types. This scale reveals patterns that are very difficult to see and evaluate the quality of using traditional methods—subtle distinctions between near-synonyms, unexpected predicate clusters, and systematic variation across semantic domains.</p>
-</section>
-<section id="teasing-apart-contributing-factors" class="level3">
-<h3 class="anchored" data-anchor-id="teasing-apart-contributing-factors">Teasing Apart Contributing Factors</h3>
-<p>Experimental methods also allow us to investigate the rich array of factors that influence inference judgments:</p>
-<ul>
-<li><strong>Semantic knowledge</strong>: The core meanings of expressions</li>
-<li><strong>World knowledge</strong>: Prior beliefs about plausibility<br>
-</li>
-<li><strong>Contextual factors</strong>: The discourse context and QUD</li>
-<li><strong>Individual differences</strong>: Variation in how speakers interpret expressions</li>
-<li><strong>Response strategies</strong>: How participants use rating scales</li>
-</ul>
-<p>Rather than viewing these as confounds, we can see them as windows into the cognitive processes underlying semantic interpretation. For instance, <span class="citation" data-cites="degen_prior_2021">Degen and Tonhauser (<a href="#ref-degen_prior_2021" role="doc-biblioref">2021</a>)</span> systematically manipulated world knowledge to show how prior beliefs modulate the strength of factive inferences, revealing the interplay between semantic and pragmatic factors.</p>
-</section>
-<section id="making-linking-hypotheses-explicit" class="level3">
-<h3 class="anchored" data-anchor-id="making-linking-hypotheses-explicit">Making Linking Hypotheses Explicit</h3>
-<p>Perhaps most importantly, experimental approaches force us to make explicit what traditional methods leave implicit: the link between semantic representations and behavioral responses <span class="citation" data-cites="jasbi_linking_2019 waldon_modeling_2020 phillips_theories_2021">(<a href="#ref-jasbi_linking_2019" role="doc-biblioref">Jasbi, Waldon, and Degen 2019</a>; <a href="#ref-waldon_modeling_2020" role="doc-biblioref">Waldon and Degen 2020</a>; <a href="#ref-phillips_theories_2021" role="doc-biblioref">Phillips et al. 2021</a>)</span>. When we say speakers judge that an inference follows, what cognitive processes produce that judgment? How do abstract semantic representations map onto the responses on some scale?</p>
-<p>This is not merely a methodological detail—it’s a substantive theoretical question. Different linking hypotheses make different predictions about response patterns, allowing us to test not just our semantic theories but our assumptions about how those theories connect to behavior. Even if our real interest is in characterizing the semantic representations of speakers, we can’t ignore the way those representations map onto their responses in some task.</p>
+<p>Through our exploration of gradable adjectives, we’ve seen how PDS transforms semantic theory into testable statistical models. From simple degree inference through complex mixture models, each step has revealed how delta rules bridge abstract semantics and empirical data.</p>
+<p>This work opens several avenues for development:</p>
+<ol type="1">
+<li><p><strong>Automated augmentation</strong>: Currently, analysts manually add statistical structure to kernel models. Future versions of PDS could automate common augmentations like random effects and hierarchical priors.</p></li>
+<li><p><strong>Formally verified compilation</strong>: Delta rules could be accompanied by formal proofs in <a href="https://agda.readthedocs.io/en/latest/getting-started/what-is-agda.html">Agda</a> or <a href="https://coq.inria.fr/">Coq</a>, ensuring soundness while enabling generic transformations.</p></li>
+<li><p><strong>Richer kernel models</strong>: Extending PDS to output mixture models, censoring mechanisms, and other statistical structures that directly encode semantic theories.</p></li>
+<li><p><strong>Community contributions</strong>: The modular design of PDS invites researchers to contribute new lexical entries, delta rules, and compilation strategies.</p></li>
+</ol>
+<p>Building on the PDS framework introduced in <a href="../pds-intro/overview.html">previous sections</a>, we’ve seen how computational tools can bridge the gap between formal semantic theory and experimental data. These models provide the foundation for understanding factivity—where gradience poses even deeper theoretical puzzles that we’ll explore in the next section.</p>
 
 
 <!-- -->
 
 
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-an_lexical_2020" class="csl-entry" role="listitem">
-An, Hannah, and Aaron White. 2020. <span>“The Lexical and Grammatical Sources of Neg-Raising Inferences.”</span> <em>Proceedings of the Society for Computation in Linguistics</em> 3 (1): 220–33. https://doi.org/<a href="https://doi.org/10.7275/yts0-q989">https://doi.org/10.7275/yts0-q989</a>.
-</div>
-<div id="ref-degen_prior_2021" class="csl-entry" role="listitem">
-Degen, Judith, and Judith Tonhauser. 2021. <span>“Prior <span>Beliefs</span> <span>Modulate</span> <span>Projection</span>.”</span> <em>Open Mind</em> 5 (September): 59–70. <a href="https://doi.org/10.1162/opmi_a_00042">https://doi.org/10.1162/opmi_a_00042</a>.
-</div>
-<div id="ref-jasbi_linking_2019" class="csl-entry" role="listitem">
-Jasbi, Masoud, Brandon Waldon, and Judith Degen. 2019. <span>“Linking <span>Hypothesis</span> and <span>Number</span> of <span>Response</span> <span>Options</span> <span>Modulate</span> <span>Inferred</span> <span>Scalar</span> <span>Implicature</span> <span>Rate</span>.”</span> <em>Frontiers in Psychology</em> 10 (February). <a href="https://doi.org/10.3389/fpsyg.2019.00189">https://doi.org/10.3389/fpsyg.2019.00189</a>.
-</div>
-<div id="ref-kane_intensional_2022" class="csl-entry" role="listitem">
-Kane, Benjamin, Will Gantt, and Aaron Steven White. 2022. <span>“Intensional <span>Gaps</span>: <span>Relating</span> Veridicality, Factivity, Doxasticity, Bouleticity, and Neg-Raising.”</span> <em>Semantics and Linguistic Theory</em> 31 (0): 570–605. <a href="https://doi.org/10.3765/salt.v31i0.5137">https://doi.org/10.3765/salt.v31i0.5137</a>.
-</div>
-<div id="ref-moon_source_2020" class="csl-entry" role="listitem">
-Moon, Ellise, and Aaron White. 2020. <span>“The Source of Nonfinite Temporal Interpretation.”</span> In <em>Proceedings of the 50th <span>Annual</span> <span>Meeting</span> of the <span>North</span> <span>East</span> <span>Linguistic</span> <span>Society</span></em>, edited by Mariam Asatryan, Yixiao Song, and Ayana Whitmal, 3:11–24. Amherst: GLSA Publications.
-</div>
-<div id="ref-phillips_theories_2021" class="csl-entry" role="listitem">
-Phillips, Colin, Phoebe Gaston, Nick Huang, and Hanna Muller. 2021. <span>“Theories <span>All</span> the <span>Way</span> <span>Down</span>: <span>Remarks</span> on <span>‘<span>Theoretical</span>’</span> and <span>‘<span>Experimental</span>’</span> <span>Linguistics</span>.”</span> In <em>The <span>Cambridge</span> <span>Handbook</span> of <span>Experimental</span> <span>Syntax</span></em>, edited by Grant Goodall, 587–616. Cambridge <span>Handbooks</span> in <span>Language</span> and <span>Linguistics</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/9781108569620.023">https://doi.org/10.1017/9781108569620.023</a>.
-</div>
-<div id="ref-waldon_modeling_2020" class="csl-entry" role="listitem">
-Waldon, Brandon, and Judith Degen. 2020. <span>“Modeling <span>Behavior</span> in <span>Truth</span> <span>Value</span> <span>Judgment</span> <span>Task</span> <span>Experiments</span>.”</span> In <em>Proceedings of the <span>Society</span> for <span>Computation</span> in <span>Linguistics</span> 2020</em>, edited by Allyson Ettinger, Gaja Jarosz, and Joe Pater, 238–47. New York, New York: Association for Computational Linguistics. <a href="https://aclanthology.org/2020.scil-1.29/">https://aclanthology.org/2020.scil-1.29/</a>.
-</div>
-<div id="ref-white_computational_2016" class="csl-entry" role="listitem">
-White, Aaron Steven, and Kyle Rawlins. 2016. <span>“A Computational Model of <span>S</span>-Selection.”</span> <em>Semantics and Linguistic Theory</em> 26 (0): 641–63. <a href="https://doi.org/10.3765/salt.v26i0.3819">https://doi.org/10.3765/salt.v26i0.3819</a>.
-</div>
-<div id="ref-white_role_2018" class="csl-entry" role="listitem">
-———. 2018. <span>“The Role of Veridicality and Factivity in Clause Selection.”</span> In <em><span>NELS</span> 48: <span>Proceedings</span> of the <span>Forty</span>-<span>Eighth</span> <span>Annual</span> <span>Meeting</span> of the <span>North</span> <span>East</span> <span>Linguistic</span> <span>Society</span></em>, edited by Sherry Hucklebridge and Max Nelson, 48:221–34. University of Iceland: GLSA (Graduate Linguistics Student Association), Department of Linguistics, University of Massachusetts.
-</div>
-<div id="ref-white_frequency_2020" class="csl-entry" role="listitem">
-———. 2020. <span>“Frequency, Acceptability, and Selection: <span>A</span> Case Study of Clause-Embedding.”</span> <em>Glossa: A Journal of General Linguistics</em> 5 (1). <a href="https://doi.org/10.5334/gjgl.1001">https://doi.org/10.5334/gjgl.1001</a>.
-</div>
-<div id="ref-white_lexicosyntactic_2018" class="csl-entry" role="listitem">
-White, Aaron Steven, Rachel Rudinger, Kyle Rawlins, and Benjamin Van Durme. 2018. <span>“Lexicosyntactic <span>Inference</span> in <span>Neural</span> <span>Models</span>.”</span> In <em>Proceedings of the 2018 <span>Conference</span> on <span>Empirical</span> <span>Methods</span> in <span>Natural</span> <span>Language</span> <span>Processing</span></em>, 4717–24. Brussels, Belgium: Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/D18-1501">https://doi.org/10.18653/v1/D18-1501</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -939,21 +861,9 @@ White, Aaron Steven, Rachel Rudinger, Kyle Rawlins, and Benjamin Van Durme. 2018
       }
     }
   });
-  </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../background/traditional-methodology.html" class="pagination-link" aria-label="From theory to data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">From theory to data</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../background/understanding-gradience.html" class="pagination-link" aria-label="Understanding gradience">
-        <span class="nav-page-text">Understanding gradience</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The experimental turn"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Future directions"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
@@ -985,31 +895,19 @@ White, Aaron Steven, Rachel Rudinger, Kyle Rawlins, and Benjamin Van Durme. 2018
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>The traditional methodology's success has created a foundation solid enough to support exciting new extensions. Experimental semantics brings the tools of behavioral experimentation to bear on questions about meaning, allowing us to test and refine theoretical insights at unprecedented scale.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Through our exploration of gradable adjectives, we've seen how PDS transforms semantic theory into testable statistical models. From simple degree inference through complex mixture models, each step has revealed how delta rules bridge abstract semantics and empirical data.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Scaling Semantic Investigation</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>This work opens several avenues for development:</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Where traditional methods might examine a handful of predicates, experimental approaches can investigate entire lexical domains. Extending our example involving the verb *love*: English has thousands of similar clause-embedding predicates, each potentially varying in its inferential properties. We can now test whether generalizations based on canonical examples extend across these vast lexicons.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Automated augmentation**: Currently, analysts manually add statistical structure to kernel models. Future versions of PDS could automate common augmentations like random effects and hierarchical priors.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>The MegaAttitude project <span class="co">[</span><span class="ot">@white_computational_2016; @white_role_2018; @white_lexicosyntactic_2018; @white_frequency_2020; @an_lexical_2020; @moon_source_2020; @kane_intensional_2022</span><span class="co">]</span> is one example of this approach. This project aims to collect inference judgments for hundreds of predicates across multiple contexts and inference types. This scale reveals patterns that are very difficult to see and evaluate the quality of using traditional methods—subtle distinctions between near-synonyms, unexpected predicate clusters, and systematic variation across semantic domains.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Formally verified compilation**: Delta rules could be accompanied by formal proofs in <span class="co">[</span><span class="ot">Agda</span><span class="co">](https://agda.readthedocs.io/en/latest/getting-started/what-is-agda.html)</span> or <span class="co">[</span><span class="ot">Coq</span><span class="co">](https://coq.inria.fr/)</span>, ensuring soundness while enabling generic transformations.</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">### Teasing Apart Contributing Factors</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Richer kernel models**: Extending PDS to output mixture models, censoring mechanisms, and other statistical structures that directly encode semantic theories.</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Experimental methods also allow us to investigate the rich array of factors that influence inference judgments:</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Community contributions**: The modular design of PDS invites researchers to contribute new lexical entries, delta rules, and compilation strategies.</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Semantic knowledge**: The core meanings of expressions</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**World knowledge**: Prior beliefs about plausibility  </span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contextual factors**: The discourse context and QUD</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Individual differences**: Variation in how speakers interpret expressions</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Response strategies**: How participants use rating scales</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Rather than viewing these as confounds, we can see them as windows into the cognitive processes underlying semantic interpretation. For instance, @degen_prior_2021 systematically manipulated world knowledge to show how prior beliefs modulate the strength of factive inferences, revealing the interplay between semantic and pragmatic factors.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### Making Linking Hypotheses Explicit</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Perhaps most importantly, experimental approaches force us to make explicit what traditional methods leave implicit: the link between semantic representations and behavioral responses <span class="co">[</span><span class="ot">@jasbi_linking_2019; @waldon_modeling_2020; @phillips_theories_2021</span><span class="co">]</span>. When we say speakers judge that an inference follows, what cognitive processes produce that judgment? How do abstract semantic representations map onto the responses on some scale?</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>This is not merely a methodological detail—it's a substantive theoretical question. Different linking hypotheses make different predictions about response patterns, allowing us to test not just our semantic theories but our assumptions about how those theories connect to behavior. Even if our real interest is in characterizing the semantic representations of speakers, we can't ignore the way those representations map onto their responses in some task.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Building on the PDS framework introduced in <span class="co">[</span><span class="ot">previous sections</span><span class="co">](../pds-intro/overview.qmd)</span>, we've seen how computational tools can bridge the gap between formal semantic theory and experimental data. These models provide the foundation for understanding factivity—where gradience poses even deeper theoretical puzzles that we'll explore in the next section.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Notes – Probabilistic dynamic semantics</title>
+<title>Compiling kernel models – Probabilistic dynamic semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../factivity/index.html" rel="next">
-<link href="../pds-intro/delta-rules.html" rel="prev">
+<link href="../adjectives/norming-model.html" rel="next">
+<link href="../adjectives/collecting-judgments.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -105,6 +125,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -118,7 +167,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/index.html">Vagueness and imprecision</a></li><li class="breadcrumb-item"><a href="../adjectives/index.html">Notes</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Vagueness and imprecision</a></li><li class="breadcrumb-item"><a href="../adjectives/compiling-kernel-models.html">Compiling kernel models</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -272,8 +321,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../adjectives/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes</span></a>
+  <a href="../adjectives/adjectives-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vague gradable adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collecting inference judgments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/compiling-kernel-models.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Compiling kernel models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/norming-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Norming model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/modeling-vagueness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modeling vagueness</span></a>
   </div>
 </li>
       </ul>
@@ -295,37 +368,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Modeling the question prompt</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../qud/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#stan-as-an-intermediary" id="toc-stan-as-an-intermediary" class="nav-link active" data-scroll-target="#stan-as-an-intermediary">Stan as an intermediary</a></li>
+  <li><a href="#kernel-models" id="toc-kernel-models" class="nav-link" data-scroll-target="#kernel-models">Kernel models</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/index.html">Vagueness and imprecision</a></li><li class="breadcrumb-item"><a href="../adjectives/index.html">Notes</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Vagueness and imprecision</a></li><li class="breadcrumb-item"><a href="../adjectives/compiling-kernel-models.html">Compiling kernel models</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Notes</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Compiling kernel models</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -342,25 +405,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
 </div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>These notes will become available on June 25.</p>
-</div>
-</div>
+<p>Having seen how gradable adjectives are represented in PDS’s compositional semantics, we now turn to the practical challenge of implementing statistical models that test these semantic theories against experimental data. The translation from abstract semantic theory to concrete statistical models requires careful attention to how theoretical commitments manifest as computational procedures. This section demonstrates this translation through two models: the first is a relatively simple model of the norming data we just discussed; the second is a model of the gradable adjectives data.</p>
+<section id="stan-as-an-intermediary" class="level2">
+<h2 class="anchored" data-anchor-id="stan-as-an-intermediary">Stan as an intermediary</h2>
+<p>The translation from abstract semantic analyses to concrete statistical models requires an intermediate representation—basically, a language that relates the abstract probabilistic models we state in PDS to the data we want to fit these models to. Stan has emerged as the <em>de facto</em> standard for this role in computational semantics and psycholinguistics <span class="citation" data-cites="burkner_brms_2017 stan_development_team_stan_2024">(<a href="#ref-burkner_brms_2017" role="doc-biblioref">Bürkner 2017</a>; <a href="#ref-stan_development_team_stan_2024" role="doc-biblioref">Stan Development Team 2024</a>)</span>. We are going to use it for our implementations, but any language that allows us to express sets of interrelated distributional assumptions would do.</p>
+<p>Stan is a probabilistic programming language designed for statistical inference. Unlike general-purpose programming languages, Stan is specialized for stating distributional assumptions that can then be translated to a C++ backend that performs statistical inference–usually, using a form of Markov Chain Monte Carlo (MCMC). Stan allows for imperative constructs, but for our purposes, we can think of it as declaring the structure of a probability model in the sense that we don’t every write code that specifies <em>how</em> to fit the model to the data.</p>
+<p>This approach aligns well with our goals: just as formal semantics declares some representation of the semantic content rather than how that representation is used in verifying truth or drawing inferences, Stan declares probabilistic relationships rather than sampling algorithms. The parallel is not accidental—both frameworks separate the <em>what</em> (semantic content, distributional assumptions) from the <em>how</em> (verification or proof, inference algorithms). Said another way, our translation to Stan allows us to retain modularity: it provides an interface that hides the nasty details of actually fitting the models from our semantic theory.</p>
+</section>
+<section id="kernel-models" class="level2">
+<h2 class="anchored" data-anchor-id="kernel-models">Kernel models</h2>
+<p>Before diving into the implementation details, it’s important to understand what PDS produces and how it relates to the full statistical models we’ll develop. PDS outputs what we term a <em>kernel model</em>—the semantic core that corresponds directly to the lexical and compositional semantics. This kernel can in principle be augmented with other components: random effects, hierarchical priors, and other statistical machinery, but the current implementation focuses on producing just the semantic kernel.</p>
+<p>This distinction is crucial: PDS automates the translation from compositional semantics to the core statistical model, while leaving room for analysts to add domain-specific statistical structure. We take this to be a useful separation of concerns because it allows the semantic theory to remain agnostic about aspects of the statistical model that are have nothing to do with the semantic theory.</p>
+<p>With this understanding of kernel models and Stan’s role, we can now examine specific implementations. We’ll start with the simplest case—inferring degrees from norming data—before building up to a model of vagueness. We’ll be showing prettified versions of what the system actually outputs. For every model block, we’ll also provide the current system output in a footnote, in addition to the prettified version.</p>
 
 
 <!-- -->
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-burkner_brms_2017" class="csl-entry" role="listitem">
+Bürkner, Paul-Christian. 2017. <span>“Brms: <span>An</span> <span>R</span> <span>Package</span> for <span>Bayesian</span> <span>Multilevel</span> <span>Models</span> <span>Using</span> <span>Stan</span>.”</span> <em>Journal of Statistical Software</em> 80 (August): 1–28. <a href="https://doi.org/10.18637/jss.v080.i01">https://doi.org/10.18637/jss.v080.i01</a>.
+</div>
+<div id="ref-stan_development_team_stan_2024" class="csl-entry" role="listitem">
+Stan Development Team. 2024. <span>“Stan <span>Modeling</span> <span>Language</span> <span>Users</span> <span>Guide</span> and <span>Reference</span> <span>Manual</span>, 2.36.”</span> <a href="https://mc-stan.org">https://mc-stan.org</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -813,24 +903,66 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../pds-intro/delta-rules.html" class="pagination-link" aria-label="Delta rules">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Delta rules</span>
+      <a href="../adjectives/collecting-judgments.html" class="pagination-link" aria-label="Collecting inference judgments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Collecting inference judgments</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../factivity/index.html" class="pagination-link" aria-label="Notes">
-        <span class="nav-page-text">Notes</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../adjectives/norming-model.html" class="pagination-link" aria-label="Norming model">
+        <span class="nav-page-text">Norming model</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Notes"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Compiling kernel models"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>These notes will become available on June 25.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\updct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\ct{upd<span class="sc">\_</span>#1}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\pure}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid orange</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\return}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid black</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>\def\P{\mathtt{P}}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\def\Q{\mathtt{Q}}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>\def\ite{\ct{if<span class="sc">\_</span>then<span class="sc">\_</span>else}}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\def\Do{\abbr{do}}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Having seen how gradable adjectives are represented in PDS's compositional semantics, we now turn to the practical challenge of implementing statistical models that test these semantic theories against experimental data. The translation from abstract semantic theory to concrete statistical models requires careful attention to how theoretical commitments manifest as computational procedures. This section demonstrates this translation through two models: the first is a relatively simple model of the norming data we just discussed; the second is a model of the gradable adjectives data.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Stan as an intermediary</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>The translation from abstract semantic analyses to concrete statistical models requires an intermediate representation—basically, a language that relates the abstract probabilistic models we state in PDS to the data we want to fit these models to. Stan has emerged as the *de facto* standard for this role in computational semantics and psycholinguistics <span class="co">[</span><span class="ot">@burkner_brms_2017; @stan_development_team_stan_2024</span><span class="co">]</span>. We are going to use it for our implementations, but any language that allows us to express sets of interrelated distributional assumptions would do.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Stan is a probabilistic programming language designed for statistical inference. Unlike general-purpose programming languages, Stan is specialized for stating distributional assumptions that can then be translated to a C++ backend that performs statistical inference–usually, using a form of Markov Chain Monte Carlo (MCMC). Stan allows for imperative constructs, but for our purposes, we can think of it as declaring the structure of a probability model in the sense that we don't every write code that specifies *how* to fit the model to the data.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>This approach aligns well with our goals: just as formal semantics declares some representation of the semantic content rather than how that representation is used in verifying truth or drawing inferences, Stan declares probabilistic relationships rather than sampling algorithms. The parallel is not accidental—both frameworks separate the *what* (semantic content, distributional assumptions) from the *how* (verification or proof, inference algorithms). Said another way, our translation to Stan allows us to retain modularity: it provides an interface that hides the nasty details of actually fitting the models from our semantic theory.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Kernel models</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Before diving into the implementation details, it's important to understand what PDS produces and how it relates to the full statistical models we'll develop. PDS outputs what we term a *kernel model*—the semantic core that corresponds directly to the lexical and compositional semantics. This kernel can in principle be augmented with other components: random effects, hierarchical priors, and other statistical machinery, but the current implementation focuses on producing just the semantic kernel. </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>This distinction is crucial: PDS automates the translation from compositional semantics to the core statistical model, while leaving room for analysts to add domain-specific statistical structure. We take this to be a useful separation of concerns because it allows the semantic theory to remain agnostic about aspects of the statistical model that are have nothing to do with the semantic theory.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>With this understanding of kernel models and Stan's role, we can now examine specific implementations. We'll start with the simplest case—inferring degrees from norming data—before building up to a model of vagueness. We'll be showing prettified versions of what the system actually outputs. For every model block, we'll also provide the current system output in a footnote, in addition to the prettified version.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
