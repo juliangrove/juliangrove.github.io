@@ -398,14 +398,115 @@
     ]
   },
   {
+    "objectID": "factivity/important-distinction.html",
+    "href": "factivity/important-distinction.html",
+    "title": "An important distinction",
+    "section": "",
+    "text": "There are two importantly distinct questions that we need to disentangle before moving on:\n\nWhether the gradience we observe suggests that there is no class (or subclasses) of factive predicates.\nWhether the veridicality inferences triggered by a particular expression containing a particular clause-embedding predicate are themselves gradient (whatever that would mean).\n\nWe’re going to be concerned with the latter question (i) because it is something PDS, we believe, is uniquely well positioned to ask, and thus asking it provides a useful demonstration of the PDS’s use; and (ii) because the former question has already been answered.\nAs discussed on Day 1, Degen and Tonhauser (2022) argue that no clear line separates factive from non-factive predicates. Mean projection ratings vary continuously from pretend (lowest) to be annoyed (highest).\n\n\n\n\n\n\nFigure 1: Aggregate factivity measures from Degen and Tonhauser (2022), showing continuous variation in projection ratings across predicates under questioning.\n\n\n\nKane, Gantt, and White (2022) later showed that this gradience is likely due largely to task effects and measurement noise. They demonstrate that when one applies a clustering model to these data that accounts for noise due to various factors, many of the standard subclasses of factives pop out.\nTo get a sense for how these clusters appear in the data, we can look back at Figure 2, which we discussed on Day 1.\n\n\n\n\n\n\nFigure 2: One way of deriving a factivity measure from the MegaVeridicality dataset.\n\n\n\nRemember that the idea behind this figure is that we could in principle derive a continuous measure of factivity by taking the minimum along the axes of the left plot in Figure 2 and rectifying.\nThe thing to note is that (i) there are clearly at least two separate “bumps” in the histogram; but (ii) the peak of the right bump is not at 1, as we might have expected. This is because some of these subclasses–e.g. the cognitive factives, which Karttunen (1971) observes to not always give rise factivity–appear to themselves be associated with non-necessary factive inferences, while other classes–e.g. the emotive factives, such as love, hate, and be annoyed–always do (up to measurement error and other sources of noise).\nWhat explains the gradience internal to a class like the cognitive factives (which, again, we have known for more than 60 years should show this pattern)?\n\n\n\n\n\n\nReferences\n\nDegen, Judith, and Judith Tonhauser. 2022. “Are There Factive Predicates? An Empirical Investigation.” Language 98 (3): 552–91. https://doi.org/10.1353/lan.0.0271.\n\n\nKane, Benjamin, Will Gantt, and Aaron Steven White. 2022. “Intensional Gaps: Relating Veridicality, Factivity, Doxasticity, Bouleticity, and Neg-Raising.” Semantics and Linguistic Theory 31 (0): 570–605. https://doi.org/10.3765/salt.v31i0.5137.\n\n\nKarttunen, Lauri. 1971. “Some Observations on Factivity.” Paper in Linguistics 4 (1): 55–69. https://doi.org/10.1080/08351817109370248.",
+    "crumbs": [
+      "Factivity inferences",
+      "An important distinction"
+    ]
+  },
+  {
+    "objectID": "factivity/additional-models.html",
+    "href": "factivity/additional-models.html",
+    "title": "Additional models",
+    "section": "",
+    "text": "For completeness, we also consider two models created by directly manipulating the Stan code rather than deriving them from linguistic hypotheses. These computational experiments serve as useful comparisons but don’t correspond to theoretical proposals in the linguistics literature:\n\nWholly-discrete model\nThis model treats both factivity and world knowledge as discrete:\n// In model block\nreal verb_prob = inv_logit(verb_intercept[verb[n]] + subj_intercept_verb[subj[n], verb[n]]);\nreal context_prob = inv_logit(context_intercept[context[n]] + subj_intercept_context[subj[n], context[n]]);\n\n// Both components are discrete\nint verb_branch = bernoulli_rng(verb_prob);      // factive or not\nint context_branch = bernoulli_rng(context_prob); // world knowledge true or not\n\n// Response is certain (1) if either component is true\nreal response = (verb_branch == 1 || context_branch == 1) ? 1.0 : 0.0;\ntarget += truncated_normal_lpdf(y[n] | response, sigma_e, 0.0, 1.0);\n\n\nDiscrete-world model\nThis model has discrete world knowledge but gradient factivity:\n// World knowledge is discrete\nint context_branch = bernoulli_rng(context_prob);\n\nif (context_branch == 1) {\n  // If world knowledge says \"true\", response is certain\n  target += truncated_normal_lpdf(y[n] | 1.0, sigma_e, 0.0, 1.0);\n} else {\n  // Otherwise, factivity provides gradient boost\n  target += truncated_normal_lpdf(y[n] | verb_prob, sigma_e, 0.0, 1.0);\n}\nAs noted, these models result mainly from us exploring all the options available within the frame, rather than linguistic theory; but they provide useful sanity checks.",
+    "crumbs": [
+      "Factivity inferences",
+      "Additional models"
+    ]
+  },
+  {
+    "objectID": "factivity/world-knowledge.html",
+    "href": "factivity/world-knowledge.html",
+    "title": "World knowledge: gradient or discrete",
+    "section": "",
+    "text": "Before examining factivity proper, let’s understand how the norming study helps us model world knowledge. The norming data allows us to test whether world knowledge itself involves discrete or gradient uncertainty. (The structure of this model is very similar to the one we covered in the adjectives section.)\n\n\n\n\n\n\nFigure 1: Left: ELPDs for the two models of the norming data from Degen and Tonhauser (2021)’s experiment 2a. Dotted line indicates estimated difference between the norming-discrete model and the norming-gradient model.\n\n\n\nAs Figure 1 shows, the gradient model of world knowledge substantially outperforms the discrete model (ΔELPD = 442.3 ± 23.1). The posterior predictive distributions reveal why: participants’ judgments cluster away from the scale endpoints, a pattern the gradient model captures naturally but the discrete model cannot. This establishes that world knowledge contributes gradient uncertainty to factivity judgments.\n\n\n\n\n\n\nReferences\n\nDegen, Judith, and Judith Tonhauser. 2021. “Prior Beliefs Modulate Projection.” Open Mind 5 (September): 59–70. https://doi.org/10.1162/opmi_a_00042."
+  },
+  {
+    "objectID": "factivity/model-comparison.html",
+    "href": "factivity/model-comparison.html",
+    "title": "Model comparison",
+    "section": "",
+    "text": "To evaluate these competing hypotheses, we can examine their empirical predictions. Using the same model comparison techniques from adjectives, we compute expected log pointwise predictive densities (ELPDs).\n\nPosterior predictive checks\nFirst, let’s visualize how well each model captures the distribution of responses:\n\n\n\n\n\n\nFigure 1: Posterior predictive distributions (with simulated participant intercepts) of all four models for six predicates from Degen and Tonhauser (2021)’s projection experiment 2b, for all contexts combined. Empirical distributions are represented by density histograms of data from Degen and Tonhauser (2021).\n\n\n\nFigure 1 reveals striking differences between the models:\n\nDiscrete-factivity (top left): Captures the characteristic dips in response frequency mid-scale—reflecting its mixture of factive (response ≈ 1) and non-factive (response varies) interpretations\nWholly-gradient (bottom left): Produces smoother, unimodal distributions, unable to capture the multi-modal patterns in the data\nWholly-discrete (top right): Forces responses to extremes, missing the intermediate values\nDiscrete-world (bottom right): Shows some bimodality but in the wrong direction\n\nThe discrete-factivity model’s ability to capture the non-monotonic response patterns is particularly clear for predicates like announce and confirm, where responses cluster both near 1 (factive interpretation) and at intermediate values (non-factive interpretation modulated by world knowledge).\n\n\nQuantitative comparison\nLooking at the expected log pointwise predictive densities reveals a clear winner. The discrete-factivity model substantially outperforms all alternatives across the board. Compared to the wholly-gradient model, it achieves a ΔELPD of 834.5 ± 55.4—a massive improvement in predictive accuracy. The advantages over discrete-world (ΔELPD = 766.1 ± 53.8) and wholly-discrete (ΔELPD = 295.1 ± 34.8) models are similarly impressive. These differences are not just statistically significant but practically large, indicating that the discrete-factivity model provides a dramatically better account of the data.\n\n\n\n\n\n\nFigure 2: ELPDs for the four models. Dotted lines indicate estimated differences between each model and the discrete-factivity model. Error bars indicate standard errors.\n\n\n\n\n\n\n\n\n\n\nReferences\n\nDegen, Judith, and Judith Tonhauser. 2021. “Prior Beliefs Modulate Projection.” Open Mind 5 (September): 59–70. https://doi.org/10.1162/opmi_a_00042."
+  },
+  {
+    "objectID": "factivity/experimental-paradigms.html",
+    "href": "factivity/experimental-paradigms.html",
+    "title": "Experimental paradigms",
+    "section": "",
+    "text": "Separating world knowledge from factivity\nA key challenge in studying factivity is that our judgments about whether someone is certain of a proposition depend on two factors:\n\nThe properties of the predicate (whether speakers interpret it as being associated with a presupposition)\nOur world knowledge about how likely the proposition is\n\nDegen and Tonhauser (2021) developed a two-stage experimental design to tease these apart:\nStage 1: Norming study (Experiment 2a)\nFirst, they measured how world knowledge affects belief in various propositions. Participants saw items like:\n\n\n\n\n\n\nNorming item example\n\n\n\nFact: Sophia is a hipster.\nQuestion: How likely is it that Sophia got a tattoo?\nResponse: [slider from 0 to 1]\n\n\nFor each proposition (e.g., Sophia got a tattoo), they created two contexts–one making it more likely (Sophia is a hipster) and one making it less likely (Sophia is a Mormon). This gives us a measure of world knowledge independent of any embedding predicate.\nStage 2: Projection study (Experiment 2b)\nNext, they embedded these same propositions under various predicates and asked about the speaker’s certainty:\n\n\n\n\n\n\nProjection item example\n\n\n\nContext: Isabella said that Sophia is a hipster.\nUtterance: Noah knows that Sophia got a tattoo.\nQuestion: Is Noah certain that Sophia got a tattoo?\nResponse: [slider from 0 to 1]\n\n\nThey reasoned that, if speakers categorically interpret know as triggering a factive presupposition, Noah should be certain regardless of the prior probability; but, they reasoned, if projection is gradient, his certainty should vary with world knowledge.\n\n\nKey experimental details\nThe experiments tested 20 predicates that theory suggests might pattern differently:\n\nCanonical factives: be annoyed, discover, know, reveal, see\nNon-factives:\n\nNon-veridical non-factive: pretend, say, suggest, think\nVeridical non-factive: be right, demonstrate\n\nOptionally factive: acknowledge, admit, announce, confess, confirm, establish, hear, inform, prove\n\nEach participant saw 20 items (one per predicate) plus controls, with predicates paired with different complement clauses and prior contexts across participants.\n\n\n\n\n\n\n\nReferences\n\nDegen, Judith, and Judith Tonhauser. 2021. “Prior Beliefs Modulate Projection.” Open Mind 5 (September): 59–70. https://doi.org/10.1162/opmi_a_00042.",
+    "crumbs": [
+      "Factivity inferences",
+      "Experimental paradigms"
+    ]
+  },
+  {
+    "objectID": "factivity/pds-to-stan.html",
+    "href": "factivity/pds-to-stan.html",
+    "title": "From PDS to Stan: implementing the theories",
+    "section": "",
+    "text": "Building on the compilation pipeline introduced for adjectives, let’s see how PDS handles the two competing theories of factivity. Recall that PDS outputs kernel models—the semantic core corresponding directly to our theoretical commitments. We’ll focus mainly on the actual experimental items here, since the norming models for this task have a very similar character to the ones we introduced for gradable adjectives."
+  },
+  {
+    "objectID": "factivity/pds-to-stan.html#footnotes",
+    "href": "factivity/pds-to-stan.html#footnotes",
+    "title": "From PDS to Stan: implementing the theories",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nActual PDS output: model { v ~ logit_normal(0.0, 1.0); w ~ logit_normal(0.0, 1.0); target += log_mix(v, truncated_normal_lpdf(y | 1.0, sigma, 0.0, 1.0), truncated_normal_lpdf(y | w, sigma, 0.0, 1.0)); }↩︎\nFor a detailed introduction to Stan’s blocks and syntax, see the Stan introduction in the adjectives section.↩︎\nActual PDS output after adding rendering hooks: model { v ~ logit_normal(0.0, 1.0); w ~ logit_normal(0.0, 1.0); target += truncated_normal_lpdf(y | v + (1.0 - v) * w, sigma, 0.0, 1.0); }↩︎"
+  },
+  {
     "objectID": "factivity/index.html",
     "href": "factivity/index.html",
     "title": "Notes",
     "section": "",
-    "text": "Note\n\n\n\nThese notes will become available on June 27.",
+    "text": "Note\n\n\n\nThese notes will become available on June 27."
+  },
+  {
+    "objectID": "factivity/hypotheses.html",
+    "href": "factivity/hypotheses.html",
+    "title": "Two competing hypotheses",
+    "section": "",
+    "text": "Using PDS, we can precisely state two fundamentally different accounts of the observed gradience:\nDiscrete-factivity hypothesis: Factivity is a discrete property—speakers either interpret a predicate as triggering a factive presupposition on a given occasion of use or they don’t. The observed gradience reflects uncertainty about which interpretation is intended, analogous to lexical ambiguity. Different uses of discover might involve different lexical entries or different syntactic structures, only some of which are associated with presupposition.\nWholly-gradient hypothesis: There is no discrete factivity property. Instead, predicates make gradient contributions to inferences about their complements’ truth. This view, aligned with Tonhauser, Beaver, and Degen (2018)’s Gradient Projection Principle, treats projection as a continuous phenomenon where content projects “to the extent that it is not at-issue.”\nAs we’ll see, PDS allows us to implement both hypotheses as statistical models and compare their empirical predictions. But first, we need to understand the experimental paradigm that gives us the data to test these hypotheses.\n\n\n\n\n\n\nReferences\n\nTonhauser, Judith, David I. Beaver, and Judith Degen. 2018. “How Projective Is Projective Content? Gradience in Projectivity and At-Issueness.” Journal of Semantics 35 (3): 495–542. https://doi.org/10.1093/jos/ffy007.",
     "crumbs": [
       "Factivity inferences",
-      "Notes"
+      "Two competing hypotheses"
+    ]
+  },
+  {
+    "objectID": "factivity/challenges-solutions.html",
+    "href": "factivity/challenges-solutions.html",
+    "title": "Implementation challenges and solutions",
+    "section": "",
+    "text": "The transition from PDS kernels to full statistical models reveals several challenges:\n\n1. Identifiability\nIn mixture models, the components can sometimes “trade off”—different parameter combinations yield identical predictions. We address this through informative priors (using norming data to constrain world knowledge parameters), hierarchical structure (partial pooling across predicates and contexts), and multiple contexts per predicate (each predicate appears with different world knowledge levels).\n\n\n2. Computational efficiency\nMixture models can be slow to fit (or not fit at all). We improve efficiency through non-centered parameterizations (as shown in the transformed parameters blocks), vectorization (operating on arrays rather than loops where possible), and warm starts (initializing chains near reasonable values).\n\n\n3. Model checking\nBeyond posterior predictive checks, we validate models through prior predictive checks (ensuring priors generate reasonable data), residual analysis (checking for systematic deviations), and cross-validation (using held-out data to assess generalization).\n\n\n4. Alternative response distributions\nTo ensure our results aren’t artifacts of the truncated normal distribution, we can consider alternative likelihoods–e.g. ordered beta distributions:\n\n\n\n\n\n\nRobustness to response distribution choice\n\n\n\n\n\nWe also fit models using ordered beta distributions, which handle bounded responses differently:\n\n\n\n\n\n\nFigure 1: Left: ELPDs for all four ordered beta models. Right: ELPDs for truncated normal vs. ordered beta models on non-endpoint responses. Dotted lines indicate differences from discrete-factivity model.\n\n\n\nThe discrete-factivity model maintains its advantage regardless of response distribution, confirming the robustness of our findings.",
+    "crumbs": [
+      "Factivity inferences",
+      "Implementation challenges and solutions"
+    ]
+  },
+  {
+    "objectID": "factivity/additional-dimensions.html",
+    "href": "factivity/additional-dimensions.html",
+    "title": "Exploring additional dimensions",
+    "section": "",
+    "text": "Predicate-specific patterns\nNot all predicates show the same degree of discreteness. We can examine the posterior distributions of the factivity parameter by predicate:\n\n\n\n\n\n\nFigure 1: Density plots of the posterior log-odds of projection (with participant intercepts zeroed out) for all four models for six predicates from Degen and Tonhauser (2021)’s projection experiment 2b.\n\n\n\nSeveral patterns emerge from these posterior distributions. Canonical factives like know and discover show high probability of being interpreted with factive presupposition across models, while non-factives like think and say show consistently low probability. The most interesting cases are variable predicates like confirm and prove, which show intermediate probabilities with high uncertainty. This variation suggests that while factivity is discrete at the token level (each use involves either a factive or non-factive interpretation), predicates differ systematically in their propensity to trigger factive interpretations.\nFor a complete view of all 20 predicates tested:\n\n\n\n\n\n\nClick to see posterior distributions for all predicates\n\n\n\n\n\n\n\n\n\n\n\nFigure 2: Density plots of the posterior log-odds of projection for all predicates from Degen and Tonhauser (2021)’s projection experiment 2b.\n\n\n\n\n\n\n\n\nContext effects\nThe norming study reveals how world knowledge varies across contexts:\n\n\n\n\n\n\nFigure 3: Density plots of the posterior log-odds certainty (with participant intercepts zeroed out) for three items in Degen and Tonhauser (2021)’s norming task (experiment 2a). Low and high priors are for Grace visited her sister, given the facts Grace hates her sister and Grace loves her sister, respectively. Mid prior is for Sophia got a tattoo, given the fact Sophia is a hipster.\n\n\n\nThe separation between low and high prior contexts validates the experimental manipulation—participants genuinely use world knowledge when judging likelihood. This makes the discrete-factivity model’s success more impressive: it must overcome this continuous variation to produce discrete projection patterns.\n\n\nComplete posterior predictive distributions\nFor researchers interested in the full pattern across all predicates:\n\n\n\n\n\n\nClick to see posterior predictive distributions for all 20 predicates\n\n\n\n\n\n\n\n\n\n\n\nFigure 4: Posterior predictive distributions (with simulated participant intercepts) of all four models for all predicates in Degen and Tonhauser (2021)’s projection experiment 2b, for all contexts combined. Empirical distributions are represented by density histograms.\n\n\n\n\n\n\n\n\n\n\n\n\n\nReferences\n\nDegen, Judith, and Judith Tonhauser. 2021. “Prior Beliefs Modulate Projection.” Open Mind 5 (September): 59–70. https://doi.org/10.1162/opmi_a_00042.",
+    "crumbs": [
+      "Factivity inferences",
+      "Exploring additional dimensions"
+    ]
+  },
+  {
+    "objectID": "factivity/factivity-projection.html",
+    "href": "factivity/factivity-projection.html",
+    "title": "Factivity and projection",
+    "section": "",
+    "text": "Having explored how PDS handles expected gradience in adjectives, we now turn to factivity—where gradience poses a deeper theoretical puzzle. While the gradience in adjective meanings arises from well-understood sources like vagueness and contextual variation, the gradience observed in judgments aimed at measuring factivity is more difficult to explain.\nBefore diving into computational models, let’s review what makes factivity special. Factivity describes the property of certain predicates that are associated with the presupposition that their complements are true, even when the predicate is embedded under various operators. Compare these sentences:\n   \n\nJo loved that Mo left.\nJo didn’t love that Mo left.\nDid Jo love that Mo left?\nIf Jo loved that Mo left, she’ll won’t be upset that Bo left.\n\nIn all cases, there’s a strong inference that Mo actually left. We say that this inference projects through negation, questions, and conditionals. Contrast this with non-factive predicates:\n \n\nJo {thinks, believes, said} that Mo left.\nJo doesn’t {think, believe, say} that Mo left.\n\nHere, using (6) doesn’t commit us to Mo having left. Given just these examples, the contrast feels sharp: predicates are either associated with factive presuppositions or not.\nBut this traditional picture has been challenged by experimental work showing substantial gradience in projection judgments. Some predicates (like love) are almost always associated with projection, others (like think) rarely trigger it, but many fall somewhere in between. For instance, White and Rawlins (2018) measured veridicality inferences for more than 700 predicates in their MegaVeridicality dataset–visualized in Figure 1.\n\n\n\n\n\n\nFigure 1: An aggregate measure of factivity, derived from the MegaVeridicality dataset of White and Rawlins (2018). Points are jittered (0.05) to avoid overplotting. The x-axis corresponds to mean scores for affirmative contexts, the y-axis for negative contexts. Each point is a predicate. Note the continuous gradient rather than discrete clusters.\n\n\n\nWhat explains this gradience?\n\n\n\n\n\n\nReferences\n\nWhite, Aaron Steven, and Kyle Rawlins. 2018. “The Role of Veridicality and Factivity in Clause Selection.” In NELS 48: Proceedings of the Forty-Eighth Annual Meeting of the North East Linguistic Society, edited by Sherry Hucklebridge and Max Nelson, 48:221–34. University of Iceland: GLSA (Graduate Linguistics Student Association), Department of Linguistics, University of Massachusetts.",
+    "crumbs": [
+      "Factivity inferences",
+      "Factivity and projection"
     ]
   },
   {

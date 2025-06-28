@@ -1,0 +1,27 @@
+---
+title: "An important distinction"
+bibliography: ../../pds.bib
+---
+
+There are two importantly distinct questions that we need to disentangle before moving on:
+
+1. Whether the gradience we observe suggests that there is no *class* (or subclasses) of factive predicates.
+2. Whether the veridicality inferences triggered by a particular expression containing a particular clause-embedding predicate are themselves gradient (whatever that would mean).
+
+We're going to be concerned with the latter question (i) because it is something PDS, we believe, is uniquely well positioned to ask, and thus asking it provides a useful demonstration of the PDS's use; and (ii) because the former question has already been answered.
+
+[As discussed on Day 1](../background/case-studies.qmd), @degen_are_2022 argue that no clear line separates factive from non-factive predicates. Mean projection ratings vary continuously from *pretend* (lowest) to *be annoyed* (highest).
+
+![Aggregate factivity measures from @degen_are_2022, showing continuous variation in projection ratings across predicates under questioning.](plots/projection_no_fact_means.png){#fig-projection-verb-means width=750}
+
+@kane_intensional_2022 later showed that this gradience is likely due largely to task effects and measurement noise. They demonstrate that when one applies a clustering model to these data that accounts for noise due to various factors, many of the standard subclasses of factives pop out. 
+
+To get a sense for how these clusters appear in the data, we can look back at @fig-derived-factivity, which [we discussed on Day 1](../background/understanding-gradience.qmd).
+
+![One way of deriving a factivity measure from the MegaVeridicality dataset.](plots/derived_factivity_measure.png){#fig-derived-factivity width=750}
+
+Remember that the idea behind this figure is that we could in principle derive a continuous measure of factivity by taking the minimum along the axes of the left plot in @fig-derived-factivity and rectifying.
+
+The thing to note is that (i) there are clearly at least two separate "bumps" in the histogram; but (ii) the peak of the right bump is not at 1, as we might have expected. This is because some of these subclasses–e.g. the cognitive factives, which @karttunen_observations_1971 observes to not always give rise factivity–appear to themselves be associated with non-necessary factive inferences, while other classes–e.g. the emotive factives, such as *love*, *hate*, and *be annoyed*–always do (up to measurement error and other sources of noise). 
+
+What explains the gradience *internal* to a class like the cognitive factives (which, again, we have known for more than 60 years *should* show this pattern)?

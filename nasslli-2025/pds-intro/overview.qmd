@@ -1,0 +1,124 @@
+---
+title: "Overview"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+Compositional dynamic semantic theories often model utterance meanings as maps from discourse states into sets of discourse states.^[
+	In its distributive implementations, that is.
+	For a discussion of distributive vs. non-distributive variants of dynamic semantics, see, e.g., @charlow_where_2019.
+]
+PDS inherits this functional view of utterances; 
+but following much work in the probabilistic semantics and pragmatics literature [@van_benthem_dynamic_2009; @lassiter_vagueness_2011; @frank_predicting_2012; @zeevat_implicit_2013; @lassiter_adjectival_2017; @bergen_pragmatic_2016, i.a.], it translates this idea into a probabilistic setting:
+in PDS, utterances denote maps from discourse states to *probability distributions* over discourse states.
+Thus in comparison to traditional dynamic semantics, PDS introduces a weighting on discourse states, allowing one to model preferences for certain resolutions of ambiguity over others.
+
+## Probability distributions as monadic values
+
+In and of itself, this extension is not novel.
+More novel is that we view probability distributions as *monadic values* that inhabit types arising from a *probability monad* [see, e.g., @giorgolo_one_2014; @bernardy_predicates_2019; @grove_probabilistic_2023].
+We formalize this view soon;
+but the gist is that viewing probability distributions this way allows PDS (i) to map linguistic expressions of a particular type to probability distributions over objects of that type so that the usual compositional structure of semantic analyses is retained;
+and thereby (ii) to compose probabilistic analyses with other analyses of, say, anaphora;
+as well as (iii) to define explicit *linking models* that map probability distributions over discourse states to probability distributions over judgments recorded using some response instrument.^[
+  This type of capability is often discussed in the experimental linguistics literature under the heading of *linking hypotheses* or *linking assumptions* (see @phillips_theories_2021).
+  For our purposes, we define linking models to be statistical models that relate a PDS analysis (which determines a probability distribution over the inferences supported by a linguistic expression) to comprehenders' judgments, as recorded using a particular instrument.
+]
+
+Crucial for PDS is that because probability distributions are characterized by a monad, they may themselves be *stacked* while retaining properties important for semantic composition.^[
+  More to the point, monads give rise to *functors*, which are composable, giving rise to the "stacking".
+]
+That is, the types derived from a probability monad may be inhabited by distributions over familiar types of objects---entities, truth values, functions from entities to truth values, and the like---or they may be inhabited by distributions *over* such distributions.
+And this stacking can be as deep as is necessary to model the sorts of uncertainty of interest to the analyst.
+
+## Two kinds of uncertainty
+
+We argue here that at least two levels of stacking are necessary in order to appropriately model two kinds of interpretive uncertainty, respectively, which we refer to as *resolved* (or *type-level*) *uncertainty* and *unresolved* (or *token-level*) *uncertainty*.
+Resolved uncertainty is any kind of uncertainty which relates to lexical, structural, or semantic (e.g., scopal) ambiguity.
+For example, a polysemous word gives rise to resolved uncertainty.
+Based on the content of its direct object, *ran* in (@ex-run-sketch) seems likely to take on its locomotion sense, though it remains plausible that it has a management sense if Jo is understood to be the race's organizer.
+
+(@ex-run-sketch) Jo ran a race.
+
+In contrast, unresolved uncertainty is that which is associated with an expression in view of some *fixed* meaning it has.
+Vague adjectives may give rise to unresolved uncertainty, for example, as witnessed by the vague inferences they support:
+the minimum degree of height *tall* requires to hold of entities of which it is true remains uncertain on any use of (@ex-tall-sketch), even while the adjective's meaning plausibly does not always vary across such uses.
+
+(@ex-tall-sketch) Jo is tall.
+
+In general, we conceptualize unresolved uncertainty as reflecting the uncertainty that one has about a given inference at a particular point in some discourse, having fixed the meanings of the linguistic expressions.
+
+Put slightly differently, resolved uncertainty is a property of one's knowledge about the meanings of expressions *qua* expressions.
+Sometimes *run* means this;
+sometimes it means that.
+Thus, any analysis of the uncertainty about the meaning of *run* should capture that it is uncertainty about *types* of utterance act.
+In contrast, unresolved uncertainty encompasses any semantic uncertainty which remains, having fixed the type of utterance act---it is uncertainty pertaining to the semantically licensed inferences themselves.^[
+  See @beaver_presupposition_1999 and @beaver_presupposition_2001, which describe an analogous bifurcation of orders of pragmatic reasoning in the representation of the common ground.
+]
+
+To capture this idea, our approach regards these types of uncertainty as interacting with each other in a restricted fashion by taking advantage of the fact that distributions may be stacked.
+Because resolved uncertainty must be resolved in order for one to draw semantically licensed inferences from uses of particular expressions, we take resolved parameters to be *fixed* in the computation of unresolved uncertainty.
+This rigid connection among sources of uncertainty is a natural consequence of structuring probabilistic reasoning in terms of stacked probability distributions.
+
+## Discourse states
+
+We follow a common in dynamic semantics practice by regarding discourse states as lists of parameters.
+We depart slightly from the usual assumption that these lists are homogenous by treating them as potentially arbitrarily complex, i.e., *heterogeneous* [though see @bumford_dynamic_2022].
+As such, they could be structured according to a variety of models sometimes employed in formal pragmatics [e.g., @farkas_reacting_2010].
+For example, we will define one parameter of this list to be a representation of the Stalnakerian common ground [or more aptly, the "context set": @stalnaker_assertion_1978 et seq.] and another parameter to be a stack of Questions Under Discussion [QUDs: @ginzburg_dynamics_1996; @roberts_information_2012].
+
+We represent common grounds as probability distributions over indices encoding information about possible worlds, as well as what we call *contexts*.
+The possible world part of an index represents facts about how the (non-linguistic) world is---e.g., a particular individual's height---while the context part encodes certain facts about lexical meaning---e.g., the identity of the height threshold conveyed by a vague adjective, such as *tall* [see, i.a.: @kennedy_scale_2005; @kennedy_vagueness_2007; @lassiter_vagueness_2011].
+
+Utterances---and more broadly, discourses---map tuples of parameters onto probability distributions over new tuples of parameters.
+Moreover, complex linguistic acts may be *sequenced*;
+in general, the effect on an ongoing discourse of multiple linguistic acts may be computed by using the sequencing operation (*bind*) native to the probability monad.
+In this sense, compositionality of interpretation obtains in PDS from the level of individual morphemes all the way up to the level of complex exchanges.
+For example, a discourse may consist in (i) making an assertion, which (perhaps, under a simplified model) modifies the common ground; 
+(ii) asking a question, which adds a QUD to the top of the QUD stack;
+or (iii) a sequence of these.
+Regardless, we require the functions encoding discourses to return probabilistic values, in order to capture their inherent uncertainty.
+
+## Linking models
+
+A linking model takes a discourse as conceived above, together with an initial probability distribution over discourse states, and links them to a distribution over responses to the current QUD.
+The possible responses to the QUD are determined by a data collection instrument, which could be a Likert scale, a slider scale, or something else.
+Furthermore, the *distribution* over responses is fixed by a likelihood function whose choice is constrained by the nature of the values encoded by the instrument. 
+Thus a Bernoulli distribution for instruments that produce binary values; 
+a categorical distribution for instruments that produce unordered, multivalued discrete responses;
+a linked logit distribution for instruments that produce ordered, multivalued discrete responses;
+and so on.
+
+## Haskell
+
+Throughout these sets of notes, we include code snippets in the [Haskell](https://www.haskell.org/) programming language to illustrate concepts that we introduce.
+There is a working Haskell implementation of PDS, which is currently undergoing further development, and which can translate PDS models into minimal pieces of code in the [Stan](https://mc-stan.org/) programming language for several of the example modeling cases that we will discuss.
+Since the components of PDS are presented with their computational implementation in mind, we think it is particularly revealing to see the code itself.
+Thus we will interleave relevant code with the prose and semantic formulae.

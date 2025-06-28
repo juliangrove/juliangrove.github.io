@@ -1,0 +1,81 @@
+---
+title: "From theory to data"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+Semantic theory has achieved remarkable success in characterizing the compositional structure of natural language meaning. Through decades of careful theoretical work, semanticists have developed elegant formal systems that capture how complex meanings arise from the systematic combination of simpler parts. These theories explain two fundamental types of judgments that speakers make: *acceptability judgments* about whether strings are well-formed, and *inference judgments* about what follows from what speakers say.
+
+The field now stands at an exciting juncture. The rise of large-scale experimental methods and computational modeling opens new opportunities to test and refine these theoretical insights against rich behavioral data. The challenge—and opportunity—is to connect our elegant formal theories to the messy, gradient patterns we observe when hundreds of speakers make thousands of judgments. How can we maintain the theoretical insights that formal semantics has achieved while extending them to account for this new empirical richness?
+
+Probabilistic Dynamic Semantics (PDS) aims to provide a systematic bridge between these theoretical insights and behavioral data. It takes the compositional analyses developed using traditional Montagovian methods and maps them to probabilistic models that can be quantitatively evaluated against experimental results. The goal is not to replace traditional semantics but to extend its reach, allowing us to test theoretical predictions at unprecedented scale while maintaining formal rigor.
+
+## Traditional Semantic Methodology: Foundations of Success
+
+Semanticists study the systematic relationships between linguistic expressions and the inferences they support. The field's methodology centers on two types of judgments:
+
+**Acceptability judgments** assess whether strings are well-formed relative to a language and in a particular context of use [see @schütze_gramaticality_2016 and references therein]. []{#exm-comitative-good} []{#exm-coordination-bad} For example, in a context where a host asks what a guest wants with coffee, (@exm-comitative-good) is clearly acceptable, while (@exm-coordination-bad) is not [@ross_constraints_1967, see @sprouse_island_2021 and references therein]:
+
+(@exm-comitative-good) What would you like with your coffee?
+(@exm-coordination-bad) #What would you like and your coffee?
+
+**Inference judgments** assess relationships between strings [see @davis_semantics_2004]. []{#exm-love-antecedent} []{#exm-veridicality-inference}  When speakers hear (@exm-love-antecedent), they typically infer (@exm-veridicality-inference) [@white_lexically_2019]:
+
+(@exm-love-antecedent) Jo loved that Mo left.
+(@exm-veridicality-inference) Mo left.
+
+### Observational Adequacy
+
+A core desideratum for semantic theories is *observational adequacy* [@chomsky_current_1964]: for any string $s \in \Sigma^*$, we should predict how acceptable speakers find it in context, and for acceptable strings $s, s'$, we should predict whether speakers judge $s'$ inferable from $s$.
+Achieving observational adequacy requires mapping vocabulary elements to abstractions that predict judgments parsimoniously. 
+
+These abstractions may be discrete or continuous, simple or richly structured. Through careful analysis of consistent inference patterns, semanticists have identified powerful generalizations.
+For instance, examining predicates like *love*, *hate*, *be surprised*, and *know*, theorists observed they all give rise to inferences about their complement clauses that survive under negation and questioning. This led to positing that they all share a property that predicts systematic inferential behavior across diverse predicates [@kiparsky_fact_1970; cf. @karttunen_observations_1971].
+
+### Descriptive Adequacy and Theoretical Depth
+
+Beyond observational adequacy lies *descriptive adequacy*: capturing data "in terms of significant generalizations that express underlying regularities in the language" [@chomsky_current_1964, p. 63]. This drive for deeper explanation motivates the field's emphasis on parsimony and formal precision.
+
+The history of generative syntax illustrates two approaches to achieving descriptive adequacy:
+
+1. **Analysis-driven**: Start with observationally adequate analyses in expressive formalisms, then extract generalizations as constraints [see @chomsky_conditions_1973 for a paradigm example of this approach and @baroni_proper_2022; @pavlick_symbols_2023 for more recent examples from the deep learning literature].
+2. **Hypothesis-driven**: Begin with constrained formalisms (like CCG or minimalist grammars) and test their empirical coverage [see @stabler_derivational_1997, @steedman_syntactic_2000 for paradigm examples of this approach].
+
+The hypothesis-driven approach, which PDS adopts for semantics, aims to delineate phenomena through representational constraints. This becomes crucial when developing models that both accord with theoretical assumptions and can be evaluated quantitatively.
+
+### The Power and Natural Boundaries of Traditional Methods
+
+This methodology has yielded profound insights into semantic composition, scope phenomena, discourse dynamics, and the semantics-pragmatics interface more generally. By focusing on carefully constructed examples and native speaker intuitions, theorists have uncovered deep regularities in how meaning is constructed and interpreted.
+
+Yet every methodology has natural boundaries. Traditional semantic methods excel at identifying patterns and building theories but face practical constraints when we ask: 
+
+- How well do our generalizations, based on examining 5-10 predicates, extend to the thousands of predicates in the lexicon? 
+- What factors beyond semantic knowledge influence the judgments we observe? 
+- How exactly does abstract semantic knowledge produce concrete behavioral responses?

@@ -1,0 +1,47 @@
+---
+title: "Vague gradable adjectives"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+Adjectives such as *tall*, *wide*, *expensive*, and *happy* are often considered to be *vague*.
+The example in (@ex-coffee), taken from @kennedy_vagueness_2007, appears to have somewhat uncertain truth conditions.
+
+(@ex-coffee) The coffee in Rome is expensive.
+  
+It is true if the cost of coffee in Rome is as great as some salient threshold for costs---something associated with the adjective *expensive*---but this threshold intuitively remains uncertain when attempting to evaluate whether or not (@ex-coffee) might be true.
+It may range somewhere from 2 euros to 4 euros, for example, but an exact value appears very difficult to pin down.
+
+A hallmark property of vague adjectives like *expensive* is that they exhibit certain unique inference patterns, such as *borderline cases* [@kennedy_vagueness_2007].
+For example while the Mud Blend ($1.50/lb), might be considered *not expensive*, and Organic Kona ($20/lb) might be considered *expensive*, it's harder to say which category the Swell Start ($9.25/lb) falls into.
+
+Perhaps most famously, vague adjectives---and vague predicates in general---give rise to *sorites* paradoxes.
+Such paradoxes arise from considering arguments (known as *sorites* arguments) that go as follows.
+
+- Premise 1: A $10 cup of coffee is expensive. 
+- Premise 2: If an expensive cup of coffee were 1 cent cheaper, it would still be expensive.
+- Conclusion: *Therefore*, a [free]{.gb-orange} cup of coffee is expensive!
+  
+These kinds of inference profiles are notoriously tricky to analyze in terms of the classical notion of truth conditions.
+Specifically, borderline cases provide instances in which the property denoted by the adjective seems neither to apply nor not to apply to certain entities;
+but this conflicts with the theoretical requirement that truth conditions provide a definition when a sentence is true---they should bifurcate the space of possible situations into those in which it is true and those in which it is false.
+Such inference patterns thus at least suggest that traditional model theoretic tools might not be sufficient for studying these kinds of adjectives.
+
+Meanwhile, the sorites paradox is troublesome because it appears to contravene the assumption that inferences should be closed under implication.
+For example, if we have the following two premises:
+
+- $10 is expensive implies $9.99 is expensive
+- $9.99 is expensive implies $9.98 is expensive
+
+We should be able to draw the following conclusion:
+
+- $10.00 is expensive implies $9.98 expensive
+
+And so on, such that we should eventually be able to conclude that $10.00 being expensive (true) implies that $0.00 is expensive (false).

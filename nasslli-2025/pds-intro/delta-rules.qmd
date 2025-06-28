@@ -1,0 +1,202 @@
+---
+title: "Delta rules"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+Now that we have constants, we would like to able to *do things* (i.e., compute) with them.
+For example, following the discussion [here](#states), we would like for the encoding of expressions such as
+
+$$
+\ct{CG}(\updct{CG}(cg)(s))
+$$
+
+to be able to be *evaluated*---in this case---to $cg$.
+We implement computations involving constants in terms of what we call *delta-rules*.^[
+	Named after δ-reduction.
+]
+In Haskell, we encode these as the following type of function:
+
+```haskell
+-- | The type of Delta rules.
+type DeltaRule = Term -> Maybe Term
+```
+
+Thus a delta rule is a partial function taking terms onto terms.
+It is partial because any given rule may only apply to some constants.
+For example, a delta rule that performs arithmetic computations might be defined on constants representing real numbers---but not, for example, on constants representing truth values.
+
+Here we list some example rules.
+For clarity of presentation, the rules are defined using Haskell's [`PatternSynonyms`](https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/pattern_synonyms.html) language extension.
+It should be fairly clear what the relevant synonyms abbreviate.
+
+### Arithmetic
+
+```haskell
+-- | Performs some arithmetic simplifications.
+arithmetic :: DeltaRule
+arithmetic = \case
+  Add t u      -> case t of
+                    Zero -> Just u
+                    x@(DCon _) -> case u of
+                                    Zero       -> Just x
+                                    y@(DCon _) -> Just (x + y)
+                                    _          -> Nothing
+                    t'         -> case u of
+                                    Zero -> Just t'
+                                    _    -> Nothing
+  Mult t u     -> case t of
+                     Zero       -> Just Zero
+                     One        -> Just u
+                     x@(DCon _) -> case u of
+                                     Zero       -> Just Zero
+                                     One        -> Just x
+                                     y@(DCon _) -> Just (x * y)
+                     t'         -> case u of
+                                     Zero -> Just Zero
+                                     One  -> Just t'
+                                     _    -> Nothing
+  Neg (DCon x) -> Just (dCon (-x))
+  _            -> Nothing
+```
+
+### Tidying up probabilistic programs
+
+``` haskell
+-- | Get rid of vacuous let-bindings.
+cleanUp :: DeltaRule
+cleanUp = \case
+  Let v m k | sampleOnly m && v `notElem` freeVars k -> Just k
+  _                                                  -> Nothing
+```
+
+### The indicator function
+
+```haskell
+-- | Computes the indicator function.
+indicator :: DeltaRule
+indicator = \case
+  Indi Tr -> Just 1
+  Indi Fa -> Just 0
+  _       -> Nothing
+
+```
+
+### Indices
+
+```haskell
+-- | Computes functions on indices.
+indices :: DeltaRule
+indices = \case
+  Ling   (UpdLing p _)   -> Just p
+  Ling   (UpdSocPla _ i) -> Just (Ling i)
+  SocPla (UpdSocPla p _) -> Just p
+  SocPla (UpdLing _ i)   -> Just (SocPla i)
+  _                      -> Nothing
+```
+
+### If then else
+
+```haskell
+-- | Computes /if then else/.
+ite :: DeltaRule
+ite = \case
+  ITE Tr x y -> Just x
+  ITE Fa x y -> Just y
+  _          -> Nothing
+```
+
+### Logical operations
+
+```haskell
+logical :: DeltaRule
+logical = \case
+  And p  Tr -> Just p
+  And Tr p  -> Just p
+  And Fa _  -> Just Fa
+  And _  Fa -> Just Fa
+  Or  p  Fa -> Just p
+  Or  Fa p  -> Just p
+  Or  Tr _  -> Just Tr
+  Or  _  Tr -> Just Tr
+  _         -> Nothing
+```
+
+### Computing the max function
+
+```haskell
+-- | Computes the /max/ function.
+maxes :: DeltaRule
+maxes = \case
+   Max (Lam y (GE x (Var y'))) | y' == y -> Just x
+   _                                     -> Nothing          
+```
+
+### Making observations
+
+```haskell
+-- | Observing @Tr@ is trivial, while observing @Fa@ yields an undefined
+-- probability distribution.
+observations :: DeltaRule
+observations = \case
+  Let _ (Observe Tr) k -> Just k
+  Let _ (Observe Fa) k -> Just Undefined
+  _                    -> Nothing
+```
+
+### Some ways of computing probabilities
+
+```haskell
+-- | Computes probabilities for certain probabilitic programs.
+probabilities :: DeltaRule
+probabilities = \case
+  Pr (Return Tr)                                             -> Just 1
+  Pr (Return Fa)                                             -> Just 0
+  Pr (Bern x)                                                -> Just x
+  _                                                          -> Nothing
+```
+
+### States
+
+```haskell
+-- | Computes functions on states.
+states :: DeltaRule
+states = \case
+  CG      (UpdCG cg _)     -> Just cg
+  CG      (UpdQUD _ s)     -> Just (CG s)
+  CG      (UpdTauKnow _ s) -> Just (CG s)
+  QUD     (UpdQUD q _)     -> Just q
+  QUD     (UpdCG _ s)      -> Just (QUD s)
+  _                        -> Nothing
+```
+
+### Combining delta-rules
+
+Note that delta-rules can be combined just like signatures.

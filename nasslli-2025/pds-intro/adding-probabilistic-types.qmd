@@ -1,0 +1,302 @@
+---
+title: "Adding probabilistic types"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+The type system presented in above included types for entities, truth values, and types formed from these.
+PDS is inspired by the presentation in @grove_probabilistic_2023, who illustrate how a semantics incorporating Bayesian reasoning can be encoded using a λ-calculus with such a frugal type system;
+however, whereas @grove_probabilistic_2023 represent probabilistic reasoning using continuations, we employ a somewhat more abstract presentation by incorporating a new type constructor ($\P$).
+In addition, we add a type $r$ to represent real numbers, for the following new set of atomic types.
+
+$$
+A \Coloneqq e ∣ t ∣ r
+$$
+
+Then, the full (and final) set of types can be given as follows.
+
+$$
+\mathcal{T}_{A} \Coloneqq A ∣ \mathcal{T}_{A} → \mathcal{T}_{A} ∣ \mathcal{T}_{A} × \mathcal{T}_{A} ∣ ⋄ ∣ \P \mathcal{T}_{A}
+$$
+
+In Haskell
+
+```haskell
+-- | Atomic types for entities, truth values, and real numbers.
+data Atom = E | T | R deriving (Eq, Show)
+
+-- | Arrows, products, and probabilistic types, as well as type variables for
+-- encoding polymorphism.
+data Type = At Atom
+          | Type :→ Type
+          | Unit
+          | Type :× Type
+          | P Type
+          | TyVar String
+  deriving (Eq)
+```
+
+Types of the form $\P α$ are inhabited by *probabilistic programs* that represent probability distributions over values of type $α$.
+For example, a program of type $\P t$ represents a probability distribution over truth values (i.e., a [Bernoulli distribution](https://en.wikipedia.org/wiki/Bernoulli_distribution)); 
+a program of type $\P e$ represents a probability distribution over entities (e.g., a [categorical distribution](https://en.wikipedia.org/wiki/Categorical_distribution});
+a program of type $\P r$ represents a probability distribution over real numbers (e.g., a [normal distribution](https://en.wikipedia.org/wiki/Normal_distribution));
+and a program of type $\P (e → t)$ represents a probability distribution over functions from entities to truth values.
+Given the new inventory of probabilistic types, probabilistic programs are typed as follows:
+
+$$
+\begin{array}{c}
+\begin{prooftree}
+\AxiomC{$Γ ⊢ t : α$}
+\RightLabel{$\mathtt{Return}$}\UnaryInfC{$Γ ⊢ \pure{t} : \P α$}
+\end{prooftree}
+& \begin{prooftree}
+\AxiomC{$Γ ⊢ t : \P α$}
+\AxiomC{$Γ, x : α ⊢ u : \P β$}
+\RightLabel{$\mathtt{Bind}$}\BinaryInfC{$Γ ⊢ \left(\begin{array}{l} x ∼ t \\ u\end{array}\right) : \P β$}
+\end{prooftree}
+\end{array}
+$$
+
+Thus there are to constructors that can be used to produce typed probabilistic programs;
+we call these '*return*', and '*bind*'.
+The $\mathtt{Return}$ rule effectively turns any value $t$ into a [degenerate distribution](https://en.wikipedia.org/wiki/Degenerate_distribution);
+i.e., a probability distribution all of whose probability mass is assigned to the value $t$.
+We denote this distribution by wrapping the relevant value in an orange box, as shown.
+Meanwhile, the $\mathtt{Bind}$ rule allows one to compose probabilistic programs together.
+Given some program $t$, one can sample a value ($x$) from $t$ and then keep going with the program $u$.
+We describe some of the interactions between return and bind in a little more detail (and with some illustrative examples) next.
+
+We also upgrade our λ-terms in Haskell to reflect these constructors:
+
+```haskell
+-- | Untyped λ-terms. Types are assigned separately (i.e., "extrinsically").
+data Term = Var VarName           -- Variables.
+          | Con Constant          -- Constants.
+          | Lam VarName Term      -- Abstractions.
+          | App Term Term         -- Applications.
+          | TT                    -- The 0-tuple.
+          | Pair Term Term        -- Pairing.
+          | Pi1 Term              -- First projection.
+          | Pi2 Term              -- Second projection.
+          | Return Term           -- Construct a degenerate distribution.
+          | Let VarName Term Term -- Sample from a distribution and continue.
+```
+Here, the bind operator is notated using `Let`:
+`Let x t u` is to be read as
+
+$$
+\begin{array}{l}
+x ∼ t \\
+u
+\end{array}
+$$
+
+## The probability monad
+
+Importantly, the map $\P$ from types to types is defined to be a *monad*.
+The typing rules given above feature one rule corresponding to each of two different *monadic operators*:
+$\mathtt{Return}$ (an introduction rule) and $\mathtt{Bind}$ (an elimination rule).^[
+  See \cite{bernardy_bayesian_2022}, where similar rules are presented in a somewhat more refined, dependently typed setting.
+]
+As a monad, $\P$ (together with return and bind) should satisfy the following *monad laws*;
+i.e., the following equalities---*Left identity*, *Right identity*, and *Associativity*---should be supported:
+
+$$
+\begin{array}{c}
+\textit{Left identity} & \textit{Right identity} & \textit{Associativity} \\[1mm]
+\begin{array}{l}
+x ∼ \pure{v} \\
+k
+\end{array}\ \ =\ \ k[v/x] 
+& \begin{array}{l}
+x ∼ m \\
+\pure{x}
+\end{array}\ \ =\ \ m 
+& \begin{array}{l}
+y ∼ \left(\begin{array}{l}
+x ∼ m \\
+n
+\end{array}\right) \\
+o
+\end{array}\ \ =\ \ \begin{array}{l}
+x ∼ m \\
+y ∼ n \\
+o
+\end{array}
+\end{array}
+$$
+
+These provide tight constraints on the behavior probabilistic programs.
+Left identity says that sampling a value from a degenerate distribution (via return and bind) is trivial:
+it can only result in the single value that the degenerate distribution assigns all of its mass to.
+The law encodes this fact by allowing one to simply continue with rest of the relevant probabilistic program ($k$, whatever that may be), but with the returned value $v$ substituted for the sampled value $x$. 
+
+What Right identity says is sort of symmetrical:
+sampling a value from a program $m$ and immediately returning that value as new degenerate distribution is *also* trivial;
+you can always get rid of this extra step.
+
+Finally, Associativity says that sampling a value ($y$) from a complex probabilistic program is the same as sampling it from the distribution defined in the final step of this program.
+For example, if one has one normal distribution parameterized by a value sampled from another,
+
+$$
+\begin{array}{l}
+y ∼ \left(\begin{array}{l}
+x ∼ \abbr{Normal}(0, 1) \\
+\abbr{Normal}(x, 1)
+\end{array}\right) \\
+o
+\end{array}
+$$
+
+one can always pull out the parts of this complex distribution to yield a series of bind statements:
+
+$$
+\begin{array}{l}
+x ∼ \abbr{Normal}(0, 1) \\
+y ∼ \abbr{Normal}(x, 1) \\
+o
+\end{array}
+$$
+
+## Some examples
+
+We can recruit return and bind to characterize complex probability distributions.
+To illustrate, suppose we have some categorical distribution, $\ct{mammal}: \P e$, on mammals.
+We can represent a distribution on mammals' mothers as in (@ex-mother).
+
+(@ex-mother)
+$$
+\begin{array}[t]{l}
+x ∼ \ct{mammal}\\
+\pure{\ct{mother}(x)}
+\end{array}
+$$
+
+Here, a random entity $x: e$ is *sampled* from $\ct{mammal}: \P e$ using bind, and then $\ct{mother}(x): e$ is returned, as indicated by the orange box.
+Since return turns things of type $α$ into probabilistic programs of type $\P α$, the resulting probabilistic program is of type $\P e$.
+Furthermore, assuming that the probability distribution $\ct{mammal}$ only has support on (i.e., assigns non-zero probability to) the entities which are mammals, the distribution which results will only have support on the entities which are the mothers of entities which are mammals.
+
+### Reweighting distributions
+
+Our probabilistic language also comes with an operator $\ct{factor}$ for scaling probability distributions according to some weight.^[
+  We define $\ct{factor}$ here as a primitive of the language of probabilistic programs (i.e., a constant).
+  In their continuation-based treatment, \cite{grove_probabilistic_2023} implement $\ct{factor}$ so that it has the scaling behavior described only informally here.
+  One could (if they wanted to) interpret the current system into one that uses continuations, so that $\ct{factor}$ has the behavior needed.
+]
+
+(@ex-factor)
+$$\ct{factor} : r → \P ⋄$$
+
+For instance, we may constrain our "mother" distribution so that it assigns more weight to the mothers of mammals which are hungrier.
+
+(@ex-hungry-mother)
+$$\begin{array}[t]{l}
+x ∼ \ct{mammal} \\
+\ct{factor}(\ct{hungry}(x)) \\
+\pure{\ct{mother}(x)}
+\end{array}$$
+
+Here, $\ct{hungry} : e → r$ maps entities onto degrees representing how hungry they are.
+Thus the program above represents a probability distribution over entities which assigns non-zero probabilities only to entities which are the mother of some mammal, and which assigns greater probabilities to entities the hungrier their children are.
+
+### Making observations
+
+In terms of $\ct{factor}$, we may define another function, $\ct{observe}$.
+
+(@ex-observe)
+$$
+\begin{align*}
+\ct{observe}\ \ &:\ \ t → \P ⋄ \\
+\ct{observe}(p)\ \ &=\ \ \ct{factor}(𝟙(p))
+\end{align*}
+$$
+
+$\ct{observe}$ takes a truth value and either keeps or throws out the distribution represented by the expression which follows it, depending on whether this truth value is $\True$ or $\False$.
+This is accomplished by factoring a distribution by the value of an indicator function ($𝟙$) applied to the truth value.^[
+  See @grove_probabilistic_2023 for further details.
+]
+
+(@ex-indicator)
+$$
+\begin{align*}
+𝟙\ \ &:\ \ t → r \\
+𝟙(\True)\ \ &=\ \ 1 \\
+𝟙(\False)\ \ &=\ \ 0
+\end{align*}
+$$
+
+For instance, we may instead constrain our "mother" program to describe a distribution over only dogs' mothers.
+
+(@ex-dog-mother)
+$$
+\begin{array}[t]{l}
+x ∼ \ct{mammal} \\
+\ct{observe}(\ct{dog}(x)) \\
+\pure{\ct{mother}(x)}
+\end{array}
+$$
+
+This distribution assigns a probability of $0$ to any entity which is not the mother of some dog.
+Indeed, we could use both $\ct{factor}$ and $\ct{observe}$ to define another distribution which assigns a probability of $0$ to any entity which is not the mother of some dog, and which assigns greater probabilities to mothers of hungrier dogs.
+
+(@ex-hungry-dog-mother)
+$$
+\begin{array}[t]{l}
+x ∼ \ct{mammal} \\
+\ct{factor}(\ct{hungry}(x)) \\
+\ct{observe}(\ct{dog}(x)) \\
+\pure{\ct{mother}(x)}
+\end{array}
+$$
+
+## Typing constants in Haskell
+
+The implemented system relies on a [Hindley-Milner](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system)-style type inference algorithm that finds any λ-term's principal type---i.e., the most general polymorphic type it can have, given its structure and the types of any constants it contains.
+We omit the full algorithm here to save space, but it's still useful to illustrate how constants are assigned types.
+In general, we rely on *signatures* to type constants, i.e., partial functions from constants to types:
+
+```haskell
+-- | Assign types to constants.
+type Sig = Constant -> Maybe Type
+```
+For example, a signature that assigns the appropriate types to $\ct{observe}$ and $\ct{factor}$, as well as constants formed out of `Double`s, is the following one (note that the following syntax requires the `LambdaCase` Haskell language extension):
+
+```haskell
+t, r :: Type
+t = At T
+r = At R
+
+tau :: Sig
+tau = \case
+  Left  "factor"  -> Just (r :→ P Unit)
+  Left  "observe" -> Just (t :→ P Unit)
+  Right _         -> Just r
+```
+It may be useful to think about how `tau` could be extended to accommodate the other expressions mentioned above.

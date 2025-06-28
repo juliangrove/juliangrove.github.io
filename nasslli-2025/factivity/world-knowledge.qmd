@@ -1,0 +1,10 @@
+---
+title: "World knowledge: gradient or discrete"
+bibliography: ../../pds.bib
+---
+
+Before examining factivity proper, let's understand how the norming study helps us model world knowledge. The norming data allows us to test whether world knowledge itself involves discrete or gradient uncertainty. (The structure of this model is very similar to the one we covered in the [adjectives section](../adjectives/adjectives-aaron.html#world-knowledge-gradient-or-discrete).)
+
+![Left: ELPDs for the two models of the norming data from @degen_prior_2021's experiment 2a. Dotted line indicates estimated difference between the norming-discrete model and the norming-gradient model.](plots/norming_elpd.png){#fig-norming-elpds-pps}
+
+As @fig-norming-elpds-pps shows, the gradient model of world knowledge substantially outperforms the discrete model (ΔELPD = 442.3 ± 23.1). The posterior predictive distributions reveal why: participants' judgments cluster away from the scale endpoints, a pattern the gradient model captures naturally but the discrete model cannot. This establishes that world knowledge contributes gradient uncertainty to factivity judgments.

@@ -1,0 +1,30 @@
+---
+title: "Implementation challenges and solutions"
+bibliography: ../../pds.bib
+---
+
+The transition from PDS kernels to full statistical models reveals several challenges:
+
+### 1. Identifiability
+
+In mixture models, the components can sometimes "trade off"—different parameter combinations yield identical predictions. We address this through informative priors (using norming data to constrain world knowledge parameters), hierarchical structure (partial pooling across predicates and contexts), and multiple contexts per predicate (each predicate appears with different world knowledge levels).
+
+### 2. Computational efficiency
+
+Mixture models can be slow to fit (or not fit at all). We improve efficiency through non-centered parameterizations (as shown in the transformed parameters blocks), vectorization (operating on arrays rather than loops where possible), and warm starts (initializing chains near reasonable values).
+
+### 3. Model checking
+
+Beyond posterior predictive checks, we validate models through prior predictive checks (ensuring priors generate reasonable data), residual analysis (checking for systematic deviations), and cross-validation (using held-out data to assess generalization).
+
+### 4. Alternative response distributions
+
+To ensure our results aren't artifacts of the truncated normal distribution, we can consider alternative likelihoods–e.g. ordered beta distributions:
+
+:::{.callout-note collapse="true" title="Robustness to response distribution choice"}
+We also fit models using ordered beta distributions, which handle bounded responses differently:
+
+![Left: ELPDs for all four ordered beta models. Right: ELPDs for truncated normal vs. ordered beta models on non-endpoint responses. Dotted lines indicate differences from discrete-factivity model.](plots/ordered_beta_elpd.png){#fig-ordered-beta-comparison}
+
+The discrete-factivity model maintains its advantage regardless of response distribution, confirming the robustness of our findings.
+:::

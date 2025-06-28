@@ -1,0 +1,60 @@
+---
+title: "Collecting inference judgments"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+
+In ongoing work, we are collecting and modeling inference judgments involving gradable adjectives using two experiments:
+one in which we collect *scale-norming* judgments, and another in which we collect *likelihood* judgments.
+
+### The scale-norming task
+
+In the scale-norming task, we provide experimental participants prompts like the following:
+
+<br>
+<div style="text-align: center;">
+<img src="images/expensive_norming.png" style="width: 60%;">
+</div>
+
+The idea here is to assess where people believe objects of different kinds fall on the scale associated with some gradable adjective.
+This information, which we will attempt to model, is useful because allows us to estimate one of the possible sources of uncertainty which are commonly thought to affect the inferences associated with these kinds of adjectives---that which comes from *world knowledge* about the entity itself (in particular where it falls on the adjective's scale).
+For each adjective we collected judgments for three different entities, thus providing three different contexts preceding the question prompt.
+
+We obtained data of this kind for six gradable adjectives that give rise to vagueness in their positive forms, obtaining the following distributions of responses (collapsed across the three contexts for each adjective):
+
+![](images/norming_histograms.png)
+
+### The likelihood task
+
+In the likelihood task, we provide a different group of participants with prompts like the following:
+
+<br>
+<div style="text-align: center;">
+<img src="images/expensive_test.png" style="width: 70%;">
+</div>
+
+Here, we use the same three contexts for each adjective that were featured in the scale-norming experiment, but now the question prompt is different:
+we ask about *likelihood* that the adjective is true in its positive form in order to gauge how the vague properties of these adjectives influence people's subjective probabilities about their application.
+The judgment data we obtained for each adjective are summarized in the following histograms (again, collapsed across contexts):
+
+::: {style="text-align: center;"}
+![](images/expensive.png){height=100}
+![](images/tall_wide.png){height=100}
+:::
+
+::: {style="text-align: center;"}
+![](images/deep.png){height=100}
+![](images/heavy_old.png){height=100}
+:::
+
+::: {style="text-align: center;"}
+Likelihood judgment
+:::

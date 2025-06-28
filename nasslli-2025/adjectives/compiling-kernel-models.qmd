@@ -1,0 +1,50 @@
+---
+title: "Compiling kernel models"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+Having seen how gradable adjectives are represented in PDS's compositional semantics, we now turn to the practical challenge of implementing statistical models that test these semantic theories against experimental data. The translation from abstract semantic theory to concrete statistical models requires careful attention to how theoretical commitments manifest as computational procedures. This section demonstrates this translation through two models: the first is a relatively simple model of the norming data we just discussed; the second is a model of the gradable adjectives data.
+
+## Stan as an intermediary
+
+The translation from abstract semantic analyses to concrete statistical models requires an intermediate representation—basically, a language that relates the abstract probabilistic models we state in PDS to the data we want to fit these models to. Stan has emerged as the *de facto* standard for this role in computational semantics and psycholinguistics [@burkner_brms_2017; @stan_development_team_stan_2024]. We are going to use it for our implementations, but any language that allows us to express sets of interrelated distributional assumptions would do.
+
+Stan is a probabilistic programming language designed for statistical inference. Unlike general-purpose programming languages, Stan is specialized for stating distributional assumptions that can then be translated to a C++ backend that performs statistical inference–usually, using a form of Markov Chain Monte Carlo (MCMC). Stan allows for imperative constructs, but for our purposes, we can think of it as declaring the structure of a probability model in the sense that we don't every write code that specifies *how* to fit the model to the data.
+
+This approach aligns well with our goals: just as formal semantics declares some representation of the semantic content rather than how that representation is used in verifying truth or drawing inferences, Stan declares probabilistic relationships rather than sampling algorithms. The parallel is not accidental—both frameworks separate the *what* (semantic content, distributional assumptions) from the *how* (verification or proof, inference algorithms). Said another way, our translation to Stan allows us to retain modularity: it provides an interface that hides the nasty details of actually fitting the models from our semantic theory.
+
+## Kernel models
+
+Before diving into the implementation details, it's important to understand what PDS produces and how it relates to the full statistical models we'll develop. PDS outputs what we term a *kernel model*—the semantic core that corresponds directly to the lexical and compositional semantics. This kernel can in principle be augmented with other components: random effects, hierarchical priors, and other statistical machinery, but the current implementation focuses on producing just the semantic kernel. 
+
+This distinction is crucial: PDS automates the translation from compositional semantics to the core statistical model, while leaving room for analysts to add domain-specific statistical structure. We take this to be a useful separation of concerns because it allows the semantic theory to remain agnostic about aspects of the statistical model that are have nothing to do with the semantic theory.
+
+With this understanding of kernel models and Stan's role, we can now examine specific implementations. We'll start with the simplest case—inferring degrees from norming data—before building up to a model of vagueness. We'll be showing prettified versions of what the system actually outputs. For every model block, we'll also provide the current system output in a footnote, in addition to the prettified version.

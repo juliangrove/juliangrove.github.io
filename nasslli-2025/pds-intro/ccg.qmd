@@ -1,0 +1,228 @@
+---
+title: "Combinatory Categorial Grammar"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+The syntactic and semantic substrate we employ is Combinatory Categorial Grammar (CGG).
+CCG is a highly lexicalized grammar formalism, in which expressions are equipped with syntactic types---i.e., *categories*.
+Syntactic types in CCG encode an expression's selectional and distributional properties.
+A noun phrase such as *a race*, for example, may be given the type $np$, while a determiner---something which, in English, occurs to the left of a noun in order to form a noun phrase---may be given the type $np / n$.
+Thus the forward direction of the slash indicates that a noun should occur to the *right* of the determiner.
+
+We use CCG in our presentation of PDS because one of our goals is to write *semantic grammar fragments* which produce analyses of a given collection of probabilistic semantic phenomena.
+Having a grammar fragment (e.g., one which generates the stimuli about which inference judgments are experimentally collected to create some linguistic dataset) allows one to implement an unbroken chain that connects the semantic analysis of some phenomenon to a probabilistic model of judgments about expressions featuring the phenomenon.
+CCG is likely to be sufficiently expressive to capture most (if not all) of the kinds of syntactic dependencies found in natural languages [@joshi_tree_1985; @vijay-shanker_equivalence_1994 et seq.; cf. @kobele_generating_2006].
+Meanwhile, because it is semantically transparent, it makes writing such grammar fragments relatively straightforward.
+
+For current purposes, we can assume the following small set of atomic syntactic types.
+$$
+\begin{align*}
+\mathcal{A} &\Coloneqq np ∣ n ∣ s
+\end{align*}
+$$
+Here we have the usual categories for noun phrases ($np$), nouns ($n$), and sentences ($s$).
+$$
+\begin{align*}
+\mathcal{C}_{\mathcal{A}} &\Coloneqq \mathcal{A} ∣ \mathcal{C}_{\mathcal{A}}/\mathcal{C}_{\mathcal{A}} ∣ \mathcal{C}_{\mathcal{A}}\backslash\mathcal{C}_{\mathcal{A}}
+\end{align*}
+$$
+Thus following \Cref{def:atomic_cats}, $\mathcal{C}_{\mathcal{A}}$ includes the five elements of $\mathcal{A}$, as well as
+\begin{align*}
+  s/np, s\backslash np, np/n, (np\backslash n)/ np, (s\backslash s)/s,
+\end{align*}
+and so on.
+Any complex syntactic type in $\mathcal{C}_{\mathcal{A}}$ features slashes, which indicate on which side an expression of that type takes its argument.
+Thus an expression of type $b/ a$ (for some two types $a\) and \(b$) occurs with an expression of type $a$ on its right in order to form an expression of type $b$, while an expression of type $b\backslash a$ occurs with an expression of type $a$ on its *left* in order to form an expression of type $b$.
+We adopt the convention of notating syntactic types without parentheses when possible, under the assumption that they are left-associative;
+i.e., $a∣_{1}b∣_{2}c ≝ (a∣_{1}b)∣_{2}a$ (where $∣_{1}$ and $∣_{2}$ are either forward or backward slashes).
+Thus for example, the type $s\backslash(np/ np)$ continues to be written as such, while the type $(s\backslash np)/ np$ may be shortened to '$s\backslash np/ np$'.
+
+In Haskell, we can introduce a single data type to encode both atomic categories and categories featuring slashes.
+
+``` haskell
+data Cat = NP | N | S  -- atomic categories
+         | Cat :/: Cat -- the forward slash
+         | Cat :\: Cat -- the backward slash
+  deriving (Eq)
+```
+
+To write CCG expressions, we use the notation
+\begin{align*}
+  \expr{s}{m}{c}
+\end{align*}
+which is to be read as stating that string $s$ has category $c$ and semantic value $m$.
+We assume $s$ to be a string over some alphabet $Σ$ (i.e., $s ∈ Σ^{*}$), which we regard as a finite set;
+e.g., the set of ``morphemes of English''.
+Meanwhile, we assume $m$ to be a typed λ-term.
+We leave somewhat open the question of what types of λ-terms may be used to define semantic values, but we adopt at least the typing rules in \Cref{fig:typing_lc}.
+Assuming that all semantic values are closed terms, we therefore have abstractions ($λx.t$), applications ($t(u)$), and $n$-ary tuples ($⟨t_{1}, ⋯, t_{n}⟩$), along with the empty tuple $⋄$.
+We additionally assume that λ-terms can feature constants, drawn from some countable set.
+
+As for the semantic types themselves, we can assume that there are the following atomic types, where $e$ is the type of entities, and $t$ is the type of the truth values $\True$ and $\False$.
+
+\begin{align*}
+A \Coloneqq e ∣ t
+\end{align*}
+
+The full set of types over $A$ ($\mathcal{T}_{A}$) is then defined as follows:
+
+\begin{align*}
+   \mathcal{T}_{A} \Coloneqq A ∣ \mathcal{T}_{A} → \mathcal{T}_{A} ∣ \mathcal{T}_{A} × \mathcal{T}_{A} ∣ ⋄
+\end{align*}
+
+Types can be encoded in Haskell via two data types for atomic and complex types, respectively:
+
+```haskell
+-- | Atomic types for entities and truth values.
+data Atom = E | T deriving (Eq, Show)
+
+-- | Arrows, and products, as well as type variables for encoding polymorphism.
+data Type = At Atom
+          | Type :→ Type
+          | Unit
+          | Type :× Type
+          | TyVar String
+  deriving (Eq)
+```
+
+Note that the Haskell encoding allows types to be polymorphic, by allowing type variables (`TyVar String`).
+Our use of polymorphism is fairly restricted, however, in that any type variable may only be quantified at the top level.
+Thus functions and values may themselves be polymorphic---their types can be underspecified---but functions may not take polymorphic values as arguments;
+any ambiguity about the type of an argument must be global.
+This means that while an expression such as $λx.x$ has the polymoprhic type $α → α$, the expression $λf.f(λy.y)(f(λx, y.x))$, where $f$ must have two distinct types in each of its bound occurrences, will not receive a type.
+Including such limited polymorphism is useful because it allows for the inclusion of certain kinds of polymorphic constants, e.g., the universal quantifier $∀ : (α → t) → t$, which we may wish to be able to quantify not only over entities, but other types of objects (e.g., real numbers, or even functions).
+
+Just as with complex syntactic types, we adopt the convention of notating complex semantic types without parentheses when possible.
+Unlike syntactic types, we assume semantic types are right-associative.^[
+  These conventions mirror each other in the sense that the input type of a function type is assumed to be atomic unless otherwise specified by the use of parentheses.
+Typing rules for typed λ-terms may then be given as follows:
+
+$$ \small
+\begin{array}{c}
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$\mathtt{Ax}$}\UnaryInfC{$Γ, x : α ⊢ x : α$}
+\end{prooftree}
+& \begin{prooftree}
+\AxiomC{$Γ, x : α ⊢ t : β$}
+\RightLabel{${→}\mathtt{I}$}\UnaryInfC{$Γ ⊢ λx.t : α → β$}
+\end{prooftree}
+& \begin{prooftree}
+\AxiomC{$Γ ⊢ t : α → β$}
+\AxiomC{$Γ ⊢ u : α$}
+\RightLabel{${→}\mathtt{E}$}\BinaryInfC{$Γ ⊢ t(u) : β$}
+\end{prooftree} \\[2mm]
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$⋄\mathtt{I}$}\UnaryInfC{$Γ ⊢ ⋄ : ⋄$}
+\end{prooftree}
+& \begin{prooftree}
+\AxiomC{$Γ ⊢ t : α$}
+\AxiomC{$Γ ⊢ u : β$}
+\RightLabel{$×\mathtt{I}$}\BinaryInfC{$Γ ⊢ ⟨t, u⟩ : α × β$}
+\end{prooftree}
+& \begin{prooftree}
+\AxiomC{$Γ ⊢ t : α_1 × α_2$}
+\RightLabel{$×\mathtt{E}_{j}$}\UnaryInfC{$Γ ⊢ π_{j}(t) : α_{j}$}
+\end{prooftree}
+\end{array}
+$$
+
+These cover λ-abstractions, applications, the unit type $⋄$ (which is inhabited by the empty tuple $⋄$), pairing, and projections.
+
+We provide an untyped implementation of λ-terms in Haskell;
+meanwhile, we provide a separate mechanism for doing type inference for these terms.^[
+	Our λ-terms are thus Curry-typed, so that operations on terms need only attend to their syntax.
+	The alternative, Church-typing, makes types an inherent part of the terms themselves.
+]
+
+```haskell
+-- | Untyped λ-terms. Types are assigned separately (i.e., "extrinsically").
+data Term = Var VarName           -- Variables.
+          | Con Constant          -- Constants.
+          | Lam VarName Term      -- Abstractions.
+          | App Term Term         -- Applications.
+          | TT                    -- The 0-tuple.
+          | Pair Term Term        -- Pairing.
+          | Pi1 Term              -- First projection.
+          | Pi2 Term              -- Second projection.
+```
+
+This implementation of the λ-calculus allows it to feature constants.
+We allow for both the Haskell `Double` type to be encoded as constants, as well as the `String` type.
+Allowing doubles to be constants will make, e.g., arithmetic computations more straightforward as the system is further developed.
+```haskell
+-- | Constants are indexed by either strings or real numbers.
+type Constant = Either String Double
+```
+
+Although we employ atomic types only for entities and truth values, we will make use of a form of intensionality in our semantic fragments, so that meanings will generally depend on an index of evaluation (which we typically denote '$i$').
+However, we make no commitments about its type, thus allowing expressions' meanings to be polymorphic---this choice will be justified later on in these notes, when we introduce the full system.
+Meanwhile, we'll provide the polymorphic types of such meanings using Greek letters to represent type variables (e.g., $ι$ for $i$), while retaining Latin letters for atomic types.
+
+In CCG, expressions are combined to form new expressions using application rules, as well as composition ($\textbf{B}$) rules and (often) type-raising ($\textbf{T}$) and substitution ($\textbf{S}$) rules [see, e.g., @steedman_syntactic_2000].
+The string *every linguist* can be derived by *right* application from expressions for the strings *every* and *linguist*, for example.
+
+(@ex-every-linguist)
+$$ \small
+\frac{\expr{\textit{every}}{λp, q, i.∀y.p(y)(i) → q(y)(i)}{s}/(s\backslash np)/ n \hspace{1cm} \expr{\textit{linguist}}{λx, i.\ct{ling}(i)(x)}{n}}{
+\expr{\textit{every linguist}}{λq, i.∀y.\ct{ling}(i)(y) → q(y)(i)}{s}/(s\backslash np)
+}>
+$$
+
+The resulting expression has the syntactic type of a quantifier;
+in this case, it takes on its right an expression which takes a noun phrase on its left to form a sentence, and it forms a sentence with that expression.
+This type---$s/(s\backslash np)$---is mirrored by the type of the λ-term which is the expression's semantic value:
+$(e → ι → t) → ι → t$.
+Indeed, the two are related by a *type homomorphism*;
+i.e., a map from syntactic types to semantic types that preserves certain structure---here, the structure of syntactic types formed via slashes ($/$ and $\backslash$), which get turned into semantic types formed via arrows ($→$).
+We may codify the behavior of this homomorphism on atomic syntactic types.
+
+(@ex-type-interp)
+$⟦np⟧ = e$ <br>
+$⟦n⟧ = e → ι → t$ <br>
+$⟦s⟧ = ι → t$
+
+The CCG derivation given in (@ex-every-linguist) tacitly assumes that noun phrases denote entities, that nouns denote functions from entities to *propositions* (i.e., functions of type $ι → t$), and that sentences denote propositions.
+
+Crucially, *every* CCG rule is analogous to the application rules in that it preserves the structure of syntactic types in the types of semantic values via the type homomorphism.
+For another example, the rightward composition rule can be used to combine *every linguist* with *saw*.
+
+(@ex-every-linguist-saw)
+$$ \small
+\frac{\expr{\textit{every linguist}}{λq, i.∀y.\ct{ling}(i)(y) → q(y)(i)}{s}/ (s\backslash np)
+\hspace{1cm}
+\expr{\textit{saw}}{λx, y, i.\ct{see}(i)(x)(y)}{s}\backslash np/ np}{
+\expr{\textit{every linguist saw}}{λx, i.∀y.\ct{ling}(i)(y) → \ct{see}(i)(x)(y)}{s}/ np
+}{>}\textbf{B}
+$$
+
+Here, the resulting type---$s/ np$---is mapped to $⟦np⟧ → ⟦s⟧ = e → ι → t$, which is precisely the type of the resulting semantic value.

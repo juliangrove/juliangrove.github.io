@@ -1,0 +1,34 @@
+---
+title: "Factivity and projection"
+bibliography: ../../pds.bib
+---
+
+Having explored how PDS handles expected gradience in adjectives, we now turn to factivity—where gradience poses a deeper theoretical puzzle. While the gradience in adjective meanings arises from well-understood sources like vagueness and contextual variation, the gradience observed in judgments aimed at measuring factivity is more difficult to explain.
+
+Before diving into computational models, let's review what makes factivity special. Factivity describes the property of certain predicates that are associated with the presupposition that their complements are true, even when the predicate is embedded under various operators. Compare these sentences:
+
+[]{#factive-projection-pos}
+[]{#factive-projection-neg}
+[]{#factive-projection-q}
+[]{#factive-projection-cond}
+
+(@factive-projection-pos) Jo loved that Mo left.
+(@factive-projection-neg) Jo didn't love that Mo left.
+(@factive-projection-q) Did Jo love that Mo left?
+(@factive-projection-cond) If Jo loved that Mo left, she'll won't be upset that Bo left.
+
+In all cases, there's a strong inference that Mo actually left. We say that this inference *projects* through negation, questions, and conditionals. Contrast this with non-factive predicates:
+
+[]{#non-factive-pos}
+[]{#non-factive-neg}
+
+(@non-factive-pos) Jo {thinks, believes, said} that Mo left.
+(@non-factive-neg) Jo doesn't {think, believe, say} that Mo left.
+
+Here, using (@non-factive-neg) doesn't commit us to Mo having left. Given just these examples, the contrast feels sharp: predicates are either associated with factive presuppositions or not.
+
+But this traditional picture has been challenged by experimental work showing substantial gradience in projection judgments. Some predicates (like *love*) are almost always associated with projection, others (like *think*) rarely trigger it, but many fall somewhere in between. For instance, @white_role_2018 measured veridicality inferences for more than 700 predicates in their MegaVeridicality dataset–visualized in @fig-veridicality-factivity.
+
+![An aggregate measure of factivity, derived from the MegaVeridicality dataset of @white_role_2018. Points are jittered (0.05) to avoid overplotting. The x-axis corresponds to mean scores for affirmative contexts, the y-axis for negative contexts. Each point is a predicate. Note the continuous gradient rather than discrete clusters.](plots/veridicality_factivity.png){#fig-veridicality-factivity}
+
+What explains this gradience?

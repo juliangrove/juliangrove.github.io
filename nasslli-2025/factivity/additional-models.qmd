@@ -1,0 +1,43 @@
+---
+title: "Additional models"
+bibliography: ../../pds.bib
+---
+
+For completeness, we also consider two models created by directly manipulating the Stan code rather than deriving them from linguistic hypotheses. These computational experiments serve as useful comparisons but don't correspond to theoretical proposals in the linguistics literature:
+
+### Wholly-discrete model
+
+This model treats both factivity and world knowledge as discrete:
+
+```stan
+// In model block
+real verb_prob = inv_logit(verb_intercept[verb[n]] + subj_intercept_verb[subj[n], verb[n]]);
+real context_prob = inv_logit(context_intercept[context[n]] + subj_intercept_context[subj[n], context[n]]);
+
+// Both components are discrete
+int verb_branch = bernoulli_rng(verb_prob);      // factive or not
+int context_branch = bernoulli_rng(context_prob); // world knowledge true or not
+
+// Response is certain (1) if either component is true
+real response = (verb_branch == 1 || context_branch == 1) ? 1.0 : 0.0;
+target += truncated_normal_lpdf(y[n] | response, sigma_e, 0.0, 1.0);
+```
+
+### Discrete-world model
+
+This model has discrete world knowledge but gradient factivity:
+
+```stan
+// World knowledge is discrete
+int context_branch = bernoulli_rng(context_prob);
+
+if (context_branch == 1) {
+  // If world knowledge says "true", response is certain
+  target += truncated_normal_lpdf(y[n] | 1.0, sigma_e, 0.0, 1.0);
+} else {
+  // Otherwise, factivity provides gradient boost
+  target += truncated_normal_lpdf(y[n] | verb_prob, sigma_e, 0.0, 1.0);
+}
+```
+
+As noted, these models result mainly from us exploring all the options available within the frame, rather than linguistic theory; but they provide useful sanity checks.

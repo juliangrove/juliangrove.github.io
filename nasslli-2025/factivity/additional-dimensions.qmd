@@ -1,0 +1,34 @@
+---
+title: "Exploring additional dimensions"
+bibliography: ../../pds.bib
+---
+
+### Predicate-specific patterns
+
+Not all predicates show the same degree of discreteness. We can examine the posterior distributions of the factivity parameter by predicate:
+
+![Density plots of the posterior log-odds of projection (with participant intercepts zeroed out) for all four models for six predicates from @degen_prior_2021's projection experiment 2b.](plots/fit_6_thetas.png){#fig-factivity-predicate-posteriors}
+
+Several patterns emerge from these posterior distributions. Canonical factives like *know* and *discover* show high probability of being interpreted with factive presupposition across models, while non-factives like *think* and *say* show consistently low probability. The most interesting cases are variable predicates like *confirm* and *prove*, which show intermediate probabilities with high uncertainty. This variation suggests that while factivity is discrete at the token level (each use involves either a factive or non-factive interpretation), predicates differ systematically in their propensity to trigger factive interpretations.
+
+For a complete view of all 20 predicates tested:
+
+:::{.callout-tip collapse="true" title="Click to see posterior distributions for all predicates"}
+![Density plots of the posterior log-odds of projection for all predicates from @degen_prior_2021's projection experiment 2b.](plots/fit_full_thetas.png){#fig-factivity-all-predicate-posteriors}
+:::
+
+### Context effects
+
+The norming study reveals how world knowledge varies across contexts:
+
+![Density plots of the posterior log-odds certainty (with participant intercepts zeroed out) for three items in @degen_prior_2021's norming task (experiment 2a). Low and high priors are for *Grace visited her sister*, given the facts *Grace hates her sister* and *Grace loves her sister*, respectively. Mid prior is for *Sophia got a tattoo*, given the fact *Sophia is a hipster*.](plots/norming_3_thetas.png){#fig-norming-contexts}
+
+The separation between low and high prior contexts validates the experimental manipulation—participants genuinely use world knowledge when judging likelihood. This makes the discrete-factivity model's success more impressive: it must overcome this continuous variation to produce discrete projection patterns.
+
+### Complete posterior predictive distributions
+
+For researchers interested in the full pattern across all predicates:
+
+:::{.callout-tip collapse="true" title="Click to see posterior predictive distributions for all 20 predicates"}
+![Posterior predictive distributions (with simulated participant intercepts) of all four models for all predicates in @degen_prior_2021's projection experiment 2b, for all contexts combined. Empirical distributions are represented by density histograms.](plots/fits_all_full_pp.png){#fig-factivity-all-posteriors}
+:::

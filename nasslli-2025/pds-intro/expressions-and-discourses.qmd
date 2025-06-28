@@ -1,0 +1,453 @@
+---
+title: "Expressions and discourses"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+
+We now turn to discourse states.
+These, like indices, are understood in terms of a theory of states and locations (and similarly, as having some polymorphic type $σ$).
+We generally refer to the values stored in discourse states as *metalinguistic parameters*.
+These include, e.g., the common ground and the QUD, along with other conversationally relevant features of discourse (e.g., representations of the entities to which pronouns can refer, the available antecedents for ellipsis, etc.).
+One can view a discourse state as akin to the context state of @farkas_reacting_2010, though the type of state we employ is in principle less constrained, insofar as the type of individual parameters is open ended.
+Since discourse states provide access to the common ground and the QUD, they are associated with constants and equations like the following:
+
+(@ex-states-eqs)
+$$
+\begin{align*}
+\ct{CG}(\updct{CG}(cg)(s)) &= cg \\
+\ct{CG}(\updct{QUD}(q)(s)) &= \ct{CG}(s) \\[2mm]
+\ct{QUD}(\updct{QUD}(q)(s)) &= q \\
+\ct{QUD}(\updct{CG}(cg)(s)) &= \ct{QUD}(s)
+\end{align*}
+$$
+
+Though we haven't yet discussed the types we take to be associated with QUDs, note that $\ct{CG}$ and $\updct{CG}$ ought to have the following types:
+
+(@ex-cg-types)
+$$
+\begin{align*}
+\ct{CG} &: σ → \P ι \\
+\updct{CG} &: \P ι → σ → σ
+\end{align*}
+$$
+
+Finally, as for indices, we provide a constant $\ct{ϵ}$ representing a "starting" state:
+
+(@ex-epsilon)
+$$
+\ct{ϵ} : σ
+$$
+
+## Expression meanings
+
+We regard expressions' probabilistic semantic values as functions of type $σ → \P (α × σ^{\prime})$, where $σ$ and $σ^{\prime}$ should be understood to represent the types of discourse states.
+We abbreviate this type as $ℙ^{σ}_{σ^{\prime}} α$:
+
+(@ex-p-abbrev)
+$$
+ℙ^{σ}_{σ^{\prime}} α ≝ σ → \P (α × σ^{\prime})
+$$
+
+Thus given an input state $s : σ$, the semantic value of an expression produces a probability distribution over pairs of ordinary semantic values of type $α$ and possible output states $s^{\prime} : σ^{\prime}$.
+An expression of category $np$, for instance, now has the *probabilistic* type $ℙ^{σ}_{σ^{\prime}}(⟦np⟧) \,\, = \,\, ℙ^{σ}_{σ^{\prime}} e \,\, = \,\, σ → \P (e × σ^{\prime})$.
+
+Building on this view of expressions, we regard an ongoing discourse as a function of type $ℙ^{σ}_{σ^{\prime}} ⋄$.
+The effects that both expressions and discourses have are therefore *stateful-probabilistic*:
+they map input states to probability distributions over output states.
+Discourses differ from expressions in that the value discourses compute is trivial:
+it is invariably the empty tuple $⋄$, as determined by its type.
+Thus while expressions produce both stateful-probabilistic effects *and* values, discourses have *only* effects, i.e., they merely update the state.
+
+### Program composition via parameterized monads
+
+The setup we have introduced allows for the possibility that the state parameter $σ$ *changes* in the course of evaluating an expression's probabilistic semantic value.
+Such a value may map an input state $s : σ$ onto a probability distribution over outputs states of type $σ^{\prime}$ ($σ^{\prime} ≠ σ$).
+This flexibility is useful to capture the changing nature of certain components of the discourse state.
+For example, the QUDs stored in a state may consist of questions of different types---e.g., degree questions, individual questions, etc.
+Thus whenever an utterance functions to add a QUD to the state, the input state's type may not match the output state's type.
+
+To countenance such type-level flexibility, we view the types $ℙ^{σ}_{σ^{\prime}} α$ as arising from a *parameterized* State.Probability monad, given the set $\mathcal{T}_{A}$ of types as the relevant collection of parameters.^[ 
+  See @atkey_parameterised_2009 on the parameterized State monad and parameterized monads more generally.
+  The current parameterized monad can be viewed as applying a parameterized State monad *transformer* to the underlying probability monad $\P$;
+  see @liang_monad_1995 on monad transformers.
+]
+Parameterized monads are associated with their own definitions of (parameterized) return and bind.
+To increase clarity, while distinguishing the notations for parameterized and vanilla monads, we present the bind statements of a parameterized monad $ℙ$ using Haskell's $\Do$-notation.
+
+(@ex-parameterized-monads)
+Given a collection $\mathcal{S}$ of parameters, a parameterized monad is a map $ℙ$ from triples consisting of two parameters and a type onto types (i.e., given parameters $p, q ∈ \mathcal{S}$ and a type $α$, $ℙ^{p}_{q} α$ is some new type), equipped with two operators satisfying the parameterized monad laws in (@ex-p-monad-laws).
+$$
+\begin{align*}
+\return{(·)}_{p}\ \ &:\ \ α → ℙ^{p}_{p} α \tag{`return'} \\
+\begin{array}{rl}
+\Do_{p, q, r} & x ← \_\_ \\
+ & \_\_(x)
+\end{array}\ \
+&:\ \ ℙ^{p}_{q} α → (α → ℙ^{q}_{r} β) → ℙ^{p}_{r} β \tag{`bind'}
+\end{align*}
+$$
+
+The parameterized monad laws themselves appear formally identical to the ordinary monad laws (see (@ex-p-monad-laws));
+the crucial difference is their implicit manipulation of parameters moving from the left-hand side of each equality to the right-hand side.
+
+(@ex-p-monad-laws)
+$$
+\begin{array}{c}
+\textit{Left identity} & \textit{Right identity} \\[1mm]
+\begin{array}{rl}
+\Do_{p, p, q} & x ← \return{v}_{p} \\
+& k(x)
+\end{array}\ \ =\ \ \ k(v)
+& \begin{array}{rl}
+\Do_{p, q, q} & x ← m \\
+& \return{x}_{q}
+\end{array} \ \ =\ \ \ m
+\end{array}
+$$
+$$
+\begin{array}{c}
+\textit{Associativity} \\[1mm]
+\begin{array}{rl}
+\Do_{p, r, s} & y ← \left(\begin{array}{rl}
+	\Do_{p, q, r} & x ← m \\
+	& n(x)
+	\end{array}\right) \\
+	& o(y)
+\end{array}\ \ =\ \ \begin{array}{rl}
+	\Do_{p, q, s} & x ← m \\
+	& \begin{array}{rl} 
+		\Do_{q, r, s} & y ← n(x) \\
+		& o(y)
+	\end{array}
+\end{array}
+\end{array}
+$$
+
+The $\Do$-notation in the above should be read as saying, "first bind the variable $x$ to the program $m$, and then do $k(x)$''.
+Indeed, this statement gives an intuitive summary of what the definition of State.Probability accomplishes:
+to bind $m$ to the continuation $k$, one must abstract over an input state $s$ and feed it to $m$, sample a value $x$ paired with an output state $s^{\prime}$ from the result, and finally, feed $x$, along with $s^{\prime}$, to $k$.
+
+In practice, we will leave the parameters implicit when we use this notation.
+We also suppress superfluous uses of $\Do$-notation, writing
+
+$$
+\begin{array}{rl}
+\Do & x ← m \\
+	& y → m \\
+	& n
+\end{array}
+$$
+
+for
+
+$$
+\begin{array}{rl}
+\Do & x ← m \\
+	& \begin{array}{rl}
+	\Do & y → m \\
+	& n
+	\end{array}
+\end{array}
+$$
+
+We will also sometimes use a "bracket" notation, writing one-liners such as
+
+$$
+\Do \{x ← m; n\}
+$$
+
+instead of
+
+$$
+\begin{array}{rl}
+\Do & x ← m \\
+	& n
+\end{array}
+$$
+
+to save space.
+
+### State.Probability
+
+The particular parameterized monad we employ is State.Probability, where the relevant collection of parameters is $\mathcal{T}_{A}$.
+
+(@ex-state-prob)
+$$
+\begin{align*}
+ℙ^{σ}_{σ^{\prime}} α\ \ &=\ \ σ → \P (α × σ^{\prime}) \\[2mm]
+\return{v}_{σ}\ \ &=\ \ λs.\pure{⟨v, s⟩} \\[2mm]
+\begin{array}{rl}
+\Do_{σ, σ^{\prime}, σ^{\prime\prime}} & x ← m \\
+& k(x)
+\end{array}\ \ 
+&=\ \ λs.\left(\begin{array}{l}
+⟨x, s^{\prime}⟩ ∼ m(s) \\
+k(x)(s^{\prime})
+\end{array}\right)
+\end{align*}
+$$
+
+These definitions can be encoded in Haskell as functions that manipulate terms (ensuring that fresh variables are used when necessary):
+```haskell
+-- | ** Some convience functions
+
+-- | Variable names are represented by strings.
+type VarName = String
+
+-- | Generate an infinite list of variable names fresh for some list of terms.
+fresh :: [Term] -> [VarName]
+
+-- | Smart(-ish) constructor for abstractions.
+lam :: Term -> Term -> Term
+lam (Var v) = Lam v
+
+-- | Smart(-ish) constructor for bind.
+let' :: Term -> Term -> Term -> Term
+let' (Var v) = Let v
+
+-- | Paramterized return.
+purePP :: Term -> Term
+purePP t = lam fr (Return (t & fr))
+  where fr:esh = map Var $ fresh [t]
+
+-- | Parameterized bind.
+(>>>=) :: Term -> Term -> Term
+t >>>= u = lam fr (let' e (t @@ fr) (u @@ Pi1 e @@ Pi2 e))
+  where fr:e:sh = map Var $ fresh [t, u]
+```
+
+In general, it will be useful to have access to a couple of basic operations for retrieving ($\abbr{get}$) and updating ($\abbr{put}$) the state of an ongoing discourse:
+
+(@ex-get-put)
+$$
+\begin{align*}
+\abbr{get} &: ℙ^{σ}_{σ} σ \\
+\abbr{get} &= λs.\pure{⟨s, s⟩} \\[2mm]
+\abbr{put} &: σ^{\prime} → ℙ^{σ}_{σ^{\prime}} \\
+\abbr{put}(s^{\prime}) &= λs.\pure{⟨⋄, s^{\prime}⟩}
+\end{align*}
+$$
+
+Now, the current state of a given discourse can be retrieved (as $s$) by writing the statement $s ← \abbr{get}$ inside of a $\Do$-block;
+meanwhile, writing the statement $\abbr{put}(s)$ updates this state so that it *becomes* $s$.
+
+These two operators can also be given the following Haskell encodings `getPP` and `putPP`:
+```haskell
+getPP :: Term
+getPP = lam' s (Return (s & s))
+
+putPP :: Term -> Term
+putPP s = Lam fr (Return (TT & s))
+  where fr:esh = fresh [s]
+```
+
+## PDS Rules
+
+We provide our probabilistic CCG rule schemata in (@ex-pds-rules).
+These schemata mimic the definitions of ordinary CCG rules, but now semantic values are considered to be of type $ℙ^{σ}_{σ^{\prime}} α$ now, rather than simply of type $α$.
+Thus rather than apply CCG operations to semantic values directly, we must bind these semantic values to variables of type $α$ and apply the operations to *those*.
+
+(@ex-pds-rules)
+$$ \small
+\begin{array}{c}
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{M_{1}}{c/ b}$}
+\AxiomC{$\expr{s_{2}}{M_{2}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\RightLabel{${>}\textbf{B}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do & \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+& \return{λx_{1}, …, x_{n}.m_{1}(m_{2}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree} \\[50pt]
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{m_{1}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\AxiomC{$\expr{s_{1}}{m_{2}}{c\backslash b}$}
+\RightLabel{${<}\textbf{B}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do & \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+	& \return{λx_{1}, …, x_{n}.m_{2}(m_{1}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree} \\[50pt]
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{M_{1}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\AxiomC{$\expr{s_{2}}{M_{2}}{c\backslash b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}⋯∣_{1}a_{1}}$}
+\RightLabel{${<}\textbf{S}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do & \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+& \return{λx_{1}, …, x_{n}.m_{1}(x_{1})…(x_{n})(m_{2}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree} \\[50pt]
+\begin{prooftree}
+\AxiomC{$\expr{s_{1}}{M_{1}}{c/ b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\AxiomC{$\expr{s_{2}}{M_{2}}{b∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}$}
+\RightLabel{${>}\textbf{S}_{n}$}\BinaryInfC{\(\expr{s_{1}\,s_{2}}{
+\begin{array}{rl}
+\Do & \{\,m_{1} ← M_{1};\,m_{2} ← M_{2}; \\
+	& \return{λx_{1}, …, x_{n}.m_{2}(x_{1})…(x_{n})(m_{1}(x_{1})…(x_{n}))}\,\}
+\end{array}
+}{c∣_{n}a_{n}\,\,⋯∣_{1}a_{1}}\)}
+\end{prooftree}
+\end{array}
+$$
+	
+The upshot is that, while an expression's syntactic type continues to determine its compositional properties, its probabilistic, dynamic effects can be stated fairly independently.
+	
+## Making an assertion
+
+Recall that we represent the meanings of expressions as functions of type $ℙ^{σ}_{σ^{\prime}}$:
+given an input state of type $σ$, the meaning of an expression produces a probability distribution over *pairs* of ordinary meanings of type $α$ and possible output states of type $σ^{\prime}$.
+Furthermore, given a sentence whose probabilistic dynamic meaning $φ$ is of type $ℙ^{σ}_{σ^{\prime}} (ι → t)$, we can represent an *assertion* of that sentence as a discourse which updates the common ground.
+Specifically, we have a function $\abbr{assert}$:
+
+(@ex-assert)
+$$
+\begin{align*}
+  \abbr{assert} &: ℙ^{σ}_{σ^{\prime}} (ι → t) → ℙ^{σ}_{σ^{\prime}} ⋄ \\
+  \abbr{assert}(φ) &= \begin{array}[t]{rl}
+	\Do & p ← φ \\
+		& s ← \abbr{get} \\
+		& c ← \return{\ct{CG}(s)} \\
+		& c^{\prime} ← \return{\left(\begin{array}{l}
+		i ∼ c \\
+		\ct{observe}(p(i)) \\
+		\pure{i}
+		\end{array}\right)} \\
+		& \abbr{put}(\updct{CG}(c^{\prime})(s))
+	\end{array}
+\end{align*}
+$$
+
+Given such a $φ$, $\abbr{assert}(φ)$ is a discourse of type $\P^{σ}_{σ^{\prime}} ⋄$ representing an assertion of $φ$.
+In plain English, $\abbr{assert}(φ$) samples a proposition $p$, given $φ$, and then updates the common ground of the current state with $p$.
+Ultimately, assertions modify an ongoing discourse so that its probability distribution over output states involves common grounds in which the proposition returned by $φ$ has been observed to hold true.
+
+Using a few new convenience functions, along with some new short-hands for named variables, $\abbr{assert}$ can be encoded in Haskell:
+```haskell
+assert :: Term
+assert = lam φ (φ >>>= lam p (getPP >>>= lam s (purePP (cg s) >>>= lam c (purePP (let' i c (let' _' (observe (p @@ i)) (Return i))) >>>= lam d (putPP (upd_CG d s))))))
+```
+
+
+
+## Asking a question
+
+We follow a categorial tradition by analyzing questions as denoting---given an index---sets of true short answer meanings [see @hausser_questions_1978; @hausser_syntax_1983; @xiang_hybrid_2021; cf. @karttunen_syntax_1977; @groenendijk_studies_1984].
+Given some type $α$ as the type of the short answer, a question therefore has a probabilistic dynamic meaning of type $ℙ^{σ}_{σ^{\prime}} (α → ι → t)$.
+
+Asking a question is a matter of pushing a question meaning onto the QUD stack [@ginzburg_dynamics_1996;@farkas_reacting_2010].
+Reflecting this, we recruit another operation, $\abbr{ask}$:
+\begin{align*}
+  \abbr{ask} &: ℙ^{σ}_{σ^{\prime}} (α → ι → t) → ℙ^{σ}_{\Q ι α σ^{\prime}} ⋄ \\
+  \abbr{ask}(κ) &= \begin{array}[t]{rl}
+	\Do & q ← κ \\
+		& s ← \abbr{get} \\
+		& \abbr{put}(\updct{QUD}(q)(s))
+	\end{array}
+\end{align*}
+Given a probabilistic dynamic question meaning $κ$, $\abbr{ask}(κ)$ samples a question meaning $q : α → ι → t$, given $κ$, and then adds $q$ as a new QUD to the outgoing state.
+Note the type of the output state that $\abbr{ask}$ returns:
+$\Q ι α σ^{\prime}$.
+$\Q$ is a new map from types to types which, like $\P$, we leave abstract;
+given a state type $σ^{\prime}$, the meaning of $\Q ι α σ^{\prime}$ is the type of a new state with a question of type $α → ι → t$ added to the QUD stack.
+Thus the type of $\updct{QUD}$ should be as in (@ex-upd-qud-type).
+
+(@ex-upd-qud-type)
+$$
+\begin{align*}
+\updct{QUD} : (α → ι → t) → σ → \Q ι α σ
+\end{align*}
+$$
+
+Indeed, we should update the set of types in our Haskell encoding to accommodate the new operator:
+```haskell
+-- | Arrows, products, and probabilistic types, as well as (a) abstract types
+-- representing the addition of a new Q, and (b) type variables for encoding
+-- polymorphism.
+data Type = At Atom
+          | Type :→ Type
+          | Unit
+          | Type :× Type
+          | P Type
+          | Q Type Type Type
+          | TyVar String
+  deriving (Eq)
+```
+
+Finally, we can also provide an implementation of $\abbr{ask}$:
+```haskell
+ask :: Term
+ask = lam κ' (κ' >>>= lam q (getPP >>>= lam s (putPP (upd_QUD q s))))
+```
+
+## Responding to a question
+
+PDS also models responses to questions;
+at any point in an ongoing discourse, one can respond to the QUD at the top of the current QUD stack based on one's prior knowledge.
+Concretely, a given responder has some background knowledge $bg : \P σ$ constituting a prior distribution over *starting* states.
+The responder uses this prior, in conjuction with the interim updates to the discourse, to derive a probability distribution over answers to the QUD.
+If the set of possible answers are real numbers (e.g., representing degrees of likelihood), this answer distribution is gotten by retrieving the QUD of any given state $s^{\prime}$---resulting in a distribution over QUDs---and then taking the maximum value of which it is true at an index sampled from the common ground---resulting, finally, in a distribution over real numbers.
+
+### Linking assumptions
+
+In practice (e.g., in the setting of a formal experiment), an answer needs to be given using a particular testing instrument.
+We assume that a given testing instrument may be modeled by a family $f$ of distributions representing the likelihood, which is then fixed by a collection $Φ$ of nuisance parameters.
+For the purposes of the implementation, we assume answers to the current QUD are real numbers, so that for fixed likelihood $f_{Φ}$, $f_{Φ} : r → \P ρ$, for the type $ρ$ of responses;
+this is not necessary, however, and the types of such functions could be generalized.
+
+Thus we may define a family of *response functions*, parametric in the testing instrument (i.e., likelihood function), each of which takes a distribution $bg$ representing one's background knowledge, along with an ongoing discourse $m$:
+\begin{align*}
+  \abbr{respond}^{f_Φ : r → \P ρ} &: \P σ → ℙ^{σ}_{\Q ι r σ^{\prime}} ⋄ → \P ρ \\
+  \abbr{respond}^{f_Φ : r → \P ρ}(bg)(m) &= \begin{array}[t]{l}
+	s ∼ bg \\
+	⟨⋄, s^{\prime}⟩ ∼ m(s) \\
+	i ∼ \ct{CG}(s^{\prime}) \\
+	f(\ct{max}(λd.\ct{QUD}(s)(d)(i)), Φ)
+	\end{array}
+\end{align*}
+For a fixed likelihood function $f_{Φ}$ mapping any given real number answer onto a distribution over possible responses of type $ρ$ (for some $ρ$), the response function takes a distribution representing background knowledge and a discourse to produce a response distribution.
+It does this by composing the discourse with background knowledge, as above, and then obtaining the maximum degree (i.e., real number) answer to the current QUD, before applying the likelihood function $f_{Φ}$ to this degree.
+
+The testing instrument employed in the studies we describe in the next few days, for example, is always a slider scale that records responses on the unit interval $[0, 1]$.
+A suitable likelihood might therefore be a truncated normal distribution:
+$f(x, Φ) = \mathcal{N}(x, σ)\,\ct{T}[0, 1]$ (so that $f = \mathcal{N}$ and $Φ = σ$).
+This likelihood---which @grove_factivity_2024 employ in their models of factivity---can be viewed as allowing some distribution of response errors, given the intended target response (i.e., the answer to the question).
+
+Before moving onto some further implementation details, we can also show the Haskell encoding of $\abbr{respond}$, which follows the description above:
+
+```haskell
+respond :: Term
+respond = lam f (lam bg (lam m (let' s bg m')))
+  where m'          = let' _s' (m @@ s) (let' i (cg (Pi2 _s')) (f @@ max' (lam x (qud (Pi2 _s') @@ x @@ i))))
+        s:_s':i:x:_ = map Var $ fresh [bg, m]
+```

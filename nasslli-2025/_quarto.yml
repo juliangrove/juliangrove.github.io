@@ -1,0 +1,58 @@
+project:
+  type: website
+  output-dir: ../docs/notes
+
+website:
+  title: "Probabilistic dynamic semantics"
+  page-navigation: true
+  sidebar:
+    style: docked
+    search: true
+    contents:
+    - about.qmd
+    - index.qmd
+    - section: "Background"
+      contents:
+      - background/traditional-methodology.qmd
+      - background/experimental-turn.qmd
+      - background/understanding-gradience.qmd
+      - background/case-studies.qmd
+      - background/new-frameworks.qmd
+      - background/theoretically-oriented-approach.qmd
+      - background/setting-stage.qmd
+    - section: "Introduction to probabilistic dynamic semantics"
+      contents:
+      - pds-intro/overview.qmd
+      - pds-intro/ccg.qmd
+      - pds-intro/adding-probabilistic-types.qmd
+      - pds-intro/common-ground.qmd
+      - pds-intro/expressions-and-discourses.qmd
+      - pds-intro/constants.qmd
+      - pds-intro/delta-rules.qmd
+    - section: "Vagueness and imprecision"
+      contents:
+      - adjectives/adjectives-intro.qmd
+      - adjectives/collecting-judgments.qmd
+      - adjectives/compiling-kernel-models.qmd
+      - adjectives/norming-model.qmd
+      - adjectives/modeling-vagueness.qmd
+    - section: "Factivity inferences"
+      contents:
+      - factivity/factivity-projection.qmd
+      - factivity/important-distinction.qmd
+      - factivity/hypotheses.qmd
+      - factivity/experimental-paradigms.qmd
+      - factivity/additional-models.qmd
+      - factivity/additional-dimensions.qmd
+      - factivity/challenges-solutions.qmd
+
+format:
+  html:
+    theme: [lux,tufte]
+    highlight-style: gruvbox-dark
+    css: styles.css
+    toc: true
+    code-tools: true
+
+# filters:
+  # - line-highlight

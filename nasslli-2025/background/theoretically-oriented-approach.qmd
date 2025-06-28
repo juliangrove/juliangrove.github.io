@@ -1,0 +1,180 @@
+---
+title: "Rational Speech Act models"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+---
+
+Rational speech act (RSA) models are a very popular approach to modeling pragmatic inference that integrates ideas from formal semantics into mathematically explicit models of Gricean reasoning [@grice_logic_1975].
+Crucially, these models aim for a certain kind of *modularity*:
+they allow one to provide separate accounts of the literal semantics of expressions, on the one hand, and the inferences that people make when they encounter utterances of these expressions, on the other.
+They achieve this kind of modularity, essentially, by allowing one to state a theory of literal meaning and then to use a systematic recipe for turning it into a theory of pragmatic inference.
+
+Here we describe what is sometimes called *vanilla* RSA.
+Vanilla RSA is RSA more or less as it was originally formulated @frank_predicting_2012 and @goodman_knowledge_2013 (see @degen_rational_2023 for a recent comprehensive overview of the RSA literature).
+The basic idea is that there are two sets of models, *listener* models, and *speaker* models, which are kind of mirror images of each other.
+
+#### Listener models
+
+In particular, any given listener model $L_{i}$ characterizes a probability distribution over possible worlds $w$, given some utterance $u$.
+$$
+\begin{aligned}
+P_{L_0}(w | u) &= \frac{\begin{cases}
+P_{L_0}(w) & ⟦u⟧^w = \mathtt{T} \\
+0 & ⟦u⟧^w = \mathtt{F}
+\end{cases}}{∑_{w^\prime}\begin{cases}
+P_{L_0}(w^\prime) & ⟦u⟧^{w^\prime} = \mathtt{T} \\
+0 & ⟦u⟧^{w^\prime} = \mathtt{F}
+\end{cases}} \\[2mm]
+P_{L_i}(w | u) &= \frac{P_{L_i}(u | w) * P_{L_i}(w)}{∑_{w^\prime}P_{L_i}(u | w^\prime) *
+P_{L_i}(w^\prime)}\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,(i > 0) \\[2mm]
+& = \frac{P_{L_i}(u | w) * P_{L_i}(w)}{P_{L_i}(u)}
+\end{aligned}
+$$
+In words, $P_{L_0}(w | u)$ depends only on whether or not $u$ and $w$ are compatible.
+It thus acts as a *filter*, eliminating possible worlds from the prior in which the utterance $u$ is false.
+
+The definition of $P_{L_i}(w | u)$ for $i > 0$ uses [Bayes' theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem).
+To state that this definition *uses* Bayes' theorem is kind of a tautology when viewed simply as a mathematical description.
+Thus what this statement really means is something more operational:
+RSA models make distinguishing choices about the definitions of $P_{L_i}(u | w)$ and $P_{L_i}(w)$, and it is these latter
+choices which are used, in turn, to compute $P_{L_i}(w | u)$.
+
+In general, the choice $P_{L_i}(w)$ of a prior distribution over $w$ is made once and for all, regardless of the particular model, so we can just call this choice $P(w)$.
+$P(w)$ can be seen to give a representation of the *context set* in a given discourse;
+that is, the distribution over possible worlds known in common among the interlocutors, before anything is uttered.
+	
+#### Speaker models
+
+The definition of $P_{L_i}(u | w)$, on the other hand, is chosen to reflect the model $S_i$ of the *speaker*, which brings us to the *other* set of
+models.
+Thus $P_{L_i}(u | w) = P_{S_i}(u | w)$, where
+$$\begin{aligned}
+P_{S_i}(u | w) &= \frac{e^{α * 𝕌_{S_i}(u; w)}}{∑_{u^\prime}e^{α *
+𝕌_{S_i}(u^\prime; w)}}
+\end{aligned}$$
+$𝕌_{S_i}(u; w)$ is the *utility* $S_i$ assigns to the utterance $u$, given its intention to communicate the world $w$. Utility for $S_i$ is typically defined as
+$$𝕌_{S_i}(u; w) = ln(P_{L_{i-1}}(w | u)) - C(u)$$
+that is, the natural log of the probability that $L_{i-1}$ assigns to $w$ (given $u$), minus $u$'s cost ($C(u)$).
+$α$ is known as the *temperature* (or the  *rationality parameter*) associated with $S_i$.
+When $α = 0$, $S_i$ chooses utterances randomly (from a uniform distribution), without attending to their utility in communicating $w$.
+When $α$ tends toward $∞$, $S_i$ becomes more and more deterministic in its choice of utterance, assigning more and more probability mass to the utterance that maximizes utility in communicating $w$.
+A little more formally,
+$$\lim_{α → ∞}\frac{e^{α * 𝕌_{S_i}(u; w)}}{∑_{u^\prime}e^{α *
+𝕌_{S_i}(u^\prime; w)}} = \begin{cases}
+1 & u = \arg\max_{u^\prime}(𝕌_{S_i}(u^\prime; w)) \\
+0 & u ≠ \arg\max_{u^\prime}(𝕌_{S_i}(u^\prime; w))
+\end{cases}$$
+Because the cost $C(u)$ only depends on $u$, it is nice to view $e^{α * 𝕌_{S_i}(u; w)}$ as factored into a prior and (something like) a likelihood, so that $P_{S_i}(u | w)$ has a formulation symmetrical to that of $P_{L_i}(w | u)$ (when $i > 0$); that is, it can be formulated in the following way:
+$$\begin{aligned}
+e^{α * 𝕌_{S_i}(u; w)} &= P_{L_{i - 1}}(w | u)^α * \frac{1}{e^{α * C(u)}}
+\\[2mm] &∝ P_{S_i}(w | u) * P_{S_i}(u) \\[2mm]
+&= P_{S_i}(w | u) * P(u)
+\end{aligned}$$
+In effect, we can define $P_{S_i}(w | u)$, viewed as a function of $u$, to be proportional to $P_{L_{i - 1}}(w | u)^α$; meanwhile, we can define $P(u)$, the prior probability over utterances, to be proportional to $\frac{1}{e^{α * C(u)}}$. (Note that if we ignore cost altogether, so that $C(u)$ is always, say, 0, then $P(u)$ just becomes a uniform distribution.)
+	
+Taking these points into consideration, we may reformulate our speaker model, $S_i$, as follows:
+$$\begin{aligned}
+P_{S_i}(u | w) &= \frac{P_{S_i}(w | u) * P(u)}{∑_{u^\prime}P_{S_i}(w |
+u^\prime) * P(u^\prime)} \\[2mm]
+&= \frac{P_{S_i}(w | u) * P(u)}{P_{S_i}(w)}
+\end{aligned}$$
+In words, the speaker model, just like the listener model, may be viewed operationally in terms of Bayes' theorem.
+Note that $P_{S_i}(w)$, in general, defines a different distribution from $P(w)$, the listener's prior distribution over worlds (i.e., the context set).
+The former represents, not prior knowledge about the *context*, but rather something more like the relative "communicability" of a given possible world, given the distribution $P(u)$ over utterances;
+that is, how likely a random utterance makes $w$, though with the exponential $α$ applied.
+	
+
+### An example
+
+An example helps illustrate how the probability distributions determined by RSA speaker and listener models are computed in practice.
+Let's say there are seven cookies, as depicted in the image below.
+
+![Cookies (7 of them)](images/7cookies.jpg){width=300 fig-align="center"}
+
+Further, say someone utters the sentence *Jo ate five cookies*.
+We'll assume that the literal meaning of such a sentence is lower bounded:
+it is true just in case the number cookies Jo ate is at least five, i.e., 
+$$
+n_{\textit{cookies}} ≥ 5
+$$
+Let's now consider the probability distributions computed by the models $L_{0}$, $S_{1}$, and $L_{1}$, following the definitions given earlier.
+
+#### The literal listener $L_{0}$
+
+Recall that the literal listener is a *filter*:
+$$
+P_{L_{0}}(w ∣ u) ∝ 𝟙(w ≥ n) × P (w)
+$$
+Let's also assume that $P(w)$, the *prior* distribution over the number of cookies Jo ate is uniform.
+Then, the literal listener is simply zeroing out the portion of this prior distribution in which Jo ate *less than five* cookies and renormalizing the resulting distribution.
+The following table illustrates this for *Jo ate five cookies*, as well as two other utterances.
+Here, $w$ (the world) is identified with a possible inference;
+i.e., about how many cookies Jo actually ate.
+
+| $w =$ | 5 | 6  |7 |
+| - | - | - | - |
+| $u = \textit{Jo ate 5 cookies}$ | 1/3 | 1/3 | 1/3 |
+| $u = \textit{Jo ate 6 cookies}$ | 0 | 1/2 | 1/2 |
+| $u = \textit{Jo ate 7 cookies}$ | 0 | 0 | 1 |
+
+Thus if *Jo ate five cookies* is uttered, $L_{0}$ assigns a probability of 1/3 to each of the possible inferences compatible with the utterance's lower-bounded literal meaning.
+
+#### The pragmatic speaker $S_{1}$
+
+Here is the pragmatic speaker model again, reformulated (i) as a proportionality statement, and (ii) by moving the cost term into the denominator:
+$$
+P_{S_{1}}(u ∣ w) ∝ \frac{P_{L_{0}}(w ∣ u)^{α}}{e^{α × C(u)}}
+$$
+For the purposes of the example, let's assume that the rationality parameter $α = 4$, and that the cost $C(u)$ of an utterance is constant across utterances.
+Let's further assume that the speaker is only considering the utterances listed in the following table;
+i.e., its prior distribution---given the constant cost function---is uniform over these alternatives.
+Then, we  obtain the following distributions over *utterances* for three possible worlds corresponding to the inference which the speaker intends to communicate.
+
+| $w =$ | 5 | 6  |7 |
+| - | - | - | - |
+| $u = \textit{Jo ate 5 cookies}$ | 1 | 0.16 | 0.01 |
+| $u = \textit{Jo ate 6 cookies}$ | 0 | 0.84 | 0.06 |
+| $u = \textit{Jo ate 7 cookies}$ | 0 | 0 | 0.93 |
+
+Thus if $S_{1}$ wishes to convey that Jo ate exactly five cookies, it chooses the first utterance with a probability of 1.
+This is because the literal listener assigns 5 cookies a probability of 0 if one of the other two stronger sentences is uttered.
+Meanwhile, if it wishes to convey that Jo ate exactly six cookies, it chooses the first utterance with probability $\frac{(1/3)^4}{(1/3)^4 + (1/2)^4} ≈ 0.16$ and the second utterance with probability $\frac{(1/2)^4}{(1/3)^4 + (1/2)^4} ≈ 0.84$.
+Crucially, we see that probabilities are normalized within *columns* of the table, rather than rows, as is the case for the listener models.
+
+#### The pragmatic listener $L_{1}$
+
+Finally, recall that the pragmatic listener model uses the pragmatic speaker model as a representation of the likelihood of some utterance, given an intended inference.
+$$
+P_{L_{1}}(w ∣ u) ∝ P_{S_{1}}(u ∣ w) × P (w)
+$$
+Given that there is a uniform prior distribution over numbers of cookies, we may obtain probability distributions for the same three utterances by taking the table in the previous subsection and renormalizing its probabilities within rows.
+
+| $w =$ | 5 | 6  |7 |
+| - | - | - | - |
+| $u = \textit{Jo ate 5 cookies}$ | 0.85 | 0.14 | 0.01 |
+| $u = \textit{Jo ate 6 cookies}$ | 0 | 0.93 | 0.07 |
+| $u = \textit{Jo ate 7 cookies}$ | 0 | 0 | 1 |
+
+Note that if we had a non-uniform prior over numbers of cookies---e.g., if 6 is more probable than 5 (classic Jo)---we can simply multiply the entries of this table by their prior probabilities and renormalize them within rows once again.
+
+### RSA discussion
+
+As noted earlier, RSA models come with a very appealing feature:
+that they provide a modular separation between semantic and pragmatic concerns.
+In particular, the $L_{0}$ model can be seen as instantiating a semantic analysis of some utterance (which is, ideally, provided by some external theory of the semantics of utterances), while the $L_{1}$ model can be seen as instantiating a pragmatic theory that is built up from the semantic theory in a fairly deterministic way (once, e.g., cost parameters, rationality parameters, and prior distributions over utterance alternatives are fixed).
+Indeed, such a separation can be methodologically useful, since it allows one to *test* particular semantic theories in the face of human inference data that arises from pragmatic (as well as other) factors (see, e.g., @waldon_modeling_2020 for discussion)
+
+#### Challenges
+
+There is a particular set of challenges for RSA models, as they are typically stated, that we aim to address in this course.
+Namely, it is not super obvious what role the Montagovian notion of semantic compositionality can play.
+Note that the account of the literal listener $L_{0}$ must come "from outside":
+RSA models are typically defined on top of analyses of sentence meaning, as opposed to the meanings of basic expressions, though the latter are presumably implicated in deriving the former.
+Thus there are certain questions about semantic compositionality which such models don't address:
+
+- How may the semantics of individual expressions be studied in tandem with their pragmatic effects? How should such pragmatic effects be formally encoded in lexical meaning representations?
+- How do pragmatic effects *compose*, in order to yield the global pragmatic effects associated with entire utterances? 
+
+One of the aims of this course is to provide a framework in which the pragmatic effects of individual expressions may be stated and composed, and then tested against human inference data.

@@ -1,0 +1,12 @@
+---
+title: "Two competing hypotheses"
+bibliography: ../../pds.bib
+---
+
+Using PDS, we can precisely state two fundamentally different accounts of the observed gradience:
+
+**Discrete-factivity hypothesis**: Factivity is a discrete property—speakers either interpret a predicate as triggering a factive presupposition on a given occasion of use or they don't. The observed gradience reflects uncertainty about which interpretation is intended, analogous to lexical ambiguity. Different uses of *discover* might involve different lexical entries or different syntactic structures, only some of which are associated with presupposition.
+
+**Wholly-gradient hypothesis**: There is no discrete factivity property. Instead, predicates make gradient contributions to inferences about their complements' truth. This view, aligned with @tonhauser_how_2018's Gradient Projection Principle, treats projection as a continuous phenomenon where content projects "to the extent that it is not at-issue."
+
+As we'll see, PDS allows us to implement both hypotheses as statistical models and compare their empirical predictions. But first, we need to understand the experimental paradigm that gives us the data to test these hypotheses.

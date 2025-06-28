@@ -1,0 +1,50 @@
+---
+title: "Experimental paradigms"
+bibliography: ../../pds.bib
+---
+
+### Separating world knowledge from factivity
+
+A key challenge in studying factivity is that our judgments about whether someone is certain of a proposition depend on two factors:
+
+1. The properties of the predicate (whether speakers interpret it as being associated with a presupposition)
+2. Our world knowledge about how likely the proposition is
+
+@degen_prior_2021 developed a two-stage experimental design to tease these apart:
+
+**Stage 1: Norming study (Experiment 2a)**
+
+First, they measured how world knowledge affects belief in various propositions. Participants saw items like:
+
+:::{.callout-note title="Norming item example"}
+**Fact**: Sophia is a hipster.  
+**Question**: How likely is it that Sophia got a tattoo?  
+**Response**: [slider from 0 to 1]
+:::
+
+For each proposition (e.g., *Sophia got a tattoo*), they created two contexts–one making it more likely (Sophia is a hipster) and one making it less likely (*Sophia is a Mormon*). This gives us a measure of world knowledge independent of any embedding predicate.
+
+**Stage 2: Projection study (Experiment 2b)**
+
+Next, they embedded these same propositions under various predicates and asked about the speaker's certainty:
+
+:::{.callout-note title="Projection item example"}
+**Context**: Isabella said that Sophia is a hipster.  
+**Utterance**: Noah knows that Sophia got a tattoo.  
+**Question**: Is Noah certain that Sophia got a tattoo?  
+**Response**: [slider from 0 to 1]
+:::
+
+They reasoned that, if speakers categorically interpret *know* as triggering a factive presupposition, Noah should be certain regardless of the prior probability; but, they reasoned, if projection is gradient, his certainty should vary with world knowledge.
+
+### Key experimental details
+
+The experiments tested 20 predicates that theory suggests might pattern differently:
+
+- **Canonical factives:** *be annoyed*, *discover*, *know*, *reveal*, *see*
+- **Non-factives:**
+  - **Non-veridical non-factive:** *pretend*, *say*, *suggest*, *think* 
+  - **Veridical non-factive:** *be right*, *demonstrate*
+- **Optionally factive:** *acknowledge*, *admit*, *announce*, *confess*, *confirm*, *establish*, *hear*, *inform*, *prove* 
+
+Each participant saw 20 items (one per predicate) plus controls, with predicates paired with different complement clauses and prior contexts across participants.

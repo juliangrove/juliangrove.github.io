@@ -1,0 +1,46 @@
+---
+title: "Future directions"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+Through our exploration of gradable adjectives, we've seen how PDS transforms semantic theory into testable statistical models. From simple degree inference through complex mixture models, each step has revealed how delta rules bridge abstract semantics and empirical data.
+
+This work opens several avenues for development:
+
+1. **Automated augmentation**: Currently, analysts manually add statistical structure to kernel models. Future versions of PDS could automate common augmentations like random effects and hierarchical priors.
+
+2. **Formally verified compilation**: Delta rules could be accompanied by formal proofs in [Agda](https://agda.readthedocs.io/en/latest/getting-started/what-is-agda.html) or [Coq](https://coq.inria.fr/), ensuring soundness while enabling generic transformations.
+
+3. **Richer kernel models**: Extending PDS to output mixture models, censoring mechanisms, and other statistical structures that directly encode semantic theories.
+
+4. **Community contributions**: The modular design of PDS invites researchers to contribute new lexical entries, delta rules, and compilation strategies.
+
+Building on the PDS framework introduced in [previous sections](../pds-intro/overview.qmd), we've seen how computational tools can bridge the gap between formal semantic theory and experimental data. These models provide the foundation for understanding factivity—where gradience poses even deeper theoretical puzzles that we'll explore in the next section.

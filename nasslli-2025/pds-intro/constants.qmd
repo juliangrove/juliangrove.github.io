@@ -1,0 +1,162 @@
+---
+title: "Constants"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+Here we provide a bit more information about the types of constants, as they are encoded in Haskell.
+The constants provided here are not exhaustive, but it should be more or less clear from these examples how to generalize the typing scheme to others.
+
+### Logical constants
+
+First, it is useful to have logical constants (e.g., to encode basic meanings for things):
+
+```haskell
+-- | Logical constants.
+tauLogical :: Sig
+tauLogical = \case
+  Left "∀"   -> Just ((α :→ t) :→ t)
+  Left "∃"   -> Just ((α :→ t) :→ t)
+  Left "(∧)" -> Just (t :→ t :→ t)
+  Left "(∨)" -> Just (t :→ t :→ t)
+  Left "(⇒)" -> Just (t :→ t :→ t)
+  Left "¬"   -> Just (t :→ t)
+  Left "T"   -> Just t
+  Left "F"   -> Just t
+  _          -> Nothing
+```
+
+Note that the universal and existential quantifiers are typed to be polymorphic in the variable they quantify over.
+
+### Non-logical constants
+
+Second, non-logical constants, e.g., $\ct{ling}$, $\ct{j}$, etc.:
+
+```haskell
+-- | Some non-logical constants.
+tauNonLogical :: Sig
+tauNonLogical = \case
+  Left "upd_ling" -> Just ((e :→ t) :→ ι :→ ι)
+  Left "ling"     -> Just (ι :→ e :→ t)
+  Left "j"        -> Just e
+  Left "b"        -> Just e
+  Left "@"        -> Just ι -- the starting index
+  _               -> Nothing
+```
+
+Following the discussion [here](#the-common-ground), constants which are intensional have corresponding constants for updating their values.
+
+### Metalinguistc parameters
+
+Following the disccusion [here](#states), we should encode constants that access metalinguistic parameters, i.e., components of the state:
+
+```haskell
+-- | Some metalinguistic parameters.
+tauMetalinguistic :: Sig
+tauMetalinguistic = \case
+  Left "upd_CG"  -> Just (P ι :→ σ :→ σ)
+  Left "CG"      -> Just (σ :→ P ι)
+  Left "upd_QUD" -> Just ((κ :→ ι :→ t) :→ σ :→ Q ι κ σ)
+  Left "QUD"     -> Just (Q ι κ σ :→ κ :→ ι :→ t)
+  Left "ϵ"       -> Just σ -- the starting state
+  _              -> Nothing
+```
+
+### "Built-in" distributions
+
+Some constants can be used to represent probability (e.g., Bernoulli and normal) distributions, and standard ways of manipulating them:
+
+```haskell
+-- | Some probability distributions (and certain ways of manipulating them).
+tauDistributions ::Sig
+tauDistributions = \case
+  Left "Bernoulli" -> Just (r :→ P t)
+  Left "Normal"    -> Just (r :× r :→ P r)
+  Left "Truncate"  -> Just (r :× r :→ P r :→ P r)
+  Left "#"         -> Just (P α) -- undefined distributions
+  _                -> Nothing
+```
+
+The third constant, for example, can be used to represent the truncation of some distribution to values within a specified range.
+Note also the fourth constant, which encodes "undefined" probability distributions.
+
+### Computing with numbers and truth values
+
+Other constants can be used to do computations with, e.g., truth values and real numbers:
+
+```haskell
+-- | Some basic data types (e.g., truth values and reals) and ways of computing with them.
+tauBasicStuff :: Sig
+tauBasicStuff = \case
+  Left  "if_then_else" -> Just (t :× α :× α :→ α) -- compute /if then else/
+  Left  "𝟙"            -> Just (t :→ r)           -- the indicator function
+  Left  "mult"         -> Just (r :× r :→ r)      -- multiply two numbers
+  Left  "add"          -> Just (r :× r :→ r)      -- add two numbers
+  Left  "neg"          -> Just (r :→ r)           -- add a minus sign
+  Left  "(≥)"          -> Just (r :→ r :→ t)      -- compare two numbers
+  Left  "max"          -> Just ((r :→ t) :→ r)    -- take the maximum number from a set
+  Right _              -> Just r                  -- real numbers are constants
+  _                    -> Nothing
+```
+
+### More probabilistic stuff
+
+Other constants for, e.g., factoring, making observations, and computing probabilities.
+
+```haskell
+-- | The probability operator, /factor/, and /observe/.
+tauProbabilities :: Sig
+tauProbabilities = \case
+  Left "Pr"      -> Just (P t :→ r)
+  Left "factor"  -> Just (r :→ P Unit)
+  Left "observe" -> Just (t :→ P Unit)
+  _              -> Nothing
+```
+
+### Combining signatures
+
+It would be convenient to have a way, given any two signatures, to combine them.
+In Haskell, we can accomplish this with the following function that combines values inhabiting types that instantiate the [`Alternative`](https://hackage.haskell.org/package/monadplus-1.4.3/docs/Control-Applicative-Alternative.html) class:
+
+```haskell
+(<||>) :: Alternative m => (a -> m b) -> (a -> m b) -> a -> m b
+f <||> g = \x -> f x <|> g x
+```
+
+Because `Maybe` is an instance of `Alternative`, we can combine signatures using such a function.
+For example, if we want to combine the signature `tauLogical` with the signature `tauNonLogical`, we can do:
+
+```haskell
+tauLogicalNonLogical :: Sig
+tauLogicalNonLogical = tauLogical <||> tauNonLogical
+```
+
+Indeed, we can combine as many signatures as we want in this way, using `(<||>)`.
+The resulting signature will type all of the constants that the component signatures type, with signatures listed further to the left taking precedence in case there is any overlap.

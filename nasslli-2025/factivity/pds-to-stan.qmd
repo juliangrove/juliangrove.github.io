@@ -1,0 +1,266 @@
+---
+title: "From PDS to Stan: implementing the theories"
+bibliography: ../../pds.bib
+---
+
+Building on [the compilation pipeline introduced for adjectives](../adjectives/norming-model.qmd), let's see how PDS handles the two competing theories of factivity. Recall that PDS outputs **kernel models**—the semantic core corresponding directly to our theoretical commitments.
+We'll focus mainly on the actual experimental items here, since the norming models for this task have a very similar character to the ones we introduced for gradable adjectives.
+
+### Discrete-factivity in PDS
+
+For the discrete-factivity hypothesis, we can derive projection judgments using:
+
+```haskell
+-- From Grammar.Parser and Grammar.Lexica.SynSem.Factivity
+-- Define the discourse: "Jo knows that Bo is a linguist"
+expr1 = ["jo", "knows", "that", "bo", "is", "a", "linguist"]
+expr2 = ["how", "likely", "that", "bo", "is", "a", "linguist"]
+s1 = getSemantics @Factivity 0 expr1
+q1 = getSemantics @Factivity 0 expr2
+discourse = ty tau $ assert s1 >>> ask q1
+
+-- Compile to Stan using factivityPrior and factivityRespond
+factivityExample = asTyped tau (betaDeltaNormal deltaRules . factivityRespond factivityPrior) discourse
+```
+
+This compilation process involves several key components. First, the lexical entry for *know* branches based on discourse state:
+
+```haskell
+-- From Grammar.Lexica.SynSem.Factivity
+"knows" -> [ SynSem {
+    syn = S :\: NP :/: S,
+    sem = ty tau (lam s (purePP (lam p (lam x (lam i 
+      (ITE (TauKnow s) 
+           (And (epi i @@ x @@ p) (p @@ i))  -- factive: belief AND truth
+           (epi i @@ x @@ p))))))            -- non-factive: belief only
+      @@ s)
+} ]
+```
+
+The `ITE` (if-then-else) creates a discrete choice: either the speaker interprets the predicate as requiring the complement to be true (factive interpretation) or only the belief component is required (non-factive interpretation). The `TauKnow` parameter, which can vary by context, determines which branch is taken.
+
+To accommodate this contextual variation, the prior over states must be updated:
+
+```haskell
+-- From Grammar.Lexica.SynSem.Factivity  
+factivityPrior = let' x (LogitNormal 0 1) (let' y (LogitNormal 0 1) (let' z (LogitNormal 0 1) (let' b (Bern x) (Return (UpdCG (let' c (Bern y) (let' d (Bern z) (Return (UpdLing (lam x c) (UpdEpi (lam x (lam p d)) _0))))) (UpdTauKnow b ϵ)))))
+```
+
+The delta rules must also be modified to handle the contextual factivity parameter:
+
+```haskell
+-- From Lambda.Delta: Computes functions on states
+states :: DeltaRule
+states = \case
+  TauKnow (UpdTauKnow b _) -> Just b
+  TauKnow (UpdCG _ s)      -> Just (TauKnow s)
+  TauKnow (UpdQUD _ s)     -> Just (TauKnow s)
+  -- ... other cases
+```
+
+PDS compiles this discrete-factivity theory to the following kernel model:^[Actual PDS output: `model { v ~ logit_normal(0.0, 1.0); w ~ logit_normal(0.0, 1.0); target += log_mix(v, truncated_normal_lpdf(y | 1.0, sigma, 0.0, 1.0), truncated_normal_lpdf(y | w, sigma, 0.0, 1.0)); }`]
+
+```stan
+model {
+  // FIXED EFFECTS
+  v ~ logit_normal(0.0, 1.0);  // probability of factive interpretation
+  w ~ logit_normal(0.0, 1.0);  // world knowledge (from norming)
+  
+  // LIKELIHOOD
+  target += log_mix(v, 
+                    truncated_normal_lpdf(y | 1.0, sigma, 0.0, 1.0),     // factive branch
+                    truncated_normal_lpdf(y | w, sigma, 0.0, 1.0));      // non-factive branch
+}
+```
+
+This kernel captures the discrete branching: with probability `v`, the response is near 1.0 (factive interpretation); otherwise, it depends on world knowledge `w` (non-factive interpretation).
+
+### Understanding the Stan implementation
+
+Before augmenting this kernel to handle real data, let's briefly review the key additions for factivity.^[For a detailed introduction to Stan's blocks and syntax, see [the Stan introduction in the adjectives section](../adjectives/norming-model.qmd).]
+
+The factivity-specific components are:
+- Hierarchical structure for verb-specific and context-specific effects
+- Integration with norming study priors via `mu_omega` and `sigma_omega`
+- Mixture likelihood for discrete-factivity (highlighted lines 25-27 in the full model below)
+
+Here's how the discrete-factivity kernel is augmented for real data:
+
+```{.stan .line-numbers highlight="16-27"}
+model {
+  // PRIORS (analyst-added)
+  verb_intercept_std ~ exponential(1);
+  context_intercept_std ~ exponential(1);
+  subj_verb_std ~ exponential(1);
+  subj_context_std ~ exponential(1);
+  sigma_e ~ beta(2, 10);  // mildly informative prior keeping sigma_e small
+  
+  // Hierarchical priors
+  verb_logit_raw ~ std_normal();
+  context_logit_raw ~ normal(mu_omega, sigma_omega);  // informed by norming
+  to_vector(subj_verb_raw) ~ std_normal();
+  to_vector(subj_context_raw) ~ std_normal();
+  
+  // DISCRETE FACTIVITY (PDS kernel structure)
+  for (n in 1:N) {
+    // Probability of factive interpretation for this verb/subject combo
+    real verb_prob = inv_logit(verb_intercept[verb[n]] +
+                               subj_intercept_verb[subj[n], verb[n]]);
+    
+    // World knowledge probability for this context/subject combo  
+    real context_prob = inv_logit(context_intercept[context[n]] +
+                                  subj_intercept_context[subj[n], context[n]]);
+    
+    // MIXTURE LIKELIHOOD (PDS kernel structure)
+    target += log_mix(verb_prob,
+                      truncated_normal_lpdf(y[n] | 1.0, sigma_e, 0.0, 1.0),
+                      truncated_normal_lpdf(y[n] | context_prob, sigma_e, 0.0, 1.0));
+  }
+}
+```
+
+The highlighted lines represent the kernel model from PDS—encoding discrete factivity as a mixture of two response distributions. The unhighlighted portions add the statistical machinery needed for real data.
+
+### Wholly-gradient factivity in PDS
+
+The compilation process for the wholly-gradient model involves analogous components.
+In this case, the lexical entry for *know* branches *not* based on discourse state, but based on indices of the common ground:
+
+```haskell
+ "knows"       -> [ SynSem {
+                      syn = S :\: NP :/: S,
+                      sem = ty tau (lam s (purePP (lam p (lam x (lam i
+                        (ITE (TauKnow i)
+                             (And (epi i @@ x @@ p) (p @@ i)) -- factive: belief AND truth
+                             (epi i @@ x @@ p))))) @@ s))     -- non-factive: belief only
+                      } ]
+```
+
+Following the discrete lexical entry for *know*, the `ITE` here creates a discrete choice, but now about something different;
+i.e., how to use the index it receives from the common ground.
+
+
+To accommodate the novel index-sensitivity of *know*, the prior over indices encoded in the common ground must be also updated:
+
+```haskell
+factivityPrior = let' x (LogitNormal 0 1) (let' y (LogitNormal 0 1) (let' z (LogitNormal 0 1) (Return (UpdCG (let' b (Bern x) (let' c (Bern y) (let' d (Bern z) (Return (UpdTauKnow b (UpdLing (lam x c) (UpdEpi (lam x (lam p d)) _0))))))) ϵ))))
+```
+Here, the Bernoulli statement that regulates whether or not *know* is factive has been added to the definition of the common ground itself.
+
+
+The delta rules must also be modified to handle the factivity parameter as it is regulated by *indices*:
+
+```haskell
+indices :: DeltaRule
+indices = \case
+  TauKnow (UpdTauKnow b _) -> Just b
+  TauKnow (UpdEpi _ i)     -> Just (TauKnow i)
+  TauKnow (UpdLing _ i)    -> Just (TauKnow i)
+  -- ... other cases
+```
+
+The alternative wholly-gradient hypothesis treats factivity as continuously variable. The key modification to the PDS code is in how we encode the gradience. Instead of discrete branching, the gradient model computes a weighted combination.
+
+PDS outputs this kernel for the wholly-gradient model:^[Actual PDS output after adding rendering hooks: `model { v ~ logit_normal(0.0, 1.0); w ~ logit_normal(0.0, 1.0); target += truncated_normal_lpdf(y | v + (1.0 - v) * w, sigma, 0.0, 1.0); }`]
+
+```stan
+model {
+  // FIXED EFFECTS
+  v ~ logit_normal(0.0, 1.0);  // degree of factivity
+  w ~ logit_normal(0.0, 1.0);  // world knowledge
+  
+  // LIKELIHOOD
+  target += truncated_normal_lpdf(y | v + (1.0 - v) * w, sigma, 0.0, 1.0);
+}
+```
+
+Here, `v` represents the degree of factivity—it provides a "boost" to the world knowledge probability `w`, but never forces the response to 1.0. The response probability is computed as: `response = v + (1-v) * w`.
+
+Let's trace through this computation:
+- If `v = 0` (no factivity): `response = 0 + 1 * w = w` (pure world knowledge)
+- If `v = 1` (full factivity): `response = 1 + 0 * w = 1` (certain)
+- If `v = 0.5` (partial factivity): `response = 0.5 + 0.5 * w` (boosted world knowledge)
+
+The full model augments this kernel with the same hierarchical structure as before:
+
+```{.stan .line-numbers highlight="16-26"}
+model {
+  // PRIORS (analyst-added)
+  verb_intercept_std ~ exponential(1);
+  context_intercept_std ~ exponential(1);
+  subj_verb_std ~ exponential(1);
+  subj_context_std ~ exponential(1);
+  sigma_e ~ beta(2, 10);
+  
+  // Hierarchical priors
+  verb_logit_raw ~ std_normal();
+  context_logit_raw ~ normal(mu_omega, sigma_omega);
+  to_vector(subj_verb_raw) ~ std_normal();
+  to_vector(subj_context_raw) ~ std_normal();
+  
+  // GRADIENT COMPUTATION (PDS kernel structure)
+  for (n in 1:N) {
+    // Degree of factivity for this verb/subject
+    real verb_boost = inv_logit(verb_intercept[verb[n]] +
+                                subj_intercept_verb[subj[n], verb[n]]);
+    
+    // World knowledge for this context/subject
+    real context_prob = inv_logit(context_intercept[context[n]] +
+                                  subj_intercept_context[subj[n], context[n]]);
+    
+    // GRADIENT LIKELIHOOD (PDS kernel computation)
+    real response_prob = verb_boost + (1.0 - verb_boost) * context_prob;
+    target += truncated_normal_lpdf(y[n] | response_prob, sigma_e, 0.0, 1.0);
+  }
+}
+```
+
+The highlighted lines show the PDS kernel—a continuous computation rather than discrete branching. The gradient contribution of factivity is clear in line 25: the verb provides a multiplicative boost to world knowledge rather than overriding it entirely.
+
+### Response distributions
+
+Both models use truncated normal distributions as response functions. As discussed in [the adjectives section](../adjectives/adjectives-aaron.html#censoring-and-boundary-effects), this handles the bounded nature of slider scales:
+
+```stan
+real truncated_normal_lpdf(real y | real mu, real sigma, real lower, real upper) {
+  // Log probability of y under Normal(mu, sigma) truncated to [lower, upper]
+  real lpdf = normal_lpdf(y | mu, sigma);
+  real normalizer = log(normal_cdf(upper | mu, sigma) - normal_cdf(lower | mu, sigma));
+  return lpdf - normalizer;
+}
+```
+
+The truncation is crucial because many responses cluster at the scale boundaries (0 and 1), which standard distributions like Beta cannot handle directly.
+
+### Generated quantities
+
+Both models can include a generated quantities block to compute posterior predictions:
+
+```stan
+generated quantities {
+  array[N] real y_pred;  // posterior predictive samples
+  
+  for (n in 1:N) {
+    real verb_prob = inv_logit(verb_intercept[verb[n]] + 
+                               subj_intercept_verb[subj[n], verb[n]]);
+    real context_prob = inv_logit(context_intercept[context[n]] + 
+                                  subj_intercept_context[subj[n], context[n]]);
+    
+    if (model_type == "discrete") {
+      // Discrete: first sample branch, then response
+      int branch = bernoulli_rng(verb_prob);
+      if (branch == 1) {
+        y_pred[n] = truncated_normal_rng(1.0, sigma_e, 0.0, 1.0);
+      } else {
+        y_pred[n] = truncated_normal_rng(context_prob, sigma_e, 0.0, 1.0);
+      }
+    } else {
+      // Gradient: compute blended probability
+      real response_prob = verb_prob + (1.0 - verb_prob) * context_prob;
+      y_pred[n] = truncated_normal_rng(response_prob, sigma_e, 0.0, 1.0);
+    }
+  }
+}
+```
+
+These posterior predictions let us visualize how well each model captures the empirical patterns.

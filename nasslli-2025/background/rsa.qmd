@@ -1,0 +1,78 @@
+---
+title: "Setting the stage"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+---
+
+To round out this set of notes, we give a brief overview of the main desiderata which we aim to have PDS satisfy.
+These are the following:
+
+- [compositionality]{.gb-orange}: models of inference should be derived compositionally from semantic grammar fragments.
+- [modularity]{.gb-orange}: factors affecting inference judgments should be theorized about independently and combined.
+- [abstraction]{.gb-orange}: models of meaning and inference should be statable *abstractly*, without reference to implementation.
+
+We say a little more about these here, in turn.
+
+#### Compositionality for models
+
+What could it mean for models of linguistic inference (e.g., as represented in a judgment dataset) to be *compositional*?
+Our basic basic strategy is to build the distributional assumptions associated with, e.g., a mixed-effects model, *into the semantics*.
+This way, when basic meanings compose, so do these distributional assumptions.
+
+Indeed, it is reasonable to ask what such distributional assumptions represent.
+Our answer is *uncertainty*;
+specifically, uncertainty about which particular inferences are licensed on any given occasion of language use.
+Importantly, these kinds of assumptions may be combined when determining the meanings of complex expressions from the meanings of the more basic expressions they contain. 
+Thus while the meaning of a sentence such as *Jo laughs* might be determined compositionally as 
+
+$$
+⟦\textit{jo laughs}⟧ = ⟦\textit{laughs}⟧ ▹ ⟦\textit{jo}⟧ = laughs(j)
+$$
+
+within a traditional semantic framework, PDS, instead, compositionally associates this sentence with a *probability distribution*.
+
+$$⟦\textit{jo laughs}⟧ = ⟦\textit{laughs}⟧ ▹ ⟦\textit{jo}⟧ = \begin{array}[t]{l}
+j ∼ JoDistr \\
+laugh ∼ LaughDistr \\
+Return (laugh(j))
+\end{array}
+$$
+
+This distribution is a distribution over truth values:
+it assigns some probability $p$ to True and $1 - p$ to False.
+Moreover, it is determined by certain *sampling statements* (whose interpretations we will formally define tomorrow).
+Informally, the meaning of *Jo* takes some distribution over entities, while the meaning of *laughs* takes some distribution over functions from entities to truth values.
+These distributions may then be *combined* to yield a distribution over values gotten by applying such functions applied to such entities; i.e., a distribution over truth values.
+Remarkably, the distributions over the meanings of such basic expressions end up corresponding exactly, within PDS, to the parameters of some hierarchical Bayesian (e.g., mixed-effects) model which may be used to fit human inference judgment data.
+
+#### Modularity
+
+We also want theories constructed within PDS to be modular.
+Specifically, we want the *factors affecting inference* to be able to be theorized about independently and combined.
+These include:
+
+- lexical and compositional semantics
+- world knowledge
+- response behavior: how does someone use a testing instrument (e.g., slider scale)?
+
+An upshot of this feature is that PDS can have different uses.
+For example, one could swap out a model of response behavior for a model of likely utterances (perhaps, $S_{1}$).
+
+#### Abstraction
+
+Finally, we want such theories to display a certain amount of abstraction.
+That is, we should be able to state models of inference judgment data that:
+
+- *describe* probability distributions,
+- do not concern themselves with how distributions are computed.
+
+There are a couple useful consequences of this feature.
+First, it allows traditional semantic theories to be plugged into PDS rather seamlessly.
+Second, it allows separation between theories stated within PDS and model stated within those thoeries.
+This second consequence allows:
+
+- Allows flexibility about implementation.
+- Allows the theory to be simpler.
+- Allows seamless integration between formal semantics and probabilistic semantics. (More tomorrow!)

@@ -1,0 +1,124 @@
+---
+title: "The common ground"
+bibliography: ../../pds.bib
+format:
+  html:
+    css: ../styles.css
+    html-math-method: mathjax
+    mathjax-config:
+      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      tex:
+        packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+::: {.hidden}
+$$
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+$$
+:::
+
+Here, we make good on the assumption mentioned earlier that common grounds amount to probability distributions over indices of some kind.
+In general, we will allow the meanings of expressions to be determined by indices in the following way.
+For any constants, e.g.,
+
+$$
+\begin{align*}
+\ct{see} &: ι → e → e → t \\
+\ct{ling} &: ι → e → t
+\end{align*}
+$$
+
+etc., there are other constants
+
+$$
+\begin{align*}
+\updct{see} &: (e → e → t) → ι → ι \\
+\updct{ling} &: (e → t) → ι → ι 
+\end{align*}
+$$
+
+which may update some index $i$ with a particular value.
+Thus our theory of indices is effectively a theory of *states and locations*:
+any given index represents a kind of state;
+meanwhile, constants such as $\ct{see}$ and $\ct{ling}$ represent different locations associated with that state.
+For example, given some index $i$, $\updct{see}(p)(i)$ is a new index just like $i$, but where the value stored at the location $\ct{see}$ has been overwritten by $p$.
+As a result, our constants should satisfy equations like the following:
+
+(@ex-indices-eqs)
+$$
+\begin{align*}
+\ct{see}(\updct{see}(p)(i)) &= p \\
+\ct{see}(\updct{ling}(p)(i)) &= \ct{see}(i) \\[2mm]
+\ct{ling}(\updct{ling}(p)(i)) &= p \\
+\ct{ling}(\updct{see}(p)(i)) &= \ct{ling}(i)
+\end{align*}
+$$
+
+That is, when $\ct{see}$ encounters an index which has been updated at its associated location, it grabs the value that the index has been updated with.
+If it encounters an index which has been updated at a different location, it keeps looking.
+(Similarly, for $\ct{ling}$.)
+
+Finally, we define a common ground to be a probability distribution over indices.
+
+(@ex-common-ground)
+Definition:
+a *common ground* is a probabilistic program of type $\P ι$.
+
+Here, again, $ι$ is understood to be a variable over types:
+its type doesn't really matter, as long as it can be understood as supporting the theory of states and locations described just above.
+We further define a constant representing a *starting* index, which we call '$\ct{@}$'. 
+
+(@ex-starting-index)
+$$\ct{@} : ι$$
+
+Let's briefly consider a concrete example.
+One way of defining a common ground is by encoding a distribution over heights for some entity;
+say, Jo.
+The following common ground updates the value stored for the constant $\ct{height} : ι → e → r$:
+
+(@ex-jo-cg)
+$$
+\begin{array}[t]{l}
+h ∼ \abbr{Normal}(0, 1) \\
+\pure{\updct{height}(λx.h)(\ct{@})}
+\end{array}
+$$
+
+This common ground encodes uncertainty about Jo's height by associating it with a normal distribution centered at 0 and with a standard deviation of 1.
+Note that because we are considering only one individual---Jo---we can update the height value globally.
+If we wish to describe a common ground that encodes uncertainty about the heights of more than individual---say, Jo and Bo---we can make the function with which indices are updated a bit more sophisticated:
+
+(@ex-jo-bo-cg)
+$$
+\begin{array}[t]{l}
+h_{j} ∼ \abbr{Normal}(0, 1) \\
+h_{b} ∼ \abbr{Normal}(0, 1) \\
+\pure{\updct{height}(λx.\ite(x = \ct{j}, h_{j}, h_{b}))(\ct{@})}
+\end{array}
+$$
+
+Here, $\ite$ should be understood as satisfying the following two equations:
+
+(@ex-ite)
+$$
+\begin{align*}
+\ite(\True, x, y) &= x \\
+\ite(\False, x, y) &= y
+\end{align*}
+$$
+
+Thus the common ground in (@ex-jo-bo-cg) updates the starting index with a value for $\ct{height}$ consisting of a function that returns $h_{j}$ on the argument $\ct{j}$ (i.e., Jo) and $h_{b}$ otherwise (i.e., when the argument is $\ct{b}$, i.e., Bo).
