@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><link rel="stylesheet" type="text/css" href="style.css" /><script type="text/javascript" src="highlight.js"></script></head><body><pre><span class="hs-pragma">{-# LANGUAGE LambdaCase #-}</span><span>
+</span><span id="line-2"></span><span class="hs-pragma">{-# LANGUAGE PatternSynonyms #-}</span><span>
+</span><span id="line-3"></span><span>
+</span><span id="line-4"></span><span class="annot"><span class="hs-comment">{-|
+Module      : Analysis.Factivity.Signature
+Description : Signature for factivity.
+Copyright   : (c) Julian Grove and Aaron Steven White, 2025
+License     : MIT
+Maintainer  : julian.grove@gmail.com
+
+Signature for factivity.
+-}</span></span><span>
+</span><span id="line-13"></span><span>
+</span><span id="line-14"></span><span class="hs-keyword">module</span><span> </span><span class="hs-identifier">Analysis.Factivity.Signature</span><span> </span><span class="hs-special">(</span><span> </span><span class="annot"><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier">tauFact</span></a></span><span>
+</span><span id="line-15"></span><span>                                    </span><span class="hs-special">)</span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-16"></span><span>
+</span><span id="line-17"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Framework.Lambda.Convenience.html"><span class="hs-identifier">Framework.Lambda.Convenience</span></a></span><span>
+</span><span id="line-18"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Framework.Lambda.Signature.html"><span class="hs-identifier">Framework.Lambda.Signature</span></a></span><span>
+</span><span id="line-19"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html"><span class="hs-identifier">Framework.Lambda.Terms</span></a></span><span>
+</span><span id="line-20"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Framework.Lambda.Types.html"><span class="hs-identifier">Framework.Lambda.Types</span></a></span><span>
+</span><span id="line-21"></span><span class="hs-keyword">import</span><span> </span><span class="annot"><a href="Theory.Signature.html"><span class="hs-identifier">Theory.Signature</span></a></span><span>
+</span><span id="line-22"></span><span>
+</span><span id="line-23"></span><span class="annot"><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-type">tauFact</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Types.html#Sig"><span class="hs-identifier hs-type">Sig</span></a></span><span>
+</span><span id="line-24"></span><span id="tauFact"><span class="annot"><span class="annottext">tauFact :: Sig
+</span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var hs-var">tauFact</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig
+</span><a href="Framework.Lambda.Signature.html#tau0"><span class="hs-identifier hs-var">tau0</span></a></span><span>      </span><span class="annot"><span class="annottext">Sig -&gt; Sig -&gt; Sig
+forall (m :: * -&gt; *) a b.
+Alternative m =&gt;
+(a -&gt; m b) -&gt; (a -&gt; m b) -&gt; a -&gt; m b
+</span><a href="Framework.Lambda.Convenience.html#%3C%7C%7C%3E"><span class="hs-operator hs-var">&lt;||&gt;</span></a></span><span>
+</span><span id="line-25"></span><span>          </span><span class="annot"><span class="annottext">Sig
+</span><a href="Analysis.Factivity.Signature.html#tauNames"><span class="hs-identifier hs-var">tauNames</span></a></span><span>  </span><span class="annot"><span class="annottext">Sig -&gt; Sig -&gt; Sig
+forall (m :: * -&gt; *) a b.
+Alternative m =&gt;
+(a -&gt; m b) -&gt; (a -&gt; m b) -&gt; a -&gt; m b
+</span><a href="Framework.Lambda.Convenience.html#%3C%7C%7C%3E"><span class="hs-operator hs-var">&lt;||&gt;</span></a></span><span>
+</span><span id="line-26"></span><span>          </span><span class="annot"><span class="annottext">Sig
+</span><a href="Theory.Signature.html#tauStates"><span class="hs-identifier hs-var">tauStates</span></a></span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Sig -&gt; Sig
+forall (m :: * -&gt; *) a b.
+Alternative m =&gt;
+(a -&gt; m b) -&gt; (a -&gt; m b) -&gt; a -&gt; m b
+</span><a href="Framework.Lambda.Convenience.html#%3C%7C%7C%3E"><span class="hs-operator hs-var">&lt;||&gt;</span></a></span><span>
+</span><span id="line-27"></span><span>          </span><span class="annot"><span class="annottext">Type -&gt; [(String, Type)] -&gt; Sig
+</span><a href="Framework.Lambda.Signature.html#mkStateSig"><span class="hs-identifier hs-var">mkStateSig</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#%3B9"><span class="hs-identifier hs-var">&#953;</span></a></span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
+</span><span class="hs-string">&quot;epi&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#e"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
+</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#%3C9"><span class="hs-identifier hs-var">&#969;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
+</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#t"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
+</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#t"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-28"></span><span>                       </span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
+</span><span class="hs-string">&quot;ling&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#e"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
+</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#t"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-29"></span><span>                       </span><span class="hs-special">,</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
+</span><span class="hs-string">&quot;phil&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#e"><span class="hs-identifier hs-var">e</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
+</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#t"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-30"></span><span>
+</span><span id="line-31"></span><span class="annot"><a href="Analysis.Factivity.Signature.html#tauNames"><span class="hs-identifier hs-type">tauNames</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Types.html#Sig"><span class="hs-identifier hs-type">Sig</span></a></span><span>
+</span><span id="line-32"></span><span id="tauNames"><span class="annot"><span class="annottext">tauNames :: Sig
+</span><a href="Analysis.Factivity.Signature.html#tauNames"><span class="hs-identifier hs-var hs-var">tauNames</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
+</span><span id="line-33"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><span class="hs-string">&quot;j&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Type -&gt; Maybe Type
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#e"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><span id="line-34"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="annot"><span class="annottext">String
+</span><span class="hs-string">&quot;b&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Type -&gt; Maybe Type
+forall a. a -&gt; Maybe a
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#e"><span class="hs-identifier hs-var">e</span></a></span><span>
+</span><span id="line-35"></span><span>  </span><span class="annot"><span class="annottext">Either String Double
+</span><span class="hs-identifier">_</span></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Type
+forall a. Maybe a
+</span><span class="hs-identifier hs-var">Nothing</span></span><span>
+</span><span id="line-36"></span></pre></body></html>
