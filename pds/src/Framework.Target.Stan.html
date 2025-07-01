@@ -25,7 +25,7 @@ Probabilistic programs encoded as &#955;-terms are translated into Stan code.
 </span><span id="line-25"></span><span class="hs-keyword">type</span><span> </span><span id="VarName"><span class="annot"><a href="Framework.Target.Stan.html#VarName"><span class="hs-identifier hs-var">VarName</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
 </span><span id="line-26"></span><span>
 </span><span id="line-27"></span><span class="hs-keyword">data</span><span> </span><span id="Model"><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-var">Model</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="Model"><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-var">Model</span></a></span></span><span> </span><span class="hs-special">{</span><span> </span><span id="statements"><span class="annot"><span class="annottext">Model -&gt; [(VarName, VarName)]
-</span><a href="Framework.Target.Stan.html#statements"><span class="hs-identifier hs-var hs-var">statements</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Target.Stan.html#VarName"><span class="hs-identifier hs-type">VarName</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#Distr"><span class="hs-identifier hs-type">Distr</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span> </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077372"><span id="local-6989586621679077377"><span class="annot"><span class="annottext">Model -&gt; Model -&gt; Bool
+</span><a href="Framework.Target.Stan.html#statements"><span class="hs-identifier hs-var hs-var">statements</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Target.Stan.html#VarName"><span class="hs-identifier hs-type">VarName</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#Distr"><span class="hs-identifier hs-type">Distr</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span> </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077422"><span id="local-6989586621679077427"><span class="annot"><span class="annottext">Model -&gt; Model -&gt; Bool
 (Model -&gt; Model -&gt; Bool) -&gt; (Model -&gt; Model -&gt; Bool) -&gt; Eq Model
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c== :: Model -&gt; Model -&gt; Bool
@@ -34,24 +34,24 @@ $c/= :: Model -&gt; Model -&gt; Bool
 /= :: Model -&gt; Model -&gt; Bool
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-28"></span><span>
-</span><span id="line-29"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679077387"><span id="local-6989586621679077392"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-30"></span><span>  </span><span id="local-6989586621679077395"><span class="annot"><span class="annottext">show :: Model -&gt; VarName
-</span><a href="#local-6989586621679077395"><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span><span> </span><span id="local-6989586621679077397"><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><span id="line-29"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679077437"><span id="local-6989586621679077442"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-30"></span><span>  </span><span id="local-6989586621679077445"><span class="annot"><span class="annottext">show :: Model -&gt; VarName
+</span><a href="#local-6989586621679077445"><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span><span> </span><span id="local-6989586621679077447"><span class="annot"><span class="annottext">[(VarName, VarName)]
+</span><a href="#local-6989586621679077447"><span class="hs-identifier hs-var">m</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;model {\n  // FIXED EFFECTS\n&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)] -&gt; VarName
-</span><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077397"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
+</span><a href="#local-6989586621679077447"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;}&quot;</span></span><span>
-</span><span id="line-31"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679077398"><span class="annot"><span class="annottext">render :: [(VarName, VarName)] -&gt; VarName
-</span><a href="#local-6989586621679077398"><span class="hs-identifier hs-var hs-var">render</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><span id="line-31"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679077448"><span class="annot"><span class="annottext">render :: [(VarName, VarName)] -&gt; VarName
+</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var hs-var">render</span></a></span></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;&quot;</span></span><span>
-</span><span id="line-32"></span><span>          </span><span class="annot"><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span id="local-6989586621679077399"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077399"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077400"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077400"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">)</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><span id="line-32"></span><span>          </span><span class="annot"><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span id="local-6989586621679077449"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077449"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077450"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077450"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">)</span><span class="hs-special">]</span><span>     </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot; \n  // LIKELIHOOD\n  &quot;</span></span><span>  </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span>
@@ -59,33 +59,33 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-string">&quot;target += &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077400"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077450"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;;\n&quot;</span></span><span>
-</span><span id="line-34"></span><span>          </span><span class="annot"><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span id="local-6989586621679077401"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077401"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077402"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077402"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679077403"><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><span id="line-34"></span><span>          </span><span class="annot"><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span id="local-6989586621679077451"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077452"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">d</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679077453"><span class="annot"><span class="annottext">[(VarName, VarName)]
+</span><a href="#local-6989586621679077453"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;  &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077401"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot; ~ &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077402"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;;\n&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)] -&gt; VarName
-</span><a href="#local-6989586621679077398"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077403"><span class="hs-identifier hs-var">s</span></a></span><span>
+</span><a href="#local-6989586621679077448"><span class="hs-identifier hs-var">render</span></a></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
+</span><a href="#local-6989586621679077453"><span class="hs-identifier hs-var">s</span></a></span><span>
 </span><span id="line-35"></span><span>
-</span><span id="line-36"></span><span class="hs-keyword">data</span><span> </span><span id="Error"><span class="annot"><a href="Framework.Target.Stan.html#Error"><span class="hs-identifier hs-var">Error</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="TypeError"><span class="annot"><a href="Framework.Target.Stan.html#TypeError"><span class="hs-identifier hs-var">TypeError</span></a></span></span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077406"><span id="local-6989586621679077408"><span class="annot"><span class="annottext">Error -&gt; Error -&gt; Bool
+</span><span id="line-36"></span><span class="hs-keyword">data</span><span> </span><span id="Error"><span class="annot"><a href="Framework.Target.Stan.html#Error"><span class="hs-identifier hs-var">Error</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="TypeError"><span class="annot"><a href="Framework.Target.Stan.html#TypeError"><span class="hs-identifier hs-var">TypeError</span></a></span></span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077456"><span id="local-6989586621679077458"><span class="annot"><span class="annottext">Error -&gt; Error -&gt; Bool
 (Error -&gt; Error -&gt; Bool) -&gt; (Error -&gt; Error -&gt; Bool) -&gt; Eq Error
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
 $c== :: Error -&gt; Error -&gt; Bool
@@ -94,65 +94,65 @@ $c/= :: Error -&gt; Error -&gt; Bool
 /= :: Error -&gt; Error -&gt; Bool
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">)</span><span>
 </span><span id="line-37"></span><span>
-</span><span id="line-38"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679077412"><span id="local-6989586621679077417"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#Error"><span class="hs-identifier hs-type">Error</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-39"></span><span>  </span><span id="local-6989586621679077419"><span class="annot"><span class="annottext">show :: Error -&gt; VarName
+</span><span id="line-38"></span><span class="hs-keyword">instance</span><span> </span><span id="local-6989586621679077462"><span id="local-6989586621679077467"><span class="annot"><span class="hs-identifier hs-type">Show</span></span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#Error"><span class="hs-identifier hs-type">Error</span></a></span></span></span><span> </span><span class="hs-keyword">where</span><span>
+</span><span id="line-39"></span><span>  </span><span id="local-6989586621679077469"><span class="annot"><span class="annottext">show :: Error -&gt; VarName
 </span><span class="hs-identifier hs-var hs-var hs-var hs-var">show</span></span></span><span> </span><span class="annot"><span class="annottext">Error
 </span><a href="Framework.Target.Stan.html#TypeError"><span class="hs-identifier hs-var">TypeError</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;Error: Term does not have type P r!&quot;</span></span><span>
 </span><span id="line-40"></span><span>
 </span><span id="line-41"></span><span class="annot"><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-type">stanShow</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
 </span><span id="line-42"></span><span id="stanShow"><span class="annot"><span class="annottext">stanShow :: Term -&gt; VarName
-</span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var hs-var">stanShow</span></a></span></span><span> </span><span id="local-6989586621679077421"><span class="annot"><span class="annottext">v :: Term
-</span><a href="#local-6989586621679077421"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span class="annot"><span class="annottext">VarName
+</span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var hs-var">stanShow</span></a></span></span><span> </span><span id="local-6989586621679077471"><span class="annot"><span class="annottext">v :: Term
+</span><a href="#local-6989586621679077471"><span class="hs-identifier hs-var">v</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span>         </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 forall a. Show a =&gt; a -&gt; VarName
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077421"><span class="hs-identifier hs-var">v</span></a></span><span>
-</span><span id="line-43"></span><span class="annot"><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span id="local-6989586621679077423"><span class="annot"><span class="annottext">x :: Term
-</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
+</span><a href="#local-6989586621679077471"><span class="hs-identifier hs-var">v</span></a></span><span>
+</span><span id="line-43"></span><span class="annot"><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span id="local-6989586621679077473"><span class="annot"><span class="annottext">x :: Term
+</span><a href="#local-6989586621679077473"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span>        </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 forall a. Show a =&gt; a -&gt; VarName
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077423"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-44"></span><span class="annot"><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#NormalCDF"><span class="hs-identifier hs-type">NormalCDF</span></a></span><span> </span><span id="local-6989586621679077426"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077426"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077427"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077427"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077428"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077428"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077473"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-44"></span><span class="annot"><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#NormalCDF"><span class="hs-identifier hs-type">NormalCDF</span></a></span><span> </span><span id="local-6989586621679077476"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077477"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077477"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077478"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077478"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;normal_cdf(&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077428"><span class="hs-identifier hs-var">z</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077478"><span class="hs-identifier hs-var">z</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077426"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077427"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077477"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;)&quot;</span></span><span>
 </span><span id="line-45"></span><span>
 </span><span id="line-46"></span><span class="annot"><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-type">lRender</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#VarName"><span class="hs-identifier hs-type">VarName</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
 </span><span id="line-47"></span><span id="lRender"><span class="annot"><span class="annottext">lRender :: VarName -&gt; Term -&gt; VarName
-</span><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var hs-var">lRender</span></a></span></span><span> </span><span id="local-6989586621679077430"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077430"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Truncate"><span class="hs-identifier hs-type">Truncate</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077433"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077433"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077434"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077434"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077435"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077435"><span class="hs-identifier hs-var">z</span></a></span></span><span> </span><span id="local-6989586621679077436"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var hs-var">lRender</span></a></span></span><span> </span><span id="local-6989586621679077480"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077480"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Truncate"><span class="hs-identifier hs-type">Truncate</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077483"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077483"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077484"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077484"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077485"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077485"><span class="hs-identifier hs-var">z</span></a></span></span><span> </span><span id="local-6989586621679077486"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077486"><span class="hs-identifier hs-var">w</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;truncated_normal_lpdf(&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077430"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077480"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span>
 </span><span id="line-48"></span><span>                                        </span><span class="annot"><span class="annottext">VarName
@@ -161,7 +161,7 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 forall a. Show a =&gt; a -&gt; VarName
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077433"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077483"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
@@ -169,7 +169,7 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 forall a. Show a =&gt; a -&gt; VarName
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077434"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077484"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span>
 </span><span id="line-49"></span><span>                                        </span><span class="annot"><span class="annottext">VarName
@@ -178,7 +178,7 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 forall a. Show a =&gt; a -&gt; VarName
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077435"><span class="hs-identifier hs-var">z</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077485"><span class="hs-identifier hs-var">z</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
@@ -186,18 +186,18 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 forall a. Show a =&gt; a -&gt; VarName
 </span><span class="hs-identifier hs-var">show</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077436"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077486"><span class="hs-identifier hs-var">w</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;)&quot;</span></span><span>
-</span><span id="line-50"></span><span class="annot"><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var">lRender</span></a></span><span> </span><span id="local-6989586621679077437"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077437"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077438"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077439"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><span id="line-50"></span><span class="annot"><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var">lRender</span></a></span><span> </span><span id="local-6989586621679077487"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077487"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077488"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077488"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077489"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077489"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;normal_lpdf(&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077437"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077487"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span>
 </span><span id="line-51"></span><span>                         </span><span class="annot"><span class="annottext">VarName
@@ -205,105 +205,105 @@ forall a. [a] -&gt; [a] -&gt; [a]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077438"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077488"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077439"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077489"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;)&quot;</span></span><span>
-</span><span id="line-52"></span><span class="annot"><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var">lRender</span></a></span><span> </span><span id="local-6989586621679077440"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077440"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span id="local-6989586621679077442"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077443"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077444"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077444"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><span id="line-52"></span><span class="annot"><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var">lRender</span></a></span><span> </span><span id="local-6989586621679077490"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077490"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span id="local-6989586621679077492"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077492"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077493"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077493"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077494"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077494"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;log_mix(&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077442"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077492"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var">lRender</span></a></span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077440"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077443"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077490"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077493"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var">lRender</span></a></span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077440"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077444"><span class="hs-identifier hs-var">z</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077490"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077494"><span class="hs-identifier hs-var">z</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;)&quot;</span></span><span> </span><span>
 </span><span id="line-53"></span><span>
 </span><span id="line-54"></span><span class="annot"><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-type">pRender</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">String</span></span><span>
 </span><span id="line-55"></span><span id="pRender"><span class="annot"><span class="annottext">pRender :: Term -&gt; VarName
-</span><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var hs-var">pRender</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077446"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077446"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077447"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077447"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var hs-var">pRender</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077496"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077496"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077497"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077497"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;normal(&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077446"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077496"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077447"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077497"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;)&quot;</span></span><span>
-</span><span id="line-56"></span><span class="annot"><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var">pRender</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#LogitNormal"><span class="hs-identifier hs-type">LogitNormal</span></a></span><span> </span><span id="local-6989586621679077449"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077449"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077450"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077450"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><span id="line-56"></span><span class="annot"><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var">pRender</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#LogitNormal"><span class="hs-identifier hs-type">LogitNormal</span></a></span><span> </span><span id="local-6989586621679077499"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077499"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077500"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077500"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;logit_normal(&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077449"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077499"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077450"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077500"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;)&quot;</span></span><span>
-</span><span id="line-57"></span><span class="annot"><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var">pRender</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Truncate"><span class="hs-identifier hs-type">Truncate</span></a></span><span> </span><span id="local-6989586621679077451"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679077452"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077453"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077453"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
+</span><span id="line-57"></span><span class="annot"><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var">pRender</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Truncate"><span class="hs-identifier hs-type">Truncate</span></a></span><span> </span><span id="local-6989586621679077501"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077501"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679077502"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077502"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077503"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077503"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var">pRender</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077451"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077501"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot; T[&quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077452"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077502"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;, &quot;</span></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#stanShow"><span class="hs-identifier hs-var">stanShow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077453"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
+</span><a href="#local-6989586621679077503"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">VarName -&gt; ShowS
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;]&quot;</span></span><span>
@@ -311,12 +311,12 @@ forall a. [a] -&gt; [a] -&gt; [a]
 </span><span id="line-59"></span><span class="annot"><a href="Framework.Target.Stan.html#toStan"><span class="hs-identifier hs-type">toStan</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="hs-identifier hs-type">Writer</span></span><span> </span><span class="hs-special">[</span><span class="annot"><a href="Framework.Target.Stan.html#Error"><span class="hs-identifier hs-type">Error</span></a></span><span class="hs-special">]</span><span> </span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span><span>
 </span><span id="line-60"></span><span id="toStan"><span class="annot"><span class="annottext">toStan :: Term -&gt; Writer [Error] Model
 </span><a href="Framework.Target.Stan.html#toStan"><span class="hs-identifier hs-var hs-var">toStan</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-61"></span><span>  </span><span id="local-6989586621679077455"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077455"><span class="hs-identifier hs-var">t</span></a></span></span><span>         </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Typed -&gt; Maybe Type
+</span><span id="line-61"></span><span>  </span><span id="local-6989586621679077505"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077505"><span class="hs-identifier hs-var">t</span></a></span></span><span>         </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Typed -&gt; Maybe Type
 </span><a href="Framework.Lambda.Types.html#typeOf"><span class="hs-identifier hs-var">typeOf</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Framework.Lambda.Signature.html#tau0"><span class="hs-identifier hs-var">tau0</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077455"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Type -&gt; Maybe Type -&gt; Bool
+</span><a href="#local-6989586621679077505"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Maybe Type -&gt; Maybe Type -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Maybe Type
 forall a. a -&gt; Maybe a
@@ -333,32 +333,32 @@ forall a. a -&gt; WriterT [Error] Identity a
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[(VarName, VarName)] -&gt; Model
 </span><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-var">Model</span></a></span><span> </span><span class="hs-special">[</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
-</span><span id="line-64"></span><span>  </span><span id="local-6989586621679077463"><span class="annot"><span class="annottext">t :: Term
-</span><a href="#local-6989586621679077463"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077465"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077465"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077466"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077466"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077467"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077467"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Writer [Error] Model
-</span><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">toStan'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077463"><span class="hs-identifier hs-var">t</span></a></span><span>
-</span><span id="line-65"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679077468"><span class="annot"><span class="annottext">toStan' :: Term -&gt; Writer [Error] Model
-</span><a href="#local-6989586621679077468"><span class="hs-identifier hs-var hs-var">toStan'</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077476"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077477"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077477"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077478"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077478"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-66"></span><span>            </span><span id="local-6989586621679077479"><span class="annot"><span class="annottext">Model
-</span><a href="#local-6989586621679077479"><span class="hs-identifier hs-var">yResult</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Writer [Error] Model
-</span><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">toStan'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077477"><span class="hs-identifier hs-var">y</span></a></span><span>
+</span><span id="line-64"></span><span>  </span><span id="local-6989586621679077513"><span class="annot"><span class="annottext">t :: Term
+</span><a href="#local-6989586621679077513"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077515"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077515"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077516"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077516"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077517"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077517"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Writer [Error] Model
+</span><a href="#local-6989586621679077518"><span class="hs-identifier hs-var">toStan'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077513"><span class="hs-identifier hs-var">t</span></a></span><span>
+</span><span id="line-65"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679077518"><span class="annot"><span class="annottext">toStan' :: Term -&gt; Writer [Error] Model
+</span><a href="#local-6989586621679077518"><span class="hs-identifier hs-var hs-var">toStan'</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077526"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077526"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077527"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077527"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span id="local-6989586621679077528"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077528"><span class="hs-identifier hs-var">z</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-66"></span><span>            </span><span id="local-6989586621679077529"><span class="annot"><span class="annottext">Model
+</span><a href="#local-6989586621679077529"><span class="hs-identifier hs-var">yResult</span></a></span></span><span> </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Writer [Error] Model
+</span><a href="#local-6989586621679077518"><span class="hs-identifier hs-var">toStan'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077527"><span class="hs-identifier hs-var">y</span></a></span><span>
 </span><span id="line-67"></span><span>            </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Model
-</span><a href="#local-6989586621679077479"><span class="hs-identifier hs-var">yResult</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679077529"><span class="hs-identifier hs-var">yResult</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-68"></span><span>              </span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="annot"><span class="annottext">VarName
-</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077480"><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077480"><span class="hs-identifier hs-var">distr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679077481"><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077481"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
-</span><span id="line-69"></span><span>                </span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span><span> </span><span id="local-6989586621679077482"><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077482"><span class="hs-identifier hs-var">zs</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Writer [Error] Model
+</span><span class="hs-identifier">_</span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077530"><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077530"><span class="hs-identifier hs-var">distr</span></a></span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="hs-glyph hs-type">:</span></span><span> </span><span id="local-6989586621679077531"><span class="annot"><span class="annottext">[(VarName, VarName)]
+</span><a href="#local-6989586621679077531"><span class="hs-identifier hs-var">ys</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><span id="line-69"></span><span>                </span><span class="annot"><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-type">Model</span></a></span><span> </span><span id="local-6989586621679077532"><span class="annot"><span class="annottext">[(VarName, VarName)]
+</span><a href="#local-6989586621679077532"><span class="hs-identifier hs-var">zs</span></a></span></span><span>      </span><span class="hs-glyph">&lt;-</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Writer [Error] Model
 </span><a href="Framework.Target.Stan.html#toStan"><span class="hs-identifier hs-var">toStan</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077478"><span class="hs-identifier hs-var">z</span></a></span><span>
+</span><a href="#local-6989586621679077528"><span class="hs-identifier hs-var">z</span></a></span><span>
 </span><span id="line-70"></span><span>                </span><span class="annot"><span class="annottext">Model -&gt; Writer [Error] Model
 forall a. a -&gt; WriterT [Error] Identity a
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
@@ -366,17 +366,17 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><span class="hs-operator hs-var">$</span></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)] -&gt; Model
 </span><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-var">Model</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077476"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">VarName
-</span><a href="#local-6989586621679077480"><span class="hs-identifier hs-var">distr</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(VarName, VarName) -&gt; [(VarName, VarName)] -&gt; [(VarName, VarName)]
+</span><a href="#local-6989586621679077526"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">VarName
+</span><a href="#local-6989586621679077530"><span class="hs-identifier hs-var">distr</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">(VarName, VarName) -&gt; [(VarName, VarName)] -&gt; [(VarName, VarName)]
 forall a. a -&gt; [a] -&gt; [a]
 </span><span class="hs-glyph hs-var">:</span></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077481"><span class="hs-identifier hs-var">ys</span></a></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
+</span><a href="#local-6989586621679077531"><span class="hs-identifier hs-var">ys</span></a></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
 -&gt; [(VarName, VarName)] -&gt; [(VarName, VarName)]
 forall a. [a] -&gt; [a] -&gt; [a]
 </span><span class="hs-operator hs-var">++</span></span><span> </span><span class="annot"><span class="annottext">[(VarName, VarName)]
-</span><a href="#local-6989586621679077482"><span class="hs-identifier hs-var">zs</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-71"></span><span>          </span><span class="annot"><a href="#local-6989586621679077468"><span class="hs-identifier hs-var">toStan'</span></a></span><span> </span><span id="local-6989586621679077483"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077483"><span class="hs-identifier hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Model -&gt; Writer [Error] Model
+</span><a href="#local-6989586621679077532"><span class="hs-identifier hs-var">zs</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-71"></span><span>          </span><span class="annot"><a href="#local-6989586621679077518"><span class="hs-identifier hs-var">toStan'</span></a></span><span> </span><span id="local-6989586621679077533"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077533"><span class="hs-identifier hs-var">result</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Model -&gt; Writer [Error] Model
 forall a. a -&gt; WriterT [Error] Identity a
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-identifier hs-var">pure</span></span><span> </span><span class="annot"><span class="annottext">(Model -&gt; Writer [Error] Model) -&gt; Model -&gt; Writer [Error] Model
@@ -385,9 +385,9 @@ forall a b. (a -&gt; b) -&gt; a -&gt; b
 </span><a href="Framework.Target.Stan.html#Model"><span class="hs-identifier hs-var">Model</span></a></span><span> </span><span class="hs-special">[</span><span class="hs-special">(</span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#pRender"><span class="hs-identifier hs-var">pRender</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077483"><span class="hs-identifier hs-var">result</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
-</span><span id="line-72"></span><span>  </span><span id="local-6989586621679077484"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077484"><span class="hs-identifier hs-var">result</span></a></span></span><span>   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
+</span><a href="#local-6989586621679077533"><span class="hs-identifier hs-var">result</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span>
+</span><span id="line-72"></span><span>  </span><span id="local-6989586621679077534"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077534"><span class="hs-identifier hs-var">result</span></a></span></span><span>   </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">do</span><span>
 </span><span id="line-73"></span><span>    </span><span class="annot"><span class="annottext">Model -&gt; Writer [Error] Model
 forall a. a -&gt; WriterT [Error] Identity a
 forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
@@ -396,5 +396,5 @@ forall (f :: * -&gt; *) a. Applicative f =&gt; a -&gt; f a
 </span><span class="hs-string">&quot;y&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">VarName -&gt; Term -&gt; VarName
 </span><a href="Framework.Target.Stan.html#lRender"><span class="hs-identifier hs-var">lRender</span></a></span><span> </span><span class="annot"><span class="annottext">VarName
 </span><span class="hs-string">&quot;y&quot;</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077484"><span class="hs-identifier hs-var">result</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077534"><span class="hs-identifier hs-var">result</span></a></span><span class="hs-special">)</span><span class="hs-special">]</span><span class="hs-special">)</span><span>
 </span><span id="line-74"></span></pre></body></html>
