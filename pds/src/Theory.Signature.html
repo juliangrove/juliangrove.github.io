@@ -30,39 +30,20 @@ Theory-level signatures.
 forall (m :: * -&gt; *) a b.
 Alternative m =&gt;
 (a -&gt; m b) -&gt; (a -&gt; m b) -&gt; a -&gt; m b
-</span><a href="Framework.Lambda.Convenience.html#%3C%7C%7C%3E"><span class="hs-operator hs-var">&lt;||&gt;</span></a></span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-24"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><span class="hs-string">&quot;QUD&quot;</span></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Type -&gt; Maybe Type
-forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type -&gt; Type
+</span><a href="Framework.Lambda.Convenience.html#%3C%7C%7C%3E"><span class="hs-operator hs-var">&lt;||&gt;</span></a></span><span>
+</span><span id="line-24"></span><span>            </span><span class="annot"><span class="annottext">Type -&gt; (Type -&gt; Type) -&gt; (Type -&gt; Type) -&gt; [(String, Type)] -&gt; Sig
+</span><a href="Framework.Lambda.Signature.html#mkStackSig"><span class="hs-identifier hs-var">mkStackSig</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#%3C3"><span class="hs-identifier hs-var">&#963;</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type -&gt; Type
 </span><a href="Framework.Lambda.Convenience.html#q"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="annot"><span class="annottext">Type
 </span><a href="Framework.Lambda.Convenience.html#%3B9"><span class="hs-identifier hs-var">&#953;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3B1"><span class="hs-identifier hs-var">&#945;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3C3"><span class="hs-identifier hs-var">&#963;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
-</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#%3B1"><span class="hs-identifier hs-var">&#945;</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type -&gt; Type
+</span><a href="Framework.Lambda.Convenience.html#popQ"><span class="hs-identifier hs-var">popQ</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#%3B9"><span class="hs-identifier hs-var">&#953;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
+</span><a href="Framework.Lambda.Convenience.html#%3B1"><span class="hs-identifier hs-var">&#945;</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">[</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String
+</span><span class="hs-string">&quot;QUD&quot;</span></span><span class="hs-special">,</span><span> </span><span class="annot"><span class="annottext">Type
 </span><a href="Framework.Lambda.Convenience.html#%3B1"><span class="hs-identifier hs-var">&#945;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
 </span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
 </span><a href="Framework.Lambda.Convenience.html#%3B9"><span class="hs-identifier hs-var">&#953;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
 </span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#t"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-25"></span><span>  </span><span class="annot"><span class="hs-identifier hs-type">Left</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><span class="hs-string">&quot;upd_QUD&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Type -&gt; Maybe Type
-forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="hs-special">(</span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3B1"><span class="hs-identifier hs-var">&#945;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
-</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3B9"><span class="hs-identifier hs-var">&#953;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
-</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#t"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
-</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3C3"><span class="hs-identifier hs-var">&#963;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type
-</span><a href="Framework.Lambda.Types.html#%3A%2192"><span class="hs-operator hs-var">:&#8594;</span></a></span><span> </span><span class="annot"><span class="annottext">Type -&gt; Type -&gt; Type -&gt; Type
-</span><a href="Framework.Lambda.Convenience.html#q"><span class="hs-identifier hs-var">q</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3B9"><span class="hs-identifier hs-var">&#953;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3B1"><span class="hs-identifier hs-var">&#945;</span></a></span><span> </span><span class="annot"><span class="annottext">Type
-</span><a href="Framework.Lambda.Convenience.html#%3C3"><span class="hs-identifier hs-var">&#963;</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-26"></span><span>  </span><span class="annot"><span class="annottext">Either String Double
-</span><span class="hs-identifier">_</span></span><span>              </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Type
-forall a. Maybe a
-</span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-27"></span></pre></body></html>
+</span><a href="Framework.Lambda.Convenience.html#t"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-25"></span></pre></body></html>
