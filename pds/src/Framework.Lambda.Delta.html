@@ -27,53 +27,53 @@ feature constants.
 </span><span id="line-27"></span><span class="annot"><a href="Framework.Lambda.Delta.html#arithmetic"><span class="hs-identifier hs-type">arithmetic</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#DeltaRule"><span class="hs-identifier hs-type">DeltaRule</span></a></span><span>
 </span><span id="line-28"></span><span id="arithmetic"><span class="annot"><span class="annottext">arithmetic :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#arithmetic"><span class="hs-identifier hs-var hs-var">arithmetic</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-29"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Add"><span class="hs-identifier hs-type">Add</span></a></span><span> </span><span id="local-6989586621679077037"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077037"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span id="local-6989586621679077038"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077038"><span class="hs-identifier hs-var">u</span></a></span></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077037"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-29"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Add"><span class="hs-identifier hs-type">Add</span></a></span><span> </span><span id="local-6989586621679077078"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077078"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span id="local-6989586621679077079"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077079"><span class="hs-identifier hs-var">u</span></a></span></span><span>      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077078"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-30"></span><span>                    </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Zero"><span class="hs-identifier hs-var">Zero</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077038"><span class="hs-identifier hs-var">u</span></a></span><span>
-</span><span id="line-31"></span><span>                    </span><span id="local-6989586621679077040"><span class="annot"><span class="annottext">x :: Term
-</span><a href="#local-6989586621679077040"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
+</span><a href="#local-6989586621679077079"><span class="hs-identifier hs-var">u</span></a></span><span>
+</span><span id="line-31"></span><span>                    </span><span id="local-6989586621679077081"><span class="annot"><span class="annottext">x :: Term
+</span><a href="#local-6989586621679077081"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077038"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679077079"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-32"></span><span>                                    </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Zero"><span class="hs-identifier hs-var">Zero</span></a></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077040"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-33"></span><span>                                    </span><span id="local-6989586621679077042"><span class="annot"><span class="annottext">y :: Term
-</span><a href="#local-6989586621679077042"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
+</span><a href="#local-6989586621679077081"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-33"></span><span>                                    </span><span id="local-6989586621679077083"><span class="annot"><span class="annottext">y :: Term
+</span><a href="#local-6989586621679077083"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077040"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077081"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077042"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077083"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-34"></span><span>                                    </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-35"></span><span>                    </span><span id="local-6989586621679077044"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077044"><span class="hs-identifier hs-var">t'</span></a></span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077038"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-35"></span><span>                    </span><span id="local-6989586621679077085"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077085"><span class="hs-identifier hs-var">t'</span></a></span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077079"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-36"></span><span>                                    </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Zero"><span class="hs-identifier hs-var">Zero</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077044"><span class="hs-identifier hs-var">t'</span></a></span><span>
+</span><a href="#local-6989586621679077085"><span class="hs-identifier hs-var">t'</span></a></span><span>
 </span><span id="line-37"></span><span>                                    </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-38"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Mult"><span class="hs-identifier hs-type">Mult</span></a></span><span> </span><span id="local-6989586621679077046"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077046"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span id="local-6989586621679077047"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077047"><span class="hs-identifier hs-var">u</span></a></span></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077046"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><span id="line-38"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Mult"><span class="hs-identifier hs-type">Mult</span></a></span><span> </span><span id="local-6989586621679077087"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077087"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span id="local-6989586621679077088"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077088"><span class="hs-identifier hs-var">u</span></a></span></span><span>     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077087"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-39"></span><span>                     </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Zero"><span class="hs-identifier hs-var">Zero</span></a></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
@@ -83,11 +83,11 @@ forall a. a -&gt; Maybe a
 </span><a href="Framework.Lambda.Convenience.html#One"><span class="hs-identifier hs-var">One</span></a></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077047"><span class="hs-identifier hs-var">u</span></a></span><span>
-</span><span id="line-41"></span><span>                     </span><span id="local-6989586621679077049"><span class="annot"><span class="annottext">x :: Term
-</span><a href="#local-6989586621679077049"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
+</span><a href="#local-6989586621679077088"><span class="hs-identifier hs-var">u</span></a></span><span>
+</span><span id="line-41"></span><span>                     </span><span id="local-6989586621679077090"><span class="annot"><span class="annottext">x :: Term
+</span><a href="#local-6989586621679077090"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077047"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679077088"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-42"></span><span>                                     </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Zero"><span class="hs-identifier hs-var">Zero</span></a></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
@@ -97,19 +97,19 @@ forall a. a -&gt; Maybe a
 </span><a href="Framework.Lambda.Convenience.html#One"><span class="hs-identifier hs-var">One</span></a></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077049"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-44"></span><span>                                     </span><span id="local-6989586621679077050"><span class="annot"><span class="annottext">y :: Term
-</span><a href="#local-6989586621679077050"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
+</span><a href="#local-6989586621679077090"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-44"></span><span>                                     </span><span id="local-6989586621679077091"><span class="annot"><span class="annottext">y :: Term
+</span><a href="#local-6989586621679077091"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-glyph">@</span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span class="annot"><span class="annottext">Double
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077049"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077090"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077050"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-45"></span><span>                     </span><span id="local-6989586621679077052"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077052"><span class="hs-identifier hs-var">t'</span></a></span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077047"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
+</span><a href="#local-6989586621679077091"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-45"></span><span>                     </span><span id="local-6989586621679077093"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077093"><span class="hs-identifier hs-var">t'</span></a></span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-keyword">case</span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077088"><span class="hs-identifier hs-var">u</span></a></span><span> </span><span class="hs-keyword">of</span><span>
 </span><span id="line-46"></span><span>                                     </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Zero"><span class="hs-identifier hs-var">Zero</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
@@ -119,17 +119,17 @@ forall a. a -&gt; Maybe a
 </span><a href="Framework.Lambda.Convenience.html#One"><span class="hs-identifier hs-var">One</span></a></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077052"><span class="hs-identifier hs-var">t'</span></a></span><span>
+</span><a href="#local-6989586621679077093"><span class="hs-identifier hs-var">t'</span></a></span><span>
 </span><span id="line-48"></span><span>                                     </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>    </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
 </span><span class="hs-identifier hs-var">Nothing</span></span><span>
-</span><span id="line-49"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Neg"><span class="hs-identifier hs-type">Neg</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span id="local-6989586621679077054"><span class="annot"><span class="annottext">Double
-</span><a href="#local-6989586621679077054"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><span id="line-49"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Neg"><span class="hs-identifier hs-type">Neg</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#DCon"><span class="hs-identifier hs-type">DCon</span></a></span><span> </span><span id="local-6989586621679077095"><span class="annot"><span class="annottext">Double
+</span><a href="#local-6989586621679077095"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Double -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#dCon"><span class="hs-identifier hs-var">dCon</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">-</span><span class="annot"><span class="annottext">Double
-</span><a href="#local-6989586621679077054"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077095"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-50"></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
@@ -139,21 +139,21 @@ forall a. Maybe a
 </span><span id="line-53"></span><span class="annot"><a href="Framework.Lambda.Delta.html#cleanUp"><span class="hs-identifier hs-type">cleanUp</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#DeltaRule"><span class="hs-identifier hs-type">DeltaRule</span></a></span><span>
 </span><span id="line-54"></span><span id="cleanUp"><span class="annot"><span class="annottext">cleanUp :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#cleanUp"><span class="hs-identifier hs-var hs-var">cleanUp</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-55"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077058"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077058"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077059"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077059"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679077060"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077060"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Bool
+</span><span id="line-55"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077099"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077099"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077100"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077100"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679077101"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077101"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Bool
 </span><a href="Framework.Lambda.Convenience.html#sampleOnly"><span class="hs-identifier hs-var">sampleOnly</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077059"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
+</span><a href="#local-6989586621679077100"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Bool -&gt; Bool -&gt; Bool
 </span><span class="hs-operator hs-var">&amp;&amp;</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077058"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; [String] -&gt; Bool
+</span><a href="#local-6989586621679077099"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; [String] -&gt; Bool
 forall (t :: * -&gt; *) a. (Foldable t, Eq a) =&gt; a -&gt; t a -&gt; Bool
 </span><span class="hs-operator hs-var">`notElem`</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; [String]
 </span><a href="Framework.Lambda.Terms.html#freeVars"><span class="hs-identifier hs-var">freeVars</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077060"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077101"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077060"><span class="hs-identifier hs-var">k</span></a></span><span>
+</span><a href="#local-6989586621679077101"><span class="hs-identifier hs-var">k</span></a></span><span>
 </span><span id="line-56"></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>                                                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
@@ -163,69 +163,69 @@ forall a. Maybe a
 </span><span id="line-59"></span><span class="annot"><a href="Framework.Lambda.Delta.html#disjunctions"><span class="hs-identifier hs-type">disjunctions</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#DeltaRule"><span class="hs-identifier hs-type">DeltaRule</span></a></span><span>
 </span><span id="line-60"></span><span id="disjunctions"><span class="annot"><span class="annottext">disjunctions :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#disjunctions"><span class="hs-identifier hs-var hs-var">disjunctions</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-61"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span>  </span><span id="local-6989586621679077066"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077066"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Bern"><span class="hs-identifier hs-type">Bern</span></a></span><span> </span><span id="local-6989586621679077068"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077068"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span>     </span><span id="local-6989586621679077069"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077069"><span class="hs-identifier hs-var">k</span></a></span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><span id="line-61"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span>  </span><span id="local-6989586621679077107"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077107"><span class="hs-identifier hs-var">b</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Bern"><span class="hs-identifier hs-type">Bern</span></a></span><span> </span><span id="local-6989586621679077109"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077109"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span>     </span><span id="local-6989586621679077110"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077110"><span class="hs-identifier hs-var">k</span></a></span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-var">Disj</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077068"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679077109"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-62"></span><span>                                                  </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#subst"><span class="hs-identifier hs-var">subst</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077066"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077107"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077069"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077110"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#subst"><span class="hs-identifier hs-var">subst</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077066"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077107"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077069"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077110"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-63"></span><span>                                                 </span><span class="hs-special">)</span><span>
-</span><span id="line-64"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span>  </span><span id="local-6989586621679077074"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077074"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span id="local-6989586621679077075"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077075"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077076"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077076"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679077077"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077077"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077078"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077078"><span class="hs-identifier hs-var">k</span></a></span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><span id="line-64"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span>  </span><span id="local-6989586621679077115"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077115"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span id="local-6989586621679077116"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077116"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077117"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077117"><span class="hs-identifier hs-var">m</span></a></span></span><span> </span><span id="local-6989586621679077118"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077118"><span class="hs-identifier hs-var">n</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077119"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077119"><span class="hs-identifier hs-var">k</span></a></span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-var">Disj</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077075"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679077116"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-65"></span><span>                                                  </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-var">Let</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077074"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077076"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077078"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077115"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077117"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077119"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-var">Let</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077074"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077077"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077078"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077115"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077118"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077119"><span class="hs-identifier hs-var">k</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-66"></span><span>                                                 </span><span class="hs-special">)</span><span>
 </span><span id="line-67"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077079"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077079"><span class="hs-identifier hs-var">m</span></a></span></span><span>            </span><span id="local-6989586621679077080"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077080"><span class="hs-identifier hs-var">n</span></a></span></span><span>         </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077079"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Bool
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077120"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077120"><span class="hs-identifier hs-var">m</span></a></span></span><span>            </span><span id="local-6989586621679077121"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077121"><span class="hs-identifier hs-var">n</span></a></span></span><span>         </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077120"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077080"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077121"><span class="hs-identifier hs-var">n</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077079"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621679077120"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-68"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077081"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077081"><span class="hs-identifier hs-var">m</span></a></span></span><span>            </span><span class="annot"><span class="annottext">Term
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077122"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077122"><span class="hs-identifier hs-var">m</span></a></span></span><span>            </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Undefined"><span class="hs-identifier hs-var">Undefined</span></a></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077081"><span class="hs-identifier hs-var">m</span></a></span><span>
+</span><a href="#local-6989586621679077122"><span class="hs-identifier hs-var">m</span></a></span><span>
 </span><span id="line-69"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#Undefined"><span class="hs-identifier hs-var">Undefined</span></a></span><span>    </span><span id="local-6989586621679077083"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077083"><span class="hs-identifier hs-var">n</span></a></span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="Framework.Lambda.Convenience.html#Undefined"><span class="hs-identifier hs-var">Undefined</span></a></span><span>    </span><span id="local-6989586621679077124"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077124"><span class="hs-identifier hs-var">n</span></a></span></span><span>                  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077083"><span class="hs-identifier hs-var">n</span></a></span><span>
+</span><a href="#local-6989586621679077124"><span class="hs-identifier hs-var">n</span></a></span><span>
 </span><span id="line-70"></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>                                      </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
@@ -235,13 +235,13 @@ forall a. Maybe a
 </span><span id="line-73"></span><span class="annot"><a href="Framework.Lambda.Delta.html#equality"><span class="hs-identifier hs-type">equality</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#DeltaRule"><span class="hs-identifier hs-type">DeltaRule</span></a></span><span>
 </span><span id="line-74"></span><span id="equality"><span class="annot"><span class="annottext">equality :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#equality"><span class="hs-identifier hs-var hs-var">equality</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-75"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Eq"><span class="hs-identifier hs-type">Eq</span></a></span><span> </span><span id="local-6989586621679077086"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077086"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077087"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077087"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077086"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Bool
+</span><span id="line-75"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Eq"><span class="hs-identifier hs-type">Eq</span></a></span><span> </span><span id="local-6989586621679077127"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077127"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077128"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077128"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077127"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077087"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077128"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span>
@@ -274,19 +274,19 @@ forall a. Maybe a
 </span><span id="line-87"></span><span id="ite"><span class="annot"><span class="annottext">ite :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#ite"><span class="hs-identifier hs-var hs-var">ite</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
 </span><span id="line-88"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#ITE"><span class="hs-identifier hs-type">ITE</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span> </span><span id="local-6989586621679077092"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077092"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077093"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077093"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span> </span><span id="local-6989586621679077133"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077133"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077134"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077134"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077092"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679077133"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-89"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#ITE"><span class="hs-identifier hs-type">ITE</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span> </span><span id="local-6989586621679077094"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077094"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077095"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077095"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span> </span><span id="local-6989586621679077135"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077135"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077136"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077136"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077095"><span class="hs-identifier hs-var">y</span></a></span><span>
+</span><a href="#local-6989586621679077136"><span class="hs-identifier hs-var">y</span></a></span><span>
 </span><span id="line-90"></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
@@ -295,18 +295,18 @@ forall a. Maybe a
 </span><span id="line-92"></span><span class="annot"><a href="Framework.Lambda.Delta.html#logical"><span class="hs-identifier hs-type">logical</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#DeltaRule"><span class="hs-identifier hs-type">DeltaRule</span></a></span><span>
 </span><span id="line-93"></span><span id="logical"><span class="annot"><span class="annottext">logical :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#logical"><span class="hs-identifier hs-var hs-var">logical</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-94"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#And"><span class="hs-identifier hs-type">And</span></a></span><span> </span><span id="local-6989586621679077098"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077098"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="annot"><span class="annottext">Term
+</span><span id="line-94"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#And"><span class="hs-identifier hs-type">And</span></a></span><span> </span><span id="local-6989586621679077139"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077139"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077098"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679077139"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-95"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#And"><span class="hs-identifier hs-type">And</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span> </span><span id="local-6989586621679077099"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077099"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span> </span><span id="local-6989586621679077140"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077140"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077099"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679077140"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-96"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#And"><span class="hs-identifier hs-type">And</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
@@ -319,18 +319,18 @@ forall a. a -&gt; Maybe a
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span>
-</span><span id="line-98"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>  </span><span id="local-6989586621679077101"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077101"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="annot"><span class="annottext">Term
+</span><span id="line-98"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>  </span><span id="local-6989586621679077142"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077142"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077101"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679077142"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-99"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>  </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span> </span><span id="local-6989586621679077102"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077102"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span> </span><span id="local-6989586621679077143"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077143"><span class="hs-identifier hs-var">p</span></a></span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077102"><span class="hs-identifier hs-var">p</span></a></span><span>
+</span><a href="#local-6989586621679077143"><span class="hs-identifier hs-var">p</span></a></span><span>
 </span><span id="line-100"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Or"><span class="hs-identifier hs-type">Or</span></a></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
@@ -352,17 +352,17 @@ forall a. Maybe a
 </span><span id="line-105"></span><span class="annot"><a href="Framework.Lambda.Delta.html#maxes"><span class="hs-identifier hs-type">maxes</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#DeltaRule"><span class="hs-identifier hs-type">DeltaRule</span></a></span><span>
 </span><span id="line-106"></span><span id="maxes"><span class="annot"><span class="annottext">maxes :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#maxes"><span class="hs-identifier hs-var hs-var">maxes</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-107"></span><span>   </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Max"><span class="hs-identifier hs-type">Max</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Lam"><span class="hs-identifier hs-type">Lam</span></a></span><span> </span><span id="local-6989586621679077106"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077106"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#GE"><span class="hs-identifier hs-type">GE</span></a></span><span> </span><span id="local-6989586621679077108"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077108"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span id="local-6989586621679077110"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077110"><span class="hs-identifier hs-var">y'</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077110"><span class="hs-identifier hs-var">y'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><span id="line-107"></span><span>   </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Max"><span class="hs-identifier hs-type">Max</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Lam"><span class="hs-identifier hs-type">Lam</span></a></span><span> </span><span id="local-6989586621679077147"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077147"><span class="hs-identifier hs-var">y</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#GE"><span class="hs-identifier hs-type">GE</span></a></span><span> </span><span id="local-6989586621679077149"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077149"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span id="local-6989586621679077151"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077151"><span class="hs-identifier hs-var">y'</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077151"><span class="hs-identifier hs-var">y'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077106"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077147"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077108"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><a href="#local-6989586621679077149"><span class="hs-identifier hs-var">x</span></a></span><span>
 </span><span id="line-108"></span><span>   </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>                                     </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
@@ -375,11 +375,11 @@ forall a. Maybe a
 </span><a href="Framework.Lambda.Delta.html#observations"><span class="hs-identifier hs-var hs-var">observations</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
 </span><span id="line-114"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Observe"><span class="hs-identifier hs-type">Observe</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077113"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077113"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="Framework.Lambda.Convenience.html#Tr"><span class="hs-identifier hs-var">Tr</span></a></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077154"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077154"><span class="hs-identifier hs-var">k</span></a></span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077113"><span class="hs-identifier hs-var">k</span></a></span><span>
+</span><a href="#local-6989586621679077154"><span class="hs-identifier hs-var">k</span></a></span><span>
 </span><span id="line-115"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Observe"><span class="hs-identifier hs-type">Observe</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#Fa"><span class="hs-identifier hs-var">Fa</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term
@@ -406,64 +406,67 @@ forall a. a -&gt; Maybe a
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-number">0</span></span><span>
-</span><span id="line-123"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Bern"><span class="hs-identifier hs-type">Bern</span></a></span><span> </span><span id="local-6989586621679077117"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077117"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span>                                                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><span id="line-123"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Bern"><span class="hs-identifier hs-type">Bern</span></a></span><span> </span><span id="local-6989586621679077158"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077158"><span class="hs-identifier hs-var">x</span></a></span></span><span class="hs-special">)</span><span>                                                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077117"><span class="hs-identifier hs-var">x</span></a></span><span>
-</span><span id="line-124"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span id="local-6989586621679077118"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077118"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077119"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077119"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span id="local-6989586621679077120"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077120"><span class="hs-identifier hs-var">u</span></a></span></span><span class="hs-special">)</span><span>                                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077158"><span class="hs-identifier hs-var">x</span></a></span><span>
+</span><span id="line-124"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Disj"><span class="hs-identifier hs-type">Disj</span></a></span><span> </span><span id="local-6989586621679077159"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077159"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077160"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077160"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span id="local-6989586621679077161"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077161"><span class="hs-identifier hs-var">u</span></a></span></span><span class="hs-special">)</span><span>                                            </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077118"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077159"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-var">Pr</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077119"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077160"><span class="hs-identifier hs-var">t</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">+</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
 </span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077118"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077159"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 forall a. Num a =&gt; a -&gt; a -&gt; a
 </span><span class="hs-operator hs-var">*</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-var">Pr</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077120"><span class="hs-identifier hs-var">u</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-125"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077121"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077121"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077123"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077123"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077124"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077124"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Return"><span class="hs-identifier hs-type">Return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#GE"><span class="hs-identifier hs-type">GE</span></a></span><span> </span><span id="local-6989586621679077125"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077125"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span id="local-6989586621679077126"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077126"><span class="hs-identifier hs-var">v'</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077126"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077161"><span class="hs-identifier hs-var">u</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-125"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077162"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077162"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077164"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077164"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077165"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077165"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Return"><span class="hs-identifier hs-type">Return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#GE"><span class="hs-identifier hs-type">GE</span></a></span><span> </span><span id="local-6989586621679077166"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077166"><span class="hs-identifier hs-var">t</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span id="local-6989586621679077167"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077167"><span class="hs-identifier hs-var">v'</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077167"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077121"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077162"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#NormalCDF"><span class="hs-identifier hs-var">NormalCDF</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077123"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077124"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077125"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-126"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077128"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077128"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077129"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077129"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077130"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077130"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Return"><span class="hs-identifier hs-type">Return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#GE"><span class="hs-identifier hs-type">GE</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span id="local-6989586621679077131"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077131"><span class="hs-identifier hs-var">v'</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077132"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077132"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077131"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077164"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077165"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077166"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-126"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-type">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Let"><span class="hs-identifier hs-type">Let</span></a></span><span> </span><span id="local-6989586621679077169"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077169"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Normal"><span class="hs-identifier hs-type">Normal</span></a></span><span> </span><span id="local-6989586621679077170"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077170"><span class="hs-identifier hs-var">x</span></a></span></span><span> </span><span id="local-6989586621679077171"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077171"><span class="hs-identifier hs-var">y</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Return"><span class="hs-identifier hs-type">Return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#GE"><span class="hs-identifier hs-type">GE</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Terms.html#Var"><span class="hs-identifier hs-type">Var</span></a></span><span> </span><span id="local-6989586621679077172"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077172"><span class="hs-identifier hs-var">v'</span></a></span></span><span class="hs-special">)</span><span> </span><span id="local-6989586621679077173"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077173"><span class="hs-identifier hs-var">t</span></a></span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077172"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077128"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077169"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
-</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
-</span><a href="Framework.Lambda.Convenience.html#NormalCDF"><span class="hs-identifier hs-var">NormalCDF</span></a></span><span> </span><span class="hs-special">(</span><span class="hs-glyph">-</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077129"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077130"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077132"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
+</span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
+</span><span class="hs-number">1</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+forall a. Num a =&gt; a -&gt; a -&gt; a
+</span><span class="hs-glyph hs-var">-</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
+</span><a href="Framework.Lambda.Convenience.html#NormalCDF"><span class="hs-identifier hs-var">NormalCDF</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077170"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077171"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077173"><span class="hs-identifier hs-var">t</span></a></span><span class="hs-special">)</span><span>
 </span><span id="line-127"></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>                                                          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a
@@ -475,128 +478,128 @@ forall a. Maybe a
 </span><span id="line-132"></span><span class="annot"><a href="Framework.Lambda.Delta.html#states"><span class="hs-identifier hs-type">states</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#DeltaRule"><span class="hs-identifier hs-type">DeltaRule</span></a></span><span>
 </span><span id="line-133"></span><span id="states"><span class="annot"><span class="annottext">states :: DeltaRule
 </span><a href="Framework.Lambda.Delta.html#states"><span class="hs-identifier hs-var hs-var">states</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
-</span><span id="line-134"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-type">LkUp</span></a></span><span> </span><span id="local-6989586621679077135"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077135"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077137"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077137"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077138"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077138"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="annot"><span class="annottext">Term
+</span><span id="line-134"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-type">LkUp</span></a></span><span> </span><span id="local-6989586621679077176"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077176"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077178"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077178"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077179"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077179"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077137"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077178"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077135"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077176"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077138"><span class="hs-identifier hs-var">v</span></a></span><span>
-</span><span id="line-135"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-type">LkUp</span></a></span><span> </span><span id="local-6989586621679077139"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077139"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077140"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077140"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077141"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077141"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077140"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077179"><span class="hs-identifier hs-var">v</span></a></span><span>
+</span><span id="line-135"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-type">LkUp</span></a></span><span> </span><span id="local-6989586621679077180"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077180"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077181"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077181"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span class="annot"><span class="annottext">Term
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077182"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077182"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077181"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077139"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077180"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-var">LkUp</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077139"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077141"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-136"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077143"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077143"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span id="local-6989586621679077144"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077144"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077145"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077145"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span class="annot"><span class="annottext">Term
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077146"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077146"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077145"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077180"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077182"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-136"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077184"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077184"><span class="hs-identifier hs-var">c</span></a></span></span><span> </span><span id="local-6989586621679077185"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077185"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077186"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077186"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span class="annot"><span class="annottext">Term
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077187"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077187"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077186"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077143"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077184"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-var">Upd</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077143"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077144"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077146"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-137"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-type">Pop</span></a></span><span>  </span><span id="local-6989586621679077148"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077148"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Push"><span class="hs-identifier hs-type">Push</span></a></span><span> </span><span id="local-6989586621679077150"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077150"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077151"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077151"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077152"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077152"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077150"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077184"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077185"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077187"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-137"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-type">Pop</span></a></span><span>  </span><span id="local-6989586621679077189"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077189"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Push"><span class="hs-identifier hs-type">Push</span></a></span><span> </span><span id="local-6989586621679077191"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077191"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077192"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077192"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077193"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077193"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077191"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">==</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077148"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077189"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077151"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077192"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%26"><span class="hs-operator hs-var">&amp;</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077152"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-138"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-type">Pop</span></a></span><span>  </span><span id="local-6989586621679077154"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077154"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Push"><span class="hs-identifier hs-type">Push</span></a></span><span> </span><span id="local-6989586621679077155"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077155"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077156"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077156"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077157"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077157"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077155"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
+</span><a href="#local-6989586621679077193"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-138"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-type">Pop</span></a></span><span>  </span><span id="local-6989586621679077195"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077195"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Push"><span class="hs-identifier hs-type">Push</span></a></span><span> </span><span id="local-6989586621679077196"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077196"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077197"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077197"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077198"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077198"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span> </span><span class="hs-glyph">|</span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077196"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; String -&gt; Bool
 forall a. Eq a =&gt; a -&gt; a -&gt; Bool
 </span><span class="hs-operator hs-var">/=</span></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077154"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077195"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077158"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077199"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%26"><span class="hs-operator hs-var">&amp;</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077159"><span class="hs-identifier hs-var">s'</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-139"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span class="annot"><a href="#local-6989586621679077158"><span class="hs-identifier hs-type">v'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="#local-6989586621679077159"><span class="hs-identifier hs-type">s'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
-</span><span id="line-140"></span><span>          </span><span id="local-6989586621679077158"><span class="annot"><span class="annottext">v' :: Term
-</span><a href="#local-6989586621679077158"><span class="hs-identifier hs-var hs-var">v'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
+</span><a href="#local-6989586621679077200"><span class="hs-identifier hs-var">s'</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-139"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span class="annot"><a href="#local-6989586621679077199"><span class="hs-identifier hs-type">v'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="#local-6989586621679077200"><span class="hs-identifier hs-type">s'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
+</span><span id="line-140"></span><span>          </span><span id="local-6989586621679077199"><span class="annot"><span class="annottext">v' :: Term
+</span><a href="#local-6989586621679077199"><span class="hs-identifier hs-var hs-var">v'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Pi1"><span class="hs-identifier hs-var">Pi1</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-var">Pop</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077154"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077157"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-141"></span><span>          </span><span id="local-6989586621679077159"><span class="annot"><span class="annottext">s' :: Term
-</span><a href="#local-6989586621679077159"><span class="hs-identifier hs-var hs-var">s'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077195"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077198"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-141"></span><span>          </span><span id="local-6989586621679077200"><span class="annot"><span class="annottext">s' :: Term
+</span><a href="#local-6989586621679077200"><span class="hs-identifier hs-var hs-var">s'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Push"><span class="hs-identifier hs-var">Push</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077155"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077156"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
+</span><a href="#local-6989586621679077196"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077197"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Pi2"><span class="hs-identifier hs-var">Pi2</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-var">Pop</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077154"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077157"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-142"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-type">LkUp</span></a></span><span> </span><span id="local-6989586621679077162"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077162"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Push"><span class="hs-identifier hs-type">Push</span></a></span><span> </span><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077195"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077198"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-142"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-type">LkUp</span></a></span><span> </span><span id="local-6989586621679077203"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077203"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Push"><span class="hs-identifier hs-type">Push</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-identifier">_</span></span><span>  </span><span class="annot"><span class="annottext">Term
-</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077163"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077163"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><span class="hs-identifier">_</span></span><span> </span><span id="local-6989586621679077204"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077204"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#LkUp"><span class="hs-identifier hs-var">LkUp</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077162"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077163"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-143"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-type">Pop</span></a></span><span>  </span><span id="local-6989586621679077164"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077164"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077165"><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077165"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077166"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077166"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077167"><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077167"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
+</span><a href="#local-6989586621679077203"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077204"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-143"></span><span>  </span><span class="annot"><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-type">Pop</span></a></span><span>  </span><span id="local-6989586621679077205"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077205"><span class="hs-identifier hs-var">c</span></a></span></span><span>   </span><span class="hs-special">(</span><span class="annot"><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-type">Upd</span></a></span><span>  </span><span id="local-6989586621679077206"><span class="annot"><span class="annottext">String
+</span><a href="#local-6989586621679077206"><span class="hs-identifier hs-var">c'</span></a></span></span><span> </span><span id="local-6989586621679077207"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077207"><span class="hs-identifier hs-var">v</span></a></span></span><span> </span><span id="local-6989586621679077208"><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077208"><span class="hs-identifier hs-var">s</span></a></span></span><span class="hs-special">)</span><span>           </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">DeltaRule
 forall a. a -&gt; Maybe a
 </span><span class="hs-identifier hs-var">Just</span></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077168"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077209"><span class="hs-identifier hs-var">v'</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%26"><span class="hs-operator hs-var">&amp;</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077169"><span class="hs-identifier hs-var">s'</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-144"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span class="annot"><a href="#local-6989586621679077168"><span class="hs-identifier hs-type">v'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="#local-6989586621679077169"><span class="hs-identifier hs-type">s'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
-</span><span id="line-145"></span><span>          </span><span id="local-6989586621679077168"><span class="annot"><span class="annottext">v' :: Term
-</span><a href="#local-6989586621679077168"><span class="hs-identifier hs-var hs-var">v'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
+</span><a href="#local-6989586621679077210"><span class="hs-identifier hs-var">s'</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-144"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span class="annot"><a href="#local-6989586621679077209"><span class="hs-identifier hs-type">v'</span></a></span><span class="hs-special">,</span><span> </span><span class="annot"><a href="#local-6989586621679077210"><span class="hs-identifier hs-type">s'</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
+</span><span id="line-145"></span><span>          </span><span id="local-6989586621679077209"><span class="annot"><span class="annottext">v' :: Term
+</span><a href="#local-6989586621679077209"><span class="hs-identifier hs-var hs-var">v'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Pi1"><span class="hs-identifier hs-var">Pi1</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-var">Pop</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077164"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077167"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-146"></span><span>          </span><span id="local-6989586621679077169"><span class="annot"><span class="annottext">s' :: Term
-</span><a href="#local-6989586621679077169"><span class="hs-identifier hs-var hs-var">s'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679077205"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077208"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-146"></span><span>          </span><span id="local-6989586621679077210"><span class="annot"><span class="annottext">s' :: Term
+</span><a href="#local-6989586621679077210"><span class="hs-identifier hs-var hs-var">s'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Upd"><span class="hs-identifier hs-var">Upd</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077165"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077166"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
+</span><a href="#local-6989586621679077206"><span class="hs-identifier hs-var">c'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077207"><span class="hs-identifier hs-var">v</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Pi2"><span class="hs-identifier hs-var">Pi2</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Pop"><span class="hs-identifier hs-var">Pop</span></a></span><span> </span><span class="annot"><span class="annottext">String
-</span><a href="#local-6989586621679077164"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679077167"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><a href="#local-6989586621679077205"><span class="hs-identifier hs-var">c</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679077208"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
 </span><span id="line-147"></span><span>  </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-identifier">_</span></span><span>                                </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><span class="annottext">Maybe Term
 forall a. Maybe a

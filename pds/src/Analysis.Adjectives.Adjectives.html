@@ -22,18 +22,18 @@ Maintainer  : julian.grove@gmail.com
 </span><span id="line-22"></span><span class="annot"><span class="hs-comment">-- * Lexica for adjectives</span></span><span>
 </span><span id="line-23"></span><span>
 </span><span id="line-24"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Framework.Grammar.CCG.html#Interpretation"><span class="hs-identifier hs-type">Interpretation</span></a></span><span> </span><span class="annot"><a href="Framework.Grammar.CCG.html#Adjectives"><span class="hs-identifier hs-type">Adjectives</span></a></span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-25"></span><span>  </span><span id="local-6989586621679078155"><span class="annot"><span class="annottext">combineR :: SynSem -&gt; SynSem -&gt; [SynSem]
-</span><a href="#local-6989586621679078155"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineR</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
+</span><span id="line-25"></span><span>  </span><span id="local-6989586621679078196"><span class="annot"><span class="annottext">combineR :: SynSem -&gt; SynSem -&gt; [SynSem]
+</span><a href="#local-6989586621679078196"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineR</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
 </span><a href="Framework.Grammar.Lexica.SynSem.Convenience.html#combineR"><span class="hs-identifier hs-var">Convenience.combineR</span></a></span><span>
-</span><span id="line-26"></span><span>  </span><span id="local-6989586621679078158"><span class="annot"><span class="annottext">combineL :: SynSem -&gt; SynSem -&gt; [SynSem]
-</span><a href="#local-6989586621679078158"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineL</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
+</span><span id="line-26"></span><span>  </span><span id="local-6989586621679078199"><span class="annot"><span class="annottext">combineL :: SynSem -&gt; SynSem -&gt; [SynSem]
+</span><a href="#local-6989586621679078199"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineL</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
 </span><a href="Framework.Grammar.Lexica.SynSem.Convenience.html#combineL"><span class="hs-identifier hs-var">Convenience.combineL</span></a></span><span>
 </span><span id="line-27"></span><span>  </span><span>
-</span><span id="line-28"></span><span>  </span><span id="local-6989586621679078161"><span class="annot"><span class="annottext">lexica :: [Lexicon SynSem]
-</span><a href="#local-6989586621679078161"><span class="hs-identifier hs-var hs-var hs-var hs-var">lexica</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Lexicon SynSem
-</span><a href="#local-6989586621679078163"><span class="hs-identifier hs-var">lex</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-29"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078163"><span class="annot"><span class="annottext">lex :: Lexicon SynSem
-</span><a href="#local-6989586621679078163"><span class="hs-identifier hs-var hs-var">lex</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
+</span><span id="line-28"></span><span>  </span><span id="local-6989586621679078202"><span class="annot"><span class="annottext">lexica :: [Lexicon SynSem]
+</span><a href="#local-6989586621679078202"><span class="hs-identifier hs-var hs-var hs-var hs-var">lexica</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Lexicon SynSem
+</span><a href="#local-6989586621679078204"><span class="hs-identifier hs-var">lex</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-29"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078204"><span class="annot"><span class="annottext">lex :: Lexicon SynSem
+</span><a href="#local-6989586621679078204"><span class="hs-identifier hs-var hs-var">lex</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
 </span><span id="line-30"></span><span>            </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;soccer player&quot;</span></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
 </span><span id="line-31"></span><span>                                   </span><span class="annot"><span class="annottext">syn :: Cat
@@ -1117,10 +1117,10 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Analysis.Adjectives.Adjectives.html#scaleNormingPrior"><span class="hs-identifier hs-var hs-var">scaleNormingPrior</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Return"><span class="hs-identifier hs-var">Return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#upd_CG"><span class="hs-identifier hs-var">upd_CG</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679078196"><span class="hs-identifier hs-var">cg'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679078237"><span class="hs-identifier hs-var">cg'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#%3F5"><span class="hs-identifier hs-var">&#1013;</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-159"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078196"><span class="annot"><span class="annottext">cg' :: Term
-</span><a href="#local-6989586621679078196"><span class="hs-identifier hs-var hs-var">cg'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
+</span><span id="line-159"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078237"><span class="annot"><span class="annottext">cg' :: Term
+</span><a href="#local-6989586621679078237"><span class="hs-identifier hs-var hs-var">cg'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#let%27"><span class="hs-identifier hs-var">let'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#b"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Bern"><span class="hs-identifier hs-var">Bern</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Double -&gt; Term
@@ -1136,23 +1136,23 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#normal"><span class="hs-identifier hs-var">normal</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679078206"><span class="hs-identifier hs-var">j'</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-160"></span><span>        </span><span id="local-6989586621679078206"><span class="annot"><span class="annottext">j' :: Term
-</span><a href="#local-6989586621679078206"><span class="hs-identifier hs-var hs-var">j'</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
+</span><a href="#local-6989586621679078247"><span class="hs-identifier hs-var">j'</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-160"></span><span>        </span><span id="local-6989586621679078247"><span class="annot"><span class="annottext">j' :: Term
+</span><a href="#local-6989586621679078247"><span class="hs-identifier hs-var hs-var">j'</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Return"><span class="hs-identifier hs-var">Return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#UpdHeight"><span class="hs-identifier hs-var">UpdHeight</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#z"><span class="hs-identifier hs-var">z</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#ITE"><span class="hs-identifier hs-var">ITE</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#SocPla"><span class="hs-identifier hs-var">SocPla</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679078210"><span class="hs-identifier hs-var">i'</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679078251"><span class="hs-identifier hs-var">i'</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#z"><span class="hs-identifier hs-var">z</span></a></span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#y"><span class="hs-identifier hs-var">y</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679078210"><span class="hs-identifier hs-var">i'</span></a></span><span class="hs-special">)</span><span>
-</span><span id="line-161"></span><span>        </span><span id="local-6989586621679078210"><span class="annot"><span class="annottext">i' :: Term
-</span><a href="#local-6989586621679078210"><span class="hs-identifier hs-var hs-var">i'</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="#local-6989586621679078251"><span class="hs-identifier hs-var">i'</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-161"></span><span>        </span><span id="local-6989586621679078251"><span class="annot"><span class="annottext">i' :: Term
+</span><a href="#local-6989586621679078251"><span class="hs-identifier hs-var hs-var">i'</span></a></span></span><span>  </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#UpdSocPla"><span class="hs-identifier hs-var">UpdSocPla</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
@@ -1172,10 +1172,10 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#UpdDTall"><span class="hs-identifier hs-var">UpdDTall</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#upd_CG"><span class="hs-identifier hs-var">upd_CG</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679078215"><span class="hs-identifier hs-var">cg'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679078256"><span class="hs-identifier hs-var">cg'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#%3F5"><span class="hs-identifier hs-var">&#1013;</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-166"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078215"><span class="annot"><span class="annottext">cg' :: Term
-</span><a href="#local-6989586621679078215"><span class="hs-identifier hs-var hs-var">cg'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
+</span><span id="line-166"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078256"><span class="annot"><span class="annottext">cg' :: Term
+</span><a href="#local-6989586621679078256"><span class="hs-identifier hs-var hs-var">cg'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#let%27"><span class="hs-identifier hs-var">let'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#y"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#normal"><span class="hs-identifier hs-var">normal</span></a></span><span> </span><span class="annot"><span class="annottext">Term
@@ -1219,10 +1219,10 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#UpdDTall"><span class="hs-identifier hs-var">UpdDTall</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#upd_CG"><span class="hs-identifier hs-var">upd_CG</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="#local-6989586621679078223"><span class="hs-identifier hs-var">cg'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="#local-6989586621679078264"><span class="hs-identifier hs-var">cg'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#%3F5"><span class="hs-identifier hs-var">&#1013;</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-171"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078223"><span class="annot"><span class="annottext">cg' :: Term
-</span><a href="#local-6989586621679078223"><span class="hs-identifier hs-var hs-var">cg'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
+</span><span id="line-171"></span><span>  </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078264"><span class="annot"><span class="annottext">cg' :: Term
+</span><a href="#local-6989586621679078264"><span class="hs-identifier hs-var hs-var">cg'</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#let%27"><span class="hs-identifier hs-var">let'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#y"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#normal"><span class="hs-identifier hs-var">normal</span></a></span><span> </span><span class="annot"><span class="annottext">Term
