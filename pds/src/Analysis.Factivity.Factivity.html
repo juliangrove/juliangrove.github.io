@@ -22,18 +22,18 @@ Maintainer  : julian.grove@gmail.com
 </span><span id="line-22"></span><span class="annot"><span class="hs-comment">-- * Lexica for factivity</span></span><span>
 </span><span id="line-23"></span><span>
 </span><span id="line-24"></span><span class="hs-keyword">instance</span><span> </span><span class="annot"><a href="Framework.Grammar.CCG.html#Interpretation"><span class="hs-identifier hs-type">Interpretation</span></a></span><span> </span><span class="annot"><a href="Framework.Grammar.CCG.html#Factivity"><span class="hs-identifier hs-type">Factivity</span></a></span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-keyword">where</span><span>
-</span><span id="line-25"></span><span>  </span><span id="local-6989586621679078098"><span class="annot"><span class="annottext">combineR :: SynSem -&gt; SynSem -&gt; [SynSem]
-</span><a href="#local-6989586621679078098"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineR</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
+</span><span id="line-25"></span><span>  </span><span id="local-6989586621679078126"><span class="annot"><span class="annottext">combineR :: SynSem -&gt; SynSem -&gt; [SynSem]
+</span><a href="#local-6989586621679078126"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineR</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
 </span><a href="Framework.Grammar.Lexica.SynSem.Convenience.html#combineR"><span class="hs-identifier hs-var">Convenience.combineR</span></a></span><span>
-</span><span id="line-26"></span><span>  </span><span id="local-6989586621679078101"><span class="annot"><span class="annottext">combineL :: SynSem -&gt; SynSem -&gt; [SynSem]
-</span><a href="#local-6989586621679078101"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineL</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
+</span><span id="line-26"></span><span>  </span><span id="local-6989586621679078129"><span class="annot"><span class="annottext">combineL :: SynSem -&gt; SynSem -&gt; [SynSem]
+</span><a href="#local-6989586621679078129"><span class="hs-identifier hs-var hs-var hs-var hs-var">combineL</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; [SynSem]
 </span><a href="Framework.Grammar.Lexica.SynSem.Convenience.html#combineL"><span class="hs-identifier hs-var">Convenience.combineL</span></a></span><span>
 </span><span id="line-27"></span><span>  </span><span>
-</span><span id="line-28"></span><span>  </span><span id="local-6989586621679078104"><span class="annot"><span class="annottext">lexica :: [Lexicon SynSem]
-</span><a href="#local-6989586621679078104"><span class="hs-identifier hs-var hs-var hs-var hs-var">lexica</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Lexicon SynSem
-</span><a href="#local-6989586621679078106"><span class="hs-identifier hs-var">lex</span></a></span><span class="hs-special">]</span><span>
-</span><span id="line-29"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078106"><span class="annot"><span class="annottext">lex :: Lexicon SynSem
-</span><a href="#local-6989586621679078106"><span class="hs-identifier hs-var hs-var">lex</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
+</span><span id="line-28"></span><span>  </span><span id="local-6989586621679078132"><span class="annot"><span class="annottext">lexica :: [Lexicon SynSem]
+</span><a href="#local-6989586621679078132"><span class="hs-identifier hs-var hs-var hs-var hs-var">lexica</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">[</span><span class="annot"><span class="annottext">Lexicon SynSem
+</span><a href="#local-6989586621679078134"><span class="hs-identifier hs-var">lex</span></a></span><span class="hs-special">]</span><span>
+</span><span id="line-29"></span><span>    </span><span class="hs-keyword">where</span><span> </span><span id="local-6989586621679078134"><span class="annot"><span class="annottext">lex :: Lexicon SynSem
+</span><a href="#local-6989586621679078134"><span class="hs-identifier hs-var hs-var">lex</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-glyph">\</span><span class="hs-glyph">case</span><span>
 </span><span id="line-30"></span><span>            </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;knows&quot;</span></span><span>       </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
 </span><span id="line-31"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
@@ -519,7 +519,8 @@ Maintainer  : julian.grove@gmail.com
 </span><span id="line-88"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
-</span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span>
+</span><span id="line-89"></span><span>                                     </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#s"><span class="hs-identifier hs-var">s</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#purePP"><span class="hs-identifier hs-var">purePP</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
@@ -528,27 +529,35 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#d"><span class="hs-identifier hs-var">d</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#_%27"><span class="hs-identifier hs-var">_'</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Term
+</span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="hs-special">(</span><span>
+</span><span id="line-90"></span><span>                                                                     </span><span class="annot"><span class="annottext">String -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#sCon"><span class="hs-identifier hs-var">sCon</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;(&#8805;)&quot;</span></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
-</span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
+</span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="hs-special">(</span><span>
+</span><span id="line-91"></span><span>                                                                         </span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#Pr"><span class="hs-identifier hs-var">Pr</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#let%27"><span class="hs-identifier hs-var">let'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
+</span><a href="Framework.Lambda.Convenience.html#j"><span class="hs-identifier hs-var">j</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#CG"><span class="hs-identifier hs-var">CG</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#s"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#Return"><span class="hs-identifier hs-var">Return</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#p"><span class="hs-identifier hs-var">p</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">[String] -&gt; Term -&gt; Term -&gt; Term
+</span><a href="Framework.Lambda.Convenience.html#overwrite"><span class="hs-identifier hs-var">overwrite</span></a></span><span> </span><span class="annot"><span class="annottext">[String]
+</span><a href="Analysis.Factivity.Signature.html#contextParams"><span class="hs-identifier hs-var">contextParams</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span> </span><span class="annot"><span class="annottext">Term
+</span><a href="Framework.Lambda.Convenience.html#j"><span class="hs-identifier hs-var">j</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
+</span><span id="line-92"></span><span>                                                                         </span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
+</span><a href="Framework.Lambda.Convenience.html#d"><span class="hs-identifier hs-var">d</span></a></span><span>
+</span><span id="line-93"></span><span>                                                                     </span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#d"><span class="hs-identifier hs-var">d</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
-</span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
-</span><a href="Framework.Lambda.Convenience.html#s"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-89"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-90"></span><span>            </span><span class="annot"><span class="annottext">String
+</span><a href="Framework.Lambda.Convenience.html#s"><span class="hs-identifier hs-var">s</span></a></span><span class="hs-special">)</span><span>
+</span><span id="line-94"></span><span>                                     </span><span class="hs-special">)</span><span>
+</span><span id="line-95"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-96"></span><span>            </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;how&quot;</span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-91"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-97"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span>  </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;qDeg&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -564,7 +573,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%5C%5C"><span class="hs-operator hs-var">\\</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;deg&quot;</span></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
-</span><span id="line-92"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-98"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -580,9 +589,9 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#z"><span class="hs-identifier hs-var">z</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-93"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-94"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-95"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-99"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-100"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
+</span><span id="line-101"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;qDeg&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -592,7 +601,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%5C%5C"><span class="hs-operator hs-var">\\</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;deg&quot;</span></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
-</span><span id="line-96"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-102"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -600,10 +609,10 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-97"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-98"></span><span>            </span><span class="annot"><span class="annottext">String
+</span><span id="line-103"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-104"></span><span>            </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;is&quot;</span></span><span>          </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-99"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-105"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -613,7 +622,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%2F%2F"><span class="hs-operator hs-var">//</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;ap&quot;</span></span><span class="hs-special">,</span><span>
-</span><span id="line-100"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-106"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -621,9 +630,9 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-101"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-102"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-103"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-107"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-108"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
+</span><span id="line-109"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -633,7 +642,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%2F%2F"><span class="hs-operator hs-var">//</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;np&quot;</span></span><span class="hs-special">,</span><span>
-</span><span id="line-104"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-110"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -641,10 +650,10 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-105"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-106"></span><span>            </span><span class="annot"><span class="annottext">String
+</span><span id="line-111"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-112"></span><span>            </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;and&quot;</span></span><span>         </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-107"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-113"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -672,7 +681,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%5C%5C"><span class="hs-operator hs-var">\\</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;np&quot;</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
-</span><span id="line-108"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-114"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -699,9 +708,9 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#k"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-109"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-110"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-111"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-115"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-116"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
+</span><span id="line-117"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -729,7 +738,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%2F%2F"><span class="hs-operator hs-var">//</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;np&quot;</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
-</span><span id="line-112"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-118"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -756,9 +765,9 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#k"><span class="hs-identifier hs-var">k</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-113"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-114"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-115"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-119"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-120"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
+</span><span id="line-121"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -804,7 +813,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%2F%2F"><span class="hs-operator hs-var">//</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;np&quot;</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">,</span><span>
-</span><span id="line-116"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-122"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -837,9 +846,9 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-117"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-118"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-119"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-123"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-124"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
+</span><span id="line-125"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -849,7 +858,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%2F%2F"><span class="hs-operator hs-var">//</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span class="hs-special">,</span><span>
-</span><span id="line-120"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-126"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -870,9 +879,9 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#m"><span class="hs-identifier hs-var">m</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-121"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-122"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-123"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-127"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-128"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
+</span><span id="line-129"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -891,7 +900,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%5C%5C"><span class="hs-operator hs-var">\\</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;np&quot;</span></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
-</span><span id="line-124"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-130"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -918,9 +927,9 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-125"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-126"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-127"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-131"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-132"></span><span>                             </span><span class="hs-special">,</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
+</span><span id="line-133"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
@@ -948,7 +957,7 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Grammar.CCG.html#%2F%2F"><span class="hs-operator hs-var">//</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;np&quot;</span></span><span class="hs-special">)</span><span class="hs-special">,</span><span>
-</span><span id="line-128"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-134"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -981,18 +990,18 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#y"><span class="hs-identifier hs-var">y</span></a></span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Terms.html#%40%40"><span class="hs-operator hs-var">@@</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#i"><span class="hs-identifier hs-var">i</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-129"></span><span>                                 </span><span class="hs-special">}</span><span>
-</span><span id="line-130"></span><span>                             </span><span class="hs-special">]</span><span>
-</span><span id="line-131"></span><span>            </span><span class="annot"><span class="annottext">String
+</span><span id="line-135"></span><span>                                 </span><span class="hs-special">}</span><span>
+</span><span id="line-136"></span><span>                             </span><span class="hs-special">]</span><span>
+</span><span id="line-137"></span><span>            </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;that&quot;</span></span><span>        </span><span class="hs-glyph">-&gt;</span><span> </span><span class="hs-special">[</span><span> </span><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-type">SynSem</span></a></span><span> </span><span class="hs-special">{</span><span>
-</span><span id="line-132"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
+</span><span id="line-138"></span><span>                                 </span><span class="annot"><span class="annottext">syn :: Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var">syn</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span> </span><span class="annot"><span class="annottext">Cat -&gt; Cat -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#%2F%2F"><span class="hs-operator hs-var">//</span></a></span><span> </span><span class="annot"><span class="annottext">String -&gt; Cat
 </span><a href="Framework.Grammar.CCG.html#Base"><span class="hs-identifier hs-var">Base</span></a></span><span> </span><span class="annot"><span class="annottext">String
 </span><span class="hs-string">&quot;s&quot;</span></span><span class="hs-special">,</span><span>
-</span><span id="line-133"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
+</span><span id="line-139"></span><span>                                 </span><span class="annot"><span class="annottext">sem :: Typed
 </span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var">sem</span></a></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Sig -&gt; Term -&gt; Typed
 </span><a href="Framework.Lambda.Types.html#ty"><span class="hs-identifier hs-var">ty</span></a></span><span> </span><span class="annot"><span class="annottext">Sig
 </span><a href="Analysis.Factivity.Signature.html#tauFact"><span class="hs-identifier hs-var">tauFact</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term
@@ -1000,15 +1009,15 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-134"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
-</span><span id="line-135"></span><span>
-</span><span id="line-136"></span><span class="hs-comment">--------------------------------------------------------------------------------</span><span>
-</span><span id="line-137"></span><span class="annot"><span class="hs-comment">-- * Priors and response functions</span></span><span>
-</span><span id="line-138"></span><span>
-</span><span id="line-139"></span><span>
-</span><span id="line-140"></span><span class="annot"><span class="hs-comment">-- | Prior to be used for the factivity example.</span></span><span>
-</span><span id="line-141"></span><span class="annot"><a href="Analysis.Factivity.Factivity.html#factivityPrior"><span class="hs-identifier hs-type">factivityPrior</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
-</span><span id="line-142"></span><span id="factivityPrior"><span class="annot"><span class="annottext">factivityPrior :: Term
+</span><span id="line-140"></span><span>                                 </span><span class="hs-special">}</span><span> </span><span class="hs-special">]</span><span>
+</span><span id="line-141"></span><span>
+</span><span id="line-142"></span><span class="hs-comment">--------------------------------------------------------------------------------</span><span>
+</span><span id="line-143"></span><span class="annot"><span class="hs-comment">-- * Priors and response functions</span></span><span>
+</span><span id="line-144"></span><span>
+</span><span id="line-145"></span><span>
+</span><span id="line-146"></span><span class="annot"><span class="hs-comment">-- | Prior to be used for the factivity example.</span></span><span>
+</span><span id="line-147"></span><span class="annot"><a href="Analysis.Factivity.Factivity.html#factivityPrior"><span class="hs-identifier hs-type">factivityPrior</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
+</span><span id="line-148"></span><span id="factivityPrior"><span class="annot"><span class="annottext">factivityPrior :: Term
 </span><a href="Analysis.Factivity.Factivity.html#factivityPrior"><span class="hs-identifier hs-var hs-var">factivityPrior</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#let%27"><span class="hs-identifier hs-var">let'</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#x"><span class="hs-identifier hs-var">x</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
@@ -1054,10 +1063,10 @@ Maintainer  : julian.grove@gmail.com
 </span><a href="Framework.Lambda.Convenience.html#UpdTauKnow"><span class="hs-identifier hs-var">UpdTauKnow</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#b"><span class="hs-identifier hs-var">b</span></a></span><span> </span><span class="annot"><span class="annottext">Term
 </span><a href="Framework.Lambda.Convenience.html#%3F5"><span class="hs-identifier hs-var">&#1013;</span></a></span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-143"></span><span>
-</span><span id="line-144"></span><span class="annot"><span class="hs-comment">-- | Respones function to be used for the factivity example.</span></span><span>
-</span><span id="line-145"></span><span class="annot"><a href="Analysis.Factivity.Factivity.html#factivityRespond"><span class="hs-identifier hs-type">factivityRespond</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
-</span><span id="line-146"></span><span id="factivityRespond"><span class="annot"><span class="annottext">factivityRespond :: Term -&gt; Term -&gt; Term
+</span><span id="line-149"></span><span>
+</span><span id="line-150"></span><span class="annot"><span class="hs-comment">-- | Respones function to be used for the factivity example.</span></span><span>
+</span><span id="line-151"></span><span class="annot"><a href="Analysis.Factivity.Factivity.html#factivityRespond"><span class="hs-identifier hs-type">factivityRespond</span></a></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span> </span><span class="hs-glyph">-&gt;</span><span> </span><span class="annot"><a href="Framework.Lambda.Terms.html#Term"><span class="hs-identifier hs-type">Term</span></a></span><span>
+</span><span id="line-152"></span><span id="factivityRespond"><span class="annot"><span class="annottext">factivityRespond :: Term -&gt; Term -&gt; Term
 </span><a href="Analysis.Factivity.Factivity.html#factivityRespond"><span class="hs-identifier hs-var hs-var">factivityRespond</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#respond"><span class="hs-identifier hs-var">respond</span></a></span><span> </span><span class="hs-special">(</span><span class="annot"><span class="annottext">Term -&gt; Term -&gt; Term
 </span><a href="Framework.Lambda.Convenience.html#lam"><span class="hs-identifier hs-var">lam</span></a></span><span> </span><span class="annot"><span class="annottext">Term
@@ -1069,4 +1078,4 @@ Maintainer  : julian.grove@gmail.com
 </span><span class="hs-string">&quot;sigma&quot;</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-number">0</span></span><span> </span><span class="annot"><span class="annottext">Term
 </span><span class="hs-number">1</span></span><span class="hs-special">)</span><span class="hs-special">)</span><span>
-</span><span id="line-147"></span></pre></body></html>
+</span><span id="line-153"></span></pre></body></html>

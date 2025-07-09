@@ -20,7 +20,7 @@ Maintainer  : julian.grove@gmail.com
 </span><span id="line-20"></span><span class="hs-comment">-- &#955;-term (@sem@).</span><span>
 </span><span id="line-21"></span><span class="hs-keyword">data</span><span> </span><span id="SynSem"><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-var">SynSem</span></a></span></span><span> </span><span class="hs-glyph">=</span><span> </span><span id="SynSem"><span class="annot"><a href="Framework.Grammar.Lexica.SynSem.html#SynSem"><span class="hs-identifier hs-var">SynSem</span></a></span></span><span> </span><span class="hs-special">{</span><span> </span><span id="syn"><span class="annot"><span class="annottext">SynSem -&gt; Cat
 </span><a href="Framework.Grammar.Lexica.SynSem.html#syn"><span class="hs-identifier hs-var hs-var">syn</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Grammar.CCG.html#Cat"><span class="hs-identifier hs-type">Cat</span></a></span><span class="hs-special">,</span><span> </span><span id="sem"><span class="annot"><span class="annottext">SynSem -&gt; Typed
-</span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var hs-var">sem</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Types.html#Typed"><span class="hs-identifier hs-type">Typed</span></a></span><span> </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077690"><span id="local-6989586621679077696"><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; Bool
+</span><a href="Framework.Grammar.Lexica.SynSem.html#sem"><span class="hs-identifier hs-var hs-var">sem</span></a></span></span><span> </span><span class="hs-glyph">::</span><span> </span><span class="annot"><a href="Framework.Lambda.Types.html#Typed"><span class="hs-identifier hs-type">Typed</span></a></span><span> </span><span class="hs-special">}</span><span> </span><span class="hs-keyword">deriving</span><span> </span><span class="hs-special">(</span><span id="local-6989586621679077717"><span id="local-6989586621679077723"><span class="annot"><span class="annottext">SynSem -&gt; SynSem -&gt; Bool
 (SynSem -&gt; SynSem -&gt; Bool)
 -&gt; (SynSem -&gt; SynSem -&gt; Bool) -&gt; Eq SynSem
 forall a. (a -&gt; a -&gt; Bool) -&gt; (a -&gt; a -&gt; Bool) -&gt; Eq a
@@ -28,7 +28,7 @@ $c== :: SynSem -&gt; SynSem -&gt; Bool
 == :: SynSem -&gt; SynSem -&gt; Bool
 $c/= :: SynSem -&gt; SynSem -&gt; Bool
 /= :: SynSem -&gt; SynSem -&gt; Bool
-</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077701"><span id="local-6989586621679077709"><span id="local-6989586621679077713"><span class="annot"><span class="annottext">Int -&gt; SynSem -&gt; ShowS
+</span><span class="hs-identifier hs-var hs-var hs-var hs-var hs-var hs-var">Eq</span></span></span></span><span class="hs-special">,</span><span> </span><span id="local-6989586621679077728"><span id="local-6989586621679077736"><span id="local-6989586621679077740"><span class="annot"><span class="annottext">Int -&gt; SynSem -&gt; ShowS
 [SynSem] -&gt; ShowS
 SynSem -&gt; String
 (Int -&gt; SynSem -&gt; ShowS)
