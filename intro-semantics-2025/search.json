@@ -1,0 +1,132 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This site contains materials the course Introduction to Semantics given by Julian Grove at the University of Florida during the Fall 2025 semester.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-instructor",
+    "href": "about.html#about-the-instructor",
+    "title": "About",
+    "section": "About the instructor",
+    "text": "About the instructor\nJulian Grove is an assistant professor in the Linguistics Department. Long story short, he is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics. You can find out more about his research interests by checking out his papers, slides, or perhaps even his cv.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-site",
+    "href": "about.html#about-the-site",
+    "title": "About",
+    "section": "About the site",
+    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/intro-semantics.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#license",
+    "href": "about.html#license",
+    "title": "About",
+    "section": "License ",
+    "text": "License \nIntroduction to Semantics by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/pds-2025.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to Intro to Semantics!1\nI’m Julian Grove - I’m an assistant professor in Linguistics Department (where this course is offered). (Check out the About page for more info about me and this site.)\nThe goals of this course are to acquaint you with the study of meaning in natural language. Specifically, the course’s aim is to equip you with a certain vocabulary of concepts, as well as a certain collection of methodological tools. This vocabulary and these tools will allow you to:\nThe first few weeks of the course will be more-or-less stage setting. Natural language semantics is a young field whose basic aims and guiding principles are somewhat in flux; so it will be useful to have this part of the course be dedicated to making these aims and principles fairly explicit. After these introductory weeks, we will get deep into the practice of doing semantics by focusing on a variety of empirical phenomena. The main acts will be verbs and their arguments, coordination, modification, anaphora, and quantification.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#attendance-and-class-participation",
+    "href": "index.html#attendance-and-class-participation",
+    "title": "Syllabus",
+    "section": "Attendance and class participation",
+    "text": "Attendance and class participation\nCome to class! Attendance won’t be graded, but you’re likely to do better in the course if you come than if you don’t.\nWhen you’re here, participate! You’ll get more out of the class if you do, and it’ll be more fun.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#assignments-and-grading",
+    "href": "index.html#assignments-and-grading",
+    "title": "Syllabus",
+    "section": "Assignments and grading",
+    "text": "Assignments and grading\n\nGrading\nYour work in this course will consist of sixteen (16) short written assignments—sometimes based on assigned readings—as well as an in-person final exam. Each written assignments will be a collection of responses to questions: some of these responses will have a mini-essay format, and some will be more like answers to problem sets (it’ll be clear in any given case what the expectation is). Each assignment will be available on this site, at the end of the set of notes to which the assignment corresponds. Please turn in a physical copy of your responses at the beginning of the class on which an assignment is due.\nThe written assignments will be graded on a 5-point scale, using the following rubric:\n\n5: you thoroughly engage with each question on the assignment. This means that you justify each of your responses (well!), as well as indicate that you have thought about its implications (e.g., if the truth of your response is likely to have any unintuitive consequences, you should note and explain these). Doing this well will be challenging and require you to think a lot.\nIf the assignment has questions requiring the application of analytical techniques that we have introduced in the course, you should apply these techniques correctly for full credit.\n4: you thoroughly engage with most, but not all, of the questions.\n3: you thoroughly engage with only a small part of the assignment and give shallow or cursory answers to most of it.\n2: you give shallow or cursory answers to all of the questions on the assignment.\n1: you barely do the assignment.\n0: you don’t even barely do the assignment.\n\nThe written assignments will account for 90% of your grade, and the final exam, for 10%. The final will take place from 10am-12pm on December 10th (place TBD). It will be formatted similarly to the assignments.\nThe following grading scale will be used to determine course grades:\n\n\n\n93.5 ≤ A ≤ 100\n89.5 ≤ A- &lt; 93.5\n\n\n\n86.5 ≤ B+ &lt; 89.5\n83.5 ≤ B &lt; 86.5\n79.5 ≤ B- &lt; 83.5\n\n\n76.5 ≤ C+ &lt; 79.5\n74 ≤ C &lt; 76.5\n69.5 ≤ C &lt; 74.5\n\n\n\n\n\nMissed or late work\nLate work will not be accepted unless you’ve arranged with me beforehand. If you need an extension, ask for one—just do it prior to the due date. No extra credit, sorry.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#zulip",
+    "href": "index.html#zulip",
+    "title": "Syllabus",
+    "section": "Zulip",
+    "text": "Zulip\nThere is a Zulip site for this course at uf-semantics-2025.zulipchat.com. We’ll use it to host discussions of the course material. You can post (and answer!) questions there. I will chime in, as well.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#university-honesty-policy",
+    "href": "index.html#university-honesty-policy",
+    "title": "Syllabus",
+    "section": "University Honesty Policy",
+    "text": "University Honesty Policy\nUF students are bound by The Honor Pledge which states, “We, the members of the University of Florida community, pledge to hold ourselves and our peers to the highest standards of honor and integrity by abiding by the Honor Code.” On all work submitted for credit by students at the University of Florida, the following pledge is either required or implied: “On my honor, I have neither given nor received unauthorized aid in doing this assignment.” The Honor Code (policy.ufl.edu/regulation/4-040/) specifies a number of behaviors that are in violation of this code and the possible sanctions. Furthermore, you are obligated to report any condition that facilitates academic misconduct to appropriate personnel. If you have any questions or concerns, please consult with the instructor.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#counseling-and-wellness-center",
+    "href": "index.html#counseling-and-wellness-center",
+    "title": "Syllabus",
+    "section": "Counseling and Wellness Center",
+    "text": "Counseling and Wellness Center\nContact information for the Counseling and Wellness Center:\n\ncounseling.ufl.edu\nPhone: 352.392.1575\n\nContact information for the University Police Department:\n\npolice.ufl.edu\nPhone: 352.392.1111",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#accommodations-for-students-with-disabilities",
+    "href": "index.html#accommodations-for-students-with-disabilities",
+    "title": "Syllabus",
+    "section": "Accommodations for Students with Disabilities",
+    "text": "Accommodations for Students with Disabilities\nStudents with disabilities requesting accommodations should first register with the Disability Resource Center (352.392.8565, disability.ufl.edu) by providing appropriate documentation. Once registered, students will receive an accommodation letter which must be presented to the instructor when requesting accommodation. Students with disabilities should follow this procedure as early as possible in the semester.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#calendar",
+    "href": "index.html#calendar",
+    "title": "Syllabus",
+    "section": "Calendar",
+    "text": "Calendar\n\n\n\n\n\n\n\n\n\nDate\nTopic\nReading\nAssignment\n\n\n\n\nFri., Aug. 22\nIntroduction\nFrankfurt (1986); Hicks, Humphries, and Slater (2024)\n\n\n\nMon., Aug. 25\nConvention\nLewis (1975)\nTBD\n\n\nWed., Aug. 27\nConvention\nGrice (1957)\n\n\n\nFri., Aug. 29\nSpeech acts\n\n\n\n\nWed., Sept. 3\nSpeech acts\n\n\n\n\nFri., Sept. 5\nSpeaker meaning\nGrice (1975)\nTBD\n\n\nMon., Sept. 8\nSpeaker meaning\n\n\n\n\nWed., Sept 10\nDiagnosing inference\n\nTBD\n\n\nFri., Sept. 12\nDiagnosing inference\n\n\n\n\nMon., Sept. 15\nWhat should go into a theory of meaning?\nBach (2006); Szabó (2020) (§§3–4)\n\n\n\nWed., Sept. 17\nSets and set theory\n\nTBD\n\n\nFri., Sept. 19\nFunctions, relations, and languages\n\n\n\n\nMon., Sept. 22\nModels\n\n\n\n\nWed., Sept. 24\nArabic numeral arithmetic\n\nTBD\n\n\nFri., Sept. 26\nArabic numeral arithmetic\n\n\n\n\nMon., Sept. 29\nLambda notation and types\nWinter (2016) (Ch. 3, pp. 44–64)\nTBD\n\n\nWed., Oct. 1\nLambda notation and types\nWinter (2016) (Ch. 3, pp. 64-72)\n\n\n\nFri., Oct. 3\nIntransitive verbs\n\nTBD\n\n\nMon., Oct. 6\nIntransitive verbs\n\n\n\n\nWed., Oct. 8\nTransitive verbs\n\nTBD\n\n\nFri., Oct. 10\nTransitive verbs\n\n\n\n\nMon., Oct. 13\nApplicative categorial grammar\n\nTBD\n\n\nWed., Oct. 15\nApplicative categorial grammar\n\n\n\n\nFri., Oct. 17\nGrammars and models\n\n\n\n\nMon., Oct. 20\nVerbs and arguments redux\n\nTBD\n\n\nWed., Oct. 22\nVerbs and arguments redux\n\n\n\n\nFri., Oct. 24\nCoordinators\n\nTBD\n\n\nMon., Oct. 27\nCoordinators\n\n\n\n\nWed., Oct. 29\nAdjectives\nKennedy (2012)\nTBD\n\n\nFri., Oct. 31\nAdjectives\n\n\n\n\nMon., Nov. 3\nAdjectives\n\n\n\n\nWed., Nov. 5\nPronouns\n\nTBD\n\n\nFri., Nov. 7\nPronouns\n\n\n\n\nMon., Nov. 10\nPronouns\n\n\n\n\nWed., Nov. 12\nQuantifiers\n\nTBD\n\n\nFri., Nov. 14\nQuantifiers\n\n\n\n\nMon., Nov. 17\nQuantifiers\n\nTBD\n\n\nWed., Nov. 19\nNegative polarity items\n\n\n\n\nFri., Nov. 21\nQuantifiers and binding\n\nTBD\n\n\nMon., Dec. 1\nQuantifiers and binding\n\n\n\n\nWed., Dec. 3\nQuantifiers and binding",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Syllabus",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nListed as both LIN4803 and LIN6804 at one.uf.edu.↩︎",
+    "crumbs": [
+      "Syllabus"
+    ]
+  }
+]
