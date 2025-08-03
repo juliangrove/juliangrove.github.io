@@ -1,0 +1,113 @@
+[
+  {
+    "objectID": "qud/index.html",
+    "href": "qud/index.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Note\n\n\n\nThese notes will become available on June 27."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This site contains materials for a course on Probabilistic dynamic semantics given by Julian Grove and Aaron Steven White at ESSLLI 2025, held at the Ruhr Universtät Bochum from August 4–8, 2025.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-instructors",
+    "href": "about.html#about-the-instructors",
+    "title": "About",
+    "section": "About the instructors",
+    "text": "About the instructors\nJulian Grove is a postdoctoral researcher in Linguistics at the University of Rochester and a member of the Formal and Computational Semantics lab (FACTS.lab). He is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics. He will be an Assistant Professor of Semantics and Computational Linguistics at the University of Florida starting in August, 2025.\nAaron Steven White is an Associate Professor of Linguistics and Computer Science at the University of Rochester, where he directs the Center for Language Sciences and the Formal and Computational Semantics lab (FACTS.lab). His research investigates the relationship between linguistic expressions and conceptual categories that undergird the human ability to convey information about possible past, present, and future configurations of things in the world.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-site",
+    "href": "about.html#about-the-site",
+    "title": "About",
+    "section": "About the site",
+    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/pds-2025.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#acknowledgments",
+    "href": "about.html#acknowledgments",
+    "title": "About",
+    "section": "Acknowledgments",
+    "text": "Acknowledgments\nThe materials for Module 3 were developed partly in collaboration with Helena Aparicio.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#license",
+    "href": "about.html#license",
+    "title": "About",
+    "section": "License ",
+    "text": "License \nProbabilistic dynamic semantics by Julian Grove and Aaron Steven White is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on work at https://github.com/juliangrove/pds-2025.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "adjectives/adjectives.html",
+    "href": "adjectives/adjectives.html",
+    "title": "Gradable adjectives",
+    "section": "",
+    "text": "Note\n\n\n\nThis module will become available on August 7.",
+    "crumbs": [
+      "Gradable adjectives",
+      "Gradable adjectives"
+    ]
+  },
+  {
+    "objectID": "factivity/factivity.html",
+    "href": "factivity/factivity.html",
+    "title": "Factivity",
+    "section": "",
+    "text": "Note\n\n\n\nThis module will become available on August 8.",
+    "crumbs": [
+      "Factivity inferences",
+      "Factivity"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Probabilistic dynamic semantics",
+    "section": "",
+    "text": "Outline\nThe recent advent of linguistic datasets and their associated statistical models have given rise to two major kinds of questions bearing on linguistic theory and methodology:\n\nHow can semanticists use such datasets? That is, how can the statistical properties of a dataset inform semantic theory directly, and what guiding principles regulate the link between such properties and semantic theory?\nHow should semantic theories themselves be modified so that they may characterize not only informally collected acceptability and inference judgments, but statistical generalizations observed from datasets?\n\nThis course brings the compositional, algebraic view of meaning employed by semanticists into contact with linguistic datasets by introducing and applying the framework of Probabilistic Dynamic Semantics (Grove and White 2024a, 2025, 2024b). PDS seamlessly integrates theories of semantic competence with accounts of linguistic behavior in experimental settings by taking a modular approach: given a dataset involving some semantic phenomenon, and which exhibits certain statistical properties, this course offers an approach to developing both (a) theories of the meanings assigned to the expressions present in the dataset, and (b) linking hypotheses that directly relate these theories to linguistic behavior.\n\n\nExisting probabilistic approaches to meaning\nThe ideas developed in this course build on and respond to existing probabilistic approaches to semantics and pragmatics, including those which use computational modeling to characterize inference (Zeevat and Schmitz 2015; Franke and Jäger 2016; Brasoveanu and Dotlačil 2020; Bernardy et al. 2022; Noah D. Goodman, Tenenbaum, and Contributors 2016). Such models are motivated, in part, by the observation that linguistic inference tends to display substantial gradience, giving rise to quantitative patterns that traditional semantic theory has difficulty capturing. Meanwhile, they often aim to explain Gricean linguistic behavior (Grice 1975) by regarding humans as Bayesian reasoners. Indeed, due to this emphasis on pragmatic principles, much modeling work blurs the semantics/pragmatics distinction, rendering the connection to traditional semantic theory somewhat opaque.\nTo take a paradigm case, models within the Rational Speech Act (RSA) framework consider human interpreters as inferring meanings for an utterance which maximize the utterance’s utility relative to a set of possible alternative utterances (Frank and Goodman 2012; Lassiter 2011; Noah D. Goodman and Stuhlmüller 2013; Noah D. Goodman and Frank 2016; Lassiter and Goodman 2017; Degen 2023). Probabilistic models of linguistic inference, including RSA, tend to encode Bayesian principles of probabilistic update in terms of Bayes’ theorem, which states that the posterior probability of an event given an observation is proportional to the prior probability of the event, multiplied by the likelihood of the observation given the event. RSA models give an explicit operational interpretation to Bayes’ theorem by assuming that prior distributions over inferences encode world knowledge, and that likelihoods represent the utility-maximizing behavior of a pragmatic speaker.\nDespite their success in modeling a wide variety of semantic and pragmatic phenomena, probabilistic models of linguistic data remain largely divorced from semantic and pragmatic practice, both in theory and in implementation. RSA models, for example, regard the semantic interpretations which humans pragmatically reason about as being provided by a literal listener that determines a distribution over inferences, given an utterance (Degen 2023). But aside from the constraint that the literal listener’s posterior distribution is proportional to its prior distribution (i.e., that it acts as a filter), the semantic components of RSA models are generally designed by researchers on an ad hoc basis: on the one hand, the space (I) of possible inferences must be decided by individual researchers in a way that depends on the task being modeled; on the other hand, the relation (⟦·⟧) between utterances and inferences is often assumed without a justified connection to any semantic theory using, e.g., an explicit grammar fragment in the style of Montague (1973).\n\n\nPDS as a bridge between probabilistic models and semantic theory\nGiven this background, this course introduces a novel approach to probabilistic meaning which integrates traditional Montague semantics, as well as ideas in compositional dynamic semantics, with probabilistic computational models in a completely seamless fashion. The theoretical framework and methodology we introduce retain the beneficial features of both kinds of approach to meaning: PDS may be used to construct probabilistic models of human inference data, and it is in principle compatible with existing probabilistic modeling paradigms such as RSA; meanwhile, it seamlessly connects probabilistic models to compositional dynamic semantics in the Montagovian tradition by providing a setting to write full-fledged grammar fragments.\nPDS additionally provides a theory of dynamic discourse update, integrating aspects of discourse such as the common ground, the question under discussion (Ginzburg 1996; Roberts 2012; Farkas and Bruce 2010), and uncertainty about lexical meaning. Crucially, given a semantic theory of some discourse phenomenon couched with PDS, one may obtain a probabilistic model of some linguistic dataset, given a particular response function (Grove and White 2024a, 2025, 2024b). We introduce PDS in the context empirical datasets studying factivity, gradable adjectives, and the question under discussion.\n\n\n\n\n\n\n\nReferences\n\nBernardy, Jean-Philippe, Rasmus Blanck, Stergios Chatzikyriakidis, and Aleksandre Maskharashvili. 2022. “Bayesian Natural Language Semantics and Pragmatics.” In Probabilistic Approaches to Linguistic Theory, edited by Jean-Philippe Bernardy, Rasmus Blanck, Stergios Chatzikyriakidis, Shalom Lappin, and Aleksandre Maskharashvili. CSLI Publications.\n\n\nBrasoveanu, Adrian, and Jakub Dotlačil. 2020. Computational Cognitive Modeling and Linguistic Theory. Vol. 6. Language, Cognition, and Mind. Cham: Springer International Publishing. https://doi.org/10.1007/978-3-030-31846-8.\n\n\nDegen, Judith. 2023. “The Rational Speech Act Framework.” Annual Review of Linguistics 9 (Volume 9, 2023): 519–40. https://doi.org/10.1146/annurev-linguistics-031220-010811.\n\n\nFarkas, Donka F., and Kim B. Bruce. 2010. “On Reacting to Assertions and Polar Questions.” Journal of Semantics 27 (1): 81–118. https://doi.org/10.1093/jos/ffp010.\n\n\nFrank, Michael C., and Noah D. Goodman. 2012. “Predicting Pragmatic Reasoning in Language Games.” Science 336 (6084): 998–98. https://doi.org/10.1126/science.1218633.\n\n\nFranke, Michael, and Gerhard Jäger. 2016. “Probabilistic Pragmatics, or Why Bayes’ Rule Is Probably Important for Pragmatics.” Zeitschrift Für Sprachwissenschaft 35 (1): 3–44. https://doi.org/10.1515/zfs-2016-0002.\n\n\nGinzburg, Jonathan. 1996. “Dynamics and the Semantics of Dialogue.” In Logic, Language, and Computation, edited by Jerry Seligman and Dag Westerståhl, 1:221–37. Stanford: CSLI Publications.\n\n\nGoodman, Noah D., and Michael C. Frank. 2016. “Pragmatic Language Interpretation as Probabilistic Inference.” Trends in Cognitive Sciences 20 (11): 818–29. https://doi.org/10.1016/j.tics.2016.08.005.\n\n\nGoodman, Noah D., and Andreas Stuhlmüller. 2013. “Knowledge and Implicature: Modeling Language Understanding as Social Cognition.” Topics in Cognitive Science 5 (1): 173–84. https://doi.org/10.1111/tops.12007.\n\n\nGoodman, Noah D, Joshua B. Tenenbaum, and The ProbMods Contributors. 2016. “Probabilistic Models of Cognition.” http://probmods.org/v2.\n\n\nGrice, H. Paul. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts:41–58. New York: Academic Press.\n\n\nGrove, Julian, and Aaron Steven White. 2024a. “Factivity, Presupposition Projection, and the Role of Discrete Knowlege in Gradient Inference Judgments.” LingBuzz. https://ling.auf.net/lingbuzz/007450.\n\n\n———. 2024b. “Probabilistic Dynamic Semantics.” University of Rochester. https://ling.auf.net/lingbuzz/008478.\n\n\n———. 2025. “Modeling the Prompt in Inference Judgment Tasks.” Experiments in Linguistic Meaning 3 (January): 176–87. https://doi.org/10.3765/elm.3.5857.\n\n\nLassiter, Daniel. 2011. “Vagueness as Probabilistic Linguistic Knowledge.” In Vagueness in Communication, edited by Rick Nouwen, Robert van Rooij, Uli Sauerland, and Hans-Christian Schmitz, 127–50. Lecture Notes in Computer Science. Berlin, Heidelberg: Springer. https://doi.org/10.1007/978-3-642-18446-8_8.\n\n\nLassiter, Daniel, and Noah D. Goodman. 2017. “Adjectival Vagueness in a Bayesian Model of Interpretation.” Synthese 194 (10): 3801–36. https://doi.org/10.1007/s11229-015-0786-1.\n\n\nMontague, Richard. 1973. “The Proper Treatment of Quantification in Ordinary English.” In Approaches to Natural Language: Proceedings of the 1970 Stanford Workshop on Grammar and Semantics, edited by K. J. J. Hintikka, J. M. E. Moravcsik, and P. Suppes, 221–42. Synthese Library. Dordrecht: Springer Netherlands. https://doi.org/10.1007/978-94-010-2506-5_10.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6.\n\n\nZeevat, Henk, and Hans-Christian Schmitz, eds. 2015. Bayesian Natural Language Semantics and Pragmatics. Vol. 2. Language, Cognition, and Mind. Cham: Springer International Publishing. https://doi.org/10.1007/978-3-319-17064-0.",
+    "crumbs": [
+      "Probabilistic dynamic semantics"
+    ]
+  },
+  {
+    "objectID": "background/background.html",
+    "href": "background/background.html",
+    "title": "Background",
+    "section": "",
+    "text": "Note\n\n\n\nThis module will become available on August 4.",
+    "crumbs": [
+      "Background",
+      "Background"
+    ]
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html",
+    "href": "pds-intro/pds-intro.html",
+    "title": "Introdution to probabilitsic dynamic semantics",
+    "section": "",
+    "text": "Note\n\n\n\nThis module will become available on August 5 and 6.",
+    "crumbs": [
+      "Introduction to probabilistic dynamic semantics",
+      "Introdution to probabilitsic dynamic semantics"
+    ]
+  }
+]
