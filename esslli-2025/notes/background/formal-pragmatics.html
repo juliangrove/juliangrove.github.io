@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Probabilistic dynamic semantics</title>
+<title>Formal pragmatics – Probabilistic dynamic semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,25 +78,25 @@ div.csl-indent {
 }</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./background/theory-to-data.html" rel="next">
-<link href="./about.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-11cbd3234f06388db87dcfbb7d560d62.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3c5b3ed224f457cdcbda003fac2adf13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../background/experimental-turn.html" rel="next">
+<link href="../background/theory-to-data.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-11cbd3234f06388db87dcfbb7d560d62.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3c5b3ed224f457cdcbda003fac2adf13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -125,8 +125,37 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -138,7 +167,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Probabilistic dynamic semantics</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../background/theory-to-data.html">Background</a></li><li class="breadcrumb-item"><a href="../background/formal-pragmatics.html">Formal pragmatics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +182,7 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Probabilistic dynamic semantics</a> 
+      <a href="../">Probabilistic dynamic semantics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -165,13 +194,13 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Probabilistic dynamic semantics</span></a>
   </div>
 </li>
@@ -186,49 +215,49 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/theory-to-data.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/theory-to-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">From theory to data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/formal-pragmatics.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/formal-pragmatics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Formal pragmatics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/experimental-turn.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The experimental turn</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/understanding-gradience.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/understanding-gradience.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Understanding gradience</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/case-studies.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/case-studies.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Two case studies</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/new-frameworks.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/new-frameworks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The need for new frameworks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/rsa.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/rsa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Rational Speech Act models</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./background/setting-stage.html" class="sidebar-item-text sidebar-link">
+  <a href="../background/setting-stage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting the stage</span></a>
   </div>
 </li>
@@ -245,7 +274,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pds-intro/pds-intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../pds-intro/pds-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introdution to probabilitsic dynamic semantics</span></a>
   </div>
 </li>
@@ -262,7 +291,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./adjectives/adjectives.html" class="sidebar-item-text sidebar-link">
+  <a href="../adjectives/adjectives.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Gradable adjectives</span></a>
   </div>
 </li>
@@ -279,7 +308,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./factivity/factivity.html" class="sidebar-item-text sidebar-link">
+  <a href="../factivity/factivity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Factivity</span></a>
   </div>
 </li>
@@ -295,18 +324,17 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline">Outline</a></li>
-  <li><a href="#existing-probabilistic-approaches-to-meaning" id="toc-existing-probabilistic-approaches-to-meaning" class="nav-link" data-scroll-target="#existing-probabilistic-approaches-to-meaning">Existing probabilistic approaches to meaning</a></li>
-  <li><a href="#pds-as-a-bridge-between-probabilistic-models-and-semantic-theory" id="toc-pds-as-a-bridge-between-probabilistic-models-and-semantic-theory" class="nav-link" data-scroll-target="#pds-as-a-bridge-between-probabilistic-models-and-semantic-theory">PDS as a bridge between probabilistic models and semantic theory</a></li>
+  <li><a href="#dynamic-semantics" id="toc-dynamic-semantics" class="nav-link active" data-scroll-target="#dynamic-semantics">Dynamic semantics</a></li>
+  <li><a href="#enriching-the-state" id="toc-enriching-the-state" class="nav-link" data-scroll-target="#enriching-the-state">Enriching the state</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../background/theory-to-data.html">Background</a></li><li class="breadcrumb-item"><a href="../background/formal-pragmatics.html">Formal pragmatics</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Probabilistic dynamic semantics</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Formal pragmatics</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -323,25 +351,43 @@ div.csl-indent {
 </header>
 
 
-<section id="outline" class="level1">
-<h1>Outline</h1>
-<p>The recent advent of linguistic datasets and their associated statistical models have given rise to two major kinds of questions bearing on linguistic theory and methodology:</p>
-<ul>
-<li>How can semanticists <em>use</em> such datasets? That is, how can the statistical properties of a dataset inform semantic theory directly, and what guiding principles regulate the link between such properties and semantic theory?</li>
-<li>How should semantic theories themselves be <em>modified</em> so that they may characterize not only informally collected acceptability and inference judgments, but statistical generalizations observed from datasets?</li>
-</ul>
-<p>This course brings the compositional, algebraic view of meaning employed by semanticists into contact with linguistic datasets by introducing and applying the framework of Probabilistic Dynamic Semantics <span class="citation" data-cites="grove_factivity_2024 grove_modeling_2025 grove_probabilistic_2024">(<a href="#ref-grove_factivity_2024" role="doc-biblioref">Grove and White 2024a</a>, <a href="#ref-grove_modeling_2025" role="doc-biblioref">2025</a>, <a href="#ref-grove_probabilistic_2024" role="doc-biblioref">2024b</a>)</span>. PDS seamlessly integrates theories of semantic competence with accounts of linguistic behavior in experimental settings by taking a modular approach: given a dataset involving some semantic phenomenon, and which exhibits certain statistical properties, this course offers an approach to developing both (a) <em>theories</em> of the meanings assigned to the expressions present in the dataset, and (b) <em>linking hypotheses</em> that directly relate these theories to linguistic behavior.</p>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
+</div>
+<section id="dynamic-semantics" class="level3">
+<h3 class="anchored" data-anchor-id="dynamic-semantics">Dynamic semantics</h3>
+<p>One of the major success stories of formal semantics has been its ability to model the dynamics of conversation. Since the eighties, which gave rise to foundational frameworks such as, e.g., discourse representation theory <span class="citation" data-cites="kamp_theory_1981">(<a href="#ref-kamp_theory_1981" role="doc-biblioref">Kamp 1981</a>)</span> and file-change semantics <span class="citation" data-cites="heim_semantics_1982">(<a href="#ref-heim_semantics_1982" role="doc-biblioref">Heim 1982</a>)</span>,<em>dynamic</em> semantics has been concerned with aspects of interpretation that both depend on earlier parts of a discourse and inform later parts. The interpretations of pronouns in one part of a discourse my depend on the non-determinism produced by an indefinite noun phrase in some earlier part, for example.</p>
+<ol class="example" type="1">
+<li>Some linguist walked in. They gave a lecture.</li>
+</ol>
+<p>In (1), the interpretation of the pronoun <em>they</em> co-varies with the interpretation of the noun phrase <em>some linguist</em>; as a result, (1) is true just in case there is a linguist who walked in and gave a lecture. Such cross-sentential co-variation in the face of non-determinism of the kind introduced by the indefinite has been modeled in various dynamic frameworks. What such frameworks tend to have in common is that they keep track of some notion of a <em>state</em>. The framework of <span class="citation" data-cites="heim_semantics_1982">Heim (<a href="#ref-heim_semantics_1982" role="doc-biblioref">1982</a>)</span>, for instance, regards this state as (effectively) an assignment function, which conveniently keeps track of the possible referents of indefinite noun phrases and pronouns.</p>
+<p>Different frameworks differ in how they manage states. Approaches in the style of <span class="citation" data-cites="groenendijk_dynamic_1991">Groenendijk and Stokhof (<a href="#ref-groenendijk_dynamic_1991" role="doc-biblioref">1991</a>)</span> and <span class="citation" data-cites="muskens_combining_1996">Muskens (<a href="#ref-muskens_combining_1996" role="doc-biblioref">1996</a>)</span>, for instance, treat sentence meanings as relations on states, or equivalently, as functions from input states to sets of output states (those to which the input state is related); i.e., functions of type <span class="math inline">\(σ → σ → t\)</span>, where <span class="math inline">\(σ\)</span> is the type of states (whatever that happens to be). If the state of a discourse keeps track of entities introduced by indefinite noun phrases, then the first sentence of (1) might be assigned the interpretation in (2), while the second sentence might be assigned the interpretation in (3).</p>
+<ol start="2" class="example" type="1">
+<li><p><span class="math inline">\(λs.\{ x{::}s^{\prime} ∣ s^{\prime} = s ∧ \ct{ling}(x) ∧ \ct{walk}(x)\}\)</span></p></li>
+<li><p><span class="math inline">\(λs.\{ s^{\prime} ∣ s^{\prime} = s ∧ \ct{lecture}(\ct{sel}(s))\}\)</span></p></li>
+</ol>
+<p>Here we use the state-modifying notation of <span class="citation" data-cites="de_groote_towards_2006">Groote (<a href="#ref-de_groote_towards_2006" role="doc-biblioref">2006</a>)</span>: `<span class="math inline">\(x{::}s\)</span>’ is meant to denote the result of updating <span class="math inline">\(s\)</span> with the entity <span class="math inline">\(x\)</span>, while <span class="math inline">\(\ct{sel}(s)\)</span> is some way of selecting an entity from the state <span class="math inline">\(s\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Thus the first sentence of (1) is interpreted as a function that non-deterministically modifies input states by introducing a new entity (in particular, a linguist who walked in), while the second sentence is interpreted as a function from an input state to the singleton set containing that state or to the empty set, as according to whether an entity can be selected from that input state which gave a lecture.</p>
 </section>
-<section id="existing-probabilistic-approaches-to-meaning" class="level1">
-<h1>Existing probabilistic approaches to meaning</h1>
-<p>The ideas developed in this course build on and respond to existing probabilistic approaches to semantics and pragmatics, including those which use computational modeling to characterize inference <span class="citation" data-cites="zeevat_bayesian_2015 franke_probabilistic_2016 brasoveanu_computational_2020 bernardy_bayesian_2022 goodman_probabilistic_2016">(<a href="#ref-zeevat_bayesian_2015" role="doc-biblioref">Zeevat and Schmitz 2015</a>; <a href="#ref-franke_probabilistic_2016" role="doc-biblioref">Franke and Jäger 2016</a>; <a href="#ref-brasoveanu_computational_2020" role="doc-biblioref">Brasoveanu and Dotlačil 2020</a>; <a href="#ref-bernardy_bayesian_2022" role="doc-biblioref">Bernardy et al. 2022</a>; <a href="#ref-goodman_probabilistic_2016" role="doc-biblioref">Noah D. Goodman, Tenenbaum, and Contributors 2016</a>)</span>. Such models are motivated, in part, by the observation that linguistic inference tends to display substantial <em>gradience</em>, giving rise to quantitative patterns that traditional semantic theory has difficulty capturing. Meanwhile, they often aim to explain Gricean linguistic behavior <span class="citation" data-cites="grice_logic_1975">(<a href="#ref-grice_logic_1975" role="doc-biblioref">Grice 1975</a>)</span> by regarding humans as Bayesian reasoners. Indeed, due to this emphasis on pragmatic principles, much modeling work blurs the semantics/pragmatics distinction, rendering the connection to traditional semantic theory somewhat opaque.</p>
-<p>To take a paradigm case, models within the Rational Speech Act (RSA) framework consider human interpreters as inferring meanings for an utterance which maximize the utterance’s utility relative to a set of possible alternative utterances <span class="citation" data-cites="frank_predicting_2012 lassiter_vagueness_2011 goodman_knowledge_2013 goodman_pragmatic_2016 lassiter_adjectival_2017 degen_rational_2023">(<a href="#ref-frank_predicting_2012" role="doc-biblioref">Frank and Goodman 2012</a>; <a href="#ref-lassiter_vagueness_2011" role="doc-biblioref">Lassiter 2011</a>; <a href="#ref-goodman_knowledge_2013" role="doc-biblioref">Noah D. Goodman and Stuhlmüller 2013</a>; <a href="#ref-goodman_pragmatic_2016" role="doc-biblioref">Noah D. Goodman and Frank 2016</a>; <a href="#ref-lassiter_adjectival_2017" role="doc-biblioref">Lassiter and Goodman 2017</a>; <a href="#ref-degen_rational_2023" role="doc-biblioref">Degen 2023</a>)</span>. Probabilistic models of linguistic inference, including RSA, tend to encode Bayesian principles of probabilistic update in terms of <em>Bayes’ theorem</em>, which states that the posterior probability of an event given an observation is proportional to the prior probability of the event, multiplied by the likelihood of the observation given the event. RSA models give an explicit operational interpretation to Bayes’ theorem by assuming that prior distributions over inferences encode world knowledge, and that likelihoods represent the utility-maximizing behavior of a pragmatic speaker.</p>
-<p>Despite their success in modeling a wide variety of semantic and pragmatic phenomena, probabilistic models of linguistic data remain largely divorced from semantic and pragmatic practice, both in theory and in implementation. RSA models, for example, regard the semantic interpretations which humans pragmatically reason about as being provided by a <em>literal listener</em> that determines a distribution over inferences, given an utterance <span class="citation" data-cites="degen_rational_2023">(<a href="#ref-degen_rational_2023" role="doc-biblioref">Degen 2023</a>)</span>. But aside from the constraint that the literal listener’s posterior distribution is proportional to its prior distribution (i.e., that it acts as a filter), the semantic components of RSA models are generally designed by researchers on an <em>ad hoc</em> basis: on the one hand, the space (I) of possible inferences must be decided by individual researchers in a way that depends on the task being modeled; on the other hand, the relation (⟦·⟧) between utterances and inferences is often assumed without a justified connection to any semantic theory using, e.g., an explicit grammar fragment in the style of <span class="citation" data-cites="montague_proper_1973">Montague (<a href="#ref-montague_proper_1973" role="doc-biblioref">1973</a>)</span>.</p>
-</section>
-<section id="pds-as-a-bridge-between-probabilistic-models-and-semantic-theory" class="level1">
-<h1>PDS as a bridge between probabilistic models and semantic theory</h1>
-<p>Given this background, this course introduces a novel approach to probabilistic meaning which integrates traditional Montague semantics, as well as ideas in compositional dynamic semantics, with probabilistic computational models in a completely seamless fashion. The theoretical framework and methodology we introduce retain the beneficial features of both kinds of approach to meaning: PDS may be used to construct probabilistic models of human inference data, and it is in principle compatible with existing probabilistic modeling paradigms such as RSA; meanwhile, it seamlessly connects probabilistic models to compositional dynamic semantics in the Montagovian tradition by providing a setting to write full-fledged grammar fragments.</p>
-<p>PDS additionally provides a theory of dynamic discourse update, integrating aspects of discourse such as the common ground, the question under discussion <span class="citation" data-cites="ginzburg_dynamics_1996 roberts_information_2012 farkas_reacting_2010">(<a href="#ref-ginzburg_dynamics_1996" role="doc-biblioref">Ginzburg 1996</a>; <a href="#ref-roberts_information_2012" role="doc-biblioref">Roberts 2012</a>; <a href="#ref-farkas_reacting_2010" role="doc-biblioref">Farkas and Bruce 2010</a>)</span>, and uncertainty about lexical meaning. Crucially, given a semantic theory of some discourse phenomenon couched with PDS, one may obtain a probabilistic model of some linguistic dataset, given a particular <em>response function</em> <span class="citation" data-cites="grove_factivity_2024 grove_modeling_2025 grove_probabilistic_2024">(<a href="#ref-grove_factivity_2024" role="doc-biblioref">Grove and White 2024a</a>, <a href="#ref-grove_modeling_2025" role="doc-biblioref">2025</a>, <a href="#ref-grove_probabilistic_2024" role="doc-biblioref">2024b</a>)</span>. We introduce PDS in the context empirical datasets studying factivity, gradable adjectives, and the question under discussion.</p>
+<section id="enriching-the-state" class="level3">
+<h3 class="anchored" data-anchor-id="enriching-the-state">Enriching the state</h3>
+<p>Much work has built on these ideas by enriching the notion of a state to countenance broader aspects of the structure of discourse. For example, the question under discussion <span class="citation" data-cites="roberts_information_2012 ginzburg_dynamics_1996">(QUD, <a href="#ref-roberts_information_2012" role="doc-biblioref">Roberts 2012</a>; <a href="#ref-ginzburg_dynamics_1996" role="doc-biblioref">Ginzburg 1996</a>)</span>—the question whose resolution is the goal of a given discourse—along with the common ground—the set of propositions mutually taken for granted among discourse participants <span class="citation" data-cites="stalnaker_assertion_1978">(<a href="#ref-stalnaker_assertion_1978" role="doc-biblioref">Stalnaker 1978</a>)</span>—are incorporated into a formal definition of the <em>context</em> of a given discourse by <span class="citation" data-cites="farkas_reacting_2010">Farkas and Bruce (<a href="#ref-farkas_reacting_2010" role="doc-biblioref">2010</a>)</span>. In addition to the common ground and a stack of QUDs, <span class="citation" data-cites="farkas_reacting_2010">Farkas and Bruce (<a href="#ref-farkas_reacting_2010" role="doc-biblioref">2010</a>)</span> incorporate into their representation of context the notion of a <em>projected set</em>. These are sets of possible new common grounds which are updated by new assertions and questions, and which must be accepted before the common ground itself is updated.</p>
+<p>As we’ll see in <a href="../pds-intro/overview.html">the next module</a>, a flexible notion of state that incorporates representations of both the common ground and the QUD will be crucial for the success of PDS.</p>
 
 
 <!-- -->
@@ -349,65 +395,41 @@ div.csl-indent {
 
 </section>
 
+
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-bernardy_bayesian_2022" class="csl-entry" role="listitem">
-Bernardy, Jean-Philippe, Rasmus Blanck, Stergios Chatzikyriakidis, and Aleksandre Maskharashvili. 2022. <span>“Bayesian <span>Natural</span> <span>Language</span> <span>Semantics</span> and <span>Pragmatics</span>.”</span> In <em>Probabilistic <span>Approaches</span> to <span>Linguistic</span> <span>Theory</span></em>, edited by Jean-Philippe Bernardy, Rasmus Blanck, Stergios Chatzikyriakidis, Shalom Lappin, and Aleksandre Maskharashvili. CSLI Publications.
-</div>
-<div id="ref-brasoveanu_computational_2020" class="csl-entry" role="listitem">
-Brasoveanu, Adrian, and Jakub Dotlačil. 2020. <em>Computational <span>Cognitive</span> <span>Modeling</span> and <span>Linguistic</span> <span>Theory</span></em>. Vol. 6. Language, <span>Cognition</span>, and <span>Mind</span>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-31846-8">https://doi.org/10.1007/978-3-030-31846-8</a>.
-</div>
-<div id="ref-degen_rational_2023" class="csl-entry" role="listitem">
-Degen, Judith. 2023. <span>“The <span>Rational</span> <span>Speech</span> <span>Act</span> <span>Framework</span>.”</span> <em>Annual Review of Linguistics</em> 9 (Volume 9, 2023): 519–40. <a href="https://doi.org/10.1146/annurev-linguistics-031220-010811">https://doi.org/10.1146/annurev-linguistics-031220-010811</a>.
-</div>
 <div id="ref-farkas_reacting_2010" class="csl-entry" role="listitem">
 Farkas, Donka F., and Kim B. Bruce. 2010. <span>“On <span>Reacting</span> to <span>Assertions</span> and <span>Polar</span> <span>Questions</span>.”</span> <em>Journal of Semantics</em> 27 (1): 81–118. <a href="https://doi.org/10.1093/jos/ffp010">https://doi.org/10.1093/jos/ffp010</a>.
-</div>
-<div id="ref-frank_predicting_2012" class="csl-entry" role="listitem">
-Frank, Michael C., and Noah D. Goodman. 2012. <span>“Predicting <span>Pragmatic</span> <span>Reasoning</span> in <span>Language</span> <span>Games</span>.”</span> <em>Science</em> 336 (6084): 998–98. <a href="https://doi.org/10.1126/science.1218633">https://doi.org/10.1126/science.1218633</a>.
-</div>
-<div id="ref-franke_probabilistic_2016" class="csl-entry" role="listitem">
-Franke, Michael, and Gerhard Jäger. 2016. <span>“Probabilistic Pragmatics, or Why <span>Bayes</span>’ Rule Is Probably Important for Pragmatics.”</span> <em>Zeitschrift Für Sprachwissenschaft</em> 35 (1): 3–44. <a href="https://doi.org/10.1515/zfs-2016-0002">https://doi.org/10.1515/zfs-2016-0002</a>.
 </div>
 <div id="ref-ginzburg_dynamics_1996" class="csl-entry" role="listitem">
 Ginzburg, Jonathan. 1996. <span>“Dynamics and the Semantics of Dialogue.”</span> In <em>Logic, <span>Language</span>, and <span>Computation</span></em>, edited by Jerry Seligman and Dag Westerståhl, 1:221–37. Stanford: CSLI Publications.
 </div>
-<div id="ref-goodman_pragmatic_2016" class="csl-entry" role="listitem">
-Goodman, Noah D., and Michael C. Frank. 2016. <span>“Pragmatic <span>Language</span> <span>Interpretation</span> as <span>Probabilistic</span> <span>Inference</span>.”</span> <em>Trends in Cognitive Sciences</em> 20 (11): 818–29. <a href="https://doi.org/10.1016/j.tics.2016.08.005">https://doi.org/10.1016/j.tics.2016.08.005</a>.
+<div id="ref-groenendijk_dynamic_1991" class="csl-entry" role="listitem">
+Groenendijk, Jeroen A., and Martin B. J. Stokhof. 1991. <span>“Dynamic <span>Predicate</span> <span>Logic</span>.”</span> <em>Linguistics and Philosophy</em> 14 (1): 39–100. <a href="https://doi.org/10.1007/BF00628304">https://doi.org/10.1007/BF00628304</a>.
 </div>
-<div id="ref-goodman_knowledge_2013" class="csl-entry" role="listitem">
-Goodman, Noah D., and Andreas Stuhlmüller. 2013. <span>“Knowledge and Implicature: Modeling Language Understanding as Social Cognition.”</span> <em>Topics in Cognitive Science</em> 5 (1): 173–84. <a href="https://doi.org/10.1111/tops.12007">https://doi.org/10.1111/tops.12007</a>.
+<div id="ref-de_groote_towards_2006" class="csl-entry" role="listitem">
+Groote, Philippe de. 2006. <span>“Towards a <span>Montagovian</span> <span>Account</span> of <span>Dynamics</span>.”</span> <em>Semantics and Linguistic Theory</em> 16 (0): 1–16. <a href="https://doi.org/10.3765/salt.v16i0.2952">https://doi.org/10.3765/salt.v16i0.2952</a>.
 </div>
-<div id="ref-goodman_probabilistic_2016" class="csl-entry" role="listitem">
-Goodman, Noah D, Joshua B. Tenenbaum, and The ProbMods Contributors. 2016. <span>“<span class="nocase">Probabilistic Models of Cognition</span>.”</span> <a href="http://probmods.org/v2" class="uri">http://probmods.org/v2</a>.
+<div id="ref-heim_semantics_1982" class="csl-entry" role="listitem">
+Heim, Irene. 1982. <span>“The <span>Semantics</span> of <span>Definite</span> and <span>Indefinite</span> <span>Noun</span> <span>Phrases</span>.”</span> PhD Thesis, Amherst: University of Massachussetts. <a href="https://semanticsarchive.net/Archive/Tk0ZmYyY/">https://semanticsarchive.net/Archive/Tk0ZmYyY/</a>.
 </div>
-<div id="ref-grice_logic_1975" class="csl-entry" role="listitem">
-Grice, H. Paul. 1975. <span>“Logic and <span>Conversation</span>.”</span> In <em>Syntax and <span>Semantics</span></em>, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts:41–58. New York: Academic Press.
+<div id="ref-kamp_theory_1981" class="csl-entry" role="listitem">
+Kamp, Hans. 1981. <span>“A <span>Theory</span> of <span>Truth</span> and <span>Semantic</span> <span>Representation</span>.”</span> In <em>Formal <span>Methods</span> in the <span>Study</span> of <span>Language</span></em>, edited by Jeroen A. Groenendijk, Theo M. V. Janssen, and Martin B. J. Stokhof, 277–322. Mathematical <span>Centre</span> <span>Tracts</span> 135. Amsterdam: Mathematisch Centrum.
 </div>
-<div id="ref-grove_factivity_2024" class="csl-entry" role="listitem">
-Grove, Julian, and Aaron Steven White. 2024a. <span>“Factivity, Presupposition Projection, and the Role of Discrete Knowlege in Gradient Inference Judgments.”</span> LingBuzz. <a href="https://ling.auf.net/lingbuzz/007450">https://ling.auf.net/lingbuzz/007450</a>.
-</div>
-<div id="ref-grove_probabilistic_2024" class="csl-entry" role="listitem">
-———. 2024b. <span>“Probabilistic Dynamic Semantics.”</span> University of Rochester. <a href="https://ling.auf.net/lingbuzz/008478">https://ling.auf.net/lingbuzz/008478</a>.
-</div>
-<div id="ref-grove_modeling_2025" class="csl-entry" role="listitem">
-———. 2025. <span>“Modeling the Prompt in Inference Judgment Tasks.”</span> <em>Experiments in Linguistic Meaning</em> 3 (January): 176–87. <a href="https://doi.org/10.3765/elm.3.5857">https://doi.org/10.3765/elm.3.5857</a>.
-</div>
-<div id="ref-lassiter_vagueness_2011" class="csl-entry" role="listitem">
-Lassiter, Daniel. 2011. <span>“Vagueness as <span>Probabilistic</span> <span>Linguistic</span> <span>Knowledge</span>.”</span> In <em>Vagueness in <span>Communication</span></em>, edited by Rick Nouwen, Robert van Rooij, Uli Sauerland, and Hans-Christian Schmitz, 127–50. Lecture <span>Notes</span> in <span>Computer</span> <span>Science</span>. Berlin, Heidelberg: Springer. <a href="https://doi.org/10.1007/978-3-642-18446-8_8">https://doi.org/10.1007/978-3-642-18446-8_8</a>.
-</div>
-<div id="ref-lassiter_adjectival_2017" class="csl-entry" role="listitem">
-Lassiter, Daniel, and Noah D. Goodman. 2017. <span>“Adjectival Vagueness in a <span>Bayesian</span> Model of Interpretation.”</span> <em>Synthese</em> 194 (10): 3801–36. <a href="https://doi.org/10.1007/s11229-015-0786-1">https://doi.org/10.1007/s11229-015-0786-1</a>.
-</div>
-<div id="ref-montague_proper_1973" class="csl-entry" role="listitem">
-Montague, Richard. 1973. <span>“The <span>Proper</span> <span>Treatment</span> of <span>Quantification</span> in <span>Ordinary</span> <span>English</span>.”</span> In <em>Approaches to <span>Natural</span> <span>Language</span>: <span>Proceedings</span> of the 1970 <span>Stanford</span> <span>Workshop</span> on <span>Grammar</span> and <span>Semantics</span></em>, edited by K. J. J. Hintikka, J. M. E. Moravcsik, and P. Suppes, 221–42. Synthese <span>Library</span>. Dordrecht: Springer Netherlands. <a href="https://doi.org/10.1007/978-94-010-2506-5_10">https://doi.org/10.1007/978-94-010-2506-5_10</a>.
+<div id="ref-muskens_combining_1996" class="csl-entry" role="listitem">
+Muskens, Reinhard. 1996. <span>“Combining <span>Montague</span> Semantics and Discourse Representation.”</span> <em>Linguistics and Philosophy</em> 19 (2): 143–86. <a href="https://doi.org/10.1007/BF00635836">https://doi.org/10.1007/BF00635836</a>.
 </div>
 <div id="ref-roberts_information_2012" class="csl-entry" role="listitem">
 Roberts, Craige. 2012. <span>“Information <span>Structure</span>: <span>Towards</span> an Integrated Formal Theory of Pragmatics.”</span> <em>Semantics and Pragmatics</em> 5 (December): 6:1–69. <a href="https://doi.org/10.3765/sp.5.6">https://doi.org/10.3765/sp.5.6</a>.
 </div>
-<div id="ref-zeevat_bayesian_2015" class="csl-entry" role="listitem">
-Zeevat, Henk, and Hans-Christian Schmitz, eds. 2015. <em>Bayesian <span>Natural</span> <span>Language</span> <span>Semantics</span> and <span>Pragmatics</span></em>. Vol. 2. Language, <span>Cognition</span>, and <span>Mind</span>. Cham: Springer International Publishing. <a href="https://doi.org/10.1007/978-3-319-17064-0">https://doi.org/10.1007/978-3-319-17064-0</a>.
+<div id="ref-stalnaker_assertion_1978" class="csl-entry" role="listitem">
+Stalnaker, Robert. 1978. <span>“Assertion.”</span> In <em>Pragmatics</em>, edited by Peter Cole, 9:315–32. New York: Academic Press.
 </div>
-</div></section></div></main> <!-- /main -->
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Thus for the purposes of the example, we’re eschewing the variable/register-based systems of <span class="citation" data-cites="groenendijk_dynamic_1991">Groenendijk and Stokhof (<a href="#ref-groenendijk_dynamic_1991" role="doc-biblioref">1991</a>)</span> and <span class="citation" data-cites="muskens_combining_1996">Muskens (<a href="#ref-muskens_combining_1996" role="doc-biblioref">1996</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -860,60 +882,84 @@ Zeevat, Henk, and Hans-Christian Schmitz, eds. 2015. <em>Bayesian <span>Natural<
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./about.html" class="pagination-link" aria-label="About">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About</span>
+      <a href="../background/theory-to-data.html" class="pagination-link" aria-label="From theory to data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">From theory to data</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./background/theory-to-data.html" class="pagination-link" aria-label="From theory to data">
-        <span class="nav-page-text">From theory to data</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../background/experimental-turn.html" class="pagination-link" aria-label="The experimental turn">
+        <span class="nav-page-text">The experimental turn</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Probabilistic dynamic semantics"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../pds.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu"># Outline</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>The recent advent of linguistic datasets and their associated statistical models have given rise to two major kinds of questions bearing on linguistic theory and methodology:</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How can semanticists *use* such datasets?</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  That is, how can the statistical properties of a dataset inform semantic theory directly, and what guiding principles regulate the link between such properties and semantic theory?</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How should semantic theories themselves be *modified* so that they may characterize not only informally collected acceptability and inference judgments, but statistical generalizations observed from datasets?</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Formal pragmatics"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>This course brings the compositional, algebraic view of meaning employed by semanticists into contact with linguistic datasets by introducing and applying the framework of Probabilistic Dynamic Semantics <span class="co">[</span><span class="ot">@grove_factivity_2024;@grove_modeling_2025;@grove_probabilistic_2024</span><span class="co">]</span>.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>PDS seamlessly integrates theories of semantic competence with accounts of linguistic behavior in experimental settings by taking a modular approach:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>given a dataset involving some semantic phenomenon, and which exhibits certain statistical properties, this course offers an approach to developing both (a) *theories* of the meanings assigned to the expressions present in the dataset, and (b) *linking hypotheses* that directly relate these theories to linguistic behavior.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># Existing probabilistic approaches to meaning</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>The ideas developed in this course build on and respond to existing probabilistic approaches to semantics and pragmatics, including those which use computational modeling to characterize inference <span class="co">[</span><span class="ot">@zeevat_bayesian_2015;@franke_probabilistic_2016;@brasoveanu_computational_2020;@bernardy_bayesian_2022;@goodman_probabilistic_2016</span><span class="co">]</span>.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Such models are motivated, in part, by the observation that linguistic inference tends to display substantial *gradience*, giving rise to quantitative patterns that traditional semantic theory has difficulty capturing.</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Meanwhile, they often aim to explain Gricean linguistic behavior <span class="co">[</span><span class="ot">@grice_logic_1975</span><span class="co">]</span> by regarding humans as Bayesian reasoners.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Indeed, due to this emphasis on pragmatic principles, much modeling work blurs the semantics/pragmatics distinction, rendering the connection to traditional semantic theory somewhat opaque.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>To take a paradigm case, models within the Rational Speech Act (RSA) framework consider human interpreters as inferring meanings for an utterance which maximize the utterance's utility relative to a set of possible alternative utterances <span class="co">[</span><span class="ot">@frank_predicting_2012;@lassiter_vagueness_2011;@goodman_knowledge_2013;@goodman_pragmatic_2016;@lassiter_adjectival_2017;@degen_rational_2023</span><span class="co">]</span>.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Probabilistic models of linguistic inference, including RSA, tend to encode Bayesian principles of probabilistic update in terms of *Bayes' theorem*, which states that the posterior probability of an event given an observation is proportional to the prior probability of the event, multiplied by the likelihood of the observation given the event.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>RSA models give an explicit operational interpretation to Bayes' theorem by assuming that prior distributions over inferences encode world knowledge, and that likelihoods represent the utility-maximizing behavior of a pragmatic speaker.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Despite their success in modeling a wide variety of semantic and pragmatic phenomena, probabilistic models of linguistic data remain largely divorced from semantic and pragmatic practice, both in theory and in implementation.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>RSA models, for example, regard the semantic interpretations which humans pragmatically reason about as being provided by a *literal listener* that determines a distribution over inferences, given an utterance <span class="co">[</span><span class="ot">@degen_rational_2023</span><span class="co">]</span>.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>But aside from the constraint that the literal listener's posterior distribution is proportional to its prior distribution (i.e., that it acts as a filter), the semantic components of RSA models are generally designed by researchers on an *ad hoc* basis:</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>on the one hand, the space <span class="sc">\(</span>I<span class="sc">\)</span> of possible inferences must be decided by individual researchers in a way that depends on the task being modeled;</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>on the other hand, the relation <span class="sc">\(</span>⟦·⟧<span class="sc">\)</span> between utterances and inferences is often assumed without a justified connection to any semantic theory using, e.g., an explicit grammar fragment in the style of @montague_proper_1973.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># PDS as a bridge between probabilistic models and semantic theory</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Given this background, this course introduces a novel approach to probabilistic meaning which integrates traditional Montague semantics, as well as ideas in compositional dynamic semantics, with probabilistic computational models in a completely seamless fashion.</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>The theoretical framework and methodology we introduce retain the beneficial features of both kinds of approach to meaning:</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>PDS may be used to construct probabilistic models of human inference data, and it is in principle compatible with existing probabilistic modeling paradigms such as RSA;</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>meanwhile, it seamlessly connects probabilistic models to compositional dynamic semantics in the Montagovian tradition by providing a setting to write full-fledged grammar fragments.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\updct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\ct{upd<span class="sc">\_</span>#1}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\pure}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid orange</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\return}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid black</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>\def\P{\mathtt{P}}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\def\Q{\mathtt{Q}}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>\def\ite{\ct{if<span class="sc">\_</span>then<span class="sc">\_</span>else}}</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>\def\Do{\abbr{do}}</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">### Dynamic semantics</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>One of the major success stories of formal semantics has been its ability to model the dynamics of conversation.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Since the eighties, which gave rise to foundational frameworks such as, e.g., discourse representation theory <span class="co">[</span><span class="ot">@kamp_theory_1981</span><span class="co">]</span> and file-change semantics <span class="co">[</span><span class="ot">@heim_semantics_1982</span><span class="co">]</span>,*dynamic* semantics has been concerned with aspects of interpretation that both depend on earlier parts of a discourse and inform later parts.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>The interpretations of pronouns in one part of a discourse my depend on the non-determinism produced by an indefinite noun phrase in some earlier part, for example.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>(@ex-indef-pronoun) Some linguist walked in. They gave a lecture.</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>PDS additionally provides a theory of dynamic discourse update, integrating aspects of discourse such as the common ground, the question under discussion <span class="co">[</span><span class="ot">@ginzburg_dynamics_1996;@roberts_information_2012;@farkas_reacting_2010</span><span class="co">]</span>, and uncertainty about lexical meaning.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Crucially, given a semantic theory of some discourse phenomenon couched with PDS, one may obtain a probabilistic model of some linguistic dataset, given a particular *response function* <span class="co">[</span><span class="ot">@grove_factivity_2024;@grove_modeling_2025;@grove_probabilistic_2024</span><span class="co">]</span>.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>We introduce PDS in the context empirical datasets studying factivity, gradable adjectives, and the question under discussion.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>In (@ex-indef-pronoun), the interpretation of the pronoun *they* co-varies with the interpretation of the noun phrase *some linguist*;</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>as a result, (@ex-indef-pronoun) is true just in case there is a linguist who walked in and gave a lecture.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Such cross-sentential co-variation in the face of non-determinism of the kind introduced by the indefinite has been modeled in various dynamic frameworks.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>What such frameworks tend to have in common is that they keep track of some notion of a *state*.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>The framework of @heim_semantics_1982, for instance, regards this state as (effectively) an assignment function, which conveniently keeps track of the possible referents of indefinite noun phrases and pronouns.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Different frameworks differ in how they manage states.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Approaches in the style of @groenendijk_dynamic_1991 and @muskens_combining_1996, for instance, treat sentence meanings as relations on states, or equivalently, as functions from input states to sets of output states (those to which the input state is related);</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>i.e., functions of type $σ → σ → t$, where $σ$ is the type of states (whatever that happens to be).</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>If the state of a discourse keeps track of entities introduced by indefinite noun phrases, then the first sentence of (@ex-indef-pronoun) might be assigned the interpretation in (@ex-indef-interp), while the second sentence might be assigned the interpretation in (@ex-pronoun-interp).</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>(@ex-indef-interp) $λs.<span class="sc">\{</span> x{::}s^{\prime} ∣ s^{\prime} = s ∧ \ct{ling}(x) ∧ \ct{walk}(x)<span class="sc">\}</span>$</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>(@ex-pronoun-interp) $λs.<span class="sc">\{</span> s^{\prime} ∣ s^{\prime} = s ∧ \ct{lecture}(\ct{sel}(s))<span class="sc">\}</span>$</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Here we use the state-modifying notation of @de_groote_towards_2006:</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>`$x{::}s$' is meant to denote the result of updating $s$ with the entity $x$, while $\ct{sel}(s)$ is some way of selecting an entity from the state $s$.^<span class="co">[</span><span class="ot">Thus for the purposes of the example, we're eschewing the variable/register-based systems of @groenendijk_dynamic_1991 and @muskens_combining_1996.</span><span class="co">]</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Thus the first sentence of (@ex-indef-pronoun) is interpreted as a function that non-deterministically modifies input states by introducing a new entity (in particular, a linguist who walked in), while the second sentence is interpreted as a function from an input state to the singleton set containing that state or to the empty set, as according to whether an entity can be selected from that input state which gave a lecture.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Enriching the state</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Much work has built on these ideas by enriching the notion of a state to countenance broader aspects of the structure of discourse.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>For example, the question under discussion <span class="co">[</span><span class="ot">QUD, @roberts_information_2012;@ginzburg_dynamics_1996</span><span class="co">]</span>---the question whose resolution is the goal of a given discourse---along with the common ground---the set of propositions mutually taken for granted among discourse participants <span class="co">[</span><span class="ot">@stalnaker_assertion_1978</span><span class="co">]</span>---are incorporated into a formal definition of the *context* of a given discourse by @farkas_reacting_2010.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>In addition to the common ground and a stack of QUDs, @farkas_reacting_2010 incorporate into their representation of context the notion of a *projected set*.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>These are sets of possible new common grounds which are updated by new assertions and questions, and which must be accepted before the common ground itself is updated.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>As we'll see in <span class="co">[</span><span class="ot">the next module</span><span class="co">](/pds-intro/overview.html)</span>, a flexible notion of state that incorporates representations of both the common ground and the QUD will be crucial for the success of PDS.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
