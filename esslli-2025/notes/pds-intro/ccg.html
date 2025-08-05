@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Combinatory Categorial Grammar – Probabilistic dynamic semantics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../adjectives/adjectives.html" rel="next">
+<link href="../pds-intro/overview.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-11cbd3234f06388db87dcfbb7d560d62.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3c5b3ed224f457cdcbda003fac2adf13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Introduction to probabilistic dynamic semantics</a></li><li class="breadcrumb-item"><a href="../pds-intro/ccg.html">Combinatory Categorial Grammar</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Probabilistic dynamic semantics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilistic dynamic semantics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Background</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/theory-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From theory to data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/formal-pragmatics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Formal pragmatics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The experimental turn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/understanding-gradience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding gradience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two case studies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/new-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The need for new frameworks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/rsa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rational Speech Act models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/setting-stage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting the stage</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction to probabilistic dynamic semantics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/ccg.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Combinatory Categorial Grammar</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Gradable adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/adjectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gradable adjectives</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Factivity inferences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../factivity/factivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factivity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../pds-intro/overview.html">Introduction to probabilistic dynamic semantics</a></li><li class="breadcrumb-item"><a href="../pds-intro/ccg.html">Combinatory Categorial Grammar</a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Combinatory Categorial Grammar</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
+</div>
+<p>The syntactic and semantic substrate we employ is Combinatory Categorial Grammar (CGG). CCG is a highly lexicalized grammar formalism, in which expressions are equipped with syntactic types—i.e., <em>categories</em>. Syntactic types in CCG encode an expression’s selectional and distributional properties. A noun phrase such as <em>a race</em>, for example, may be given the type <span class="math inline">\(np\)</span>, while a determiner—something which, in English, occurs to the left of a noun in order to form a noun phrase—may be given the type <span class="math inline">\(np / n\)</span>. Thus the forward direction of the slash indicates that a noun should occur to the <em>right</em> of the determiner.</p>
+<p>We use CCG in our presentation of PDS because one of our goals is to write <em>semantic grammar fragments</em> which produce analyses of a given collection of probabilistic semantic phenomena. Having a grammar fragment (e.g., one which generates the stimuli about which inference judgments are experimentally collected to create some linguistic dataset) allows one to implement an unbroken chain that connects the semantic analysis of some phenomenon to a probabilistic model of judgments about expressions featuring the phenomenon. CCG is likely to be sufficiently expressive to capture most (if not all) of the kinds of syntactic dependencies found in natural languages <span class="citation" data-cites="joshi_tree_1985 vijay-shanker_equivalence_1994 kobele_generating_2006">(<a href="#ref-joshi_tree_1985" role="doc-biblioref">Joshi 1985</a>; <a href="#ref-vijay-shanker_equivalence_1994" role="doc-biblioref">Vijay-Shanker and Weir 1994</a> et seq.; cf. <a href="#ref-kobele_generating_2006" role="doc-biblioref">Kobele 2006</a>)</span>. Meanwhile, because it is semantically transparent, it makes writing such grammar fragments relatively straightforward.</p>
+<p>For current purposes, we can assume the following small set of atomic syntactic types. <span class="math display">\[
+\begin{align*}
+\mathcal{A} &amp;\Coloneqq np ∣ n ∣ s
+\end{align*}
+\]</span> Here we have the usual categories for noun phrases (<span class="math inline">\(np\)</span>), nouns (<span class="math inline">\(n\)</span>), and sentences (<span class="math inline">\(s\)</span>). <span class="math display">\[
+\begin{align*}
+\mathcal{C}_{\mathcal{A}} &amp;\Coloneqq \mathcal{A} ∣ \mathcal{C}_{\mathcal{A}}/\mathcal{C}_{\mathcal{A}} ∣ \mathcal{C}_{\mathcal{A}}\backslash\mathcal{C}_{\mathcal{A}}
+\end{align*}
+\]</span> Thus following , <span class="math inline">\(\mathcal{C}_{\mathcal{A}}\)</span> includes the five elements of <span class="math inline">\(\mathcal{A}\)</span>, as well as <span class="math display">\[\begin{align*}
+  s/np, s\backslash np, np/n, (np\backslash n)/ np, (s\backslash s)/s,
+\end{align*}\]</span> and so on. Any complex syntactic type in <span class="math inline">\(\mathcal{C}_{\mathcal{A}}\)</span> features slashes, which indicate on which side an expression of that type takes its argument. Thus an expression of type <span class="math inline">\(b/ a\)</span> (for some two types <span class="math inline">\(a\) and \(b\)</span>) occurs with an expression of type <span class="math inline">\(a\)</span> on its right in order to form an expression of type <span class="math inline">\(b\)</span>, while an expression of type <span class="math inline">\(b\backslash a\)</span> occurs with an expression of type <span class="math inline">\(a\)</span> on its <em>left</em> in order to form an expression of type <span class="math inline">\(b\)</span>. We adopt the convention of notating syntactic types without parentheses when possible, under the assumption that they are left-associative; i.e., <span class="math inline">\(a∣_{1}b∣_{2}c ≝ (a∣_{1}b)∣_{2}a\)</span> (where <span class="math inline">\(∣_{1}\)</span> and <span class="math inline">\(∣_{2}\)</span> are either forward or backward slashes). Thus for example, the type <span class="math inline">\(s\backslash(np/ np)\)</span> continues to be written as such, while the type <span class="math inline">\((s\backslash np)/ np\)</span> may be shortened to ‘<span class="math inline">\(s\backslash np/ np\)</span>’.</p>
+<p>In Haskell, we can introduce a single data type to encode both atomic categories and categories featuring slashes.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Cat</span> <span class="ot">=</span> <span class="dt">NP</span> <span class="op">|</span> <span class="dt">N</span> <span class="op">|</span> <span class="dt">S</span>  <span class="co">-- atomic categories</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>         <span class="op">|</span> <span class="dt">Cat</span> <span class="op">:/:</span> <span class="dt">Cat</span> <span class="co">-- the forward slash</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>         <span class="op">|</span> <span class="dt">Cat</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">Cat</span> <span class="co">-- the backward slash</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">deriving</span> (<span class="dt">Eq</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To write CCG expressions, we use the notation <span class="math display">\[\begin{align*}
+  \expr{s}{m}{c}
+\end{align*}\]</span> which is to be read as stating that string <span class="math inline">\(s\)</span> has category <span class="math inline">\(c\)</span> and semantic value <span class="math inline">\(m\)</span>. We assume <span class="math inline">\(s\)</span> to be a string over some alphabet <span class="math inline">\(Σ\)</span> (i.e., <span class="math inline">\(s ∈ Σ^{*}\)</span>), which we regard as a finite set; e.g., the set of ``morphemes of English’’. Meanwhile, we assume <span class="math inline">\(m\)</span> to be a typed λ-term. We leave somewhat open the question of what types of λ-terms may be used to define semantic values, but we adopt at least the typing rules in . Assuming that all semantic values are closed terms, we therefore have abstractions (<span class="math inline">\(λx.t\)</span>), applications (<span class="math inline">\(t(u)\)</span>), and <span class="math inline">\(n\)</span>-ary tuples (<span class="math inline">\(⟨t_{1}, ⋯, t_{n}⟩\)</span>), along with the empty tuple <span class="math inline">\(⋄\)</span>. We additionally assume that λ-terms can feature constants, drawn from some countable set.</p>
+<p>As for the semantic types themselves, we can assume that there are the following atomic types, where <span class="math inline">\(e\)</span> is the type of entities, and <span class="math inline">\(t\)</span> is the type of the truth values <span class="math inline">\(\True\)</span> and <span class="math inline">\(\False\)</span>.</p>
+<p><span class="math display">\[\begin{align*}
+A \Coloneqq e ∣ t
+\end{align*}\]</span></p>
+<p>The full set of types over <span class="math inline">\(A\)</span> (<span class="math inline">\(\mathcal{T}_{A}\)</span>) is then defined as follows:</p>
+<p><span class="math display">\[\begin{align*}
+   \mathcal{T}_{A} \Coloneqq A ∣ \mathcal{T}_{A} → \mathcal{T}_{A} ∣ \mathcal{T}_{A} × \mathcal{T}_{A} ∣ ⋄
+\end{align*}\]</span></p>
+<p>Types can be encoded in Haskell via two data types for atomic and complex types, respectively:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Atomic types for entities and truth values.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Atom</span> <span class="ot">=</span> <span class="dt">E</span> <span class="op">|</span> <span class="dt">T</span> <span class="kw">deriving</span> (<span class="dt">Eq</span>, <span class="dt">Show</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Arrows, and products, as well as type variables for encoding polymorphism.</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Type</span> <span class="ot">=</span> <span class="dt">At</span> <span class="dt">Atom</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Type</span> <span class="op">:</span>→ <span class="dt">Type</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Unit</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Type</span> <span class="op">:</span>× <span class="dt">Type</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">TyVar</span> <span class="dt">String</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">deriving</span> (<span class="dt">Eq</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the Haskell encoding allows types to be polymorphic, by allowing type variables (<code>TyVar String</code>). Our use of polymorphism is fairly restricted, however, in that any type variable may only be quantified at the top level. Thus functions and values may themselves be polymorphic—their types can be underspecified—but functions may not take polymorphic values as arguments; any ambiguity about the type of an argument must be global. This means that while an expression such as <span class="math inline">\(λx.x\)</span> has the polymoprhic type <span class="math inline">\(α → α\)</span>, the expression <span class="math inline">\(λf.f(λy.y)(f(λx, y.x))\)</span>, where <span class="math inline">\(f\)</span> must have two distinct types in each of its bound occurrences, will not receive a type. Including such limited polymorphism is useful because it allows for the inclusion of certain kinds of polymorphic constants, e.g., the universal quantifier <span class="math inline">\(∀ : (α → t) → t\)</span>, which we may wish to be able to quantify not only over entities, but other types of objects (e.g., real numbers, or even functions).</p>
+<p>Just as with complex syntactic types, we adopt the convention of notating complex semantic types without parentheses when possible. Unlike syntactic types, we assume semantic types are right-associative.^[ These conventions mirror each other in the sense that the input type of a function type is assumed to be atomic unless otherwise specified by the use of parentheses. Typing rules for typed λ-terms may then be given as follows:</p>
+<p><span class="math display">\[ \small
+\begin{array}{c}
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$\mathtt{Ax}$}\UnaryInfC{$Γ, x : α ⊢ x : α$}
+\end{prooftree}
+&amp; \begin{prooftree}
+\AxiomC{$Γ, x : α ⊢ t : β$}
+\RightLabel{${→}\mathtt{I}$}\UnaryInfC{$Γ ⊢ λx.t : α → β$}
+\end{prooftree}
+&amp; \begin{prooftree}
+\AxiomC{$Γ ⊢ t : α → β$}
+\AxiomC{$Γ ⊢ u : α$}
+\RightLabel{${→}\mathtt{E}$}\BinaryInfC{$Γ ⊢ t(u) : β$}
+\end{prooftree} \\[2mm]
+\begin{prooftree}
+\AxiomC{}
+\RightLabel{$⋄\mathtt{I}$}\UnaryInfC{$Γ ⊢ ⋄ : ⋄$}
+\end{prooftree}
+&amp; \begin{prooftree}
+\AxiomC{$Γ ⊢ t : α$}
+\AxiomC{$Γ ⊢ u : β$}
+\RightLabel{$×\mathtt{I}$}\BinaryInfC{$Γ ⊢ ⟨t, u⟩ : α × β$}
+\end{prooftree}
+&amp; \begin{prooftree}
+\AxiomC{$Γ ⊢ t : α_1 × α_2$}
+\RightLabel{$×\mathtt{E}_{j}$}\UnaryInfC{$Γ ⊢ π_{j}(t) : α_{j}$}
+\end{prooftree}
+\end{array}
+\]</span></p>
+<p>These cover λ-abstractions, applications, the unit type <span class="math inline">\(⋄\)</span> (which is inhabited by the empty tuple <span class="math inline">\(⋄\)</span>), pairing, and projections.</p>
+<p>We provide an untyped implementation of λ-terms in Haskell; meanwhile, we provide a separate mechanism for doing type inference for these terms.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Untyped λ-terms. Types are assigned separately (i.e., "extrinsically").</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> <span class="dt">Term</span> <span class="ot">=</span> <span class="dt">Var</span> <span class="dt">VarName</span>           <span class="co">-- Variables.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Con</span> <span class="dt">Constant</span>          <span class="co">-- Constants.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Lam</span> <span class="dt">VarName</span> <span class="dt">Term</span>      <span class="co">-- Abstractions.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">App</span> <span class="dt">Term</span> <span class="dt">Term</span>         <span class="co">-- Applications.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">TT</span>                    <span class="co">-- The 0-tuple.</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Pair</span> <span class="dt">Term</span> <span class="dt">Term</span>        <span class="co">-- Pairing.</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Pi1</span> <span class="dt">Term</span>              <span class="co">-- First projection.</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> <span class="dt">Pi2</span> <span class="dt">Term</span>              <span class="co">-- Second projection.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This implementation of the λ-calculus allows it to feature constants. We allow for both the Haskell <code>Double</code> type to be encoded as constants, as well as the <code>String</code> type. Allowing doubles to be constants will make, e.g., arithmetic computations more straightforward as the system is further developed.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- | Constants are indexed by either strings or real numbers.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">type</span> <span class="dt">Constant</span> <span class="ot">=</span> <span class="dt">Either</span> <span class="dt">String</span> <span class="dt">Double</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Although we employ atomic types only for entities and truth values, we will make use of a form of intensionality in our semantic fragments, so that meanings will generally depend on an index of evaluation (which we typically denote ‘<span class="math inline">\(i\)</span>’). However, we make no commitments about its type, thus allowing expressions’ meanings to be polymorphic—this choice will be justified later on in these notes, when we introduce the full system. Meanwhile, we’ll provide the polymorphic types of such meanings using Greek letters to represent type variables (e.g., <span class="math inline">\(ι\)</span> for <span class="math inline">\(i\)</span>), while retaining Latin letters for atomic types.</p>
+<p>In CCG, expressions are combined to form new expressions using application rules, as well as composition (<span class="math inline">\(\textbf{B}\)</span>) rules and (often) type-raising (<span class="math inline">\(\textbf{T}\)</span>) and substitution (<span class="math inline">\(\textbf{S}\)</span>) rules <span class="citation" data-cites="steedman_syntactic_2000">(see, e.g., <a href="#ref-steedman_syntactic_2000" role="doc-biblioref">Steedman 2000</a>)</span>. The string <em>every linguist</em> can be derived by <em>right</em> application from expressions for the strings <em>every</em> and <em>linguist</em>, for example.</p>
+<ol class="example" type="1">
+<li><span class="math display">\[ \small
+\frac{\expr{\textit{every}}{λp, q, i.∀y.p(y)(i) → q(y)(i)}{s}/(s\backslash np)/ n \hspace{1cm} \expr{\textit{linguist}}{λx, i.\ct{ling}(i)(x)}{n}}{
+\expr{\textit{every linguist}}{λq, i.∀y.\ct{ling}(i)(y) → q(y)(i)}{s}/(s\backslash np)
+}&gt;
+\]</span></li>
+</ol>
+<p>The resulting expression has the syntactic type of a quantifier; in this case, it takes on its right an expression which takes a noun phrase on its left to form a sentence, and it forms a sentence with that expression. This type—<span class="math inline">\(s/(s\backslash np)\)</span>—is mirrored by the type of the λ-term which is the expression’s semantic value: <span class="math inline">\((e → ι → t) → ι → t\)</span>. Indeed, the two are related by a <em>type homomorphism</em>; i.e., a map from syntactic types to semantic types that preserves certain structure—here, the structure of syntactic types formed via slashes (<span class="math inline">\(/\)</span> and <span class="math inline">\(\backslash\)</span>), which get turned into semantic types formed via arrows (<span class="math inline">\(→\)</span>). We may codify the behavior of this homomorphism on atomic syntactic types.</p>
+<ol start="2" class="example" type="1">
+<li><span class="math inline">\(⟦np⟧ = e\)</span> <br> <span class="math inline">\(⟦n⟧ = e → ι → t\)</span> <br> <span class="math inline">\(⟦s⟧ = ι → t\)</span></li>
+</ol>
+<p>The CCG derivation given in (1) tacitly assumes that noun phrases denote entities, that nouns denote functions from entities to <em>propositions</em> (i.e., functions of type <span class="math inline">\(ι → t\)</span>), and that sentences denote propositions.</p>
+<p>Crucially, <em>every</em> CCG rule is analogous to the application rules in that it preserves the structure of syntactic types in the types of semantic values via the type homomorphism. For another example, the rightward composition rule can be used to combine <em>every linguist</em> with <em>saw</em>.</p>
+<ol start="3" class="example" type="1">
+<li><span class="math display">\[ \small
+\frac{\expr{\textit{every linguist}}{λq, i.∀y.\ct{ling}(i)(y) → q(y)(i)}{s}/ (s\backslash np)
+\hspace{1cm}
+\expr{\textit{saw}}{λx, y, i.\ct{see}(i)(x)(y)}{s}\backslash np/ np}{
+\expr{\textit{every linguist saw}}{λx, i.∀y.\ct{ling}(i)(y) → \ct{see}(i)(x)(y)}{s}/ np
+}{&gt;}\textbf{B}
+\]</span></li>
+</ol>
+<p>Here, the resulting type—<span class="math inline">\(s/ np\)</span>—is mapped to <span class="math inline">\(⟦np⟧ → ⟦s⟧ = e → ι → t\)</span>, which is precisely the type of the resulting semantic value.</p>
+
+
+<!-- -->
+
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-joshi_tree_1985" class="csl-entry" role="listitem">
+Joshi, Aravind K. 1985. <span>“Tree Adjoining Grammars: <span>How</span> Much Context-Sensitivity Is Required to Provide Reasonable Structural Descriptions?”</span> In <em>Natural <span>Language</span> <span>Parsing</span>: <span>Psychological</span>, <span>Computational</span>, and <span>Theoretical</span> <span>Perspectives</span></em>, edited by Arnold M. Zwicky, David R. Dowty, and Lauri Karttunen, 206–50. Studies in <span>Natural</span> <span>Language</span> <span>Processing</span>. Cambridge: Cambridge University Press. <a href="https://doi.org/10.1017/CBO9780511597855.007">https://doi.org/10.1017/CBO9780511597855.007</a>.
+</div>
+<div id="ref-kobele_generating_2006" class="csl-entry" role="listitem">
+Kobele, Gregory. 2006. <span>“Generating <span>Copies</span>: <span>An</span> Investigation into Structural Identity in Language and Grammar.”</span> PhD thesis, Los Angeles: UCLA.
+</div>
+<div id="ref-steedman_syntactic_2000" class="csl-entry" role="listitem">
+Steedman, Mark. 2000. <em>The <span>Syntactic</span> <span>Process</span></em>. Cambridge: MIT Press.
+</div>
+<div id="ref-vijay-shanker_equivalence_1994" class="csl-entry" role="listitem">
+Vijay-Shanker, K., and D. J. Weir. 1994. <span>“The Equivalence of Four Extensions of Context-Free Grammars.”</span> <em>Mathematical Systems Theory</em> 27 (6): 511–46. <a href="https://doi.org/10.1007/BF01191624">https://doi.org/10.1007/BF01191624</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p> Our λ-terms are thus Curry-typed, so that operations on terms need only attend to their syntax. The alternative, Church-typing, makes types an inherent part of the terms themselves.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../pds-intro/overview.html" class="pagination-link" aria-label="Overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../adjectives/adjectives.html" class="pagination-link" aria-label="Gradable adjectives">
+        <span class="nav-page-text">Gradable adjectives</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Combinatory Categorial Grammar"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\updct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\ct{upd<span class="sc">\_</span>#1}}</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\pure}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid orange</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\return}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid black</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>\def\P{\mathtt{P}}</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>\def\Q{\mathtt{Q}}</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>\def\ite{\ct{if<span class="sc">\_</span>then<span class="sc">\_</span>else}}</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>\def\Do{\abbr{do}}</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>The syntactic and semantic substrate we employ is Combinatory Categorial Grammar (CGG).</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>CCG is a highly lexicalized grammar formalism, in which expressions are equipped with syntactic types---i.e., *categories*.</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>Syntactic types in CCG encode an expression's selectional and distributional properties.</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>A noun phrase such as *a race*, for example, may be given the type $np$, while a determiner---something which, in English, occurs to the left of a noun in order to form a noun phrase---may be given the type $np / n$.</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>Thus the forward direction of the slash indicates that a noun should occur to the *right* of the determiner.</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>We use CCG in our presentation of PDS because one of our goals is to write *semantic grammar fragments* which produce analyses of a given collection of probabilistic semantic phenomena.</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>Having a grammar fragment (e.g., one which generates the stimuli about which inference judgments are experimentally collected to create some linguistic dataset) allows one to implement an unbroken chain that connects the semantic analysis of some phenomenon to a probabilistic model of judgments about expressions featuring the phenomenon.</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>CCG is likely to be sufficiently expressive to capture most (if not all) of the kinds of syntactic dependencies found in natural languages <span class="co">[</span><span class="ot">@joshi_tree_1985; @vijay-shanker_equivalence_1994 et seq.; cf. @kobele_generating_2006</span><span class="co">]</span>.</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>Meanwhile, because it is semantically transparent, it makes writing such grammar fragments relatively straightforward.</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>For current purposes, we can assume the following small set of atomic syntactic types.</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>\mathcal{A} &amp;\Coloneqq np ∣ n ∣ s</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>Here we have the usual categories for noun phrases ($np$), nouns ($n$), and sentences ($s$).</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>\mathcal{C}_{\mathcal{A}} &amp;\Coloneqq \mathcal{A} ∣ \mathcal{C}_{\mathcal{A}}/\mathcal{C}_{\mathcal{A}} ∣ \mathcal{C}_{\mathcal{A}}\backslash\mathcal{C}_{\mathcal{A}}</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>Thus following \Cref{def:atomic_cats}, $\mathcal{C}_{\mathcal{A}}$ includes the five elements of $\mathcal{A}$, as well as</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>  s/np, s\backslash np, np/n, (np\backslash n)/ np, (s\backslash s)/s,</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>and so on.</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>Any complex syntactic type in $\mathcal{C}_{\mathcal{A}}$ features slashes, which indicate on which side an expression of that type takes its argument.</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>Thus an expression of type $b/ a$ (for some two types $a<span class="sc">\)</span> and <span class="sc">\(</span>b$) occurs with an expression of type $a$ on its right in order to form an expression of type $b$, while an expression of type $b\backslash a$ occurs with an expression of type $a$ on its *left* in order to form an expression of type $b$.</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>We adopt the convention of notating syntactic types without parentheses when possible, under the assumption that they are left-associative;</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>i.e., $a∣_{1}b∣_{2}c ≝ (a∣_{1}b)∣_{2}a$ (where $∣_{1}$ and $∣_{2}$ are either forward or backward slashes).</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>Thus for example, the type $s\backslash(np/ np)$ continues to be written as such, while the type $(s\backslash np)/ np$ may be shortened to '$s\backslash np/ np$'.</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>In Haskell, we can introduce a single data type to encode both atomic categories and categories featuring slashes.</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a><span class="in">``` haskell</span></span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>data Cat <span class="op">=</span> NP <span class="op">|</span> N <span class="op">|</span> S  <span class="op">--</span> atomic categories</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>         <span class="op">|</span> Cat <span class="op">:/:</span> Cat <span class="op">--</span> the forward slash</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>         <span class="op">|</span> Cat <span class="op">:</span>\<span class="op">:</span> Cat <span class="op">--</span> the backward slash</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>  deriving <span class="op">(</span>Eq<span class="op">)</span></span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>To write CCG expressions, we use the notation</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>  \expr{s}{m}{c}</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>which is to be read as stating that string $s$ has category $c$ and semantic value $m$.</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>We assume $s$ to be a string over some alphabet $Σ$ (i.e., $s ∈ Σ^{*}$), which we regard as a finite set;</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>e.g., the set of ``morphemes of English''.</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>Meanwhile, we assume $m$ to be a typed λ-term.</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>We leave somewhat open the question of what types of λ-terms may be used to define semantic values, but we adopt at least the typing rules in \Cref{fig:typing_lc}.</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>Assuming that all semantic values are closed terms, we therefore have abstractions ($λx.t$), applications ($t(u)$), and $n$-ary tuples ($⟨t_{1}, ⋯, t_{n}⟩$), along with the empty tuple $⋄$.</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>We additionally assume that λ-terms can feature constants, drawn from some countable set.</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>As for the semantic types themselves, we can assume that there are the following atomic types, where $e$ is the type of entities, and $t$ is the type of the truth values $\True$ and $\False$.</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>A \Coloneqq e ∣ t</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>The full set of types over $A$ ($\mathcal{T}_{A}$) is then defined as follows:</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>\begin{align*}</span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>   \mathcal{T}_{A} \Coloneqq A ∣ \mathcal{T}_{A} → \mathcal{T}_{A} ∣ \mathcal{T}_{A} × \mathcal{T}_{A} ∣ ⋄</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>\end{align*}</span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>Types can be encoded in Haskell via two data types for atomic and complex types, respectively:</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Atomic types <span class="cf">for</span> entities and truth values<span class="op">.</span></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>data Atom <span class="op">=</span> E <span class="op">|</span> T deriving <span class="op">(</span>Eq<span class="op">,</span> Show<span class="op">)</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Arrows<span class="op">,</span> and products<span class="op">,</span> as well as type variables <span class="cf">for</span> encoding polymorphism<span class="op">.</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>data Type <span class="op">=</span> At Atom</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Type <span class="op">:</span>→ Type</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Unit</span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Type <span class="op">:</span>× Type</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> TyVar String</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>  deriving <span class="op">(</span>Eq<span class="op">)</span></span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>Note that the Haskell encoding allows types to be polymorphic, by allowing type variables (<span class="in">`TyVar String`</span>).</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>Our use of polymorphism is fairly restricted, however, in that any type variable may only be quantified at the top level.</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>Thus functions and values may themselves be polymorphic---their types can be underspecified---but functions may not take polymorphic values as arguments;</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>any ambiguity about the type of an argument must be global.</span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>This means that while an expression such as $λx.x$ has the polymoprhic type $α → α$, the expression $λf.f(λy.y)(f(λx, y.x))$, where $f$ must have two distinct types in each of its bound occurrences, will not receive a type.</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>Including such limited polymorphism is useful because it allows for the inclusion of certain kinds of polymorphic constants, e.g., the universal quantifier $∀ : (α → t) → t$, which we may wish to be able to quantify not only over entities, but other types of objects (e.g., real numbers, or even functions).</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>Just as with complex syntactic types, we adopt the convention of notating complex semantic types without parentheses when possible.</span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>Unlike syntactic types, we assume semantic types are right-associative.^[</span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>  These conventions mirror each other in the sense that the input type of a function type is assumed to be atomic unless otherwise specified by the use of parentheses.</span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>Typing rules for typed λ-terms may then be given as follows:</span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>$$ \small</span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>\begin{array}{c}</span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>\AxiomC{}</span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>\RightLabel{$\mathtt{Ax}$}\UnaryInfC{$Γ, x : α ⊢ x : α$}</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>&amp; \begin{prooftree}</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>\AxiomC{$Γ, x : α ⊢ t : β$}</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>\RightLabel{${→}\mathtt{I}$}\UnaryInfC{$Γ ⊢ λx.t : α → β$}</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>&amp; \begin{prooftree}</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>\AxiomC{$Γ ⊢ t : α → β$}</span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>\AxiomC{$Γ ⊢ u : α$}</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>\RightLabel{${→}\mathtt{E}$}\BinaryInfC{$Γ ⊢ t(u) : β$}</span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>\end{prooftree} <span class="sc">\\</span><span class="co">[</span><span class="ot">2mm</span><span class="co">]</span></span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>\AxiomC{}</span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>\RightLabel{$⋄\mathtt{I}$}\UnaryInfC{$Γ ⊢ ⋄ : ⋄$}</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>&amp; \begin{prooftree}</span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>\AxiomC{$Γ ⊢ t : α$}</span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>\AxiomC{$Γ ⊢ u : β$}</span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>\RightLabel{$×\mathtt{I}$}\BinaryInfC{$Γ ⊢ ⟨t, u⟩ : α × β$}</span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>&amp; \begin{prooftree}</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>\AxiomC{$Γ ⊢ t : α_1 × α_2$}</span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>\RightLabel{$×\mathtt{E}_{j}$}\UnaryInfC{$Γ ⊢ π_{j}(t) : α_{j}$}</span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>These cover λ-abstractions, applications, the unit type $⋄$ (which is inhabited by the empty tuple $⋄$), pairing, and projections.</span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>We provide an untyped implementation of λ-terms in Haskell;</span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>meanwhile, we provide a separate mechanism for doing type inference for these terms.^[</span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a>    Our λ-terms are thus Curry-typed, so that operations on terms need only attend to their syntax.</span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>    The alternative, Church-typing, makes types an inherent part of the terms themselves.</span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Untyped λ<span class="op">-</span>terms<span class="op">.</span> Types are assigned separately <span class="op">(</span>i<span class="op">.</span>e<span class="op">.,</span> <span class="st">"extrinsically"</span><span class="op">).</span></span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>data Term <span class="op">=</span> Var VarName           <span class="op">--</span> Variables<span class="op">.</span></span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Con Constant          <span class="op">--</span> Constants<span class="op">.</span></span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Lam VarName Term      <span class="op">--</span> Abstractions<span class="op">.</span></span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> App Term Term         <span class="op">--</span> Applications<span class="op">.</span></span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> TT                    <span class="op">--</span> The <span class="dv">0</span><span class="op">-</span>tuple<span class="op">.</span></span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Pair Term Term        <span class="op">--</span> Pairing<span class="op">.</span></span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Pi1 Term              <span class="op">--</span> First projection<span class="op">.</span></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a>          <span class="op">|</span> Pi2 Term              <span class="op">--</span> Second projection<span class="op">.</span></span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a>This implementation of the λ-calculus allows it to feature constants.</span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a>We allow for both the Haskell <span class="in">`Double`</span> type to be encoded as constants, as well as the <span class="in">`String`</span> type.</span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a>Allowing doubles to be constants will make, e.g., arithmetic computations more straightforward as the system is further developed.</span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> <span class="op">|</span> Constants are indexed by either strings or real numbers<span class="op">.</span></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>type Constant <span class="op">=</span> Either String Double</span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>Although we employ atomic types only for entities and truth values, we will make use of a form of intensionality in our semantic fragments, so that meanings will generally depend on an index of evaluation (which we typically denote '$i$').</span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>However, we make no commitments about its type, thus allowing expressions' meanings to be polymorphic---this choice will be justified later on in these notes, when we introduce the full system.</span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>Meanwhile, we'll provide the polymorphic types of such meanings using Greek letters to represent type variables (e.g., $ι$ for $i$), while retaining Latin letters for atomic types.</span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a>In CCG, expressions are combined to form new expressions using application rules, as well as composition ($\textbf{B}$) rules and (often) type-raising ($\textbf{T}$) and substitution ($\textbf{S}$) rules <span class="co">[</span><span class="ot">see, e.g., @steedman_syntactic_2000</span><span class="co">]</span>.</span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>The string *every linguist* can be derived by *right* application from expressions for the strings *every* and *linguist*, for example.</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>(@ex-every-linguist)</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>$$ \small</span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>\frac{\expr{\textit{every}}{λp, q, i.∀y.p(y)(i) → q(y)(i)}{s}/(s\backslash np)/ n \hspace{1cm} \expr{\textit{linguist}}{λx, i.\ct{ling}(i)(x)}{n}}{</span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>\expr{\textit{every linguist}}{λq, i.∀y.\ct{ling}(i)(y) → q(y)(i)}{s}/(s\backslash np)</span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>}&gt;</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>The resulting expression has the syntactic type of a quantifier;</span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>in this case, it takes on its right an expression which takes a noun phrase on its left to form a sentence, and it forms a sentence with that expression.</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>This type---$s/(s\backslash np)$---is mirrored by the type of the λ-term which is the expression's semantic value:</span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a>$(e → ι → t) → ι → t$.</span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a>Indeed, the two are related by a *type homomorphism*;</span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a>i.e., a map from syntactic types to semantic types that preserves certain structure---here, the structure of syntactic types formed via slashes ($/$ and $\backslash$), which get turned into semantic types formed via arrows ($→$).</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>We may codify the behavior of this homomorphism on atomic syntactic types.</span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>(@ex-type-interp)</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>$⟦np⟧ = e$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>$⟦n⟧ = e → ι → t$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>$⟦s⟧ = ι → t$</span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a>The CCG derivation given in (@ex-every-linguist) tacitly assumes that noun phrases denote entities, that nouns denote functions from entities to *propositions* (i.e., functions of type $ι → t$), and that sentences denote propositions.</span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a>Crucially, *every* CCG rule is analogous to the application rules in that it preserves the structure of syntactic types in the types of semantic values via the type homomorphism.</span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a>For another example, the rightward composition rule can be used to combine *every linguist* with *saw*.</span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>(@ex-every-linguist-saw)</span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a>$$ \small</span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a>\frac{\expr{\textit{every linguist}}{λq, i.∀y.\ct{ling}(i)(y) → q(y)(i)}{s}/ (s\backslash np)</span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a>\hspace{1cm}</span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a>\expr{\textit{saw}}{λx, y, i.\ct{see}(i)(x)(y)}{s}\backslash np/ np}{</span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a>\expr{\textit{every linguist saw}}{λx, i.∀y.\ct{ling}(i)(y) → \ct{see}(i)(x)(y)}{s}/ np</span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a>}{&gt;}\textbf{B}</span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>Here, the resulting type---$s/ np$---is mapped to $⟦np⟧ → ⟦s⟧ = e → ι → t$, which is precisely the type of the resulting semantic value.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
