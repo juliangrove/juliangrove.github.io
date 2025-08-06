@@ -1,5 +1,390 @@
 [
   {
+    "objectID": "adjectives/gradable-adjectives.html#vague-adjectives",
+    "href": "adjectives/gradable-adjectives.html#vague-adjectives",
+    "title": "Gradable adjectives",
+    "section": "Vague adjectives",
+    "text": "Vague adjectives\n\ntall, wide, expensive, happy, …\n\n\nThe coffee in Rome is expensive. (Kennedy 2007)\n\n\nTrue if: the cost of coffee in Rome is as great as a salient threshold, \\(d\\): \\[c ≥ d\\]\nMaybe the cost of coffee is 3 euros.\n\\(d\\) is vague… maybe it ranges somewhere from 2 euros to 4 euros."
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns",
+    "href": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns",
+    "title": "Gradable adjectives",
+    "section": "Vagueness: strange inference patterns",
+    "text": "Vagueness: strange inference patterns\nVague adjectives such as expensive\n\nadmit borderline cases:\n\nMud Blend: $1.50/lb   🙁\nOrganic Kona: $20/lb   🥰\nSwell Start Blend: $9.25/lb ??"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-1",
+    "href": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-1",
+    "title": "Gradable adjectives",
+    "section": "Vagueness: strange inference patterns",
+    "text": "Vagueness: strange inference patterns\n\nproduce sorites paradoxes:"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#sorites-10",
+    "href": "adjectives/gradable-adjectives.html#sorites-10",
+    "title": "Gradable adjectives",
+    "section": "Sorites: $10",
+    "text": "Sorites: $10\nIs a $10 cup of coffee expensive?"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#sorites-9.99",
+    "href": "adjectives/gradable-adjectives.html#sorites-9.99",
+    "title": "Gradable adjectives",
+    "section": "Sorites: $9.99",
+    "text": "Sorites: $9.99\nTake $0.01 away. Is a $9.99 cup of coffee expensive?"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#sorites-9.98",
+    "href": "adjectives/gradable-adjectives.html#sorites-9.98",
+    "title": "Gradable adjectives",
+    "section": "Sorites: $9.98",
+    "text": "Sorites: $9.98\nTake $0.01 away. Is a $9.98 cup of coffee expensive?"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-2",
+    "href": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-2",
+    "title": "Gradable adjectives",
+    "section": "Vagueness: strange inference patterns",
+    "text": "Vagueness: strange inference patterns\n\nproduce sorites paradoxes:\n\nPremise 1: A $10 cup of coffee is expensive.\nPremise 2: If an expensive cup of coffee were 1 cent cheaper, it would still be expensive.\nConclusion: Therefore, a free cup of coffee is expensive!"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#why-tricky",
+    "href": "adjectives/gradable-adjectives.html#why-tricky",
+    "title": "Gradable adjectives",
+    "section": "Why tricky?",
+    "text": "Why tricky?\nBorderline cases and sorites paradoxes: inference patterns that do not fall into any traditional semantic classification.\n\nBorderline cases: things to which the adjective neither applies nor doesn’t apply.\nThe inference is not simply “on” or “off”.\nThe sorites paradox: troublesome because…\n\ninferences should be closed under implication: if $10 ↝ $9.99, and $9.99 ↝ $9.98, then $10.00 ↝ $9.98.\n\na $10 cup is expensive ↝ a free cup is expensive"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#inference-judgments",
+    "href": "adjectives/gradable-adjectives.html#inference-judgments",
+    "title": "Gradable adjectives",
+    "section": "Inference judgments",
+    "text": "Inference judgments\nOngoing work with Helena Aparicio (Cornell Linguistics):\n\nCollect scale norming data.\n\n“X drank a coffee. Guess how expensive it was?”\n\nCollect adjectival inference data.\n\n“X drank a coffee. How likely is it that it was expensive?” (vague)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#modeling-pipeline",
+    "href": "adjectives/gradable-adjectives.html#modeling-pipeline",
+    "title": "Gradable adjectives",
+    "section": "Modeling pipeline",
+    "text": "Modeling pipeline\nUsing the norming data to help model the adjectival inference data:\n\nAssume that people make likelihood judgments based on their probabilistic estimate of where an object lands on the adjective’s scale.\nThen, we can model the distribution over these estimates using a model fit to the norming data."
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#norming-task",
+    "href": "adjectives/gradable-adjectives.html#norming-task",
+    "title": "Gradable adjectives",
+    "section": "Norming task",
+    "text": "Norming task\n\n\n\n\n\n6 relative adjectives\n3 possible contexts for each adjective (“high”, “medium”, “low”)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#norming-data",
+    "href": "adjectives/gradable-adjectives.html#norming-data",
+    "title": "Gradable adjectives",
+    "section": "Norming data",
+    "text": "Norming data"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#adjectival-inference-task",
+    "href": "adjectives/gradable-adjectives.html#adjectival-inference-task",
+    "title": "Gradable adjectives",
+    "section": "Adjectival inference task",
+    "text": "Adjectival inference task\n\n\n\n\n\nSame 6 adjectives (six relative, six absolute)\nSame 3 possible contexts for each adjective (“high”, “medium”, “low”)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#adjectival-inference-data",
+    "href": "adjectives/gradable-adjectives.html#adjectival-inference-data",
+    "title": "Gradable adjectives",
+    "section": "Adjectival inference data",
+    "text": "Adjectival inference data\n\n \n\n\n  \\(\\scriptsize \\text{Likelihood that adj. is true}\\)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-compilation-challenge",
+    "href": "adjectives/gradable-adjectives.html#the-compilation-challenge",
+    "title": "Gradable adjectives",
+    "section": "The compilation challenge",
+    "text": "The compilation challenge\n\nSemantic theory: λ-terms, compositional rules\nStatistical models: Parameters, likelihoods, inference\n\nThe gap: Need explicit linking hypotheses\n\n\nPDS automates the core translation while leaving room for statistical expertise"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#what-pds-produces",
+    "href": "adjectives/gradable-adjectives.html#what-pds-produces",
+    "title": "Gradable adjectives",
+    "section": "What PDS produces",
+    "text": "What PDS produces\n\nPDS outputs what we term a kernel model—the semantic core that corresponds directly to the lexical and compositional semantics\nThis kernel can in principle be augmented with other components:\n\nRandom effects\nHierarchical priors\n\nOther statistical machinery\n\nThe current implementation focuses on producing just the semantic kernel"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#why-stan",
+    "href": "adjectives/gradable-adjectives.html#why-stan",
+    "title": "Gradable adjectives",
+    "section": "Why Stan?",
+    "text": "Why Stan?\n\nStan is a probabilistic programming language designed for statistical inference\nUnlike general-purpose programming languages, Stan is specialized for stating distributional assumptions\nThese assumptions are translated to a C++ backend that performs statistical inference\nUsually uses a form of Markov Chain Monte Carlo (MCMC)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#why-stan-1",
+    "href": "adjectives/gradable-adjectives.html#why-stan-1",
+    "title": "Gradable adjectives",
+    "section": "Why Stan?",
+    "text": "Why Stan?\n\nDeclarative(-ish): We specify probability models, not procedures\nSpecialized: Designed for Bayesian inference\nParallel to semantics: Both declare “what” not “how”\n\nSemantics: truth conditions\nStan: probabilistic relationships"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#stans-block-structure",
+    "href": "adjectives/gradable-adjectives.html#stans-block-structure",
+    "title": "Gradable adjectives",
+    "section": "Stan’s block structure",
+    "text": "Stan’s block structure\ndata {\n  int&lt;lower=1&gt; N;           // observed\n  vector[N] y;              \n}\nparameters {\n  real mu;                  // inferred\n  real&lt;lower=0&gt; sigma;      \n}\nmodel {\n  mu ~ normal(0, 10);       // prior\n  y ~ normal(mu, sigma);    // likelihood\n}\n\nKey idea: This approach aligns well with our goals:\n\nFormal semantic analyses declare some representation of the semantic content\nStan declares probabilistic relationships rather than sampling algorithms"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#our-first-example",
+    "href": "adjectives/gradable-adjectives.html#our-first-example",
+    "title": "Gradable adjectives",
+    "section": "Our first example",
+    "text": "Our first example\n\nQuestion: “How tall is Jo?”\nTask: Participants report degrees on scales\nGoal: Infer the “true” degree for each item\n\n\nThis seemingly simple task will reveal the complexity of the PDS-to-Stan pipeline"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-experimental-data",
+    "href": "adjectives/gradable-adjectives.html#the-experimental-data",
+    "title": "Gradable adjectives",
+    "section": "The experimental data",
+    "text": "The experimental data\n\n\n\n\nparticipant\nitem\nadjective\ncondition\nresponse\n\n\n\n\n1\ntall_high\ntall\nhigh\n0.82\n\n\n1\nwide_low\nwide\nlow\n0.34\n\n\n1\nexpensive_mid\nexpensive\nmid\n0.62\n\n\n1\nfull_high\nfull\nhigh\n1.00\n\n\n\n\n\n\nItems = adjective × condition pairs\nResponses on 0-1 scale (slider)\nChallenge: Handle boundary responses (0s and 1s)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#building-the-data-block---counts",
+    "href": "adjectives/gradable-adjectives.html#building-the-data-block---counts",
+    "title": "Gradable adjectives",
+    "section": "Building the data block - counts",
+    "text": "Building the data block - counts\ndata {\n  int&lt;lower=1&gt; N_item;        // number of items\n  int&lt;lower=1&gt; N_participant; // number of participants  \n  int&lt;lower=1&gt; N_data;        // number of data points\n\nWhy constraints?\n\n&lt;lower=1&gt; ensures valid data\nHelps Stan optimize algorithms\nCatches errors early"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#handling-boundary-responses",
+    "href": "adjectives/gradable-adjectives.html#handling-boundary-responses",
+    "title": "Gradable adjectives",
+    "section": "Handling boundary responses",
+    "text": "Handling boundary responses\n  // Censoring at boundaries\n  int&lt;lower=1&gt; N_0;           // number of 0s\n  int&lt;lower=1&gt; N_1;           // number of 1s\n\nWhy separate these?\n\nSlider endpoints are special\n0 might mean “even less than 0”\n1 might mean “even more than 1”\nCensored data needs special treatment"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#response-data-and-indexing",
+    "href": "adjectives/gradable-adjectives.html#response-data-and-indexing",
+    "title": "Gradable adjectives",
+    "section": "Response data and indexing",
+    "text": "Response data and indexing\n  vector&lt;lower=0, upper=1&gt;[N_data] y; // responses in (0,1)\n  \n  // Which item/participant for each response\n  array[N_data] int&lt;lower=1, upper=N_item&gt; item;\n  array[N_data] int&lt;lower=1, upper=N_participant&gt; participant;\n}\n\nThese arrays are lookup tables: item[5] = 3 means the 5th response is about item #3"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#parameters-what-we-want-to-learn",
+    "href": "adjectives/gradable-adjectives.html#parameters-what-we-want-to-learn",
+    "title": "Gradable adjectives",
+    "section": "Parameters: What we want to learn",
+    "text": "Parameters: What we want to learn\nparameters {\n  // Semantic parameters - what PDS cares about\n  vector[N_item] mu_guess;    // degree for each item\n\n\nThese means represent our best guess, as researchers, about each item’s true degree on its scale\nThey capture the theoretical degrees that the semantic analysis posits\nCrucially, they can also be viewed as representing subjects’ uncertainty about these degrees\nThey reflect what unresolved uncertainty subjects maintain when they make these guesses"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#random-effects-structure",
+    "href": "adjectives/gradable-adjectives.html#random-effects-structure",
+    "title": "Gradable adjectives",
+    "section": "Random effects structure",
+    "text": "Random effects structure\n  // How much people vary\n  real&lt;lower=0&gt; sigma_epsilon_guess;\n  \n  // Each person's deviation (z-scores)\n  vector[N_participant] z_epsilon_guess;\n\nNon-centered parameterization\n\nSeparate scale (sigma) from standardized deviations (z)\nHelps Stan’s algorithms converge\nMathematically equivalent but computationally superior"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#measurement-and-censoring",
+    "href": "adjectives/gradable-adjectives.html#measurement-and-censoring",
+    "title": "Gradable adjectives",
+    "section": "Measurement and censoring",
+    "text": "Measurement and censoring\n  real&lt;lower=0,upper=1&gt; sigma_e;  // response noise\n  \n  // True values for censored data\n  array[N_0] real&lt;upper=0&gt; y_0;    // true values for 0s\n  array[N_1] real&lt;lower=1&gt; y_1;    // true values for 1s\n}\n\nWe infer what the “true” values might have been beyond scale boundaries"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#transformed-parameters",
+    "href": "adjectives/gradable-adjectives.html#transformed-parameters",
+    "title": "Gradable adjectives",
+    "section": "Transformed parameters",
+    "text": "Transformed parameters\ntransformed parameters {\n  // Convert z-scores to actual effects\n  vector[N_participant] epsilon_guess = \n    sigma_epsilon_guess * z_epsilon_guess;\n\nIf sigma = 0.2 and z[3] = 1.5, then participant 3 gives responses 0.3 units higher than average"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#computing-predictions",
+    "href": "adjectives/gradable-adjectives.html#computing-predictions",
+    "title": "Gradable adjectives",
+    "section": "Computing predictions",
+    "text": "Computing predictions\n  vector[N_data] guess;\n  for (i in 1:N_data) {\n    guess[i] = mu_guess[item[i]] + \n               epsilon_guess[participant[i]];\n  }\n}\n\nExample trace\n\nResponse i: item 5, participant 3\nmu_guess[5] = 0.7 (item’s degree)\nepsilon_guess[3] = 0.1 (participant’s adjustment)\nguess[i] = 0.7 + 0.1 = 0.8"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-model-block",
+    "href": "adjectives/gradable-adjectives.html#the-model-block",
+    "title": "Gradable adjectives",
+    "section": "The model block",
+    "text": "The model block\nmodel {\n  // Priors\n  sigma_epsilon_guess ~ exponential(1);\n  z_epsilon_guess ~ std_normal();\n  \n  // Likelihood\n  for (i in 1:N_data) {\n    y[i] ~ normal(guess[i], sigma_e);\n  }\n}"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-pds-implementation",
+    "href": "adjectives/gradable-adjectives.html#the-pds-implementation",
+    "title": "Gradable adjectives",
+    "section": "The PDS implementation",
+    "text": "The PDS implementation\n-- From sources/pds/src/\ns1'        = termOf $ getSemantics @Adjectives 1 \n             [\"jo\", \"is\", \"a\", \"soccer player\"]\nq1'        = termOf $ getSemantics @Adjectives 0 \n             [\"how\", \"tall\", \"jo\", \"is\"]\ndiscourse' = ty tau $ assert s1' &gt;&gt;&gt; ask q1'\nscaleNormingExample = asTyped tau \n  (betaΔNormal δRules . \n   adjectivesRespond scaleNormingPrior) discourse'\n\nThis establishes context and asks for Jo’s height\n\n\nNote the use of certain convenience functions:\n\ngetSemantics retrieves one of the meanings (in the λ-calculus) for the expression\nIt takes a string of strings as input\nUses the parser implemented at Grammar.Parser"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#lexical-entries-for-degree-questions",
+    "href": "adjectives/gradable-adjectives.html#lexical-entries-for-degree-questions",
+    "title": "Gradable adjectives",
+    "section": "Lexical entries for degree questions",
+    "text": "Lexical entries for degree questions\n-- From Grammar.Lexica.SynSem.Adjectives\n\"tall\" -&gt; [ SynSem {\n  syn = AP :\\: Deg,\n  sem = ty tau (purePP (lam d (lam x (lam i \n    (sCon \"(≥)\" @@ (sCon \"height\" @@ i @@ x) @@ d)))))\n  }, ... ]\n\n\"how\" -&gt; [ SynSem {\n  syn = Qdeg :/: (S :/: AP) :/: (AP :\\: Deg),\n  sem = ty tau (purePP (lam x (lam y (lam z \n    (y @@ (x @@ z))))))\n  }, ... ]\n\nThe degree-argument version of adjectives enables degree questions"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#compositional-semantics",
+    "href": "adjectives/gradable-adjectives.html#compositional-semantics",
+    "title": "Gradable adjectives",
+    "section": "Compositional semantics",
+    "text": "Compositional semantics\nFor how tall is Jo?, composition yields:\n\\[λd, i.\\ct{height}(i)(\\ct{j}) ≥ d\\]\n\nWhen \\(\\abbr{respond}\\) comes into the picture, some index \\(i^{\\prime}\\) is sampled from the common ground, and the maximal answer to the question is determined to be:\n\\[\\ct{max}(λd.\\ct{height}(i^{\\prime})(\\ct{j}) ≥ d)\\]"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#δ-rules-what-are-they",
+    "href": "adjectives/gradable-adjectives.html#δ-rules-what-are-they",
+    "title": "Gradable adjectives",
+    "section": "δ-rules: What are they?",
+    "text": "δ-rules: What are they?\ntype DeltaRule = Term -&gt; Maybe Term\n\nδ-rules enable different semantic computations while preserving semantic equivalence\nOrder of rule application doesn’t affect the final result\nThey should be sound\n\nMeaning: the equalities they encode should be (mathematically) true equalities"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-indices-and-maxes-δ-rules",
+    "href": "adjectives/gradable-adjectives.html#the-indices-and-maxes-δ-rules",
+    "title": "Gradable adjectives",
+    "section": "The indices and maxes δ-rules",
+    "text": "The indices and maxes δ-rules\n-- From Lambda.Δ module\nindices :: DeltaRule\nindices = \\case\n  Height (UpdHeight p _) -&gt; Just p\n  Height (UpdSocPla _ i) -&gt; Just (Height i)\n  SocPla (UpdSocPla p _) -&gt; Just p\n  SocPla (UpdHeight _ i) -&gt; Just (SocPla i)\n  -- ... other cases for Ling, Epi\n  _                      -&gt; Nothing\n\nExtracts values from the discourse state\n\n\nmaxes :: DeltaRule\nmaxes = \\case\n   Max (Lam y (GE x (Var y'))) | y' == y -&gt; Just x\n   _                                     -&gt; Nothing  \n\n\nExtracts the unique degree satisfying the inequality"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#δ-reduction-walkthrough",
+    "href": "adjectives/gradable-adjectives.html#δ-reduction-walkthrough",
+    "title": "Gradable adjectives",
+    "section": "δ-reduction walkthrough",
+    "text": "δ-reduction walkthrough\nFor degree questions like how tall is Jo?, the compositional semantics produces: \\[\\ct{max}(λd.\\ct{height}(i^{\\prime})(\\ct{j}) ≥ d)\\]\n\nApply indices rule to extract height: \\[\\text{becomes}\\,\\,\\, \\ct{max}(λd.h ≥ d)\\] where \\(h\\) represents Jo’s actual height at index \\(i\\)\n\n\nApply max extraction using the following δ-rule: becomes \\(h\\)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#key-transformations",
+    "href": "adjectives/gradable-adjectives.html#key-transformations",
+    "title": "Gradable adjectives",
+    "section": "Key transformations",
+    "text": "Key transformations\n\nChallenge: translating abstract semantic computations into Stan’s parameter space\nTranslation embodies (some of) our linking hypothesis between semantic competence and performance\n\n\nDegree extraction feeds parameter inference\n\n\\(\\ct{max}(λd.\\ct{height}(i)(\\ct{j}) ≥ d)\\) → Infer parameter height_jo\nThe unique degree satisfying the equation becomes a parameter to estimate"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#key-transformations-1",
+    "href": "adjectives/gradable-adjectives.html#key-transformations-1",
+    "title": "Gradable adjectives",
+    "section": "Key transformations",
+    "text": "Key transformations\n\n\nFunctions become arrays\n\n\\(\\ct{height} : \\iota \\to e \\to r\\): Array height[person]\nFunction application: Array indexing\n\nPropositions become probabilities\n\nTruth values: Real numbers in [0,1]\nLogical operations: Probabilistic operations\n\nThe probabilistic bind statements become Stan’s target\n\nThe \\(∼\\) structures sequential computation\nThis determines Stan’s log probability"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#pds-kernel-output",
+    "href": "adjectives/gradable-adjectives.html#pds-kernel-output",
+    "title": "Gradable adjectives",
+    "section": "PDS kernel output",
+    "text": "PDS kernel output\nThe PDS system outputs the following kernel model, given the semantic fragment:\nmodel {\n  // FIXED EFFECTS\n  w ~ normal(0.0, 1.0);\n  \n  // LIKELIHOOD\n  target += normal_lpdf(y | w, sigma);\n}\n\n\n\n\nCaptures the essential degree-based semantics where w represents the degree on the height scale."
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#from-kernel-to-full-model",
+    "href": "adjectives/gradable-adjectives.html#from-kernel-to-full-model",
+    "title": "Gradable adjectives",
+    "section": "From kernel to full model",
+    "text": "From kernel to full model\nThe full model with analyst augmentations looks like:\nmodel {\n  // PRIORS (analyst-added)\n  sigma_epsilon_guess ~ exponential(1);\n  sigma_e ~ beta(2, 10);\n  \n  // FIXED EFFECTS (PDS kernel)\n  mu_guess ~ normal(0.0, 1.0);\n  \n  // RANDOM EFFECTS (analyst-added)\n  z_epsilon_guess ~ std_normal();\n  \n  // LIKELIHOOD (PDS kernel with modifications)\n  y[i] ~ normal(mu_guess[item[i]] + epsilon_guess[participant[i]], sigma_e);\n}\nHighlighted lines show the kernel model from PDS"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#from-kernel-to-full-model-1",
+    "href": "adjectives/gradable-adjectives.html#from-kernel-to-full-model-1",
+    "title": "Gradable adjectives",
+    "section": "From kernel to full model",
+    "text": "From kernel to full model\n\n\nThe unhighlighted portions add statistical machinery for real data:\n\nHierarchical priors\nRandom effects\n\nIndexed parameters"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#from-degrees-to-likelihood-judgments",
+    "href": "adjectives/gradable-adjectives.html#from-degrees-to-likelihood-judgments",
+    "title": "Gradable adjectives",
+    "section": "From degrees to likelihood judgments",
+    "text": "From degrees to likelihood judgments\nOur next model addresses how speakers reason about the likelihood that gradable adjectives apply: how likely (is it) that Jo is tall?\n\nMetalinguistic judgment about adjective application\nRequires probabilistic reasoning\nKey: Threshold uncertainty creates vagueness"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-pds-implementation-1",
+    "href": "adjectives/gradable-adjectives.html#the-pds-implementation-1",
+    "title": "Gradable adjectives",
+    "section": "The PDS implementation",
+    "text": "The PDS implementation\n-- From sources/pds/src/\nexpr1 = [\"jo\", \"is\", \"a\", \"soccer\", \"player\"]\nexpr2 = [\"how\", \"likely\", \"that\", \"jo\", \"is\", \"tall\"]\ns1 = getSemantics @Adjectives 0 expr1\nq1 = getSemantics @Adjectives 0 expr2\ndiscourse = ty tau $ assert s1 &gt;&gt;&gt; ask q1\nlikelihoodExample = asTyped tau \n  (betaΔNormal δRules . \n   adjectivesRespond likelihoodPrior) discourse"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#lexical-entries-part-1",
+    "href": "adjectives/gradable-adjectives.html#lexical-entries-part-1",
+    "title": "Gradable adjectives",
+    "section": "Lexical entries (Part 1)",
+    "text": "Lexical entries (Part 1)\n-- From Grammar.Lexica.SynSem.Adjectives\n\"tall\" -&gt; [ SynSem {\n    syn = AP,\n    sem = ty tau (lam s (purePP (lam x (lam i \n      (sCon \"(≥)\" @@ (sCon \"height\" @@ i @@ x) @@ \n       (sCon \"d_tall\" @@ s)))) @@ s))\n    } ]\n\nKey semantic components:\n\nheight: \\(\\iota \\to e \\to r\\) (entity heights)\nd_tall: \\(\\sigma \\to r\\) (contextual threshold)\n(≥): \\(r \\to r \\to t\\) (comparison)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#lexical-entries-part-2",
+    "href": "adjectives/gradable-adjectives.html#lexical-entries-part-2",
+    "title": "Gradable adjectives",
+    "section": "Lexical entries (Part 2)",
+    "text": "Lexical entries (Part 2)\n\"likely\" -&gt; [ SynSem {\n    syn = S :\\: Deg :/: S,\n    sem = ty tau (lam s (purePP (lam p (lam d (lam _' \n      (sCon \"(≥)\" @@ \n       (Pr (let' i (CG s) (Return (p @@ i)))) @@ \n       d)))) @@ s))\n    } ]\n\nCompares probability of embedded proposition to a degree"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#δ-reduction-for-vagueness",
+    "href": "adjectives/gradable-adjectives.html#δ-reduction-for-vagueness",
+    "title": "Gradable adjectives",
+    "section": "δ-reduction for vagueness",
+    "text": "δ-reduction for vagueness\nStarting with Jo is tall: \\[\\ct{(≥)}(\\ct{height}(i)(\\ct{j}))(\\ct{d\\_tall}(s))\\]\n\nApply states rule to extract threshold: \\[\\text{becomes}\\,\\,\\,\\ct{(≥)}(\\ct{height}(i)(\\ct{j}))(d)\\]\n\n\nApply indices rule to extract height: \\[\\text{becomes}\\,\\,\\,\\ct{(≥)}(h)(d)\\]"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-states-δ-rule",
+    "href": "adjectives/gradable-adjectives.html#the-states-δ-rule",
+    "title": "Gradable adjectives",
+    "section": "The states δ-rule",
+    "text": "The states δ-rule\n-- From Lambda.Δ (lines 167-183)\nstates :: DeltaRule\nstates = \\case\n  CG      (UpdCG cg _)     -&gt; Just cg\n  CG      (UpdDTall _ s)   -&gt; Just (CG s)\n  DTall   (UpdDTall d _)   -&gt; Just d\n  DTall   (UpdCG _ s)      -&gt; Just (DTall s)\n  QUD     (UpdQUD q _)     -&gt; Just q\n  QUD     (UpdCG _ s)      -&gt; Just (QUD s)\n  TauKnow (UpdTauKnow b _) -&gt; Just b\n  TauKnow (UpdCG _ s)      -&gt; Just (TauKnow s)\n  _                        -&gt; Nothing"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-probabilities-δ-rule",
+    "href": "adjectives/gradable-adjectives.html#the-probabilities-δ-rule",
+    "title": "Gradable adjectives",
+    "section": "The probabilities δ-rule",
+    "text": "The probabilities δ-rule\n-- From Lambda.Δ (lines 156-164)\nprobabilities :: DeltaRule\nprobabilities = \\case\n  Pr (Return Tr)         -&gt; Just 1\n  Pr (Return Fa)         -&gt; Just 0\n  Pr (Bern x)            -&gt; Just x\n  Pr (Disj x t u)        -&gt; Just (x * Pr t + (1 - x) * Pr u)\n  Pr (Let v (Normal x y) (Return (GE t (Var v')))) \n    | v' == v -&gt; Just (NormalCDF x y t)\n  Pr (Let v (Normal x y) (Return (GE (Var v') t))) \n    | v' == v -&gt; Just (NormalCDF (- x) y t)\n  _                      -&gt; Nothing"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#probabilistic-computation",
+    "href": "adjectives/gradable-adjectives.html#probabilistic-computation",
+    "title": "Gradable adjectives",
+    "section": "Probabilistic computation",
+    "text": "Probabilistic computation\nThe system computes \\(P(h \\geq d)\\) when both are uncertain:\n\n\\(h \\sim \\ct{Normal}(\\mu_h, \\sigma_h)\\) (height)\n\\(d \\sim \\ct{Normal}(\\mu_d, \\sigma_d)\\) (threshold)\nResult: normal_cdf computation in Stan\n\n\nresponse = 1 - normal_cdf(d[item[i]] | \n                         mu_guess[i], \n                         sigma_guess);"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#pds-kernel-for-vagueness",
+    "href": "adjectives/gradable-adjectives.html#pds-kernel-for-vagueness",
+    "title": "Gradable adjectives",
+    "section": "PDS kernel for vagueness",
+    "text": "PDS kernel for vagueness\nmodel {\n  v ~ normal(0.0, 1.0);\n  target += normal_lpdf(y | \n              normal_cdf(v, -0.0, 1.0), \n              sigma);\n}\n\nThe kernel captures likelihood via normal_cdf"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#full-vagueness-model",
+    "href": "adjectives/gradable-adjectives.html#full-vagueness-model",
+    "title": "Gradable adjectives",
+    "section": "Full vagueness model",
+    "text": "Full vagueness model\ntransformed parameters {\n  for (i in 1:N_data) {\n    // Add participant adjustment\n    real threshold_logit = mu_guess0[item[i]] + \n                          epsilon_mu_guess[participant[i]];\n    mu_guess[i] = inv_logit(threshold_logit);\n    \n    // KEY SEMANTIC COMPUTATION: P(adjective applies)\n    response_rel[i] = 1 - normal_cdf(d[item[i]] | \n                                     mu_guess[i], \n                                     sigma_guess);\n  }\n}"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#key-ideas",
+    "href": "adjectives/gradable-adjectives.html#key-ideas",
+    "title": "Gradable adjectives",
+    "section": "Key ideas",
+    "text": "Key ideas\n\nδ-rules bridge theory and computation\nKernel models isolate semantic content from statistical machinery\nThis distinction is crucial:\n\nPDS automates the translation from compositional semantics to the core statistical model…\nwhile leaving room for analysts to add domain-specific statistical structure\n\nCompilation embodies our linking hypothesis between semantic competence and performance"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#what-weve-covered",
+    "href": "adjectives/gradable-adjectives.html#what-weve-covered",
+    "title": "Gradable adjectives",
+    "section": "What we’ve covered",
+    "text": "What we’ve covered\n\nDegree inference from norming questions using degree-argument adjectives\nVagueness as threshold uncertainty in gradable adjectives\nLikelihood judgments via probabilistic computation with normal_cdf\nFull δ-rule walkthroughs showing how complex λ-terms become Stan parameters"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#conclusion",
+    "href": "adjectives/gradable-adjectives.html#conclusion",
+    "title": "Gradable adjectives",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nPDS bridges formal semantics and statistical modeling\nδ-rules enable computational tractability\nKernel models preserve theoretical clarity\nThis approach scales to complex phenomena\n\n\nNext: How this handles factivity—where gradience poses even deeper theoretical puzzles"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#references",
+    "href": "adjectives/gradable-adjectives.html#references",
+    "title": "Gradable adjectives",
+    "section": "References",
+    "text": "References\n\n\n\n\nKennedy, Christopher. 2007. “Vagueness and Grammar: The Semantics of Relative and Absolute Gradable Adjectives.” Linguistics and Philosophy 30 (1): 1–45. https://doi.org/10.1007/s10988-006-9008-0."
+  },
+  {
     "objectID": "pds-intro/pds-intro.html#motivation",
     "href": "pds-intro/pds-intro.html#motivation",
     "title": "PDS Introduction",

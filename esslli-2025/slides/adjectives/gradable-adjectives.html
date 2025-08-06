@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-11cbd3234f06388db87dcfbb7d560d62.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <title>Gradable adjectives</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #ebdbb2; background-color: #282828; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #ebdbb2; } /* Normal */
+    code span.al { color: #282828; background-color: #cc241d; font-weight: bold; } /* Alert */
+    code span.an { color: #98971a; } /* Annotation */
+    code span.at { color: #d79921; } /* Attribute */
+    code span.bn { color: #f67400; } /* BaseN */
+    code span.bu { color: #d65d0e; } /* BuiltIn */
+    code span.cf { color: #cc241d; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #b16286; } /* Char */
+    code span.cn { color: #b16286; font-weight: bold; } /* Constant */
+    code span.co { color: #928374; } /* Comment */
+    code span.cv { color: #928374; } /* CommentVar */
+    code span.do { color: #98971a; } /* Documentation */
+    code span.dt { color: #d79921; } /* DataType */
+    code span.dv { color: #f67400; } /* DecVal */
+    code span.er { color: #cc241d; text-decoration: underline; } /* Error */
+    code span.ex { color: #689d6a; font-weight: bold; } /* Extension */
+    code span.fl { color: #f67400; } /* Float */
+    code span.fu { color: #689d6a; } /* Function */
+    code span.im { color: #689d6a; } /* Import */
+    code span.in { color: #282828; background-color: #83a598; } /* Information */
+    code span.kw { color: #ebdbb2; font-weight: bold; } /* Keyword */
+    code span.op { color: #ebdbb2; } /* Operator */
+    code span.ot { color: #689d6a; } /* Other */
+    code span.pp { color: #d65d0e; } /* Preprocessor */
+    code span.re { color: #928374; background-color: #1d2021; } /* RegionMarker */
+    code span.sc { color: #b16286; } /* SpecialChar */
+    code span.ss { color: #98971a; } /* SpecialString */
+    code span.st { color: #98971a; } /* String */
+    code span.va { color: #458588; } /* Variable */
+    code span.vs { color: #98971a; } /* VerbatimString */
+    code span.wa { color: #282828; background-color: #fabd2f; } /* Warning */
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-85a37fd1af7426b1e045386c9b01ffe1.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Gradable adjectives</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section class="slide level2">
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
+</div>
+</section>
+<section id="vague-adjectives" class="slide level2">
+<h2>Vague adjectives</h2>
+<ul>
+<li class="fragment"><em>tall</em>, <em>wide</em>, <em>expensive</em>, <em>happy</em>, …</li>
+</ul>
+<ol class="example" type="1">
+<li class="fragment">The coffee in Rome is <span class="gb-orange">expensive</span>. <span class="citation" data-cites="kennedy_vagueness_2007">(<a href="#/references" role="doc-biblioref" onclick="">Kennedy 2007</a>)</span></li>
+</ol>
+<ul>
+<li class="fragment">True if: the cost of coffee in Rome is as great as a salient threshold, <span class="gb-orange"><span class="math inline">\(d\)</span></span>: <span class="math display">\[c ≥ d\]</span></li>
+<li class="fragment">Maybe the cost of coffee is 3 euros.</li>
+<li class="fragment"><span class="math inline">\(d\)</span> is <span class="gb-orange">vague</span>… maybe it ranges somewhere from 2 euros to 4 euros.</li>
+</ul>
+</section>
+<section id="vagueness-strange-inference-patterns" class="slide level2">
+<h2>Vagueness: strange inference patterns</h2>
+<p>Vague adjectives such as <em>expensive</em></p>
+<ul>
+<li class="fragment">admit <span class="gb-orange">borderline cases</span>:
+<ul>
+<li class="fragment">Mud Blend: $1.50/lb &nbsp;&nbsp;🙁</li>
+<li class="fragment">Organic Kona: $20/lb &nbsp;&nbsp;🥰</li>
+<li class="fragment">Swell Start Blend: $9.25/lb ??</li>
+</ul></li>
+</ul>
+</section>
+<section id="vagueness-strange-inference-patterns-1" class="slide level2">
+<h2>Vagueness: strange inference patterns</h2>
+<ul>
+<li class="fragment">produce <span class="gb-orange">sorites paradoxes</span>:</li>
+</ul>
+</section>
+<section id="sorites-10" class="slide level2">
+<h2>Sorites: $10</h2>
+<p>Is a $10 cup of coffee expensive?</p>
+<div class="fragment">
+<p><img data-src="images/hands1.jpg" width="800"></p>
+</div>
+</section>
+<section id="sorites-9.99" class="slide level2">
+<h2>Sorites: $9.99</h2>
+<p>Take $0.01 away. Is a $9.99 cup of coffee expensive?</p>
+<div class="fragment">
+<p><img data-src="images/hands2.jpg" width="800"></p>
+</div>
+</section>
+<section id="sorites-9.98" class="slide level2">
+<h2>Sorites: $9.98</h2>
+<p>Take $0.01 away. Is a $9.98 cup of coffee expensive?</p>
+<div class="fragment">
+<p><img data-src="images/hands3.jpg" width="800"></p>
+</div>
+</section>
+<section id="vagueness-strange-inference-patterns-2" class="slide level2">
+<h2>Vagueness: strange inference patterns</h2>
+<ul>
+<li class="fragment">produce <span class="gb-orange">sorites paradoxes</span>:
+<ul>
+<li class="fragment">Premise 1: A $10 cup of coffee is expensive.</li>
+<li class="fragment">Premise 2: If an expensive cup of coffee were 1 cent cheaper, it would still be expensive.</li>
+<li class="fragment">Conclusion: <em>Therefore</em>, a <span class="gb-orange">free</span> cup of coffee is expensive!</li>
+</ul></li>
+</ul>
+</section>
+<section id="why-tricky" class="slide level2">
+<h2>Why tricky?</h2>
+<p>Borderline cases and sorites paradoxes: inference patterns that do not fall into any traditional semantic classification.</p>
+<ul>
+<li class="fragment">Borderline cases: things to which the adjective neither applies nor doesn’t apply.</li>
+<li class="fragment">The inference is not simply “on” or “off”.</li>
+<li class="fragment">The sorites paradox: troublesome because…
+<ul>
+<li class="fragment">inferences should be closed under implication: if $10 ↝ $9.99, and $9.99 ↝ $9.98, then $10.00 ↝ $9.98.
+<ul>
+<li class="fragment"><em>a $10 cup is expensive</em> ↝ <em>a free cup is expensive</em></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="inference-judgments" class="slide level2">
+<h2>Inference judgments</h2>
+<p>Ongoing work with Helena Aparicio (Cornell Linguistics):</p>
+<ul>
+<li class="fragment">Collect <span class="gb-orange">scale norming</span> data.
+<ul>
+<li class="fragment">“X drank a coffee. Guess how <span class="gb-orange">expensive</span> it was?”</li>
+</ul></li>
+<li class="fragment">Collect <span class="gb-orange">adjectival inference</span> data.
+<ul>
+<li class="fragment">“X drank a coffee. How likely is it that it was <span class="gb-orange">expensive</span>?” (vague)</li>
+</ul></li>
+</ul>
+</section>
+<section id="modeling-pipeline" class="slide level2">
+<h2>Modeling pipeline</h2>
+<p>Using the norming data to help model the adjectival inference data:</p>
+<ul>
+<li class="fragment">Assume that people make likelihood judgments based on their probabilistic estimate of where an object lands on the adjective’s scale.<br></li>
+<li class="fragment">Then, we can model the distribution over these estimates <em>using</em> a model fit to the norming data.</li>
+</ul>
+</section>
+<section id="norming-task" class="slide level2">
+<h2>Norming task</h2>
+<br>
+<div style="text-align: center;">
+<p><img src="images/expensive_norming.png" style="width: 60%;"></p>
+</div>
+<ul>
+<li class="fragment">6 relative adjectives</li>
+<li class="fragment">3 possible contexts for each adjective (“high”, “medium”, “low”)</li>
+</ul>
+</section>
+<section id="norming-data" class="slide level2">
+<h2>Norming data</h2>
+
+<img data-src="images/norming_histograms.png" class="r-stretch"></section>
+<section id="adjectival-inference-task" class="slide level2">
+<h2>Adjectival inference task</h2>
+<br>
+<div style="text-align: center;">
+<p><img src="images/expensive_test.png" style="width: 70%;"></p>
+</div>
+<ul>
+<li class="fragment">Same 6 adjectives (six relative, six absolute)</li>
+<li class="fragment">Same 3 possible contexts for each adjective (“high”, “medium”, “low”)</li>
+</ul>
+</section>
+<section id="adjectival-inference-data" class="slide level2">
+<h2>Adjectival inference data</h2>
+<div style="text-align: center;">
+<p><img data-src="images/expensive.png" height="200"> <img data-src="images/tall_wide.png" height="200"></p>
+</div>
+<div style="text-align: center;">
+<p><img data-src="images/deep.png" height="200"> <img data-src="images/heavy_old.png" height="200"> <span class="math inline">\(\scriptsize \text{Likelihood that adj. is true}\)</span></p>
+</div>
+</section>
+<section id="the-compilation-challenge" class="slide level2">
+<h2>The compilation challenge</h2>
+<ul>
+<li class="fragment"><strong>Semantic theory</strong>: λ-terms, compositional rules</li>
+<li class="fragment"><strong>Statistical models</strong>: Parameters, likelihoods, inference<br>
+</li>
+<li class="fragment"><strong>The gap</strong>: Need explicit linking hypotheses</li>
+</ul>
+<div class="fragment">
+<p>PDS automates the core translation while leaving room for statistical expertise</p>
+</div>
+</section>
+<section id="what-pds-produces" class="slide level2">
+<h2>What PDS produces</h2>
+<ul>
+<li class="fragment">PDS outputs what we term a <em>kernel model</em>—the semantic core that corresponds directly to the lexical and compositional semantics</li>
+<li class="fragment">This kernel can in principle be augmented with other components:
+<ul>
+<li class="fragment">Random effects</li>
+<li class="fragment">Hierarchical priors<br>
+</li>
+<li class="fragment">Other statistical machinery</li>
+</ul></li>
+<li class="fragment">The current implementation focuses on producing just the semantic kernel</li>
+</ul>
+</section>
+<section id="why-stan" class="slide level2">
+<h2>Why Stan?</h2>
+<ul>
+<li class="fragment">Stan is a probabilistic programming language designed for statistical inference</li>
+<li class="fragment">Unlike general-purpose programming languages, Stan is specialized for stating distributional assumptions</li>
+<li class="fragment">These assumptions are translated to a C++ backend that performs statistical inference</li>
+<li class="fragment">Usually uses a form of Markov Chain Monte Carlo (MCMC)</li>
+</ul>
+</section>
+<section id="why-stan-1" class="slide level2">
+<h2>Why Stan?</h2>
+<ul>
+<li class="fragment"><strong>Declarative(-ish)</strong>: We specify probability models, not procedures</li>
+<li class="fragment"><strong>Specialized</strong>: Designed for Bayesian inference</li>
+<li class="fragment"><strong>Parallel to semantics</strong>: Both declare “what” not “how”
+<ul>
+<li class="fragment">Semantics: truth conditions</li>
+<li class="fragment">Stan: probabilistic relationships</li>
+</ul></li>
+</ul>
+</section>
+<section id="stans-block-structure" class="slide level2">
+<h2>Stan’s block structure</h2>
+<div class="sourceCode" id="cb1" style="font-size: 85%;"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb1-1"><a></a><span class="kw">data</span> {</span>
+<span id="cb1-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N;           <span class="co">// observed</span></span>
+<span id="cb1-3"><a></a>  <span class="dt">vector</span>[N] y;              </span>
+<span id="cb1-4"><a></a>}</span>
+<span id="cb1-5"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb1-6"><a></a>  <span class="dt">real</span> mu;                  <span class="co">// inferred</span></span>
+<span id="cb1-7"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;      </span>
+<span id="cb1-8"><a></a>}</span>
+<span id="cb1-9"><a></a><span class="kw">model</span> {</span>
+<span id="cb1-10"><a></a>  mu ~ normal(<span class="dv">0</span>, <span class="dv">10</span>);       <span class="co">// prior</span></span>
+<span id="cb1-11"><a></a>  y ~ normal(mu, sigma);    <span class="co">// likelihood</span></span>
+<span id="cb1-12"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p><strong>Key idea</strong>: This approach aligns well with our goals:</p>
+<ul>
+<li class="fragment">Formal semantic analyses declare some representation of the semantic content</li>
+<li class="fragment">Stan declares probabilistic relationships rather than sampling algorithms</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+</section>
+<section>
+<section id="case-study-norming-model" class="title-slide slide level1 center">
+<h1>Case Study: Norming Model</h1>
+
+</section>
+<section id="our-first-example" class="slide level2">
+<h2>Our first example</h2>
+<ul>
+<li class="fragment"><strong>Question</strong>: “How tall is Jo?”</li>
+<li class="fragment"><strong>Task</strong>: Participants report degrees on scales</li>
+<li class="fragment"><strong>Goal</strong>: Infer the “true” degree for each item</li>
+</ul>
+<div class="fragment">
+<p>This seemingly simple task will reveal the complexity of the PDS-to-Stan pipeline</p>
+</div>
+</section>
+<section id="the-experimental-data" class="slide level2">
+<h2>The experimental data</h2>
+<div style="font-size: 85%;">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>participant</th>
+<th>item</th>
+<th>adjective</th>
+<th>condition</th>
+<th>response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>tall_high</td>
+<td>tall</td>
+<td>high</td>
+<td>0.82</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>wide_low</td>
+<td>wide</td>
+<td>low</td>
+<td>0.34</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>expensive_mid</td>
+<td>expensive</td>
+<td>mid</td>
+<td>0.62</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>full_high</td>
+<td>full</td>
+<td>high</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<ul>
+<li class="fragment"><strong>Items</strong> = adjective × condition pairs</li>
+<li class="fragment"><strong>Responses</strong> on 0-1 scale (slider)</li>
+<li class="fragment"><strong>Challenge</strong>: Handle boundary responses (0s and 1s)</li>
+</ul>
+</div>
+</section>
+<section id="building-the-data-block---counts" class="slide level2">
+<h2>Building the data block - counts</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb2-1"><a></a><span class="kw">data</span> {</span>
+<span id="cb2-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_item;        <span class="co">// number of items</span></span>
+<span id="cb2-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_participant; <span class="co">// number of participants  </span></span>
+<span id="cb2-4"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_data;        <span class="co">// number of data points</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<h3 id="why-constraints">Why constraints?</h3>
+<ul>
+<li class="fragment"><code>&lt;lower=1&gt;</code> ensures valid data</li>
+<li class="fragment">Helps Stan optimize algorithms</li>
+<li class="fragment">Catches errors early</li>
+</ul>
+</div>
+</section>
+<section id="handling-boundary-responses" class="slide level2">
+<h2>Handling boundary responses</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb3-1"><a></a>  <span class="co">// Censoring at boundaries</span></span>
+<span id="cb3-2"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_0;           <span class="co">// number of 0s</span></span>
+<span id="cb3-3"><a></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_1;           <span class="co">// number of 1s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<h3 id="why-separate-these">Why separate these?</h3>
+<ul>
+<li class="fragment">Slider endpoints are special</li>
+<li class="fragment">0 might mean “even less than 0”</li>
+<li class="fragment">1 might mean “even more than 1”</li>
+<li class="fragment">Censored data needs special treatment</li>
+</ul>
+</div>
+</section>
+<section id="response-data-and-indexing" class="slide level2">
+<h2>Response data and indexing</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb4-1"><a></a>  <span class="dt">vector</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>, <span class="kw">upper</span>=<span class="dv">1</span>&gt;[N_data] y; <span class="co">// responses in (0,1)</span></span>
+<span id="cb4-2"><a></a>  </span>
+<span id="cb4-3"><a></a>  <span class="co">// Which item/participant for each response</span></span>
+<span id="cb4-4"><a></a>  <span class="dt">array</span>[N_data] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_item&gt; item;</span>
+<span id="cb4-5"><a></a>  <span class="dt">array</span>[N_data] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_participant&gt; participant;</span>
+<span id="cb4-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>These arrays are lookup tables: <code>item[5] = 3</code> means the 5th response is about item #3</p>
+</div>
+</section>
+<section id="parameters-what-we-want-to-learn" class="slide level2">
+<h2>Parameters: What we want to learn</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb5-1"><a></a><span class="kw">parameters</span> {</span>
+<span id="cb5-2"><a></a>  <span class="co">// Semantic parameters - what PDS cares about</span></span>
+<span id="cb5-3"><a></a>  <span class="dt">vector</span>[N_item] mu_guess;    <span class="co">// degree for each item</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<ul>
+<li class="fragment">These means represent our best guess, as researchers, about each item’s true degree on its scale</li>
+<li class="fragment">They capture the theoretical degrees that the semantic analysis posits</li>
+<li class="fragment">Crucially, they can also be viewed as representing subjects’ uncertainty about these degrees</li>
+<li class="fragment">They reflect what unresolved uncertainty subjects maintain when they make these guesses</li>
+</ul>
+</div>
+</section>
+<section id="random-effects-structure" class="slide level2">
+<h2>Random effects structure</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb6-1"><a></a>  <span class="co">// How much people vary</span></span>
+<span id="cb6-2"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma_epsilon_guess;</span>
+<span id="cb6-3"><a></a>  </span>
+<span id="cb6-4"><a></a>  <span class="co">// Each person's deviation (z-scores)</span></span>
+<span id="cb6-5"><a></a>  <span class="dt">vector</span>[N_participant] z_epsilon_guess;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<h3 id="non-centered-parameterization">Non-centered parameterization</h3>
+<ul>
+<li class="fragment">Separate scale (<code>sigma</code>) from standardized deviations (<code>z</code>)</li>
+<li class="fragment">Helps Stan’s algorithms converge</li>
+<li class="fragment">Mathematically equivalent but computationally superior</li>
+</ul>
+</div>
+</section>
+<section id="measurement-and-censoring" class="slide level2">
+<h2>Measurement and censoring</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb7-1"><a></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; sigma_e;  <span class="co">// response noise</span></span>
+<span id="cb7-2"><a></a>  </span>
+<span id="cb7-3"><a></a>  <span class="co">// True values for censored data</span></span>
+<span id="cb7-4"><a></a>  <span class="dt">array</span>[N_0] <span class="dt">real</span>&lt;<span class="kw">upper</span>=<span class="dv">0</span>&gt; y_0;    <span class="co">// true values for 0s</span></span>
+<span id="cb7-5"><a></a>  <span class="dt">array</span>[N_1] <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; y_1;    <span class="co">// true values for 1s</span></span>
+<span id="cb7-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>We infer what the “true” values might have been beyond scale boundaries</p>
+</div>
+</section>
+<section id="transformed-parameters" class="slide level2">
+<h2>Transformed parameters</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb8-1"><a></a><span class="kw">transformed parameters</span> {</span>
+<span id="cb8-2"><a></a>  <span class="co">// Convert z-scores to actual effects</span></span>
+<span id="cb8-3"><a></a>  <span class="dt">vector</span>[N_participant] epsilon_guess = </span>
+<span id="cb8-4"><a></a>    sigma_epsilon_guess * z_epsilon_guess;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>If <code>sigma = 0.2</code> and <code>z[3] = 1.5</code>, then participant 3 gives responses 0.3 units higher than average</p>
+</div>
+</section>
+<section id="computing-predictions" class="slide level2">
+<h2>Computing predictions</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb9-1"><a></a>  <span class="dt">vector</span>[N_data] guess;</span>
+<span id="cb9-2"><a></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb9-3"><a></a>    guess[i] = mu_guess[item[i]] + </span>
+<span id="cb9-4"><a></a>               epsilon_guess[participant[i]];</span>
+<span id="cb9-5"><a></a>  }</span>
+<span id="cb9-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<h3 id="example-trace">Example trace</h3>
+<ul>
+<li class="fragment">Response i: item 5, participant 3</li>
+<li class="fragment"><code>mu_guess[5] = 0.7</code> (item’s degree)</li>
+<li class="fragment"><code>epsilon_guess[3] = 0.1</code> (participant’s adjustment)</li>
+<li class="fragment"><code>guess[i] = 0.7 + 0.1 = 0.8</code></li>
+</ul>
+</div>
+</section>
+<section id="the-model-block" class="slide level2">
+<h2>The model block</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb10-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb10-2"><a></a>  <span class="co">// Priors</span></span>
+<span id="cb10-3"><a></a>  sigma_epsilon_guess ~ exponential(<span class="dv">1</span>);</span>
+<span id="cb10-4"><a></a>  z_epsilon_guess ~ std_normal();</span>
+<span id="cb10-5"><a></a>  </span>
+<span id="cb10-6"><a></a>  <span class="co">// Likelihood</span></span>
+<span id="cb10-7"><a></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb10-8"><a></a>    y[i] ~ normal(guess[i], sigma_e);</span>
+<span id="cb10-9"><a></a>  }</span>
+<span id="cb10-10"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="pds-to-stan-compilation" class="title-slide slide level1 center">
+<h1>PDS to Stan Compilation</h1>
+
+</section>
+<section id="the-pds-implementation" class="slide level2">
+<h2>The PDS implementation</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb11-1"><a></a><span class="co">-- From sources/pds/src/</span></span>
+<span id="cb11-2"><a></a>s1'        <span class="ot">=</span> termOf <span class="op">$</span> getSemantics <span class="op">@</span><span class="dt">Adjectives</span> <span class="dv">1</span> </span>
+<span id="cb11-3"><a></a>             [<span class="st">"jo"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"soccer player"</span>]</span>
+<span id="cb11-4"><a></a>q1'        <span class="ot">=</span> termOf <span class="op">$</span> getSemantics <span class="op">@</span><span class="dt">Adjectives</span> <span class="dv">0</span> </span>
+<span id="cb11-5"><a></a>             [<span class="st">"how"</span>, <span class="st">"tall"</span>, <span class="st">"jo"</span>, <span class="st">"is"</span>]</span>
+<span id="cb11-6"><a></a>discourse' <span class="ot">=</span> ty tau <span class="op">$</span> assert s1' <span class="op">&gt;&gt;&gt;</span> ask q1'</span>
+<span id="cb11-7"><a></a>scaleNormingExample <span class="ot">=</span> asTyped tau </span>
+<span id="cb11-8"><a></a>  (betaΔ<span class="dt">Normal</span> δ<span class="dt">Rules</span> <span class="op">.</span> </span>
+<span id="cb11-9"><a></a>   adjectivesRespond scaleNormingPrior) discourse'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>This establishes context and asks for Jo’s height</p>
+</div>
+<div class="fragment" style="font-size: 85%;">
+<p>Note the use of certain convenience functions:</p>
+<ul>
+<li class="fragment"><code>getSemantics</code> retrieves one of the meanings (in the λ-calculus) for the expression</li>
+<li class="fragment">It takes a string of strings as input</li>
+<li class="fragment">Uses the parser implemented at <a href="https://juliangrove.github.io/pds/Grammar-Parser.html"><code>Grammar.Parser</code></a></li>
+</ul>
+</div>
+</section>
+<section id="lexical-entries-for-degree-questions" class="slide level2">
+<h2>Lexical entries for degree questions</h2>
+<div class="sourceCode" id="cb12" style="font-size: 80%;"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb12-1"><a></a><span class="co">-- From Grammar.Lexica.SynSem.Adjectives</span></span>
+<span id="cb12-2"><a></a><span class="st">"tall"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
+<span id="cb12-3"><a></a>  syn <span class="ot">=</span> <span class="dt">AP</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">Deg</span>,</span>
+<span id="cb12-4"><a></a>  sem <span class="ot">=</span> ty tau (purePP (lam d (lam x (lam i </span>
+<span id="cb12-5"><a></a>    (sCon <span class="st">"(≥)"</span> <span class="op">@@</span> (sCon <span class="st">"height"</span> <span class="op">@@</span> i <span class="op">@@</span> x) <span class="op">@@</span> d)))))</span>
+<span id="cb12-6"><a></a>  }, <span class="op">...</span> ]</span>
+<span id="cb12-7"><a></a></span>
+<span id="cb12-8"><a></a><span class="st">"how"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
+<span id="cb12-9"><a></a>  syn <span class="ot">=</span> <span class="dt">Qdeg</span> <span class="op">:/:</span> (<span class="dt">S</span> <span class="op">:/:</span> <span class="dt">AP</span>) <span class="op">:/:</span> (<span class="dt">AP</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">Deg</span>),</span>
+<span id="cb12-10"><a></a>  sem <span class="ot">=</span> ty tau (purePP (lam x (lam y (lam z </span>
+<span id="cb12-11"><a></a>    (y <span class="op">@@</span> (x <span class="op">@@</span> z))))))</span>
+<span id="cb12-12"><a></a>  }, <span class="op">...</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>The degree-argument version of adjectives enables degree questions</p>
+</div>
+</section>
+<section id="compositional-semantics" class="slide level2">
+<h2>Compositional semantics</h2>
+<p>For <em>how tall is Jo?</em>, composition yields:</p>
+<p><span class="math display">\[λd, i.\ct{height}(i)(\ct{j}) ≥ d\]</span></p>
+<div class="fragment">
+<p>When <span class="math inline">\(\abbr{respond}\)</span> comes into the picture, some index <span class="math inline">\(i^{\prime}\)</span> is sampled from the common ground, and the maximal answer to the question is determined to be:</p>
+<p><span class="math display">\[\ct{max}(λd.\ct{height}(i^{\prime})(\ct{j}) ≥ d)\]</span></p>
+</div>
+</section>
+<section id="δ-rules-what-are-they" class="slide level2">
+<h2>δ-rules: What are they?</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb13-1"><a></a><span class="kw">type</span> <span class="dt">DeltaRule</span> <span class="ot">=</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Maybe</span> <span class="dt">Term</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li class="fragment">δ-rules enable different semantic computations while preserving semantic equivalence</li>
+<li class="fragment">Order of rule application doesn’t affect the final result</li>
+<li class="fragment">They should be <span class="gb-orange">sound</span>
+<ul>
+<li class="fragment">Meaning: the equalities they encode should be (mathematically) true equalities</li>
+</ul></li>
+</ul>
+</section>
+<section id="the-indices-and-maxes-δ-rules" class="slide level2">
+<h2>The <code>indices</code> and <code>maxes</code> δ-rules</h2>
+<div class="sourceCode" id="cb14" style="font-size: 80%;"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb14-1"><a></a><span class="co">-- From Lambda.Δ module</span></span>
+<span id="cb14-2"><a></a><span class="ot">indices ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb14-3"><a></a>indices <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb14-4"><a></a>  <span class="dt">Height</span> (<span class="dt">UpdHeight</span> p _) <span class="ot">-&gt;</span> <span class="dt">Just</span> p</span>
+<span id="cb14-5"><a></a>  <span class="dt">Height</span> (<span class="dt">UpdSocPla</span> _ i) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">Height</span> i)</span>
+<span id="cb14-6"><a></a>  <span class="dt">SocPla</span> (<span class="dt">UpdSocPla</span> p _) <span class="ot">-&gt;</span> <span class="dt">Just</span> p</span>
+<span id="cb14-7"><a></a>  <span class="dt">SocPla</span> (<span class="dt">UpdHeight</span> _ i) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">SocPla</span> i)</span>
+<span id="cb14-8"><a></a>  <span class="co">-- ... other cases for Ling, Epi</span></span>
+<span id="cb14-9"><a></a>  _                      <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Extracts values from the discourse state</p>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb15-1"><a></a><span class="ot">maxes ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb15-2"><a></a>maxes <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb15-3"><a></a>   <span class="dt">Max</span> (<span class="dt">Lam</span> y (<span class="dt">GE</span> x (<span class="dt">Var</span> y'))) <span class="op">|</span> y' <span class="op">==</span> y <span class="ot">-&gt;</span> <span class="dt">Just</span> x</span>
+<span id="cb15-4"><a></a>   _                                     <span class="ot">-&gt;</span> <span class="dt">Nothing</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Extracts the unique degree satisfying the inequality</p>
+</div>
+</section>
+<section id="δ-reduction-walkthrough" class="slide level2">
+<h2>δ-reduction walkthrough</h2>
+<p>For degree questions like <em>how tall is Jo?</em>, the compositional semantics produces: <span class="math display">\[\ct{max}(λd.\ct{height}(i^{\prime})(\ct{j}) ≥ d)\]</span></p>
+<div class="fragment">
+<p>Apply <code>indices</code> rule to extract height: <span class="math display">\[\text{becomes}\,\,\, \ct{max}(λd.h ≥ d)\]</span> where <span class="math inline">\(h\)</span> represents Jo’s actual height at index <span class="math inline">\(i\)</span></p>
+</div>
+<div class="fragment">
+<p>Apply max extraction using the following δ-rule: becomes <span class="math inline">\(h\)</span></p>
+</div>
+</section>
+<section id="key-transformations" class="slide level2">
+<h2>Key transformations</h2>
+<ul>
+<li class="fragment"><strong>Challenge:</strong> translating abstract semantic computations into Stan’s parameter space</li>
+<li class="fragment">Translation embodies (some of) our linking hypothesis between semantic competence and performance</li>
+</ul>
+<ol type="1">
+<li class="fragment"><strong>Degree extraction feeds parameter inference</strong>
+<ul>
+<li class="fragment"><span class="math inline">\(\ct{max}(λd.\ct{height}(i)(\ct{j}) ≥ d)\)</span> → Infer parameter <code>height_jo</code></li>
+<li class="fragment">The unique degree satisfying the equation becomes a parameter to estimate</li>
+</ul></li>
+</ol>
+</section>
+<section id="key-transformations-1" class="slide level2">
+<h2>Key transformations</h2>
+<div class="fragment">
+<ol start="2" type="1">
+<li class="fragment"><strong>Functions become arrays</strong>
+<ul>
+<li class="fragment"><span class="math inline">\(\ct{height} : \iota \to e \to r\)</span>: Array <code>height[person]</code></li>
+<li class="fragment">Function application: Array indexing</li>
+</ul></li>
+<li class="fragment"><strong>Propositions become probabilities</strong>
+<ul>
+<li class="fragment">Truth values: Real numbers in [0,1]</li>
+<li class="fragment">Logical operations: Probabilistic operations</li>
+</ul></li>
+<li class="fragment"><strong>The probabilistic bind statements become Stan’s target</strong>
+<ul>
+<li class="fragment">The <span class="math inline">\(∼\)</span> structures sequential computation</li>
+<li class="fragment">This determines Stan’s log probability</li>
+</ul></li>
+</ol>
+</div>
+</section>
+<section id="pds-kernel-output" class="slide level2">
+<h2>PDS kernel output</h2>
+<p>The PDS system outputs the following kernel model, given the semantic fragment:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb16-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb16-2"><a></a>  <span class="co">// FIXED EFFECTS</span></span>
+<span id="cb16-3"><a></a>  w ~ normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb16-4"><a></a>  </span>
+<span id="cb16-5"><a></a>  <span class="co">// LIKELIHOOD</span></span>
+<span id="cb16-6"><a></a>  <span class="kw">target +=</span> normal_lpdf(y | w, sigma);</span>
+<span id="cb16-7"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- ::: {.fragment} -->
+<!-- ::: {style="font-size: 85%;"} -->
+<!-- Actual PDS output: `model { w ~ normal(0.0, 1.0); target += normal_lpdf(y | w, sigma); }` -->
+<!-- ::: -->
+<p>Captures the essential degree-based semantics where <code>w</code> represents the degree on the height scale.</p>
+</section>
+<section id="from-kernel-to-full-model" class="slide level2">
+<h2>From kernel to full model</h2>
+<p>The full model with analyst augmentations looks like:</p>
+<div class="sourceCode" id="cb17" data-code-line-numbers="7,13"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb17-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb17-2"><a></a>  <span class="co">// PRIORS (analyst-added)</span></span>
+<span id="cb17-3"><a></a>  sigma_epsilon_guess ~ exponential(<span class="dv">1</span>);</span>
+<span id="cb17-4"><a></a>  sigma_e ~ beta(<span class="dv">2</span>, <span class="dv">10</span>);</span>
+<span id="cb17-5"><a></a>  </span>
+<span id="cb17-6"><a></a>  <span class="co">// FIXED EFFECTS (PDS kernel)</span></span>
+<span id="cb17-7"><a></a>  mu_guess ~ normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb17-8"><a></a>  </span>
+<span id="cb17-9"><a></a>  <span class="co">// RANDOM EFFECTS (analyst-added)</span></span>
+<span id="cb17-10"><a></a>  z_epsilon_guess ~ std_normal();</span>
+<span id="cb17-11"><a></a>  </span>
+<span id="cb17-12"><a></a>  <span class="co">// LIKELIHOOD (PDS kernel with modifications)</span></span>
+<span id="cb17-13"><a></a>  y[i] ~ normal(mu_guess[item[i]] + epsilon_guess[participant[i]], sigma_e);</span>
+<span id="cb17-14"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Highlighted lines show the kernel model from PDS</p>
+</section>
+<section id="from-kernel-to-full-model-1" class="slide level2">
+<h2>From kernel to full model</h2>
+<div class="fragment">
+<ul>
+<li class="fragment">The unhighlighted portions add statistical machinery for real data:
+<ul>
+<li class="fragment">Hierarchical priors</li>
+<li class="fragment">Random effects<br>
+</li>
+<li class="fragment">Indexed parameters</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="modeling-vagueness" class="title-slide slide level1 center">
+<h1>Modeling Vagueness</h1>
+
+</section>
+<section id="from-degrees-to-likelihood-judgments" class="slide level2">
+<h2>From degrees to likelihood judgments</h2>
+<p>Our next model addresses how speakers reason about the likelihood that gradable adjectives apply: <em>how likely (is it) that Jo is tall?</em></p>
+<ul>
+<li class="fragment">Metalinguistic judgment about adjective application</li>
+<li class="fragment">Requires probabilistic reasoning</li>
+<li class="fragment"><strong>Key</strong>: Threshold uncertainty creates vagueness</li>
+</ul>
+</section>
+<section id="the-pds-implementation-1" class="slide level2">
+<h2>The PDS implementation</h2>
+<div class="sourceCode" id="cb18" style="font-size: 85%;"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb18-1"><a></a><span class="co">-- From sources/pds/src/</span></span>
+<span id="cb18-2"><a></a>expr1 <span class="ot">=</span> [<span class="st">"jo"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"soccer"</span>, <span class="st">"player"</span>]</span>
+<span id="cb18-3"><a></a>expr2 <span class="ot">=</span> [<span class="st">"how"</span>, <span class="st">"likely"</span>, <span class="st">"that"</span>, <span class="st">"jo"</span>, <span class="st">"is"</span>, <span class="st">"tall"</span>]</span>
+<span id="cb18-4"><a></a>s1 <span class="ot">=</span> getSemantics <span class="op">@</span><span class="dt">Adjectives</span> <span class="dv">0</span> expr1</span>
+<span id="cb18-5"><a></a>q1 <span class="ot">=</span> getSemantics <span class="op">@</span><span class="dt">Adjectives</span> <span class="dv">0</span> expr2</span>
+<span id="cb18-6"><a></a>discourse <span class="ot">=</span> ty tau <span class="op">$</span> assert s1 <span class="op">&gt;&gt;&gt;</span> ask q1</span>
+<span id="cb18-7"><a></a>likelihoodExample <span class="ot">=</span> asTyped tau </span>
+<span id="cb18-8"><a></a>  (betaΔ<span class="dt">Normal</span> δ<span class="dt">Rules</span> <span class="op">.</span> </span>
+<span id="cb18-9"><a></a>   adjectivesRespond likelihoodPrior) discourse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lexical-entries-part-1" class="slide level2">
+<h2>Lexical entries (Part 1)</h2>
+<div class="sourceCode" id="cb19" style="font-size: 75%;"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb19-1"><a></a><span class="co">-- From Grammar.Lexica.SynSem.Adjectives</span></span>
+<span id="cb19-2"><a></a><span class="st">"tall"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
+<span id="cb19-3"><a></a>    syn <span class="ot">=</span> <span class="dt">AP</span>,</span>
+<span id="cb19-4"><a></a>    sem <span class="ot">=</span> ty tau (lam s (purePP (lam x (lam i </span>
+<span id="cb19-5"><a></a>      (sCon <span class="st">"(≥)"</span> <span class="op">@@</span> (sCon <span class="st">"height"</span> <span class="op">@@</span> i <span class="op">@@</span> x) <span class="op">@@</span> </span>
+<span id="cb19-6"><a></a>       (sCon <span class="st">"d_tall"</span> <span class="op">@@</span> s)))) <span class="op">@@</span> s))</span>
+<span id="cb19-7"><a></a>    } ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Key semantic components:</p>
+<ul>
+<li class="fragment"><code>height</code>: <span class="math inline">\(\iota \to e \to r\)</span> (entity heights)</li>
+<li class="fragment"><code>d_tall</code>: <span class="math inline">\(\sigma \to r\)</span> (contextual threshold)</li>
+<li class="fragment"><code>(≥)</code>: <span class="math inline">\(r \to r \to t\)</span> (comparison)</li>
+</ul>
+</div>
+</section>
+<section id="lexical-entries-part-2" class="slide level2">
+<h2>Lexical entries (Part 2)</h2>
+<div class="sourceCode" id="cb20" style="font-size: 75%;"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb20-1"><a></a><span class="st">"likely"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
+<span id="cb20-2"><a></a>    syn <span class="ot">=</span> <span class="dt">S</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">Deg</span> <span class="op">:/:</span> <span class="dt">S</span>,</span>
+<span id="cb20-3"><a></a>    sem <span class="ot">=</span> ty tau (lam s (purePP (lam p (lam d (lam _' </span>
+<span id="cb20-4"><a></a>      (sCon <span class="st">"(≥)"</span> <span class="op">@@</span> </span>
+<span id="cb20-5"><a></a>       (<span class="dt">Pr</span> (let' i (<span class="dt">CG</span> s) (<span class="dt">Return</span> (p <span class="op">@@</span> i)))) <span class="op">@@</span> </span>
+<span id="cb20-6"><a></a>       d)))) <span class="op">@@</span> s))</span>
+<span id="cb20-7"><a></a>    } ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Compares probability of embedded proposition to a degree</p>
+</div>
+</section>
+<section id="δ-reduction-for-vagueness" class="slide level2">
+<h2>δ-reduction for vagueness</h2>
+<p>Starting with <em>Jo is tall</em>: <span class="math display">\[\ct{(≥)}(\ct{height}(i)(\ct{j}))(\ct{d\_tall}(s))\]</span></p>
+<div class="fragment">
+<p>Apply <code>states</code> rule to extract threshold: <span class="math display">\[\text{becomes}\,\,\,\ct{(≥)}(\ct{height}(i)(\ct{j}))(d)\]</span></p>
+</div>
+<div class="fragment">
+<p>Apply <code>indices</code> rule to extract height: <span class="math display">\[\text{becomes}\,\,\,\ct{(≥)}(h)(d)\]</span></p>
+</div>
+</section>
+<section id="the-states-δ-rule" class="slide level2">
+<h2>The states δ-rule</h2>
+<div class="sourceCode" id="cb21" style="font-size: 75%;"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb21-1"><a></a><span class="co">-- From Lambda.Δ (lines 167-183)</span></span>
+<span id="cb21-2"><a></a><span class="ot">states ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb21-3"><a></a>states <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb21-4"><a></a>  <span class="dt">CG</span>      (<span class="dt">UpdCG</span> cg _)     <span class="ot">-&gt;</span> <span class="dt">Just</span> cg</span>
+<span id="cb21-5"><a></a>  <span class="dt">CG</span>      (<span class="dt">UpdDTall</span> _ s)   <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">CG</span> s)</span>
+<span id="cb21-6"><a></a>  <span class="dt">DTall</span>   (<span class="dt">UpdDTall</span> d _)   <span class="ot">-&gt;</span> <span class="dt">Just</span> d</span>
+<span id="cb21-7"><a></a>  <span class="dt">DTall</span>   (<span class="dt">UpdCG</span> _ s)      <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">DTall</span> s)</span>
+<span id="cb21-8"><a></a>  <span class="dt">QUD</span>     (<span class="dt">UpdQUD</span> q _)     <span class="ot">-&gt;</span> <span class="dt">Just</span> q</span>
+<span id="cb21-9"><a></a>  <span class="dt">QUD</span>     (<span class="dt">UpdCG</span> _ s)      <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">QUD</span> s)</span>
+<span id="cb21-10"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdTauKnow</span> b _) <span class="ot">-&gt;</span> <span class="dt">Just</span> b</span>
+<span id="cb21-11"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdCG</span> _ s)      <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">TauKnow</span> s)</span>
+<span id="cb21-12"><a></a>  _                        <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-probabilities-δ-rule" class="slide level2">
+<h2>The probabilities δ-rule</h2>
+<div class="sourceCode" id="cb22" style="font-size: 75%;"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb22-1"><a></a><span class="co">-- From Lambda.Δ (lines 156-164)</span></span>
+<span id="cb22-2"><a></a><span class="ot">probabilities ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb22-3"><a></a>probabilities <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb22-4"><a></a>  <span class="dt">Pr</span> (<span class="dt">Return</span> <span class="dt">Tr</span>)         <span class="ot">-&gt;</span> <span class="dt">Just</span> <span class="dv">1</span></span>
+<span id="cb22-5"><a></a>  <span class="dt">Pr</span> (<span class="dt">Return</span> <span class="dt">Fa</span>)         <span class="ot">-&gt;</span> <span class="dt">Just</span> <span class="dv">0</span></span>
+<span id="cb22-6"><a></a>  <span class="dt">Pr</span> (<span class="dt">Bern</span> x)            <span class="ot">-&gt;</span> <span class="dt">Just</span> x</span>
+<span id="cb22-7"><a></a>  <span class="dt">Pr</span> (<span class="dt">Disj</span> x t u)        <span class="ot">-&gt;</span> <span class="dt">Just</span> (x <span class="op">*</span> <span class="dt">Pr</span> t <span class="op">+</span> (<span class="dv">1</span> <span class="op">-</span> x) <span class="op">*</span> <span class="dt">Pr</span> u)</span>
+<span id="cb22-8"><a></a>  <span class="dt">Pr</span> (<span class="dt">Let</span> v (<span class="dt">Normal</span> x y) (<span class="dt">Return</span> (<span class="dt">GE</span> t (<span class="dt">Var</span> v')))) </span>
+<span id="cb22-9"><a></a>    <span class="op">|</span> v' <span class="op">==</span> v <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">NormalCDF</span> x y t)</span>
+<span id="cb22-10"><a></a>  <span class="dt">Pr</span> (<span class="dt">Let</span> v (<span class="dt">Normal</span> x y) (<span class="dt">Return</span> (<span class="dt">GE</span> (<span class="dt">Var</span> v') t))) </span>
+<span id="cb22-11"><a></a>    <span class="op">|</span> v' <span class="op">==</span> v <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">NormalCDF</span> (<span class="op">-</span> x) y t)</span>
+<span id="cb22-12"><a></a>  _                      <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="probabilistic-computation" class="slide level2">
+<h2>Probabilistic computation</h2>
+<p>The system computes <span class="math inline">\(P(h \geq d)\)</span> when both are uncertain:</p>
+<ul>
+<li class="fragment"><span class="math inline">\(h \sim \ct{Normal}(\mu_h, \sigma_h)\)</span> (height)</li>
+<li class="fragment"><span class="math inline">\(d \sim \ct{Normal}(\mu_d, \sigma_d)\)</span> (threshold)</li>
+<li class="fragment">Result: <code>normal_cdf</code> computation in Stan</li>
+</ul>
+<div class="fragment">
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb23-1"><a></a>response = <span class="dv">1</span> - normal_cdf(d[item[i]] | </span>
+<span id="cb23-2"><a></a>                         mu_guess[i], </span>
+<span id="cb23-3"><a></a>                         sigma_guess);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pds-kernel-for-vagueness" class="slide level2">
+<h2>PDS kernel for vagueness</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb24-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb24-2"><a></a>  v ~ normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb24-3"><a></a>  <span class="kw">target +=</span> normal_lpdf(y | </span>
+<span id="cb24-4"><a></a>              normal_cdf(v, -<span class="fl">0.0</span>, <span class="fl">1.0</span>), </span>
+<span id="cb24-5"><a></a>              sigma);</span>
+<span id="cb24-6"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>The kernel captures likelihood via <code>normal_cdf</code></p>
+</div>
+</section>
+<section id="full-vagueness-model" class="slide level2">
+<h2>Full vagueness model</h2>
+<div class="sourceCode" id="cb25" style="font-size: 75%;" data-code-line-numbers="9-11"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb25-1"><a></a><span class="kw">transformed parameters</span> {</span>
+<span id="cb25-2"><a></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb25-3"><a></a>    <span class="co">// Add participant adjustment</span></span>
+<span id="cb25-4"><a></a>    <span class="dt">real</span> threshold_logit = mu_guess0[item[i]] + </span>
+<span id="cb25-5"><a></a>                          epsilon_mu_guess[participant[i]];</span>
+<span id="cb25-6"><a></a>    mu_guess[i] = inv_logit(threshold_logit);</span>
+<span id="cb25-7"><a></a>    </span>
+<span id="cb25-8"><a></a>    <span class="co">// KEY SEMANTIC COMPUTATION: P(adjective applies)</span></span>
+<span id="cb25-9"><a></a>    response_rel[i] = <span class="dv">1</span> - normal_cdf(d[item[i]] | </span>
+<span id="cb25-10"><a></a>                                     mu_guess[i], </span>
+<span id="cb25-11"><a></a>                                     sigma_guess);</span>
+<span id="cb25-12"><a></a>  }</span>
+<span id="cb25-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section class="slide level2">
+
+<!-- # Summary -->
+<!-- ## The complete pipeline -->
+<!-- ```{style="text-align: center;"} -->
+<!-- Semantic theory (λ-terms) -->
+<!--      ↓ δ-rules -->
+<!-- Simplified form -->
+<!--      ↓ Compilation -->
+<!-- Kernel model (Stan) -->
+<!--      ↓ Augmentation -->
+<!-- Full statistical model -->
+<!-- ``` -->
+<!-- --- -->
+</section>
+<section id="key-ideas" class="slide level2">
+<h2>Key ideas</h2>
+<ul>
+<li class="fragment"><strong>δ-rules</strong> bridge theory and computation</li>
+<li class="fragment"><strong>Kernel models</strong> isolate semantic content from statistical machinery</li>
+<li class="fragment"><strong>This distinction is crucial</strong>:
+<ul>
+<li class="fragment">PDS automates the translation from compositional semantics to the core statistical model…</li>
+<li class="fragment">while leaving room for analysts to add domain-specific statistical structure</li>
+</ul></li>
+<li class="fragment"><strong>Compilation</strong> embodies our linking hypothesis between semantic competence and performance</li>
+</ul>
+</section>
+<section id="what-weve-covered" class="slide level2">
+<h2>What we’ve covered</h2>
+<ul>
+<li class="fragment"><strong>Degree inference</strong> from norming questions using degree-argument adjectives</li>
+<li class="fragment"><strong>Vagueness</strong> as threshold uncertainty in gradable adjectives</li>
+<li class="fragment"><strong>Likelihood judgments</strong> via probabilistic computation with <code>normal_cdf</code></li>
+<li class="fragment"><strong>Full δ-rule walkthroughs</strong> showing how complex λ-terms become Stan parameters</li>
+</ul>
+<!-- --- -->
+<!-- # Future Directions -->
+<!-- ## Automated augmentation -->
+<!-- Currently analysts manually add: -->
+<!-- - Random effects -->
+<!-- - Hierarchical priors -->
+<!-- - Measurement models -->
+<!-- ::: {.fragment} -->
+<!-- **Goal**: Automate common statistical patterns -->
+<!-- ::: -->
+<!-- --- -->
+<!-- ## Formally verified compilation -->
+<!-- ::: {.incremental} -->
+<!-- - δ-rules with Agda/Coq proofs -->
+<!-- - Ensure semantic preservation -->
+<!-- - Enable generic transformations -->
+<!-- - Build trust in compilation -->
+<!-- ::: -->
+<!-- --- -->
+<!-- ## Richer kernel models -->
+<!-- Extend PDS to directly output: -->
+<!-- - Mixture models -->
+<!-- - Censoring mechanisms -->
+<!-- - Complex statistical structures -->
+<!-- ::: {.fragment} -->
+<!-- **Key**: Encode more semantic theory in kernels -->
+<!-- ::: -->
+<!-- --- -->
+<!-- ## Community contributions -->
+<!-- The modular PDS design invites: -->
+<!-- - New lexical entries -->
+<!-- - Domain-specific δ-rules -->
+<!-- - Alternative compilation strategies -->
+<!-- - Cross-linguistic extensions -->
+<!-- --- -->
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<ul>
+<li class="fragment">PDS bridges formal semantics and statistical modeling</li>
+<li class="fragment">δ-rules enable computational tractability</li>
+<li class="fragment">Kernel models preserve theoretical clarity</li>
+<li class="fragment">This approach scales to complex phenomena</li>
+</ul>
+<div class="fragment">
+<p>Next: How this handles factivity—where gradience poses even deeper theoretical puzzles</p>
+</div>
+</section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-kennedy_vagueness_2007" class="csl-entry" role="listitem">
+Kennedy, Christopher. 2007. <span>“Vagueness and Grammar: The Semantics of Relative and Absolute Gradable Adjectives.”</span> <em>Linguistics and Philosophy</em> 30 (1): 1–45. <a href="https://doi.org/10.1007/s10988-006-9008-0">https://doi.org/10.1007/s10988-006-9008-0</a>.
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Probabilistic dynamic semantics</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
