@@ -1,0 +1,821 @@
+[
+  {
+    "objectID": "adjectives/gradable-adjectives.html#vague-adjectives",
+    "href": "adjectives/gradable-adjectives.html#vague-adjectives",
+    "title": "Gradable adjectives",
+    "section": "Vague adjectives",
+    "text": "Vague adjectives\n\ntall, wide, expensive, happy, …\n\n\nThe coffee in Rome is expensive. (Kennedy 2007)\n\n\nTrue if: the cost of coffee in Rome is as great as a salient threshold, \\(d\\): \\[c ≥ d\\]\nMaybe the cost of coffee is 3 euros.\n\\(d\\) is vague… maybe it ranges somewhere from 2 euros to 4 euros."
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns",
+    "href": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns",
+    "title": "Gradable adjectives",
+    "section": "Vagueness: strange inference patterns",
+    "text": "Vagueness: strange inference patterns\nVague adjectives such as expensive\n\nadmit borderline cases:\n\nMud Blend: $1.50/lb   🙁\nOrganic Kona: $20/lb   🥰\nSwell Start Blend: $9.25/lb ??"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-1",
+    "href": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-1",
+    "title": "Gradable adjectives",
+    "section": "Vagueness: strange inference patterns",
+    "text": "Vagueness: strange inference patterns\n\nproduce sorites paradoxes:"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#sorites-10",
+    "href": "adjectives/gradable-adjectives.html#sorites-10",
+    "title": "Gradable adjectives",
+    "section": "Sorites: $10",
+    "text": "Sorites: $10\nIs a $10 cup of coffee expensive?"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#sorites-9.99",
+    "href": "adjectives/gradable-adjectives.html#sorites-9.99",
+    "title": "Gradable adjectives",
+    "section": "Sorites: $9.99",
+    "text": "Sorites: $9.99\nTake $0.01 away. Is a $9.99 cup of coffee expensive?"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#sorites-9.98",
+    "href": "adjectives/gradable-adjectives.html#sorites-9.98",
+    "title": "Gradable adjectives",
+    "section": "Sorites: $9.98",
+    "text": "Sorites: $9.98\nTake $0.01 away. Is a $9.98 cup of coffee expensive?"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-2",
+    "href": "adjectives/gradable-adjectives.html#vagueness-strange-inference-patterns-2",
+    "title": "Gradable adjectives",
+    "section": "Vagueness: strange inference patterns",
+    "text": "Vagueness: strange inference patterns\n\nproduce sorites paradoxes:\n\nPremise 1: A $10 cup of coffee is expensive.\nPremise 2: If an expensive cup of coffee were 1 cent cheaper, it would still be expensive.\nConclusion: Therefore, a free cup of coffee is expensive!"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#why-tricky",
+    "href": "adjectives/gradable-adjectives.html#why-tricky",
+    "title": "Gradable adjectives",
+    "section": "Why tricky?",
+    "text": "Why tricky?\nBorderline cases and sorites paradoxes: inference patterns that do not fall into any traditional semantic classification.\n\nBorderline cases: things to which the adjective neither applies nor doesn’t apply.\nThe inference is not simply “on” or “off”.\nThe sorites paradox: troublesome because…\n\ninferences should be closed under implication: if $10 ↝ $9.99, and $9.99 ↝ $9.98, then $10.00 ↝ $9.98.\n\na $10 cup is expensive ↝ a free cup is expensive"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#inference-judgments",
+    "href": "adjectives/gradable-adjectives.html#inference-judgments",
+    "title": "Gradable adjectives",
+    "section": "Inference judgments",
+    "text": "Inference judgments\nOngoing work with Helena Aparicio (Cornell Linguistics):\n\nCollect scale norming data.\n\n“X drank a coffee. Guess how expensive it was?”\n\nCollect adjectival inference data.\n\n“X drank a coffee. How likely is it that it was expensive?” (vague)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#modeling-pipeline",
+    "href": "adjectives/gradable-adjectives.html#modeling-pipeline",
+    "title": "Gradable adjectives",
+    "section": "Modeling pipeline",
+    "text": "Modeling pipeline\nUsing the norming data to help model the adjectival inference data:\n\nAssume that people make likelihood judgments based on their probabilistic estimate of where an object lands on the adjective’s scale.\nThen, we can model the distribution over these estimates using a model fit to the norming data."
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#norming-task",
+    "href": "adjectives/gradable-adjectives.html#norming-task",
+    "title": "Gradable adjectives",
+    "section": "Norming task",
+    "text": "Norming task\n\n\n\n\n\n6 relative adjectives\n3 possible contexts for each adjective (“high”, “medium”, “low”)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#norming-data",
+    "href": "adjectives/gradable-adjectives.html#norming-data",
+    "title": "Gradable adjectives",
+    "section": "Norming data",
+    "text": "Norming data"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#adjectival-inference-task",
+    "href": "adjectives/gradable-adjectives.html#adjectival-inference-task",
+    "title": "Gradable adjectives",
+    "section": "Adjectival inference task",
+    "text": "Adjectival inference task\n\n\n\n\n\nSame 6 adjectives (six relative, six absolute)\nSame 3 possible contexts for each adjective (“high”, “medium”, “low”)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#adjectival-inference-data",
+    "href": "adjectives/gradable-adjectives.html#adjectival-inference-data",
+    "title": "Gradable adjectives",
+    "section": "Adjectival inference data",
+    "text": "Adjectival inference data\n\n \n\n\n  \\(\\scriptsize \\text{Likelihood that adj. is true}\\)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-compilation-challenge",
+    "href": "adjectives/gradable-adjectives.html#the-compilation-challenge",
+    "title": "Gradable adjectives",
+    "section": "The compilation challenge",
+    "text": "The compilation challenge\n\nSemantic theory: λ-terms, compositional rules\nStatistical models: Parameters, likelihoods, inference\n\nThe gap: Need explicit linking hypotheses\n\n\nPDS automates the core translation while leaving room for statistical expertise"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#what-pds-produces",
+    "href": "adjectives/gradable-adjectives.html#what-pds-produces",
+    "title": "Gradable adjectives",
+    "section": "What PDS produces",
+    "text": "What PDS produces\n\nPDS outputs what we term a kernel model—the semantic core that corresponds directly to the lexical and compositional semantics\nThis kernel can in principle be augmented with other components:\n\nRandom effects\nHierarchical priors\n\nOther statistical machinery\n\nThe current implementation focuses on producing just the semantic kernel"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#why-stan",
+    "href": "adjectives/gradable-adjectives.html#why-stan",
+    "title": "Gradable adjectives",
+    "section": "Why Stan?",
+    "text": "Why Stan?\n\nStan is a probabilistic programming language designed for statistical inference\nUnlike general-purpose programming languages, Stan is specialized for stating distributional assumptions\nThese assumptions are translated to a C++ backend that performs statistical inference\nUsually uses a form of Markov Chain Monte Carlo (MCMC)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#why-stan-1",
+    "href": "adjectives/gradable-adjectives.html#why-stan-1",
+    "title": "Gradable adjectives",
+    "section": "Why Stan?",
+    "text": "Why Stan?\n\nDeclarative(-ish): We specify probability models, not procedures\nSpecialized: Designed for Bayesian inference\nParallel to semantics: Both declare “what” not “how”\n\nSemantics: truth conditions\nStan: probabilistic relationships"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#stans-block-structure",
+    "href": "adjectives/gradable-adjectives.html#stans-block-structure",
+    "title": "Gradable adjectives",
+    "section": "Stan’s block structure",
+    "text": "Stan’s block structure\ndata {\n  int&lt;lower=1&gt; N;           // observed\n  vector[N] y;              \n}\nparameters {\n  real mu;                  // inferred\n  real&lt;lower=0&gt; sigma;      \n}\nmodel {\n  mu ~ normal(0, 10);       // prior\n  y ~ normal(mu, sigma);    // likelihood\n}\n\nKey idea: This approach aligns well with our goals:\n\nFormal semantic analyses declare some representation of the semantic content\nStan declares probabilistic relationships rather than sampling algorithms"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#our-first-example",
+    "href": "adjectives/gradable-adjectives.html#our-first-example",
+    "title": "Gradable adjectives",
+    "section": "Our first example",
+    "text": "Our first example\n\nQuestion: “How tall is Jo?”\nTask: Participants report degrees on scales\nGoal: Infer the “true” degree for each item\n\n\nThis seemingly simple task will reveal the complexity of the PDS-to-Stan pipeline"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-experimental-data",
+    "href": "adjectives/gradable-adjectives.html#the-experimental-data",
+    "title": "Gradable adjectives",
+    "section": "The experimental data",
+    "text": "The experimental data\n\n\n\n\nparticipant\nitem\nadjective\ncondition\nresponse\n\n\n\n\n1\ntall_high\ntall\nhigh\n0.82\n\n\n1\nwide_low\nwide\nlow\n0.34\n\n\n1\nexpensive_mid\nexpensive\nmid\n0.62\n\n\n1\nfull_high\nfull\nhigh\n1.00\n\n\n\n\n\n\nItems = adjective × condition pairs\nResponses on 0-1 scale (slider)\nChallenge: Handle boundary responses (0s and 1s)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#building-the-data-block---counts",
+    "href": "adjectives/gradable-adjectives.html#building-the-data-block---counts",
+    "title": "Gradable adjectives",
+    "section": "Building the data block - counts",
+    "text": "Building the data block - counts\ndata {\n  int&lt;lower=1&gt; N_item;        // number of items\n  int&lt;lower=1&gt; N_participant; // number of participants  \n  int&lt;lower=1&gt; N_data;        // number of data points\n\nWhy constraints?\n\n&lt;lower=1&gt; ensures valid data\nHelps Stan optimize algorithms\nCatches errors early"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#handling-boundary-responses",
+    "href": "adjectives/gradable-adjectives.html#handling-boundary-responses",
+    "title": "Gradable adjectives",
+    "section": "Handling boundary responses",
+    "text": "Handling boundary responses\n  // Censoring at boundaries\n  int&lt;lower=1&gt; N_0;           // number of 0s\n  int&lt;lower=1&gt; N_1;           // number of 1s\n\nWhy separate these?\n\nSlider endpoints are special\n0 might mean “even less than 0”\n1 might mean “even more than 1”\nCensored data needs special treatment"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#response-data-and-indexing",
+    "href": "adjectives/gradable-adjectives.html#response-data-and-indexing",
+    "title": "Gradable adjectives",
+    "section": "Response data and indexing",
+    "text": "Response data and indexing\n  vector&lt;lower=0, upper=1&gt;[N_data] y; // responses in (0,1)\n  \n  // Which item/participant for each response\n  array[N_data] int&lt;lower=1, upper=N_item&gt; item;\n  array[N_data] int&lt;lower=1, upper=N_participant&gt; participant;\n}\n\nThese arrays are lookup tables: item[5] = 3 means the 5th response is about item #3"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#parameters-what-we-want-to-learn",
+    "href": "adjectives/gradable-adjectives.html#parameters-what-we-want-to-learn",
+    "title": "Gradable adjectives",
+    "section": "Parameters: What we want to learn",
+    "text": "Parameters: What we want to learn\nparameters {\n  // Semantic parameters - what PDS cares about\n  vector[N_item] mu_guess;    // degree for each item\n\n\nThese means represent our best guess, as researchers, about each item’s true degree on its scale\nThey capture the theoretical degrees that the semantic analysis posits\nCrucially, they can also be viewed as representing subjects’ uncertainty about these degrees\nThey reflect what unresolved uncertainty subjects maintain when they make these guesses"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#random-effects-structure",
+    "href": "adjectives/gradable-adjectives.html#random-effects-structure",
+    "title": "Gradable adjectives",
+    "section": "Random effects structure",
+    "text": "Random effects structure\n  // How much people vary\n  real&lt;lower=0&gt; sigma_epsilon_guess;\n  \n  // Each person's deviation (z-scores)\n  vector[N_participant] z_epsilon_guess;\n\nNon-centered parameterization\n\nSeparate scale (sigma) from standardized deviations (z)\nHelps Stan’s algorithms converge\nMathematically equivalent but computationally superior"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#measurement-and-censoring",
+    "href": "adjectives/gradable-adjectives.html#measurement-and-censoring",
+    "title": "Gradable adjectives",
+    "section": "Measurement and censoring",
+    "text": "Measurement and censoring\n  real&lt;lower=0,upper=1&gt; sigma_e;  // response noise\n  \n  // True values for censored data\n  array[N_0] real&lt;upper=0&gt; y_0;    // true values for 0s\n  array[N_1] real&lt;lower=1&gt; y_1;    // true values for 1s\n}\n\nWe infer what the “true” values might have been beyond scale boundaries"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#transformed-parameters",
+    "href": "adjectives/gradable-adjectives.html#transformed-parameters",
+    "title": "Gradable adjectives",
+    "section": "Transformed parameters",
+    "text": "Transformed parameters\ntransformed parameters {\n  // Convert z-scores to actual effects\n  vector[N_participant] epsilon_guess = \n    sigma_epsilon_guess * z_epsilon_guess;\n\nIf sigma = 0.2 and z[3] = 1.5, then participant 3 gives responses 0.3 units higher than average"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#computing-predictions",
+    "href": "adjectives/gradable-adjectives.html#computing-predictions",
+    "title": "Gradable adjectives",
+    "section": "Computing predictions",
+    "text": "Computing predictions\n  vector[N_data] guess;\n  for (i in 1:N_data) {\n    guess[i] = mu_guess[item[i]] + \n               epsilon_guess[participant[i]];\n  }\n}\n\nExample trace\n\nResponse i: item 5, participant 3\nmu_guess[5] = 0.7 (item’s degree)\nepsilon_guess[3] = 0.1 (participant’s adjustment)\nguess[i] = 0.7 + 0.1 = 0.8"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-model-block",
+    "href": "adjectives/gradable-adjectives.html#the-model-block",
+    "title": "Gradable adjectives",
+    "section": "The model block",
+    "text": "The model block\nmodel {\n  // Priors\n  sigma_epsilon_guess ~ exponential(1);\n  z_epsilon_guess ~ std_normal();\n  \n  // Likelihood\n  for (i in 1:N_data) {\n    y[i] ~ normal(guess[i], sigma_e);\n  }\n}"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-pds-implementation",
+    "href": "adjectives/gradable-adjectives.html#the-pds-implementation",
+    "title": "Gradable adjectives",
+    "section": "The PDS implementation",
+    "text": "The PDS implementation\n-- From sources/pds/src/\ns1'        = termOf $ getSemantics @Adjectives 1 \n             [\"jo\", \"is\", \"a\", \"soccer player\"]\nq1'        = termOf $ getSemantics @Adjectives 0 \n             [\"how\", \"tall\", \"jo\", \"is\"]\ndiscourse' = ty tau $ assert s1' &gt;&gt;&gt; ask q1'\nscaleNormingExample = asTyped tau \n  (betaΔNormal δRules . \n   adjectivesRespond scaleNormingPrior) discourse'\n\nThis establishes context and asks for Jo’s height\n\n\nNote the use of certain convenience functions:\n\ngetSemantics retrieves one of the meanings (in the λ-calculus) for the expression\nIt takes a string of strings as input\nUses the parser implemented at Grammar.Parser"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#lexical-entries-for-degree-questions",
+    "href": "adjectives/gradable-adjectives.html#lexical-entries-for-degree-questions",
+    "title": "Gradable adjectives",
+    "section": "Lexical entries for degree questions",
+    "text": "Lexical entries for degree questions\n-- From Grammar.Lexica.SynSem.Adjectives\n\"tall\" -&gt; [ SynSem {\n  syn = AP :\\: Deg,\n  sem = ty tau (purePP (lam d (lam x (lam i \n    (sCon \"(≥)\" @@ (sCon \"height\" @@ i @@ x) @@ d)))))\n  }, ... ]\n\n\"how\" -&gt; [ SynSem {\n  syn = Qdeg :/: (S :/: AP) :/: (AP :\\: Deg),\n  sem = ty tau (purePP (lam x (lam y (lam z \n    (y @@ (x @@ z))))))\n  }, ... ]\n\nThe degree-argument version of adjectives enables degree questions"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#compositional-semantics",
+    "href": "adjectives/gradable-adjectives.html#compositional-semantics",
+    "title": "Gradable adjectives",
+    "section": "Compositional semantics",
+    "text": "Compositional semantics\nFor how tall is Jo?, composition yields:\n\\[λd, i.\\ct{height}(i)(\\ct{j}) ≥ d\\]\n\nWhen \\(\\abbr{respond}\\) comes into the picture, some index \\(i^{\\prime}\\) is sampled from the common ground, and the maximal answer to the question is determined to be:\n\\[\\ct{max}(λd.\\ct{height}(i^{\\prime})(\\ct{j}) ≥ d)\\]"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#δ-rules-what-are-they",
+    "href": "adjectives/gradable-adjectives.html#δ-rules-what-are-they",
+    "title": "Gradable adjectives",
+    "section": "δ-rules: What are they?",
+    "text": "δ-rules: What are they?\ntype DeltaRule = Term -&gt; Maybe Term\n\nδ-rules enable different semantic computations while preserving semantic equivalence\nOrder of rule application doesn’t affect the final result\nThey should be sound\n\nMeaning: the equalities they encode should be (mathematically) true equalities"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-indices-and-maxes-δ-rules",
+    "href": "adjectives/gradable-adjectives.html#the-indices-and-maxes-δ-rules",
+    "title": "Gradable adjectives",
+    "section": "The indices and maxes δ-rules",
+    "text": "The indices and maxes δ-rules\n-- From Lambda.Δ module\nindices :: DeltaRule\nindices = \\case\n  Height (UpdHeight p _) -&gt; Just p\n  Height (UpdSocPla _ i) -&gt; Just (Height i)\n  SocPla (UpdSocPla p _) -&gt; Just p\n  SocPla (UpdHeight _ i) -&gt; Just (SocPla i)\n  -- ... other cases for Ling, Epi\n  _                      -&gt; Nothing\n\nExtracts values from the discourse state\n\n\nmaxes :: DeltaRule\nmaxes = \\case\n   Max (Lam y (GE x (Var y'))) | y' == y -&gt; Just x\n   _                                     -&gt; Nothing  \n\n\nExtracts the unique degree satisfying the inequality"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#δ-reduction-walkthrough",
+    "href": "adjectives/gradable-adjectives.html#δ-reduction-walkthrough",
+    "title": "Gradable adjectives",
+    "section": "δ-reduction walkthrough",
+    "text": "δ-reduction walkthrough\nFor degree questions like how tall is Jo?, the compositional semantics produces: \\[\\ct{max}(λd.\\ct{height}(i^{\\prime})(\\ct{j}) ≥ d)\\]\n\nApply indices rule to extract height: \\[\\text{becomes}\\,\\,\\, \\ct{max}(λd.h ≥ d)\\] where \\(h\\) represents Jo’s actual height at index \\(i\\)\n\n\nApply max extraction using the following δ-rule: becomes \\(h\\)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#key-transformations",
+    "href": "adjectives/gradable-adjectives.html#key-transformations",
+    "title": "Gradable adjectives",
+    "section": "Key transformations",
+    "text": "Key transformations\n\nChallenge: translating abstract semantic computations into Stan’s parameter space\nTranslation embodies (some of) our linking hypothesis between semantic competence and performance\n\n\nDegree extraction feeds parameter inference\n\n\\(\\ct{max}(λd.\\ct{height}(i)(\\ct{j}) ≥ d)\\) → Infer parameter height_jo\nThe unique degree satisfying the equation becomes a parameter to estimate"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#key-transformations-1",
+    "href": "adjectives/gradable-adjectives.html#key-transformations-1",
+    "title": "Gradable adjectives",
+    "section": "Key transformations",
+    "text": "Key transformations\n\n\nFunctions become arrays\n\n\\(\\ct{height} : \\iota \\to e \\to r\\): Array height[person]\nFunction application: Array indexing\n\nPropositions become probabilities\n\nTruth values: Real numbers in [0,1]\nLogical operations: Probabilistic operations\n\nThe probabilistic bind statements become Stan’s target\n\nThe \\(∼\\) structures sequential computation\nThis determines Stan’s log probability"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#pds-kernel-output",
+    "href": "adjectives/gradable-adjectives.html#pds-kernel-output",
+    "title": "Gradable adjectives",
+    "section": "PDS kernel output",
+    "text": "PDS kernel output\nThe PDS system outputs the following kernel model, given the semantic fragment:\nmodel {\n  // FIXED EFFECTS\n  w ~ normal(0.0, 1.0);\n  \n  // LIKELIHOOD\n  target += normal_lpdf(y | w, sigma);\n}\n\n\n\n\nCaptures the essential degree-based semantics where w represents the degree on the height scale."
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#from-kernel-to-full-model",
+    "href": "adjectives/gradable-adjectives.html#from-kernel-to-full-model",
+    "title": "Gradable adjectives",
+    "section": "From kernel to full model",
+    "text": "From kernel to full model\nThe full model with analyst augmentations looks like:\nmodel {\n  // PRIORS (analyst-added)\n  sigma_epsilon_guess ~ exponential(1);\n  sigma_e ~ beta(2, 10);\n  \n  // FIXED EFFECTS (PDS kernel)\n  mu_guess ~ normal(0.0, 1.0);\n  \n  // RANDOM EFFECTS (analyst-added)\n  z_epsilon_guess ~ std_normal();\n  \n  // LIKELIHOOD (PDS kernel with modifications)\n  y[i] ~ normal(mu_guess[item[i]] + epsilon_guess[participant[i]], sigma_e);\n}\nHighlighted lines show the kernel model from PDS"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#from-kernel-to-full-model-1",
+    "href": "adjectives/gradable-adjectives.html#from-kernel-to-full-model-1",
+    "title": "Gradable adjectives",
+    "section": "From kernel to full model",
+    "text": "From kernel to full model\n\n\nThe unhighlighted portions add statistical machinery for real data:\n\nHierarchical priors\nRandom effects\n\nIndexed parameters"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#from-degrees-to-likelihood-judgments",
+    "href": "adjectives/gradable-adjectives.html#from-degrees-to-likelihood-judgments",
+    "title": "Gradable adjectives",
+    "section": "From degrees to likelihood judgments",
+    "text": "From degrees to likelihood judgments\nOur next model addresses how speakers reason about the likelihood that gradable adjectives apply: how likely (is it) that Jo is tall?\n\nMetalinguistic judgment about adjective application\nRequires probabilistic reasoning\nKey: Threshold uncertainty creates vagueness"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-pds-implementation-1",
+    "href": "adjectives/gradable-adjectives.html#the-pds-implementation-1",
+    "title": "Gradable adjectives",
+    "section": "The PDS implementation",
+    "text": "The PDS implementation\n-- From sources/pds/src/\nexpr1 = [\"jo\", \"is\", \"a\", \"soccer\", \"player\"]\nexpr2 = [\"how\", \"likely\", \"that\", \"jo\", \"is\", \"tall\"]\ns1 = getSemantics @Adjectives 0 expr1\nq1 = getSemantics @Adjectives 0 expr2\ndiscourse = ty tau $ assert s1 &gt;&gt;&gt; ask q1\nlikelihoodExample = asTyped tau \n  (betaΔNormal δRules . \n   adjectivesRespond likelihoodPrior) discourse"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#lexical-entries-part-1",
+    "href": "adjectives/gradable-adjectives.html#lexical-entries-part-1",
+    "title": "Gradable adjectives",
+    "section": "Lexical entries (Part 1)",
+    "text": "Lexical entries (Part 1)\n-- From Grammar.Lexica.SynSem.Adjectives\n\"tall\" -&gt; [ SynSem {\n    syn = AP,\n    sem = ty tau (lam s (purePP (lam x (lam i \n      (sCon \"(≥)\" @@ (sCon \"height\" @@ i @@ x) @@ \n       (sCon \"d_tall\" @@ s)))) @@ s))\n    } ]\n\nKey semantic components:\n\nheight: \\(\\iota \\to e \\to r\\) (entity heights)\nd_tall: \\(\\sigma \\to r\\) (contextual threshold)\n(≥): \\(r \\to r \\to t\\) (comparison)"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#lexical-entries-part-2",
+    "href": "adjectives/gradable-adjectives.html#lexical-entries-part-2",
+    "title": "Gradable adjectives",
+    "section": "Lexical entries (Part 2)",
+    "text": "Lexical entries (Part 2)\n\"likely\" -&gt; [ SynSem {\n    syn = S :\\: Deg :/: S,\n    sem = ty tau (lam s (purePP (lam p (lam d (lam _' \n      (sCon \"(≥)\" @@ \n       (Pr (let' i (CG s) (Return (p @@ i)))) @@ \n       d)))) @@ s))\n    } ]\n\nCompares probability of embedded proposition to a degree"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#δ-reduction-for-vagueness",
+    "href": "adjectives/gradable-adjectives.html#δ-reduction-for-vagueness",
+    "title": "Gradable adjectives",
+    "section": "δ-reduction for vagueness",
+    "text": "δ-reduction for vagueness\nStarting with Jo is tall: \\[\\ct{(≥)}(\\ct{height}(i)(\\ct{j}))(\\ct{d\\_tall}(s))\\]\n\nApply states rule to extract threshold: \\[\\text{becomes}\\,\\,\\,\\ct{(≥)}(\\ct{height}(i)(\\ct{j}))(d)\\]\n\n\nApply indices rule to extract height: \\[\\text{becomes}\\,\\,\\,\\ct{(≥)}(h)(d)\\]"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-states-δ-rule",
+    "href": "adjectives/gradable-adjectives.html#the-states-δ-rule",
+    "title": "Gradable adjectives",
+    "section": "The states δ-rule",
+    "text": "The states δ-rule\n-- From Lambda.Δ (lines 167-183)\nstates :: DeltaRule\nstates = \\case\n  CG      (UpdCG cg _)     -&gt; Just cg\n  CG      (UpdDTall _ s)   -&gt; Just (CG s)\n  DTall   (UpdDTall d _)   -&gt; Just d\n  DTall   (UpdCG _ s)      -&gt; Just (DTall s)\n  QUD     (UpdQUD q _)     -&gt; Just q\n  QUD     (UpdCG _ s)      -&gt; Just (QUD s)\n  TauKnow (UpdTauKnow b _) -&gt; Just b\n  TauKnow (UpdCG _ s)      -&gt; Just (TauKnow s)\n  _                        -&gt; Nothing"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#the-probabilities-δ-rule",
+    "href": "adjectives/gradable-adjectives.html#the-probabilities-δ-rule",
+    "title": "Gradable adjectives",
+    "section": "The probabilities δ-rule",
+    "text": "The probabilities δ-rule\n-- From Lambda.Δ (lines 156-164)\nprobabilities :: DeltaRule\nprobabilities = \\case\n  Pr (Return Tr)         -&gt; Just 1\n  Pr (Return Fa)         -&gt; Just 0\n  Pr (Bern x)            -&gt; Just x\n  Pr (Disj x t u)        -&gt; Just (x * Pr t + (1 - x) * Pr u)\n  Pr (Let v (Normal x y) (Return (GE t (Var v')))) \n    | v' == v -&gt; Just (NormalCDF x y t)\n  Pr (Let v (Normal x y) (Return (GE (Var v') t))) \n    | v' == v -&gt; Just (NormalCDF (- x) y t)\n  _                      -&gt; Nothing"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#probabilistic-computation",
+    "href": "adjectives/gradable-adjectives.html#probabilistic-computation",
+    "title": "Gradable adjectives",
+    "section": "Probabilistic computation",
+    "text": "Probabilistic computation\nThe system computes \\(P(h \\geq d)\\) when both are uncertain:\n\n\\(h \\sim \\ct{Normal}(\\mu_h, \\sigma_h)\\) (height)\n\\(d \\sim \\ct{Normal}(\\mu_d, \\sigma_d)\\) (threshold)\nResult: normal_cdf computation in Stan\n\n\nresponse = 1 - normal_cdf(d[item[i]] | \n                         mu_guess[i], \n                         sigma_guess);"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#pds-kernel-for-vagueness",
+    "href": "adjectives/gradable-adjectives.html#pds-kernel-for-vagueness",
+    "title": "Gradable adjectives",
+    "section": "PDS kernel for vagueness",
+    "text": "PDS kernel for vagueness\nmodel {\n  v ~ normal(0.0, 1.0);\n  target += normal_lpdf(y | \n              normal_cdf(v, -0.0, 1.0), \n              sigma);\n}\n\nThe kernel captures likelihood via normal_cdf"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#full-vagueness-model",
+    "href": "adjectives/gradable-adjectives.html#full-vagueness-model",
+    "title": "Gradable adjectives",
+    "section": "Full vagueness model",
+    "text": "Full vagueness model\ntransformed parameters {\n  for (i in 1:N_data) {\n    // Add participant adjustment\n    real threshold_logit = mu_guess0[item[i]] + \n                          epsilon_mu_guess[participant[i]];\n    mu_guess[i] = inv_logit(threshold_logit);\n    \n    // KEY SEMANTIC COMPUTATION: P(adjective applies)\n    response_rel[i] = 1 - normal_cdf(d[item[i]] | \n                                     mu_guess[i], \n                                     sigma_guess);\n  }\n}"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#key-ideas",
+    "href": "adjectives/gradable-adjectives.html#key-ideas",
+    "title": "Gradable adjectives",
+    "section": "Key ideas",
+    "text": "Key ideas\n\nδ-rules bridge theory and computation\nKernel models isolate semantic content from statistical machinery\nThis distinction is crucial:\n\nPDS automates the translation from compositional semantics to the core statistical model…\nwhile leaving room for analysts to add domain-specific statistical structure\n\nCompilation embodies our linking hypothesis between semantic competence and performance"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#what-weve-covered",
+    "href": "adjectives/gradable-adjectives.html#what-weve-covered",
+    "title": "Gradable adjectives",
+    "section": "What we’ve covered",
+    "text": "What we’ve covered\n\nDegree inference from norming questions using degree-argument adjectives\nVagueness as threshold uncertainty in gradable adjectives\nLikelihood judgments via probabilistic computation with normal_cdf\nFull δ-rule walkthroughs showing how complex λ-terms become Stan parameters"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#conclusion",
+    "href": "adjectives/gradable-adjectives.html#conclusion",
+    "title": "Gradable adjectives",
+    "section": "Conclusion",
+    "text": "Conclusion\n\nPDS bridges formal semantics and statistical modeling\nδ-rules enable computational tractability\nKernel models preserve theoretical clarity\nThis approach scales to complex phenomena\n\n\nNext: How this handles factivity—where gradience poses even deeper theoretical puzzles"
+  },
+  {
+    "objectID": "adjectives/gradable-adjectives.html#references",
+    "href": "adjectives/gradable-adjectives.html#references",
+    "title": "Gradable adjectives",
+    "section": "References",
+    "text": "References\n\n\n\n\nKennedy, Christopher. 2007. “Vagueness and Grammar: The Semantics of Relative and Absolute Gradable Adjectives.” Linguistics and Philosophy 30 (1): 1–45. https://doi.org/10.1007/s10988-006-9008-0."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#motivation",
+    "href": "pds-intro/pds-intro.html#motivation",
+    "title": "PDS Introduction",
+    "section": "Motivation",
+    "text": "Motivation\nSemantic frameworks provide powerful tools for characterizing what we can and cannot mean in using linguistic expressions.\n\nImportant properties: compositional and modular.\n\nCompositional: the meanings of complex expressions systematically computed from the meanings of smaller expressions, how they are assembled.\nModular: we can analyze one linguistic phenomenon at a time (e.g., anaphora, vagueness)… then use a systematic recipe for putting the analyses together (e.g., anaphora and vagueness)."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#prior-approach-1",
+    "href": "pds-intro/pds-intro.html#prior-approach-1",
+    "title": "PDS Introduction",
+    "section": "Prior approach #1",
+    "text": "Prior approach #1\nChallenge: semantic frameworks don’t generally provide an apparatus for characterizing uncertainty about what we can mean in using linguistic expressions.\n\nResult: they have great difficulty characterizing:\n\nthe actual inferences that a language-comprehender draws;\nthe statistical patterns exhibited by these inferences (e.g., in a human inference dataset)."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-1",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-1",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-2",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-2",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-3",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-3",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-4",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-4",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-5",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-5",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?\n\n\nAverage response:"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#inferential-uncertainty-6",
+    "href": "pds-intro/pds-intro.html#inferential-uncertainty-6",
+    "title": "PDS Introduction",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?\n\n\nAverage response:"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#prior-approach-2",
+    "href": "pds-intro/pds-intro.html#prior-approach-2",
+    "title": "PDS Introduction",
+    "section": "Prior approach #2",
+    "text": "Prior approach #2\nFrameworks for probabilistic semantics and pragmatics provide powerful tools for characterizing uncertainty about what we can mean in using linguistics expressions:\n\nsampling from and querying arbitrary probability distributions\nrelating the output to (e.g., human) data\nformal model comparison\n\n\nChallenge: no general structure-preserving method for mapping between semantic analyses and probabilistic analyses."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#probabilistic-dynamic-semantics",
+    "href": "pds-intro/pds-intro.html#probabilistic-dynamic-semantics",
+    "title": "PDS Introduction",
+    "section": "“Probabilistic Dynamic Semantics”",
+    "text": "“Probabilistic Dynamic Semantics”\nGoal: framework where probabilistic reasoning can be added to a semantic analysis without changing its structure.\n\nResult:\n\ncharacterize and distinguish difference sources of uncertainty\nuse existing semantic theories by plugging them into the framework\nformally compare different semantic theories with each other"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#a-general-goal",
+    "href": "pds-intro/pds-intro.html#a-general-goal",
+    "title": "PDS Introduction",
+    "section": "A general goal",
+    "text": "A general goal\n\nHave a methodology that is widely available to linguists working on meaning.\n\n\nLarge-scale inference datasets are becoming more and more central to linguistic methodology, and semantic theory should keep up!\n\nTools to render semantic theories as probabilistic models can help catalyze things."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#the-basic-idea",
+    "href": "pds-intro/pds-intro.html#the-basic-idea",
+    "title": "PDS Introduction",
+    "section": "The basic idea",
+    "text": "The basic idea\nWe should think of an experimental trial as a little discourse."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#the-basic-idea-1",
+    "href": "pds-intro/pds-intro.html#the-basic-idea-1",
+    "title": "PDS Introduction",
+    "section": "The basic idea",
+    "text": "The basic idea\n\nSentences: Start with a prior distribution over parameters some kind (e.g., encoding world knowledge, basic meanings). Update this prior with \\(⟦\\textit{s1}⟧\\), then \\(⟦\\textit{s2}⟧\\), etc.\nQuestion: Add \\(⟦\\textit{q}⟧\\) to the stack of questions under discussion (Ginzburg 1996; Farkas and Bruce 2010).\nAnswer: Retrieve \\(⟦\\textit{q}⟧\\) from the question stack; respond (i.e., query an inference distribution)."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#upshot",
+    "href": "pds-intro/pds-intro.html#upshot",
+    "title": "PDS Introduction",
+    "section": "Upshot",
+    "text": "Upshot\nOnce we have modeled the entire discourse in terms of some semantic analysis, we end up with a distribution over answers to the question prompt.\n\nA distribution we can learn about from data."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#two-kinds-of-uncertainty",
+    "href": "pds-intro/pds-intro.html#two-kinds-of-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Two kinds of uncertainty",
+    "text": "Two kinds of uncertainty\n\nresolved (or type-level) uncertainty\n\nlexical, structural, or semantic (e.g., scopal) ambiguity\n\nunresolved (or token-level) uncertainty\n\npresent on individual occasions of language use"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#example-of-resolved-uncertainty",
+    "href": "pds-intro/pds-intro.html#example-of-resolved-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Example of resolved uncertainty",
+    "text": "Example of resolved uncertainty\n\nJo ran a race.\n\n\n\nlocomotion sense of ran\nmanagement/organizational sense of ran\n\n\nAbout nature of speech act."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#example-of-unresolved-uncertainty",
+    "href": "pds-intro/pds-intro.html#example-of-unresolved-uncertainty",
+    "title": "PDS Introduction",
+    "section": "Example of unresolved uncertainty",
+    "text": "Example of unresolved uncertainty\n\nJo is tall.\n\n\n\nuncertainty about Jo’s height\n\n\nIn some sense, independent of speech act."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#uncertainty-in-pds",
+    "href": "pds-intro/pds-intro.html#uncertainty-in-pds",
+    "title": "PDS Introduction",
+    "section": "Uncertainty in PDS",
+    "text": "Uncertainty in PDS\n\nProbability distributions may be “stacked”; this stacking is reflected in the types of semantic values.\n\nE.g., \\(\\P e\\) vs. \\(\\P (\\P e)\\).\n\nResolved uncertainty: about the state of some discourse.\n\n\\(\\P σ\\)\n\nUnresolved uncertainty: encoded in the common ground.\n\n\\(\\P ι\\) (\\(ι\\) the type of possible worlds)\nThe common ground is an aspect of the state! \\(\\P σ = \\P (… \\P ι …)\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#discourse-states",
+    "href": "pds-intro/pds-intro.html#discourse-states",
+    "title": "PDS Introduction",
+    "section": "Discourse states",
+    "text": "Discourse states\n\nLists of parameters - can be arbitrarily complex.\n\nThe common ground (or context set; Stalnaker (1978))\nThe question under discussion (Roberts 2012; Ginzburg 1996)\nFarkas and Bruce (2010) stuff (e.g., projected sets)\n(Whatever you want)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#common-grounds",
+    "href": "pds-intro/pds-intro.html#common-grounds",
+    "title": "PDS Introduction",
+    "section": "Common grounds",
+    "text": "Common grounds\n\nProbability distributions over indices of some type\n\nencode what is true “in the world” \nmaybe certain linguistic parameters\n\n\n\nStates vs. indices of the common ground\nWhat kind of thing goes where?\n\nUltimately, an empirical question."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#dynamic-semantics",
+    "href": "pds-intro/pds-intro.html#dynamic-semantics",
+    "title": "PDS Introduction",
+    "section": "Dynamic semantics",
+    "text": "Dynamic semantics\n\nSome linguist walked in. They gave a lecture.\n\n\nPopular idea\nMany frameworks for dynamic semantics model sentence meanings as maps from input states to sets of output states (e.g., Groenendijk and Stokhof 1991; Muskens 1996, i.a.).\n\n\n\n1st sentence: \\(λs.\\{ x{::}s^{\\prime} ∣ s^{\\prime} = s ∧ \\ct{ling}(x) ∧ \\ct{walk}(x)\\}\\)\n2nd sentence: \\(λs.\\{ s^{\\prime} ∣ s^{\\prime} = s ∧ \\ct{lecture}(\\ct{sel}(s))\\}\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#expressions-and-discourses",
+    "href": "pds-intro/pds-intro.html#expressions-and-discourses",
+    "title": "PDS Introduction",
+    "section": "Expressions and discourses",
+    "text": "Expressions and discourses\n\nmap discourse states onto probability distributions over new discourse states: \\(σ → \\P (α × σ^{\\prime})\\)\ncomplex linguistic acts may be sequenced\n\nan operation, bind, native to the probability monad\n\n\n\nFor instance\n\n\\(\\abbr{assert}(⟦\\textit{Jo is tall}⟧) : σ → \\P (⋄ × σ)\\)\n\\(\\abbr{ask}(⟦\\textit{how tall?}⟧) : σ → \\P (⋄ × \\Q ι r σ)\\)\n\\(\\abbr{assert}(⟦\\textit{Jo is tall}⟧) &gt;&gt; \\abbr{ask}(⟦\\textit{how tall?}⟧) : σ → \\P (⋄ × \\Q ι r σ)\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#response-functionslinking-models",
+    "href": "pds-intro/pds-intro.html#response-functionslinking-models",
+    "title": "PDS Introduction",
+    "section": "Response functions/linking models",
+    "text": "Response functions/linking models\n\nTake a discourse, together with a prior distribution over states…\nGive back a distribution over responses to the last question asked (given some testing instrument).\n\n\n\\[\n\\begin{align*}\n\\ct{respond} &: \\P σ → (σ → \\P (⋄ × \\Q ι α σ^{\\prime})) → \\P ρ\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#examples-of-linking-models",
+    "href": "pds-intro/pds-intro.html#examples-of-linking-models",
+    "title": "PDS Introduction",
+    "section": "Examples of linking models",
+    "text": "Examples of linking models\n\\[\n\\begin{align*}\n\\ct{respond} &: \\P σ → (σ → \\P (⋄ × \\Q ι α σ^{\\prime})) → \\P ρ\n\\end{align*}\n\\]\n\nLikert scale (categorical distribution); e.g., \\(ρ = \\{\\textit{yes}, \\textit{maybe}, \\textit{no}\\}\\)\nSlider scale (truncated normal distribution);  \\(ρ = r\\)\nBinary forced choice (Bernoulli distribution);  \\(ρ = t\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#ccg",
+    "href": "pds-intro/pds-intro.html#ccg",
+    "title": "PDS Introduction",
+    "section": "CCG",
+    "text": "CCG\nAtomic types\n\\[\n\\begin{align*}\n\\mathcal{A} &\\Coloneqq np ∣ n ∣ s ∣\\,\\,...\n\\end{align*}\n\\] Noun phrases (\\(np\\)), nouns (\\(n\\)), and sentences (\\(s\\)).\n\nComplex types\n\\[\n\\begin{align*}\n\\mathcal{C}_{\\mathcal{A}} &\\Coloneqq \\mathcal{A} ∣ \\mathcal{C}_{\\mathcal{A}}/\\mathcal{C}_{\\mathcal{A}} ∣ \\mathcal{C}_{\\mathcal{A}}\\backslash\\mathcal{C}_{\\mathcal{A}}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell",
+    "href": "pds-intro/pds-intro.html#haskell",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\n\ndata Cat = Base String  -- atomic categories\n         | Cat :/: Cat  -- the forward slash\n         | Cat :\\: Cat  -- the backward slash\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#ccg-expressions",
+    "href": "pds-intro/pds-intro.html#ccg-expressions",
+    "title": "PDS Introduction",
+    "section": "CCG expressions",
+    "text": "CCG expressions\nAn expression:\n\\[\\Large\n\\begin{align*}\n  \\expr{\\textit{dog}}{λx, i.\\ct{dog}(i)(x)}{n}\n\\end{align*}\n\\]\n\n\\(\\textit{dog}\\) is a string.\n\\(λx, i.\\ct{dog}(i)(x)\\) is a meaning (reprented in the λ-calculus).\n\nIts type is \\(e → ι → t\\).\n\n\\(n\\) is a CCG category."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#semantic-types-in-detail",
+    "href": "pds-intro/pds-intro.html#semantic-types-in-detail",
+    "title": "PDS Introduction",
+    "section": "Semantic types (in detail)",
+    "text": "Semantic types (in detail)\n\nAtomic types\n\\[\n\\begin{align*}\nA \\Coloneqq e ∣ t ∣\\,\\,...\n\\end{align*}\n\\]\n\n\nComplex types\n\\[\n\\begin{align*}\n   \\mathcal{T}_{A} \\Coloneqq A ∣ \\mathcal{T}_{A} → \\mathcal{T}_{A} ∣ \\mathcal{T}_{A} × \\mathcal{T}_{A} ∣ ⋄\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-1",
+    "href": "pds-intro/pds-intro.html#haskell-1",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\ndata Type = Atom String  -- atomic types\n          | Type :→ Type -- arrows\n          | Unit         -- unit type\n          | Type :× Type -- products\n          | TyVar String -- type variables\n  deriving (Eq)\n\nNote the type variables!"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#typing-rules",
+    "href": "pds-intro/pds-intro.html#typing-rules",
+    "title": "PDS Introduction",
+    "section": "Typing rules",
+    "text": "Typing rules\n \\[ \\scriptsize\n\\begin{array}{c}\n\\begin{prooftree}\n\\AxiomC{}\n\\RightLabel{$\\mathtt{Ax}$}\\UnaryInfC{$Γ, x : α ⊢ x : α$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ, x : α ⊢ t : β$}\n\\RightLabel{${→}\\mathtt{I}$}\\UnaryInfC{$Γ ⊢ λx.t : α → β$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α → β$}\n\\AxiomC{$Γ ⊢ u : α$}\n\\RightLabel{${→}\\mathtt{E}$}\\BinaryInfC{$Γ ⊢ t(u) : β$}\n\\end{prooftree} \\\\[2mm]\n\\begin{prooftree}\n\\AxiomC{}\n\\RightLabel{$⋄\\mathtt{I}$}\\UnaryInfC{$Γ ⊢ ⋄ : ⋄$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α$}\n\\AxiomC{$Γ ⊢ u : β$}\n\\RightLabel{$×\\mathtt{I}$}\\BinaryInfC{$Γ ⊢ ⟨t, u⟩ : α × β$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α_1 × α_2$}\n\\RightLabel{$×\\mathtt{E}_{j}$}\\UnaryInfC{$Γ ⊢ π_{j}(t) : α_{j}$}\n\\end{prooftree}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#typing-rules-1",
+    "href": "pds-intro/pds-intro.html#typing-rules-1",
+    "title": "PDS Introduction",
+    "section": "Typing rules",
+    "text": "Typing rules\n\\(→\\mathtt{E}\\)\n \\[\n\\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α → β$}\n\\AxiomC{$Γ ⊢ u : α$}\n\\RightLabel{${→}\\mathtt{E}$}\\BinaryInfC{$Γ ⊢ t(u) : β$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-vanilla-terms",
+    "href": "pds-intro/pds-intro.html#haskell-vanilla-terms",
+    "title": "PDS Introduction",
+    "section": "Haskell: vanilla terms",
+    "text": "Haskell: vanilla terms\n-- | Untyped λ-terms. Types are assigned separately (i.e., \"extrinsically\").\ndata Term = Var VarName           -- Variables.\n          | Con Constant          -- Constants.\n          | Lam VarName Term      -- Abstractions.\n          | App Term Term         -- Applications.\n          | TT                    -- The 0-tuple.\n          | Pair Term Term        -- Pairing.\n          | Pi1 Term              -- First projection.\n          | Pi2 Term              -- Second projection.\n\nConstants:\n-- | Constants are indexed by either strings or real numbers.\ntype Constant = Either String Double"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#deriving-meanings",
+    "href": "pds-intro/pds-intro.html#deriving-meanings",
+    "title": "PDS Introduction",
+    "section": "Deriving meanings",
+    "text": "Deriving meanings\n\nType homomorphism\n\n\\(\\small ⟦np⟧ = e \\hspace{2cm} ⟦n⟧ = e → ι → t \\hspace{2cm} ⟦s⟧ = ι → t\\) \n\\(\\small ⟦b / a⟧ = ⟦b \\backslash a⟧ = ⟦a⟧ → ⟦b⟧\\)\n\n\n\nExample: application\n\n\\[\\scriptsize\n\\frac{\\expr{\\textit{every}}{λp^{e → ι → t}, q^{e → ι → t}, i^{ι}.(∀y.p(y)(i) → q(y)(i))^{t}}{s}/(s\\backslash np)/ n \\hspace{1cm} \\expr{\\textit{linguist}}{λx^{e}, i^{ι}.(\\ct{ling}(i)(x))^{t}}{n}}{\n\\expr{\\textit{every linguist}}{λq^{e → ι → t}, i^{ι}.(∀y.\\ct{ling}(i)(y) → q(y)(i))^{t}}{s}/(s\\backslash np)\n}&gt;\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#adding-probabilistic-types",
+    "href": "pds-intro/pds-intro.html#adding-probabilistic-types",
+    "title": "PDS Introduction",
+    "section": "Adding probabilistic types",
+    "text": "Adding probabilistic types\n\nNew atomic types\n\\[\nA \\Coloneqq e ∣ t ∣ r ∣\\,\\,...\n\\]\n\n\nNew complex types\n\\[\n\\mathcal{T}_{A} \\Coloneqq A ∣ \\mathcal{T}_{A} → \\mathcal{T}_{A} ∣ \\mathcal{T}_{A} × \\mathcal{T}_{A} ∣ ⋄ ∣ \\P \\mathcal{T}_{A}\n\\]\n\n\\(\\P t\\): a Bernoulli distribution—probabilistically True or False.\n\\(\\P r\\): e.g., a normal distribution."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-2",
+    "href": "pds-intro/pds-intro.html#haskell-2",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\ndata Type = Atom String  -- atomic types\n          | Type :→ Type -- arrows\n          | Unit         -- unit type\n          | Type :× Type -- products\n          | P Type       -- probabilistic types\n          | TyVar String -- type variables\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#probabilistic-typing-rules",
+    "href": "pds-intro/pds-intro.html#probabilistic-typing-rules",
+    "title": "PDS Introduction",
+    "section": "Probabilistic typing rules",
+    "text": "Probabilistic typing rules\n \\[\n\\begin{array}{c}\n\\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α$}\n\\RightLabel{$\\mathtt{Return}$}\\UnaryInfC{$Γ ⊢ \\pure{t} : \\P α$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : \\P α$}\n\\AxiomC{$Γ, x : α ⊢ u : \\P β$}\n\\RightLabel{$\\mathtt{Bind}$}\\BinaryInfC{$Γ ⊢ \\left(\\begin{array}{l} x ∼ t \\\\ u\\end{array}\\right) : \\P β$}\n\\end{prooftree}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-probabilistic-programs",
+    "href": "pds-intro/pds-intro.html#haskell-probabilistic-programs",
+    "title": "PDS Introduction",
+    "section": "Haskell: probabilistic programs",
+    "text": "Haskell: probabilistic programs\n-- | Untyped λ-terms. Types are assigned separately (i.e., \"extrinsically\").\ndata Term = Var VarName           -- Variables.\n          | Con Constant          -- Constants.\n          | Lam VarName Term      -- Abstractions.\n          | App Term Term         -- Applications.\n          | TT                    -- The 0-tuple.\n          | Pair Term Term        -- Pairing.\n          | Pi1 Term              -- First projection.\n          | Pi2 Term              -- Second projection.\n          | Return Term           -- Construct a degenerate distribution.\n          | Let VarName Term Term -- Sample from a distribution and continue.\n\nLet x t u    =    \\(\\begin{array}[t]{l}\nx ∼ t \\\\\nu\n\\end{array}\\)\nReturn t    =    \\(\\pure{t}\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#making-observations",
+    "href": "pds-intro/pds-intro.html#making-observations",
+    "title": "PDS Introduction",
+    "section": "Making observations",
+    "text": "Making observations\n\\[\n\\begin{align*}\n\\ct{observe}\\ \\ &:\\ \\ t → \\P ⋄ \\\\\n\\end{align*}\n\\]\n\n\\[\n\\begin{array}[t]{l}\nx ∼ \\ct{Normal}(0, 1) \\\\\n\\ct{observe}(-1 ≤ x ≤ 1) \\\\\n\\pure{x}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#making-observations-1",
+    "href": "pds-intro/pds-intro.html#making-observations-1",
+    "title": "PDS Introduction",
+    "section": "Making observations",
+    "text": "Making observations\n\\[\n\\begin{align*}\n\\ct{observe}\\ \\ &:\\ \\ t → \\P ⋄ \\\\\n\\end{align*}\n\\]\n\\[\n\\begin{array}[t]{l}\nx ∼ \\ct{Normal}(0, 1) \\\\\n\\ct{observe}(-1 ≤ x ≤ 1) \\\\\n\\pure{x}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-typing-constants",
+    "href": "pds-intro/pds-intro.html#haskell-typing-constants",
+    "title": "PDS Introduction",
+    "section": "Haskell: typing constants",
+    "text": "Haskell: typing constants\n-- | Assign types to constants.\ntype Sig = Constant -&gt; Maybe Type\n\n\nAn example signature\ne, t, r :: Type\ne = At E\nt = At T\nr = At R\n\ntau :: Sig\ntau = \\case\n  Left  \"observe\"   -&gt; Just (t :→ P Unit)\n  Left  \"Normal\"    -&gt; Just (r :× r → P r)\n  Left  \"Bernoulli\" -&gt; Just (r :→ P t)\n  Left  \"mother\"    -&gt; Just (e :→ e)\n  Right _           -&gt; Just r"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#types-of-expressions",
+    "href": "pds-intro/pds-intro.html#types-of-expressions",
+    "title": "PDS Introduction",
+    "section": "Types of expressions",
+    "text": "Types of expressions\n\\[\\Large\nσ → \\P (α × σ^{\\prime})\n\\]\n\n\\(α\\) could be:\n\n\\(e → ι → t \\hspace{2cm}\\) (a predicate meaning)\n\\(e \\hspace{7cm}\\) (a np meaning)\netc."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#an-interface-for-meaning-composition",
+    "href": "pds-intro/pds-intro.html#an-interface-for-meaning-composition",
+    "title": "PDS Introduction",
+    "section": "An interface for meaning composition",
+    "text": "An interface for meaning composition\n\\[\n\\begin{align*}\nℙ^{σ}_{σ^{\\prime}} α\\ \\ &=\\ \\ σ → \\P (α × σ^{\\prime})\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\return{v}\\ \\ &=\\ \\ λs.\\pure{⟨v, s⟩} : ℙ^{σ}_{σ}\n\\end{align*}\n\\]\n\n\n\\[\n\\begin{align*}\n\\begin{array}{rl}\n\\Do & x ← m : ℙ^{σ}_{σ^{\\prime}} \\\\\n& k(x) : ℙ^{σ^{\\prime}}_{σ^{\\prime\\prime}}\n\\end{array}\\ \\\n&=\\ \\ λs.\\left(\\begin{array}{l}\n⟨x, s^{\\prime}⟩ ∼ m(s) \\\\\nk(x)(s^{\\prime})\n\\end{array}\\right) : ℙ^{σ}_{σ^{\\prime\\prime}}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#types-of-expressions-1",
+    "href": "pds-intro/pds-intro.html#types-of-expressions-1",
+    "title": "PDS Introduction",
+    "section": "Types of expressions",
+    "text": "Types of expressions\n\nJo ran a race.\n\n\n\\(⟦\\textit{run}⟧ : ℙ^{σ}_{σ} (e → ι → t)\\)\n\n\n\\[\n\\expr{\\textit{run}}{λs.\\pure{⟨λx, i.\\ct{if\\_then\\_else}(τ_{\\textit{run}}(s))(\\ct{run}_{loc.}(i)(x), \\ct{run}_{org.}(i)(x)), s⟩}}{s \\backslash np}\n\\]\n\n\nDepends on the state.\nDoesn’t update it.\nNot very probabilistic."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#pds-rules",
+    "href": "pds-intro/pds-intro.html#pds-rules",
+    "title": "PDS Introduction",
+    "section": "PDS Rules",
+    "text": "PDS Rules\nExample: leftward application\n\\[\n\\begin{prooftree}\n\\AxiomC{$\\expr{s_{1}}{M_{1}}{b}$}\n\\AxiomC{$\\expr{s_{2}}{M_{2}}{c\\backslash b}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{s_{1}\\,s_{2}}{\n\\begin{array}{rl}\n\\Do & m_{1} ← M_{1} \\\\\n& m_{2} ← M_{2}; \\\\\n& \\return{m_{2}(m_{1})}\n\\end{array}\n}{c}$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#a-sentence-meaning",
+    "href": "pds-intro/pds-intro.html#a-sentence-meaning",
+    "title": "PDS Introduction",
+    "section": "A sentence meaning",
+    "text": "A sentence meaning\n\nA linguist saw a philosopher.\n\n\n\\[\\tiny\\hspace{-6cm}\n\\begin{prooftree}\n\\AxiomC{$\\expr{\\textit{a ling.}}{λs.\\pure{⟨λi, k.∃x.\\ct{ling}(i)(x) ∧ k(i)(x), s⟩}}{s/(s\\backslash np)}$}\n\\AxiomC{$\\expr{\\textit{saw}}{λs.\\pure{⟨λi, y, x.\\ct{see}(i)(y)(x), s⟩}}{s\\backslash np/ np}$}\n\\AxiomC{$\\expr{\\textit{a phil.}}{λs.\\pure{⟨λi, k, x.∃y.\\ct{phil}(i)(y) ∧ k(i)(y)(x), s⟩}}{s\\backslash np/(s\\backslash np/np)}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{\\textit{saw a phil.}}{λs.\\pure{⟨λx, i.∃y.\\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s \\backslash np}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{\\textit{a linguist saw a philosopher}}{λs.\\pure{⟨λi.∃x, y.\\ct{ling}(i)(x) ∧ \\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s}$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#a-sentence-meaning-1",
+    "href": "pds-intro/pds-intro.html#a-sentence-meaning-1",
+    "title": "PDS Introduction",
+    "section": "A sentence meaning",
+    "text": "A sentence meaning\n\n\\[\n\\expr{\\textit{a linguist saw a philosopher}}{λs.\\pure{⟨λi.∃x, y.\\ct{ling}(i)(x) ∧ \\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#intensionality",
+    "href": "pds-intro/pds-intro.html#intensionality",
+    "title": "PDS Introduction",
+    "section": "Intensionality",
+    "text": "Intensionality\nIntensional constants:\n\\[\n\\begin{align*}\n\\ct{see} &: ι → e → e → t \\\\\n\\ct{ling} &: ι → e → t\n\\end{align*}\n\\]\n\nWe require other constants:\n\\[\n\\begin{align*}\n\\updct{see} &: (e → e → t) → ι → ι \\\\\n\\updct{ling} &: (e → t) → ι → ι\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#how-intensional-constants-interact",
+    "href": "pds-intro/pds-intro.html#how-intensional-constants-interact",
+    "title": "PDS Introduction",
+    "section": "How intensional constants interact",
+    "text": "How intensional constants interact\n\n\\[\n\\ct{see}(\\updct{see}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{see}(\\updct{ling}(p)(i)) = \\ct{see}(i)\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{ling}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{see}(p)(i)) = \\ct{ling}(i)\n\\]\n\nCan be seen as a theory of states and locations.\n\nIndices are “states”.\n(Pairs of) constants correspond to “locations”."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#the-common-ground",
+    "href": "pds-intro/pds-intro.html#the-common-ground",
+    "title": "PDS Introduction",
+    "section": "The common ground",
+    "text": "The common ground\nDefinition\nA common ground is a probabilistic program of type \\(\\P ι\\).\n\n\\(ι\\), a variable over types.\n\n\nA “starting” index\n\\[\\ct{@} : ι\\]\n\nConstants that update indices can add information, to be later retrieved by intensional constants."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#states",
+    "href": "pds-intro/pds-intro.html#states",
+    "title": "PDS Introduction",
+    "section": "States",
+    "text": "States\nSome state-sensitive constants:\n\n\\[\n\\ct{CG} : σ → \\P ι \\\\\n\\]\n\n\n\\[\n\\updct{CG} : \\P ι → σ → σ \\\\\n\\]\n\n\n\\[\n\\ct{QUD} : \\Q ι α σ → α → ι → t\n\\]\n\n\n\\[\n\\updct{QUD} : (α → ι → t) → σ → \\Q ι α σ\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-the-q-constructor",
+    "href": "pds-intro/pds-intro.html#haskell-the-q-constructor",
+    "title": "PDS Introduction",
+    "section": "Haskell: the \\(\\Q\\) constructor",
+    "text": "Haskell: the \\(\\Q\\) constructor\n\n-- | Arrows, products, and probabilistic types, as well as (a) abstract types\n-- representing the addition of a new Q, and (b) type variables for encoding\n-- polymorphism.\ndata Type = At Atom\n          | Type :→ Type\n          | Unit\n          | Type :× Type\n          | P Type\n          | Q Type Type Type\n          | TyVar String\n  deriving (Eq)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#how-stateful-constants-interact",
+    "href": "pds-intro/pds-intro.html#how-stateful-constants-interact",
+    "title": "PDS Introduction",
+    "section": "How stateful constants interact",
+    "text": "How stateful constants interact\n\\[\n\\ct{CG}(\\updct{CG}(cg)(s)) = cg\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#manipulating-stateful-programs",
+    "href": "pds-intro/pds-intro.html#manipulating-stateful-programs",
+    "title": "PDS Introduction",
+    "section": "Manipulating stateful programs",
+    "text": "Manipulating stateful programs\n\\(\\ct{get}\\) and \\(\\ct{put}\\)\n\\[\n\\begin{align*}\n\\abbr{get} &: ℙ^{σ}_{σ} σ\n\\end{align*}\n\\]\n\nGets the current state.\n\n\n\\[\n\\begin{align*}\n\\abbr{put} &: σ^{\\prime} → ℙ^{σ}_{σ^{\\prime}} ⋄ \\\\\n\\end{align*}\n\\]\n\nOverwrites the current state with a new one."
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#haskell-3",
+    "href": "pds-intro/pds-intro.html#haskell-3",
+    "title": "PDS Introduction",
+    "section": "Haskell",
+    "text": "Haskell\n\ngetPP :: Term\ngetPP = lam' s (Return (s & s))\n\nputPP :: Term -&gt; Term\nputPP s = Lam fr (Return (TT & s))\n  where fr:esh = fresh [s]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#asking-a-question",
+    "href": "pds-intro/pds-intro.html#asking-a-question",
+    "title": "PDS Introduction",
+    "section": "Asking a question",
+    "text": "Asking a question\n\\[\n\\begin{align*}\n\\abbr{ask} &: ℙ^{σ}_{σ^{\\prime}} (α → ι → t) → ℙ^{σ}_{\\Q ι α σ^{\\prime}} ⋄\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\abbr{ask}(⟦\\textit{how tall?}⟧) &= \\begin{array}[t]{rl}\n\\Do & q^{r → ι → t} ← ⟦\\textit{how tall?}⟧^{ℙ^{σ}_{σ}(r → ι → t)} \\\\\n& s ← \\abbr{get} \\\\\n& \\abbr{put}(\\updct{QUD}(q)(s))\n\\end{array}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#responding-to-a-question",
+    "href": "pds-intro/pds-intro.html#responding-to-a-question",
+    "title": "PDS Introduction",
+    "section": "Responding to a question",
+    "text": "Responding to a question\n\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ} &: \\P σ → ℙ^{σ}_{\\Q ι r σ^{\\prime}} ⋄ → \\P ρ\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#responding-to-a-question-1",
+    "href": "pds-intro/pds-intro.html#responding-to-a-question-1",
+    "title": "PDS Introduction",
+    "section": "Responding to a question",
+    "text": "Responding to a question\n\\[\n\\begin{align*}\n&\\abbr{respond}^{f_Φ : r → \\P ρ}(prior)(discourse) \\\\[5mm]\n&= \\begin{array}[t]{l}\ns ∼ prior \\\\\n⟨⋄, s^{\\prime}⟩ ∼ discourse(s)\\\\\ni ∼ \\ct{CG}(s^{\\prime}) \\\\\nf(\\ct{max}(λd.\\ct{QUD}(s^{\\prime})(d)(i)), Φ)\n\\end{array}\n\\end{align*}\n\\]\n\nExample \\(f_{Φ}\\)\n\n\\(f(x, Φ) = \\ct{Normal}(x, 1)\\)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#a-probabilistic-model",
+    "href": "pds-intro/pds-intro.html#a-probabilistic-model",
+    "title": "PDS Introduction",
+    "section": "A probabilistic model",
+    "text": "A probabilistic model\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ} &: \\P σ → ℙ^{σ}_{\\Q ι r σ^{\\prime}} ⋄ → \\P ρ\n\\end{align*}\n\\]\n\\[\n\\abbr{respond}^{λx.\\ct{Normal}(x, 1)}(prior)\\left(\n\\begin{array}{rl}\n\\Do & \\abbr{assert}(⟦\\textit{Jo is tall}⟧) \\\\\n& \\abbr{ask}(⟦\\textit{how tall?}⟧)\n\\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#how-do-we-actually-compute-this-stuff",
+    "href": "pds-intro/pds-intro.html#how-do-we-actually-compute-this-stuff",
+    "title": "PDS Introduction",
+    "section": "How do we actually compute this stuff?",
+    "text": "How do we actually compute this stuff?\n\n\nDelta-rules.\n-- | The type of Delta-rules.\ntype DeltaRule = Term -&gt; Maybe Term"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#summing-up",
+    "href": "pds-intro/pds-intro.html#summing-up",
+    "title": "PDS Introduction",
+    "section": "Summing up",
+    "text": "Summing up\n\nWe have a computational framework for:\n\nencoding grammar fragments\nrepresenting speech acts (assertions, questions)\nrepresenting theories linking inferences to behavior (as response functions)\ncomputing with the resulting probabilistic programs (via delta-rules)"
+  },
+  {
+    "objectID": "pds-intro/pds-intro.html#references",
+    "href": "pds-intro/pds-intro.html#references",
+    "title": "PDS Introduction",
+    "section": "",
+    "text": "References\n\n\n\n\nFarkas, Donka F., and Kim B. Bruce. 2010. “On Reacting to Assertions and Polar Questions.” Journal of Semantics 27 (1): 81–118. https://doi.org/10.1093/jos/ffp010.\n\n\nGinzburg, Jonathan. 1996. “Dynamics and the Semantics of Dialogue.” In Logic, Language, and Computation, edited by Jerry Seligman and Dag Westerståhl, 1:221–37. Stanford: CSLI Publications.\n\n\nGroenendijk, Jeroen A., and Martin B. J. Stokhof. 1991. “Dynamic Predicate Logic.” Linguistics and Philosophy 14 (1): 39–100. https://doi.org/10.1007/BF00628304.\n\n\nMuskens, Reinhard. 1996. “Combining Montague Semantics and Discourse Representation.” Linguistics and Philosophy 19 (2): 143–86. https://doi.org/10.1007/BF00635836.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6.\n\n\nStalnaker, Robert. 1978. “Assertion.” In Pragmatics, edited by Peter Cole, 9:315–32. New York: Academic Press."
+  }
+]
