@@ -662,7 +662,7 @@
 <span id="cb11-5"><a></a>             [<span class="st">"how"</span>, <span class="st">"tall"</span>, <span class="st">"jo"</span>, <span class="st">"is"</span>]</span>
 <span id="cb11-6"><a></a>discourse' <span class="ot">=</span> ty tau <span class="op">$</span> assert s1' <span class="op">&gt;&gt;&gt;</span> ask q1'</span>
 <span id="cb11-7"><a></a>scaleNormingExample <span class="ot">=</span> asTyped tau </span>
-<span id="cb11-8"><a></a>  (betaΔ<span class="dt">Normal</span> δ<span class="dt">Rules</span> <span class="op">.</span> </span>
+<span id="cb11-8"><a></a>  (betaDeltaNormal deltaRules <span class="op">.</span> </span>
 <span id="cb11-9"><a></a>   adjectivesRespond scaleNormingPrior) discourse'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>This establishes context and asks for Jo’s height</p>
@@ -672,7 +672,7 @@
 <ul>
 <li class="fragment"><code>getSemantics</code> retrieves one of the meanings (in the λ-calculus) for the expression</li>
 <li class="fragment">It takes a string of strings as input</li>
-<li class="fragment">Uses the parser implemented at <a href="https://juliangrove.github.io/pds/Grammar-Parser.html"><code>Grammar.Parser</code></a></li>
+<li class="fragment">Uses the parser implemented at <a href="https://juliangrove.github.io/pds/Framework.Grammar.Parser.html"><code>Framework.Grammar.Parser</code></a></li>
 </ul>
 </div>
 </section>
@@ -860,7 +860,7 @@
 <span id="cb18-5"><a></a>q1 <span class="ot">=</span> getSemantics <span class="op">@</span><span class="dt">Adjectives</span> <span class="dv">0</span> expr2</span>
 <span id="cb18-6"><a></a>discourse <span class="ot">=</span> ty tau <span class="op">$</span> assert s1 <span class="op">&gt;&gt;&gt;</span> ask q1</span>
 <span id="cb18-7"><a></a>likelihoodExample <span class="ot">=</span> asTyped tau </span>
-<span id="cb18-8"><a></a>  (betaΔ<span class="dt">Normal</span> δ<span class="dt">Rules</span> <span class="op">.</span> </span>
+<span id="cb18-8"><a></a>  (betaDeltaNormal deltaRules <span class="op">.</span> </span>
 <span id="cb18-9"><a></a>   adjectivesRespond likelihoodPrior) discourse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="lexical-entries-part-1" class="slide level2">
