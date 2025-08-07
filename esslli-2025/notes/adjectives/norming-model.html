@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Norming model – Probabilistic dynamic semantics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../adjectives/modeling-vagueness.html" rel="next">
+<link href="../adjectives/compiling-kernel-models.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-11cbd3234f06388db87dcfbb7d560d62.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3c5b3ed224f457cdcbda003fac2adf13.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/norming-model.html">Norming model</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Probabilistic dynamic semantics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probabilistic dynamic semantics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Background</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/theory-to-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">From theory to data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/formal-pragmatics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Formal pragmatics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/experimental-turn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The experimental turn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/understanding-gradience.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Understanding gradience</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/case-studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Two case studies</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/new-frameworks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The need for new frameworks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/rsa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rational Speech Act models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../background/setting-stage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setting the stage</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction to probabilistic dynamic semantics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/ccg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Combinatory Categorial Grammar</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/adding-probabilistic-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Adding probabilistic types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/common-ground.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The common ground</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/expressions-and-discourses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Expressions and discourses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/constants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../pds-intro/delta-rules.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Delta rules</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Gradable adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/adjectives-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vague gradable adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Collecting inference judgments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/compiling-kernel-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Compiling kernel models</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/norming-model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Norming model</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/modeling-vagueness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modeling vagueness</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Factivity inferences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../factivity/factivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Factivity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#understanding-the-experimental-setup" id="toc-understanding-the-experimental-setup" class="nav-link active" data-scroll-target="#understanding-the-experimental-setup">Understanding the experimental setup</a></li>
+  <li><a href="#the-structure-of-a-stan-program" id="toc-the-structure-of-a-stan-program" class="nav-link" data-scroll-target="#the-structure-of-a-stan-program">The structure of a Stan program</a>
+  <ul class="collapse">
+  <li><a href="#the-data-block" id="toc-the-data-block" class="nav-link" data-scroll-target="#the-data-block">The <code>data</code> block</a></li>
+  <li><a href="#the-model-block" id="toc-the-model-block" class="nav-link" data-scroll-target="#the-model-block">The <code>model</code> block</a></li>
+  <li><a href="#the-generated-quantities-block" id="toc-the-generated-quantities-block" class="nav-link" data-scroll-target="#the-generated-quantities-block">The <code>generated quantities</code> block</a></li>
+  <li><a href="#the-complete-model" id="toc-the-complete-model" class="nav-link" data-scroll-target="#the-complete-model">The complete model</a></li>
+  </ul></li>
+  <li><a href="#pds-to-stan" id="toc-pds-to-stan" class="nav-link" data-scroll-target="#pds-to-stan">PDS-to-Stan</a>
+  <ul class="collapse">
+  <li><a href="#working-through-degree-questions" id="toc-working-through-degree-questions" class="nav-link" data-scroll-target="#working-through-degree-questions">Working through degree questions</a></li>
+  <li><a href="#delta-rules-and-semantic-computation" id="toc-delta-rules-and-semantic-computation" class="nav-link" data-scroll-target="#delta-rules-and-semantic-computation">delta-rules and semantic computation</a></li>
+  <li><a href="#working-through-delta-reductions" id="toc-working-through-delta-reductions" class="nav-link" data-scroll-target="#working-through-delta-reductions">Working through delta-reductions</a></li>
+  <li><a href="#from-lambda-terms-to-stan-parameters" id="toc-from-lambda-terms-to-stan-parameters" class="nav-link" data-scroll-target="#from-lambda-terms-to-stan-parameters">From lambda terms to Stan parameters</a></li>
+  <li><a href="#the-pds-kernel-model" id="toc-the-pds-kernel-model" class="nav-link" data-scroll-target="#the-pds-kernel-model">The PDS kernel model</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/norming-model.html">Norming model</a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Norming model</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\updct}[1]{\ct{upd\_#1}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\newcommand{\pure}[1]{\bbox[border: 1px solid orange]{\bbox[border: 4px solid transparent]{#1}}}
+\newcommand{\return}[1]{\bbox[border: 1px solid black]{\bbox[border: 4px solid transparent]{#1}}}
+\def\P{\mathtt{P}}
+\def\Q{\mathtt{Q}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\def\ite{\ct{if\_then\_else}}
+\def\Do{\abbr{do}}
+\]</span></p>
+</div>
+<p>Our first model addresses a fundamental question: how do we infer the “shape” of people’s prior beliefs about the degrees that gradable adjectives operate on? The norming study provides a clean test case where participants directly report degrees on scales.</p>
+<p>We’ll start with a realistic model of the norming data that one might design as a means for analyzing that dataset. What we’ll do is to build up the model block-by-block, explaining each line. Then, we’ll turn to how we might analyze this experiment using PDS and show which components of this model correspond to the PDS kernel model and which ones are extensions of the model by the analyst.</p>
+<section id="understanding-the-experimental-setup" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-the-experimental-setup">Understanding the experimental setup</h2>
+<p>Before diving into the Stan code, let’s consider how we’ll represent the norming data, since this is important for understanding how we design Stan code. Here’s a sample of the data:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 4%">
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 8%">
+<col style="width: 13%">
+<col style="width: 9%">
+<col style="width: 14%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>participant</th>
+<th>item</th>
+<th>item_number</th>
+<th>adjective</th>
+<th>adjective_number</th>
+<th>condition</th>
+<th>condition_number</th>
+<th>scale_type</th>
+<th>scale_type_number</th>
+<th>response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>closed_mid</td>
+<td>6</td>
+<td>closed</td>
+<td>2</td>
+<td>mid</td>
+<td>3</td>
+<td>absolute</td>
+<td>1</td>
+<td>0.66</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>old_mid</td>
+<td>24</td>
+<td>old</td>
+<td>8</td>
+<td>mid</td>
+<td>3</td>
+<td>relative</td>
+<td>2</td>
+<td>0.51</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>expensive_mid</td>
+<td>15</td>
+<td>expensive</td>
+<td>5</td>
+<td>mid</td>
+<td>3</td>
+<td>relative</td>
+<td>2</td>
+<td>0.62</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>full_high</td>
+<td>16</td>
+<td>full</td>
+<td>6</td>
+<td>high</td>
+<td>1</td>
+<td>absolute</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>deep_low</td>
+<td>8</td>
+<td>deep</td>
+<td>3</td>
+<td>low</td>
+<td>2</td>
+<td>relative</td>
+<td>2</td>
+<td>0.22</td>
+</tr>
+</tbody>
+</table>
+<p>Each row represents one judgment: - <code>participant</code>: Which person made this judgment (participant 1, 2, etc.) - <code>item</code>: A unique identifier combining adjective and condition (e.g., “tall_high”) - <code>item_number</code>: Numeric ID for the item (used in Stan) - <code>adjective</code>: The gradable adjective being tested - <code>condition</code>: Whether this is a high/mid/low standard context - <code>response</code>: The participant’s slider response (0-1)</p>
+<p>Our simplest model asks: what degree does each item have on its scale, and how do participants map these degrees to slider responses?</p>
+</section>
+<section id="the-structure-of-a-stan-program" class="level2">
+<h2 class="anchored" data-anchor-id="the-structure-of-a-stan-program">The structure of a Stan program</h2>
+<p>Every Stan program follows a particular architecture with blocks that appear in a specific order. Each block serves a specific purpose in defining our statistical model. Let’s build up our norming model block by block to understand how Stan works. This structure parallels the modular architecture of PDS itself—each block handles a distinct aspect of the modeling problem.</p>
+<section id="the-data-block" class="level3">
+<h3 class="anchored" data-anchor-id="the-data-block">The <code>data</code> block</h3>
+<p>Every Stan program begins with a <code>data</code> block that tells Stan what information will be provided from the outside world—our experimental observations. Let’s build this up piece by piece:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_item;        <span class="co">// number of items</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_participant; <span class="co">// number of participants  </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_data;        <span class="co">// number of data points</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These first lines declare basic counts. The syntax breaks down as:</p>
+<ul>
+<li><code>int</code>: This will be an integer (whole number)</li>
+<li><code>&lt;lower=1&gt;</code>: This integer must be at least 1 (no negative counts!)</li>
+<li><code>N_item</code>: The variable name (we’ll use this throughout our program)</li>
+<li><code>// number of items</code>: A comment explaining what this represents</li>
+</ul>
+<p>Why do we need these constraints? Stan uses them to:</p>
+<ol type="1">
+<li>Catch data errors early (if we accidentally pass 0 items, Stan will complain)</li>
+<li>Optimize its algorithms (knowing bounds helps the sampler work efficiently)</li>
+</ol>
+<p>Next, we handle a subtle but important issue—boundary responses:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_0;           <span class="co">// number of 0s</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_1;           <span class="co">// number of 1s</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Why separate these out? Slider responses of exactly 0 or 1 are “censored”—they might represent even more extreme judgments that the scale can’t capture. We’ll handle these in a second.</p>
+<p>For the actual response data:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>, <span class="kw">upper</span>=<span class="dv">1</span>&gt;[N_data] y; <span class="co">// response in (0, 1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This declares a vector (like an array) of length <code>N_data</code>, where each element must be between 0 and 1. Notice this is for responses <em>between</em> 0 and 1, not including the boundaries.</p>
+<p>Finally, we need to map responses to items and participants:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_data] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_item&gt; item;        <span class="co">// which item for each response</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_0] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_item&gt; item_0;         <span class="co">// which item for each 0</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_1] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_item&gt; item_1;         <span class="co">// which item for each 1</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_data] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_participant&gt; participant;     </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_0] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_participant&gt; participant_0;</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_1] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_participant&gt; participant_1;</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These arrays work like lookup tables. If <code>item[5] = 3</code>, then the 5th response in our data was about item #3. This indexing structure connects our flat data file to the hierarchical structure of our experiment.</p>
+<p>Looking back at our CSV data, when Stan reads it, it will: 1. Count unique items → <code>N_item</code> (e.g., 36 if we have 12 adjectives × 3 conditions) 2. Count unique participants → <code>N_participant</code> 3. Extract all responses between 0 and 1 → <code>y</code> vector 4. Build index arrays mapping each response to its item and participant</p>
+<section id="the-parameters-block-what-we-want-to-learn" class="level4">
+<h4 class="anchored" data-anchor-id="the-parameters-block-what-we-want-to-learn">The parameters block: What we want to learn</h4>
+<p>After declaring our data, we declare the parameters—the unknown quantities we want to infer. This is where semantic theory meets statistical inference:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">parameters</span> {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Fixed effects</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_item] mu_guess;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This declares a vector of “guesses” (degrees) for each item. Why <code>mu_guess</code>? In statistics, μ (mu) traditionally denotes a mean or central tendency. These means can be understood as representing our best guess, as researchers, about each item’s true degree on its scale—the theoretical degrees that the semantic analysis posits. Crucially, they can also be viewed as representing subjects’ uncertainty about these degrees—what unresolved uncertainty do they maintain when they make these guesses?</p>
+<p>But people differ! We need random effects to capture individual variation:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Random effects</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma_epsilon_guess;     <span class="co">// how much people vary</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_participant] z_epsilon_guess; <span class="co">// each person's deviation</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This uses a clever trick called “non-centered parameterization”:</p>
+<ul>
+<li><code>sigma_epsilon_guess</code>: The overall amount of person-to-person variation</li>
+<li><code>z_epsilon_guess</code>: Standardized (z-score) deviations for each person</li>
+</ul>
+<p>We’ll combine these later to get each person’s actual adjustment. Why not just use <code>vector[N_participant] epsilon_guess</code> directly? This separation often helps Stan’s algorithms converge much faster—a practical consideration that doesn’t affect the semantic theory but matters for implementation.</p>
+<p>Next, measurement noise:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; sigma_e;  <span class="co">// response variability</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Even if two people agree on an item’s degree, their slider responses might differ slightly. This parameter captures that noise.</p>
+<p>Finally, those boundary responses:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Censored data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_0] <span class="dt">real</span>&lt;<span class="kw">upper</span>=<span class="dv">0</span>&gt; y_0;  <span class="co">// true values for observed 0s</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_1] <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; y_1;  <span class="co">// true values for observed 1s</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is subtle but important. When someone gives a 0 response, their “true” judgment might be -0.1 or -0.5—we just can’t see below 0. These parameters let Stan infer what those true values might have been.</p>
+</section>
+<section id="the-transformed-parameters-block-building-predictions" class="level4">
+<h4 class="anchored" data-anchor-id="the-transformed-parameters-block-building-predictions">The transformed parameters block: Building predictions</h4>
+<p>Now we combine our basic parameters to build what we actually need. This block serves as a bridge between abstract parameters and concrete predictions:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">transformed parameters</span> {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_participant] epsilon_guess;</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_data] guess;</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_0] guess_0;</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_1] guess_1;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>First, we convert those z-scores to actual participant adjustments:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Non-centered parameterization</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  epsilon_guess = sigma_epsilon_guess * z_epsilon_guess;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If <code>sigma_epsilon_guess = 0.2</code> and participant 3 has <code>z_epsilon_guess[3] = 1.5</code>, then participant 3 tends to give responses 0.3 units higher than average.</p>
+<p>Now we can compute predicted responses:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    guess[i] = mu_guess[item[i]] + epsilon_guess[participant[i]];</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s trace through one prediction: - Response i is about item 5 by participant 3 - <code>item[i] = 5</code>, so we look up <code>mu_guess[5]</code> (say it’s 0.7) - <code>participant[i] = 3</code>, so we add <code>epsilon_guess[3]</code> (say it’s 0.1) - <code>guess[i] = 0.7 + 0.1 = 0.8</code></p>
+<p>We repeat this for the boundary responses:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_0) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    guess_0[i] = mu_guess[item_0[i]] + epsilon_guess[participant_0[i]];</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_1) {</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    guess_1[i] = mu_guess[item_1[i]] + epsilon_guess[participant_1[i]];</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="the-model-block" class="level3">
+<h3 class="anchored" data-anchor-id="the-model-block">The <code>model</code> block</h3>
+<p>The model block is where we specify our statistical assumptions—both our prior beliefs and how the data was generated. This is where most of the action in terms of how PDS relates to data.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">model</span> {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Priors on random effects</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  sigma_epsilon_guess ~ exponential(<span class="dv">1</span>);</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  z_epsilon_guess ~ std_normal();</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These priors encode mild assumptions: - <code>exponential(1)</code>: We expect person-to-person variation to be moderate (not huge) - <code>std_normal()</code>: By construction, z-scores have a standard normal distribution</p>
+<p>Notice we don’t specify priors for <code>mu_guess</code>—Stan treats this as an implicit uniform prior over the real numbers. Since our responses are bounded, the data will naturally constrain these values.</p>
+<p>Now the likelihood—how data relates to parameters:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Likelihood</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    y[i] ~ normal(guess[i], sigma_e);</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This says: each response is drawn from a normal distribution centered at our prediction with standard deviation <code>sigma_e</code>. The <code>~</code> symbol means “is distributed as.”</p>
+<p>For boundary responses, we use the latent values:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_0) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    y_0[i] ~ normal(guess_0[i], sigma_e);</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_1) {</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    y_1[i] ~ normal(guess_1[i], sigma_e);</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Remember: we’re inferring <code>y_0</code> and <code>y_1</code> as parameters! Stan will sample plausible values that are consistent with both the model and the fact that we observed 0s and 1s.</p>
+</section>
+<section id="the-generated-quantities-block" class="level3">
+<h3 class="anchored" data-anchor-id="the-generated-quantities-block">The <code>generated quantities</code> block</h3>
+<p>Finally, we compute quantities that help us understand and evaluate our model:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">generated quantities</span> {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_data] ll; <span class="co">// log-likelihoods</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (y[i] &gt;= <span class="dv">0</span> &amp;&amp; y[i] &lt;= <span class="dv">1</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>      ll[i] = normal_lpdf(y[i] | guess[i], sigma_e);</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>      ll[i] = negative_infinity();</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The log-likelihood tells us how probable each observation is under our model. We’ll use these for model comparison—models that assign higher probability to the actual data are better.</p>
+</section>
+<section id="the-complete-model" class="level3">
+<h3 class="anchored" data-anchor-id="the-complete-model">The complete model</h3>
+<p>Here’s our complete model with consistent naming:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_item;              <span class="co">// number of items</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_participant;       <span class="co">// number of participants</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_data;              <span class="co">// number of data points in (0, 1)</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_0;                 <span class="co">// number of 0s</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; N_1;                 <span class="co">// number of 1s</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>, <span class="kw">upper</span>=<span class="dv">1</span>&gt;[N_data] y; <span class="co">// response in (0, 1)</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_data] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_item&gt; item;</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_0] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_item&gt; item_0;</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_1] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_item&gt; item_1;</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_data] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_participant&gt; participant;</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_0] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_participant&gt; participant_0;</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_1] <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>, <span class="kw">upper</span>=N_participant&gt; participant_1;</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="kw">parameters</span> {</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_item] mu_guess;</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma_epsilon_guess;</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_participant] z_epsilon_guess;</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; sigma_e;</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_0] <span class="dt">real</span>&lt;<span class="kw">upper</span>=<span class="dv">0</span>&gt; y_0;</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[N_1] <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">1</span>&gt; y_1;</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="kw">transformed parameters</span> {</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_participant] epsilon_guess = sigma_epsilon_guess * z_epsilon_guess;</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_data] guess;</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_0] guess_0;</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_1] guess_1;</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>    guess[i] = mu_guess[item[i]] + epsilon_guess[participant[i]];</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_0) {</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>    guess_0[i] = mu_guess[item_0[i]] + epsilon_guess[participant_0[i]];</span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_1) {</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>    guess_1[i] = mu_guess[item_1[i]] + epsilon_guess[participant_1[i]];</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="kw">model</span> {</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>  sigma_epsilon_guess ~ exponential(<span class="dv">1</span>);</span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>  z_epsilon_guess ~ std_normal();</span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>    y[i] ~ normal(guess[i], sigma_e);</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_0) {</span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>    y_0[i] ~ normal(guess_0[i], sigma_e);</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_1) {</span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>    y_1[i] ~ normal(guess_1[i], sigma_e);</span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a><span class="kw">generated quantities</span> {</span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N_data] ll;</span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span>:N_data) {</span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (y[i] &gt;= <span class="dv">0</span> &amp;&amp; y[i] &lt;= <span class="dv">1</span>)</span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a>      ll[i] = normal_lpdf(y[i] | guess[i], sigma_e);</span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span></span>
+<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>      ll[i] = negative_infinity();</span>
+<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This baseline model treats each item as having an inherent degree along the relevant scale, with participants providing noisy measurements of these degrees. The censoring approach handles the common issue of responses at the boundaries (0 and 1) of the slider scale.</p>
+</section>
+</section>
+<section id="pds-to-stan" class="level2">
+<h2 class="anchored" data-anchor-id="pds-to-stan">PDS-to-Stan</h2>
+<p>So what components of the above model are derived from PDS? To answer this, we need to define our PDS model of the norming task itself. Here it is:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>s1'        <span class="ot">=</span> termOf <span class="op">$</span> getSemantics <span class="op">@</span><span class="dt">Adjectives</span> <span class="dv">1</span> [<span class="st">"jo"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"soccer player"</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>q1'        <span class="ot">=</span> termOf <span class="op">$</span> getSemantics <span class="op">@</span><span class="dt">Adjectives</span> <span class="dv">0</span> [<span class="st">"how"</span>, <span class="st">"tall"</span>, <span class="st">"jo"</span>, <span class="st">"is"</span>]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>discourse' <span class="ot">=</span> ty tau <span class="op">$</span> assert s1' <span class="op">&gt;&gt;&gt;</span> ask q1'</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>scaleNormingExample <span class="ot">=</span> asTyped tau (betaDeltaNormal deltaRules <span class="op">.</span> adjectivesRespond scaleNormingPrior) discourse'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This code:</p>
+<ol type="1">
+<li>Asserts that Jo is a soccer player (establishing context)</li>
+<li>Asks “how tall is Jo?” using the degree-argument version of the adjective</li>
+<li>Applies beta and delta-reduction rules via <code>betaDeltaNormal</code></li>
+<li>Uses <code>scaleNormingPrior</code> to generate prior distributions</li>
+<li>Applies <code>adjectivesRespond</code> to specify the response function</li>
+</ol>
+<p>Note the use of certain convenience functions. For example, <code>getSemantics</code> retrieves one of the meanings (in the λ-calculus) for the expression it is given as a string of strings, using the parser implemented at <a href="https://juliangrove.github.io/pds/Grammar-Parser.html"><code>Grammar.Parser</code></a>. The other functions, <a href="https://juliangrove.github.io/pds/Lambda-Types.html#v:termOf"><code>termOf</code></a>, <a href="https://juliangrove.github.io/pds/Lambda-Types.html#v:ty"><code>ty</code></a>, and <a href="https://juliangrove.github.io/pds/Lambda-Convenience.html#v:tau"><code>tau</code></a> serve as basic plumbing and can be found in the documentation.</p>
+<section id="working-through-degree-questions" class="level3">
+<h3 class="anchored" data-anchor-id="working-through-degree-questions">Working through degree questions</h3>
+<p>Degree questions like “how tall is Jo?” use a special lexical entry for adjectives that exposes the degree argument. From <a href="https://juliangrove.github.io/pds/Grammar-Lexica-SynSem-Adjectives.html"><code>Grammar.Lexica.SynSem.Adjectives</code></a>:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">instance</span> <span class="dt">Interpretation</span> <span class="dt">Adjectives</span> <span class="dt">SynSem</span> <span class="kw">where</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  combineR <span class="ot">=</span> Convenience.combineR</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  combineL <span class="ot">=</span> Convenience.combineL</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  lexica <span class="ot">=</span> [<span class="fu">lex</span>]</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">where</span> <span class="fu">lex</span> <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>      <span class="op">...</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"tall"</span>          <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                              syn <span class="ot">=</span> <span class="dt">AP</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">Deg</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>                              sem <span class="ot">=</span> ty tau (purePP (lam d (lam x (lam i (sCon <span class="st">"(≥)"</span> <span class="op">@@</span> (sCon <span class="st">"height"</span> <span class="op">@@</span> i <span class="op">@@</span> x) <span class="op">@@</span> d)))))</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                              }</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                           <span class="op">...</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>                         ]</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>      <span class="op">...</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"how"</span>           <span class="ot">-&gt;</span>  [ <span class="dt">SynSem</span> {</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>                              syn <span class="ot">=</span>  <span class="dt">Qdeg</span> <span class="op">:/:</span> (<span class="dt">S</span> <span class="op">:/:</span> <span class="dt">AP</span>) <span class="op">:/:</span> (<span class="dt">AP</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">Deg</span>),</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>                              sem <span class="ot">=</span> ty tau (purePP (lam x (lam y (lam z (y <span class="op">@@</span> (x <span class="op">@@</span> z))))))</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>                            }</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>                            <span class="op">...</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>                          ]</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>      <span class="op">...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="delta-rules-and-semantic-computation" class="level3">
+<h3 class="anchored" data-anchor-id="delta-rules-and-semantic-computation">delta-rules and semantic computation</h3>
+<p>PDS applies delta-rules to simplify these complex λ-terms. As discussed in <a href="../pds-intro/delta-rules.html">the implementation section</a>, delta-rules enable different semantic computations while preserving semantic equivalence. The formalism is strongly normalizing and confluent, so the order of rule application doesn’t affect the final result—a crucial property that ensures our semantic theory remains consistent.</p>
+<p>Key delta-rules for adjectives include: - <strong>Arithmetic operations</strong>: Simplifying comparisons like <span class="math inline">\(\ct{(≥)}\)</span> when applied to constants - <strong>State/index extraction</strong>: Rules for <span class="math inline">\(\ct{height}\)</span>, <span class="math inline">\(\ct{d\_tall}\)</span>, etc. - <strong>Beta reduction</strong>: Standard λ-calculus reduction</p>
+<p>These rules transform the complex compositional semantics into simpler forms suitable for compilation to Stan. The transformation preserves the semantic content while making it computationally tractable.</p>
+</section>
+<section id="working-through-delta-reductions" class="level3">
+<h3 class="anchored" data-anchor-id="working-through-delta-reductions">Working through delta-reductions</h3>
+<p>Having seen the PDS code for degree questions, we now trace through how delta-rules transform these complex λ-terms into forms suitable for Stan compilation. delta-rules, as introduced in <a href="https://juliangrove.github.io/pds/Lambda-Delta.html"><code>Lambda.Delta</code></a>, are partial functions from terms to terms that implement semantic computations.</p>
+<p>For degree questions like <em>how tall is Jo?</em>, the compositional semantics produces:</p>
+<p><span class="math display">\[
+λd, i.\ct{height}(i)(j) ≥ d
+\]</span></p>
+<p>When <span class="math inline">\(\abbr{respond}\)</span> comes into the picture, some index <span class="math inline">\(i^{\prime}\)</span> is sampled from the common ground, and the maximal answer to the question is determined to be:</p>
+<p><span class="math display">\[
+\ct{max}(λd.\ct{height}(i^{\prime})(j) ≥ d)
+\]</span> This term undergoes several delta-reductions. First, the <code>indices</code> rule extracts the height value from whatever actual index is sampled from the common ground of the current discourse state. From <a href="https://juliangrove.github.io/pds/Lambda-Delta.html"><code>Lambda.Delta</code></a>:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ot">indices ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>indices <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Height</span> (<span class="dt">UpdHeight</span> p _) <span class="ot">-&gt;</span> <span class="dt">Just</span> p</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">Height</span> (<span class="dt">UpdSocPla</span> _ i) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">Height</span> i)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  _                      <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Calling this height value <span class="math inline">\(h\)</span>, this rule yields:</p>
+<p><span class="math display">\[
+\ct{max}(λd.h ≥ d)
+\]</span></p>
+<p>where <span class="math inline">\(h\)</span> represents Jo’s actual height at index <span class="math inline">\(i\)</span>. The <span class="math inline">\(\ct{max}\)</span> operator then extracts this unique value using the following delta-rule:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ot">maxes ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>maxes <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">Max</span> (<span class="dt">Lam</span> y (<span class="dt">GE</span> x (<span class="dt">Var</span> y'))) <span class="op">|</span> y' <span class="op">==</span> y <span class="ot">-&gt;</span> <span class="dt">Just</span> x</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>   _                                     <span class="ot">-&gt;</span> <span class="dt">Nothing</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This gives us <span class="math inline">\(h\)</span>.</p>
+<p>This final form directly corresponds to the Stan parameter we need to infer—the degree on the height scale.</p>
+</section>
+<section id="from-lambda-terms-to-stan-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="from-lambda-terms-to-stan-parameters">From lambda terms to Stan parameters</h3>
+<p>The challenge is translating abstract semantic computations into Stan’s parameter space. This translation embodies (some of) our linking hypothesis between semantic competence and performance.</p>
+<ol type="1">
+<li><strong>Degree extraction becomes parameter inference</strong>:
+<ul>
+<li><span class="math inline">\(\ct{max}(λd.\ct{height}(i)(j) ≥ d)\)</span> → Infer parameter <code>height_jo</code></li>
+<li>The unique degree satisfying the equation becomes a parameter to estimate</li>
+</ul></li>
+<li><strong>Functions become arrays</strong>:
+<ul>
+<li><span class="math inline">\(\ct{height} : \iota \to e \to r\)</span> → Array <code>height[person]</code></li>
+<li>Function application → Array indexing</li>
+</ul></li>
+<li><strong>Propositions become probabilities</strong>:
+<ul>
+<li>Truth values → Real numbers in [0,1]</li>
+<li>Logical operations → Probabilistic operations</li>
+</ul></li>
+<li><strong>The monad becomes Stan’s target</strong>:
+<ul>
+<li><p>The <span class="math inline">\(\Do\)</span>-notation structures sequential computation:</p>
+<p><span class="math inline">\(\begin{array}[t]{l}
+x ∼ \ct{normal}(0, 1) \\
+y ∼ \ct{normal}(x, 1) \\
+\pure{y}
+\end{array}\)</span></p></li>
+<li><p>This determines Stan’s log probability</p></li>
+</ul></li>
+</ol>
+<p>This translation embodies our linking hypothesis: semantic computations generate behavioral data through a noisy measurement process captured by <code>adjectivesRespond</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="PDS Compilation Details">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+PDS Compilation Details
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Input PDS:</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode haskell code-with-copy"><code class="sourceCode haskell"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>discourse' <span class="ot">=</span> ty tau <span class="op">$</span> assert s1' <span class="op">&gt;&gt;&gt;</span> ask q1'</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>scaleNormingExample <span class="ot">=</span> asTyped tau (betaDeltaNormal deltaRules <span class="op">.</span> adjectivesRespond scaleNormingPrior) discourse'</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>delta-reductions:</strong></p>
+<ol type="1">
+<li>Parse the answer to “how tall jo is” → <span class="math inline">\(\ct{max}(λd.\ct{height}(i)(j) ≥ d)\)</span></li>
+<li>Apply <code>indices</code> rule → <span class="math inline">\(\ct{max}(λd.h ≥ d)\)</span></li>
+<li>Apply <span class="math inline">\(\ct{max}\)</span> extraction → <span class="math inline">\(h\)</span></li>
+<li>Monadic structure maps to Stan parameter inference</li>
+</ol>
+<p><strong>Kernel output:</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">model</span> {</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// FIXED EFFECTS</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  w ~ normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">// LIKELIHOOD</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">target +=</span> normal_lpdf(y | w, sigma);</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="the-pds-kernel-model" class="level3">
+<h3 class="anchored" data-anchor-id="the-pds-kernel-model">The PDS kernel model</h3>
+<p>The PDS system outputs the following kernel model:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">model</span> {</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// FIXED EFFECTS</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  w ~ normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">// LIKELIHOOD</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">target +=</span> normal_lpdf(y | w, sigma);</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is the semantic core—it captures the essential degree-based semantics where <code>w</code> represents the degree on the height scale. But reality is complicated: we need random effects, the ability to model censored data, and proper indexing for multiple items and participants. This gap between the kernel model and a full statistical implementation represents ongoing research: how to get from here (PDS output) to here (actual implementation).</p>
+<p>The full model with analyst augmentations looks like:</p>
+<div class="sourceCode" id="cb25" data-highlight="6,13"><pre class="sourceCode stan line-numbers code-with-copy"><code class="sourceCode stan"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">model</span> {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// PRIORS (analyst-added)</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  sigma_epsilon_guess ~ exponential(<span class="dv">1</span>);</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  sigma_e ~ beta(<span class="dv">2</span>, <span class="dv">10</span>);</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">// FIXED EFFECTS (PDS kernel)</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  mu_guess ~ normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">// RANDOM EFFECTS (analyst-added)</span></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  z_epsilon_guess ~ std_normal();</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">// LIKELIHOOD (PDS kernel with modifications)</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  y[i] ~ normal(mu_guess[item[i]] + epsilon_guess[participant[i]], sigma_e);</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Lines 6 and 13 (highlighted) show the kernel model from PDS. The unhighlighted portions add statistical machinery for real data: hierarchical priors, random effects, and indexed parameters. The kernel captures the core semantic computation—degrees on scales—while the augmentations handle the realities of experimental data.</p>
+<p>This baseline model establishes how PDS transforms degree questions into parameter inference. Next, we’ll see how this extends to modeling the vagueness inherent in gradable adjective judgments.</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Actual PDS output: <code>model { w ~ normal(0.0, 1.0); target += normal_lpdf(y | w, sigma); }</code><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Actual PDS output: <code>model { w ~ normal(0.0, 1.0); target += normal_lpdf(y | w, sigma); }</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../adjectives/compiling-kernel-models.html" class="pagination-link" aria-label="Compiling kernel models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Compiling kernel models</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../adjectives/modeling-vagueness.html" class="pagination-link" aria-label="Modeling vagueness">
+        <span class="nav-page-text">Modeling vagueness</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb26" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Norming model"</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\updct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\ct{upd<span class="sc">\_</span>#1}}</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>\newcommand{\pure}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid orange</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>\newcommand{\return}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 1px solid black</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">border: 4px solid transparent</span><span class="co">]</span>{#1}}}</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a>\def\P{\mathtt{P}}</span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a>\def\Q{\mathtt{Q}}</span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a>\def\ite{\ct{if<span class="sc">\_</span>then<span class="sc">\_</span>else}}</span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a>\def\Do{\abbr{do}}</span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>Our first model addresses a fundamental question: how do we infer the "shape" of people's prior beliefs about the degrees that gradable adjectives operate on? The norming study provides a clean test case where participants directly report degrees on scales.</span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-36"><a href="#cb26-36" aria-hidden="true" tabindex="-1"></a>We'll start with a realistic model of the norming data that one might design as a means for analyzing that dataset. What we'll do is to build up the model block-by-block, explaining each line. Then, we'll turn to how we might analyze this experiment using PDS and show which components of this model correspond to the PDS kernel model and which ones are extensions of the model by the analyst.</span>
+<span id="cb26-37"><a href="#cb26-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-38"><a href="#cb26-38" aria-hidden="true" tabindex="-1"></a><span class="fu">## Understanding the experimental setup</span></span>
+<span id="cb26-39"><a href="#cb26-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-40"><a href="#cb26-40" aria-hidden="true" tabindex="-1"></a>Before diving into the Stan code, let's consider how we'll represent the norming data, since this is important for understanding how we design Stan code. Here's a sample of the data:</span>
+<span id="cb26-41"><a href="#cb26-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-42"><a href="#cb26-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> participant <span class="pp">|</span> item <span class="pp">|</span> item_number <span class="pp">|</span> adjective <span class="pp">|</span> adjective_number <span class="pp">|</span> condition <span class="pp">|</span> condition_number <span class="pp">|</span> scale_type <span class="pp">|</span> scale_type_number <span class="pp">|</span> response <span class="pp">|</span></span>
+<span id="cb26-43"><a href="#cb26-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------|------|-------------|-----------|------------------|-----------|------------------|------------|-------------------|----------|</span></span>
+<span id="cb26-44"><a href="#cb26-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> closed_mid <span class="pp">|</span> 6 <span class="pp">|</span> closed <span class="pp">|</span> 2 <span class="pp">|</span> mid <span class="pp">|</span> 3 <span class="pp">|</span> absolute <span class="pp">|</span> 1 <span class="pp">|</span> 0.66 <span class="pp">|</span></span>
+<span id="cb26-45"><a href="#cb26-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> old_mid <span class="pp">|</span> 24 <span class="pp">|</span> old <span class="pp">|</span> 8 <span class="pp">|</span> mid <span class="pp">|</span> 3 <span class="pp">|</span> relative <span class="pp">|</span> 2 <span class="pp">|</span> 0.51 <span class="pp">|</span></span>
+<span id="cb26-46"><a href="#cb26-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> expensive_mid <span class="pp">|</span> 15 <span class="pp">|</span> expensive <span class="pp">|</span> 5 <span class="pp">|</span> mid <span class="pp">|</span> 3 <span class="pp">|</span> relative <span class="pp">|</span> 2 <span class="pp">|</span> 0.62 <span class="pp">|</span></span>
+<span id="cb26-47"><a href="#cb26-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> full_high <span class="pp">|</span> 16 <span class="pp">|</span> full <span class="pp">|</span> 6 <span class="pp">|</span> high <span class="pp">|</span> 1 <span class="pp">|</span> absolute <span class="pp">|</span> 1 <span class="pp">|</span> 1 <span class="pp">|</span></span>
+<span id="cb26-48"><a href="#cb26-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1 <span class="pp">|</span> deep_low <span class="pp">|</span> 8 <span class="pp">|</span> deep <span class="pp">|</span> 3 <span class="pp">|</span> low <span class="pp">|</span> 2 <span class="pp">|</span> relative <span class="pp">|</span> 2 <span class="pp">|</span> 0.22 <span class="pp">|</span></span>
+<span id="cb26-49"><a href="#cb26-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-50"><a href="#cb26-50" aria-hidden="true" tabindex="-1"></a>Each row represents one judgment:</span>
+<span id="cb26-51"><a href="#cb26-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`participant`</span>: Which person made this judgment (participant 1, 2, etc.)</span>
+<span id="cb26-52"><a href="#cb26-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`item`</span>: A unique identifier combining adjective and condition (e.g., "tall_high")</span>
+<span id="cb26-53"><a href="#cb26-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`item_number`</span>: Numeric ID for the item (used in Stan)</span>
+<span id="cb26-54"><a href="#cb26-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`adjective`</span>: The gradable adjective being tested</span>
+<span id="cb26-55"><a href="#cb26-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`condition`</span>: Whether this is a high/mid/low standard context</span>
+<span id="cb26-56"><a href="#cb26-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`response`</span>: The participant's slider response (0-1)</span>
+<span id="cb26-57"><a href="#cb26-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-58"><a href="#cb26-58" aria-hidden="true" tabindex="-1"></a>Our simplest model asks: what degree does each item have on its scale, and how do participants map these degrees to slider responses?</span>
+<span id="cb26-59"><a href="#cb26-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-60"><a href="#cb26-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## The structure of a Stan program</span></span>
+<span id="cb26-61"><a href="#cb26-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-62"><a href="#cb26-62" aria-hidden="true" tabindex="-1"></a>Every Stan program follows a particular architecture with blocks that appear in a specific order. Each block serves a specific purpose in defining our statistical model. Let's build up our norming model block by block to understand how Stan works. This structure parallels the modular architecture of PDS itself—each block handles a distinct aspect of the modeling problem.</span>
+<span id="cb26-63"><a href="#cb26-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-64"><a href="#cb26-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### The `data` block</span></span>
+<span id="cb26-65"><a href="#cb26-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-66"><a href="#cb26-66" aria-hidden="true" tabindex="-1"></a>Every Stan program begins with a <span class="in">`data`</span> block that tells Stan what information will be provided from the outside world—our experimental observations. Let's build this up piece by piece:</span>
+<span id="cb26-67"><a href="#cb26-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-68"><a href="#cb26-68" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-69"><a href="#cb26-69" aria-hidden="true" tabindex="-1"></a><span class="in">data {</span></span>
+<span id="cb26-70"><a href="#cb26-70" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_item;        // number of items</span></span>
+<span id="cb26-71"><a href="#cb26-71" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_participant; // number of participants  </span></span>
+<span id="cb26-72"><a href="#cb26-72" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_data;        // number of data points</span></span>
+<span id="cb26-73"><a href="#cb26-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-74"><a href="#cb26-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-75"><a href="#cb26-75" aria-hidden="true" tabindex="-1"></a>These first lines declare basic counts. The syntax breaks down as:</span>
+<span id="cb26-76"><a href="#cb26-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-77"><a href="#cb26-77" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`int`</span>: This will be an integer (whole number)</span>
+<span id="cb26-78"><a href="#cb26-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`&lt;lower=1&gt;`</span>: This integer must be at least 1 (no negative counts!)</span>
+<span id="cb26-79"><a href="#cb26-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`N_item`</span>: The variable name (we'll use this throughout our program)</span>
+<span id="cb26-80"><a href="#cb26-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`// number of items`</span>: A comment explaining what this represents</span>
+<span id="cb26-81"><a href="#cb26-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-82"><a href="#cb26-82" aria-hidden="true" tabindex="-1"></a>Why do we need these constraints? Stan uses them to:</span>
+<span id="cb26-83"><a href="#cb26-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-84"><a href="#cb26-84" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Catch data errors early (if we accidentally pass 0 items, Stan will complain)</span>
+<span id="cb26-85"><a href="#cb26-85" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Optimize its algorithms (knowing bounds helps the sampler work efficiently)</span>
+<span id="cb26-86"><a href="#cb26-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-87"><a href="#cb26-87" aria-hidden="true" tabindex="-1"></a>Next, we handle a subtle but important issue—boundary responses:</span>
+<span id="cb26-88"><a href="#cb26-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-89"><a href="#cb26-89" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-90"><a href="#cb26-90" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_0;           // number of 0s</span></span>
+<span id="cb26-91"><a href="#cb26-91" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_1;           // number of 1s</span></span>
+<span id="cb26-92"><a href="#cb26-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-93"><a href="#cb26-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-94"><a href="#cb26-94" aria-hidden="true" tabindex="-1"></a>Why separate these out? Slider responses of exactly 0 or 1 are "censored"—they might represent even more extreme judgments that the scale can't capture. We'll handle these in a second.</span>
+<span id="cb26-95"><a href="#cb26-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-96"><a href="#cb26-96" aria-hidden="true" tabindex="-1"></a>For the actual response data:</span>
+<span id="cb26-97"><a href="#cb26-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-98"><a href="#cb26-98" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-99"><a href="#cb26-99" aria-hidden="true" tabindex="-1"></a><span class="in">  vector&lt;lower=0, upper=1&gt;[N_data] y; // response in (0, 1)</span></span>
+<span id="cb26-100"><a href="#cb26-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-101"><a href="#cb26-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-102"><a href="#cb26-102" aria-hidden="true" tabindex="-1"></a>This declares a vector (like an array) of length <span class="in">`N_data`</span>, where each element must be between 0 and 1. Notice this is for responses *between* 0 and 1, not including the boundaries.</span>
+<span id="cb26-103"><a href="#cb26-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-104"><a href="#cb26-104" aria-hidden="true" tabindex="-1"></a>Finally, we need to map responses to items and participants:</span>
+<span id="cb26-105"><a href="#cb26-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-106"><a href="#cb26-106" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-107"><a href="#cb26-107" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_data] int&lt;lower=1, upper=N_item&gt; item;        // which item for each response</span></span>
+<span id="cb26-108"><a href="#cb26-108" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_0] int&lt;lower=1, upper=N_item&gt; item_0;         // which item for each 0</span></span>
+<span id="cb26-109"><a href="#cb26-109" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_1] int&lt;lower=1, upper=N_item&gt; item_1;         // which item for each 1</span></span>
+<span id="cb26-110"><a href="#cb26-110" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_data] int&lt;lower=1, upper=N_participant&gt; participant;     </span></span>
+<span id="cb26-111"><a href="#cb26-111" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_0] int&lt;lower=1, upper=N_participant&gt; participant_0;</span></span>
+<span id="cb26-112"><a href="#cb26-112" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_1] int&lt;lower=1, upper=N_participant&gt; participant_1;</span></span>
+<span id="cb26-113"><a href="#cb26-113" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-114"><a href="#cb26-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-115"><a href="#cb26-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-116"><a href="#cb26-116" aria-hidden="true" tabindex="-1"></a>These arrays work like lookup tables. If <span class="in">`item[5] = 3`</span>, then the 5th response in our data was about item #3. This indexing structure connects our flat data file to the hierarchical structure of our experiment.</span>
+<span id="cb26-117"><a href="#cb26-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-118"><a href="#cb26-118" aria-hidden="true" tabindex="-1"></a>Looking back at our CSV data, when Stan reads it, it will:</span>
+<span id="cb26-119"><a href="#cb26-119" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Count unique items → <span class="in">`N_item`</span> (e.g., 36 if we have 12 adjectives × 3 conditions)</span>
+<span id="cb26-120"><a href="#cb26-120" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Count unique participants → <span class="in">`N_participant`</span> </span>
+<span id="cb26-121"><a href="#cb26-121" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Extract all responses between 0 and 1 → <span class="in">`y`</span> vector</span>
+<span id="cb26-122"><a href="#cb26-122" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Build index arrays mapping each response to its item and participant</span>
+<span id="cb26-123"><a href="#cb26-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-124"><a href="#cb26-124" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The parameters block: What we want to learn</span></span>
+<span id="cb26-125"><a href="#cb26-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-126"><a href="#cb26-126" aria-hidden="true" tabindex="-1"></a>After declaring our data, we declare the parameters—the unknown quantities we want to infer. This is where semantic theory meets statistical inference:</span>
+<span id="cb26-127"><a href="#cb26-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-128"><a href="#cb26-128" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-129"><a href="#cb26-129" aria-hidden="true" tabindex="-1"></a><span class="in">parameters {</span></span>
+<span id="cb26-130"><a href="#cb26-130" aria-hidden="true" tabindex="-1"></a><span class="in">  // Fixed effects</span></span>
+<span id="cb26-131"><a href="#cb26-131" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_item] mu_guess;</span></span>
+<span id="cb26-132"><a href="#cb26-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-133"><a href="#cb26-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-134"><a href="#cb26-134" aria-hidden="true" tabindex="-1"></a>This declares a vector of "guesses" (degrees) for each item. Why <span class="in">`mu_guess`</span>? In statistics, μ (mu) traditionally denotes a mean or central tendency. These means can be understood as representing our best guess, as researchers, about each item's true degree on its scale---the theoretical degrees that the semantic analysis posits.</span>
+<span id="cb26-135"><a href="#cb26-135" aria-hidden="true" tabindex="-1"></a>Crucially, they can also be viewed as representing subjects' uncertainty about these degrees---what unresolved uncertainty do they maintain when they make these guesses?</span>
+<span id="cb26-136"><a href="#cb26-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-137"><a href="#cb26-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-138"><a href="#cb26-138" aria-hidden="true" tabindex="-1"></a>But people differ! We need random effects to capture individual variation:</span>
+<span id="cb26-139"><a href="#cb26-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-140"><a href="#cb26-140" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-141"><a href="#cb26-141" aria-hidden="true" tabindex="-1"></a><span class="in">  // Random effects</span></span>
+<span id="cb26-142"><a href="#cb26-142" aria-hidden="true" tabindex="-1"></a><span class="in">  real&lt;lower=0&gt; sigma_epsilon_guess;     // how much people vary</span></span>
+<span id="cb26-143"><a href="#cb26-143" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_participant] z_epsilon_guess; // each person's deviation</span></span>
+<span id="cb26-144"><a href="#cb26-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-145"><a href="#cb26-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-146"><a href="#cb26-146" aria-hidden="true" tabindex="-1"></a>This uses a clever trick called "non-centered parameterization":</span>
+<span id="cb26-147"><a href="#cb26-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-148"><a href="#cb26-148" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`sigma_epsilon_guess`</span>: The overall amount of person-to-person variation</span>
+<span id="cb26-149"><a href="#cb26-149" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`z_epsilon_guess`</span>: Standardized (z-score) deviations for each person</span>
+<span id="cb26-150"><a href="#cb26-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-151"><a href="#cb26-151" aria-hidden="true" tabindex="-1"></a>We'll combine these later to get each person's actual adjustment. Why not just use <span class="in">`vector[N_participant] epsilon_guess`</span> directly? This separation often helps Stan's algorithms converge much faster—a practical consideration that doesn't affect the semantic theory but matters for implementation.</span>
+<span id="cb26-152"><a href="#cb26-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-153"><a href="#cb26-153" aria-hidden="true" tabindex="-1"></a>Next, measurement noise:</span>
+<span id="cb26-154"><a href="#cb26-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-155"><a href="#cb26-155" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-156"><a href="#cb26-156" aria-hidden="true" tabindex="-1"></a><span class="in">  real&lt;lower=0,upper=1&gt; sigma_e;  // response variability</span></span>
+<span id="cb26-157"><a href="#cb26-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-158"><a href="#cb26-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-159"><a href="#cb26-159" aria-hidden="true" tabindex="-1"></a>Even if two people agree on an item's degree, their slider responses might differ slightly. This parameter captures that noise.</span>
+<span id="cb26-160"><a href="#cb26-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-161"><a href="#cb26-161" aria-hidden="true" tabindex="-1"></a>Finally, those boundary responses:</span>
+<span id="cb26-162"><a href="#cb26-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-163"><a href="#cb26-163" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-164"><a href="#cb26-164" aria-hidden="true" tabindex="-1"></a><span class="in">  // Censored data</span></span>
+<span id="cb26-165"><a href="#cb26-165" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_0] real&lt;upper=0&gt; y_0;  // true values for observed 0s</span></span>
+<span id="cb26-166"><a href="#cb26-166" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_1] real&lt;lower=1&gt; y_1;  // true values for observed 1s</span></span>
+<span id="cb26-167"><a href="#cb26-167" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-168"><a href="#cb26-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-169"><a href="#cb26-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-170"><a href="#cb26-170" aria-hidden="true" tabindex="-1"></a>This is subtle but important. When someone gives a 0 response, their "true" judgment might be -0.1 or -0.5—we just can't see below 0. These parameters let Stan infer what those true values might have been.</span>
+<span id="cb26-171"><a href="#cb26-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-172"><a href="#cb26-172" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The transformed parameters block: Building predictions</span></span>
+<span id="cb26-173"><a href="#cb26-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-174"><a href="#cb26-174" aria-hidden="true" tabindex="-1"></a>Now we combine our basic parameters to build what we actually need. This block serves as a bridge between abstract parameters and concrete predictions:</span>
+<span id="cb26-175"><a href="#cb26-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-176"><a href="#cb26-176" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-177"><a href="#cb26-177" aria-hidden="true" tabindex="-1"></a><span class="in">transformed parameters {</span></span>
+<span id="cb26-178"><a href="#cb26-178" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_participant] epsilon_guess;</span></span>
+<span id="cb26-179"><a href="#cb26-179" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_data] guess;</span></span>
+<span id="cb26-180"><a href="#cb26-180" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_0] guess_0;</span></span>
+<span id="cb26-181"><a href="#cb26-181" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_1] guess_1;</span></span>
+<span id="cb26-182"><a href="#cb26-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-183"><a href="#cb26-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-184"><a href="#cb26-184" aria-hidden="true" tabindex="-1"></a>First, we convert those z-scores to actual participant adjustments:</span>
+<span id="cb26-185"><a href="#cb26-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-186"><a href="#cb26-186" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-187"><a href="#cb26-187" aria-hidden="true" tabindex="-1"></a><span class="in">  // Non-centered parameterization</span></span>
+<span id="cb26-188"><a href="#cb26-188" aria-hidden="true" tabindex="-1"></a><span class="in">  epsilon_guess = sigma_epsilon_guess * z_epsilon_guess;</span></span>
+<span id="cb26-189"><a href="#cb26-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-190"><a href="#cb26-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-191"><a href="#cb26-191" aria-hidden="true" tabindex="-1"></a>If <span class="in">`sigma_epsilon_guess = 0.2`</span> and participant 3 has <span class="in">`z_epsilon_guess[3] = 1.5`</span>, then participant 3 tends to give responses 0.3 units higher than average.</span>
+<span id="cb26-192"><a href="#cb26-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-193"><a href="#cb26-193" aria-hidden="true" tabindex="-1"></a>Now we can compute predicted responses:</span>
+<span id="cb26-194"><a href="#cb26-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-195"><a href="#cb26-195" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-196"><a href="#cb26-196" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_data) {</span></span>
+<span id="cb26-197"><a href="#cb26-197" aria-hidden="true" tabindex="-1"></a><span class="in">    guess[i] = mu_guess[item[i]] + epsilon_guess[participant[i]];</span></span>
+<span id="cb26-198"><a href="#cb26-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-199"><a href="#cb26-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-200"><a href="#cb26-200" aria-hidden="true" tabindex="-1"></a>Let's trace through one prediction:</span>
+<span id="cb26-201"><a href="#cb26-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Response i is about item 5 by participant 3</span>
+<span id="cb26-202"><a href="#cb26-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`item[i] = 5`</span>, so we look up <span class="in">`mu_guess[5]`</span> (say it's 0.7)</span>
+<span id="cb26-203"><a href="#cb26-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`participant[i] = 3`</span>, so we add <span class="in">`epsilon_guess[3]`</span> (say it's 0.1)</span>
+<span id="cb26-204"><a href="#cb26-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`guess[i] = 0.7 + 0.1 = 0.8`</span></span>
+<span id="cb26-205"><a href="#cb26-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-206"><a href="#cb26-206" aria-hidden="true" tabindex="-1"></a>We repeat this for the boundary responses:</span>
+<span id="cb26-207"><a href="#cb26-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-208"><a href="#cb26-208" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-209"><a href="#cb26-209" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_0) {</span></span>
+<span id="cb26-210"><a href="#cb26-210" aria-hidden="true" tabindex="-1"></a><span class="in">    guess_0[i] = mu_guess[item_0[i]] + epsilon_guess[participant_0[i]];</span></span>
+<span id="cb26-211"><a href="#cb26-211" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-212"><a href="#cb26-212" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-213"><a href="#cb26-213" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_1) {</span></span>
+<span id="cb26-214"><a href="#cb26-214" aria-hidden="true" tabindex="-1"></a><span class="in">    guess_1[i] = mu_guess[item_1[i]] + epsilon_guess[participant_1[i]];</span></span>
+<span id="cb26-215"><a href="#cb26-215" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-216"><a href="#cb26-216" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-217"><a href="#cb26-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-218"><a href="#cb26-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-219"><a href="#cb26-219" aria-hidden="true" tabindex="-1"></a><span class="fu">### The `model` block</span></span>
+<span id="cb26-220"><a href="#cb26-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-221"><a href="#cb26-221" aria-hidden="true" tabindex="-1"></a>The model block is where we specify our statistical assumptions—both our prior beliefs and how the data was generated. This is where most of the action in terms of how PDS relates to data.</span>
+<span id="cb26-222"><a href="#cb26-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-223"><a href="#cb26-223" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-224"><a href="#cb26-224" aria-hidden="true" tabindex="-1"></a><span class="in">model {</span></span>
+<span id="cb26-225"><a href="#cb26-225" aria-hidden="true" tabindex="-1"></a><span class="in">  // Priors on random effects</span></span>
+<span id="cb26-226"><a href="#cb26-226" aria-hidden="true" tabindex="-1"></a><span class="in">  sigma_epsilon_guess ~ exponential(1);</span></span>
+<span id="cb26-227"><a href="#cb26-227" aria-hidden="true" tabindex="-1"></a><span class="in">  z_epsilon_guess ~ std_normal();</span></span>
+<span id="cb26-228"><a href="#cb26-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-229"><a href="#cb26-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-230"><a href="#cb26-230" aria-hidden="true" tabindex="-1"></a>These priors encode mild assumptions:</span>
+<span id="cb26-231"><a href="#cb26-231" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`exponential(1)`</span>: We expect person-to-person variation to be moderate (not huge)</span>
+<span id="cb26-232"><a href="#cb26-232" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`std_normal()`</span>: By construction, z-scores have a standard normal distribution</span>
+<span id="cb26-233"><a href="#cb26-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-234"><a href="#cb26-234" aria-hidden="true" tabindex="-1"></a>Notice we don't specify priors for <span class="in">`mu_guess`</span>—Stan treats this as an implicit uniform prior over the real numbers. Since our responses are bounded, the data will naturally constrain these values.</span>
+<span id="cb26-235"><a href="#cb26-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-236"><a href="#cb26-236" aria-hidden="true" tabindex="-1"></a>Now the likelihood—how data relates to parameters:</span>
+<span id="cb26-237"><a href="#cb26-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-238"><a href="#cb26-238" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-239"><a href="#cb26-239" aria-hidden="true" tabindex="-1"></a><span class="in">  // Likelihood</span></span>
+<span id="cb26-240"><a href="#cb26-240" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_data) {</span></span>
+<span id="cb26-241"><a href="#cb26-241" aria-hidden="true" tabindex="-1"></a><span class="in">    y[i] ~ normal(guess[i], sigma_e);</span></span>
+<span id="cb26-242"><a href="#cb26-242" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-243"><a href="#cb26-243" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-244"><a href="#cb26-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-245"><a href="#cb26-245" aria-hidden="true" tabindex="-1"></a>This says: each response is drawn from a normal distribution centered at our prediction with standard deviation <span class="in">`sigma_e`</span>. The <span class="in">`~`</span> symbol means "is distributed as."</span>
+<span id="cb26-246"><a href="#cb26-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-247"><a href="#cb26-247" aria-hidden="true" tabindex="-1"></a>For boundary responses, we use the latent values:</span>
+<span id="cb26-248"><a href="#cb26-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-249"><a href="#cb26-249" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-250"><a href="#cb26-250" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_0) {</span></span>
+<span id="cb26-251"><a href="#cb26-251" aria-hidden="true" tabindex="-1"></a><span class="in">    y_0[i] ~ normal(guess_0[i], sigma_e);</span></span>
+<span id="cb26-252"><a href="#cb26-252" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-253"><a href="#cb26-253" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-254"><a href="#cb26-254" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_1) {</span></span>
+<span id="cb26-255"><a href="#cb26-255" aria-hidden="true" tabindex="-1"></a><span class="in">    y_1[i] ~ normal(guess_1[i], sigma_e);</span></span>
+<span id="cb26-256"><a href="#cb26-256" aria-hidden="true" tabindex="-1"></a><span class="in">  } </span></span>
+<span id="cb26-257"><a href="#cb26-257" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-258"><a href="#cb26-258" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-259"><a href="#cb26-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-260"><a href="#cb26-260" aria-hidden="true" tabindex="-1"></a>Remember: we're inferring <span class="in">`y_0`</span> and <span class="in">`y_1`</span> as parameters! Stan will sample plausible values that are consistent with both the model and the fact that we observed 0s and 1s.</span>
+<span id="cb26-261"><a href="#cb26-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-262"><a href="#cb26-262" aria-hidden="true" tabindex="-1"></a><span class="fu">### The `generated quantities` block</span></span>
+<span id="cb26-263"><a href="#cb26-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-264"><a href="#cb26-264" aria-hidden="true" tabindex="-1"></a>Finally, we compute quantities that help us understand and evaluate our model:</span>
+<span id="cb26-265"><a href="#cb26-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-266"><a href="#cb26-266" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-267"><a href="#cb26-267" aria-hidden="true" tabindex="-1"></a><span class="in">generated quantities {</span></span>
+<span id="cb26-268"><a href="#cb26-268" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_data] ll; // log-likelihoods</span></span>
+<span id="cb26-269"><a href="#cb26-269" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-270"><a href="#cb26-270" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_data) {</span></span>
+<span id="cb26-271"><a href="#cb26-271" aria-hidden="true" tabindex="-1"></a><span class="in">    if (y[i] &gt;= 0 &amp;&amp; y[i] &lt;= 1)</span></span>
+<span id="cb26-272"><a href="#cb26-272" aria-hidden="true" tabindex="-1"></a><span class="in">      ll[i] = normal_lpdf(y[i] | guess[i], sigma_e);</span></span>
+<span id="cb26-273"><a href="#cb26-273" aria-hidden="true" tabindex="-1"></a><span class="in">    else</span></span>
+<span id="cb26-274"><a href="#cb26-274" aria-hidden="true" tabindex="-1"></a><span class="in">      ll[i] = negative_infinity();</span></span>
+<span id="cb26-275"><a href="#cb26-275" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-276"><a href="#cb26-276" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-277"><a href="#cb26-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-278"><a href="#cb26-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-279"><a href="#cb26-279" aria-hidden="true" tabindex="-1"></a>The log-likelihood tells us how probable each observation is under our model. We'll use these for model comparison—models that assign higher probability to the actual data are better.</span>
+<span id="cb26-280"><a href="#cb26-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-281"><a href="#cb26-281" aria-hidden="true" tabindex="-1"></a><span class="fu">### The complete model</span></span>
+<span id="cb26-282"><a href="#cb26-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-283"><a href="#cb26-283" aria-hidden="true" tabindex="-1"></a>Here's our complete model with consistent naming:</span>
+<span id="cb26-284"><a href="#cb26-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-285"><a href="#cb26-285" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-286"><a href="#cb26-286" aria-hidden="true" tabindex="-1"></a><span class="in">data {</span></span>
+<span id="cb26-287"><a href="#cb26-287" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_item;              // number of items</span></span>
+<span id="cb26-288"><a href="#cb26-288" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_participant;       // number of participants</span></span>
+<span id="cb26-289"><a href="#cb26-289" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_data;              // number of data points in (0, 1)</span></span>
+<span id="cb26-290"><a href="#cb26-290" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_0;                 // number of 0s</span></span>
+<span id="cb26-291"><a href="#cb26-291" aria-hidden="true" tabindex="-1"></a><span class="in">  int&lt;lower=1&gt; N_1;                 // number of 1s</span></span>
+<span id="cb26-292"><a href="#cb26-292" aria-hidden="true" tabindex="-1"></a><span class="in">  vector&lt;lower=0, upper=1&gt;[N_data] y; // response in (0, 1)</span></span>
+<span id="cb26-293"><a href="#cb26-293" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_data] int&lt;lower=1, upper=N_item&gt; item;</span></span>
+<span id="cb26-294"><a href="#cb26-294" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_0] int&lt;lower=1, upper=N_item&gt; item_0;</span></span>
+<span id="cb26-295"><a href="#cb26-295" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_1] int&lt;lower=1, upper=N_item&gt; item_1;</span></span>
+<span id="cb26-296"><a href="#cb26-296" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_data] int&lt;lower=1, upper=N_participant&gt; participant;</span></span>
+<span id="cb26-297"><a href="#cb26-297" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_0] int&lt;lower=1, upper=N_participant&gt; participant_0;</span></span>
+<span id="cb26-298"><a href="#cb26-298" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_1] int&lt;lower=1, upper=N_participant&gt; participant_1;</span></span>
+<span id="cb26-299"><a href="#cb26-299" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-300"><a href="#cb26-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-301"><a href="#cb26-301" aria-hidden="true" tabindex="-1"></a><span class="in">parameters {</span></span>
+<span id="cb26-302"><a href="#cb26-302" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_item] mu_guess;</span></span>
+<span id="cb26-303"><a href="#cb26-303" aria-hidden="true" tabindex="-1"></a><span class="in">  real&lt;lower=0&gt; sigma_epsilon_guess;</span></span>
+<span id="cb26-304"><a href="#cb26-304" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_participant] z_epsilon_guess;</span></span>
+<span id="cb26-305"><a href="#cb26-305" aria-hidden="true" tabindex="-1"></a><span class="in">  real&lt;lower=0,upper=1&gt; sigma_e;</span></span>
+<span id="cb26-306"><a href="#cb26-306" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_0] real&lt;upper=0&gt; y_0;</span></span>
+<span id="cb26-307"><a href="#cb26-307" aria-hidden="true" tabindex="-1"></a><span class="in">  array[N_1] real&lt;lower=1&gt; y_1;</span></span>
+<span id="cb26-308"><a href="#cb26-308" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-309"><a href="#cb26-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-310"><a href="#cb26-310" aria-hidden="true" tabindex="-1"></a><span class="in">transformed parameters {</span></span>
+<span id="cb26-311"><a href="#cb26-311" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_participant] epsilon_guess = sigma_epsilon_guess * z_epsilon_guess;</span></span>
+<span id="cb26-312"><a href="#cb26-312" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_data] guess;</span></span>
+<span id="cb26-313"><a href="#cb26-313" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_0] guess_0;</span></span>
+<span id="cb26-314"><a href="#cb26-314" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_1] guess_1;</span></span>
+<span id="cb26-315"><a href="#cb26-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-316"><a href="#cb26-316" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_data) {</span></span>
+<span id="cb26-317"><a href="#cb26-317" aria-hidden="true" tabindex="-1"></a><span class="in">    guess[i] = mu_guess[item[i]] + epsilon_guess[participant[i]];</span></span>
+<span id="cb26-318"><a href="#cb26-318" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-319"><a href="#cb26-319" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_0) {</span></span>
+<span id="cb26-320"><a href="#cb26-320" aria-hidden="true" tabindex="-1"></a><span class="in">    guess_0[i] = mu_guess[item_0[i]] + epsilon_guess[participant_0[i]];</span></span>
+<span id="cb26-321"><a href="#cb26-321" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-322"><a href="#cb26-322" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_1) {</span></span>
+<span id="cb26-323"><a href="#cb26-323" aria-hidden="true" tabindex="-1"></a><span class="in">    guess_1[i] = mu_guess[item_1[i]] + epsilon_guess[participant_1[i]];</span></span>
+<span id="cb26-324"><a href="#cb26-324" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-325"><a href="#cb26-325" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-326"><a href="#cb26-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-327"><a href="#cb26-327" aria-hidden="true" tabindex="-1"></a><span class="in">model {</span></span>
+<span id="cb26-328"><a href="#cb26-328" aria-hidden="true" tabindex="-1"></a><span class="in">  sigma_epsilon_guess ~ exponential(1);</span></span>
+<span id="cb26-329"><a href="#cb26-329" aria-hidden="true" tabindex="-1"></a><span class="in">  z_epsilon_guess ~ std_normal();</span></span>
+<span id="cb26-330"><a href="#cb26-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-331"><a href="#cb26-331" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_data) {</span></span>
+<span id="cb26-332"><a href="#cb26-332" aria-hidden="true" tabindex="-1"></a><span class="in">    y[i] ~ normal(guess[i], sigma_e);</span></span>
+<span id="cb26-333"><a href="#cb26-333" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-334"><a href="#cb26-334" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_0) {</span></span>
+<span id="cb26-335"><a href="#cb26-335" aria-hidden="true" tabindex="-1"></a><span class="in">    y_0[i] ~ normal(guess_0[i], sigma_e);</span></span>
+<span id="cb26-336"><a href="#cb26-336" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-337"><a href="#cb26-337" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_1) {</span></span>
+<span id="cb26-338"><a href="#cb26-338" aria-hidden="true" tabindex="-1"></a><span class="in">    y_1[i] ~ normal(guess_1[i], sigma_e);</span></span>
+<span id="cb26-339"><a href="#cb26-339" aria-hidden="true" tabindex="-1"></a><span class="in">  } </span></span>
+<span id="cb26-340"><a href="#cb26-340" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-341"><a href="#cb26-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-342"><a href="#cb26-342" aria-hidden="true" tabindex="-1"></a><span class="in">generated quantities {</span></span>
+<span id="cb26-343"><a href="#cb26-343" aria-hidden="true" tabindex="-1"></a><span class="in">  vector[N_data] ll;</span></span>
+<span id="cb26-344"><a href="#cb26-344" aria-hidden="true" tabindex="-1"></a><span class="in">  for (i in 1:N_data) {</span></span>
+<span id="cb26-345"><a href="#cb26-345" aria-hidden="true" tabindex="-1"></a><span class="in">    if (y[i] &gt;= 0 &amp;&amp; y[i] &lt;= 1)</span></span>
+<span id="cb26-346"><a href="#cb26-346" aria-hidden="true" tabindex="-1"></a><span class="in">      ll[i] = normal_lpdf(y[i] | guess[i], sigma_e);</span></span>
+<span id="cb26-347"><a href="#cb26-347" aria-hidden="true" tabindex="-1"></a><span class="in">    else</span></span>
+<span id="cb26-348"><a href="#cb26-348" aria-hidden="true" tabindex="-1"></a><span class="in">      ll[i] = negative_infinity();</span></span>
+<span id="cb26-349"><a href="#cb26-349" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb26-350"><a href="#cb26-350" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-351"><a href="#cb26-351" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-352"><a href="#cb26-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-353"><a href="#cb26-353" aria-hidden="true" tabindex="-1"></a>This baseline model treats each item as having an inherent degree along the relevant scale, with participants providing noisy measurements of these degrees. The censoring approach handles the common issue of responses at the boundaries (0 and 1) of the slider scale.</span>
+<span id="cb26-354"><a href="#cb26-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-355"><a href="#cb26-355" aria-hidden="true" tabindex="-1"></a><span class="fu">## PDS-to-Stan</span></span>
+<span id="cb26-356"><a href="#cb26-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-357"><a href="#cb26-357" aria-hidden="true" tabindex="-1"></a>So what components of the above model are derived from PDS? To answer this, we need to define our PDS model of the norming task itself. Here it is:</span>
+<span id="cb26-358"><a href="#cb26-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-359"><a href="#cb26-359" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb26-360"><a href="#cb26-360" aria-hidden="true" tabindex="-1"></a>s1<span class="ch">' </span><span class="er">       = termOf $ getSemantics @Adjectives 1 ["jo", "is", "a", "soccer player"]</span></span>
+<span id="cb26-361"><a href="#cb26-361" aria-hidden="true" tabindex="-1"></a>q1<span class="ch">' </span><span class="er">       = termOf $ getSemantics @Adjectives 0 ["how", "tall", "jo", "is"]</span></span>
+<span id="cb26-362"><a href="#cb26-362" aria-hidden="true" tabindex="-1"></a>discourse<span class="ch">' </span><span class="er">= ty tau $ assert s1</span><span class="ch">'</span> <span class="op">&gt;&gt;&gt;</span> ask q1<span class="ch">'</span></span>
+<span id="cb26-363"><a href="#cb26-363" aria-hidden="true" tabindex="-1"></a>scaleNormingExample <span class="op">=</span> asTyped tau <span class="op">(</span>betaDeltaNormal deltaRules <span class="op">.</span> adjectivesRespond scaleNormingPrior<span class="op">)</span> discourse<span class="ch">'</span></span>
+<span id="cb26-364"><a href="#cb26-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-365"><a href="#cb26-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-366"><a href="#cb26-366" aria-hidden="true" tabindex="-1"></a>This code:</span>
+<span id="cb26-367"><a href="#cb26-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-368"><a href="#cb26-368" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Asserts that Jo is a soccer player (establishing context)</span>
+<span id="cb26-369"><a href="#cb26-369" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Asks "how tall is Jo?" using the degree-argument version of the adjective</span>
+<span id="cb26-370"><a href="#cb26-370" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Applies beta and delta-reduction rules via <span class="in">`betaDeltaNormal`</span></span>
+<span id="cb26-371"><a href="#cb26-371" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Uses <span class="in">`scaleNormingPrior`</span> to generate prior distributions</span>
+<span id="cb26-372"><a href="#cb26-372" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Applies <span class="in">`adjectivesRespond`</span> to specify the response function</span>
+<span id="cb26-373"><a href="#cb26-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-374"><a href="#cb26-374" aria-hidden="true" tabindex="-1"></a>Note the use of certain convenience functions.</span>
+<span id="cb26-375"><a href="#cb26-375" aria-hidden="true" tabindex="-1"></a>For example, <span class="in">`getSemantics`</span> retrieves one of the meanings (in the λ-calculus) for the expression it is given as a string of strings, using the parser implemented at <span class="co">[</span><span class="ot">`Grammar.Parser`</span><span class="co">](https://juliangrove.github.io/pds/Grammar-Parser.html)</span>.</span>
+<span id="cb26-376"><a href="#cb26-376" aria-hidden="true" tabindex="-1"></a>The other functions, <span class="co">[</span><span class="ot">`termOf`</span><span class="co">](https://juliangrove.github.io/pds/Lambda-Types.html#v:termOf)</span>, <span class="co">[</span><span class="ot">`ty`</span><span class="co">](https://juliangrove.github.io/pds/Lambda-Types.html#v:ty)</span>, and <span class="co">[</span><span class="ot">`tau`</span><span class="co">](https://juliangrove.github.io/pds/Lambda-Convenience.html#v:tau)</span> serve as basic plumbing and can be found in the documentation.</span>
+<span id="cb26-377"><a href="#cb26-377" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-378"><a href="#cb26-378" aria-hidden="true" tabindex="-1"></a><span class="fu">### Working through degree questions</span></span>
+<span id="cb26-379"><a href="#cb26-379" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-380"><a href="#cb26-380" aria-hidden="true" tabindex="-1"></a>Degree questions like "how tall is Jo?" use a special lexical entry for adjectives that exposes the degree argument. From <span class="co">[</span><span class="ot">`Grammar.Lexica.SynSem.Adjectives`</span><span class="co">](https://juliangrove.github.io/pds/Grammar-Lexica-SynSem-Adjectives.html)</span>:</span>
+<span id="cb26-381"><a href="#cb26-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-382"><a href="#cb26-382" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb26-383"><a href="#cb26-383" aria-hidden="true" tabindex="-1"></a>instance Interpretation Adjectives SynSem where</span>
+<span id="cb26-384"><a href="#cb26-384" aria-hidden="true" tabindex="-1"></a>  combineR <span class="op">=</span> Convenience<span class="op">.</span>combineR</span>
+<span id="cb26-385"><a href="#cb26-385" aria-hidden="true" tabindex="-1"></a>  combineL <span class="op">=</span> Convenience<span class="op">.</span>combineL</span>
+<span id="cb26-386"><a href="#cb26-386" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb26-387"><a href="#cb26-387" aria-hidden="true" tabindex="-1"></a>  lexica <span class="op">=</span> <span class="op">[</span>lex<span class="op">]</span></span>
+<span id="cb26-388"><a href="#cb26-388" aria-hidden="true" tabindex="-1"></a>    where lex <span class="op">=</span> \<span class="cf">case</span></span>
+<span id="cb26-389"><a href="#cb26-389" aria-hidden="true" tabindex="-1"></a>      <span class="op">...</span></span>
+<span id="cb26-390"><a href="#cb26-390" aria-hidden="true" tabindex="-1"></a>      <span class="st">"tall"</span>          <span class="op">-&gt;</span> <span class="op">[</span> SynSem <span class="op">{</span></span>
+<span id="cb26-391"><a href="#cb26-391" aria-hidden="true" tabindex="-1"></a>                              syn <span class="op">=</span> AP <span class="op">:</span>\<span class="op">:</span> Deg<span class="op">,</span></span>
+<span id="cb26-392"><a href="#cb26-392" aria-hidden="true" tabindex="-1"></a>                              sem <span class="op">=</span> ty tau <span class="op">(</span>purePP <span class="op">(</span>lam d <span class="op">(</span>lam x <span class="op">(</span>lam i <span class="op">(</span>sCon <span class="st">"(≥)"</span> @@ <span class="op">(</span>sCon <span class="st">"height"</span> @@ i @@ x<span class="op">)</span> @@ d<span class="op">)))))</span></span>
+<span id="cb26-393"><a href="#cb26-393" aria-hidden="true" tabindex="-1"></a>                              <span class="op">}</span></span>
+<span id="cb26-394"><a href="#cb26-394" aria-hidden="true" tabindex="-1"></a>                           <span class="op">...</span></span>
+<span id="cb26-395"><a href="#cb26-395" aria-hidden="true" tabindex="-1"></a>                         <span class="op">]</span></span>
+<span id="cb26-396"><a href="#cb26-396" aria-hidden="true" tabindex="-1"></a>      <span class="op">...</span></span>
+<span id="cb26-397"><a href="#cb26-397" aria-hidden="true" tabindex="-1"></a>      <span class="st">"how"</span>           <span class="op">-&gt;</span>  <span class="op">[</span> SynSem <span class="op">{</span></span>
+<span id="cb26-398"><a href="#cb26-398" aria-hidden="true" tabindex="-1"></a>                              syn <span class="op">=</span>  Qdeg <span class="op">:/:</span> <span class="op">(</span>S <span class="op">:/:</span> AP<span class="op">)</span> <span class="op">:/:</span> <span class="op">(</span>AP <span class="op">:</span>\<span class="op">:</span> Deg<span class="op">),</span></span>
+<span id="cb26-399"><a href="#cb26-399" aria-hidden="true" tabindex="-1"></a>                              sem <span class="op">=</span> ty tau <span class="op">(</span>purePP <span class="op">(</span>lam x <span class="op">(</span>lam y <span class="op">(</span>lam z <span class="op">(</span>y @@ <span class="op">(</span>x @@ z<span class="op">))))))</span></span>
+<span id="cb26-400"><a href="#cb26-400" aria-hidden="true" tabindex="-1"></a>                            <span class="op">}</span></span>
+<span id="cb26-401"><a href="#cb26-401" aria-hidden="true" tabindex="-1"></a>                            <span class="op">...</span></span>
+<span id="cb26-402"><a href="#cb26-402" aria-hidden="true" tabindex="-1"></a>                          <span class="op">]</span></span>
+<span id="cb26-403"><a href="#cb26-403" aria-hidden="true" tabindex="-1"></a>      <span class="op">...</span></span>
+<span id="cb26-404"><a href="#cb26-404" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-405"><a href="#cb26-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-406"><a href="#cb26-406" aria-hidden="true" tabindex="-1"></a><span class="fu">### delta-rules and semantic computation</span></span>
+<span id="cb26-407"><a href="#cb26-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-408"><a href="#cb26-408" aria-hidden="true" tabindex="-1"></a>PDS applies delta-rules to simplify these complex λ-terms. As discussed in <span class="co">[</span><span class="ot">the implementation section</span><span class="co">](../pds-intro/delta-rules.qmd)</span>, delta-rules enable different semantic computations while preserving semantic equivalence. The formalism is strongly normalizing and confluent, so the order of rule application doesn't affect the final result—a crucial property that ensures our semantic theory remains consistent.</span>
+<span id="cb26-409"><a href="#cb26-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-410"><a href="#cb26-410" aria-hidden="true" tabindex="-1"></a>Key delta-rules for adjectives include:</span>
+<span id="cb26-411"><a href="#cb26-411" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Arithmetic operations**: Simplifying comparisons like $\ct{(≥)}$ when applied to constants</span>
+<span id="cb26-412"><a href="#cb26-412" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**State/index extraction**: Rules for $\ct{height}$, $\ct{d<span class="sc">\_</span>tall}$, etc.</span>
+<span id="cb26-413"><a href="#cb26-413" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Beta reduction**: Standard λ-calculus reduction</span>
+<span id="cb26-414"><a href="#cb26-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-415"><a href="#cb26-415" aria-hidden="true" tabindex="-1"></a>These rules transform the complex compositional semantics into simpler forms suitable for compilation to Stan. The transformation preserves the semantic content while making it computationally tractable.</span>
+<span id="cb26-416"><a href="#cb26-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-417"><a href="#cb26-417" aria-hidden="true" tabindex="-1"></a><span class="fu">### Working through delta-reductions</span></span>
+<span id="cb26-418"><a href="#cb26-418" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-419"><a href="#cb26-419" aria-hidden="true" tabindex="-1"></a>Having seen the PDS code for degree questions, we now trace through how delta-rules transform these complex λ-terms into forms suitable for Stan compilation. delta-rules, as introduced in <span class="co">[</span><span class="ot">`Lambda.Delta`</span><span class="co">](https://juliangrove.github.io/pds/Lambda-Delta.html)</span>, are partial functions from terms to terms that implement semantic computations.</span>
+<span id="cb26-420"><a href="#cb26-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-421"><a href="#cb26-421" aria-hidden="true" tabindex="-1"></a>For degree questions like *how tall is Jo?*, the compositional semantics produces:</span>
+<span id="cb26-422"><a href="#cb26-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-423"><a href="#cb26-423" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-424"><a href="#cb26-424" aria-hidden="true" tabindex="-1"></a>λd, i.\ct{height}(i)(j) ≥ d</span>
+<span id="cb26-425"><a href="#cb26-425" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-426"><a href="#cb26-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-427"><a href="#cb26-427" aria-hidden="true" tabindex="-1"></a>When $\abbr{respond}$ comes into the picture, some index $i^{\prime}$ is sampled from the common ground, and the maximal answer to the question is determined to be:</span>
+<span id="cb26-428"><a href="#cb26-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-429"><a href="#cb26-429" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-430"><a href="#cb26-430" aria-hidden="true" tabindex="-1"></a>\ct{max}(λd.\ct{height}(i^{\prime})(j) ≥ d)</span>
+<span id="cb26-431"><a href="#cb26-431" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-432"><a href="#cb26-432" aria-hidden="true" tabindex="-1"></a>This term undergoes several delta-reductions. First, the <span class="in">`indices`</span> rule extracts the height value from whatever actual index is sampled from the common ground of the current discourse state. From <span class="co">[</span><span class="ot">`Lambda.Delta`</span><span class="co">](https://juliangrove.github.io/pds/Lambda-Delta.html)</span>:</span>
+<span id="cb26-433"><a href="#cb26-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-434"><a href="#cb26-434" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb26-435"><a href="#cb26-435" aria-hidden="true" tabindex="-1"></a>indices <span class="op">::</span> DeltaRule</span>
+<span id="cb26-436"><a href="#cb26-436" aria-hidden="true" tabindex="-1"></a>indices <span class="op">=</span> \<span class="cf">case</span></span>
+<span id="cb26-437"><a href="#cb26-437" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
+<span id="cb26-438"><a href="#cb26-438" aria-hidden="true" tabindex="-1"></a>  Height <span class="op">(</span>UpdHeight p _<span class="op">)</span> <span class="op">-&gt;</span> Just p</span>
+<span id="cb26-439"><a href="#cb26-439" aria-hidden="true" tabindex="-1"></a>  Height <span class="op">(</span>UpdSocPla _ i<span class="op">)</span> <span class="op">-&gt;</span> Just <span class="op">(</span>Height i<span class="op">)</span></span>
+<span id="cb26-440"><a href="#cb26-440" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
+<span id="cb26-441"><a href="#cb26-441" aria-hidden="true" tabindex="-1"></a>  _                      <span class="op">-&gt;</span> Nothing</span>
+<span id="cb26-442"><a href="#cb26-442" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-443"><a href="#cb26-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-444"><a href="#cb26-444" aria-hidden="true" tabindex="-1"></a>Calling this height value $h$, this rule yields:</span>
+<span id="cb26-445"><a href="#cb26-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-446"><a href="#cb26-446" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-447"><a href="#cb26-447" aria-hidden="true" tabindex="-1"></a>\ct{max}(λd.h ≥ d)</span>
+<span id="cb26-448"><a href="#cb26-448" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb26-449"><a href="#cb26-449" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-450"><a href="#cb26-450" aria-hidden="true" tabindex="-1"></a>where $h$ represents Jo's actual height at index $i$. The $\ct{max}$ operator then extracts this unique value using the following delta-rule:</span>
+<span id="cb26-451"><a href="#cb26-451" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-452"><a href="#cb26-452" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb26-453"><a href="#cb26-453" aria-hidden="true" tabindex="-1"></a>maxes <span class="op">::</span> DeltaRule</span>
+<span id="cb26-454"><a href="#cb26-454" aria-hidden="true" tabindex="-1"></a>maxes <span class="op">=</span> \<span class="cf">case</span></span>
+<span id="cb26-455"><a href="#cb26-455" aria-hidden="true" tabindex="-1"></a>   Max <span class="op">(</span>Lam y <span class="op">(</span>GE x <span class="op">(</span>Var y<span class="ch">')</span><span class="er">)) | y</span><span class="ch">'</span> <span class="op">==</span> y <span class="op">-&gt;</span> Just x</span>
+<span id="cb26-456"><a href="#cb26-456" aria-hidden="true" tabindex="-1"></a>   _                                     <span class="op">-&gt;</span> Nothing  </span>
+<span id="cb26-457"><a href="#cb26-457" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-458"><a href="#cb26-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-459"><a href="#cb26-459" aria-hidden="true" tabindex="-1"></a>This gives us $h$.</span>
+<span id="cb26-460"><a href="#cb26-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-461"><a href="#cb26-461" aria-hidden="true" tabindex="-1"></a>This final form directly corresponds to the Stan parameter we need to infer—the degree on the height scale.</span>
+<span id="cb26-462"><a href="#cb26-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-463"><a href="#cb26-463" aria-hidden="true" tabindex="-1"></a><span class="fu">### From lambda terms to Stan parameters</span></span>
+<span id="cb26-464"><a href="#cb26-464" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-465"><a href="#cb26-465" aria-hidden="true" tabindex="-1"></a>The challenge is translating abstract semantic computations into Stan's parameter space. This translation embodies (some of) our linking hypothesis between semantic competence and performance.</span>
+<span id="cb26-466"><a href="#cb26-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-467"><a href="#cb26-467" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Degree extraction becomes parameter inference**:</span>
+<span id="cb26-468"><a href="#cb26-468" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>$\ct{max}(λd.\ct{height}(i)(j) ≥ d)$ → Infer parameter <span class="in">`height_jo`</span></span>
+<span id="cb26-469"><a href="#cb26-469" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The unique degree satisfying the equation becomes a parameter to estimate</span>
+<span id="cb26-470"><a href="#cb26-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-471"><a href="#cb26-471" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Functions become arrays**:</span>
+<span id="cb26-472"><a href="#cb26-472" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>$\ct{height} : \iota \to e \to r$ → Array <span class="in">`height[person]`</span></span>
+<span id="cb26-473"><a href="#cb26-473" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Function application → Array indexing</span>
+<span id="cb26-474"><a href="#cb26-474" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-475"><a href="#cb26-475" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Propositions become probabilities**:</span>
+<span id="cb26-476"><a href="#cb26-476" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Truth values → Real numbers in <span class="co">[</span><span class="ot">0,1</span><span class="co">]</span></span>
+<span id="cb26-477"><a href="#cb26-477" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>Logical operations → Probabilistic operations</span>
+<span id="cb26-478"><a href="#cb26-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-479"><a href="#cb26-479" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**The monad becomes Stan's target**:</span>
+<span id="cb26-480"><a href="#cb26-480" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>The $\Do$-notation structures sequential computation:</span>
+<span id="cb26-481"><a href="#cb26-481" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb26-482"><a href="#cb26-482" aria-hidden="true" tabindex="-1"></a>     $\begin{array}<span class="co">[</span><span class="ot">t</span><span class="co">]</span>{l}</span>
+<span id="cb26-483"><a href="#cb26-483" aria-hidden="true" tabindex="-1"></a>     x ∼ \ct{normal}(0, 1) <span class="sc">\\</span></span>
+<span id="cb26-484"><a href="#cb26-484" aria-hidden="true" tabindex="-1"></a>     y ∼ \ct{normal}(x, 1) <span class="sc">\\</span></span>
+<span id="cb26-485"><a href="#cb26-485" aria-hidden="true" tabindex="-1"></a>     \pure{y}</span>
+<span id="cb26-486"><a href="#cb26-486" aria-hidden="true" tabindex="-1"></a>     \end{array}$</span>
+<span id="cb26-487"><a href="#cb26-487" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-488"><a href="#cb26-488" aria-hidden="true" tabindex="-1"></a><span class="ss">   - </span>This determines Stan's log probability</span>
+<span id="cb26-489"><a href="#cb26-489" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-490"><a href="#cb26-490" aria-hidden="true" tabindex="-1"></a>This translation embodies our linking hypothesis: semantic computations generate behavioral data through a noisy measurement process captured by <span class="in">`adjectivesRespond`</span>.</span>
+<span id="cb26-491"><a href="#cb26-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-492"><a href="#cb26-492" aria-hidden="true" tabindex="-1"></a>::: {.callout-note title="PDS Compilation Details"}</span>
+<span id="cb26-493"><a href="#cb26-493" aria-hidden="true" tabindex="-1"></a>**Input PDS:**</span>
+<span id="cb26-494"><a href="#cb26-494" aria-hidden="true" tabindex="-1"></a><span class="in">```haskell</span></span>
+<span id="cb26-495"><a href="#cb26-495" aria-hidden="true" tabindex="-1"></a>discourse<span class="ch">' </span><span class="er">= ty tau $ assert s1</span><span class="ch">'</span> <span class="op">&gt;&gt;&gt;</span> ask q1<span class="ch">'</span></span>
+<span id="cb26-496"><a href="#cb26-496" aria-hidden="true" tabindex="-1"></a>scaleNormingExample <span class="op">=</span> asTyped tau <span class="op">(</span>betaDeltaNormal deltaRules <span class="op">.</span> adjectivesRespond scaleNormingPrior<span class="op">)</span> discourse<span class="ch">'</span></span>
+<span id="cb26-497"><a href="#cb26-497" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-498"><a href="#cb26-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-499"><a href="#cb26-499" aria-hidden="true" tabindex="-1"></a>**delta-reductions:**</span>
+<span id="cb26-500"><a href="#cb26-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-501"><a href="#cb26-501" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Parse the answer to "how tall jo is" → $\ct{max}(λd.\ct{height}(i)(j) ≥ d)$</span>
+<span id="cb26-502"><a href="#cb26-502" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Apply <span class="in">`indices`</span> rule → $\ct{max}(λd.h ≥ d)$ </span>
+<span id="cb26-503"><a href="#cb26-503" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Apply $\ct{max}$ extraction → $h$</span>
+<span id="cb26-504"><a href="#cb26-504" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Monadic structure maps to Stan parameter inference</span>
+<span id="cb26-505"><a href="#cb26-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-506"><a href="#cb26-506" aria-hidden="true" tabindex="-1"></a>**Kernel output:**^<span class="co">[</span><span class="ot">Actual PDS output: `model { w ~ normal(0.0, 1.0); target += normal_lpdf(y | w, sigma); }`</span><span class="co">]</span></span>
+<span id="cb26-507"><a href="#cb26-507" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-508"><a href="#cb26-508" aria-hidden="true" tabindex="-1"></a><span class="in">model {</span></span>
+<span id="cb26-509"><a href="#cb26-509" aria-hidden="true" tabindex="-1"></a><span class="in">  // FIXED EFFECTS</span></span>
+<span id="cb26-510"><a href="#cb26-510" aria-hidden="true" tabindex="-1"></a><span class="in">  w ~ normal(0.0, 1.0);</span></span>
+<span id="cb26-511"><a href="#cb26-511" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-512"><a href="#cb26-512" aria-hidden="true" tabindex="-1"></a><span class="in">  // LIKELIHOOD</span></span>
+<span id="cb26-513"><a href="#cb26-513" aria-hidden="true" tabindex="-1"></a><span class="in">  target += normal_lpdf(y | w, sigma);</span></span>
+<span id="cb26-514"><a href="#cb26-514" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-515"><a href="#cb26-515" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-516"><a href="#cb26-516" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb26-517"><a href="#cb26-517" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-518"><a href="#cb26-518" aria-hidden="true" tabindex="-1"></a><span class="fu">### The PDS kernel model</span></span>
+<span id="cb26-519"><a href="#cb26-519" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-520"><a href="#cb26-520" aria-hidden="true" tabindex="-1"></a>The PDS system outputs the following kernel model:^<span class="co">[</span><span class="ot">Actual PDS output: `model { w ~ normal(0.0, 1.0); target += normal_lpdf(y | w, sigma); }`</span><span class="co">]</span></span>
+<span id="cb26-521"><a href="#cb26-521" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-522"><a href="#cb26-522" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb26-523"><a href="#cb26-523" aria-hidden="true" tabindex="-1"></a><span class="in">model {</span></span>
+<span id="cb26-524"><a href="#cb26-524" aria-hidden="true" tabindex="-1"></a><span class="in">  // FIXED EFFECTS</span></span>
+<span id="cb26-525"><a href="#cb26-525" aria-hidden="true" tabindex="-1"></a><span class="in">  w ~ normal(0.0, 1.0);</span></span>
+<span id="cb26-526"><a href="#cb26-526" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-527"><a href="#cb26-527" aria-hidden="true" tabindex="-1"></a><span class="in">  // LIKELIHOOD</span></span>
+<span id="cb26-528"><a href="#cb26-528" aria-hidden="true" tabindex="-1"></a><span class="in">  target += normal_lpdf(y | w, sigma);</span></span>
+<span id="cb26-529"><a href="#cb26-529" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-530"><a href="#cb26-530" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-531"><a href="#cb26-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-532"><a href="#cb26-532" aria-hidden="true" tabindex="-1"></a>This is the semantic core—it captures the essential degree-based semantics where <span class="in">`w`</span> represents the degree on the height scale. But reality is complicated: we need random effects, the ability to model censored data, and proper indexing for multiple items and participants. This gap between the kernel model and a full statistical implementation represents ongoing research: how to get from here (PDS output) to here (actual implementation).</span>
+<span id="cb26-533"><a href="#cb26-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-534"><a href="#cb26-534" aria-hidden="true" tabindex="-1"></a>The full model with analyst augmentations looks like:</span>
+<span id="cb26-535"><a href="#cb26-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-536"><a href="#cb26-536" aria-hidden="true" tabindex="-1"></a><span class="in">```stan {.line-numbers highlight="6,13"}</span></span>
+<span id="cb26-537"><a href="#cb26-537" aria-hidden="true" tabindex="-1"></a><span class="in">model {</span></span>
+<span id="cb26-538"><a href="#cb26-538" aria-hidden="true" tabindex="-1"></a><span class="in">  // PRIORS (analyst-added)</span></span>
+<span id="cb26-539"><a href="#cb26-539" aria-hidden="true" tabindex="-1"></a><span class="in">  sigma_epsilon_guess ~ exponential(1);</span></span>
+<span id="cb26-540"><a href="#cb26-540" aria-hidden="true" tabindex="-1"></a><span class="in">  sigma_e ~ beta(2, 10);</span></span>
+<span id="cb26-541"><a href="#cb26-541" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-542"><a href="#cb26-542" aria-hidden="true" tabindex="-1"></a><span class="in">  // FIXED EFFECTS (PDS kernel)</span></span>
+<span id="cb26-543"><a href="#cb26-543" aria-hidden="true" tabindex="-1"></a><span class="in">  mu_guess ~ normal(0.0, 1.0);</span></span>
+<span id="cb26-544"><a href="#cb26-544" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-545"><a href="#cb26-545" aria-hidden="true" tabindex="-1"></a><span class="in">  // RANDOM EFFECTS (analyst-added)</span></span>
+<span id="cb26-546"><a href="#cb26-546" aria-hidden="true" tabindex="-1"></a><span class="in">  z_epsilon_guess ~ std_normal();</span></span>
+<span id="cb26-547"><a href="#cb26-547" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
+<span id="cb26-548"><a href="#cb26-548" aria-hidden="true" tabindex="-1"></a><span class="in">  // LIKELIHOOD (PDS kernel with modifications)</span></span>
+<span id="cb26-549"><a href="#cb26-549" aria-hidden="true" tabindex="-1"></a><span class="in">  y[i] ~ normal(mu_guess[item[i]] + epsilon_guess[participant[i]], sigma_e);</span></span>
+<span id="cb26-550"><a href="#cb26-550" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb26-551"><a href="#cb26-551" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb26-552"><a href="#cb26-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-553"><a href="#cb26-553" aria-hidden="true" tabindex="-1"></a>Lines 6 and 13 (highlighted) show the kernel model from PDS. The unhighlighted portions add statistical machinery for real data: hierarchical priors, random effects, and indexed parameters. The kernel captures the core semantic computation—degrees on scales—while the augmentations handle the realities of experimental data.</span>
+<span id="cb26-554"><a href="#cb26-554" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-555"><a href="#cb26-555" aria-hidden="true" tabindex="-1"></a>This baseline model establishes how PDS transforms degree questions into parameter inference. Next, we'll see how this extends to modeling the vagueness inherent in gradable adjective judgments.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
