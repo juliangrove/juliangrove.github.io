@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Collecting inference judgments – Probabilistic dynamic semantics</title>
+<title>Experimental paradigms – Probabilistic dynamic semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../adjectives/compiling-kernel-models.html" rel="next">
-<link href="../adjectives/adjectives-intro.html" rel="prev">
+<link href="../factivity/hypotheses.html" rel="next">
+<link href="../factivity/important-distinction.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/collecting-judgments.html">Collecting inference judgments</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../factivity/factivity-projection.html">Factivity inferences</a></li><li class="breadcrumb-item"><a href="../factivity/experimental-paradigms.html">Experimental paradigms</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -284,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link active">
+  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collecting inference judgments</span></a>
   </div>
 </li>
@@ -331,7 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../factivity/experimental-paradigms.html" class="sidebar-item-text sidebar-link">
+  <a href="../factivity/experimental-paradigms.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Experimental paradigms</span></a>
   </div>
 </li>
@@ -383,17 +403,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-scale-norming-task" id="toc-the-scale-norming-task" class="nav-link active" data-scroll-target="#the-scale-norming-task">The scale-norming task</a></li>
-  <li><a href="#the-likelihood-task" id="toc-the-likelihood-task" class="nav-link" data-scroll-target="#the-likelihood-task">The likelihood task</a></li>
+  <li><a href="#separating-world-knowledge-from-factivity" id="toc-separating-world-knowledge-from-factivity" class="nav-link active" data-scroll-target="#separating-world-knowledge-from-factivity">Separating world knowledge from factivity</a></li>
+  <li><a href="#key-experimental-details" id="toc-key-experimental-details" class="nav-link" data-scroll-target="#key-experimental-details">Key experimental details</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/collecting-judgments.html">Collecting inference judgments</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../factivity/factivity-projection.html">Factivity inferences</a></li><li class="breadcrumb-item"><a href="../factivity/experimental-paradigms.html">Experimental paradigms</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Collecting inference judgments</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Experimental paradigms</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -410,42 +430,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In ongoing work, we are collecting and modeling inference judgments involving gradable adjectives using two experiments: one in which we collect <em>scale-norming</em> judgments, and another in which we collect <em>likelihood</em> judgments.</p>
-<section id="the-scale-norming-task" class="level3">
-<h3 class="anchored" data-anchor-id="the-scale-norming-task">The scale-norming task</h3>
-<p>In the scale-norming task, we provide experimental participants prompts like the following:</p>
-<br>
-<div style="text-align: center;">
-<p><img src="images/expensive_norming.png" style="width: 60%;"></p>
+<section id="separating-world-knowledge-from-factivity" class="level3">
+<h3 class="anchored" data-anchor-id="separating-world-knowledge-from-factivity">Separating world knowledge from factivity</h3>
+<p>A key challenge in studying factivity is that our judgments about whether someone is certain of a proposition depend on two factors:</p>
+<ol type="1">
+<li>The properties of the predicate (whether speakers interpret it as being associated with a presupposition)</li>
+<li>Our world knowledge about how likely the proposition is</li>
+</ol>
+<p><span class="citation" data-cites="degen_prior_2021">Degen and Tonhauser (<a href="#ref-degen_prior_2021" role="doc-biblioref">2021</a>)</span> developed a two-stage experimental design to tease these apart:</p>
+<p><strong>Stage 1: Norming study (Experiment 2a)</strong></p>
+<p>First, they measured how world knowledge affects belief in various propositions. Participants saw items like:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Norming item example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>The idea here is to assess where people believe objects of different kinds fall on the scale associated with some gradable adjective. This information, which we will attempt to model, is useful because allows us to estimate one of the possible sources of uncertainty which are commonly thought to affect the inferences associated with these kinds of adjectives—that which comes from <em>world knowledge</em> about the entity itself (in particular where it falls on the adjective’s scale). For each adjective we collected judgments for three different entities, thus providing three different contexts preceding the question prompt.</p>
-<p>We obtained data of this kind for six gradable adjectives that give rise to vagueness in their positive forms, obtaining the following distributions of responses (collapsed across the three contexts for each adjective):</p>
-<p><img src="images/norming_histograms.png" class="img-fluid"></p>
+<div class="callout-title-container flex-fill">
+Norming item example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Fact</strong>: Sophia is a hipster.<br>
+<strong>Question</strong>: How likely is it that Sophia got a tattoo?<br>
+<strong>Response</strong>: [slider from 0 to 1]</p>
+</div>
+</div>
+<p>For each proposition (e.g., <em>Sophia got a tattoo</em>), they created two contexts–one making it more likely (Sophia is a hipster) and one making it less likely (<em>Sophia is a Mormon</em>). This gives us a measure of world knowledge independent of any embedding predicate.</p>
+<p><strong>Stage 2: Projection study (Experiment 2b)</strong></p>
+<p>Next, they embedded these same propositions under various predicates and asked about the speaker’s certainty:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Projection item example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Projection item example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Context</strong>: Isabella said that Sophia is a hipster.<br>
+<strong>Utterance</strong>: Noah knows that Sophia got a tattoo.<br>
+<strong>Question</strong>: Is Noah certain that Sophia got a tattoo?<br>
+<strong>Response</strong>: [slider from 0 to 1]</p>
+</div>
+</div>
+<p>They reasoned that, if speakers categorically interpret <em>know</em> as triggering a factive presupposition, Noah should be certain regardless of the prior probability; but, they reasoned, if projection is gradient, his certainty should vary with world knowledge.</p>
 </section>
-<section id="the-likelihood-task" class="level3">
-<h3 class="anchored" data-anchor-id="the-likelihood-task">The likelihood task</h3>
-<p>In the likelihood task, we provide a different group of participants with prompts like the following:</p>
-<br>
-<div style="text-align: center;">
-<p><img src="images/expensive_test.png" style="width: 70%;"></p>
-</div>
-<p>Here, we use the same three contexts for each adjective that were featured in the scale-norming experiment, but now the question prompt is different: we ask about <em>likelihood</em> that the adjective is true in its positive form in order to gauge how the vague properties of these adjectives influence people’s subjective probabilities about their application. The judgment data we obtained for each adjective are summarized in the following histograms (again, collapsed across contexts):</p>
-<div style="text-align: center;">
-<p><img src="images/expensive.png" height="100"> <img src="images/tall_wide.png" height="100"></p>
-</div>
-<div style="text-align: center;">
-<p><img src="images/deep.png" height="100"> <img src="images/heavy_old.png" height="100"></p>
-</div>
-<div style="text-align: center;">
-<p>Likelihood judgment</p>
-</div>
+<section id="key-experimental-details" class="level3">
+<h3 class="anchored" data-anchor-id="key-experimental-details">Key experimental details</h3>
+<p>The experiments tested 20 predicates that theory suggests might pattern differently:</p>
+<ul>
+<li><strong>Canonical factives:</strong> <em>be annoyed</em>, <em>discover</em>, <em>know</em>, <em>reveal</em>, <em>see</em></li>
+<li><strong>Non-factives:</strong>
+<ul>
+<li><strong>Non-veridical non-factive:</strong> <em>pretend</em>, <em>say</em>, <em>suggest</em>, <em>think</em></li>
+<li><strong>Veridical non-factive:</strong> <em>be right</em>, <em>demonstrate</em></li>
+</ul></li>
+<li><strong>Optionally factive:</strong> <em>acknowledge</em>, <em>admit</em>, <em>announce</em>, <em>confess</em>, <em>confirm</em>, <em>establish</em>, <em>hear</em>, <em>inform</em>, <em>prove</em></li>
+</ul>
+<p>Each participant saw 20 items (one per predicate) plus controls, with predicates paired with different complement clauses and prior contexts across participants.</p>
 
 
 <!-- -->
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-degen_prior_2021" class="csl-entry" role="listitem">
+Degen, Judith, and Judith Tonhauser. 2021. <span>“Prior <span>Beliefs</span> <span>Modulate</span> <span>Projection</span>.”</span> <em>Open Mind</em> 5 (September): 59–70. <a href="https://doi.org/10.1162/opmi_a_00042">https://doi.org/10.1162/opmi_a_00042</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -898,76 +953,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../adjectives/adjectives-intro.html" class="pagination-link" aria-label="Vague gradable adjectives">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vague gradable adjectives</span>
+      <a href="../factivity/important-distinction.html" class="pagination-link" aria-label="An important distinction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">An important distinction</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../adjectives/compiling-kernel-models.html" class="pagination-link" aria-label="Compiling kernel models">
-        <span class="nav-page-text">Compiling kernel models</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../factivity/hypotheses.html" class="pagination-link" aria-label="Two competing hypotheses">
+        <span class="nav-page-text">Two competing hypotheses</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Collecting inference judgments"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Experimental paradigms"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">### Separating world knowledge from factivity</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>A key challenge in studying factivity is that our judgments about whether someone is certain of a proposition depend on two factors:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>The properties of the predicate (whether speakers interpret it as being associated with a presupposition)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Our world knowledge about how likely the proposition is</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>@degen_prior_2021 developed a two-stage experimental design to tease these apart:</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>In ongoing work, we are collecting and modeling inference judgments involving gradable adjectives using two experiments:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>one in which we collect *scale-norming* judgments, and another in which we collect *likelihood* judgments.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### The scale-norming task</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>In the scale-norming task, we provide experimental participants prompts like the following:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"images/expensive_norming.png"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 60%;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>**Stage 1: Norming study (Experiment 2a)**</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>First, they measured how world knowledge affects belief in various propositions. Participants saw items like:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>:::{.callout-note title="Norming item example"}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>**Fact**: Sophia is a hipster.  </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>**Question**: How likely is it that Sophia got a tattoo?  </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>**Response**: <span class="co">[</span><span class="ot">slider from 0 to 1</span><span class="co">]</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>For each proposition (e.g., *Sophia got a tattoo*), they created two contexts–one making it more likely (Sophia is a hipster) and one making it less likely (*Sophia is a Mormon*). This gives us a measure of world knowledge independent of any embedding predicate.</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>The idea here is to assess where people believe objects of different kinds fall on the scale associated with some gradable adjective.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This information, which we will attempt to model, is useful because allows us to estimate one of the possible sources of uncertainty which are commonly thought to affect the inferences associated with these kinds of adjectives---that which comes from *world knowledge* about the entity itself (in particular where it falls on the adjective's scale).</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>For each adjective we collected judgments for three different entities, thus providing three different contexts preceding the question prompt.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**Stage 2: Projection study (Experiment 2b)**</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Next, they embedded these same propositions under various predicates and asked about the speaker's certainty:</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>We obtained data of this kind for six gradable adjectives that give rise to vagueness in their positive forms, obtaining the following distributions of responses (collapsed across the three contexts for each adjective):</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/norming_histograms.png)</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### The likelihood task</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>In the likelihood task, we provide a different group of participants with prompts like the following:</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"images/expensive_test.png"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 70%;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>:::{.callout-note title="Projection item example"}</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>**Context**: Isabella said that Sophia is a hipster.  </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>**Utterance**: Noah knows that Sophia got a tattoo.  </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**Question**: Is Noah certain that Sophia got a tattoo?  </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>**Response**: <span class="co">[</span><span class="ot">slider from 0 to 1</span><span class="co">]</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>They reasoned that, if speakers categorically interpret *know* as triggering a factive presupposition, Noah should be certain regardless of the prior probability; but, they reasoned, if projection is gradient, his certainty should vary with world knowledge.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Key experimental details</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>The experiments tested 20 predicates that theory suggests might pattern differently:</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Here, we use the same three contexts for each adjective that were featured in the scale-norming experiment, but now the question prompt is different:</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>we ask about *likelihood* that the adjective is true in its positive form in order to gauge how the vague properties of these adjectives influence people's subjective probabilities about their application.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>The judgment data we obtained for each adjective are summarized in the following histograms (again, collapsed across contexts):</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/expensive.png)</span>{height=100}</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/tall_wide.png)</span>{height=100}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/deep.png)</span>{height=100}</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/heavy_old.png)</span>{height=100}</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Likelihood judgment</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Canonical factives:** *be annoyed*, *discover*, *know*, *reveal*, *see*</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Non-factives:**</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Non-veridical non-factive:** *pretend*, *say*, *suggest*, *think* </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>**Veridical non-factive:** *be right*, *demonstrate*</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Optionally factive:** *acknowledge*, *admit*, *announce*, *confess*, *confirm*, *establish*, *hear*, *inform*, *prove* </span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Each participant saw 20 items (one per predicate) plus controls, with predicates paired with different complement clauses and prior contexts across participants.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

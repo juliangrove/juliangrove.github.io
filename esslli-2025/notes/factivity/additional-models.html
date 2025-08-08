@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Collecting inference judgments – Probabilistic dynamic semantics</title>
+<title>Additional models – Probabilistic dynamic semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../adjectives/compiling-kernel-models.html" rel="next">
-<link href="../adjectives/adjectives-intro.html" rel="prev">
+<link href="../factivity/world-knowledge.html" rel="next">
+<link href="../factivity/pds-to-stan.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/collecting-judgments.html">Collecting inference judgments</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../factivity/factivity-projection.html">Factivity inferences</a></li><li class="breadcrumb-item"><a href="../factivity/additional-models.html">Additional models</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link active">
+  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collecting inference judgments</span></a>
   </div>
 </li>
@@ -349,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../factivity/additional-models.html" class="sidebar-item-text sidebar-link">
+  <a href="../factivity/additional-models.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Additional models</span></a>
   </div>
 </li>
@@ -383,17 +383,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-scale-norming-task" id="toc-the-scale-norming-task" class="nav-link active" data-scroll-target="#the-scale-norming-task">The scale-norming task</a></li>
-  <li><a href="#the-likelihood-task" id="toc-the-likelihood-task" class="nav-link" data-scroll-target="#the-likelihood-task">The likelihood task</a></li>
+  <li><a href="#wholly-discrete-model" id="toc-wholly-discrete-model" class="nav-link active" data-scroll-target="#wholly-discrete-model">Wholly-discrete model</a></li>
+  <li><a href="#discrete-world-model" id="toc-discrete-world-model" class="nav-link" data-scroll-target="#discrete-world-model">Discrete-world model</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/collecting-judgments.html">Collecting inference judgments</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../factivity/factivity-projection.html">Factivity inferences</a></li><li class="breadcrumb-item"><a href="../factivity/additional-models.html">Additional models</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Collecting inference judgments</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Additional models</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -410,35 +410,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In ongoing work, we are collecting and modeling inference judgments involving gradable adjectives using two experiments: one in which we collect <em>scale-norming</em> judgments, and another in which we collect <em>likelihood</em> judgments.</p>
-<section id="the-scale-norming-task" class="level3">
-<h3 class="anchored" data-anchor-id="the-scale-norming-task">The scale-norming task</h3>
-<p>In the scale-norming task, we provide experimental participants prompts like the following:</p>
-<br>
-<div style="text-align: center;">
-<p><img src="images/expensive_norming.png" style="width: 60%;"></p>
-</div>
-<p>The idea here is to assess where people believe objects of different kinds fall on the scale associated with some gradable adjective. This information, which we will attempt to model, is useful because allows us to estimate one of the possible sources of uncertainty which are commonly thought to affect the inferences associated with these kinds of adjectives—that which comes from <em>world knowledge</em> about the entity itself (in particular where it falls on the adjective’s scale). For each adjective we collected judgments for three different entities, thus providing three different contexts preceding the question prompt.</p>
-<p>We obtained data of this kind for six gradable adjectives that give rise to vagueness in their positive forms, obtaining the following distributions of responses (collapsed across the three contexts for each adjective):</p>
-<p><img src="images/norming_histograms.png" class="img-fluid"></p>
+<p>For completeness, we also consider two models created by directly manipulating the Stan code rather than deriving them from linguistic hypotheses. These computational experiments serve as useful comparisons but don’t correspond to theoretical proposals in the linguistics literature:</p>
+<section id="wholly-discrete-model" class="level3">
+<h3 class="anchored" data-anchor-id="wholly-discrete-model">Wholly-discrete model</h3>
+<p>This model treats both factivity and world knowledge as discrete:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">// In model block</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">real</span> verb_prob = inv_logit(verb_intercept[verb[n]] + subj_intercept_verb[subj[n], verb[n]]);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">real</span> context_prob = inv_logit(context_intercept[context[n]] + subj_intercept_context[subj[n], context[n]]);</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">// Both components are discrete</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> verb_branch = bernoulli_rng(verb_prob);      <span class="co">// factive or not</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> context_branch = bernoulli_rng(context_prob); <span class="co">// world knowledge true or not</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">// Response is certain (1) if either component is true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">real</span> response = (verb_branch == <span class="dv">1</span> || context_branch == <span class="dv">1</span>) ? <span class="fl">1.0</span> : <span class="fl">0.0</span>;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">target +=</span> truncated_normal_lpdf(y[n] | response, sigma_e, <span class="fl">0.0</span>, <span class="fl">1.0</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="the-likelihood-task" class="level3">
-<h3 class="anchored" data-anchor-id="the-likelihood-task">The likelihood task</h3>
-<p>In the likelihood task, we provide a different group of participants with prompts like the following:</p>
-<br>
-<div style="text-align: center;">
-<p><img src="images/expensive_test.png" style="width: 70%;"></p>
-</div>
-<p>Here, we use the same three contexts for each adjective that were featured in the scale-norming experiment, but now the question prompt is different: we ask about <em>likelihood</em> that the adjective is true in its positive form in order to gauge how the vague properties of these adjectives influence people’s subjective probabilities about their application. The judgment data we obtained for each adjective are summarized in the following histograms (again, collapsed across contexts):</p>
-<div style="text-align: center;">
-<p><img src="images/expensive.png" height="100"> <img src="images/tall_wide.png" height="100"></p>
-</div>
-<div style="text-align: center;">
-<p><img src="images/deep.png" height="100"> <img src="images/heavy_old.png" height="100"></p>
-</div>
-<div style="text-align: center;">
-<p>Likelihood judgment</p>
-</div>
+<section id="discrete-world-model" class="level3">
+<h3 class="anchored" data-anchor-id="discrete-world-model">Discrete-world model</h3>
+<p>This model has discrete world knowledge but gradient factivity:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">// World knowledge is discrete</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> context_branch = bernoulli_rng(context_prob);</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (context_branch == <span class="dv">1</span>) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="co">// If world knowledge says "true", response is certain</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">target +=</span> truncated_normal_lpdf(y[n] | <span class="fl">1.0</span>, sigma_e, <span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Otherwise, factivity provides gradient boost</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">target +=</span> truncated_normal_lpdf(y[n] | verb_prob, sigma_e, <span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As noted, these models result mainly from us exploring all the options available within the frame, rather than linguistic theory; but they provide useful sanity checks.</p>
 
 
 <!-- -->
@@ -898,76 +899,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../adjectives/adjectives-intro.html" class="pagination-link" aria-label="Vague gradable adjectives">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vague gradable adjectives</span>
+      <a href="../factivity/pds-to-stan.html" class="pagination-link" aria-label="From PDS to Stan: implementing the theories">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">From PDS to Stan: implementing the theories</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../adjectives/compiling-kernel-models.html" class="pagination-link" aria-label="Compiling kernel models">
-        <span class="nav-page-text">Compiling kernel models</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../factivity/world-knowledge.html" class="pagination-link" aria-label="World knowledge: gradient or discrete">
+        <span class="nav-page-text">World knowledge: gradient or discrete</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Collecting inference judgments"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>In ongoing work, we are collecting and modeling inference judgments involving gradable adjectives using two experiments:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>one in which we collect *scale-norming* judgments, and another in which we collect *likelihood* judgments.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### The scale-norming task</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>In the scale-norming task, we provide experimental participants prompts like the following:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"images/expensive_norming.png"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 60%;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>The idea here is to assess where people believe objects of different kinds fall on the scale associated with some gradable adjective.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This information, which we will attempt to model, is useful because allows us to estimate one of the possible sources of uncertainty which are commonly thought to affect the inferences associated with these kinds of adjectives---that which comes from *world knowledge* about the entity itself (in particular where it falls on the adjective's scale).</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>For each adjective we collected judgments for three different entities, thus providing three different contexts preceding the question prompt.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>We obtained data of this kind for six gradable adjectives that give rise to vagueness in their positive forms, obtaining the following distributions of responses (collapsed across the three contexts for each adjective):</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/norming_histograms.png)</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### The likelihood task</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>In the likelihood task, we provide a different group of participants with prompts like the following:</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"images/expensive_test.png"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 70%;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Here, we use the same three contexts for each adjective that were featured in the scale-norming experiment, but now the question prompt is different:</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>we ask about *likelihood* that the adjective is true in its positive form in order to gauge how the vague properties of these adjectives influence people's subjective probabilities about their application.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>The judgment data we obtained for each adjective are summarized in the following histograms (again, collapsed across contexts):</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/expensive.png)</span>{height=100}</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/tall_wide.png)</span>{height=100}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/deep.png)</span>{height=100}</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/heavy_old.png)</span>{height=100}</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Likelihood judgment</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Additional models"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>For completeness, we also consider two models created by directly manipulating the Stan code rather than deriving them from linguistic hypotheses. These computational experiments serve as useful comparisons but don't correspond to theoretical proposals in the linguistics literature:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### Wholly-discrete model</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>This model treats both factivity and world knowledge as discrete:</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="in">// In model block</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="in">real verb_prob = inv_logit(verb_intercept[verb[n]] + subj_intercept_verb[subj[n], verb[n]]);</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="in">real context_prob = inv_logit(context_intercept[context[n]] + subj_intercept_context[subj[n], context[n]]);</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="in">// Both components are discrete</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="in">int verb_branch = bernoulli_rng(verb_prob);      // factive or not</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="in">int context_branch = bernoulli_rng(context_prob); // world knowledge true or not</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="in">// Response is certain (1) if either component is true</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="in">real response = (verb_branch == 1 || context_branch == 1) ? 1.0 : 0.0;</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="in">target += truncated_normal_lpdf(y[n] | response, sigma_e, 0.0, 1.0);</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Discrete-world model</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>This model has discrete world knowledge but gradient factivity:</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="in">```stan</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="in">// World knowledge is discrete</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="in">int context_branch = bernoulli_rng(context_prob);</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="in">if (context_branch == 1) {</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="in">  // If world knowledge says "true", response is certain</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="in">  target += truncated_normal_lpdf(y[n] | 1.0, sigma_e, 0.0, 1.0);</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="in">} else {</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="in">  // Otherwise, factivity provides gradient boost</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="in">  target += truncated_normal_lpdf(y[n] | verb_prob, sigma_e, 0.0, 1.0);</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>As noted, these models result mainly from us exploring all the options available within the frame, rather than linguistic theory; but they provide useful sanity checks.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

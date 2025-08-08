@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Collecting inference judgments – Probabilistic dynamic semantics</title>
+<title>An important distinction – Probabilistic dynamic semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +85,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../adjectives/compiling-kernel-models.html" rel="next">
-<link href="../adjectives/adjectives-intro.html" rel="prev">
+<link href="../factivity/experimental-paradigms.html" rel="next">
+<link href="../factivity/factivity-projection.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -118,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/collecting-judgments.html">Collecting inference judgments</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../factivity/factivity-projection.html">Factivity inferences</a></li><li class="breadcrumb-item"><a href="../factivity/important-distinction.html">An important distinction</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -284,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link active">
+  <a href="../adjectives/collecting-judgments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collecting inference judgments</span></a>
   </div>
 </li>
@@ -325,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../factivity/important-distinction.html" class="sidebar-item-text sidebar-link">
+  <a href="../factivity/important-distinction.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">An important distinction</span></a>
   </div>
 </li>
@@ -378,22 +398,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#the-scale-norming-task" id="toc-the-scale-norming-task" class="nav-link active" data-scroll-target="#the-scale-norming-task">The scale-norming task</a></li>
-  <li><a href="#the-likelihood-task" id="toc-the-likelihood-task" class="nav-link" data-scroll-target="#the-likelihood-task">The likelihood task</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../adjectives/adjectives-intro.html">Gradable adjectives</a></li><li class="breadcrumb-item"><a href="../adjectives/collecting-judgments.html">Collecting inference judgments</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../factivity/factivity-projection.html">Factivity inferences</a></li><li class="breadcrumb-item"><a href="../factivity/important-distinction.html">An important distinction</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Collecting inference judgments</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">An important distinction</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -410,42 +423,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In ongoing work, we are collecting and modeling inference judgments involving gradable adjectives using two experiments: one in which we collect <em>scale-norming</em> judgments, and another in which we collect <em>likelihood</em> judgments.</p>
-<section id="the-scale-norming-task" class="level3">
-<h3 class="anchored" data-anchor-id="the-scale-norming-task">The scale-norming task</h3>
-<p>In the scale-norming task, we provide experimental participants prompts like the following:</p>
-<br>
-<div style="text-align: center;">
-<p><img src="images/expensive_norming.png" style="width: 60%;"></p>
+<p>There are two importantly distinct questions that we need to disentangle before moving on:</p>
+<ol type="1">
+<li>Whether the gradience we observe suggests that there is no <em>class</em> (or subclasses) of factive predicates.</li>
+<li>Whether the veridicality inferences triggered by a particular expression containing a particular clause-embedding predicate are themselves gradient (whatever that would mean).</li>
+</ol>
+<p>We’re going to be concerned with the latter question (i) because it is something PDS, we believe, is uniquely well positioned to ask, and thus asking it provides a useful demonstration of the PDS’s use; and (ii) because the former question has already been answered.</p>
+<p><a href="../background/case-studies.html">As discussed on Day 1</a>, <span class="citation" data-cites="degen_are_2022">Degen and Tonhauser (<a href="#ref-degen_are_2022" role="doc-biblioref">2022</a>)</span> argue that no clear line separates factive from non-factive predicates. Mean projection ratings vary continuously from <em>pretend</em> (lowest) to <em>be annoyed</em> (highest).</p>
+<div id="fig-projection-verb-means" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-projection-verb-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="plots/projection_no_fact_means.png" class="img-fluid figure-img" width="750">
 </div>
-<p>The idea here is to assess where people believe objects of different kinds fall on the scale associated with some gradable adjective. This information, which we will attempt to model, is useful because allows us to estimate one of the possible sources of uncertainty which are commonly thought to affect the inferences associated with these kinds of adjectives—that which comes from <em>world knowledge</em> about the entity itself (in particular where it falls on the adjective’s scale). For each adjective we collected judgments for three different entities, thus providing three different contexts preceding the question prompt.</p>
-<p>We obtained data of this kind for six gradable adjectives that give rise to vagueness in their positive forms, obtaining the following distributions of responses (collapsed across the three contexts for each adjective):</p>
-<p><img src="images/norming_histograms.png" class="img-fluid"></p>
-</section>
-<section id="the-likelihood-task" class="level3">
-<h3 class="anchored" data-anchor-id="the-likelihood-task">The likelihood task</h3>
-<p>In the likelihood task, we provide a different group of participants with prompts like the following:</p>
-<br>
-<div style="text-align: center;">
-<p><img src="images/expensive_test.png" style="width: 70%;"></p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-projection-verb-means-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Aggregate factivity measures from <span class="citation" data-cites="degen_are_2022">Degen and Tonhauser (<a href="#ref-degen_are_2022" role="doc-biblioref">2022</a>)</span>, showing continuous variation in projection ratings across predicates under questioning.
+</figcaption>
+</figure>
 </div>
-<p>Here, we use the same three contexts for each adjective that were featured in the scale-norming experiment, but now the question prompt is different: we ask about <em>likelihood</em> that the adjective is true in its positive form in order to gauge how the vague properties of these adjectives influence people’s subjective probabilities about their application. The judgment data we obtained for each adjective are summarized in the following histograms (again, collapsed across contexts):</p>
-<div style="text-align: center;">
-<p><img src="images/expensive.png" height="100"> <img src="images/tall_wide.png" height="100"></p>
+<p><span class="citation" data-cites="kane_intensional_2022">Kane, Gantt, and White (<a href="#ref-kane_intensional_2022" role="doc-biblioref">2022</a>)</span> later showed that this gradience is likely due largely to task effects and measurement noise. They demonstrate that when one applies a clustering model to these data that accounts for noise due to various factors, many of the standard subclasses of factives pop out.</p>
+<p>To get a sense for how these clusters appear in the data, we can look back at <a href="#fig-derived-factivity" class="quarto-xref">Figure&nbsp;2</a>, which <a href="../background/understanding-gradience.html">we discussed on Day 1</a>.</p>
+<div id="fig-derived-factivity" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-derived-factivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="plots/derived_factivity_measure.png" class="img-fluid figure-img" width="750">
 </div>
-<div style="text-align: center;">
-<p><img src="images/deep.png" height="100"> <img src="images/heavy_old.png" height="100"></p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-derived-factivity-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: One way of deriving a factivity measure from the MegaVeridicality dataset.
+</figcaption>
+</figure>
 </div>
-<div style="text-align: center;">
-<p>Likelihood judgment</p>
-</div>
+<p>Remember that the idea behind this figure is that we could in principle derive a continuous measure of factivity by taking the minimum along the axes of the left plot in <a href="#fig-derived-factivity" class="quarto-xref">Figure&nbsp;2</a> and rectifying.</p>
+<p>The thing to note is that (i) there are clearly at least two separate “bumps” in the histogram; but (ii) the peak of the right bump is not at 1, as we might have expected. This is because some of these subclasses–e.g.&nbsp;the cognitive factives, which <span class="citation" data-cites="karttunen_observations_1971">Karttunen (<a href="#ref-karttunen_observations_1971" role="doc-biblioref">1971</a>)</span> observes to not always give rise factivity–appear to themselves be associated with non-necessary factive inferences, while other classes–e.g.&nbsp;the emotive factives, such as <em>love</em>, <em>hate</em>, and <em>be annoyed</em>–always do (up to measurement error and other sources of noise).</p>
+<p>What explains the gradience <em>internal</em> to a class like the cognitive factives (which, again, we have known for more than 60 years <em>should</em> show this pattern)?</p>
 
 
 <!-- -->
 
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-degen_are_2022" class="csl-entry" role="listitem">
+Degen, Judith, and Judith Tonhauser. 2022. <span>“Are There Factive Predicates? <span>An</span> Empirical Investigation.”</span> <em>Language</em> 98 (3): 552–91. <a href="https://doi.org/10.1353/lan.0.0271">https://doi.org/10.1353/lan.0.0271</a>.
+</div>
+<div id="ref-kane_intensional_2022" class="csl-entry" role="listitem">
+Kane, Benjamin, Will Gantt, and Aaron Steven White. 2022. <span>“Intensional <span>Gaps</span>: <span>Relating</span> Veridicality, Factivity, Doxasticity, Bouleticity, and Neg-Raising.”</span> <em>Semantics and Linguistic Theory</em> 31 (0): 570–605. <a href="https://doi.org/10.3765/salt.v31i0.5137">https://doi.org/10.3765/salt.v31i0.5137</a>.
+</div>
+<div id="ref-karttunen_observations_1971" class="csl-entry" role="listitem">
+Karttunen, Lauri. 1971. <span>“Some Observations on Factivity.”</span> <em>Paper in Linguistics</em> 4 (1): 55–69. <a href="https://doi.org/10.1080/08351817109370248">https://doi.org/10.1080/08351817109370248</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -898,76 +924,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../adjectives/adjectives-intro.html" class="pagination-link" aria-label="Vague gradable adjectives">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Vague gradable adjectives</span>
+      <a href="../factivity/factivity-projection.html" class="pagination-link" aria-label="Factivity and projection">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Factivity and projection</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../adjectives/compiling-kernel-models.html" class="pagination-link" aria-label="Compiling kernel models">
-        <span class="nav-page-text">Compiling kernel models</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../factivity/experimental-paradigms.html" class="pagination-link" aria-label="Experimental paradigms">
+        <span class="nav-page-text">Experimental paradigms</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Collecting inference judgments"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "An important distinction"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../pds.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>There are two importantly distinct questions that we need to disentangle before moving on:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Whether the gradience we observe suggests that there is no *class* (or subclasses) of factive predicates.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Whether the veridicality inferences triggered by a particular expression containing a particular clause-embedding predicate are themselves gradient (whatever that would mean).</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>We're going to be concerned with the latter question (i) because it is something PDS, we believe, is uniquely well positioned to ask, and thus asking it provides a useful demonstration of the PDS's use; and (ii) because the former question has already been answered.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">As discussed on Day 1</span><span class="co">](../background/case-studies.qmd)</span>, @degen_are_2022 argue that no clear line separates factive from non-factive predicates. Mean projection ratings vary continuously from *pretend* (lowest) to *be annoyed* (highest).</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>In ongoing work, we are collecting and modeling inference judgments involving gradable adjectives using two experiments:</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>one in which we collect *scale-norming* judgments, and another in which we collect *likelihood* judgments.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### The scale-norming task</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>In the scale-norming task, we provide experimental participants prompts like the following:</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"images/expensive_norming.png"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 60%;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="al">![Aggregate factivity measures from @degen_are_2022, showing continuous variation in projection ratings across predicates under questioning.](plots/projection_no_fact_means.png)</span>{#fig-projection-verb-means width=750}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>@kane_intensional_2022 later showed that this gradience is likely due largely to task effects and measurement noise. They demonstrate that when one applies a clustering model to these data that accounts for noise due to various factors, many of the standard subclasses of factives pop out. </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>To get a sense for how these clusters appear in the data, we can look back at @fig-derived-factivity, which <span class="co">[</span><span class="ot">we discussed on Day 1</span><span class="co">](../background/understanding-gradience.qmd)</span>.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="al">![One way of deriving a factivity measure from the MegaVeridicality dataset.](plots/derived_factivity_measure.png)</span>{#fig-derived-factivity width=750}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Remember that the idea behind this figure is that we could in principle derive a continuous measure of factivity by taking the minimum along the axes of the left plot in @fig-derived-factivity and rectifying.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>The thing to note is that (i) there are clearly at least two separate "bumps" in the histogram; but (ii) the peak of the right bump is not at 1, as we might have expected. This is because some of these subclasses–e.g. the cognitive factives, which @karttunen_observations_1971 observes to not always give rise factivity–appear to themselves be associated with non-necessary factive inferences, while other classes–e.g. the emotive factives, such as *love*, *hate*, and *be annoyed*–always do (up to measurement error and other sources of noise). </span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>The idea here is to assess where people believe objects of different kinds fall on the scale associated with some gradable adjective.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This information, which we will attempt to model, is useful because allows us to estimate one of the possible sources of uncertainty which are commonly thought to affect the inferences associated with these kinds of adjectives---that which comes from *world knowledge* about the entity itself (in particular where it falls on the adjective's scale).</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>For each adjective we collected judgments for three different entities, thus providing three different contexts preceding the question prompt.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>We obtained data of this kind for six gradable adjectives that give rise to vagueness in their positive forms, obtaining the following distributions of responses (collapsed across the three contexts for each adjective):</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/norming_histograms.png)</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### The likelihood task</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>In the likelihood task, we provide a different group of participants with prompts like the following:</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"images/expensive_test.png"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 70%;"</span><span class="dt">&gt;</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Here, we use the same three contexts for each adjective that were featured in the scale-norming experiment, but now the question prompt is different:</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>we ask about *likelihood* that the adjective is true in its positive form in order to gauge how the vague properties of these adjectives influence people's subjective probabilities about their application.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>The judgment data we obtained for each adjective are summarized in the following histograms (again, collapsed across contexts):</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/expensive.png)</span>{height=100}</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/tall_wide.png)</span>{height=100}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/deep.png)</span>{height=100}</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/heavy_old.png)</span>{height=100}</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>::: {style="text-align: center;"}</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Likelihood judgment</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>What explains the gradience *internal* to a class like the cognitive factives (which, again, we have known for more than 60 years *should* show this pattern)?</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
