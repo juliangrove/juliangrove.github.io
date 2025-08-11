@@ -5,7 +5,7 @@ pagetitle: about
 
 * About
   Beginning in August, I'll be an Assistant Professor in the Department of Linguistics at the [[https://lin.ufl.edu/][University of Florida]].
-  I'm currently a post-doctoral researcher in the [[http://factslab.io/][FACTS.lab]], directed by [[http://aaronstevenwhite.io/][Aaron Steven White]], at the [[https://www.rochester.edu/][University of Rochester]].
+  I'm currently a post-doctoral researcher in the [[http://factslab.io/][FACTS.lab]], directed by [[http://aaronstevenwhite.io/][Aaron Steven White]], at the [[https://www.sas.rochester.edu/lin/][University of Rochester]].
   Previously, I was affiliated with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory and Studies in Probability]] at the [[https://www.gu.se/en/flov][University of Gothenburg]].
   Before that, I did a PhD in Linguistics at the [[https://linguistics.uchicago][University of Chicago]].
 
