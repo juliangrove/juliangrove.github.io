@@ -19,5 +19,5 @@ pagetitle: dissertation
   Ultimately, what is offered is a comprehensive, yet simple and modular approach to presupposition in natural language.
   #+end_div
 
-* Errata
-  Coming eventually...
+# * Errata
+  # Coming eventually...

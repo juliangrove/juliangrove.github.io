@@ -4,7 +4,12 @@ pagetitle: teaching
 ---
 
 * Teaching
-  [[https://juliangrove.github.io/intro-semantics-2025/][Semantics 1]] - University of Florida (Fall, 2025) \\
-  [[https://juliangrove.github.io/esslli-2025/notes/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]]) - [[https://2025.esslli.eu/][ESSLLI '25]] at the Ruhr University Bochum (August 4-8, 2025) \\
-  [[https://juliangrove.github.io/nasslli-2025/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]]) - [[https://nasslli25.shane.st/][NASSLLI '25]] at the University of Washington (June 23-27, 2025) \\
-  [[./ur-comp-sem-2023/README.html][Computational Semantics]] - University of Rochester (Fall, 2023).
+** 2025
+*** Fall
+    [[https://juliangrove.github.io/intro-semantics-2025/][Semantics 1]] (University of Florida)
+*** Summer
+    [[https://juliangrove.github.io/esslli-2025/notes/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]] at [[https://2025.esslli.eu/][ESSLLI '25]]) \\
+    [[https://juliangrove.github.io/nasslli-2025/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]] at [[https://nasslli25.shane.st/][NASSLLI '25]])
+** 2023
+*** Fall
+    [[./ur-comp-sem-2023/README.html][Computational Semantics]] (University of Rochester)
