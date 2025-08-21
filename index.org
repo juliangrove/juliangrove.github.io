@@ -4,10 +4,10 @@ pagetitle: about
 ---
 
 * About
-  Beginning in August, I'll be an Assistant Professor in the Department of Linguistics at the [[https://lin.ufl.edu/][University of Florida]].
-  I'm currently a post-doctoral researcher in the [[http://factslab.io/][FACTS.lab]], directed by [[http://aaronstevenwhite.io/][Aaron Steven White]], at the [[https://www.sas.rochester.edu/lin/][University of Rochester]].
-  Previously, I was affiliated with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory and Studies in Probability]] at the [[https://www.gu.se/en/flov][University of Gothenburg]].
-  Before that, I did a PhD in Linguistics at the [[https://linguistics.uchicago.edu/][University of Chicago]].
+  I currently an Assistant Professor in the Department of Linguistics at the [[https://lin.ufl.edu/][University of Florida]].
+  Prior to my current position, I was a post-doctoral researcher in the [[http://factslab.io/][FACTS.lab]], directed by [[http://aaronstevenwhite.io/][Aaron Steven White]], at the [[https://www.sas.rochester.edu/lin/][University of Rochester]].
+  Before that, I was affiliated with the [[https://gu-clasp.github.io/][Centre for Linguistic Theory and Studies in Probability]] at the [[https://www.gu.se/en/flov][University of Gothenburg]].
+  Even further back in the past, I did a PhD in Linguistics at the [[https://linguistics.uchicago.edu/][University of Chicago]].
 
   I am generally interested in type-theoretic approaches to natural language semantics, which I aim to connect with Bayesian computational models of human behavior.
   I try to do this in a way that preserves the tools, like λ-calculus, that semanticists are typically used to.
