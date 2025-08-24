@@ -1,0 +1,16 @@
+project:
+  type: website
+  output-dir: ../docs/slides
+  render:
+    - aug25.qmd
+
+format:
+  revealjs:
+    theme: default
+    highlight-style: gruvbox-dark
+    slide-number: true
+    chalkboard: true
+    incremental: true
+    preview-links: auto
+    css: styles.css
+    footer: "Introduction to Semantics"

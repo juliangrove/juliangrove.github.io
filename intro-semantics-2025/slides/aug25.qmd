@@ -1,0 +1,271 @@
+---
+title: "Intro. to Semantics"
+bibliography: ../semantics.bib
+# format:
+  # revealjs:
+    # css: ../styles.css
+    # html-math-method: mathjax
+    # mathjax-config:
+      # loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      # tex:
+        # packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+# What is meaning?
+
+## Meaning
+
+(@ex-raining) It's raining.
+
+::: {.fragment}
+::: {style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px;"}
+<span style="font-size: 2em;">⇒</span>
+
+Something in the world...<br>
+![](images/raining.jpg)
+:::
+:::
+
+---
+
+## Meaning
+
+::: {.nonincremental}
+(@ex-raining) It's raining.
+
+::: {style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px;"}
+<span style="font-size: 2em;">⇒</span>
+
+A property of something that can be verified...<br>
+![](images/verificationism.jpg){width=700}
+:::
+:::
+
+---
+
+## Meaning
+
+::: {.nonincremental}
+(@ex-raining) It's raining.
+
+::: {style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px;"}
+<span style="font-size: 2em;">⇒</span>
+
+![](images/brain.webp)
+:::
+:::
+
+---
+
+::: {.nonincremental}
+(@ex-raining) It's raining.
+
+<span style="font-size: 2em;">⇓</span><br>
+
+::: {style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px;"}
+![](images/brain.webp)
+
+<span style="font-size: 2em;">⇒</span>
+
+![](images/raining.jpg)
+:::
+:::
+
+---
+
+::: {.nonincremental}
+(@ex-raining) It's raining.
+
+<span style="font-size: 2em;">⇓</span><br>
+
+::: {style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px;"}
+![](images/raining.jpg)
+
+<span style="font-size: 2em;">⇐</span>
+
+![](images/brain.webp)
+:::
+:::
+
+---
+
+## Twin Earth
+
+![](images/twin_earths.jpg)
+
+"Twin Earth is very much like Earth: in fact, people on Twin Earth even speak English." [@putnam_meaning_1973]
+
+---
+
+## Meaning as distribution
+
+"To the extent that formal (distributional) structure  can be discovered in discourse, it correlates in some way with the substance of what is being said..." [@harris_distributional_1954]
+
+- The meaning of a linguistic expression can be understood as (some representation of) the contexts in which it occurs.
+  - E.g., *dog* ≈ *cat*
+
+---
+
+# On "bullshit"
+
+---
+
+## Some examples
+
+(From the Corpus of Contemporary American English)
+
+- "And they say, But she's completely herself. There's no **bullshit**, she knows what she wants. She's like a heat-seeking missile." (LA Times, 2017)
+
+- "...I won't testify against you." I said, "**Bullshit**, Kate, you've got nothing to testify about." (SanFranChron, 1995)
+
+- "And indeed, there are those folks who think the Oscars are total **bullshit**. They consider the award to be the real-life equivalent to the Montgomery Burns Award for Outstanding Achievement in the Field of Excellence" (Salon, 2016)
+
+---
+
+## What is bullshit?
+
+- Lying?
+- Saying things that are false?
+- Being imprecise?
+
+---
+
+## A bullshit anecdote
+
+Related by Fania Pascal [@frankfurt_bullshit_1986]:
+
+*I had my tonsils out and was in the Evelyn Nursing Home feeling sorry for myself.
+Wittgenstein called.
+I croaked:
+"I feel just  like a dog that has been run over."
+He was disgusted:
+"You don't know what a dog that has been run over feels like."*
+
+---
+
+## @frankfurt_bullshit_1986
+
+*For the essence of bullshit is not that it is false but that it is phony.
+In order to appreciate this distinction, one must recognize that a fake or a phony need not be in any respect (apart from authenticity itself) inferior to the real thing.
+What is not genuine need not also be defective in some other way.
+It may be, after all, an exact copy.
+What is wrong with a counterfeit is not what it is like, but how it was made.
+This points to a similar and fundamental aspect of the essential nature of bullshit:
+although it is produced without concern with the truth, it need not be false.
+The bullshitter is faking things.
+But this does not mean that he necessarily gets them wrong.*
+
+---
+
+![](images/chatgpt_bs.png)
+
+---
+
+## ChatGPT
+
+- OpenAI chatbot based on the G(enerative) P(re-trained) T(ransformer) models.
+- Fun to use.
+
+---
+
+## @hicks_chatgpt_2024
+
+- **Bullshit (general):**
+  Any utterance produced where a speaker has indifference towards the truth of the utterance.
+- **Hard bullshit:**
+  Bullshit produced with the intention to mislead the audience about the utterer’s agenda.
+- **Soft bullshit:**
+  Bullshit produced without the intention to mislead the hearer regarding the utterer’s agenda.
+
+---
+
+## "Hallucinations"
+
+- @hicks_chatgpt_2024 argue that ChatGPT does not hallucinate.
+  - Hallucination involves a non-standard perceptual experience, despite well-designed perceptual equipment.
+
+---
+
+# Convention
+
+## E.g., traffic signals
+
+![](images/traffic.jpeg)
+
+## @lewis_languages_1975 on convention
+
+Some criteria:
+
+- Everyone conforms.
+- Everyone believes the others conform.
+- The others conforming provides a reason to conform.
+- Preference for conformity (as opposed to non-conformity).
+- Common knowledge of the above.
+
+::: {.fragment}
+Possible to be unaware of any or all of these.
+:::
+
+---
+
+## Different from "rules"
+
+Rules (according to Lewis):
+
+- Promulgated by an authority
+- Enforced by means of sanctions
+- Codified somewhere
+
+![](images/constitution.jpg){width=800}
+
+---
+
+## Tipping
+
+![](images/tipping.jpg)
+
+---
+
+# Linguistic conventions
+
+## @lewis_languages_1975 on language
+
+What are *languages*?
+
+- Lewis: collections of pairs of forms and meanings
+  - Form: sign, sound, mark, etc.
+  - Meaning: set (i.e., collection) of possible states of affairs, things in the world, etc.
+
+::: {.fragment}
+What is *language*?
+
+- A human social activity in which people produce certain forms.
+:::
+
+## Relating them
+
+Lewis introduces a convention to define language use:
+
+- "...a population P uses a language £ is a convention of truthfulness and trust in ξ."
+  - Truthfulness:
+	try never to utter sentences of ξ that are not true in ξ.
+  - Trust in ξ:
+	impute truthfulness in ξ to others.
+	Believe the things that others tell you.
+
+---
+
+## "Language use"
+
+These are *pragmatic* conventions.
+
+::: {.fragment}
+What about conventions relating to form?
+
+- syntax, morphology, phonology, phonetics, etc.
+- sociolinguistic conventions: using a particular register/dialect in particular social setting
+:::
+
+---
+
+### References
