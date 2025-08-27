@@ -1,149 +1,128 @@
 [
   {
-    "objectID": "aug25.html#meaning",
-    "href": "aug25.html#meaning",
+    "objectID": "aug27.html#lewis_languages_1975s-criteria",
+    "href": "aug27.html#lewis_languages_1975s-criteria",
     "title": "Intro. to Semantics",
-    "section": "Meaning",
-    "text": "Meaning\n\nIt’s raining.\n\n\n\n⇒\nSomething in the world…"
+    "section": "Lewis (1975)’s criteria",
+    "text": "Lewis (1975)’s criteria\n\nEveryone conforms.\nEveryone believes the others conform.\nThe others conforming provides a reason to conform.\nPreference for conformity (as opposed to non-conformity).\nOptional or arbitrary—there are possible alternatives.\nCommon knowledge of the above."
   },
   {
-    "objectID": "aug25.html#meaning-1",
-    "href": "aug25.html#meaning-1",
-    "title": "Intro. to Semantics",
-    "section": "Meaning",
-    "text": "Meaning\n\nIt’s raining.\n\n\n⇒\nA property of something that can be verified…"
-  },
-  {
-    "objectID": "aug25.html#meaning-2",
-    "href": "aug25.html#meaning-2",
-    "title": "Intro. to Semantics",
-    "section": "Meaning",
-    "text": "Meaning\n\nIt’s raining.\n\n\n⇒"
-  },
-  {
-    "objectID": "aug25.html#twin-earth",
-    "href": "aug25.html#twin-earth",
-    "title": "Intro. to Semantics",
-    "section": "Twin Earth",
-    "text": "Twin Earth\n\n“Twin Earth is very much like Earth: in fact, people on Twin Earth even speak English.” (Putnam 1973)"
-  },
-  {
-    "objectID": "aug25.html#meaning-as-distribution",
-    "href": "aug25.html#meaning-as-distribution",
-    "title": "Intro. to Semantics",
-    "section": "Meaning as distribution",
-    "text": "Meaning as distribution\n“To the extent that formal (distributional) structure can be discovered in discourse, it correlates in some way with the substance of what is being said…” (Harris 1954)\n\nThe meaning of a linguistic expression can be understood as (some representation of) the contexts in which it occurs.\n\nE.g., dog ≈ cat"
-  },
-  {
-    "objectID": "aug25.html#some-examples",
-    "href": "aug25.html#some-examples",
-    "title": "Intro. to Semantics",
-    "section": "Some examples",
-    "text": "Some examples\n(From the Corpus of Contemporary American English)\n\n“And they say, But she’s completely herself. There’s no bullshit, she knows what she wants. She’s like a heat-seeking missile.” (LA Times, 2017)\n“…I won’t testify against you.” I said, “Bullshit, Kate, you’ve got nothing to testify about.” (SanFranChron, 1995)\n“And indeed, there are those folks who think the Oscars are total bullshit. They consider the award to be the real-life equivalent to the Montgomery Burns Award for Outstanding Achievement in the Field of Excellence” (Salon, 2016)"
-  },
-  {
-    "objectID": "aug25.html#what-is-bullshit",
-    "href": "aug25.html#what-is-bullshit",
-    "title": "Intro. to Semantics",
-    "section": "What is bullshit?",
-    "text": "What is bullshit?\n\nLying?\nSaying things that are false?\nBeing imprecise?"
-  },
-  {
-    "objectID": "aug25.html#a-bullshit-anecdote",
-    "href": "aug25.html#a-bullshit-anecdote",
-    "title": "Intro. to Semantics",
-    "section": "A bullshit anecdote",
-    "text": "A bullshit anecdote\nRelated by Fania Pascal (Frankfurt 1986):\nI had my tonsils out and was in the Evelyn Nursing Home feeling sorry for myself. Wittgenstein called. I croaked: “I feel just like a dog that has been run over.” He was disgusted: “You don’t know what a dog that has been run over feels like.”"
-  },
-  {
-    "objectID": "aug25.html#frankfurt_bullshit_1986",
-    "href": "aug25.html#frankfurt_bullshit_1986",
-    "title": "Intro. to Semantics",
-    "section": "Frankfurt (1986)",
-    "text": "Frankfurt (1986)\nFor the essence of bullshit is not that it is false but that it is phony. In order to appreciate this distinction, one must recognize that a fake or a phony need not be in any respect (apart from authenticity itself) inferior to the real thing. What is not genuine need not also be defective in some other way. It may be, after all, an exact copy. What is wrong with a counterfeit is not what it is like, but how it was made. This points to a similar and fundamental aspect of the essential nature of bullshit: although it is produced without concern with the truth, it need not be false. The bullshitter is faking things. But this does not mean that he necessarily gets them wrong."
-  },
-  {
-    "objectID": "aug25.html#chatgpt",
-    "href": "aug25.html#chatgpt",
-    "title": "Intro. to Semantics",
-    "section": "ChatGPT",
-    "text": "ChatGPT\n\nOpenAI chatbot based on the G(enerative) P(re-trained) T(ransformer) models.\nFun to use."
-  },
-  {
-    "objectID": "aug25.html#hicks_chatgpt_2024",
-    "href": "aug25.html#hicks_chatgpt_2024",
-    "title": "Intro. to Semantics",
-    "section": "Hicks, Humphries, and Slater (2024)",
-    "text": "Hicks, Humphries, and Slater (2024)\n\nBullshit (general): Any utterance produced where a speaker has indifference towards the truth of the utterance.\nHard bullshit: Bullshit produced with the intention to mislead the audience about the utterer’s agenda.\nSoft bullshit: Bullshit produced without the intention to mislead the hearer regarding the utterer’s agenda."
-  },
-  {
-    "objectID": "aug25.html#hallucinations",
-    "href": "aug25.html#hallucinations",
-    "title": "Intro. to Semantics",
-    "section": "“Hallucinations”",
-    "text": "“Hallucinations”\n\nHicks, Humphries, and Slater (2024) argue that ChatGPT does not hallucinate.\n\nHallucination involves a non-standard perceptual experience, despite well-designed perceptual equipment."
-  },
-  {
-    "objectID": "aug25.html#e.g.-traffic-signals",
-    "href": "aug25.html#e.g.-traffic-signals",
-    "title": "Intro. to Semantics",
-    "section": "E.g., traffic signals",
-    "text": "E.g., traffic signals"
-  },
-  {
-    "objectID": "aug25.html#lewis_languages_1975-on-convention",
-    "href": "aug25.html#lewis_languages_1975-on-convention",
-    "title": "Intro. to Semantics",
-    "section": "Lewis (1975) on convention",
-    "text": "Lewis (1975) on convention\nSome criteria:\n\nEveryone conforms.\nEveryone believes the others conform.\nThe others conforming provides a reason to conform.\nPreference for conformity (as opposed to non-conformity).\nOptional or arbitrary—there are possible alternatives.\nCommon knowledge of the above.\n\n\nPossible to be unaware of any or all of these."
-  },
-  {
-    "objectID": "aug25.html#different-from-rules",
-    "href": "aug25.html#different-from-rules",
-    "title": "Intro. to Semantics",
-    "section": "Different from “rules”",
-    "text": "Different from “rules”\nRules (according to Lewis):\n\nPromulgated by an authority\nEnforced by means of sanctions\nCodified somewhere"
-  },
-  {
-    "objectID": "aug25.html#tipping",
-    "href": "aug25.html#tipping",
-    "title": "Intro. to Semantics",
-    "section": "Tipping?",
-    "text": "Tipping?"
-  },
-  {
-    "objectID": "aug25.html#other-candidates",
-    "href": "aug25.html#other-candidates",
-    "title": "Intro. to Semantics",
-    "section": "Other candidates…",
-    "text": "Other candidates…\n\nBrushing your teeth?\nKnocking on the door before you enter a room?\nLooking both ways before crossing the street?\nUsing an umbrella when it’s raining?\nMaking WiFi available at coffee shops?"
-  },
-  {
-    "objectID": "aug25.html#lewis_languages_1975-on-language",
-    "href": "aug25.html#lewis_languages_1975-on-language",
+    "objectID": "aug27.html#lewis_languages_1975-on-language",
+    "href": "aug27.html#lewis_languages_1975-on-language",
     "title": "Intro. to Semantics",
     "section": "Lewis (1975) on language",
     "text": "Lewis (1975) on language\nWhat are languages?\n\nLewis: collections of pairs of forms and meanings\n\nForm: sign, sound, mark, etc.\nMeaning: set (i.e., collection) of possible states of affairs, things in the world, etc.\n\n\n\nWhat is language?\n\nA human social activity in which people produce certain forms."
   },
   {
-    "objectID": "aug25.html#relating-them",
-    "href": "aug25.html#relating-them",
+    "objectID": "aug27.html#relating-them",
+    "href": "aug27.html#relating-them",
     "title": "Intro. to Semantics",
     "section": "Relating them",
     "text": "Relating them\nLewis introduces a convention to define language use:\n\n“…a population P uses a language ξ is a convention of truthfulness and trust in ξ.”\n\nTruthfulness: try never to utter sentences of ξ that are not true in ξ.\nTrust in ξ: impute truthfulness in ξ to others. Believe the things that others tell you."
   },
   {
-    "objectID": "aug25.html#language-use",
-    "href": "aug25.html#language-use",
+    "objectID": "aug27.html#language-use",
+    "href": "aug27.html#language-use",
     "title": "Intro. to Semantics",
     "section": "“Language use”",
     "text": "“Language use”\nThese are pragmatic conventions.\n\nWhat about conventions relating to form?\n\nsyntax, morphology, phonology, phonetics, etc.\nsociolinguistic conventions: using a particular register/dialect in particular social setting"
   },
   {
-    "objectID": "aug25.html#references",
-    "href": "aug25.html#references",
+    "objectID": "aug27.html#communication-and-meaning",
+    "href": "aug27.html#communication-and-meaning",
+    "title": "Intro. to Semantics",
+    "section": "Communication and meaning",
+    "text": "Communication and meaning\nGrice (1957): conceptual analysis of the word ‘mean’.\n\nThis rainy weather means we’ll probably be taxiing for a while.\nJo’s gesture means that she wants you to walk over.\n“Bo devoured the beans” means that Bo ate the beans aggressively."
+  },
+  {
+    "objectID": "aug27.html#test-1",
+    "href": "aug27.html#test-1",
+    "title": "Intro. to Semantics",
+    "section": "Test 1",
+    "text": "Test 1\n\nThis rainy weather means we’ll probably be taxiing for a while, but in fact, we won’t be taxiing for a while.\nJo’s gesture means that she wants you to walk over, but in fact, she doesn’t want you to walk over.\n“Bo devoured the beans” means that Bo ate the beans aggressively, but in fact, Bo didn’t eat the beans aggressively."
+  },
+  {
+    "objectID": "aug27.html#test-2",
+    "href": "aug27.html#test-2",
+    "title": "Intro. to Semantics",
+    "section": "Test 2",
+    "text": "Test 2\n\nWhat is meant by this rainy weather is that we’ll be taxiing for a while.\nWhat is meant by Jo’s gesture is that she wants you to walk over.\nWhat is meant by “Bo devoured the beans” is that Bo ate the beans aggressively."
+  },
+  {
+    "objectID": "aug27.html#test-3",
+    "href": "aug27.html#test-3",
+    "title": "Intro. to Semantics",
+    "section": "Test 3",
+    "text": "Test 3\n\nSomeone meant by this rainy weather that we’ll probably be taxiing for a while.\nJo meant by her gesture that she wants you to walk over.\nSomeone meant by “Bo devoured the beans” that Bo ate the beans aggressively."
+  },
+  {
+    "objectID": "aug27.html#natural-and-non-natural-meaning",
+    "href": "aug27.html#natural-and-non-natural-meaning",
+    "title": "Intro. to Semantics",
+    "section": "Natural and non-natural meaning",
+    "text": "Natural and non-natural meaning\n\n‘mean’ in the 1 examples: describes a consequence relation\n‘mean’ in the 2 and 3 examples: some other kind of relation\n\n\nGrice (1957): natural meaning vs. non-natural meaning."
+  },
+  {
+    "objectID": "aug27.html#non-natural-meaning",
+    "href": "aug27.html#non-natural-meaning",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nHypothesis 1\nSomething means\\(_{NN}\\) that \\(p\\) if things of its kind tend to produce a belief in an observer that \\(p\\) is true.\n\nsun being out makes people believe it’s daytime…"
+  },
+  {
+    "objectID": "aug27.html#non-natural-meaning-1",
+    "href": "aug27.html#non-natural-meaning-1",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nHypothesis 2\nMaybe we should factor in intention.\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend to use that thing to produce the belief in an audience that \\(p\\) is true."
+  },
+  {
+    "objectID": "aug27.html#counterexample",
+    "href": "aug27.html#counterexample",
+    "title": "Intro. to Semantics",
+    "section": "Counterexample",
+    "text": "Counterexample"
+  },
+  {
+    "objectID": "aug27.html#non-natural-meaning-2",
+    "href": "aug27.html#non-natural-meaning-2",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nHypothesis 3\nMaybe we should factor in an intention for one’s intention to be recognized.\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend to produce the belief that \\(p\\) in their audience by that thing, and they intend for their intention to be recognized."
+  },
+  {
+    "objectID": "aug27.html#counterexample-1",
+    "href": "aug27.html#counterexample-1",
+    "title": "Intro. to Semantics",
+    "section": "Counterexample",
+    "text": "Counterexample\nCutting someone off in traffic to make them think you’re aggressive and to get them to get out of your way."
+  },
+  {
+    "objectID": "aug27.html#non-natural-meaning-3",
+    "href": "aug27.html#non-natural-meaning-3",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nWhat it actually is (according to Grice)\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend that:\n\ntheir audience comes to believe \\(p\\) because of it,\ntheir audience recognizes their intention, and\ntheir audience comes to believe that \\(p\\) specifically because of the intention."
+  },
+  {
+    "objectID": "aug27.html#question-1",
+    "href": "aug27.html#question-1",
+    "title": "Intro. to Semantics",
+    "section": "Question 1",
+    "text": "Question 1\nHow to go from “someone meant that \\(p\\) by \\(X\\)” to “\\(p\\) means \\(X\\) in a particular linguistic community”?\n\nTie in Lewis (1975)?"
+  },
+  {
+    "objectID": "aug27.html#question-2",
+    "href": "aug27.html#question-2",
+    "title": "Intro. to Semantics",
+    "section": "Question 2",
+    "text": "Question 2\nHow do we characterize meanings for things which aren’t statements?\n\nCommands?\nQuestions?"
+  },
+  {
+    "objectID": "aug27.html#references",
+    "href": "aug27.html#references",
     "title": "Intro. to Semantics",
     "section": "",
-    "text": "References\n\n\n\n\nFrankfurt, Harry. 1986. “On Bullshit.” Raritan: A Quarterly Review  Rutgers, The State University of New Jersey 6 (2). https://raritanquarterly.rutgers.edu/issue-index/all-articles/560-on-bullshit.\n\n\nHarris, Zellig S. 1954. “Distributional Structure.” WORD 10 (2-3): 146–62. https://doi.org/10.1080/00437956.1954.11659520.\n\n\nHicks, Michael Townsen, James Humphries, and Joe Slater. 2024. “ChatGPT Is Bullshit.” Ethics and Information Technology 26 (2): 38. https://doi.org/10.1007/s10676-024-09775-5.\n\n\nLewis, David K. 1975. “Languages and Language.” In Arguing about Language, edited by Darragh Byrne and Max Kölbel. Arguing about Philosophy. New York: Routledge.\n\n\nPutnam, Hilary. 1973. “Meaning and Reference.” The Journal of Philosophy 70 (19): 699–711. https://doi.org/10.2307/2025079."
+    "text": "References\n\n\n\n\nGrice, H. P. 1957. “Meaning.” The Philosophical Review 66 (3): 377–88. https://doi.org/10.2307/2182440.\n\n\nLewis, David K. 1975. “Languages and Language.” In Arguing about Language, edited by Darragh Byrne and Max Kölbel. Arguing about Philosophy. New York: Routledge."
   }
 ]
