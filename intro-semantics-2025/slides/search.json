@@ -1,128 +1,114 @@
 [
   {
-    "objectID": "aug27.html#lewis_languages_1975s-criteria",
-    "href": "aug27.html#lewis_languages_1975s-criteria",
+    "objectID": "aug29.html#some-things-you-can-do-with-words",
+    "href": "aug29.html#some-things-you-can-do-with-words",
     "title": "Intro. to Semantics",
-    "section": "Lewis (1975)’s criteria",
-    "text": "Lewis (1975)’s criteria\n\nEveryone conforms.\nEveryone believes the others conform.\nThe others conforming provides a reason to conform.\nPreference for conformity (as opposed to non-conformity).\nOptional or arbitrary—there are possible alternatives.\nCommon knowledge of the above."
+    "section": "Some things you can do with words",
+    "text": "Some things you can do with words\n\nMake assertions:\n\nJohn devoured the beans.\n\n\n\nAsk questions:\n\nHow many beans did John devour?\n\n\n\nIssue commands:\n\n(Looking John dead in the eye:) Devour the beans!"
   },
   {
-    "objectID": "aug27.html#lewis_languages_1975-on-language",
-    "href": "aug27.html#lewis_languages_1975-on-language",
+    "objectID": "aug29.html#construction-types",
+    "href": "aug29.html#construction-types",
     "title": "Intro. to Semantics",
-    "section": "Lewis (1975) on language",
-    "text": "Lewis (1975) on language\nWhat are languages?\n\nLewis: collections of pairs of forms and meanings\n\nForm: sign, sound, mark, etc.\nMeaning: set (i.e., collection) of possible states of affairs, things in the world, etc.\n\n\n\nWhat is language?\n\nA human social activity in which people produce certain forms."
+    "section": "Construction types",
+    "text": "Construction types\n\nJohn devoured the beans.\n\ndeclarative sentence\nassertion\n\nHow many beans did John devour?\n\ninterrogative sentence\nquestion\n\nDevour the beans!\n\nimperative sentence\ncommand"
   },
   {
-    "objectID": "aug27.html#relating-them",
-    "href": "aug27.html#relating-them",
+    "objectID": "aug29.html#switching-up-construction-types",
+    "href": "aug29.html#switching-up-construction-types",
     "title": "Intro. to Semantics",
-    "section": "Relating them",
-    "text": "Relating them\nLewis introduces a convention to define language use:\n\n“…a population P uses a language ξ is a convention of truthfulness and trust in ξ.”\n\nTruthfulness: try never to utter sentences of ξ that are not true in ξ.\nTrust in ξ: impute truthfulness in ξ to others. Believe the things that others tell you."
+    "section": "Switching up construction types",
+    "text": "Switching up construction types\n\nI command you to help me cook the beans!\n\ndeclarative sentence\ncommand\n\nPlease, help me cook the beans…\n\nimperative sentence\nrequest\n\nCould you please help me cook the beans?\n\ninterrogative sentence\nrequest"
   },
   {
-    "objectID": "aug27.html#language-use",
-    "href": "aug27.html#language-use",
+    "objectID": "aug29.html#distinguishing-types-of-act",
+    "href": "aug29.html#distinguishing-types-of-act",
     "title": "Intro. to Semantics",
-    "section": "“Language use”",
-    "text": "“Language use”\nThese are pragmatic conventions.\n\nWhat about conventions relating to form?\n\nsyntax, morphology, phonology, phonetics, etc.\nsociolinguistic conventions: using a particular register/dialect in particular social setting"
+    "section": "Distinguishing types of act",
+    "text": "Distinguishing types of act\nAustin (1962) classified speech acts at distinct levels.\n\nLocutionary act: an act of uttering a particular expression.\n\ne.g., interrogative vs. imperative vs. declarative\n\nIllocutionary act: an an act of uttering something with a particular intended discourse effect.\n\ne.g., question vs. comamand vs. assertion\n\nPerlocutionary effects: the worldly effects an utterance actually has.\n\ne.g., question answered, command fulfilled, assertion believed"
   },
   {
-    "objectID": "aug27.html#communication-and-meaning",
-    "href": "aug27.html#communication-and-meaning",
+    "objectID": "aug29.html#illocutionary-uptake",
+    "href": "aug29.html#illocutionary-uptake",
     "title": "Intro. to Semantics",
-    "section": "Communication and meaning",
-    "text": "Communication and meaning\nGrice (1957): conceptual analysis of the word ‘mean’.\n\nThis rainy weather means we’ll probably be taxiing for a while.\nJo’s gesture means that she wants you to walk over.\n“Bo devoured the beans” means that Bo ate the beans aggressively."
+    "section": "Illocutionary uptake",
+    "text": "Illocutionary uptake\nAn illocutionary act may be successful or unsuccessful.\n\nSuccessful if it has the intended social consequence (it has uptake).\nUnsuccessful if it does not have this consequence (it does not have uptake)."
   },
   {
-    "objectID": "aug27.html#test-1",
-    "href": "aug27.html#test-1",
+    "objectID": "aug29.html#uptakes-for-different-acts",
+    "href": "aug29.html#uptakes-for-different-acts",
     "title": "Intro. to Semantics",
-    "section": "Test 1",
-    "text": "Test 1\n\nThis rainy weather means we’ll probably be taxiing for a while, but in fact, we won’t be taxiing for a while.\nJo’s gesture means that she wants you to walk over, but in fact, she doesn’t want you to walk over.\n“Bo devoured the beans” means that Bo ate the beans aggressively, but in fact, Bo didn’t eat the beans aggressively."
+    "section": "Uptakes for different acts",
+    "text": "Uptakes for different acts\n\nI bet you $300 that it will rain tomorrow.\n\nthe bet is accepted\n\nOpen the window!\n\naddressee accepts the obligation to act\n\nWhat time is it?\n\naddressee accepts the obligation to answer\n\nIt’s 1:20pm.\n\naddressee accepts (in some sense) the truth of the sentence"
   },
   {
-    "objectID": "aug27.html#test-2",
-    "href": "aug27.html#test-2",
+    "objectID": "aug29.html#assertions",
+    "href": "aug29.html#assertions",
     "title": "Intro. to Semantics",
-    "section": "Test 2",
-    "text": "Test 2\n\nWhat is meant by this rainy weather is that we’ll be taxiing for a while.\nWhat is meant by Jo’s gesture is that she wants you to walk over.\nWhat is meant by “Bo devoured the beans” is that Bo ate the beans aggressively."
+    "section": "Assertions",
+    "text": "Assertions\nStalnaker (1978) introduces the notion of the common ground.\n\nset of propositions\n\n\nUptake of an assertion:\n\naddressee accepts the meaning of the sentence into the common ground."
   },
   {
-    "objectID": "aug27.html#test-3",
-    "href": "aug27.html#test-3",
+    "objectID": "aug29.html#force-and-content",
+    "href": "aug29.html#force-and-content",
     "title": "Intro. to Semantics",
-    "section": "Test 3",
-    "text": "Test 3\n\nSomeone meant by this rainy weather that we’ll probably be taxiing for a while.\nJo meant by her gesture that she wants you to walk over.\nSomeone meant by “Bo devoured the beans” that Bo ate the beans aggressively."
+    "section": "Force and content",
+    "text": "Force and content\nIllocutionary acts can be characterized along at least two dimensions:\n\nillocutionary force: what kind of intended social effect is involved?\n\nassertoric force, imperative force, interrogative force\n\ncontent: utterance-specific aspects of conveyed meaning\n\nassertions: sets of possible worlds (“truth conditions”)\ncommands: “satisfaction conditions”\nquestions: “answerhood conditions”"
   },
   {
-    "objectID": "aug27.html#natural-and-non-natural-meaning",
-    "href": "aug27.html#natural-and-non-natural-meaning",
+    "objectID": "aug29.html#question-about-content",
+    "href": "aug29.html#question-about-content",
     "title": "Intro. to Semantics",
-    "section": "Natural and non-natural meaning",
-    "text": "Natural and non-natural meaning\n\n‘mean’ in the 1 examples: describes a consequence relation\n‘mean’ in the 2 and 3 examples: some other kind of relation\n\n\nGrice (1957): natural meaning vs. non-natural meaning."
+    "section": "Question about content",
+    "text": "Question about content\nWhere in the taxonomy of acts does content fall?\n\nJust the illocutionary act?\nAlso locutionary effect?\n(Also perlocutionary effect?)"
   },
   {
-    "objectID": "aug27.html#non-natural-meaning",
-    "href": "aug27.html#non-natural-meaning",
+    "objectID": "aug29.html#performatives",
+    "href": "aug29.html#performatives",
     "title": "Intro. to Semantics",
-    "section": "Non-natural meaning",
-    "text": "Non-natural meaning\nHypothesis 1\nSomething means\\(_{NN}\\) that \\(p\\) if things of its kind tend to produce a belief in an observer that \\(p\\) is true.\n\nsun being out makes people believe it’s daytime…"
+    "section": "Performatives",
+    "text": "Performatives\n\nI command you to help me cook the beans!\nI hereby name this ship the R.M.S. Titanic!\n\nlocutionary act: declarative sentence\nillocutionary act: naming\nuptake: ship’s name is now ‘R.M.S. Titanic’\n\nI promise to stop moving furniture while you’re sleeping.\n\nlocutionary act: declarative sentence\nillocutionary act: promise\nuptake: promise accepted, obligation registered"
   },
   {
-    "objectID": "aug27.html#non-natural-meaning-1",
-    "href": "aug27.html#non-natural-meaning-1",
+    "objectID": "aug29.html#peformatives-contd",
+    "href": "aug29.html#peformatives-contd",
     "title": "Intro. to Semantics",
-    "section": "Non-natural meaning",
-    "text": "Non-natural meaning\nHypothesis 2\nMaybe we should factor in intention.\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend to use that thing to produce the belief in an audience that \\(p\\) is true."
+    "section": "Peformatives (cont’d)",
+    "text": "Peformatives (cont’d)\n\nI apologize.\n\napology\nuptake: apology accepted\n\nI do.\n\nillocutionary act: vow\nuptake: obligation registered\n\nI bet you $300 that it will rain tomorrow.\n\nillocutionary act: bet\nuptake: bet accepted"
   },
   {
-    "objectID": "aug27.html#counterexample",
-    "href": "aug27.html#counterexample",
+    "objectID": "aug29.html#felicity-conditions",
+    "href": "aug29.html#felicity-conditions",
     "title": "Intro. to Semantics",
-    "section": "Counterexample",
-    "text": "Counterexample"
+    "section": "Felicity conditions",
+    "text": "Felicity conditions\nYou can’t just perform any speech act haphazardly."
   },
   {
-    "objectID": "aug27.html#non-natural-meaning-2",
-    "href": "aug27.html#non-natural-meaning-2",
+    "objectID": "aug29.html#felicity-conditions-1",
+    "href": "aug29.html#felicity-conditions-1",
     "title": "Intro. to Semantics",
-    "section": "Non-natural meaning",
-    "text": "Non-natural meaning\nHypothesis 3\nMaybe we should factor in an intention for one’s intention to be recognized.\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend to produce the belief that \\(p\\) in their audience by that thing, and they intend for their intention to be recognized."
+    "section": "Felicity conditions",
+    "text": "Felicity conditions\n\nI apologize.\n\nThe speaker should have done something that requires an apology.\n\nI do.\n\nThere should be a vow at stake (“…till death do us part?”).\n\nOpen the window!\n\nThe utterer should have the relevant authority.\n\nI bet you $300 that it will rain tomorrow.\n\nThe utterer should have the means to procure $300."
   },
   {
-    "objectID": "aug27.html#counterexample-1",
-    "href": "aug27.html#counterexample-1",
+    "objectID": "aug29.html#felicity-conditions-2",
+    "href": "aug29.html#felicity-conditions-2",
     "title": "Intro. to Semantics",
-    "section": "Counterexample",
-    "text": "Counterexample\nCutting someone off in traffic to make them think you’re aggressive and to get them to get out of your way."
+    "section": "Felicity conditions",
+    "text": "Felicity conditions\nIn general:\n\nIt must be allowable, by convention, for the speech act to have the illocutionary effect that it is intended to have.\nThe circumstances prior to the act have to be appropriate."
   },
   {
-    "objectID": "aug27.html#non-natural-meaning-3",
-    "href": "aug27.html#non-natural-meaning-3",
+    "objectID": "aug29.html#performatives-redux",
+    "href": "aug29.html#performatives-redux",
     "title": "Intro. to Semantics",
-    "section": "Non-natural meaning",
-    "text": "Non-natural meaning\nWhat it actually is (according to Grice)\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend that:\n\ntheir audience comes to believe \\(p\\) because of it,\ntheir audience recognizes their intention, and\ntheir audience comes to believe that \\(p\\) specifically because of the intention."
+    "section": "Performatives redux",
+    "text": "Performatives redux\nQuestion 1\n\nWhat do performatives and other speech acts have in common?\n\n\nQuestion 2\n\nHow does illocutionary effect fit into the distinction of Grice (1957) between meaning\\(_{NN}\\) and meaning\\(_{N}\\)?"
   },
   {
-    "objectID": "aug27.html#question-1",
-    "href": "aug27.html#question-1",
-    "title": "Intro. to Semantics",
-    "section": "Question 1",
-    "text": "Question 1\nHow to go from “someone meant that \\(p\\) by \\(X\\)” to “\\(p\\) means \\(X\\) in a particular linguistic community”?\n\nTie in Lewis (1975)?"
-  },
-  {
-    "objectID": "aug27.html#question-2",
-    "href": "aug27.html#question-2",
-    "title": "Intro. to Semantics",
-    "section": "Question 2",
-    "text": "Question 2\nHow do we characterize meanings for things which aren’t statements?\n\nCommands?\nQuestions?"
-  },
-  {
-    "objectID": "aug27.html#references",
-    "href": "aug27.html#references",
+    "objectID": "aug29.html#references",
+    "href": "aug29.html#references",
     "title": "Intro. to Semantics",
     "section": "",
-    "text": "References\n\n\n\n\nGrice, H. P. 1957. “Meaning.” The Philosophical Review 66 (3): 377–88. https://doi.org/10.2307/2182440.\n\n\nLewis, David K. 1975. “Languages and Language.” In Arguing about Language, edited by Darragh Byrne and Max Kölbel. Arguing about Philosophy. New York: Routledge."
+    "text": "References\n\n\n\n\nAustin, J. L. 1962. How to Do Things with Words. Oxford: Oxford University Press.\n\n\nGrice, H. P. 1957. “Meaning.” The Philosophical Review 66 (3): 377–88. https://doi.org/10.2307/2182440.\n\n\nStalnaker, Robert. 1978. “Assertion.” In Pragmatics, edited by Peter Cole, 9:315–32. New York: Academic Press."
   }
 ]
