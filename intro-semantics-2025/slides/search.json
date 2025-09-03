@@ -1,114 +1,135 @@
 [
   {
-    "objectID": "aug29.html#some-things-you-can-do-with-words",
-    "href": "aug29.html#some-things-you-can-do-with-words",
+    "objectID": "sept3.html#last-time",
+    "href": "sept3.html#last-time",
     "title": "Intro. to Semantics",
-    "section": "Some things you can do with words",
-    "text": "Some things you can do with words\n\nMake assertions:\n\nJohn devoured the beans.\n\n\n\nAsk questions:\n\nHow many beans did John devour?\n\n\n\nIssue commands:\n\n(Looking John dead in the eye:) Devour the beans!"
+    "section": "Last time",
+    "text": "Last time\nHow Austin (1962) classifies speech acts:\n\nas locutionary acts\nin terms of their illocutionary effects\nin terms of their perlocutionary effects\n\n\nExample:\n\nJo ate the chicken salad. (decl., assertion)\nDid Jo eat the chicken salad? (inter., question)\nEat the chicken salad! (imper., command)"
   },
   {
-    "objectID": "aug29.html#construction-types",
-    "href": "aug29.html#construction-types",
+    "objectID": "sept3.html#last-time-1",
+    "href": "sept3.html#last-time-1",
     "title": "Intro. to Semantics",
-    "section": "Construction types",
-    "text": "Construction types\n\nJohn devoured the beans.\n\ndeclarative sentence\nassertion\n\nHow many beans did John devour?\n\ninterrogative sentence\nquestion\n\nDevour the beans!\n\nimperative sentence\ncommand"
+    "section": "Last time",
+    "text": "Last time\nUptake:\n\nAn illocutionary act has uptake when it has the “intended social consequence”.\n\n\nExample:\n\nI bet you $300 that it’s raining."
   },
   {
-    "objectID": "aug29.html#switching-up-construction-types",
-    "href": "aug29.html#switching-up-construction-types",
+    "objectID": "sept3.html#last-time-2",
+    "href": "sept3.html#last-time-2",
     "title": "Intro. to Semantics",
-    "section": "Switching up construction types",
-    "text": "Switching up construction types\n\nI command you to help me cook the beans!\n\ndeclarative sentence\ncommand\n\nPlease, help me cook the beans…\n\nimperative sentence\nrequest\n\nCould you please help me cook the beans?\n\ninterrogative sentence\nrequest"
+    "section": "Last time",
+    "text": "Last time\nThose were direct speech acts.\n\n\nIndirect speech acts: illocutionary act arises as a consequence of some other some other, more basic illocutionary act.\n\nCould you please pass the salt? (inter., request)\nI still haven’t gotten my reimbursement. (decl., request)"
   },
   {
-    "objectID": "aug29.html#distinguishing-types-of-act",
-    "href": "aug29.html#distinguishing-types-of-act",
-    "title": "Intro. to Semantics",
-    "section": "Distinguishing types of act",
-    "text": "Distinguishing types of act\nAustin (1962) classified speech acts at distinct levels.\n\nLocutionary act: an act of uttering a particular expression.\n\ne.g., interrogative vs. imperative vs. declarative\n\nIllocutionary act: an an act of uttering something with a particular intended discourse effect.\n\ne.g., question vs. comamand vs. assertion\n\nPerlocutionary effects: the worldly effects an utterance actually has.\n\ne.g., question answered, command fulfilled, assertion believed"
-  },
-  {
-    "objectID": "aug29.html#illocutionary-uptake",
-    "href": "aug29.html#illocutionary-uptake",
-    "title": "Intro. to Semantics",
-    "section": "Illocutionary uptake",
-    "text": "Illocutionary uptake\nAn illocutionary act may be successful or unsuccessful.\n\nSuccessful if it has the intended social consequence (it has uptake).\nUnsuccessful if it does not have this consequence (it does not have uptake)."
-  },
-  {
-    "objectID": "aug29.html#uptakes-for-different-acts",
-    "href": "aug29.html#uptakes-for-different-acts",
-    "title": "Intro. to Semantics",
-    "section": "Uptakes for different acts",
-    "text": "Uptakes for different acts\n\nI bet you $300 that it will rain tomorrow.\n\nthe bet is accepted\n\nOpen the window!\n\naddressee accepts the obligation to act\n\nWhat time is it?\n\naddressee accepts the obligation to answer\n\nIt’s 1:20pm.\n\naddressee accepts (in some sense) the truth of the sentence"
-  },
-  {
-    "objectID": "aug29.html#assertions",
-    "href": "aug29.html#assertions",
-    "title": "Intro. to Semantics",
-    "section": "Assertions",
-    "text": "Assertions\nStalnaker (1978) introduces the notion of the common ground.\n\nset of propositions\n\n\nUptake of an assertion:\n\naddressee accepts the meaning of the sentence into the common ground."
-  },
-  {
-    "objectID": "aug29.html#force-and-content",
-    "href": "aug29.html#force-and-content",
-    "title": "Intro. to Semantics",
-    "section": "Force and content",
-    "text": "Force and content\nIllocutionary acts can be characterized along at least two dimensions:\n\nillocutionary force: what kind of intended social effect is involved?\n\nassertoric force, imperative force, interrogative force\n\ncontent: utterance-specific aspects of conveyed meaning\n\nassertions: sets of possible worlds (“truth conditions”)\ncommands: “satisfaction conditions”\nquestions: “answerhood conditions”"
-  },
-  {
-    "objectID": "aug29.html#question-about-content",
-    "href": "aug29.html#question-about-content",
-    "title": "Intro. to Semantics",
-    "section": "Question about content",
-    "text": "Question about content\nWhere in the taxonomy of acts does content fall?\n\nJust the illocutionary act?\nAlso locutionary effect?\n(Also perlocutionary effect?)"
-  },
-  {
-    "objectID": "aug29.html#performatives",
-    "href": "aug29.html#performatives",
+    "objectID": "sept3.html#performatives",
+    "href": "sept3.html#performatives",
     "title": "Intro. to Semantics",
     "section": "Performatives",
-    "text": "Performatives\n\nI command you to help me cook the beans!\nI hereby name this ship the R.M.S. Titanic!\n\nlocutionary act: declarative sentence\nillocutionary act: naming\nuptake: ship’s name is now ‘R.M.S. Titanic’\n\nI promise to stop moving furniture while you’re sleeping.\n\nlocutionary act: declarative sentence\nillocutionary act: promise\nuptake: promise accepted, obligation registered"
+    "text": "Performatives\nA class of speech acts distinguished by Austin (1962).\n\nI command you to help me cook the beans!\n\nlocutionary act: declarative sentence\nillocutionary act: command\nuptake: obligation accepted\n\nI hereby name this ship the R.M.S. Titanic!\n\nlocutionary act: declarative sentence\nillocutionary act: naming\nuptake: ship’s name is now ‘R.M.S. Titanic’"
   },
   {
-    "objectID": "aug29.html#peformatives-contd",
-    "href": "aug29.html#peformatives-contd",
+    "objectID": "sept3.html#performatives-1",
+    "href": "sept3.html#performatives-1",
     "title": "Intro. to Semantics",
-    "section": "Peformatives (cont’d)",
-    "text": "Peformatives (cont’d)\n\nI apologize.\n\napology\nuptake: apology accepted\n\nI do.\n\nillocutionary act: vow\nuptake: obligation registered\n\nI bet you $300 that it will rain tomorrow.\n\nillocutionary act: bet\nuptake: bet accepted"
+    "section": "Performatives",
+    "text": "Performatives\n\nI promise to stop moving furniture while you’re sleeping.\n\nlocutionary act: declarative sentence\nillocutionary act: promise\nuptake: promise accepted, obligation registered\n\nI apologize.\n\nillocutionary act: apology\nuptake: ??"
   },
   {
-    "objectID": "aug29.html#felicity-conditions",
-    "href": "aug29.html#felicity-conditions",
+    "objectID": "sept3.html#performatives-2",
+    "href": "sept3.html#performatives-2",
+    "title": "Intro. to Semantics",
+    "section": "Performatives",
+    "text": "Performatives\n\nI do.\n\nillocutionary act: vow\nuptake: obligation registered\n\nI bet you $300 that it will rain tomorrow.\n\nillocutionary act: bet\nuptake: bet accepted"
+  },
+  {
+    "objectID": "sept3.html#felicity-conditions",
+    "href": "sept3.html#felicity-conditions",
     "title": "Intro. to Semantics",
     "section": "Felicity conditions",
     "text": "Felicity conditions\nYou can’t just perform any speech act haphazardly."
   },
   {
-    "objectID": "aug29.html#felicity-conditions-1",
-    "href": "aug29.html#felicity-conditions-1",
+    "objectID": "sept3.html#felicity-conditions-1",
+    "href": "sept3.html#felicity-conditions-1",
     "title": "Intro. to Semantics",
     "section": "Felicity conditions",
-    "text": "Felicity conditions\n\nI apologize.\n\nThe speaker should have done something that requires an apology.\n\nI do.\n\nThere should be a vow at stake (“…till death do us part?”).\n\nOpen the window!\n\nThe utterer should have the relevant authority.\n\nI bet you $300 that it will rain tomorrow.\n\nThe utterer should have the means to procure $300."
+    "text": "Felicity conditions\n\nI apologize.\n\nThe speaker should have done something that requires an apology.\nThe speaker should feel regret.\n\nI do.\n\nThere should be a vow at stake (“…till death do us part?”)."
   },
   {
-    "objectID": "aug29.html#felicity-conditions-2",
-    "href": "aug29.html#felicity-conditions-2",
+    "objectID": "sept3.html#felicity-conditions-2",
+    "href": "sept3.html#felicity-conditions-2",
+    "title": "Intro. to Semantics",
+    "section": "Felicity conditions",
+    "text": "Felicity conditions\n\nOpen the window!\n\nThe utterer should have the relevant authority.\n\nI bet you $300 that it will rain tomorrow.\n\nThe utterer should have the means to procure $300.\n\nCongratulations!\n\nThe utterer must actually be pleased.\n\nI advise you to do the readings.\n\nI should think you should do the readings."
+  },
+  {
+    "objectID": "sept3.html#felicity-conditions-3",
+    "href": "sept3.html#felicity-conditions-3",
     "title": "Intro. to Semantics",
     "section": "Felicity conditions",
     "text": "Felicity conditions\nIn general:\n\nIt must be allowable, by convention, for the speech act to have the illocutionary effect that it is intended to have.\nThe circumstances prior to the act have to be appropriate."
   },
   {
-    "objectID": "aug29.html#performatives-redux",
-    "href": "aug29.html#performatives-redux",
+    "objectID": "sept3.html#performatives-redux",
+    "href": "sept3.html#performatives-redux",
     "title": "Intro. to Semantics",
     "section": "Performatives redux",
-    "text": "Performatives redux\nQuestion 1\n\nWhat do performatives and other speech acts have in common?\n\n\nQuestion 2\n\nHow does illocutionary effect fit into the distinction of Grice (1957) between meaning\\(_{NN}\\) and meaning\\(_{N}\\)?"
+    "text": "Performatives redux\nQuestion 1\n\nWhat do performatives and other speech acts have in common? How are they different?\n\n\nQuestion 2\n\nHow does do locutionary acts fit into the distinction of Grice (1957) between meaning\\(_{NN}\\) and meaning\\(_{N}\\)?\nIllocutionary effects?\nPerlocutionary effects?"
   },
   {
-    "objectID": "aug29.html#references",
-    "href": "aug29.html#references",
+    "objectID": "sept3.html#more-on-felicity-conditions",
+    "href": "sept3.html#more-on-felicity-conditions",
+    "title": "Intro. to Semantics",
+    "section": "More on felicity conditions",
+    "text": "More on felicity conditions\n\nPerformatives tend to have felicity conditions.\nWhat about other types of speech act?\n\n\nJo: Is Pascal’s closed?  Bo: The lights are out.\n\nImplies there are lights.\n(May also imply that Pascal’s is closed.)"
+  },
+  {
+    "objectID": "sept3.html#presupposition",
+    "href": "sept3.html#presupposition",
+    "title": "Intro. to Semantics",
+    "section": "Presupposition",
+    "text": "Presupposition\nA well-studied type of felicity condition on speech acts.\n\n\nApparently affects them uniformly.\n\n\nAre the lights are out?\nTurn out the lights!\n\n\nBoth imply that there are lights."
+  },
+  {
+    "objectID": "sept3.html#aspectual-predicates",
+    "href": "sept3.html#aspectual-predicates",
+    "title": "Intro. to Semantics",
+    "section": "Aspectual predicates",
+    "text": "Aspectual predicates\n\nJo stopped smoking cigarettes.\n\n↝ Jo used to smoke cigarettes.\n\nJo continued smoking cigarettes.\n\n↝ Jo used to smoke cigarettes."
+  },
+  {
+    "objectID": "sept3.html#more-aspectual-inferences",
+    "href": "sept3.html#more-aspectual-inferences",
+    "title": "Intro. to Semantics",
+    "section": "More aspectual inferences",
+    "text": "More aspectual inferences\n\nJo still smokes cigarettes.\n\n↝ Jo used to smoke cigarettes.\n\nDoes Jo smoke cigarettes yet?\n\n↝ Jo is going to smoke cigarettes."
+  },
+  {
+    "objectID": "sept3.html#factive-predicates",
+    "href": "sept3.html#factive-predicates",
+    "title": "Intro. to Semantics",
+    "section": "Factive predicates",
+    "text": "Factive predicates\n\nJo loves that Bo stopped smoking.\n\n↝ Bo used to smoke.\n↝ Bo stopped smoking.\n\nJo hates that it’s raining.\n\n↝ It’s raining."
+  },
+  {
+    "objectID": "sept3.html#something-weird",
+    "href": "sept3.html#something-weird",
+    "title": "Intro. to Semantics",
+    "section": "Something weird",
+    "text": "Something weird\n\nIf it’s raining, then Jo hates that it’s raining.\n\n↝ ?\n\nIf Jo used to smoke cigarettes, then she still does.\n\n↝ ?\n\n\n\nWhere’d they go?"
+  },
+  {
+    "objectID": "sept3.html#summary",
+    "href": "sept3.html#summary",
+    "title": "Intro. to Semantics",
+    "section": "Summary",
+    "text": "Summary\nFelicity conditions:\n\nSome kinds of felicity conditions pertain to specific illocutionary act types.\n\ncommands, bets, apologies, etc.\n\nOther kinds of felicity conditions (presuppositions) seem to cross-cut speech acts.\n\n\nWhat could be the locus of this difference?"
+  },
+  {
+    "objectID": "sept3.html#references",
+    "href": "sept3.html#references",
     "title": "Intro. to Semantics",
     "section": "",
-    "text": "References\n\n\n\n\nAustin, J. L. 1962. How to Do Things with Words. Oxford: Oxford University Press.\n\n\nGrice, H. P. 1957. “Meaning.” The Philosophical Review 66 (3): 377–88. https://doi.org/10.2307/2182440.\n\n\nStalnaker, Robert. 1978. “Assertion.” In Pragmatics, edited by Peter Cole, 9:315–32. New York: Academic Press."
+    "text": "References\n\n\n\n\nAustin, J. L. 1962. How to Do Things with Words. Oxford: Oxford University Press.\n\n\nGrice, H. P. 1957. “Meaning.” The Philosophical Review 66 (3): 377–88. https://doi.org/10.2307/2182440."
   }
 ]
