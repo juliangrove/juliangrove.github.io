@@ -1,128 +1,107 @@
 [
   {
-    "objectID": "sept5.html#overview",
-    "href": "sept5.html#overview",
+    "objectID": "sept8.html#last-time",
+    "href": "sept8.html#last-time",
     "title": "Intro. to Semantics",
-    "section": "Overview",
-    "text": "Overview\nThings we’ve looked at:\n\nThings that people do: use expressions of their language to create certain (conventional) social effects.\n\nCategorization of illocutionary effects:\n\nperformative, assertion, question, …\n\n\n\n\nThings we haven’t looked at:\n\nHow they do it: locutionary act → illocutionary act (?)"
+    "section": "Last time",
+    "text": "Last time\nGrice’s maxims: Quality, Quantity, Relation, and Manner.\n\nQuality: be truthful.\nQuantity: say enough (and not too much).\nRelation: be relevant.\nManner: be brief, unambiguous, orderly, clear."
   },
   {
-    "objectID": "sept5.html#strategy",
-    "href": "sept5.html#strategy",
+    "objectID": "sept8.html#reasoning-through-some-examples",
+    "href": "sept8.html#reasoning-through-some-examples",
     "title": "Intro. to Semantics",
-    "section": "Strategy",
-    "text": "Strategy\nWhat we need:\n\na (systematic, predictive, comprehensive) story about how people use expressions to perform illocutionary acts\n\n\nWe can work backwards.\n\nIllocutionary act ↓\n\nLocutionary act\n\nsyntax\nsemantics"
+    "section": "Reasoning through some examples",
+    "text": "Reasoning through some examples\n\nJo did some of the readings.\n\n\nQuantity implicature: Jo did not do all of the readings.\n\n\nReasoning:\n\n\n\n\nSpeaker is being truthful (Quality) and providing as much information as required (Quantity).\nTherefore: if they thought that Jo did all of the readings, they would say so.\nThey didn’t say so, so Jo must not have done all of the readings."
   },
   {
-    "objectID": "sept5.html#some-illocutionary-acts",
-    "href": "sept5.html#some-illocutionary-acts",
+    "objectID": "sept8.html#reasoning-through-some-examples-1",
+    "href": "sept8.html#reasoning-through-some-examples-1",
     "title": "Intro. to Semantics",
-    "section": "Some illocutionary acts",
-    "text": "Some illocutionary acts\n\n\n\nContext: Jo and Bo are outside Pascal’s, looking in the window.  Jo: No one’s at the cash register.  Bo: The lights are on. \n\nBo’s response:\n\nForce: assertion\nContent, Part 1: Pascal’s lights are on\nContent, Part 2: Pascal’s is open"
+    "section": "Reasoning through some examples",
+    "text": "Reasoning through some examples\n\nContext: Jo is writing a letter of recommendation for Bo’s linguistics instructor application.  Jo: To whom it may concern: Bo has great handwriting. He’s quite punctual. He kicked my ass at Hungry Hungry Hippos.\n\n\n\n\nImplicature: You should not hire Bo.\n\n\nReasoning:\n\n\n\n\n\nJo typically provides truthful (Quality) and relevant information (Relation).\nShe has obviously flouted Relation.\nSo, satisfying both must require violating some other principle."
   },
   {
-    "objectID": "sept5.html#some-illocutionary-acts-1",
-    "href": "sept5.html#some-illocutionary-acts-1",
+    "objectID": "sept8.html#implicature",
+    "href": "sept8.html#implicature",
     "title": "Intro. to Semantics",
-    "section": "Some illocutionary acts",
-    "text": "Some illocutionary acts\n\n\n\nContext: Jo and Bo get inside Pascal’s and are now in line.  Jo: What do you want?  Bo: Something with lots of caffeine.\n\n\n↝ Bo isn’t sure what he wants."
+    "section": "Implicature",
+    "text": "Implicature\nTwo kinds typically recognized.\n\nImplicatures from the maxims: conversational implicatures.\nAnother category of implicature: conventional implicatures.\n\nThe class is fun but difficult.\nJo, a linguist, enjoys syntax.\nThe instructor, who is a linguist, enjoys syntax."
   },
   {
-    "objectID": "sept5.html#some-illocutionary-acts-2",
-    "href": "sept5.html#some-illocutionary-acts-2",
+    "objectID": "sept8.html#conversational-vs.-conventional",
+    "href": "sept8.html#conversational-vs.-conventional",
     "title": "Intro. to Semantics",
-    "section": "Some illocutionary acts",
-    "text": "Some illocutionary acts\n\n\n\nContext: Bo got an iced matcha latte.  Jo: How is it?  Bo: I think it needs at least three more pumps of syrup.\n\n\n↝ Bo’s thinks his latte is too sweet."
+    "section": "Conversational vs. conventional",
+    "text": "Conversational vs. conventional\nConversational implicatures:\n\nNon-detachable (Grice 1975).\n\n{Some, a few, several, many} linguists like syntax.\n\nContext-dependent.\n\nEspecially, particularized conversational implicatures.\nGrice (1975) distinguishes these from generalized conversational impicatures."
   },
   {
-    "objectID": "sept5.html#explaining-illocutionary-effects",
-    "href": "sept5.html#explaining-illocutionary-effects",
+    "objectID": "sept8.html#conversational-vs.-conventional-1",
+    "href": "sept8.html#conversational-vs.-conventional-1",
     "title": "Intro. to Semantics",
-    "section": "Explaining illocutionary effects",
-    "text": "Explaining illocutionary effects\nHas two parts:\n\nthe semantics of the expressions\ngeneral rules for mapping the semantics of expressions onto meanings in context"
+    "section": "Conversational vs. conventional",
+    "text": "Conversational vs. conventional\nConventional implicatures:\n\nGenerally, detachable.\n\nThe class is fun {but, and} difficult.\n\nGenerally, not context-dependent.\n\nArise from particular lexical items and syntactic constructions."
   },
   {
-    "objectID": "sept5.html#an-extremely-general-rule",
-    "href": "sept5.html#an-extremely-general-rule",
+    "objectID": "sept8.html#detachability",
+    "href": "sept8.html#detachability",
     "title": "Intro. to Semantics",
-    "section": "An extremely general rule",
-    "text": "An extremely general rule\nGrice (1975) proposes the Cooperative Principle:\n\n“Make your conversational contribution, such as is required, at the stage at which is occurs, by the accepted purpose or direction of the talk exchange in which you are engaged.”\n\n\nBasic hypotheses:\n\nHumans are rational agents.\nThey are cooperative.\nMeaning arises from principles of rational cooperation."
+    "section": "Detachability?",
+    "text": "Detachability?\nExamples from Coppock (2016):\n\nI’m in my sixties and had more than two parents growing up.\n\n\n\nI’m in my sixties and had at least three parents growing up."
   },
   {
-    "objectID": "sept5.html#maxims",
-    "href": "sept5.html#maxims",
+    "objectID": "sept8.html#issue-how-to-evaluate-the-maxims",
+    "href": "sept8.html#issue-how-to-evaluate-the-maxims",
     "title": "Intro. to Semantics",
-    "section": "Maxims",
-    "text": "Maxims\nGrice describe four maxims:\n\nQuality\nQuantity\nRelation\nManner"
+    "section": "Issue: how to evaluate the maxims?",
+    "text": "Issue: how to evaluate the maxims?\nQuantity: give the right amount of information.\n\nHow much is enough/too much?\n\n\nRelation: be relevant.\n\nRelevant to what?"
   },
   {
-    "objectID": "sept5.html#quality",
-    "href": "sept5.html#quality",
+    "objectID": "sept8.html#issue-the-symmetry-problem",
+    "href": "sept8.html#issue-the-symmetry-problem",
     "title": "Intro. to Semantics",
-    "section": "Quality",
-    "text": "Quality\nPart 1: only say that which you believe to be true.\n\nPart 2: only say that which you have enough evidence for.\n\n\n\nWho else said something like this?"
+    "section": "Issue: the symmetry problem",
+    "text": "Issue: the symmetry problem\n\nJo did some of the readings.\n\n\nQuantity implicature: Jo didn’t do all of the readings.\nBut why not: Jo didn’t do only some of the readings?\n\n\nWhat we need: some notion of “possible alternative”."
   },
   {
-    "objectID": "sept5.html#quantity",
-    "href": "sept5.html#quantity",
+    "objectID": "sept8.html#questions-under-discussion",
+    "href": "sept8.html#questions-under-discussion",
     "title": "Intro. to Semantics",
-    "section": "Quantity",
-    "text": "Quantity\nPart 1: make your contribution as informative as necessary.\n\nPart 2: don’t overdo it."
+    "section": "Questions under discussion",
+    "text": "Questions under discussion\nAsking a question: add the question onto an ongoing record of questions that need to be answered.\n\n\nDiscourse—at least involving assertions—always has the goal of answering some question (Roberts 2012).\n\nThere is always a Question Under Discussion (QUD)."
   },
   {
-    "objectID": "sept5.html#relation",
-    "href": "sept5.html#relation",
+    "objectID": "sept8.html#example-from-last-class",
+    "href": "sept8.html#example-from-last-class",
     "title": "Intro. to Semantics",
-    "section": "Relation",
-    "text": "Relation\nMake your contribution relevant."
+    "section": "Example from last class",
+    "text": "Example from last class\n\n\n\nContext: Jo and Bo are outside Pascal’s, looking in the window.  Jo: No one’s at the cash register.  Bo: The lights are on.\n\n\nQUD?\n\nIs Pascal’s open?"
   },
   {
-    "objectID": "sept5.html#manner",
-    "href": "sept5.html#manner",
+    "objectID": "sept8.html#does-this-help-with-evaluating-the-maxims",
+    "href": "sept8.html#does-this-help-with-evaluating-the-maxims",
     "title": "Intro. to Semantics",
-    "section": "Manner",
-    "text": "Manner\nFour parts:\n\nAvoid obscurity.\nAvoid ambiguity.\nBe brief.\nBe orderly."
+    "section": "Does this help with evaluating the maxims?",
+    "text": "Does this help with evaluating the maxims?\n\nRelation:\n\nHelp resolve the QUD.\n\n\n\nQuantity (Part 1):\n\nResolve it as much as possible."
   },
   {
-    "objectID": "sept5.html#first-example",
-    "href": "sept5.html#first-example",
+    "objectID": "sept8.html#on-the-right-track",
+    "href": "sept8.html#on-the-right-track",
     "title": "Intro. to Semantics",
-    "section": "First example",
-    "text": "First example\n\n\n\nContext: Jo and Bo are outside Pascal’s, looking in the window.  Jo: No one’s at the cash register.  Bo: The lights are on.\n\nImplicature: Pascal’s is open.\n\nrelation\n\n\nHow? Followed."
+    "section": "On the right track?",
+    "text": "On the right track?\n\nJo: How many cookies did Mary eat?  Bo: Mary ate some of the cookies.\n\n\n\nJo: Is there any evidence against them?  Bo: Some of their identity documents are forgeries.\n\n(Based on example from Levinson (2000).)"
   },
   {
-    "objectID": "sept5.html#second-example",
-    "href": "sept5.html#second-example",
+    "objectID": "sept8.html#dealing-with-the-symmetry-problem",
+    "href": "sept8.html#dealing-with-the-symmetry-problem",
     "title": "Intro. to Semantics",
-    "section": "Second example",
-    "text": "Second example\n\n\n\nContext: Jo and Bo get inside Pascal’s and are now in line.  Jo: What do you want?  Bo: Something with lots of caffeine.\n\nImplicature: Bo doesn’t know what he wants.\n\nquality\nquantity\n\n\nHow? Clash."
+    "section": "Dealing with the symmetry problem",
+    "text": "Dealing with the symmetry problem\nPossibility: certain lexical items are associated with scales (Horn 1972).\n\nnone &lt; some &lt; all, every\none &lt; two &lt; three\ndecent &lt; great &lt; fantastic!\n\n\nHow might this help with the symmetry problem?"
   },
   {
-    "objectID": "sept5.html#third-example",
-    "href": "sept5.html#third-example",
-    "title": "Intro. to Semantics",
-    "section": "Third example",
-    "text": "Third example\n\n\n\nContext: Bo got an iced matcha latte.  Jo: How is it?  Bo: I think it needs at least three more pumps of syrup.\n\nImplicature: Bo thinks his latte is too sweet.\n\nquality\n\n\nHow? Flouted."
-  },
-  {
-    "objectID": "sept5.html#a-few-more",
-    "href": "sept5.html#a-few-more",
-    "title": "Intro. to Semantics",
-    "section": "A few more",
-    "text": "A few more\n\nJohn devoured some of the beans.\n\n\n\nBo walked to his desk, sat down, and got up.\n\n\n\nJo got the car to start."
-  },
-  {
-    "objectID": "sept5.html#questions",
-    "href": "sept5.html#questions",
-    "title": "Intro. to Semantics",
-    "section": "Questions",
-    "text": "Questions\n\nHow should we understand the CP and the maxims?\n\nDo they tell us how to behave?\n\nHow do they fit into Grice’s notion of meaning\\(_{NN}\\)?\n\nImplicatures: just inferred, or genuinely communicated?\n\nVariation?"
-  },
-  {
-    "objectID": "sept5.html#references",
-    "href": "sept5.html#references",
+    "objectID": "sept8.html#references",
+    "href": "sept8.html#references",
     "title": "Intro. to Semantics",
     "section": "",
-    "text": "References\n\n\n\n\nGrice, H. P. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts:41–58. New York: Academic Press."
+    "text": "References\n\n\n\n\nCoppock, Elizabeth. 2016. “Superlative Modifiers as Modified Superlatives.” Semantics and Linguistic Theory, October, 471–88. https://doi.org/10.3765/salt.v26i0.3822.\n\n\nGrice, H. P. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts:41–58. New York: Academic Press.\n\n\nHorn, Laurence Robert. 1972. “On the Semantic Properties of Logical Operators in English.” PhD thesis, Los Angeles: UCLA.\n\n\nLevinson, Stephen C. 2000. Presumptive Meanings: The Theory of Generalized Conversational Implicature. MIT Press. https://direct.mit.edu/books/monograph/2629/Presumptive-MeaningsThe-Theory-of-Generalized.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6."
   }
 ]
