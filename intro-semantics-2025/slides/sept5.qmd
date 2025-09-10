@@ -1,0 +1,325 @@
+---
+title: "Intro. to Semantics"
+bibliography: ../semantics.bib
+format:
+  revealjs:
+    css: styles.css
+    # html-math-method: mathjax
+    # mathjax-config:
+      # loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      # tex:
+        # packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+# Speaker meaning
+
+## Overview
+
+Things we've looked at:
+
+- **Things that people do**:
+  use expressions of their language to create certain (conventional) social effects.
+  - Categorization of illocutionary effects:
+	- performative, assertion, question, ...
+
+::: {.fragment}
+Things we *haven't* looked at:
+
+- **How they do it**:
+  locutionary act → illocutionary act (?)
+:::
+
+---
+
+## Strategy
+
+What we need:
+
+- a (systematic, predictive, comprehensive) story about how people use expressions to perform illocutionary acts
+
+::: {.fragment}
+We can work backwards.
+
+- Illocutionary act [↓]{.gb-blue}
+  - [Locutionary act]{.gb-blue}
+	- syntax
+	- [semantics]{.gb-green}
+:::
+
+---
+
+## Some illocutionary acts
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+(@ex-relation) **Context**: Jo and Bo are outside Pascal's, looking in the window. <br> 
+	**Jo**: No one's at the cash register. <br>
+	**Bo**: The lights are on. <br>
+	- Bo's response:
+		- Force: assertion
+		- Content, Part 1: <span class="fragment">**Pascal's lights are on**</span>
+		- Content, Part 2: **Pascal's is open**
+:::
+
+::: {.column width="25%"}
+![](images/pascals.jpg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## Some illocutionary acts
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+(@ex-ignorance) **Context**: Jo and Bo get inside Pascal's and are now in line. <br>
+	**Jo**: What do you want? <br>
+	**Bo**: Something with lots of caffeine.
+	
+- ↝ Bo isn't sure what he wants.
+:::
+
+::: {.column width="25%"}
+![](images/pascals2.jpg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## Some illocutionary acts
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+(@ex-ignorance) **Context**: Bo got an iced matcha latte. <br>
+	**Jo**: How is it? <br>
+	**Bo**: I think it needs at least three more pumps of syrup.
+	
+- ↝ Bo's thinks his latte is *too sweet*.
+:::
+
+::: {.column width="25%"}
+![](images/pascals3.jpeg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## Explaining illocutionary effects
+
+Has two parts:
+
+- the semantics of the expressions
+- general rules for mapping the semantics of expressions onto meanings in context
+
+---
+
+## An *extremely* general rule
+
+@grice_logic_1975 proposes the **Cooperative Principle**:
+
+- *"Make your conversational contribution, such as is required, at the stage at which is occurs, by the accepted purpose or direction of the talk exchange in which you are engaged."*
+
+::: {.fragment}
+Basic hypotheses:
+
+- Humans are rational agents.
+- They are cooperative.
+- Meaning arises from principles of rational cooperation.
+:::
+
+---
+
+## Maxims
+
+Grice describe four maxims:
+
+- Quality
+- Quantity
+- Relation
+- Manner
+
+---
+
+## Quality
+
+Part 1:
+only say that which you believe to be true.
+
+::: {.fragment}
+Part 2:
+only say that which you have enough evidence for.
+:::
+
+<br>
+
+::: {.fragment}
+Who else said something like this?
+:::
+
+---
+
+## Quantity
+
+Part 1:
+make your contribution as informative as necessary.
+
+::: {.fragment}
+Part 2:
+don't overdo it.
+
+![](images/talking.webp){width="300px"}
+:::
+
+---
+
+## Relation
+
+Make your contribution relevant.
+
+---
+
+## Manner
+
+Four parts:
+
+- Avoid obscurity.
+- Avoid ambiguity.
+- Be brief.
+- Be orderly.
+
+---
+
+## First example
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+::: {.nonincremental}
+(@ex-relation) **Context**: Jo and Bo are outside Pascal's, looking in the window. <br> 
+	**Jo**: No one's at the cash register. <br>
+	**Bo**: The lights are on.
+		
+**Implicature**:
+Pascal's is open.
+
+:::
+
+- relation
+
+::: {.fragment}
+How? <span class="fragment">Followed.</span>
+:::
+
+:::
+
+::: {.column width="25%"}
+![](images/pascals.jpg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## Second example
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+::: {.nonincremental}
+(@ex-ignorance) **Context**: Jo and Bo get inside Pascal's and are now in line. <br>
+	**Jo**: What do you want? <br>
+	**Bo**: Something with lots of caffeine.
+
+**Implicature**:
+Bo doesn't know what he wants.
+:::
+
+- quality
+- quantity
+
+::: {.fragment}
+How? <span class="fragment">Clash.</span>
+:::
+
+:::
+
+::: {.column width="25%"}
+![](images/pascals2.jpg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## Third example
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+::: {.nonincremental}
+
+(@ex-ignorance) **Context**: Bo got an iced matcha latte. <br>
+	**Jo**: How is it? <br>
+	**Bo**: I think it needs at least three more pumps of syrup.
+
+**Implicature**:
+Bo thinks his latte is too sweet.
+:::
+
+- quality
+
+::: {.fragment}
+How? <span class="fragment">Flouted.</span>
+:::
+
+:::
+
+
+::: {.column width="25%"}
+![](images/pascals3.jpeg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## A few more
+
+(@ex-quantity) John devoured some of the beans.
+
+<br>
+
+(@ex-manner-1) Bo walked to his desk, sat down, and got up.
+
+<br>
+
+(@ex-manner-2) Jo got the car to start.
+
+---
+
+## Questions
+
+1. How should we understand the CP and the maxims?
+   - Do they tell us how to behave?
+
+2. How do they fit into Grice's notion of meaning$_{NN}$?
+   - Implicatures:
+	 just inferred, or genuinely communicated?
+
+3. Variation?
+
+---
+
+### References

@@ -1,0 +1,205 @@
+---
+title: "Intro. to Semantics"
+bibliography: ../semantics.bib
+# format:
+  # revealjs:
+    # css: ../styles.css
+    # html-math-method: mathjax
+    # mathjax-config:
+      # loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      # tex:
+        # packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+# Linguistic convention
+
+## @lewis_languages_1975's criteria
+
+::: {.nonincremental}
+- Everyone conforms.
+- Everyone believes the others conform.
+- The others conforming provides a reason to conform.
+- Preference for conformity (as opposed to non-conformity).
+- Optional or arbitrary---there are possible alternatives.
+- Common knowledge of the above.
+:::
+
+---
+
+## @lewis_languages_1975 on language
+
+What are *languages*?
+
+- Lewis: collections of pairs of forms and meanings
+  - Form: sign, sound, mark, etc.
+  - Meaning: set (i.e., collection) of possible states of affairs, things in the world, etc.
+
+::: {.fragment}
+What is *language*?
+
+- A human social activity in which people produce certain forms.
+:::
+
+## Relating them
+
+Lewis introduces a convention to define language use:
+
+- "...a population P uses a language ξ is a convention of truthfulness and trust in ξ."
+  - Truthfulness:
+	try never to utter sentences of ξ that are not true in ξ.
+  - Trust in ξ:
+	impute truthfulness in ξ to others.
+	Believe the things that others tell you.
+
+---
+
+## "Language use"
+
+These are *pragmatic* conventions.
+
+::: {.fragment}
+What about conventions relating to form?
+
+- syntax, morphology, phonology, phonetics, etc.
+- sociolinguistic conventions:
+  using a particular register/dialect in particular social setting
+:::
+
+---
+
+## Communication and meaning
+
+@grice_meaning_1957: conceptual analysis of the word 'mean'.
+
+(@ex-weather) This rainy weather _means_ we'll probably be taxiing for a while.
+
+(@ex-gesture) Jo's gesture _means_ that she wants you to walk over.
+
+(@ex-beans) "Bo devoured the beans" _means_ that Bo ate the beans aggressively.
+
+---
+
+## Test 1
+
+(@ex-weather) This rainy weather means we'll probably be taxiing for a while, but in fact, we won't be taxiing for a while.
+
+(@ex-gesture) Jo's gesture means that she wants you to walk over, but in fact, she doesn't want you to walk over.
+
+(@ex-beans) "Bo devoured the beans" means that Bo ate the beans aggressively, but in fact, Bo didn't eat the beans aggressively.
+
+---
+
+## Test 2
+
+(@ex-weather) What is meant by this rainy weather is that we'll be taxiing for a while.
+
+(@ex-gesture) What is meant by Jo's gesture is that she wants you to walk over.
+
+(@ex-beans) What is meant by "Bo devoured the beans" is that Bo ate the beans aggressively.
+
+---
+
+## Test 3
+
+(@ex-weather) Someone meant by this rainy weather that we'll probably be taxiing for a while.
+
+(@ex-gesture) Jo meant by her gesture that she wants you to walk over.
+
+(@ex-beans) Someone meant by "Bo devoured the beans" that Bo ate the beans aggressively.
+
+---
+
+## Natural and non-natural meaning
+
+- 'mean' in the @ex-weather examples:
+  describes a _consequence_ relation
+- 'mean' in the @ex-gesture and @ex-beans examples:
+  some other kind of relation
+
+::: {.fragment}
+@grice_meaning_1957:
+_natural_ meaning vs. _non-natural_ meaning.
+:::
+
+---
+
+## Non-natural meaning
+
+### Hypothesis 1
+
+Something _means_$_{NN}$ that $p$ if things of its kind tend to produce a belief in an observer that $p$ is true.
+
+- sun being out makes people believe it's daytime...
+
+---
+
+## Non-natural meaning
+
+### Hypothesis 2
+
+Maybe we should factor in intention.
+
+::: {.fragment}
+Someone _means_$_{NN}$ that $p$ by something if they **intend** to use that thing to produce the belief in an audience that $p$ is true.
+:::
+
+---
+
+## Counterexample
+
+![](images/worker.webp){fig-align="center"}
+
+---
+
+## Non-natural meaning
+
+### Hypothesis 3
+
+Maybe we should factor in an **intention for one's intention to be recognized**.
+
+::: {.fragment}
+Someone _means_$_{NN}$ that $p$ by something if they intend to produce the belief that $p$ in their audience by that thing, and they intend for their intention to be recognized.
+:::
+
+---
+
+## Counterexample
+
+Cutting someone off in traffic to make them think you're aggressive and to get them to get out of your way.<br>
+
+![](images/traffic_dog.jpeg){fig-align="center"}
+
+---
+
+## Non-natural meaning
+
+### What it actually is (according to Grice)
+
+::: {.fragment}
+Someone _means_$_{NN}$ that $p$ by something if they intend that:
+
+- their audience comes to believe $p$ because of it,
+- their audience recognizes their intention, and
+- their audience comes to believe that $p$ specifically *because* of the intention.
+:::
+
+---
+
+## Question 1
+
+How to go from "someone meant that $p$ by $X$" to "$p$ means $X$ in a particular linguistic community"?
+
+- Tie in @lewis_languages_1975?
+
+---
+
+## Question 2
+
+How do we characterize meanings for things which aren't statements?
+
+- Commands?
+- Questions?
+
+---
+
+### References

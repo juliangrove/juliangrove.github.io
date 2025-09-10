@@ -1,0 +1,258 @@
+---
+title: "Intro. to Semantics"
+bibliography: ../semantics.bib
+format:
+  revealjs:
+    css: styles.css
+    # html-math-method: mathjax
+    # mathjax-config:
+      # loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      # tex:
+        # packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+# Issues from last time
+
+## Issue: how to evaluate the maxims?
+
+Quantity:
+give the right amount of information.
+
+- How much is enough/too much?
+
+::: {.fragment}
+Relation:
+be relevant.
+
+- Relevant to what?
+:::
+
+---
+
+## Questions under discussion
+
+Asking a question:
+add the question onto an ongoing record of questions that need to be answered.
+
+<br>
+
+::: {.fragment}
+Discourse---at least involving assertions---always has the goal of answering some question [@roberts_information_2012].
+
+- There is always a Question Under Discussion (QUD).
+:::
+
+---
+
+## An implicit QUD
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+::: {.nonincremental}
+(@ex-relation) **Context**: Jo and Bo are outside Pascal's, looking in the window. <br> 
+	**Jo**: No one's at the cash register. <br>
+	**Bo**: The lights are on.
+:::
+
+::: {.fragment}
+QUD?
+
+- Is Pascal's open?
+:::
+
+:::
+
+::: {.column width="25%"}
+![](images/pascals.jpg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## Does this help with evaluating the maxims?
+
+::: {.fragment}
+Relation:
+
+- Help resolve the QUD.
+:::
+
+::: {.fragment}
+Quantity (Part 1):
+
+- Resolve it as much as possible.
+:::
+
+---
+
+## On the right track?
+
+(@ex-quantity-qud) **Jo**: How many cookies did Mary eat? <br>
+	**Bo**: Mary ate some of the cookies.
+	
+::: {.fragment}
+::: {.nonincremental}
+(@ex-no-quantity-qud) **Jo**: Is there any evidence against them? <br>
+	**Bo**: Some of their identity documents are forgeries.
+:::
+	
+(Based on example from @levinson_presumptive_2000.)
+:::
+
+---
+
+## Issue: the symmetry problem
+
+(@ex-quantity) Jo did some of the readings.
+- **Quantity implicature**: Jo didn't do all of the readings.
+- **But why not**: Jo did all of the readings?
+
+::: {.fragment}
+What we need:
+some notion of "possible alternative utterance".
+:::
+
+---
+
+## A possibility
+
+What if certain lexical items come with *scales* [@horn_semantic_1972]?
+
+- none < some < all, every
+- one < two < three
+- decent < great < fantastic!
+
+::: {.fragment}
+How might this help with the symmetry problem?
+:::
+
+---
+
+## Summary
+
+- **Speech acts**:
+  utterances that use a particular locution with a conventional meaning to achieve a certain social effect.
+- **Conversational implicatures**:
+  inferences tied to particular speech acts, based on:
+  - general principles of rational, cooperative communication [@grice_logic_1975];
+  - [conventional meanings]{.gb-blue}.
+
+---
+
+## Where do we go next?
+
+::: {.fragment}
+→ conventional meaning
+:::
+
+<br>
+
+- First, we need to develop methods for observing and classifying inference types.
+- Then, we can focus on the conventional stuff:
+  - study how it is encoded in linguistic expressions.
+
+---
+
+## Defining inference
+
+What is an inference?
+
+- A relation between expressions of a language.
+  - $E_{1} ↝ E_{2}$
+	- Typically, $E_{2}$ is a declarative sentence.
+
+(@ex-quantity) Jo did some of the readings. <br>
+	↝ Jo didn't do all of the readings.
+	
+(@ex-definite) Could you bring the dog inside? <br>
+	↝ There is a dog.
+
+## Data collection
+
+Where do inferences come from?
+
+- Speakers of the language!
+  - Your friends.
+  - Laboratory experiments.
+  - Large crowd-sourced inference judgment studies.
+
+## This class
+
+[Semantics]{.gb-blue} is the study of conventional meaning in natural language.
+
+- Goal:
+  give a ridiculously precise account of the inferences that linguistic expressions trigger.
+- If we can do this, then we have captured what these expressions *mean*$_{NN}$.
+
+## A taxonomy of inference types
+
+::: {.fragment}
+Some types of inference observable in natural language:
+
+- entailment
+- conversational implicature
+- presupposition
+- conventional implicature
+:::
+
+---
+
+## Entailment
+
+- A relationship between declarative sentences.
+- If $S_{1}$ entails $S_{2}$, then whenever $S_{1}$ is true, $S_{2}$ *must* be true.
+  (@ex-at-least) Jo has at least three siblings. <br>
+	  ↝ Jo has at least two siblings.
+- Entailments are **non-defeasible**.
+	  
+---
+
+## Non-defeasibility of entailments
+
+(@ex-at-least-contd) \#Jo has at least three siblings, {and, but} she doesn't have at least two siblings.
+
+---
+
+## Conversational implicature
+
+- Typically a relationship between utterances of declarative sentences.
+- If an utterance of $S_{1}$ *conversationally implicates* $S_{2}$, then the utterance *means*$_{NN}$ $S_{2}$.
+- Conversational implicatures are **defeasible**.
+
+---
+
+## Defeasibility of conversational implicatures
+
+(@ex-quantity-canceled) Jo did some of the readings. In fact, she did all of them.
+
+---
+
+## Presupposition
+
+- A relationship between an expression and a declarative sentence.
+- If $E$ presupposes $S$, then whenever an utterance of $E$ is felicitous, $S$ is true.
+  (@ex-stop) Jo stopped smoking. <br>
+	  ↝ Jo used to smoke.
+- Presuppositions are **non-defeasible**.
+
+---
+
+## Non-defeasibility of presuppositions
+
+(@ex-stop-contd) \#Jo stopped smoking, {and, but} she didn't used to smoke.
+
+---
+
+## Summary
+
+|                 | entailment | conv. impl. | presupposition   |
+|-----------------|------------|-------------|------------------|
+| **between**     | sentences  | utterances  | expr. + sentence |
+| **defeasible?** | no         | yes         | no               |
+
+---
+
+### References

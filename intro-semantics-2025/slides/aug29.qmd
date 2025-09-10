@@ -1,0 +1,237 @@
+---
+title: "Intro. to Semantics"
+bibliography: ../semantics.bib
+# format:
+  # revealjs:
+    # css: ../styles.css
+    # html-math-method: mathjax
+    # mathjax-config:
+      # loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      # tex:
+        # packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+# Speech acts
+
+## Some things you can do with words
+
+::: {.fragment}
+Make **assertions**:
+
+(@ex-assertion-beans) John devoured the beans.
+:::
+
+::: {.fragment}
+Ask **questions**:
+
+(@ex-question-beans) How many beans did John devour?
+:::
+
+::: {.fragment}
+Issue **commands**:
+
+(@ex-command-beans) (Looking John dead in the eye:) Devour the beans!
+:::
+
+---
+
+![](images/eating_beans.jpg){fig-align="center"}
+
+---
+
+## Construction types
+
+(@ex-assertion-beans) John devoured the beans.
+	- declarative sentence
+	- assertion
+
+(@ex-question-beans) How many beans did John devour?
+	- interrogative sentence
+	- question
+
+(@ex-command-beans) Devour the beans!
+	- imperative sentence
+	- command
+
+---
+
+## Switching up construction types
+
+(@ex-command-beans-declarative) I command you to help me cook the beans!
+	- declarative sentence
+	- command
+
+(@ex-request-beans-imperative) Please, help me cook the beans...
+    - imperative sentence
+	- request
+
+(@ex-request-beans-interrogative) Could you please help me cook the beans?
+    - interrogative sentence
+	- request
+
+---
+
+## Distinguishing types of act
+
+@austin_how_1962 classified speech acts at distinct levels.
+
+- Locutionary act:
+  an act of uttering a particular expression.
+  - e.g., interrogative vs. imperative vs. declarative
+- Illocutionary act:
+  an an act of uttering something with a particular intended discourse effect.
+  - e.g., question vs. comamand vs. assertion
+- Perlocutionary effects:
+  the worldly effects an utterance actually has.
+  - e.g., question answered, command fulfilled, assertion believed
+
+---
+
+## Illocutionary uptake
+
+An illocutionary act may be successful or unsuccessful.
+
+- Successful if it has the intended social consequence (it has uptake).
+- Unsuccessful if it does not have this consequence (it does not have uptake).
+
+---
+
+## Uptakes for different acts
+
+(@ex-bet-uptake) I bet you $300 that it will rain tomorrow.
+	- the bet is *accepted*
+	
+(@ex-command-uptake) Open the window!
+	- addressee accepts the obligation to act
+	
+(@ex-question-uptake) What time is it?
+	- addressee accepts the obligation to answer
+
+(@ex-assertion-uptake) It's 1:20pm.
+	- addressee accepts (in some sense) the truth of the sentence
+
+---
+
+## Assertions
+
+@stalnaker_assertion_1978 introduces the notion of the *common ground*.
+
+- set of propositions
+
+::: {.fragment}
+Uptake of an assertion:
+
+- addressee accepts the meaning of the sentence into the common ground.
+:::
+
+---
+
+## Force and content
+
+Illocutionary acts can be characterized along at least two dimensions:
+
+- illocutionary force:
+  what kind of intended social effect is involved?
+  - assertoric force, imperative force, interrogative force
+- content:
+  utterance-specific aspects of conveyed meaning
+  - assertions:
+	sets of possible worlds ("truth conditions")
+  - commands:
+	<span class="fragment">"satisfaction conditions"</span>
+  - questions:
+	<span class="fragment">"answerhood conditions"</span>
+
+---
+
+## Question about content
+
+Where in the taxonomy of acts does content fall?
+
+- Just the illocutionary act?
+- Also locutionary effect?
+- (Also perlocutionary effect?)
+
+---
+
+## Performatives
+
+(@ex-command-beans-declarative) I [command]{.underline} you to help me cook the beans!
+
+(@ex-titanic) I hereby [name]{.underline} this ship the R.M.S. Titanic!
+	- locutionary act: declarative sentence
+	- illocutionary act: naming
+	- uptake: ship's name is now 'R.M.S. Titanic'
+
+(@ex-marriage) I [promise]{.underline} to stop moving furniture while you're sleeping.
+	- locutionary act: declarative sentence
+	- illocutionary act: promise
+	- uptake: <span class="fragment">promise accepted, obligation registered</span>
+
+---
+
+## Peformatives (cont'd)
+
+(@ex-apology) I [apologize]{.underline}.
+	- apology
+	- uptake: <span class="fragment">apology accepted</span>
+
+(@ex-marriage) I do.
+	- illocutionary act: vow
+	- uptake: <span class="fragment">obligation registered</span>
+	
+(@ex-bet) I bet you $300 that it will rain tomorrow.
+	- illocutionary act: bet
+	- uptake: bet accepted
+	
+---
+
+## Felicity conditions
+
+You can't just perform any speech act haphazardly.
+
+![](images/boat_names.jpg){fig-align="center"}
+
+---
+
+## Felicity conditions
+
+(@ex-apology) I apologize.
+	- The speaker should have done something that requires an apology.
+	
+(@ex-marriage) I do.
+	- There should be a vow at stake ("...till death do us part?").
+	
+(@ex-command) Open the window!
+	- The utterer should have the relevant authority.
+
+
+(@ex-bet) I bet you $300 that it will rain tomorrow.
+	- The utterer should have the means to procure $300.
+
+---
+
+## Felicity conditions
+
+In general:
+
+- It must be allowable, by convention, for the speech act to have the illocutionary effect that it is intended to have.
+- The circumstances prior to the act have to be appropriate.
+
+---
+
+## Performatives redux
+
+Question 1
+
+- What do performatives and other speech acts have in common?
+
+::: {.fragment}
+Question 2
+
+- How does illocutionary effect fit into the distinction of @grice_meaning_1957 between meaning$_{NN}$ and meaning$_{N}$?
+:::
+
+---
+
+### References

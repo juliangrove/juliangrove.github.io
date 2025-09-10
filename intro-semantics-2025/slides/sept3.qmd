@@ -1,0 +1,260 @@
+---
+title: "Intro. to Semantics"
+bibliography: ../semantics.bib
+# format:
+  # revealjs:
+    # css: ../styles.css
+    # html-math-method: mathjax
+    # mathjax-config:
+      # loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      # tex:
+        # packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+# Speech acts (cont'd)
+
+## Last time
+
+How @austin_how_1962 classifies speech acts:
+
+- as **locutionary acts**
+- in terms of their **illocutionary effects**
+- in terms of their **perlocutionary effects**
+ 
+::: {.fragment}
+Example:
+
+- Jo ate the chicken salad. (decl., assertion)
+- Did Jo eat the chicken salad? (inter., question)
+- Eat the chicken salad! (imper., command)
+:::
+
+---
+
+## Last time
+
+Uptake:
+
+- An illocutionary act has **uptake** when it has the "intended social consequence".
+
+::: {.fragment}
+Example:
+
+- I bet you $300 that it's raining.
+:::
+
+---
+
+## Last time
+
+Those were **direct speech acts**.
+
+<br>
+
+::: {.fragment}
+**Indirect speech acts**:
+illocutionary act arises as a consequence of some other some other, more basic illocutionary act.
+
+- Could you please pass the salt? <span class="fragment">(inter., request)</span>
+- I still haven't gotten my reimbursement. <span class="fragment">(decl., request)</span>
+:::
+
+
+
+---
+
+## Performatives
+
+A class of speech acts distinguished by @austin_how_1962.
+
+(@ex-command-beans-declarative) I [command]{.underline} you to help me cook the beans!
+	- locutionary act: declarative sentence
+	- illocutionary act: command
+	- uptake: obligation accepted
+
+(@ex-titanic) I hereby [name]{.underline} this ship the R.M.S. Titanic!
+	- locutionary act: declarative sentence
+	- illocutionary act: naming
+	- uptake: ship's name is now 'R.M.S. Titanic'
+
+---
+
+## Performatives
+
+(@ex-marriage) I [promise]{.underline} to stop moving furniture while you're sleeping.
+	- locutionary act: declarative sentence
+	- illocutionary act: promise
+	- uptake: <span class="fragment">promise accepted, obligation registered</span>
+	
+(@ex-apology) I [apologize]{.underline}.
+	- illocutionary act: apology
+	- uptake: ??
+
+---
+
+## Performatives
+
+(@ex-marriage) I do.
+	- illocutionary act: vow
+	- uptake: <span class="fragment">obligation registered</span>
+	
+(@ex-bet) I bet you $300 that it will rain tomorrow.
+	- illocutionary act: bet
+	- uptake: bet accepted
+	
+---
+
+## Felicity conditions
+
+You can't just perform any speech act haphazardly.
+
+![](images/boat_names.jpg){fig-align="center"}
+
+---
+
+## Felicity conditions
+
+(@ex-apology) I apologize.
+	- The speaker should have done something that requires an apology.
+	- The speaker should feel regret.
+	
+(@ex-marriage) I do.
+	- There should be a vow at stake ("...till death do us part?").
+	
+---
+
+## Felicity conditions
+
+(@ex-command) Open the window!
+	- The utterer should have the relevant authority.
+
+
+(@ex-bet) I bet you $300 that it will rain tomorrow.
+	- The utterer should have the means to procure $300.
+
+(@ex-congrats) Congratulations!
+	- The utterer must actually be pleased.
+
+(@ex-advise) I advise you to do the readings.
+	- I should think you should do the readings.
+
+---
+
+## Felicity conditions
+
+In general:
+
+- It must be allowable, by convention, for the speech act to have the illocutionary effect that it is intended to have.
+- The circumstances prior to the act have to be appropriate.
+
+---
+
+## Performatives redux
+
+Question 1
+
+- What do performatives and other speech acts have in common?
+  How are they different?
+
+::: {.fragment}
+Question 2
+
+- How does do locutionary acts fit into the distinction of @grice_meaning_1957 between meaning$_{NN}$ and meaning$_{N}$?
+- Illocutionary effects?
+- Perlocutionary effects?
+:::
+
+---
+
+## More on felicity conditions
+
+- Performatives tend to have felicity conditions.
+- What about other types of speech act?
+
+(@ex-lights) Jo: Is Pascal's closed? <br> Bo: The lights are out.
+	- Implies there are lights.
+	- (May also imply that Pascal's is closed.)
+
+---
+
+## Presupposition
+
+A well-studied type of felicity condition on speech acts.
+
+<br>
+
+::: {.fragment}
+Apparently affects them uniformly.
+:::
+
+(@ex-lights-q) Are the lights are out?
+
+(@ex-lights-imp) Turn out the lights!
+
+::: {.fragment}
+Both imply that there are lights.
+:::
+
+---
+
+## Aspectual predicates
+
+(@ex-stop-smoking) Jo stopped smoking cigarettes.
+	- ↝ Jo used to smoke cigarettes.
+
+(@ex-continue-smoking) Jo continued smoking cigarettes.
+	- ↝ Jo used to smoke cigarettes.
+
+---
+
+## More aspectual inferences
+
+(@ex-still-smoking) Jo still smokes cigarettes.
+	- ↝ Jo used to smoke cigarettes.
+
+(@ex-yet-smoking) Does Jo smoke cigarettes yet?
+	- ↝ Jo is going to smoke cigarettes.
+
+---
+
+## Factive predicates
+
+(@ex-love) Jo loves that Bo stopped smoking.
+	- ↝ Bo used to smoke.
+	- ↝ Bo stopped smoking.
+
+(@ex-hate) Jo hates that it's raining.
+	- ↝ It's raining.
+
+---
+
+## Something weird
+
+(@ex-hate-conditional) If it's raining, then Jo hates that it's raining.
+	- ↝ ?
+
+(@ex-still-conditional) If Jo used to smoke cigarettes, then she still does.
+	- ↝ ?
+
+::: {.fragment}
+Where'd they go?
+:::
+
+---
+
+## Summary
+
+Felicity conditions:
+
+- Some kinds of felicity conditions pertain to specific illocutionary act types.
+  - commands, bets, apologies, etc.
+  
+- Other kinds of felicity conditions (presuppositions) seem to cross-cut speech acts. 
+  
+::: {.fragment style="text-align: center;"}
+What could be the locus of this difference?
+:::
+
+---
+
+### References

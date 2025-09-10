@@ -1,0 +1,119 @@
+---
+title: "Intro. to Semantics"
+bibliography: ../semantics.bib
+format:
+  revealjs:
+    css: styles.css
+    # html-math-method: mathjax
+    # mathjax-config:
+      # loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}
+      # tex:
+        # packages: {'[+]': ['bussproofs','bbox','colorbox']}
+---
+
+# The symmetry problem
+
+## Example from last time
+
+(@ex-quantity) Jo did some of the readings.
+- **Quantity implicature**: Jo didn't do all of the readings.
+- But why not: Jo didn't do *only* some of the readings?
+
+::: {.fragment}
+What we need:
+some notion of "possible alternative".
+:::
+
+---
+
+## Questions under discussion
+
+Asking a question:
+add the question onto an ongoing record of questions that need to be answered.
+
+<br>
+
+::: {.fragment}
+Discourse---at least involving assertions---always has the goal of answering some question [@roberts_information_2012].
+
+- There is always a Question Under Discussion (QUD).
+:::
+
+---
+
+## Example from last class
+
+:::: {.columns}
+
+::: {.column width="75%"}
+
+::: {.nonincremental}
+(@ex-relation) **Context**: Jo and Bo are outside Pascal's, looking in the window. <br> 
+	**Jo**: No one's at the cash register. <br>
+	**Bo**: The lights are on.
+:::
+
+::: {.fragment}
+QUD?
+
+- Is Pascal's open?
+:::
+
+:::
+
+::: {.column width="25%"}
+![](images/pascals.jpg){width="300px" height="400px"}
+:::
+
+::::
+
+---
+
+## Does this help with evaluating the maxims?
+
+::: {.fragment}
+Relation:
+
+- Help resolve the QUD.
+:::
+
+::: {.fragment}
+Quantity (Part 1):
+
+- Resolve it as much as possible.
+:::
+
+---
+
+## On the right track?
+
+(@ex-quantity-qud) **Jo**: How many cookies did Mary eat? <br>
+	**Bo**: Mary ate some of the cookies.
+	
+::: {.fragment}
+::: {.nonincremental}
+(@ex-no-quantity-qud) **Jo**: Is there any evidence against them? <br>
+	**Bo**: Some of their identity documents are forgeries.
+:::
+	
+(Based on example from @levinson_presumptive_2000.)
+:::
+
+---
+
+## Dealing with the symmetry problem
+
+Possibility:
+certain lexical items are associated with *scales* [@horn_semantic_1972].
+
+- none < some < all, every
+- one < two < three
+- decent < great < fantastic!
+
+::: {.fragment}
+How might this help with the symmetry problem?
+:::
+
+---
+
+### References
