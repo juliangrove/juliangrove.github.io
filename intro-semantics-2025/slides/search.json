@@ -102,7 +102,7 @@
     "href": "sept10.html#non-defeasibility-of-entailments",
     "title": "Intro. to Semantics",
     "section": "Non-defeasibility of entailments",
-    "text": "Non-defeasibility of entailments\n\n#Jo has at least three siblings, {and, but} she doesn’t have at least two siblings."
+    "text": "Non-defeasibility of entailments\n\n#Jo has at least three siblings, {and, but} she doesn’t have at least two siblings.\n# Jo is Bo’s sibling, {and, but} Jo and Bo aren’t siblings.\n#No one came to class, {and, but} it’s not the case that Julian didn’t come to class."
   },
   {
     "objectID": "sept10.html#conversational-implicature",
@@ -116,7 +116,7 @@
     "href": "sept10.html#defeasibility-of-conversational-implicatures",
     "title": "Intro. to Semantics",
     "section": "Defeasibility of conversational implicatures",
-    "text": "Defeasibility of conversational implicatures\n\nJo did some of the readings. In fact, she did all of them."
+    "text": "Defeasibility of conversational implicatures\n\nJo did some of the readings. In fact, she did all of them.\nI want something with lots of caffeine. In fact, I want a matcha latte.\nContext: Jo is writing a letter of rec. for Bo for the ling. instructor position.  Jo: Bo is very punctual. He has great handwriting. Last, but not least, he’d be a great ling. instructor!"
   },
   {
     "objectID": "sept10.html#presupposition",
@@ -130,7 +130,7 @@
     "href": "sept10.html#non-defeasibility-of-presuppositions",
     "title": "Intro. to Semantics",
     "section": "Non-defeasibility of presuppositions",
-    "text": "Non-defeasibility of presuppositions\n\n#Jo stopped smoking, {and, but} she didn’t used to smoke."
+    "text": "Non-defeasibility of presuppositions\n\n#Jo stopped smoking, {and, but} she didn’t used to smoke.\n#Jo loves that it’s raining, {and, but} it’s not raining.\n#Bo failed the assignment, {and, but} there isn’t an assignment.\n#Bo failed the assignment again, {and, but} he hasn’t failed it before."
   },
   {
     "objectID": "sept10.html#summary-1",
