@@ -67,7 +67,7 @@
     "href": "sept12.html#hey-wait-a-minute",
     "title": "Intro. to Semantics",
     "section": "Hey, wait a minute!",
-    "text": "Hey, wait a minute!\nThe hey, wait a minute test (von Fintel 2004).\n\nBo: You love that you’re good at Go.  Jo: Hey, wait a minute! I’m not good at Go!\nBo: You demonstrated that you’re good at Go!  Jo: No, I didn’t! / #Hey, wait a minute! I’m not good at Go!"
+    "text": "Hey, wait a minute!\nThe hey, wait a minute test (von Fintel 2004).\n\nBo: You love that you’re good at Go.  Jo: Hey, wait a minute! I’m not good at Go!\nBo: You demonstrated that you’re good at Go!  Jo: #Hey, wait a minute! I’m not good at Go!  Jo: No, I didn’t!"
   },
   {
     "objectID": "sept12.html#hey-wait-a-minute-1",
@@ -124,6 +124,13 @@
     "title": "Intro. to Semantics",
     "section": "Can they disappear?",
     "text": "Can they disappear?\n\n#If Julian enjoys syntax, then the class is taught by Julian, who enjoys syntax."
+  },
+  {
+    "objectID": "sept12.html#summary",
+    "href": "sept12.html#summary",
+    "title": "Intro. to Semantics",
+    "section": "Summary",
+    "text": "Summary\nDistinguishing entailments/presuppositions from conv. implicatures:\n\ndefeasibility/contradiction test\n\nDistinguishing entailments from presuppositions:\n\nfamily-of-sentence tests\n“hey wait a minute” test\n\n\nDistinguishing presuppositions from conventional implicatures:\n\nconventional implicatures always project (?)"
   },
   {
     "objectID": "sept12.html#references",
