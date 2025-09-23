@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignment – Introduction to semantics</title>
+<title>Sets – Introduction to semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -85,8 +65,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../speaker_meaning/maxims.html" rel="next">
-<link href="../convention/defining_meaning.html" rel="prev">
+<link href="../formal_preliminaries/products.html" rel="next">
+<link href="../diagnosing_inference/assignment.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -167,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../convention/defining_convention.html">Convention</a></li><li class="breadcrumb-item"><a href="../convention/assignment.html">Assignment</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Sets</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -227,7 +207,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../convention/assignment.html" class="sidebar-item-text sidebar-link active">
+  <a href="../convention/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
 </li>
@@ -312,7 +292,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/sets.html" class="sidebar-item-text sidebar-link">
+  <a href="../formal_preliminaries/sets.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Sets</span></a>
   </div>
 </li>
@@ -396,18 +376,18 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1" id="toc-part-1" class="nav-link active" data-scroll-target="#part-1">Part 1</a></li>
-  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
-  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
+  <li><a href="#whats-a-set" id="toc-whats-a-set" class="nav-link active" data-scroll-target="#whats-a-set">What’s a set?</a></li>
+  <li><a href="#set-forming-operations" id="toc-set-forming-operations" class="nav-link" data-scroll-target="#set-forming-operations">Set-forming operations</a></li>
+  <li><a href="#powerset" id="toc-powerset" class="nav-link" data-scroll-target="#powerset">Powerset</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../convention/defining_convention.html">Convention</a></li><li class="breadcrumb-item"><a href="../convention/assignment.html">Assignment</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Sets</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Assignment</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Sets</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -424,59 +404,40 @@ window.Quarto = {
 </header>
 
 
-<p>Due on Friday, September 5th.</p>
-<section id="part-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
-<p>Pick one of the other practices that were brought up in class, and give an analysis of whether or not it meets criteria 1-5 outlined in <a href="defining_convention.html">Defining convention</a>. To remind you, these practices were:</p>
-<ul>
-<li>Knocking on the door before entering a room</li>
-<li>Looking both ways before crossing the street</li>
-<li>Using an umbrella when it’s raining</li>
-<li>Making WiFi free available to customers at coffee shops</li>
-</ul>
-<p>Alternatively, pick your own practice to analyze, and do the same. Whatever practice you choose need not be well-known, and we need not generally be consciously aware of its existence. It just needs to be something that people do within some community with which you’re familiar. (Please don’t use one of the ones that <span class="citation" data-cites="lewis_languages_1975">Lewis (<a href="#ref-lewis_languages_1975" role="doc-biblioref">1975</a>)</span> mentions, e.g., driving on a particular side of the road in a particular country.) You might use the discussion in these notes of ‘brushing your teeth’ as a model. Note—following those notes—that some aspects of the practice might appear to be conventional, while other aspects might seem less so. If you notice that this is true of the practice you analyze, please point it out.</p>
-<p>Please consider and provide a response to the following question: is your analysis of the practice you’ve chosen consistent with your own intuitions about whether or not the practice is a convention?</p>
+<section id="whats-a-set" class="level3">
+<h3 class="anchored" data-anchor-id="whats-a-set">What’s a set?</h3>
+<p>A set is, intuitively speaking, a collection of objects, which we call the <em>elements</em> or <em>members</em> of the set. Any talk about sets is understood in the context of some universe of discourse. All sets inhabit this universe, as do any of the objects which we may consider to be members of a set. We may, for example, want to have things like words or natural numbers inhabit this universe. When analyzing the semantics of English, we may include other things too, like entities or individuals.</p>
+<p>For any set <span class="math inline">\(A\)</span> and any object <span class="math inline">\(a\)</span> in the universe, either one of the following two things is true. <span class="math display">\[\begin{align*}
+a ∈ A \tag{$a$ is a member of $A$}\\
+a ∉ A \tag{$a$ is not a member of $A$}
+\end{align*}\]</span> Moreover, sets are defined by their members. That means that, for every <span class="math inline">\(a\)</span> in the universe, if <span class="math inline">\(a ∈ A\)</span> if and only if <span class="math inline">\(a ∈ B\)</span>, then <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are the same set. This is the principle of <em>extensionality</em> for sets.</p>
+<p>We will generally help ourselves to two kinds of notation for specifying sets: list notation and predicate (or “set-comprehension”, or “set-builder”) notation. In list notation, we define a set by enumerating its elements between curly braces. For example, <span class="math display">\[\{1, 2, 3, George Washington\}\]</span> is just the set <span class="math inline">\(A\)</span> such that <span class="math inline">\(1 ∈ A\)</span>, <span class="math inline">\(2 ∈ A\)</span>, <span class="math inline">\(3 ∈ A\)</span>, and nothing else is <span class="math inline">\(∈ A\)</span>. Because of extensionality, <span class="math inline">\(\{1, 2, 3, GW\}\)</span> is the same set as <span class="math inline">\(\{1, 1, 2, 3, GW\}\)</span> is the same set as <span class="math inline">\(\{3, GW, 2, 2, 1\}\)</span>, etc. Using predicate notation, we can specify the very same set as <span class="math display">\[\{x ∣ x = 1 \text{ or } x = 2 \text{ or } x = 3 \text{ or } x = GW\}\]</span> In general, in writing ‘<span class="math inline">\(\{a\)</span> <span class="math inline">\(|\)</span> <span class="math inline">\(φ\}\)</span>’, <span class="math inline">\(a\)</span> will be an expression with some number of <em>variables</em> occurring in it (things like <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>, and so on), and <span class="math inline">\(φ\)</span> will be a sentence expressing a condition on the values of these variables. Any number of the variables in <span class="math inline">\(a\)</span>, and generally <em>only these</em>, can occur in <span class="math inline">\(φ\)</span>. In the example above, <span class="math inline">\(a\)</span> just was the variable <span class="math inline">\(x\)</span>, and the condition expressed was that the value of <span class="math inline">\(x\)</span> be either 1, 2, 3, or George.</p>
+<p>But we could also use predicate notation, as in <span class="math display">\[\{x + 1 ∣ x = 1 \text{ or } x = 2 \text{ or } x = 3\}\]</span> where <span class="math inline">\(a\)</span> is the complex expression ‘<span class="math inline">\(x +
+1\)</span>’, to specify the set <span class="math inline">\(\{2, 3, 4\}\)</span>.</p>
+<p>Importantly, there is an empty set, which we’ll write ‘<span class="math inline">\(\varnothing\)</span>’. It has no members. As a result, <span class="math inline">\(a ∉ \varnothing\)</span> for any <span class="math inline">\(a\)</span> in the universe. The empty set can also be specified in list notation as `<span class="math inline">\(\{\}\)</span>’.</p>
 </section>
-<section id="part-2" class="level3">
-<h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
-<p>Consider the following state of affairs. Jo utters the sentence in (1) after her laptop freezes.</p>
-<ol class="example" type="1">
-<li>This damn computer is so slow!</li>
-</ol>
-<p>There are a number of inferences you might draw based on this utterance. For example:</p>
-<ul>
-<li>There is a computer.</li>
-<li>The computer exceeds some degree of slowness, perhaps salient in the context of utterance, which is particularly high.</li>
-<li>Jo is frustrated by her computer.</li>
-</ul>
-<p>The last inference—that Jo is frustrated—appears to be triggered by her use of the word <em>damn</em>. In general, such words (called <em>expressives</em>) give rise to inferences of this kind, e.g., about an attitude held by the person who utters them; in this case, we draw an inference about Jo’s attitude toward her laptop.</p>
-<p>This use of the word <em>damn</em>, which causes the frustration inference, appears, in some sense to <em>mean</em> that Jo is frustrated. Do you think that this notion of meaning is meaning<span class="math inline">\(_{N}\)</span> or meaning<span class="math inline">\(_{NN}\)</span>? That is, which of these relates utterances of (1)—or sentences containing the word <em>damn</em>, more generally—to inferences about frustration? Explain why, using the criteria for meaning<span class="math inline">\(_{NN}\)</span> that Grice discusses.</p>
+<section id="set-forming-operations" class="level3">
+<h3 class="anchored" data-anchor-id="set-forming-operations">Set-forming operations</h3>
+<p>Given any two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we can use the following set-forming operations. <span class="math display">\[\begin{align*}
+&amp;a ∈ A \cup B &amp;\textit{if $a ∈ A$ or $a ∈ B$}\tag{union}\\
+&amp;a ∈ A \cap B &amp;\textit{if $a ∈ A$ and $a ∈ B$}\tag{intersection}\\
+&amp;a ∈ A - B &amp;\textit{if $a ∈ A$ and $a ∉ B$}\tag{set difference}
+\end{align*}\]</span> In addition, we say one set <span class="math inline">\(A\)</span> is a <em>subset</em> of another set <span class="math inline">\(B\)</span> <span class="math display">\[A ⊆ B\]</span> just in case every <span class="math inline">\(a ∈ A\)</span> is also <span class="math inline">\(∈ B\)</span>. If, in addition, there is some <span class="math inline">\(b ∈ B\)</span> such that <span class="math inline">\(b ∉ A\)</span>, we may write <span class="math display">\[A ⊂ B\]</span> (<span class="math inline">\(A\)</span> is a <em>proper subset</em> of <span class="math inline">\(B\)</span>) to indicate this. Note that because of extensionality, <span class="math inline">\(A = B\)</span> just in case both <span class="math inline">\(A ⊆ B\)</span> and <span class="math inline">\(B ⊆ A\)</span>.</p>
+<p>We may sometimes refer to sets using notation for <em>generalized</em> intersection and union. If <span class="math inline">\(S\)</span> is a set all of whose members are <em>also</em> sets, we write <span class="math display">\[⋃ S\]</span> to mean <span class="math inline">\(\{x\)</span> <span class="math inline">\(|\)</span> <span class="math inline">\(x ∈ A\)</span> for some <span class="math inline">\(A ∈ S\}\)</span>; that is, we squash <span class="math inline">\(S\)</span> into the union of all of its members.</p>
+<p>For example, let’s define <span class="math inline">\(ℕ = \{0, 1, 2, ...\}\)</span> (i.e., the set of “natural numbers”). Then, we can define the set <span class="math inline">\(\{\{x\} ∣ x ∈ ℕ\}\)</span>—this is just the set of sets with only one member, and whose single member is one of the natural numbers; i.e., <span class="math inline">\(\{\{0\}, \{1\}, \{3\}, ...\}\)</span>. Now, we can define the set <span class="math inline">\(⋃\{\{x\} ∣ x ∈ ℕ\}\)</span>—this set is just <span class="math inline">\(ℕ\)</span>!</p>
+<p>Likewise, we write <span class="math display">\[⋂ S\]</span> to mean <span class="math inline">\(\{x\)</span> <span class="math inline">\(|\)</span> <span class="math inline">\(x ∈ A\)</span> for every <span class="math inline">\(A ∈ S\}\)</span>; that is, we squash <span class="math inline">\(S\)</span> into the intersection of all of its members. If we did this for the set defined above, i.e., <span class="math inline">\(⋃\{\{x\} ∣ x ∈ ℕ\}\)</span>, we’d get back the empty set (<span class="math inline">\(\varnothing\)</span>)—none of the sets in the original set has any members in common!</p>
 </section>
-<section id="part-3" class="level3">
-<h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
-<p>Consider the following different state of affairs. Bo maintains two forms of the verb <em>be</em> that he uses in the antecedents of counterfactual conditional sentences. For example, sometimes he utters sentences like (2)</p>
-<ol start="2" class="example" type="1">
-<li>If I was buying ice cream, I would probably get chocolate.</li>
-</ol>
-<p>while at other times he utters sentences like (3).</p>
-<ol start="3" class="example" type="1">
-<li>If I were buying ice cream, I would probably get chocolate.</li>
-</ol>
-<p>In the first set of cases (exemplified by (2)), he inflects <em>be</em> as <em>was</em> when the subject is <em>I</em>, <em>he</em>, <em>she</em>, or a singular noun phrase, and as <em>were</em> when the subject is <em>we</em>, <em>you</em>, <em>they</em>, or a plural noun phrase. Meanwhile, in the second set of cases, (exemplified by (3)), he inflects <em>be</em> as <em>were</em> regardless of the person or number of the subject.</p>
-<p>Importantly, he tends to use these forms of <em>be</em> in this way in somewhat different social contexts. He is more likely to utter sentences like (2) (<em>be</em> -&gt; <em>was</em>) when he is with his friends or family or buying something at the grocery store (i.e., “informal” settings); while he is more likely to utter sentences like (3) (<em>be</em> -&gt; <em>were</em>) when he is answering a question in class or writing a paper (i.e., “formal” settings). In both cases, he appears to be signaling, in one way or another, something about his identity as a speaker of English and his relationship to his interlocutors. In the first set of contexts, he is not trying to speak “correctly” according to a received standard about spoken or written English, while in the second set of contexts, it is important to him that his English sound “correct”, and that his interlocutors draw the inference that he speaks English according to a particular formal standard.</p>
-<p>Do you think that the inference about Bo’s “correct” use of English in these contexts, i.e., when he uses <em>were</em> in cases in which he might otherwise use <em>was</em> is related to meaning<span class="math inline">\(_{N}\)</span> or meaning<span class="math inline">\(_{NN}\)</span>? In other words, in which sense of <em>mean</em> does Bo’s use of the form of the verb <em>be</em> <u>mean</u> that he uses English “correctly”? In the sense relevant to natural meaning, or in the sense relevant to non-natural meaning? Again, explain why, making reference to the criteria outlined by Grice.</p>
+<section id="powerset" class="level3">
+<h3 class="anchored" data-anchor-id="powerset">Powerset</h3>
+<p>Given a set <span class="math inline">\(A\)</span>, we may take its <em>powerset</em>, which is often written ‘<span class="math inline">\(2^A\)</span>’ The powerset of <span class="math inline">\(A\)</span> is defined as <span class="math display">\[2^A = \{B ∣ B ⊆ A\}\]</span> That is, it is the set of subsets of <span class="math inline">\(A\)</span>.</p>
+<p>The power set of <span class="math inline">\(ℕ\)</span>, for example is <span class="math inline">\(\{\{1\}, \{7, 223423, 2\}, ... \text{all the ways of putting natural numbers into sets}\}\)</span>. Indeed, the set <span class="math inline">\(\{\{x\} ∣ x ∈ ℕ\}\)</span> that we talked about above is a <em>subset</em> of the powerset of <span class="math inline">\(ℕ\)</span>. (Why?)</p>
 
 
 <!-- -->
 
-
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-lewis_languages_1975" class="csl-entry" role="listitem">
-Lewis, David K. 1975. <span>“Languages and <span>Language</span>.”</span> In <em>Arguing about Language</em>, edited by Darragh Byrne and Max Kölbel. Arguing about Philosophy. New York: Routledge.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -929,92 +890,98 @@ Lewis, David K. 1975. <span>“Languages and <span>Language</span>.”</span> In
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../convention/defining_meaning.html" class="pagination-link" aria-label="Defining meaning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Defining meaning</span>
+      <a href="../diagnosing_inference/assignment.html" class="pagination-link" aria-label="Assignment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../speaker_meaning/maxims.html" class="pagination-link" aria-label="The Gricean maxims">
-        <span class="nav-page-text">The Gricean maxims</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../formal_preliminaries/products.html" class="pagination-link" aria-label="Products">
+        <span class="nav-page-text">Products</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Assignment"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Sets"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Due on Friday, September 5th.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">### What's a set?</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 1</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Pick one of the other practices that were brought up in class, and give an analysis of whether or not it meets criteria 1-5 outlined in <span class="co">[</span><span class="ot">Defining convention</span><span class="co">](defining_convention.html)</span>.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>To remind you, these practices were:</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Knocking on the door before entering a room</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Looking both ways before crossing the street</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using an umbrella when it's raining</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Making WiFi free available to customers at coffee shops</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Alternatively, pick your own practice to analyze, and do the same.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Whatever practice you choose need not be well-known, and we need not generally be consciously aware of its existence.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>It just needs to be something that people do within some community with which you're familiar.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>(Please don't use one of the ones that @lewis_languages_1975 mentions, e.g., driving on a particular side of the road in a particular country.)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>You might use the discussion in these notes of 'brushing your teeth' as a model.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Note---following those notes---that some aspects of the practice might appear to be conventional, while other aspects might seem less so.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>If you notice that this is true of the practice you analyze, please point it out.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Please consider and provide a response to the following question:</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>is your analysis of the practice you've chosen consistent with your own intuitions about whether or not the practice is a convention?</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Consider the following state of affairs.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Jo utters the sentence in (@ex-jo-damn) after her laptop freezes.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>(@ex-jo-damn) This damn computer is so slow!</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>There are a number of inferences you might draw based on this utterance.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>For example:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>A set is, intuitively speaking, a collection of objects, which we call the *elements* or *members* of the set.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Any talk about sets is understood in the context of some universe of discourse.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>All sets inhabit this universe, as do any of the objects which we may consider to be members of a set.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>We may, for example, want to have things like words or natural numbers inhabit this universe.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>When analyzing the semantics of English, we may include other things too, like entities or individuals.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>For any set $A$ and any object $a$ in the universe, either one of the following two things is true.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$\begin{align*}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>a ∈ A \tag{$a$ is a member of $A$}<span class="sc">\\</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>a ∉ A \tag{$a$ is not a member of $A$}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\end{align*}$$</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Moreover, sets are defined by their members.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>That means that, for every $a$ in the universe, if $a ∈ A$ if and only if $a ∈ B$, then $A$ and $B$ are the same set.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>This is the principle of *extensionality* for sets.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>We will generally help ourselves to two kinds of notation for specifying sets:</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>list notation and predicate (or "set-comprehension", or "set-builder") notation.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>In list notation, we define a set by enumerating its elements between curly braces.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>For example,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>1, 2, 3, George Washington<span class="sc">\}</span>$$</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>is just the set $A$ such that $1 ∈ A$, $2 ∈ A$, $3 ∈ A$, and nothing else is $∈ A$.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Because of extensionality, $<span class="sc">\{</span>1, 2, 3, GW<span class="sc">\}</span>$ is the same set as $<span class="sc">\{</span>1, 1, 2, 3, GW<span class="sc">\}</span>$ is the same set as $<span class="sc">\{</span>3, GW, 2, 2, 1<span class="sc">\}</span>$, etc.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Using predicate notation, we can specify the very same set as</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>x ∣ x = 1 \text{ or } x = 2 \text{ or } x = 3 \text{ or } x = GW<span class="sc">\}</span>$$</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>In general, in writing '$<span class="sc">\{</span>a$ $|$ $φ<span class="sc">\}</span>$', $a$ will be an expression with some number of *variables* occurring in it (things like $x$, $y$, $z$, and so on), and $φ$ will be a sentence expressing a condition on the values of these variables.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>Any number of the variables in $a$, and generally *only these*, can occur in $φ$.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>In the example above, $a$ just was the variable $x$, and the condition expressed was that the value of $x$ be either 1, 2, 3, or George.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>But we could also use predicate notation, as in $$<span class="sc">\{</span>x + 1 ∣ x = 1 \text{ or } x = 2 \text{ or } x = 3<span class="sc">\}</span>$$ where $a$ is the complex expression '$x +</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>1$', to specify the set $<span class="sc">\{</span>2, 3, 4<span class="sc">\}</span>$.</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>There is a computer.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The computer exceeds some degree of slowness, perhaps salient in the context of utterance, which is particularly high.</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Jo is frustrated by her computer.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>The last inference---that Jo is frustrated---appears to be triggered by her use of the word *damn*.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>In general, such words (called *expressives*) give rise to inferences of this kind, e.g., about an attitude held by the person who utters them;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>in this case, we draw an inference about Jo's attitude toward her laptop.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>This use of the word *damn*, which causes the frustration inference, appears, in some sense to *mean* that Jo is frustrated.</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Do you think that this notion of meaning is meaning$_{N}$ or meaning$_{NN}$?</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>That is, which of these relates utterances of (@ex-jo-damn)---or sentences containing the word *damn*, more generally---to inferences about frustration?</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Explain why, using the criteria for meaning$_{NN}$ that Grice discusses.</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Consider the following different state of affairs.</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Bo maintains two forms of the verb *be* that he uses in the antecedents of counterfactual conditional sentences.</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>For example, sometimes he utters sentences like (@ex-bo-was)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>(@ex-bo-was) If I was buying ice cream, I would probably get chocolate.</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>while at other times he utters sentences like (@ex-bo-were).</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>(@ex-bo-were) If I were buying ice cream, I would probably get chocolate.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Importantly, there is an empty set, which we'll write '$\varnothing$'.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>It has no members.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>As a result, $a ∉ \varnothing$ for any $a$ in the universe.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>The empty set can also be specified in list notation as `$<span class="sc">\{\}</span>$'.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### Set-forming operations</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Given any two sets $A$ and $B$, we can use the following set-forming operations.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$\begin{align*}</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>&amp;a ∈ A \cup B &amp;\textit{if $a ∈ A$ or $a ∈ B$}\tag{union}<span class="sc">\\</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>&amp;a ∈ A \cap B &amp;\textit{if $a ∈ A$ and $a ∈ B$}\tag{intersection}<span class="sc">\\</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>&amp;a ∈ A - B &amp;\textit{if $a ∈ A$ and $a ∉ B$}\tag{set difference}</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>\end{align*}$$</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>In addition, we say one set $A$ is a *subset* of another set $B$</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>$$A ⊆ B$$</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>just in case every $a ∈ A$ is also $∈ B$.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>If, in addition, there is some $b ∈ B$ such that $b ∉ A$, we may write</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$A ⊂ B$$ ($A$ is a *proper subset* of $B$) to indicate this.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Note that because of extensionality, $A = B$ just in case both $A ⊆ B$ and $B ⊆ A$.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>We may sometimes refer to sets using notation for *generalized* intersection</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>and union.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>If $S$ is a set all of whose members are *also* sets, we write $$⋃ S$$ to mean $<span class="sc">\{</span>x$ $|$ $x ∈ A$ for some $A ∈ S<span class="sc">\}</span>$;</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>that is, we squash $S$ into the union of all of its members.</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>In the first set of cases (exemplified by (@ex-bo-was)), he inflects *be* as *was* when the subject is *I*, *he*, *she*, or a singular noun phrase, and as *were* when the subject is *we*, *you*, *they*, or a plural noun phrase.</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Meanwhile, in the second set of cases, (exemplified by (@ex-bo-were)), he inflects *be* as *were* regardless of the person or number of the subject.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Importantly, he tends to use these forms of *be* in this way in somewhat different social contexts.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>He is more likely to utter sentences like (@ex-bo-was) (*be* -&gt; *was*) when he is with his friends or family or buying something at the grocery store (i.e., "informal" settings);</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>while he is more likely to utter sentences like (@ex-bo-were) (*be* -&gt; *were*) when he is answering a question in class or writing a paper (i.e., "formal" settings).</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>In both cases, he appears to be signaling, in one way or another, something about his identity as a speaker of English and his relationship to his interlocutors.</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>In the first set of contexts, he is not trying to speak "correctly" according to a received standard about spoken or written English, while in the second set of contexts, it is important to him that his English sound "correct", and that his interlocutors draw the inference that he speaks English according to a particular formal standard.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>For example, let's define $ℕ = <span class="sc">\{</span>0, 1, 2, ...<span class="sc">\}</span>$ (i.e., the set of "natural numbers").</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Then, we can define the set $<span class="sc">\{\{</span>x<span class="sc">\}</span> ∣ x ∈ ℕ<span class="sc">\}</span>$---this is just the set of sets with only one member, and whose single member is one of the natural numbers;</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>i.e., $<span class="sc">\{\{</span>0<span class="sc">\}</span>, <span class="sc">\{</span>1<span class="sc">\}</span>, <span class="sc">\{</span>3<span class="sc">\}</span>, ...<span class="sc">\}</span>$.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Now, we can define the set $⋃<span class="sc">\{\{</span>x<span class="sc">\}</span> ∣ x ∈ ℕ<span class="sc">\}</span>$---this set is just $ℕ$!</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Likewise, we write $$⋂ S$$ to mean $<span class="sc">\{</span>x$ $|$ $x ∈ A$ for every $A ∈ S<span class="sc">\}</span>$;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>that is, we squash $S$ into the intersection of all of its members.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>If we did this for the set defined above, i.e., $⋃<span class="sc">\{\{</span>x<span class="sc">\}</span> ∣ x ∈ ℕ<span class="sc">\}</span>$, we'd get back the empty set ($\varnothing$)---none of the sets in the original set has any members in common!</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Do you think that the inference about Bo's "correct" use of English in these contexts, i.e., when he uses *were* in cases in which he might otherwise use *was*  is related to meaning$_{N}$ or meaning$_{NN}$?</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>In other words, in which sense  of *mean* does Bo's use of the form of the verb *be* <span class="co">[</span><span class="ot">mean</span><span class="co">]</span>{.underline} that he uses English "correctly"?</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>In the sense relevant to natural meaning, or in the sense relevant to non-natural meaning?</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Again, explain why, making reference to the criteria outlined by Grice.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">### Powerset</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Given a set $A$, we may take its *powerset*, which is often written '$2^A$'</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>The powerset of $A$ is defined as</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>$$2^A = <span class="sc">\{</span>B ∣ B ⊆ A<span class="sc">\}</span>$$</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>That is, it is the set of subsets of $A$.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>The power set of $ℕ$, for example is $<span class="sc">\{\{</span>1<span class="sc">\}</span>, <span class="sc">\{</span>7, 223423, 2<span class="sc">\}</span>, ... \text{all the ways of putting natural numbers into sets}<span class="sc">\}</span>$.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>Indeed, the set $<span class="sc">\{\{</span>x<span class="sc">\}</span> ∣ x ∈ ℕ<span class="sc">\}</span>$ that we talked about above is a *subset* of the powerset of $ℕ$.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>(Why?)</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

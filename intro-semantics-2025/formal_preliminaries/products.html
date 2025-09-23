@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignment – Introduction to semantics</title>
+<title>Products – Introduction to semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,27 +55,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -85,8 +65,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../speaker_meaning/maxims.html" rel="next">
-<link href="../convention/defining_meaning.html" rel="prev">
+<link href="../formal_preliminaries/relations.html" rel="next">
+<link href="../formal_preliminaries/sets.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -167,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../convention/defining_convention.html">Convention</a></li><li class="breadcrumb-item"><a href="../convention/assignment.html">Assignment</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/products.html">Products</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -227,7 +207,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../convention/assignment.html" class="sidebar-item-text sidebar-link active">
+  <a href="../convention/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
 </li>
@@ -318,7 +298,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/products.html" class="sidebar-item-text sidebar-link">
+  <a href="../formal_preliminaries/products.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Products</span></a>
   </div>
 </li>
@@ -391,23 +371,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#part-1" id="toc-part-1" class="nav-link active" data-scroll-target="#part-1">Part 1</a></li>
-  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
-  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../convention/defining_convention.html">Convention</a></li><li class="breadcrumb-item"><a href="../convention/assignment.html">Assignment</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/products.html">Products</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Assignment</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Products</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -424,59 +396,15 @@ window.Quarto = {
 </header>
 
 
-<p>Due on Friday, September 5th.</p>
-<section id="part-1" class="level3">
-<h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
-<p>Pick one of the other practices that were brought up in class, and give an analysis of whether or not it meets criteria 1-5 outlined in <a href="defining_convention.html">Defining convention</a>. To remind you, these practices were:</p>
-<ul>
-<li>Knocking on the door before entering a room</li>
-<li>Looking both ways before crossing the street</li>
-<li>Using an umbrella when it’s raining</li>
-<li>Making WiFi free available to customers at coffee shops</li>
-</ul>
-<p>Alternatively, pick your own practice to analyze, and do the same. Whatever practice you choose need not be well-known, and we need not generally be consciously aware of its existence. It just needs to be something that people do within some community with which you’re familiar. (Please don’t use one of the ones that <span class="citation" data-cites="lewis_languages_1975">Lewis (<a href="#ref-lewis_languages_1975" role="doc-biblioref">1975</a>)</span> mentions, e.g., driving on a particular side of the road in a particular country.) You might use the discussion in these notes of ‘brushing your teeth’ as a model. Note—following those notes—that some aspects of the practice might appear to be conventional, while other aspects might seem less so. If you notice that this is true of the practice you analyze, please point it out.</p>
-<p>Please consider and provide a response to the following question: is your analysis of the practice you’ve chosen consistent with your own intuitions about whether or not the practice is a convention?</p>
-</section>
-<section id="part-2" class="level3">
-<h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
-<p>Consider the following state of affairs. Jo utters the sentence in (1) after her laptop freezes.</p>
-<ol class="example" type="1">
-<li>This damn computer is so slow!</li>
-</ol>
-<p>There are a number of inferences you might draw based on this utterance. For example:</p>
-<ul>
-<li>There is a computer.</li>
-<li>The computer exceeds some degree of slowness, perhaps salient in the context of utterance, which is particularly high.</li>
-<li>Jo is frustrated by her computer.</li>
-</ul>
-<p>The last inference—that Jo is frustrated—appears to be triggered by her use of the word <em>damn</em>. In general, such words (called <em>expressives</em>) give rise to inferences of this kind, e.g., about an attitude held by the person who utters them; in this case, we draw an inference about Jo’s attitude toward her laptop.</p>
-<p>This use of the word <em>damn</em>, which causes the frustration inference, appears, in some sense to <em>mean</em> that Jo is frustrated. Do you think that this notion of meaning is meaning<span class="math inline">\(_{N}\)</span> or meaning<span class="math inline">\(_{NN}\)</span>? That is, which of these relates utterances of (1)—or sentences containing the word <em>damn</em>, more generally—to inferences about frustration? Explain why, using the criteria for meaning<span class="math inline">\(_{NN}\)</span> that Grice discusses.</p>
-</section>
-<section id="part-3" class="level3">
-<h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
-<p>Consider the following different state of affairs. Bo maintains two forms of the verb <em>be</em> that he uses in the antecedents of counterfactual conditional sentences. For example, sometimes he utters sentences like (2)</p>
-<ol start="2" class="example" type="1">
-<li>If I was buying ice cream, I would probably get chocolate.</li>
-</ol>
-<p>while at other times he utters sentences like (3).</p>
-<ol start="3" class="example" type="1">
-<li>If I were buying ice cream, I would probably get chocolate.</li>
-</ol>
-<p>In the first set of cases (exemplified by (2)), he inflects <em>be</em> as <em>was</em> when the subject is <em>I</em>, <em>he</em>, <em>she</em>, or a singular noun phrase, and as <em>were</em> when the subject is <em>we</em>, <em>you</em>, <em>they</em>, or a plural noun phrase. Meanwhile, in the second set of cases, (exemplified by (3)), he inflects <em>be</em> as <em>were</em> regardless of the person or number of the subject.</p>
-<p>Importantly, he tends to use these forms of <em>be</em> in this way in somewhat different social contexts. He is more likely to utter sentences like (2) (<em>be</em> -&gt; <em>was</em>) when he is with his friends or family or buying something at the grocery store (i.e., “informal” settings); while he is more likely to utter sentences like (3) (<em>be</em> -&gt; <em>were</em>) when he is answering a question in class or writing a paper (i.e., “formal” settings). In both cases, he appears to be signaling, in one way or another, something about his identity as a speaker of English and his relationship to his interlocutors. In the first set of contexts, he is not trying to speak “correctly” according to a received standard about spoken or written English, while in the second set of contexts, it is important to him that his English sound “correct”, and that his interlocutors draw the inference that he speaks English according to a particular formal standard.</p>
-<p>Do you think that the inference about Bo’s “correct” use of English in these contexts, i.e., when he uses <em>were</em> in cases in which he might otherwise use <em>was</em> is related to meaning<span class="math inline">\(_{N}\)</span> or meaning<span class="math inline">\(_{NN}\)</span>? In other words, in which sense of <em>mean</em> does Bo’s use of the form of the verb <em>be</em> <u>mean</u> that he uses English “correctly”? In the sense relevant to natural meaning, or in the sense relevant to non-natural meaning? Again, explain why, making reference to the criteria outlined by Grice.</p>
+<p>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we take their binary Cartesian product <span class="math display">\[(A × B)\]</span> to be the set of pairs of elements <span class="math inline">\(⟨a, b⟩\)</span>, where <span class="math inline">\(a ∈ A\)</span> and <span class="math inline">\(b ∈ B\)</span>. We call <span class="math inline">\(a\)</span> the first <em>component</em> (or <em>projection</em>) of such a pair and <span class="math inline">\(b\)</span> the second component. Given a pair <span class="math inline">\(p\)</span>, we will sometimes write ‘<span class="math inline">\(p_{1}\)</span>’ to refer to its first component and ‘<span class="math inline">\(p_{2}\)</span>’ to refer to its second component. In particular: <span class="math display">\[⟨x, y⟩_{1} = x\]</span> <span class="math display">\[⟨x, y⟩_{2} = y\]</span></p>
+<p>The following statement is also true: <span class="math display">\[⟨x_{1}, x_{2}⟩ = x\]</span> That is, if you take the first and second components of a pair and pair them back up, you haven’t done anything!</p>
+<p>We can generalize binary products to <span class="math inline">\(n\)</span>-ary products by considering the former to correspond to the special case where <span class="math inline">\(n = 2\)</span>. For the general case <span class="math display">\[A₁ × ... × A_{n-1} × Aₙ\]</span> we can encode this product as <span class="math display">\[(...(A₁ × ... × A_{n-1}) × Aₙ)\]</span> For example, <span class="math inline">\(A × B × C\)</span> is just <span class="math inline">\(((A × B) × C)\)</span>; its members are, therefore, pairs <span class="math inline">\(⟨⟨a, b⟩, c⟩\)</span>, which is just how we can encode 3-tuples <span class="math inline">\(⟨a, b, c⟩\)</span>.</p>
 
 
 <!-- -->
 
 
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-lewis_languages_1975" class="csl-entry" role="listitem">
-Lewis, David K. 1975. <span>“Languages and <span>Language</span>.”</span> In <em>Arguing about Language</em>, edited by Darragh Byrne and Max Kölbel. Arguing about Philosophy. New York: Routledge.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -929,92 +857,36 @@ Lewis, David K. 1975. <span>“Languages and <span>Language</span>.”</span> In
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../convention/defining_meaning.html" class="pagination-link" aria-label="Defining meaning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Defining meaning</span>
+      <a href="../formal_preliminaries/sets.html" class="pagination-link" aria-label="Sets">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Sets</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../speaker_meaning/maxims.html" class="pagination-link" aria-label="The Gricean maxims">
-        <span class="nav-page-text">The Gricean maxims</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../formal_preliminaries/relations.html" class="pagination-link" aria-label="Relations">
+        <span class="nav-page-text">Relations</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Assignment"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Products"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Due on Friday, September 5th.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 1</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Pick one of the other practices that were brought up in class, and give an analysis of whether or not it meets criteria 1-5 outlined in <span class="co">[</span><span class="ot">Defining convention</span><span class="co">](defining_convention.html)</span>.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>To remind you, these practices were:</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Given two sets $A$ and $B$, we take their binary Cartesian product $$(A × B)$$ to be the set of pairs of elements $⟨a, b⟩$, where $a ∈ A$ and $b ∈ B$.</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>We call $a$ the first *component* (or *projection*) of such a pair and $b$ the second component.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Given a pair $p$, we will sometimes write '$p_{1}$' to refer to its first component and '$p_{2}$' to refer to its second component.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>In particular:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>$$⟨x, y⟩_{1} = x$$</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>$$⟨x, y⟩_{2} = y$$</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Knocking on the door before entering a room</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Looking both ways before crossing the street</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Using an umbrella when it's raining</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Making WiFi free available to customers at coffee shops</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Alternatively, pick your own practice to analyze, and do the same.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Whatever practice you choose need not be well-known, and we need not generally be consciously aware of its existence.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>It just needs to be something that people do within some community with which you're familiar.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>(Please don't use one of the ones that @lewis_languages_1975 mentions, e.g., driving on a particular side of the road in a particular country.)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>You might use the discussion in these notes of 'brushing your teeth' as a model.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Note---following those notes---that some aspects of the practice might appear to be conventional, while other aspects might seem less so.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>If you notice that this is true of the practice you analyze, please point it out.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Please consider and provide a response to the following question:</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>is your analysis of the practice you've chosen consistent with your own intuitions about whether or not the practice is a convention?</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Consider the following state of affairs.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Jo utters the sentence in (@ex-jo-damn) after her laptop freezes.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>(@ex-jo-damn) This damn computer is so slow!</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>There are a number of inferences you might draw based on this utterance.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>For example:</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>There is a computer.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The computer exceeds some degree of slowness, perhaps salient in the context of utterance, which is particularly high.</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Jo is frustrated by her computer.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>The last inference---that Jo is frustrated---appears to be triggered by her use of the word *damn*.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>In general, such words (called *expressives*) give rise to inferences of this kind, e.g., about an attitude held by the person who utters them;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>in this case, we draw an inference about Jo's attitude toward her laptop.</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>This use of the word *damn*, which causes the frustration inference, appears, in some sense to *mean* that Jo is frustrated.</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Do you think that this notion of meaning is meaning$_{N}$ or meaning$_{NN}$?</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>That is, which of these relates utterances of (@ex-jo-damn)---or sentences containing the word *damn*, more generally---to inferences about frustration?</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Explain why, using the criteria for meaning$_{NN}$ that Grice discusses.</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Consider the following different state of affairs.</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Bo maintains two forms of the verb *be* that he uses in the antecedents of counterfactual conditional sentences.</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>For example, sometimes he utters sentences like (@ex-bo-was)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>(@ex-bo-was) If I was buying ice cream, I would probably get chocolate.</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>while at other times he utters sentences like (@ex-bo-were).</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>(@ex-bo-were) If I were buying ice cream, I would probably get chocolate.</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>In the first set of cases (exemplified by (@ex-bo-was)), he inflects *be* as *was* when the subject is *I*, *he*, *she*, or a singular noun phrase, and as *were* when the subject is *we*, *you*, *they*, or a plural noun phrase.</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Meanwhile, in the second set of cases, (exemplified by (@ex-bo-were)), he inflects *be* as *were* regardless of the person or number of the subject.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Importantly, he tends to use these forms of *be* in this way in somewhat different social contexts.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>He is more likely to utter sentences like (@ex-bo-was) (*be* -&gt; *was*) when he is with his friends or family or buying something at the grocery store (i.e., "informal" settings);</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>while he is more likely to utter sentences like (@ex-bo-were) (*be* -&gt; *were*) when he is answering a question in class or writing a paper (i.e., "formal" settings).</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>In both cases, he appears to be signaling, in one way or another, something about his identity as a speaker of English and his relationship to his interlocutors.</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>In the first set of contexts, he is not trying to speak "correctly" according to a received standard about spoken or written English, while in the second set of contexts, it is important to him that his English sound "correct", and that his interlocutors draw the inference that he speaks English according to a particular formal standard.</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Do you think that the inference about Bo's "correct" use of English in these contexts, i.e., when he uses *were* in cases in which he might otherwise use *was*  is related to meaning$_{N}$ or meaning$_{NN}$?</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>In other words, in which sense  of *mean* does Bo's use of the form of the verb *be* <span class="co">[</span><span class="ot">mean</span><span class="co">]</span>{.underline} that he uses English "correctly"?</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>In the sense relevant to natural meaning, or in the sense relevant to non-natural meaning?</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Again, explain why, making reference to the criteria outlined by Grice.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>The following statement is also true:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$$⟨x_{1}, x_{2}⟩ = x$$</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>That is, if you take the first and second components of a pair and pair them back up, you haven't done anything!</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>We can generalize binary products to $n$-ary products by considering the former to correspond to the special case where $n = 2$.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>For the general case $$A₁ × ... × A_{n-1} × Aₙ$$ we can encode this product as $$(...(A₁ × ... × A_{n-1}) × Aₙ)$$</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>For example, $A × B × C$ is just $((A × B) × C)$;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>its members are, therefore, pairs $⟨⟨a, b⟩, c⟩$, which is just how we can encode 3-tuples $⟨a, b, c⟩$.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
