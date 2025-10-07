@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Functions – Introduction to semantics</title>
+<title>Overview – Introduction to semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../formal_preliminaries/languages.html" rel="next">
-<link href="../formal_preliminaries/relations.html" rel="prev">
+<link href="../models/ana_syntax.html" rel="next">
+<link href="../formal_preliminaries/assignment.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -147,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/functions.html">Functions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../models/overview.html">Models</a></li><li class="breadcrumb-item"><a href="../models/overview.html">Overview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -310,7 +310,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/functions.html" class="sidebar-item-text sidebar-link active">
+  <a href="../formal_preliminaries/functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
   </div>
 </li>
@@ -345,7 +345,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../models/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../models/overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -422,9 +422,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/functions.html">Functions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../models/overview.html">Models</a></li><li class="breadcrumb-item"><a href="../models/overview.html">Overview</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Functions</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Overview</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -441,21 +441,26 @@ window.Quarto = {
 </header>
 
 
-<p>A function from a set <span class="math inline">\(A\)</span> to a set <span class="math inline">\(B\)</span> is a map from elements of <span class="math inline">\(A\)</span> to elements of <span class="math inline">\(B\)</span> which pairs each element of <span class="math inline">\(A\)</span> with exactly one element of <span class="math inline">\(B\)</span>. If <span class="math inline">\(f\)</span> is such a function, we write <span class="math display">\[f : A → B\]</span> to indicate this. We call <span class="math inline">\(A\)</span> the <em>domain</em> of the function, and we call <span class="math inline">\(B\)</span> the <em>codomain</em> of the function. If <span class="math inline">\(a ∈ A\)</span>, then we write <span class="math display">\[f(a)\]</span> to pick out the unique <span class="math inline">\(b ∈ B\)</span> that <span class="math inline">\(f\)</span> pairs <span class="math inline">\(a\)</span> up with. In case <span class="math inline">\(f(a) = b\)</span> (for some <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>), we call <span class="math inline">\(a\)</span> the <em>argument</em> of the function <span class="math inline">\(f\)</span>, and we call <span class="math inline">\(b\)</span> the <em>value</em> of the function <span class="math inline">\(f\)</span> on <span class="math inline">\(a\)</span>.</p>
-<p>Kind of like with relations, the definition of (unary) functions can be generalized to that for <em>n</em>-ary functions by considering the latter to be a map from the product of <span class="math inline">\(n\)</span> sets <span class="math inline">\(A₁, ..., Aₙ\)</span> to a set <span class="math inline">\(B\)</span>. If <span class="math inline">\(f\)</span> is such an <span class="math inline">\(n\)</span>-ary function, we write <span class="math display">\[f : A_1 × ... × A_n → B\]</span> to indicate this. Given <span class="math inline">\(n\)</span> arguments <span class="math inline">\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\)</span>, we write <span class="math display">\[f(a_1, ..., a_n)\]</span> to pick out out the <span class="math inline">\(b ∈ B\)</span> that <span class="math inline">\(f\)</span> maps <span class="math inline">\(a₁, ..., aₙ\)</span> to.</p>
-<!-- Two properties of functions are sometimes important for certain purposes: if -->
-<!-- a function $f$ from $A$ (or $A₁, ..., Aₙ$) to $B$ pairs each element $a ∈ A$ -->
-<!-- (or \(n\)-tuple $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$) with a different element $b ∈ B$, we -->
-<!-- call $f$ an /injection/ (or a /one-to-one/ function). If for each $b ∈ B$, $f$ -->
-<!-- pairs some or other $a ∈ A$ (or \(n\)-tuple $a₁, ..., aₙ$) with it, we call -->
-<!-- $f$ a /surjection/ (or an /onto/ function). If $f$ is both an injection and a -->
-<!-- surjection, we call it a /bijection/ from $A$ (or $A₁, ..., Aₙ$) to $B$.[fn::A -->
-<!-- function $f : A → B$ can be considered to be a relation on $A$ and $B$ where, -->
-<!-- for each $a ∈ A$, there is exactly one $b ∈ B$ such that $⟨a, b⟩ ∈ f$. More -->
-<!-- generally, an \(n\)-ary function can be considered an \((n+1)\)-ary relation. -->
-<!-- This is just a particular way of encoding functions as relations --- it isn't -->
-<!-- the /definition/ of a function, i.e., a map between sets, as above.] -->
-<p>Importantly, there is a corresponding notion of <em>function composition</em>. We need only consider functions from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> a type of relation on <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>—one that relations <em>every</em> element in <span class="math inline">\(A\)</span> to exactly one element in <span class="math inline">\(B\)</span>. Given functions <span class="math inline">\(f : A → B\)</span> and <span class="math inline">\(g : B → C\)</span>, their composition <span class="math inline">\(g ∘ f : A → C\)</span> is such that <span class="math inline">\((g ∘ f)(x) = g(f(x))\)</span>, for any <span class="math inline">\(x ∈ A\)</span>. <!-- In the same vein, if $f : A → A$, then we may write `$fⁿ$' to denote the function which ``applies $f$ to an element of $A$ $n$ times''. --></p>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\def\True{\ct{T}}
+\def\False{\ct{F}}
+\]</span></p>
+</div>
+<p>One of the central technical notions that we’ll rely on in this course is that of a model. A model is, in short, a way of associating the most basic expressions of whatever language we are studying with interpretations. It can be useful to think of a model as encoding a <em>way that things could be</em>, or—in the parlance of possible world semantics—a “possible world”. For example, if we are assigning meanings to a language that has the verb <em>runs</em> as one of its basic expressions, then we might associate this verb with a set—specifically, the set of people (or other entities) that run. In one model, Jo and Bo might be the ones who run (so that the set of people who run is <span class="math inline">\(\{\ct{j}, \ct{b}\}\)</span>); in another, the interpretation of <em>runs</em> might be the set containing Bo and Mo (<span class="math inline">\(\{\ct{b}, \ct{m}\}\)</span>); in yet another, maybe nobody runs (<span class="math inline">\(\varnothing\)</span>); and so on.</p>
+<p>Technically, a model <span class="math inline">\(\mathcal{M}\)</span> is a structure that consists of a pair of a <em>domain</em> <span class="math inline">\(D\)</span> and an interpretation function <span class="math inline">\(I\)</span>—something which takes <em>atoms</em> (i.e., the most basic expressions, whatever those are) of the language onto elements of a set <span class="math inline">\(M\)</span> (‘<span class="math inline">\(M\)</span>’ for “meanings”):</p>
+<ol class="example" type="1">
+<li>Definition: <br> a model <span class="math inline">\(\mathcal{M}\)</span> is a tuple <span class="math inline">\(⟨D, \{\True, \False\}, I⟩\)</span> of a non-empty set <span class="math inline">\(D\)</span>, the set of truth values <span class="math inline">\(\True\)</span> and <span class="math inline">\(\False\)</span>, and a function <span class="math inline">\(I : atom → M\)</span>.</li>
+</ol>
+<p>In (1), <span class="math inline">\(atom\)</span> is just whatever the set of atoms is chosen to be.</p>
+<p>Exactly how <span class="math inline">\(M\)</span> is chosen will vary by case—but in general, it is something “constructed” out of <span class="math inline">\(D\)</span>, the domain. For example, it might be <span class="math inline">\(D\)</span> itself; or it might be <span class="math inline">\(D ∪ 2^{D}\)</span> (the set containing as members both all of the elements of <span class="math inline">\(D\)</span> and all of the subsets of <span class="math inline">\(D\)</span>); or it might be something else more complicated.</p>
+<p>Further, the way the set <span class="math inline">\(atom\)</span> is chosen will also vary by case. For example, if we are defining a language <span class="math inline">\(L\)</span> over some alphaet <span class="math inline">\(Σ\)</span>, <span class="math inline">\(atom\)</span> might be chosen to be <span class="math inline">\(Σ\)</span> itself—or perhaps some subset of <span class="math inline">\(Σ\)</span>. The way we decide what <span class="math inline">\(atom\)</span> is depends on how we decide we want to construct the interpretations of more complex expressions of the language out of the meanings of more basic expressions.</p>
 
 
 <!-- -->
@@ -914,49 +919,67 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../formal_preliminaries/relations.html" class="pagination-link" aria-label="Relations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Relations</span>
+      <a href="../formal_preliminaries/assignment.html" class="pagination-link" aria-label="Assignment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../formal_preliminaries/languages.html" class="pagination-link" aria-label="Languages">
-        <span class="nav-page-text">Languages</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../models/ana_syntax.html" class="pagination-link" aria-label="Arabic numeral arithmetic: syntax">
+        <span class="nav-page-text">Arabic numeral arithmetic: syntax</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Functions"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Overview"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>A function from a set $A$ to a set $B$ is a map from elements of $A$ to elements of $B$ which pairs each element of $A$ with exactly one element of</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>$B$.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>If $f$ is such a function, we write $$f : A → B$$ to indicate this.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>We call $A$ the *domain* of the function, and we call $B$ the *codomain* of the function.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>If $a ∈ A$, then we write $$f(a)$$ to pick out the unique $b ∈ B$ that $f$ pairs $a$ up with.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>In case $f(a) = b$ (for some $a$ and $b$), we call $a$ the *argument* of the function $f$, and we call $b$ the *value* of the function $f$ on $a$.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Kind of like with relations, the definition of (unary) functions can be generalized to that for *n*-ary functions by considering the latter to be a map from the product of $n$ sets $A₁, ..., Aₙ$ to a set $B$.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>If $f$ is such an $n$-ary function, we write $$f : A_1 × ... × A_n → B$$ to indicate this.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Given $n$ arguments $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$, we write $$f(a_1, ..., a_n)$$ to pick out out the $b ∈ B$ that $f$ maps $a₁, ..., aₙ$ to.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Two properties of functions are sometimes important for certain purposes: if --&gt;</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- a function $f$ from $A$ (or $A₁, ..., Aₙ$) to $B$ pairs each element $a ∈ A$ --&gt;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- (or \(n\)-tuple $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$) with a different element $b ∈ B$, we --&gt;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- call $f$ an /injection/ (or a /one-to-one/ function). If for each $b ∈ B$, $f$ --&gt;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- pairs some or other $a ∈ A$ (or \(n\)-tuple $a₁, ..., aₙ$) with it, we call --&gt;</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $f$ a /surjection/ (or an /onto/ function). If $f$ is both an injection and a --&gt;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- surjection, we call it a /bijection/ from $A$ (or $A₁, ..., Aₙ$) to $B$.[fn::A --&gt;</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- function $f : A → B$ can be considered to be a relation on $A$ and $B$ where, --&gt;</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- for each $a ∈ A$, there is exactly one $b ∈ B$ such that $⟨a, b⟩ ∈ f$. More --&gt;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- generally, an \(n\)-ary function can be considered an \((n+1)\)-ary relation. --&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- This is just a particular way of encoding functions as relations --- it isn't --&gt;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- the /definition/ of a function, i.e., a map between sets, as above.] --&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Importantly, there is a corresponding notion of *function composition*.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>We need only consider functions from $A$ to $B$ a type of relation on $A$ and $B$---one that relations *every* element in $A$ to exactly one element in $B$.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Given functions $f : A → B$ and $g : B → C$, their composition $g ∘ f : A → C$ is such that $(g ∘ f)(x) = g(f(x))$, for any $x ∈ A$.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- In the same vein, if $f : A → A$, then we may write `$fⁿ$' to denote the function which ``applies $f$ to an element of $A$ $n$ times''. --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\def\True{\ct{T}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\def\False{\ct{F}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>One of the central technical notions that we'll rely on in this course is that of a model.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>A model is, in short, a way of associating the most basic expressions of whatever language we are studying with interpretations.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>It can be useful to think of a model as encoding a *way that things could be*, or---in the parlance of possible world semantics---a "possible world".</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>For example, if we are assigning meanings to a language that has the verb *runs* as one of its basic expressions, then we might associate this verb with a set---specifically, the set of people (or other entities) that run.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>In one model, Jo and Bo might be the ones who run (so that the set of people who run is $<span class="sc">\{</span>\ct{j}, \ct{b}<span class="sc">\}</span>$);</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>in another, the interpretation of *runs* might be the set containing Bo and Mo ($<span class="sc">\{</span>\ct{b}, \ct{m}<span class="sc">\}</span>$);</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>in yet another, maybe nobody runs ($\varnothing$);</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>and so on.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Technically, a model $\mathcal{M}$ is a structure that consists of a pair of a *domain* $D$ and an interpretation function $I$---something which takes *atoms* (i.e., the most basic expressions, whatever those are) of the language onto elements of a set $M$ ('$M$' for "meanings"):</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>(@ex-model-def) Definition: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> </span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    a model $\mathcal{M}$ is a tuple $⟨D, <span class="sc">\{</span>\True, \False<span class="sc">\}</span>, I⟩$ of a non-empty set $D$, the set of truth values $\True$ and $\False$, and a function $I : atom → M$.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>In (@ex-model-def), $atom$ is just whatever the set of atoms is chosen to be.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Exactly how $M$ is chosen will vary by case---but in general, it is something "constructed" out of $D$, the domain.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>For example, it might be $D$ itself;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>or it might be $D ∪ 2^{D}$ (the set containing as members both all of the elements of $D$ and all of the subsets of $D$);</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>or it might be something else more complicated.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Further, the way the set $atom$ is chosen will also vary by case.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>For example, if we are defining a language $L$ over some alphaet $Σ$, $atom$ might be chosen to be $Σ$ itself---or perhaps some subset of $Σ$.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>The way we decide what $atom$ is depends on how we decide we want to construct the interpretations of more complex expressions of the language out of the meanings of more basic expressions.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
