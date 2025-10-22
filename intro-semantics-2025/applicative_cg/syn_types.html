@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Syntactic categories – Introduction to semantics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../applicative_cg/assignment.html" rel="next">
+<link href="../applicative_cg/sem_types.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-26b7f73f5db2d4d9cde9593d186c2617.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9f79853da641c0bfdbac879c0364521c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../applicative_cg/overview.html">Applicative categorial grammar</a></li><li class="breadcrumb-item"><a href="../applicative_cg/syn_types.html">Syntactic categories</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Introduction to semantics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Convention</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../convention/defining_convention.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Defining convention</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../convention/defining_meaning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Defining meaning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../convention/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Speech acts</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Speaker meaning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../speaker_meaning/maxims.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Gricean maxims</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../speaker_meaning/applying_maxims.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applying the maxims</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Diagnosing inference</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../diagnosing_inference/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../diagnosing_inference/entailments_conv_impl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Entailments and presuppositions versus conversational implicatures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../diagnosing_inference/presuppositions_entailments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presuppositions versus entailments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../diagnosing_inference/conventional_implicatures_presuppositions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conventional implicatures versus presuppositions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../diagnosing_inference/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Formal preliminaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formal_preliminaries/sets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formal_preliminaries/products.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Products</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formal_preliminaries/relations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Relations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formal_preliminaries/functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formal_preliminaries/languages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Languages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formal_preliminaries/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formal_preliminaries/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Models</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/ana_syntax.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arabic numeral arithmetic: syntax</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/ana_semantics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arabic numeral arithmetic: semantics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/ana_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arabic numeral arithmetic: examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/english.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A first approximation of English</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/english_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">An English model and example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applicative categorial grammar</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../applicative_cg/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../applicative_cg/sem_types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Semantic types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../applicative_cg/syn_types.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Syntactic categories</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Verbs</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Coordinators</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Adjectives</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Pronouns</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Quantification</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../applicative_cg/overview.html">Applicative categorial grammar</a></li><li class="breadcrumb-item"><a href="../applicative_cg/syn_types.html">Syntactic categories</a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Syntactic categories</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\def\true{\ct{T}}
+\def\false{\ct{F}}
+\]</span></p>
+</div>
+<p>The collection of syntactic categories introduced in the last section is pretty minimal. So far, there are only three categories: <span class="math inline">\(np\)</span>, <span class="math inline">\(pp\)</span>, and <span class="math inline">\(s\)</span>! In addition to noun phrases, prepositional phrases, and sentences, we would very much like to have syntactic categories for verb phrases, transitive verbs, ditranstive verbs—you name it. So, let’s introduce a system that allows us to take these three starting categories—which we can call <em>base</em> categories—and generate an infinite collection of <em>possible</em> syntactic categories. Each of these possible categories will encapsulate the syntactic distribution of whatever expression it is assigned to. Note that the way we treat syntactic categories here will be exactly analogous to what we did for semantic types, where we used <span class="math inline">\(e\)</span> and <span class="math inline">\(t\)</span> as our “base” (i.e., <em>atomic</em>) types and used the “arrow” operator to make new types out of old ones.</p>
+<p>So, just like we had a rule for forming “arrow” <em>types</em>, let’s have a rule for forming what we can call <em>“slash” categories</em>.</p>
+<ol class="example" type="1">
+<li>If <span class="math inline">\(α\)</span> and <span class="math inline">\(β\)</span> are syntactic categories, then <span class="math inline">\((α/β)\)</span> and <span class="math inline">\((β\backslash α)\)</span> are also syntactic categories.</li>
+</ol>
+<p>Thus in addition to the base categories <span class="math inline">\(np\)</span>, <span class="math inline">\(pp\)</span>, and <span class="math inline">\(s\)</span>, we have categories like <span class="math inline">\((pp/np)\)</span>, <span class="math inline">\((s\backslash pp)\)</span>, <span class="math inline">\(((pp\backslash np)/(s/s))\)</span>, and so on.</p>
+<p>The idea behind a slash category is that it represents either what kind of expression can occur to something’s right or what kind of expression can occur to something’s left. For example, a verb phrase (e.g., <em>runs</em>)—something whose category we have been calling <span class="math inline">\(vp\)</span>—allows a noun phrase (e.g., <em>Bella</em>) to occur to its left; and when this happens, the result is a sentence (e.g., <em>Bella runs</em>). To capture this fact about verb phrases, we should assign them the syntactic category <span class="math inline">\((np\backslash s)\)</span>. This category says: “if you stick an <span class="math inline">\(np\)</span> (the thing to the left of the ‘<span class="math inline">\(\backslash\)</span>’) to my left, then together, we can make an <span class="math inline">\(s\)</span>!”</p>
+<p>This scheme for assigning categories to expressions allows them to (so to speak) <em>announce</em> what things they can occur to the left or to the right of. While a verb phrase takes an <span class="math inline">\(np\)</span> to its left and, with it, makes an <span class="math inline">\(s\)</span>, a preposition (e.g., <em>to</em>) takes an <span class="math inline">\(np\)</span> to its <em>right</em> and, with it, makes a <span class="math inline">\(pp\)</span>. Thus a preposition like <em>to</em> can be assigned the syntactic category <span class="math inline">\((pp/np)\)</span>. This category says: “if you stick an <span class="math inline">\(np\)</span> (the thing to the right of the ‘<span class="math inline">\(/\)</span>’) to my right, then together, we can make a <span class="math inline">\(pp\)</span>!”</p>
+<section id="the-syntactic-structure-of-syntactic-categories" class="level4">
+<h4 class="anchored" data-anchor-id="the-syntactic-structure-of-syntactic-categories">The syntactic structure of syntactic categories</h4>
+<p>Syntactic categories formed with slashes (like <span class="math inline">\((np\backslash s)\)</span> and <span class="math inline">\((pp/np)\)</span>) have an internal structure, which it is convenient to represent as a kind of syntactic tree structure (note that each slash annotating a node here is wrapped in parentheses for readability):</p>
+<pre><code>  (\)     (/)
+  / \     / \
+ np  s   pp np</code></pre>
+<p>Categories featuring multiple slashes can be represented this way, as well. Take the ditransitive verb <em>introduced</em> as an example, as in (2).</p>
+<ol start="2" class="example" type="1">
+<li>Jo introduced Bo to Mo.</li>
+</ol>
+<p>This verb <u>first</u> takes a noun phrase to its right (<em>introduced <u>Bo</u></em>); <a href=".underline">second</a>, it takes a prepositional phrase to its right (<em>introduced Bo <u>to Mo</u></em>); and <u>third</u>, it takes a noun phrase to its left (<em><u>Jo</u> introduced Bo to Mo</em>). The verb <em>introduced</em> therefore has the following syntactic category, in tree form:</p>
+<pre><code>      (/)
+      / \
+    (/)  np
+    / \
+  (\) pp
+  / \
+ np  s</code></pre>
+<p>The way to read this tree is by starting at the very top (or <em>root</em>) node and looking at the direction of the slash. If it is a right slash (<span class="math inline">\(/\)</span>), then the child node on the <em>right</em> is the category of the first argument of an expression with this category. If it is a left slash (<span class="math inline">\(\backslash\)</span>), then the child node on the <em>left</em> is the category of the first argument. Here, the root node is a right slash, so we look to the right child, which is <span class="math inline">\(np\)</span>—that’s the thing <em>introduce</em> combines with first. Meanwhile, the <em>left</em> child is the category of the expression that results once you combine <em>introduced</em> with this noun phrase. Hence, the string <em>introduced Bo</em> has the category represented by the <em>following</em> tree:</p>
+<pre><code>    (/)
+    / \
+  (\) pp
+  / \
+ np  s</code></pre>
+<p>Likewise—assuming that <em>to Bella</em> has the category <span class="math inline">\(pp\)</span>—<em>introduced Bo to Bella</em> has the following category:</p>
+<pre><code>  (\)
+  / \
+ np  s</code></pre>
+<p>Finally—and in this case, we’re dealing with a left slash (<span class="math inline">\(\backslash\)</span>)—we can combine this expression with <em>Jo</em> to get <em>Jo introduced Bo to Bella</em>, which therefore has the category <span class="math inline">\(s\)</span>.</p>
+<p>In the more usual notation, we would write this very same syntactic category out as <span class="math inline">\((((np\backslash s)/pp)/np)\)</span>. Both notations encode the <em>order</em> in which the verb takes its arguments, as well as whether each argument that it takes occurs to its left or to its right!</p>
+</section>
+<section id="the-correspondence-between-syntactic-categories-and-semantic-types" class="level4">
+<h4 class="anchored" data-anchor-id="the-correspondence-between-syntactic-categories-and-semantic-types">The correspondence between syntactic categories and semantic types</h4>
+<p>So now we have a whole <em>language</em> of syntactic categories, as well as a whole <em>language</em> of semantic types. Let’s keep developing the chart that we started in <a href="sem_types.html">Semantic types</a>, in order to incorporate a few more syntactic categories. Now, we will have not only noun phrases, prepositional phrases, and sentences, but also: verb phrases, transitive verbs, ditransitive verbs that take two noun phrases (e.g., <em>show</em>), ditransitive verbs that take a noun phrase and a prepositional phrase (e.g., <em>introduce</em>), and prepositions. Respectively:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 51%">
+<col style="width: 21%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Syntactic category</th>
+<th>Semantic type</th>
+<th>Domain</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(np\)</span></td>
+<td><span class="math inline">\(e\)</span></td>
+<td><span class="math inline">\(D_{e} = D\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(pp\)</span></td>
+<td><span class="math inline">\(e\)</span></td>
+<td><span class="math inline">\(D_{e} = D\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(s\)</span></td>
+<td><span class="math inline">\(t\)</span></td>
+<td><span class="math inline">\(D_{t} = \{\true, \false\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((np\backslash s)\)</span> <br> (previously <span class="math inline">\(vp\)</span>)</td>
+<td><span class="math inline">\((e → t)\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(((np\backslash s)/np)\)</span> <br> (previously <span class="math inline">\(tv\)</span>)</td>
+<td><span class="math inline">\((e → (e → t))\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((((np\backslash s)/np)/np)\)</span> <br> (previously <span class="math inline">\(dtv\)</span>)</td>
+<td><span class="math inline">\((e → (e → (e → t)))\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((((np\backslash s)/pp)/np)\)</span> <br> (previously <span class="math inline">\(datV\)</span>)</td>
+<td><span class="math inline">\((e → (e → (e → t)))\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((pp/np)\)</span> <br> (previously <span class="math inline">\(p\)</span>)</td>
+<td><span class="math inline">\((e → e)\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>By lining syntactic categories up with their semantic types, we can begin to see a correspondence. Specifically we have something like the following set of rules:</p>
+<ul>
+<li>Wherever there is an <span class="math inline">\(np\)</span> or <span class="math inline">\(pp\)</span> in the syntactic category, there is an <span class="math inline">\(e\)</span> in the corresponding semantic type.</li>
+<li>Wherever there is a left slash (<span class="math inline">\(\backslash\)</span>) in the syntactic category, there is an arrow (<span class="math inline">\(→\)</span>) in the semantic type.</li>
+<li>Wherever there is a right slash (<span class="math inline">\(/\)</span>) in the syntactic category, there is an arrow (<span class="math inline">\(→\)</span>) in the semantic type; but this time, the arrow is “pointing the other way”—that is, the thing that goes to the <em>right</em> of the right slash goes to the <em>left</em> of the arrow.</li>
+</ul>
+<p>Let’s look at a couple of example of this correspondence, one simple, and one slightly more complex.</p>
+<section id="first-example" class="level5">
+<h5 class="anchored" data-anchor-id="first-example">First example</h5>
+<p>First, let’s look at the very last line of the table—the one which relates the category of prepositions to the semantic type <span class="math inline">\((e → e)\)</span>. In tree notation, the syntactic category and the semantic type can be rendered as follows:</p>
+<pre><code> (/)     ─&gt;
+ / \    / \
+pp np  e   e</code></pre>
+<p>Note that in this example, the <span class="math inline">\(e\)</span> which is the left child of the arrow corresponds to the <span class="math inline">\(np\)</span> which is the right child of the slash, since it is a right slash. Both correspond, in some sense, to an <em>argument</em>: while <span class="math inline">\(np\)</span> corresponds to the syntactic argument—the object of the preposition—<span class="math inline">\(e\)</span> corresponds to the semantic argument of the function <em>denoted</em> by the preposition.</p>
+<p>Meanwhile, the <span class="math inline">\(e\)</span> which is the <em>right</em> child of the arrow corresponds to the <span class="math inline">\(pp\)</span> which is the left child of the slash. Both correspond, in some sonse, to the <em>result</em>—either the result of concatenating the two expressions (in the case of the syntactic category), or the result of applying the function (in the case of the semantic type).</p>
+</section>
+<section id="second-example" class="level5">
+<h5 class="anchored" data-anchor-id="second-example">Second example</h5>
+<p>For a slightly more complex example, let’s look at the fifth line of the table—the one for transitive verbs. In tree notation, we have the following syntactic category and semantic type:</p>
+<pre><code>   (/)         ─&gt;
+   / \        / \
+ (\) np      e  ─&gt;
+ / \           / \
+np  s         e   t</code></pre>
+<p>In this example, the <span class="math inline">\(e\)</span> which is the left child of the arrow at the root corresponds to the <span class="math inline">\(np\)</span> which is the <em>right</em> child of the slash, since it is a right slash. Meanwhile, the left child of this same slash corresponds to the type <span class="math inline">\((e → t)\)</span> which is the <em>right</em> child of the arrow at the root of the semantic type. Since this left child in the syntactic category is a category formed from a <em>left</em> slash, its left child—the <span class="math inline">\(np\)</span>—corresponds to the <span class="math inline">\(e\)</span>, while its right child—the <span class="math inline">\(s\)</span>—corresponds to the <span class="math inline">\(t\)</span>.</p>
+</section>
+</section>
+<section id="rules" class="level4">
+<h4 class="anchored" data-anchor-id="rules">Rules</h4>
+<p>Now that we have explored the structure of both syntactic categories and semantic types, as well as how these structures correspond to each other, let’s formalize the way that syntactic categories may actually be <em>used</em>. That is, how do we use them to derive complex expressions?</p>
+<p>We need just two rules: one for allowing an expression to combine with something to its right (Right Application), and one for allowing an expression to combine with something to its left (Left Application).</p>
+<ol start="3" class="example" type="1">
+<li>Right Application: <br><br> <span class="math inline">\(\begin{prooftree}
+\AxiomC{\(⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ (a/b)\)}
+\AxiomC{\(⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ b\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}}(⟦y⟧_{\mathcal{M}})⟩ ⊢ a\)}
+\end{prooftree}\)</span> <br><br> Left application: <br><br> <span class="math inline">\(\begin{prooftree}
+\AxiomC{\(⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ a\)}
+\AxiomC{\(⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ (b\backslash a)\)}
+\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ a\)}
+\end{prooftree}\)</span></li>
+</ol>
+<p>In words, Right Application concatenates a string of category <span class="math inline">\((a/b)\)</span> with a string of category <span class="math inline">\(b\)</span> to form a string of category <span class="math inline">\(a\)</span>. At the same time, it applies the meaning of <span class="math inline">\(x\)</span>—a function—to the meaning of <span class="math inline">\(y\)</span>—its argument.</p>
+<p>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually <em>guarantee</em> that the function is the correct kind of thing to apply to the argument. That is, if the function denoted by <span class="math inline">\(x\)</span> takes entity arguments, then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be an entity; if it takes truth value arguments, then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be a truth value. The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</p>
+<section id="example-derivation" class="level5">
+<h5 class="anchored" data-anchor-id="example-derivation">Example derivation</h5>
+<p>To illustrate these rules, let’s derive the sentence in (4), which features the transitive verb <em>bites</em> (and allows Ziggy to get her revenge).</p>
+<ol start="4" class="example" type="1">
+<li>Ziggy bites Bella.</li>
+</ol>
+<p><span class="math display">\[\begin{prooftree}
+\AxiomC{\(⟨\textit{Ziggy}, \ct{z}⟩ ⊢ np\)}
+\AxiomC{\(⟨\textit{bites}, (λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(x, y)))⟩ ⊢ ((np\backslash s)/np)\)}
+\AxiomC{\(⟨\textit{Bella}, \ct{b}⟩ ⊢ np\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{bites Bella}, (λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩\}_{CF}(x, y)))(\ct{b})⟩ ⊢ (np\backslash s)\)}
+\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Ziggy bites Bella}, (λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩\}_{CF}(x, y)))(\ct{b})(\ct{z})⟩ ⊢ s\)}
+\end{prooftree}\]</span></p>
+<p>Note that I have assumed a denotation for <em>bites</em> here that makes it the case that Ziggy and Bella bite each other. Thus if we evaluate the resulting expression</p>
+<p><span class="math display">\[(λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(x, y)))(\ct{b})(\ct{z})\]</span></p>
+<p>by first plugging <span class="math inline">\(\ct{b}\)</span> in for <span class="math inline">\(x\)</span>—</p>
+<p><span class="math display">\[(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(\ct{b}, y))(\ct{z})\]</span></p>
+<p>—and then plugging <span class="math inline">\(\ct{z}\)</span> in for <span class="math inline">\(y\)</span>—we end up with</p>
+<p><span class="math display">\[\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(\ct{b}, \ct{z})\]</span></p>
+<p>which is <span class="math inline">\(\true\)</span>!</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../applicative_cg/sem_types.html" class="pagination-link" aria-label="Semantic types">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Semantic types</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../applicative_cg/assignment.html" class="pagination-link" aria-label="Assignment">
+        <span class="nav-page-text">Assignment</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Syntactic categories"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>\def\true{\ct{T}}</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>\def\false{\ct{F}}</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>The collection of syntactic categories introduced in the last section is pretty minimal.</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>So far, there are only three categories:</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>$np$, $pp$, and $s$!</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>In addition to noun phrases, prepositional phrases, and sentences, we would very much like to have syntactic categories for verb phrases, transitive verbs, ditranstive verbs---you name it.</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>So, let's introduce a system that allows us to take these three starting categories---which we can call *base* categories---and generate an infinite collection of *possible* syntactic categories.</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>Each of these possible categories will encapsulate the syntactic distribution of whatever expression it is assigned to.</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>Note that the way we treat syntactic categories here will be exactly analogous to what we did for semantic types, where we used $e$ and $t$ as our "base" (i.e., *atomic*) types and used the "arrow" operator to make new types out of old ones.</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>So, just like we had a rule for forming "arrow" *types*, let's have a rule for forming what we can call *"slash" categories*.</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>(@ex-slash-rule) If $α$ and $β$ are syntactic categories, then $(α/β)$ and $(β\backslash α)$ are also syntactic categories.</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>Thus in addition to the base categories $np$, $pp$, and $s$, we have categories like $(pp/np)$, $(s\backslash pp)$, $((pp\backslash np)/(s/s))$, and so on.</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>The idea behind a slash category is that it represents either what kind of expression can occur to something's right or what kind of expression can occur to something's left.</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>For example, a verb phrase (e.g., *runs*)---something whose category we have been calling $vp$---allows a noun phrase (e.g., *Bella*) to occur to its left;</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>and when this happens, the result is a sentence (e.g., *Bella runs*).</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>To capture this fact about verb phrases, we should assign them the syntactic category $(np\backslash s)$.</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>This category says:</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>"if you stick an $np$ (the thing to the left of the '$\backslash$') to my left, then together, we can make an $s$!"</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>This scheme for assigning categories to expressions allows them to (so to speak) *announce* what things they can occur to the left or to the right of. </span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>While a verb phrase takes an $np$ to its left and, with it, makes an $s$, a preposition (e.g., *to*) takes an $np$ to its *right* and, with it, makes a $pp$.</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>Thus a preposition like *to* can be assigned the syntactic category $(pp/np)$.</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>This category says:</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>"if you stick an $np$ (the thing to the right of the '$/$') to my right, then together, we can make a $pp$!"</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The syntactic structure of syntactic categories</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>Syntactic categories formed with slashes (like $(np\backslash s)$ and $(pp/np)$) have an internal structure, which it is convenient to represent as a kind of syntactic tree structure (note that each slash annotating a node here is wrapped in parentheses for readability):</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="in">  (\)     (/)</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="in">  / \     / \</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s   pp np</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>Categories featuring multiple slashes can be represented this way, as well.</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>Take the ditransitive verb *introduced* as an example, as in (@ex-introduced).</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>(@ex-introduced) Jo introduced Bo to Mo.</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>This verb <span class="co">[</span><span class="ot">first</span><span class="co">]</span>{.underline} takes a noun phrase to its right (*introduced [Bo]{.underline}*);</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">second</span><span class="co">](.underline)</span>, it takes a prepositional phrase to its right (*introduced Bo [to Mo]{.underline}*);</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>and <span class="co">[</span><span class="ot">third</span><span class="co">]</span>{.underline}, it takes a noun phrase to its left (*[Jo]{.underline} introduced Bo to Mo*).</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>The verb *introduced* therefore has the following syntactic category, in tree form:</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="in">      (/)</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="in">      / \</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="in">    (/)  np</span></span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="in">    / \</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="in">  (\) pp</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="in">  / \</span></span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s</span></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>The way to read this tree is by starting at the very top (or *root*) node and looking at the direction of the slash.</span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>If it is a right slash ($/$), then the child node on the *right* is the category of the first argument of an expression with this category.</span>
+<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>If it is a left slash ($\backslash$), then the child node on the *left* is the category of the first argument.</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>Here, the root node is a right slash, so we look to the right child, which is $np$---that's the thing *introduce* combines with first.</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>Meanwhile, the *left* child is the category of the expression that results once you combine *introduced* with this noun phrase.</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>Hence, the string *introduced Bo* has the category represented by the *following* tree:</span>
+<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="in">    (/)</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="in">    / \</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="in">  (\) pp</span></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="in">  / \</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s</span></span>
+<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>Likewise---assuming that *to Bella* has the category $pp$---*introduced Bo to Bella* has the following category:</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="in">  (\)</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="in">  / \</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>Finally---and in this case, we're dealing with a left slash ($\backslash$)---we can combine this expression with *Jo* to get *Jo introduced Bo to Bella*, which therefore has the category $s$.</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>In the more usual notation, we would write this very same syntactic category out as $(((np\backslash s)/pp)/np)$.</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>Both notations encode the *order* in which the verb takes its arguments, as well as whether each argument that it takes occurs to its left or to its right!</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The correspondence between syntactic categories and semantic types</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>So now we have a whole *language* of syntactic categories, as well as a whole *language* of semantic types.</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>Let's keep developing the chart that we started in <span class="co">[</span><span class="ot">Semantic types</span><span class="co">](sem_types.html)</span>, in order to incorporate a few more syntactic categories.</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>Now, we will have not only noun phrases, prepositional phrases, and sentences, but also:</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>verb phrases, transitive verbs, ditransitive verbs that take two noun phrases (e.g., *show*), ditransitive verbs that take a noun phrase and a prepositional phrase (e.g., *introduce*), and prepositions.</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>Respectively:</span>
+<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Syntactic category                                    <span class="pp">|</span> Semantic type         <span class="pp">|</span> Domain                      <span class="pp">|</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------------------------------------|-----------------------|-----------------------------|</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $np$                                                  <span class="pp">|</span> $e$                   <span class="pp">|</span> $D_{e} = D$                 <span class="pp">|</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $pp$                                                  <span class="pp">|</span> $e$                   <span class="pp">|</span> $D_{e} = D$                 <span class="pp">|</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $s$                                                   <span class="pp">|</span> $t$                   <span class="pp">|</span> $D_{t} = <span class="sc">\{</span>\true, \false<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(np\backslash s)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $vp$)             <span class="pp">|</span> $(e → t)$             <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $((np\backslash s)/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $tv$)        <span class="pp">|</span> $(e → (e → t))$       <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(((np\backslash s)/np)/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $dtv$)  <span class="pp">|</span> $(e → (e → (e → t)))$ <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(((np\backslash s)/pp)/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $datV$) <span class="pp">|</span> $(e → (e → (e → t)))$ <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(pp/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $p$)                       <span class="pp">|</span> $(e → e)$             <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>By lining syntactic categories up with their semantic types, we can begin to see a correspondence.</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>Specifically we have something like the following set of rules:</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is an $np$ or $pp$ in the syntactic category, there is an $e$ in the corresponding semantic type.</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is a left slash ($\backslash$) in the syntactic category, there is an arrow ($→$) in the semantic type.</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is a right slash ($/$) in the syntactic category, there is an arrow ($→$) in the semantic type;</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a>  but this time, the arrow is "pointing the other way"---that is, the thing that goes to the *right* of the right slash goes to the *left* of the arrow.</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>Let's look at a couple of example of this correspondence, one simple, and one slightly more complex.</span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="fu">##### First example</span></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>First, let's look at the very last line of the table---the one which relates the category of prepositions to the semantic type $(e → e)$.</span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>In tree notation, the syntactic category and the semantic type can be rendered as follows:</span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="in"> (/)     ─&gt;</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="in"> / \    / \</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="in">pp np  e   e</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>Note that in this example, the $e$ which is the left child of the arrow corresponds to the $np$ which is the right child of the slash, since it is a right slash.</span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>Both correspond, in some sense, to an *argument*:</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>while $np$ corresponds to the syntactic argument---the object of the preposition---$e$ corresponds to the semantic argument of the function *denoted* by the preposition.</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>Meanwhile, the $e$ which is the *right* child of the arrow corresponds to the $pp$ which is the left child of the slash.</span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>Both correspond, in some sonse, to the *result*---either the result of concatenating the two expressions (in the case of the syntactic category), or the result of applying the function (in the case of the semantic type).</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Second example</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>For a slightly more complex example, let's look at the fifth line of the table---the one for transitive verbs.</span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>In tree notation, we have the following syntactic category and semantic type:</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="in">   (/)         ─&gt;</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="in">   / \        / \</span></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="in"> (\) np      e  ─&gt;</span></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="in"> / \           / \</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="in">np  s         e   t</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>In this example, the $e$ which is the left child of the arrow at the root corresponds to the $np$ which is the *right* child of the slash, since it is a right slash.</span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>Meanwhile, the left child of this same slash corresponds to the type $(e → t)$ which is the *right* child of the arrow at the root of the semantic type.</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>Since this left child in the syntactic category is a category formed from a *left* slash, its left child---the $np$---corresponds to the $e$, while its right child---the $s$---corresponds to the $t$.</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Rules</span></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>Now that we have explored the structure of both syntactic categories and semantic types, as well as how these structures correspond to each other, let's formalize the way that syntactic categories may actually be *used*.</span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>That is, how do we use them to derive complex expressions?</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>We need just two rules:</span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>one for allowing an expression to combine with something to its right (Right Application), and one for allowing an expression to combine with something to its left (Left Application).</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>(@ex-applicative-cg-rules)</span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>    Right Application: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>    $\begin{prooftree}</span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ (a/b)<span class="sc">\)</span>}</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ b<span class="sc">\)</span>}</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>    \RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}}(⟦y⟧_{\mathcal{M}})⟩ ⊢ a<span class="sc">\)</span>}</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>    \end{prooftree}$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>    Left application: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>    $\begin{prooftree}</span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ a<span class="sc">\)</span>}</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ (b\backslash a)<span class="sc">\)</span>}</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>    \RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ a<span class="sc">\)</span>}</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>    \end{prooftree}$</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>In words, Right Application concatenates a string of category $(a/b)$ with a string of category $b$ to form a string of category $a$.</span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>At the same time, it applies the meaning of $x$---a function---to the meaning of $y$---its argument.</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually *guarantee* that the function is the correct kind of thing to apply to the argument.</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>That is, if the function denoted by $x$ takes entity arguments, then the meaning of $y$ *has* to be an entity;</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>if it takes truth value arguments, then the meaning of $y$ *has* to be a truth value.</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Example derivation</span></span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>To illustrate these rules, let's derive the sentence in (@ex-bites), which features the transitive verb *bites* (and allows Ziggy to get her revenge).</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>(@ex-bites) Ziggy bites Bella.</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Ziggy}, \ct{z}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{bites}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))⟩ ⊢ ((np\backslash s)/np)<span class="sc">\)</span>}</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Bella}, \ct{b}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Ziggy bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})⟩ ⊢ s<span class="sc">\)</span>}</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>Note that I have assumed a denotation for *bites* here that makes it the case that Ziggy and Bella bite each other.</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>Thus if we evaluate the resulting expression</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})$$</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>by first plugging $\ct{b}$ in for $x$---</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a>$$(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, y))(\ct{z})$$</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a>---and then plugging $\ct{z}$ in for $y$---we end up with</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, \ct{z})$$</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a>which is $\true$!</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

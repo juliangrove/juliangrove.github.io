@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Examples – Introduction to semantics</title>
+<title>Overview – Introduction to semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../formal_preliminaries/assignment.html" rel="next">
-<link href="../formal_preliminaries/languages.html" rel="prev">
+<link href="../applicative_cg/sem_types.html" rel="next">
+<link href="../models/assignment.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -147,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/examples.html">Examples</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../applicative_cg/overview.html">Applicative categorial grammar</a></li><li class="breadcrumb-item"><a href="../applicative_cg/overview.html">Overview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -322,7 +322,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/examples.html" class="sidebar-item-text sidebar-link active">
+  <a href="../formal_preliminaries/examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Examples</span></a>
   </div>
 </li>
@@ -398,7 +398,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../applicative_cg/overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -447,22 +447,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#first-example" id="toc-first-example" class="nav-link active" data-scroll-target="#first-example">First example</a></li>
-  <li><a href="#second-example" id="toc-second-example" class="nav-link" data-scroll-target="#second-example">Second example</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/examples.html">Examples</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../applicative_cg/overview.html">Applicative categorial grammar</a></li><li class="breadcrumb-item"><a href="../applicative_cg/overview.html">Overview</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Examples</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Overview</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -479,22 +472,36 @@ window.Quarto = {
 </header>
 
 
-<p>Here are some examples of <em>proofs</em> of some basic facts about sets.</p>
-<section id="first-example" class="level3">
-<h3 class="anchored" data-anchor-id="first-example">First example</h3>
-<p>Show that <span class="math inline">\(A ⊆ A ∪ B\)</span>.</p>
-<p>The definition of subset says that this holds if everything in <span class="math inline">\(A\)</span> is also in <span class="math inline">\(A ∪ B\)</span>. The definition of union says that any <span class="math inline">\(x ∈ A ∪ B\)</span> if <span class="math inline">\(x ∈ A\)</span> or <span class="math inline">\(x ∈ B\)</span>. Thus any <span class="math inline">\(x ∈ A\)</span> is such that <span class="math inline">\(x ∈ A ∪ B\)</span>, as needed.</p>
-</section>
-<section id="second-example" class="level3">
-<h3 class="anchored" data-anchor-id="second-example">Second example</h3>
-<p>Let <span class="math inline">\(A, B ⊆ C\)</span>, and let’s introduce the notation ‘<span class="math inline">\(¬X\)</span>’ for <span class="math inline">\(C - X\)</span>.</p>
-<p>Show that <span class="math inline">\(¬(A ∪ B) ⊆ ¬A ∩ ¬B\)</span>.</p>
-<p>Assume <span class="math inline">\(x ∈ ¬(A ∪ B)\)</span> (for arbitrary <span class="math inline">\(x\)</span>); then, our goal is show that <span class="math inline">\(x\)</span> <em>must</em> be in <span class="math inline">\(¬A ∩ ¬B\)</span>. By definition, <span class="math inline">\(x ∈ C\)</span>, but <span class="math inline">\(x ∉ A ∪ B\)</span>. Hence, <span class="math inline">\(x ∉ A\)</span> (or else, we would have that <span class="math inline">\(x ∈ A ∪ B\)</span>). But because, by hypothesis, <span class="math inline">\(x ∈ C\)</span>, we now have that <span class="math inline">\(x ∈ ¬A\)</span>. A similar argument applies to <span class="math inline">\(¬B\)</span>! Thus <span class="math inline">\(x ∈ ¬A ∩ ¬B\)</span>. Since <span class="math inline">\(x\)</span> is arbitrary, the argument extends to any element of <span class="math inline">\(¬(A ∪ B)\)</span>, as needed to show that the two sets are in a subset relation.</p>
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\def\true{\ct{T}}
+\def\false{\ct{F}}
+\]</span></p>
+</div>
+<p>In the last few weeks, we’ve introduced syntactic and semantic rules for English that aim to characterize two things at once: (i) the <em>distributional properties</em> of English expressions (e.g., that the <span class="math inline">\(np\)</span> <em>Ziggy</em> can precede the <span class="math inline">\(vp\)</span> <em>meows</em>, in order to make an <span class="math inline">\(s\)</span>); and (ii) the <em>semantic contributions</em> these expressions make to the meanings of the larger expressions that contain them. Further, our rules are stated to be sensitive to the <em>syntactic categories</em> of the expressions whose behavior they characterize. For example, the rule</p>
+<p><span class="math display">\[\begin{prooftree}
+\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ np$}
+\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ vp$}
+\BinaryInfC{$⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ s$}
+\end{prooftree}\]</span></p>
+<p>says:</p>
+<ul>
+<li>that you can form an <span class="math inline">\(s\)</span> by sticking an <span class="math inline">\(np\)</span> to the left of a <span class="math inline">\(vp\)</span>;</li>
+<li>that you can get the meaning of the <span class="math inline">\(s\)</span> by applying the meaning of the <span class="math inline">\(vp\)</span> as a function to the meaning of the <span class="math inline">\(np\)</span> as an argument.</li>
+</ul>
+<p>So, syntactic categories have an important role: they say where things can go, and they also say what things can <em>do</em> (semantically) when they go there.</p>
+<p>These notes further develop this idea, in two directions. First, we introduce a language of <em>semantic types</em>. Semantic types tell us what kind of meaning an expression can have—for example, whether it is an entity, a truth value, or some type of function (and if so, what type). Second, we introduce a language of <em>syntactic categories</em> (or <em>syntactic types</em>, if you like). Syntactic categories tell us what an expression’s distributional properties are—that is, what kinds of expressions can appear to its left and to its right. As we’ll see, there is a close relation between syntactic categories and semantic types. This relation holds because of the fact that where an expression can go inside some larger expression <em>determines</em> what type of meaning it can have.</p>
+<p>We’ve already encoded a version of this idea in our grammar with categories like <span class="math inline">\(np\)</span>, <span class="math inline">\(vp\)</span>, and <span class="math inline">\(tv\)</span>, where we had rules that were specific to these categories. Our new <em>language</em> of categories will make the idea completely general: we’ll have an <em>infinite</em> number of possible syntactic categories, as well as an infinite number of possible semantic types, and each syntactic category will be seen to be associated with a semantic type. At the same time, we’ll be able to pare down the number of rules we have to only two!</p>
 
 
 <!-- -->
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -949,45 +956,74 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../formal_preliminaries/languages.html" class="pagination-link" aria-label="Languages">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Languages</span>
+      <a href="../models/assignment.html" class="pagination-link" aria-label="Assignment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../formal_preliminaries/assignment.html" class="pagination-link" aria-label="Assignment">
-        <span class="nav-page-text">Assignment</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../applicative_cg/sem_types.html" class="pagination-link" aria-label="Semantic types">
+        <span class="nav-page-text">Semantic types</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Examples"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Overview"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Here are some examples of *proofs* of some basic facts about sets.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### First example</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Show that $A ⊆ A ∪ B$.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>The definition of subset says that this holds if everything in $A$ is also in $A ∪ B$.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>The definition of union says that any $x ∈ A ∪ B$ if $x ∈ A$ or $x ∈ B$.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Thus any $x ∈ A$ is such that $x ∈ A ∪ B$, as needed.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">### Second example</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Let $A, B ⊆ C$, and let's introduce the notation '$¬X$' for $C - X$.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Show that $¬(A ∪ B) ⊆ ¬A ∩ ¬B$.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Assume $x ∈ ¬(A ∪ B)$ (for arbitrary $x$);</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>then, our goal is show that $x$ *must* be in $¬A ∩ ¬B$.</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>By definition, $x ∈ C$, but $x ∉ A ∪ B$.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Hence, $x ∉ A$ (or else, we would have that $x ∈ A ∪ B$).</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>But because, by hypothesis, $x ∈ C$, we now have that $x ∈ ¬A$.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>A similar argument applies to $¬B$!</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Thus $x ∈ ¬A ∩ ¬B$.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Since $x$ is arbitrary, the argument extends to any element of $¬(A ∪ B)$, as needed to show that the two sets are in a subset relation.</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\def\true{\ct{T}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\def\false{\ct{F}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>In the last few weeks, we've introduced syntactic and semantic rules for English that aim to characterize two things at once:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>(i) the *distributional properties* of English expressions (e.g., that the $np$ *Ziggy* can precede the $vp$ *meows*, in order to make an $s$);</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>and (ii) the *semantic contributions* these expressions make to the meanings of the larger expressions that contain them.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Further, our rules are stated to be sensitive to the *syntactic categories* of the expressions whose behavior they characterize.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>For example, the rule</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ np$}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ vp$}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>\BinaryInfC{$⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ s$}</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>says:</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can form an $s$ by sticking an $np$ to the left of a $vp$;</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can get the meaning of the $s$ by applying the meaning of the $vp$ as a function to the meaning of the $np$ as an argument.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>So, syntactic categories have an important role:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>they say where things can go, and they also say what things can *do* (semantically) when they go there.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>These notes further develop this idea, in two directions.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>First, we introduce a language of *semantic types*.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Semantic types tell us what kind of meaning an expression can have---for example, whether it is an entity, a truth value, or some type of function (and if so, what type).</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Second, we introduce a language of *syntactic categories* (or *syntactic types*, if you like).</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Syntactic categories tell us what an expression's distributional properties are---that is, what kinds of expressions can appear to its left and to its right.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>As we'll see, there is a close relation between syntactic categories and semantic types.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>This relation holds because of the fact that where an expression can go inside some larger expression *determines* what type of meaning it can have.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>We've already encoded a version of this idea in our grammar with categories like $np$, $vp$, and $tv$, where we had rules that were specific to these categories.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Our new *language* of categories will make the idea completely general:</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>we'll have an *infinite* number of possible syntactic categories, as well as an infinite number of possible semantic types, and each syntactic category will be seen to be associated with a semantic type.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>At the same time, we'll be able to pare down the number of rules we have to only two!</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
