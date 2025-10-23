@@ -625,7 +625,8 @@ np  s         e   t</code></pre>
 \end{prooftree}\)</span></li>
 </ol>
 <p>In words, Right Application concatenates a string of category <span class="math inline">\((a/b)\)</span> with a string of category <span class="math inline">\(b\)</span> to form a string of category <span class="math inline">\(a\)</span>. At the same time, it applies the meaning of <span class="math inline">\(x\)</span>—a function—to the meaning of <span class="math inline">\(y\)</span>—its argument.</p>
-<p>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually <em>guarantee</em> that the function is the correct kind of thing to apply to the argument. That is, if the function denoted by <span class="math inline">\(x\)</span> takes entity arguments, then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be an entity; if it takes truth value arguments, then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be a truth value. The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</p>
+<p>Left Application goes the other way: it concatenates a string of category <span class="math inline">\(b\)</span> with a string of category <span class="math inline">\((b\backslash a)\)</span> to form a string of category <span class="math inline">\(a\)</span>. And it applies the meaning of <span class="math inline">\(y\)</span>—a function—to the mean of <span class="math inline">\(x\)</span>—its argument.</p>
+<p>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually <em>guarantee</em> that in each case, the function is the correct kind of thing to apply to the argument. That is, if the function denoted by <span class="math inline">\(x\)</span> takes entity arguments (in the case of Right Application), then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be an entity; if it takes truth value arguments, then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be a truth value. The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</p>
 <section id="example-derivation" class="level5">
 <h5 class="anchored" data-anchor-id="example-derivation">Example derivation</h5>
 <p>To illustrate these rules, let’s derive the sentence in (4), which features the transitive verb <em>bites</em> (and allows Ziggy to get her revenge).</p>
@@ -1311,39 +1312,43 @@ np  s         e   t</code></pre>
 <span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>In words, Right Application concatenates a string of category $(a/b)$ with a string of category $b$ to form a string of category $a$.</span>
 <span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>At the same time, it applies the meaning of $x$---a function---to the meaning of $y$---its argument.</span>
 <span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually *guarantee* that the function is the correct kind of thing to apply to the argument.</span>
-<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>That is, if the function denoted by $x$ takes entity arguments, then the meaning of $y$ *has* to be an entity;</span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>if it takes truth value arguments, then the meaning of $y$ *has* to be a truth value.</span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Example derivation</span></span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>To illustrate these rules, let's derive the sentence in (@ex-bites), which features the transitive verb *bites* (and allows Ziggy to get her revenge).</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>Left Application goes the other way:</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>it concatenates a string of category $b$ with a string of category $(b\backslash a)$ to form a string of category $a$.</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>And it applies the meaning of $y$---a function---to the mean of $x$---its argument.</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually *guarantee* that in each case, the function is the correct kind of thing to apply to the argument.</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>That is, if the function denoted by $x$ takes entity arguments (in the case of Right Application), then the meaning of $y$ *has* to be an entity;</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>if it takes truth value arguments, then the meaning of $y$ *has* to be a truth value.</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</span>
 <span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>(@ex-bites) Ziggy bites Bella.</span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Example derivation</span></span>
 <span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
-<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Ziggy}, \ct{z}⟩ ⊢ np<span class="sc">\)</span>}</span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{bites}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))⟩ ⊢ ((np\backslash s)/np)<span class="sc">\)</span>}</span>
-<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Bella}, \ct{b}⟩ ⊢ np<span class="sc">\)</span>}</span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
-<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Ziggy bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})⟩ ⊢ s<span class="sc">\)</span>}</span>
-<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
-<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>Note that I have assumed a denotation for *bites* here that makes it the case that Ziggy and Bella bite each other.</span>
-<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>Thus if we evaluate the resulting expression</span>
-<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})$$</span>
-<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>by first plugging $\ct{b}$ in for $x$---</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>To illustrate these rules, let's derive the sentence in (@ex-bites), which features the transitive verb *bites* (and allows Ziggy to get her revenge).</span>
+<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>(@ex-bites) Ziggy bites Bella.</span>
+<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Ziggy}, \ct{z}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{bites}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))⟩ ⊢ ((np\backslash s)/np)<span class="sc">\)</span>}</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Bella}, \ct{b}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Ziggy bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})⟩ ⊢ s<span class="sc">\)</span>}</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>Note that I have assumed a denotation for *bites* here that makes it the case that Ziggy and Bella bite each other.</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>Thus if we evaluate the resulting expression</span>
 <span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>$$(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, y))(\ct{z})$$</span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})$$</span>
 <span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>---and then plugging $\ct{z}$ in for $y$---we end up with</span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>by first plugging $\ct{b}$ in for $x$---</span>
 <span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, \ct{z})$$</span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>$$(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, y))(\ct{z})$$</span>
 <span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>which is $\true$!</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>---and then plugging $\ct{z}$ in for $y$---we end up with</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, \ct{z})$$</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>which is $\true$!</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
