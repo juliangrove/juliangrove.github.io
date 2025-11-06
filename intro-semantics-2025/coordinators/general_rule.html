@@ -603,13 +603,13 @@ window.Quarto = {
 <p><span class="math display">\[\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.\ct{and}_{(e → t)}(f(x))(g(x)))))\]</span></p>
 <p>This meaning for <em>and</em> immediately uses the meaning we defined for verb-phrase-coordinator <em>and</em>—<span class="math inline">\(\ct{and}_{(e → t)}\)</span>—so let’s just that meaning in. Importantly, we should change up the names of our variables in the meaning we substitute, in order to help prevent them from getting mixed up with the other variables. So instead of writing in</p>
 <p><span class="math display">\[(λf.(λg.(λx.f(x) = g(x) = \true)))\]</span></p>
-<p>as the definition of <span class="math inline">\(\ct{and}_{t}\)</span></p>
+<p>as the definition of <span class="math inline">\(\ct{and}_{(e → t)}\)</span></p>
 <p>we can instead write the following:</p>
 <p><span class="math display">\[(λf^{\prime}.(λg^{\prime}.(λy.f^{\prime}(y) = g^{\prime}(y) = \true)))\]</span></p>
 <p>Importantly, this is exactly the same function! We just changed the names of the variables.</p>
 <p>If we susbstitute this in, we get:</p>
 <p><span class="math display">\[\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λf^{\prime}.(λg^{\prime}.(λy.f^{\prime}(y) = g^{\prime}(y) = \true)))(f(x))(g(x)))))\]</span></p>
-<p>Just as before, we can simply this a bit by performing some substitutions. First, let’s substitute <span class="math inline">\(f(x)\)</span> in for <span class="math inline">\(f^{\prime}\)</span>:</p>
+<p>Following what we did above, we can simplify this definition a bit by performing some substitutions. First, let’s substitute <span class="math inline">\(f(x)\)</span> in for <span class="math inline">\(f^{\prime}\)</span>:</p>
 <p><span class="math display">\[\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λg^{\prime}.(λy.f(x)(y) = g^{\prime}(y) = \true))(g(x)))))\]</span></p>
 <p>Second, lets substitute <span class="math inline">\(g(x)\)</span> in for <span class="math inline">\(g^{\prime}\)</span>:</p>
 <p><span class="math display">\[\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λy.f(x)(y) = g(x)(y) = \true))))\]</span></p>
@@ -1195,7 +1195,7 @@ window.Quarto = {
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>$$(λf.(λg.(λx.f(x) = g(x) = \true)))$$</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>as the definition of $\ct{and}_{t}$</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>as the definition of $\ct{and}_{(e → t)}$</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>we can instead write the following:</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
@@ -1208,7 +1208,7 @@ window.Quarto = {
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>$$\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λf^{\prime}.(λg^{\prime}.(λy.f^{\prime}(y) = g^{\prime}(y) = \true)))(f(x))(g(x)))))$$</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>Just as before, we can simply this a bit by performing some substitutions.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>Following what we did above, we can simplify this definition a bit by performing some substitutions.</span>
 <span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>First, let's substitute $f(x)$ in for $f^{\prime}$:</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>$$\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λg^{\prime}.(λy.f(x)(y) = g^{\prime}(y) = \true))(g(x)))))$$</span>
