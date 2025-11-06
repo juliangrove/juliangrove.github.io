@@ -578,7 +578,7 @@ window.Quarto = {
 <section id="all-other-coordinators" class="level3">
 <h3 class="anchored" data-anchor-id="all-other-coordinators">All other coordinators</h3>
 <p>What about coordinators of verb phrases, transitive verbs, etc.? We should define meanings for these coordinators that depend only on the semantic types of the expressions that they take as their arguments. Thus we can define totally generic meanings, as follows:</p>
-<p><span class="math display">\[\ct{and}_{(x → y)} = (λf.(λg.(λx.\ct{and}_{y}(f(x))(g(x)))))\]</span> <span class="math display">\[\ct{or}_{(x → y)} = (λf.(λg.(λx.\ct{or}_{y}(f(x))(g(x)))))\]</span></p>
+<p><span class="math display">\[\ct{and}_{(X → Y)} = (λf.(λg.(λx.\ct{and}_{Y}(f(x))(g(x)))))\]</span> <span class="math display">\[\ct{or}_{(X → Y)} = (λf.(λg.(λx.\ct{or}_{Y}(f(x))(g(x)))))\]</span></p>
 <section id="example-verb-phrases" class="level4">
 <h4 class="anchored" data-anchor-id="example-verb-phrases">Example: verb phrases</h4>
 <p>So, now, what is the meaning of <em>and</em> when it coordinates two verb phrases? We can just give it the following lexical entry:</p>
@@ -1138,8 +1138,8 @@ window.Quarto = {
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>We should define meanings for these coordinators that depend only on the semantic types of the expressions that they take as their arguments.</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Thus we can define totally generic meanings, as follows:</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$\ct{and}_{(x → y)} = (λf.(λg.(λx.\ct{and}_{y}(f(x))(g(x)))))$$</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$\ct{or}_{(x → y)} = (λf.(λg.(λx.\ct{or}_{y}(f(x))(g(x)))))$$</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$\ct{and}_{(X → Y)} = (λf.(λg.(λx.\ct{and}_{Y}(f(x))(g(x)))))$$</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$\ct{or}_{(X → Y)} = (λf.(λg.(λx.\ct{or}_{Y}(f(x))(g(x)))))$$</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Example: verb phrases</span></span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
