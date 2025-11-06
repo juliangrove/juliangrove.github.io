@@ -614,9 +614,9 @@ window.Quarto = {
 \AxiomC{\(⟨\textit{and}_{(s/(np\backslash s))}, \ct{and}_{((e → t) → t)}⟩ ⊢ (((s/(np\backslash s))\backslash(s/(np\backslash s)))/(s/(np\backslash s)))\)}
 \AxiomC{\(⟨\textit{Tigress}, (λf.f(\ct{ti}))⟩ ⊢ (s/(np\backslash s))\)}
 \RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))⟩ ⊢ ((s/(np\backslash s))\backslash(s/(np\backslash s)))\)}
-\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))⟩ ⊢ (s/(np\backslash s))\)}
+\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Po and\(_{(s/(np\backslash s))}\) Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))⟩ ⊢ (s/(np\backslash s))\)}
 \AxiomC{\(⟨\textit{slept}, (λx.\ct{sleep}(x))⟩ ⊢ (np\backslash s)\)}
-\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))⟩ ⊢ s\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{Po and\(_{(s/(np\backslash s))}\) Tigress slept}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))⟩ ⊢ s\)}
 \end{prooftree}\]</span></p>
 <p>Let’s evaluate the result by first unfolding the definition of <span class="math inline">\(\ct{and}_{((e → t) → t)}\)</span></p>
 <p><span class="math display">\[\ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))\]</span> <span class="math display">\[= (λf.(λg.(λx.f(x) = g(x) = \true)))((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))\]</span></p>
@@ -1197,9 +1197,9 @@ window.Quarto = {
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{and}_{(s/(np\backslash s))}, \ct{and}_{((e → t) → t)}⟩ ⊢ (((s/(np\backslash s))\backslash(s/(np\backslash s)))/(s/(np\backslash s)))<span class="sc">\)</span>}</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Tigress}, (λf.f(\ct{ti}))⟩ ⊢ (s/(np\backslash s))<span class="sc">\)</span>}</span>
 <span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))⟩ ⊢ ((s/(np\backslash s))\backslash(s/(np\backslash s)))<span class="sc">\)</span>}</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))⟩ ⊢ (s/(np\backslash s))<span class="sc">\)</span>}</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Po and<span class="sc">\(</span>_{(s/(np\backslash s))}\) Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))⟩ ⊢ (s/(np\backslash s))<span class="sc">\)</span>}</span>
 <span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{slept}, (λx.\ct{sleep}(x))⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))⟩ ⊢ s<span class="sc">\)</span>}</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Po and<span class="sc">\(</span>_{(s/(np\backslash s))}\) Tigress slept}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))⟩ ⊢ s<span class="sc">\)</span>}</span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Let's evaluate the result by first unfolding the definition of $\ct{and}_{((e → t) → t)}$</span>
