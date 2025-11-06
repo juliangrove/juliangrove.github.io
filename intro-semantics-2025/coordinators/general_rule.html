@@ -607,7 +607,7 @@ window.Quarto = {
 <p>we can instead write the following:</p>
 <p><span class="math display">\[(λf^{\prime}.(λg^{\prime}.(λy.f^{\prime}(y) = g^{\prime}(y) = \true)))\]</span></p>
 <p>Importantly, this is exactly the same function! We just changed the names of the variables.</p>
-<p>If we susbstitute this in, we get:</p>
+<p>If we substitute this in, we get:</p>
 <p><span class="math display">\[\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λf^{\prime}.(λg^{\prime}.(λy.f^{\prime}(y) = g^{\prime}(y) = \true)))(f(x))(g(x)))))\]</span></p>
 <p>Following what we did above, we can simplify this definition a bit by performing some substitutions. First, let’s substitute <span class="math inline">\(f(x)\)</span> in for <span class="math inline">\(f^{\prime}\)</span>:</p>
 <p><span class="math display">\[\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λg^{\prime}.(λy.f(x)(y) = g^{\prime}(y) = \true))(g(x)))))\]</span></p>
@@ -1204,7 +1204,7 @@ window.Quarto = {
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>Importantly, this is exactly the same function!</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>We just changed the names of the variables.</span>
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>If we susbstitute this in, we get:</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>If we substitute this in, we get:</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>$$\ct{and}_{(e → (e → t))} = (λf.(λg.(λx.(λf^{\prime}.(λg^{\prime}.(λy.f^{\prime}(y) = g^{\prime}(y) = \true)))(f(x))(g(x)))))$$</span>
 <span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
