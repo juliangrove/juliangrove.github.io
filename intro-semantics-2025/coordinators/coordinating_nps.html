@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Relations – Introduction to semantics</title>
+<title>Coordinating subject noun phrases – Introduction to semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../formal_preliminaries/functions.html" rel="next">
-<link href="../formal_preliminaries/products.html" rel="prev">
+<link href="../coordinators/assignment.html" rel="next">
+<link href="../coordinators/general_rule.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -147,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/relations.html">Relations</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../coordinators/overview.html">Coordinators</a></li><li class="breadcrumb-item"><a href="../coordinators/coordinating_nps.html">Coordinating subject noun phrases</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -304,7 +304,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/relations.html" class="sidebar-item-text sidebar-link active">
+  <a href="../formal_preliminaries/relations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Relations</span></a>
   </div>
 </li>
@@ -492,7 +492,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../coordinators/coordinating_nps.html" class="sidebar-item-text sidebar-link">
+  <a href="../coordinators/coordinating_nps.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Coordinating subject noun phrases</span></a>
   </div>
 </li>
@@ -521,15 +521,23 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#lexical-entries-for-subject-noun-phrases" id="toc-lexical-entries-for-subject-noun-phrases" class="nav-link active" data-scroll-target="#lexical-entries-for-subject-noun-phrases">Lexical entries for subject noun phrases</a></li>
+  <li><a href="#the-coordinator" id="toc-the-coordinator" class="nav-link" data-scroll-target="#the-coordinator">The coordinator</a></li>
+  <li><a href="#an-example" id="toc-an-example" class="nav-link" data-scroll-target="#an-example">An example</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/relations.html">Relations</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../coordinators/overview.html">Coordinators</a></li><li class="breadcrumb-item"><a href="../coordinators/coordinating_nps.html">Coordinating subject noun phrases</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Relations</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Coordinating subject noun phrases</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -546,32 +554,81 @@ window.Quarto = {
 </header>
 
 
-<p>If we have a collection of sets <span class="math inline">\(A_{1}\)</span> through <span class="math inline">\(A_{n}\)</span>, then we can take an <span class="math inline">\(n\)</span>-ary <em>relation</em> on those sets. An <span class="math inline">\(n\)</span>-ary <em>relation</em> on the sets <span class="math inline">\(A_{1}, ..., A_{n}\)</span> is a set <span class="math inline">\(R\)</span> such that <span class="math inline">\(R ⊆ A_{1} × ... × A_{n}\)</span>. In the special case of a binary relation on two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, <span class="math inline">\(R\)</span> is a set of pairs <span class="math inline">\(⟨a, b⟩\)</span>, such that <span class="math inline">\(a ∈ A\)</span> and <span class="math inline">\(b ∈ B\)</span>. That is, <span class="math inline">\(R ⊆ A × B\)</span>. For <span class="math inline">\(n\)</span>-ary relations <span class="math inline">\(R\)</span>, if the <span class="math inline">\(n\)</span>-tuple <span class="math inline">\(⟨a₁, ..., aₙ⟩\)</span> is a member of <span class="math inline">\(R\)</span>, we can indicate this by writing <span class="math display">\[R(a₁, ..., aₙ)\]</span></p>
-<!-- Some properties of relations are useful to be able to describe. A relation -->
-<!-- $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be /reflexive/ if $⟨x, -->
-<!-- x⟩ ∈ R$ for every $x ∈ A$. That is, $R$ relates everything in $A$ to -->
-<!-- itself. A relation $R$ on $A$ is said to be /symmetric/ if $⟨y, x⟩ ∈ R$ -->
-<!-- whenever $⟨x, y⟩ ∈ R$. It is said to be /antisymmetric/ if the only case in -->
-<!-- which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$. $R$ is said to be -->
-<!-- /transitive/ if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$. A relation -->
-<!-- $R$ on $A$ which is reflexive, transitive, and symmetric is said to be an -->
-<!-- /equivalence relation/. -->
-<p>An important operation on relations is <em>relation composition</em>. Given a relation <span class="math inline">\(R_{1} ⊂ A × B\)</span> and a relation <span class="math inline">\(R_{2} ⊆ B × C\)</span>, their composition <span class="math inline">\(R_{2} ∘ R_{1} ⊆ A × C\)</span> is defined as <span class="math display">\[R_{2} ∘ R_{1} = \{⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}\}\]</span> That is, <span class="math inline">\(R_{2} ∘ R_{1}\)</span> is gotten by relating an element of <span class="math inline">\(A\)</span> to an element of <span class="math inline">\(C\)</span> just in case there is some element of <span class="math inline">\(B\)</span> related to the first element by <span class="math inline">\(R_{1}\)</span> and to the second element by <span class="math inline">\(R_{2}\)</span>.</p>
-<!-- If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result -->
-<!-- of composing $R$ with itself $n$ times. -->
-<!-- By convention: -->
-<!-- $$\begin{align*} -->
-<!-- R^{0} &= \{⟨x, x⟩ ∣ x ∈ A\}\\ -->
-<!-- R^{} &= R\\ -->
-<!-- Rⁿ &= R^{n - 1} ∘ R -->
-<!-- \end{align*}$$ -->
-<!-- If $R ⊆ A × B$, we may define its /inverse/ as the relation $R^{-1} ⊆ B × A$ -->
-<!-- such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$. That is, $R^{-1}$ is -->
-<!-- just like $R$, but ``flipped around''. -->
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\def\true{\ct{T}}
+\def\false{\ct{F}}
+\]</span></p>
+</div>
+<p>To coordinate subject noun phrases like <em>Po</em> and <em>Tigress</em> in a sentence such as (1), we had to make a novel move.</p>
+<ol class="example" type="1">
+<li>Po and Tigress slept.</li>
+</ol>
+<p>Instead of the usual category <span class="math inline">\(np\)</span>, we assigned these noun phrases the category <span class="math inline">\((s/(np\backslash s))\)</span>. This means that they take a verb phrase to their right—something whose syntactic category is <span class="math inline">\((np\backslash s)\)</span>—and together with that verb phrase, they make a sentence (an <span class="math inline">\(s\)</span>).</p>
+<p>This is a strange reversal of roles: typically, it is the verb phrase that takes the subject as <em>its</em> argument. The verb phrase’s syntactic category even says that that’s what it does—it takes an <span class="math inline">\(np\)</span> to its left, and with that <span class="math inline">\(np\)</span>, it makes a sentence. But alas, now there is no longer an <span class="math inline">\(np\)</span> to the left of the verb phrase. What’s there instead is a souped up noun phrase—a taker of verb phrases, if you will. Someone saying, “Hey verb phrase, remember how you were going to take me as your syntactic argument on your left and make a sentence? Well, now it is I who takes you as <em>my</em> argument on my <em>right</em> (don’t worry, I’ll still use you to make a sentence)! (Evil laugh.)”</p>
+<p>Importantly, this is perfectly within the bounds of what we are allowed to do using our category system. If some expression has category <span class="math inline">\(X\)</span>, then we can also define an expression that takes an <span class="math inline">\(X\)</span> to its right to make a sentence by assigning it the category <span class="math inline">\((s/X)\)</span>. We can still do this even if <span class="math inline">\(X\)</span> happens to be the category of a verb phrase, i.e., <span class="math inline">\((np\backslash s)\)</span>.</p>
+<p>The whole reason we want to do this, of course, is in order to allow noun phrases to have a type that “ends in <span class="math inline">\(t\)</span>”. Such types—which also include <span class="math inline">\((e → t)\)</span> and <span class="math inline">\((e → (e → t))\)</span>—allow noun phrases to be coordinated using the scheme in <a href="general_rule.html">A general rule</a>.</p>
+<p>In particular, if noun phrases have the syntactic category <span class="math inline">\((s/(np\backslash s))\)</span>, then they have the semantic type <span class="math inline">\(((e → t) → t)\)</span>. They denote functions from characteristic functions of sets of entities to truth values. Put differently, they are characteristic functions of sets of characteristic functions (of sets of entities). (See <a href="../applicative_cg/sem_types.html#third-example">this discussion</a> again for some review.)</p>
+<p>If we forced noun phrases to have the syntactic category <span class="math inline">\(np\)</span>, we would also be limiting them to having the semantic type <span class="math inline">\(e\)</span> of entities—things that are neither truth values, nor functions into truth values, nor functions into functions into truth values, etc. The scheme we developed to define the possible meanings of <em>and</em> and <em>or</em> would be unusable.</p>
+<section id="lexical-entries-for-subject-noun-phrases" class="level3">
+<h3 class="anchored" data-anchor-id="lexical-entries-for-subject-noun-phrases">Lexical entries for subject noun phrases</h3>
+<p>We can assign <em>Po</em> and <em>Tigress</em> the lexical entries in (2)</p>
+<ol start="2" class="example" type="1">
+<li><ol type="a">
+<li><span class="math inline">\(⟨\textit{Po}, (λf.f(\ct{p}))⟩ ⊢ (s/(np\backslash s))\)</span></li>
+<li><span class="math inline">\(⟨\textit{Tigress}, (λf.f(\ct{ti}))⟩ ⊢ (s/(np\backslash s))\)</span></li>
+</ol></li>
+</ol>
+<p>Each of the meanings in these lexical entries takes a verb phrase meaning—a characteristic function—and obtains a truth value by applying that function to the entity the noun phrase usually denotes (i.e., <span class="math inline">\(\ct{p}\)</span> or <span class="math inline">\(\ct{ti}\)</span>). The idea is that the resulting sentence will denote <span class="math inline">\(\true\)</span> just in case the verb phrase characterizes a set that has that entity as one of its members.</p>
+<p>Here’s a derivation of <em>Po slept</em> to illustrate:</p>
+<p><span class="math display">\[\begin{prooftree}
+\AxiomC{\(⟨\textit{Po}, (λf.f(\ct{p}))⟩ ⊢ (s/(np\backslash s))\)}
+\AxiomC{\(⟨\textit{slept}, (λx.\ct{sleep}(x))⟩ ⊢ (np\backslash s)\)}
+\RightLabel{\(/\)}\BinaryInfC{\(\textit{Po slept}, (λf.f(\ct{p}))(λx.\ct{sleep}(x))⟩ ⊢ s\)}
+\end{prooftree}\]</span></p>
+<p>The resulting meaning representation can then be evaluated:</p>
+<p><span class="math display">\[(λf.f(\ct{p}))(λx.\ct{sleep}(x))\]</span> <span class="math display">\[⇒ (λx.\ct{sleep}(x))(\ct{p})\]</span> <span class="math display">\[⇒ \ct{sleep}(\ct{p})\]</span></p>
+</section>
+<section id="the-coordinator" class="level3">
+<h3 class="anchored" data-anchor-id="the-coordinator">The coordinator</h3>
+<p>The meaning for <em>and</em> that we want in order to coordinate noun phrases like that in (1) is given by the lexical in (3).</p>
+<ol start="3" class="example" type="1">
+<li><span class="math inline">\(⟨\textit{and}_{(s/(np\backslash s))}, \ct{and}_{((e → t) → t)}⟩ ⊢ (((s/(np\backslash s))\backslash(s/(np\backslash s)))/(s/(np\backslash s)))\)</span></li>
+</ol>
+<p>What is <span class="math inline">\(\ct{and}_{((e → t) → t)}\)</span>? If we follow the scheme given in <a href="general_rule.html">A general rule</a>, we can see that it is defined as:</p>
+<p><span class="math display">\[\ct{and}_{((e → t) → t)} = (λf.(λg.(λx.\ct{and}_{t}(f(x))(g(x)))))\]</span></p>
+<p><span class="math display">\[= (λf.(λg.(λx.f(x) = g(x) = \true)))\]</span></p>
+<p>Here, the <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> represent noun phrase meanings (functions from characteristic functions to truth values), and the <span class="math inline">\(x\)</span> represents a verb phrase meaning (a characteristic function).</p>
+</section>
+<section id="an-example" class="level3">
+<h3 class="anchored" data-anchor-id="an-example">An example</h3>
+<p>Here is an example derivation for the sentence in (1):</p>
+<p><span class="math display">\[\begin{prooftree}
+\AxiomC{\(⟨\textit{Po}, (λf.f(\ct{p}))⟩ ⊢ (s/(np\backslash s))\)}
+\AxiomC{\(⟨\textit{and}_{(s/(np\backslash s))}, \ct{and}_{((e → t) → t)}⟩ ⊢ (((s/(np\backslash s))\backslash(s/(np\backslash s)))/(s/(np\backslash s)))\)}
+\AxiomC{\(⟨\textit{Tigress}, (λf.f(\ct{ti}))⟩ ⊢ (s/(np\backslash s))\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))⟩ ⊢ ((s/(np\backslash s))\backslash(s/(np\backslash s)))\)}
+\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))⟩ ⊢ (s/(np\backslash s))\)}
+\AxiomC{\(⟨\textit{slept}, (λx.\ct{sleep}(x))⟩ ⊢ (np\backslash s)\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))⟩ ⊢ s\)}
+\end{prooftree}\]</span></p>
+<p>Let’s evaluate the result by first unfolding the definition of <span class="math inline">\(\ct{and}_{((e → t) → t)}\)</span></p>
+<p><span class="math display">\[\ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))\]</span> <span class="math display">\[= (λf.(λg.(λx.f(x) = g(x) = \true)))((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))\]</span></p>
+<p>and then reducing the resulting expression, one step at a time:</p>
+<p><span class="math display">\[(λf.(λg.(λx.f(x) = g(x) = \true)))((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))\]</span> <span class="math display">\[⇒ (λg.(λx.(λf.f(\ct{ti}))(x) = g(x) = \true))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))\]</span> <span class="math display">\[⇒ (λx.(λf.f(\ct{ti}))(x) = (λf.f(\ct{p}))(x) = \true)((λx.\ct{sleep}(x)))\]</span> <span class="math display">\[⇒ (λf.f(\ct{ti}))((λx.\ct{sleep}(x))) = (λf.f(\ct{p}))((λx.\ct{sleep}(x))) = \true\]</span> <span class="math display">\[⇒ (λx.\ct{sleep}(x))(\ct{ti}) = (λf.f(\ct{p}))((λx.\ct{sleep}(x))) = \true\]</span> <span class="math display">\[⇒ \ct{sleep}(\ct{ti}) = (λf.f(\ct{p}))((λx.\ct{sleep}(x))) = \true\]</span> <span class="math display">\[⇒ \ct{sleep}(\ct{ti}) = (λx.\ct{sleep}(x))(\ct{p}) = \true\]</span> <span class="math display">\[⇒ \ct{sleep}(\ct{ti}) = \ct{sleep}(\ct{p}) = \true\]</span></p>
+<p>The truth value we get at the end is <span class="math inline">\(\true\)</span> just in case <span class="math inline">\(\ct{sleep}\)</span> is true of both <span class="math inline">\(\ct{ti}\)</span> and <span class="math inline">\(\ct{p}\)</span>—that is, if both Tigress and Po slept.</p>
+<p>(I would really recommend reading each of these lines carefully and ensuring that you see which particular reduction has taken place!)</p>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1026,53 +1083,144 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../formal_preliminaries/products.html" class="pagination-link" aria-label="Products">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Products</span>
+      <a href="../coordinators/general_rule.html" class="pagination-link" aria-label="A general rule">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">A general rule</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../formal_preliminaries/functions.html" class="pagination-link" aria-label="Functions">
-        <span class="nav-page-text">Functions</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../coordinators/assignment.html" class="pagination-link" aria-label="Assignment">
+        <span class="nav-page-text">Assignment</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Relations"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Coordinating subject noun phrases"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>If we have a collection of sets $A_{1}$ through $A_{n}$, then we can take an $n$-ary *relation* on those sets. </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>An $n$-ary *relation* on the sets $A_{1}, ..., A_{n}$ is a set $R$ such that $R ⊆ A_{1} × ... × A_{n}$.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>In the special case of a binary relation on two sets $A$ and $B$, $R$ is a set of pairs $⟨a, b⟩$, such that $a ∈ A$ and $b ∈ B$.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>That is, $R ⊆ A × B$.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>For $n$-ary relations $R$, if the $n$-tuple $⟨a₁, ..., aₙ⟩$ is a member of $R$, we can indicate this by writing $$R(a₁, ..., aₙ)$$</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Some properties of relations are useful to be able to describe. A relation --&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be /reflexive/ if $⟨x, --&gt;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- x⟩ ∈ R$ for every $x ∈ A$. That is, $R$ relates everything in $A$ to --&gt;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- itself. A relation $R$ on $A$ is said to be /symmetric/ if $⟨y, x⟩ ∈ R$ --&gt;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- whenever $⟨x, y⟩ ∈ R$. It is said to be /antisymmetric/ if the only case in --&gt;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$. $R$ is said to be --&gt;</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- /transitive/ if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$. A relation --&gt;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $R$ on $A$ which is reflexive, transitive, and symmetric is said to be an --&gt;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- /equivalence relation/. --&gt;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>An important operation on relations is *relation composition*.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Given a relation $R_{1} ⊂ A × B$ and a relation $R_{2} ⊆ B × C$, their composition $R_{2} ∘ R_{1} ⊆ A × C$ is defined as $$R_{2} ∘ R_{1} = <span class="sc">\{</span>⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}<span class="sc">\}</span>$$</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>That is, $R_{2} ∘ R_{1}$ is gotten by relating an element of $A$ to an element of $C$ just in case there is some element of $B$ related to the first element by $R_{1}$ and to the second element by $R_{2}$.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result --&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- of composing $R$ with itself $n$ times. --&gt;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- By convention: --&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $$\begin{align*} --&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- R^{0} &amp;= \{⟨x, x⟩ ∣ x ∈ A\}\\ --&gt;</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- R^{} &amp;= R\\ --&gt;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Rⁿ &amp;= R^{n - 1} ∘ R --&gt;</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- \end{align*}$$ --&gt;</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- If $R ⊆ A × B$, we may define its /inverse/ as the relation $R^{-1} ⊆ B × A$ --&gt;</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$. That is, $R^{-1}$ is --&gt;</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- just like $R$, but ``flipped around''. --&gt;</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\def\true{\ct{T}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\def\false{\ct{F}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>To coordinate subject noun phrases like *Po* and *Tigress* in a sentence such as (@ex-po-tigress-slept), we had to make a novel move.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>(@ex-po-tigress-slept) Po and Tigress slept.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Instead of the usual category $np$, we assigned these noun phrases the category $(s/(np\backslash s))$.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>This means that they take a verb phrase to their right---something whose syntactic category is $(np\backslash s)$---and together with that verb phrase, they make a sentence (an $s$).</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>This is a strange reversal of roles:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>typically, it is the verb phrase that takes the subject as *its* argument.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>The verb phrase's syntactic category even says that that's what it does---it takes an $np$ to its left, and with that $np$, it makes a sentence.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>But alas, now there is no longer an $np$ to the left of the verb phrase.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>What's there instead is a souped up noun phrase---a taker of verb phrases, if you will.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Someone saying, "Hey verb phrase, remember how you were going to take me as your syntactic argument on your left and make a sentence? Well, now it is I who takes you as *my* argument on my *right* (don't worry, I'll still use you to make a sentence)! (Evil laugh.)"</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Importantly, this is perfectly within the bounds of what we are allowed to do using our category system.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>If some expression has category $X$, then we can also define an expression that takes an $X$ to its right to make a sentence by assigning it the category $(s/X)$.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>We can still do this even if $X$ happens to be the category of a verb phrase, i.e., $(np\backslash s)$.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>The whole reason we want to do this, of course, is in order to allow noun phrases to have a type that "ends in $t$".</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Such types---which also include $(e → t)$ and $(e → (e → t))$---allow noun phrases to be coordinated using the scheme in <span class="co">[</span><span class="ot">A general rule</span><span class="co">](general_rule.html)</span>.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>In particular, if noun phrases have the syntactic category $(s/(np\backslash s))$, then they have the semantic type $((e → t) → t)$.</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>They denote functions from characteristic functions of sets of entities to truth values.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Put differently, they are characteristic functions of sets of characteristic functions (of sets of entities).</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>(See <span class="co">[</span><span class="ot">this discussion</span><span class="co">](../applicative_cg/sem_types.html#third-example)</span> again for some review.)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>If we forced noun phrases to have the syntactic category $np$, we would also be limiting them to having the semantic type $e$ of entities---things that are neither truth values, nor functions into truth values, nor functions into functions into truth values, etc.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>The scheme we developed to define the possible meanings of *and* and *or* would be unusable.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### Lexical entries for subject noun phrases</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>We can assign *Po* and *Tigress* the lexical entries in (@ex-lex-noun-phrases)</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>(@ex-lex-noun-phrases) a. $⟨\textit{Po}, (λf.f(\ct{p}))⟩ ⊢ (s/(np\backslash s))$</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    b. $⟨\textit{Tigress}, (λf.f(\ct{ti}))⟩ ⊢ (s/(np\backslash s))$</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Each of the meanings in these lexical entries takes a verb phrase meaning---a characteristic function---and obtains a truth value by applying that function to the entity the noun phrase usually denotes (i.e., $\ct{p}$ or $\ct{ti}$).</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>The idea is that the resulting sentence will denote $\true$ just in case the verb phrase characterizes a set that has that entity as one of its members.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Here's a derivation of *Po slept* to illustrate:</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Po}, (λf.f(\ct{p}))⟩ ⊢ (s/(np\backslash s))<span class="sc">\)</span>}</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{slept}, (λx.\ct{sleep}(x))⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>\textit{Po slept}, (λf.f(\ct{p}))(λx.\ct{sleep}(x))⟩ ⊢ s<span class="sc">\)</span>}</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>The resulting meaning representation can then be evaluated:</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>$$(λf.f(\ct{p}))(λx.\ct{sleep}(x))$$</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>$$⇒ (λx.\ct{sleep}(x))(\ct{p})$$</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>$$⇒ \ct{sleep}(\ct{p})$$</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">### The coordinator</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>The meaning for *and* that we want in order to coordinate noun phrases like that in (@ex-po-tigress-slept) is given by the lexical in (@ex-lex-and-np).</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>(@ex-lex-and-np) $⟨\textit{and}_{(s/(np\backslash s))}, \ct{and}_{((e → t) → t)}⟩ ⊢ (((s/(np\backslash s))\backslash(s/(np\backslash s)))/(s/(np\backslash s)))$</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>What is $\ct{and}_{((e → t) → t)}$?</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>If we follow the scheme given in <span class="co">[</span><span class="ot">A general rule</span><span class="co">](general_rule.html)</span>, we can see that it is defined as:</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>$$\ct{and}_{((e → t) → t)} = (λf.(λg.(λx.\ct{and}_{t}(f(x))(g(x)))))$$</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>$$= (λf.(λg.(λx.f(x) = g(x) = \true)))$$</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Here, the $f$ and $g$ represent noun phrase meanings (functions from characteristic functions to truth values), and the $x$ represents a verb phrase meaning (a characteristic function).</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### An example</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Here is an example derivation for the sentence in (@ex-po-tigress-slept):</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Po}, (λf.f(\ct{p}))⟩ ⊢ (s/(np\backslash s))<span class="sc">\)</span>}</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{and}_{(s/(np\backslash s))}, \ct{and}_{((e → t) → t)}⟩ ⊢ (((s/(np\backslash s))\backslash(s/(np\backslash s)))/(s/(np\backslash s)))<span class="sc">\)</span>}</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Tigress}, (λf.f(\ct{ti}))⟩ ⊢ (s/(np\backslash s))<span class="sc">\)</span>}</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))⟩ ⊢ ((s/(np\backslash s))\backslash(s/(np\backslash s)))<span class="sc">\)</span>}</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))⟩ ⊢ (s/(np\backslash s))<span class="sc">\)</span>}</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{slept}, (λx.\ct{sleep}(x))⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Po and Tigress}, \ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))⟩ ⊢ s<span class="sc">\)</span>}</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Let's evaluate the result by first unfolding the definition of $\ct{and}_{((e → t) → t)}$</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>$$\ct{and}_{((e → t) → t)}((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))$$</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>$$= (λf.(λg.(λx.f(x) = g(x) = \true)))((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))$$</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>and then reducing the resulting expression, one step at a time:</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>$$(λf.(λg.(λx.f(x) = g(x) = \true)))((λf.f(\ct{ti})))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))$$</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>$$⇒ (λg.(λx.(λf.f(\ct{ti}))(x) = g(x) = \true))((λf.f(\ct{p})))((λx.\ct{sleep}(x)))$$</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>$$⇒ (λx.(λf.f(\ct{ti}))(x) = (λf.f(\ct{p}))(x) = \true)((λx.\ct{sleep}(x)))$$</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>$$⇒ (λf.f(\ct{ti}))((λx.\ct{sleep}(x))) = (λf.f(\ct{p}))((λx.\ct{sleep}(x))) = \true$$</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>$$⇒ (λx.\ct{sleep}(x))(\ct{ti}) = (λf.f(\ct{p}))((λx.\ct{sleep}(x))) = \true$$</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>$$⇒ \ct{sleep}(\ct{ti}) = (λf.f(\ct{p}))((λx.\ct{sleep}(x))) = \true$$</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>$$⇒ \ct{sleep}(\ct{ti}) = (λx.\ct{sleep}(x))(\ct{p}) = \true$$</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>$$⇒ \ct{sleep}(\ct{ti}) = \ct{sleep}(\ct{p}) = \true$$</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>The truth value we get at the end is $\true$ just in case $\ct{sleep}$ is true of both $\ct{ti}$ and $\ct{p}$---that is, if both Tigress and Po slept.</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>(I would really recommend reading each of these lines carefully and ensuring that you see which particular reduction has taken place!)</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

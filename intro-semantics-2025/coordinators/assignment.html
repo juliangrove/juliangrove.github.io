@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Relations – Introduction to semantics</title>
+<title>Assignment – Introduction to semantics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../formal_preliminaries/functions.html" rel="next">
-<link href="../formal_preliminaries/products.html" rel="prev">
+<link href="../coordinators/coordinating_nps.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -147,7 +146,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/relations.html">Relations</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../coordinators/overview.html">Coordinators</a></li><li class="breadcrumb-item"><a href="../coordinators/assignment.html">Assignment</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -304,7 +303,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/relations.html" class="sidebar-item-text sidebar-link active">
+  <a href="../formal_preliminaries/relations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Relations</span></a>
   </div>
 </li>
@@ -498,7 +497,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../coordinators/assignment.html" class="sidebar-item-text sidebar-link">
+  <a href="../coordinators/assignment.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Assignment</span></a>
   </div>
 </li>
@@ -521,15 +520,23 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-1" id="toc-part-1" class="nav-link active" data-scroll-target="#part-1">Part 1</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/relations.html">Relations</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../coordinators/overview.html">Coordinators</a></li><li class="breadcrumb-item"><a href="../coordinators/assignment.html">Assignment</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Relations</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Assignment</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -546,32 +553,54 @@ window.Quarto = {
 </header>
 
 
-<p>If we have a collection of sets <span class="math inline">\(A_{1}\)</span> through <span class="math inline">\(A_{n}\)</span>, then we can take an <span class="math inline">\(n\)</span>-ary <em>relation</em> on those sets. An <span class="math inline">\(n\)</span>-ary <em>relation</em> on the sets <span class="math inline">\(A_{1}, ..., A_{n}\)</span> is a set <span class="math inline">\(R\)</span> such that <span class="math inline">\(R ⊆ A_{1} × ... × A_{n}\)</span>. In the special case of a binary relation on two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, <span class="math inline">\(R\)</span> is a set of pairs <span class="math inline">\(⟨a, b⟩\)</span>, such that <span class="math inline">\(a ∈ A\)</span> and <span class="math inline">\(b ∈ B\)</span>. That is, <span class="math inline">\(R ⊆ A × B\)</span>. For <span class="math inline">\(n\)</span>-ary relations <span class="math inline">\(R\)</span>, if the <span class="math inline">\(n\)</span>-tuple <span class="math inline">\(⟨a₁, ..., aₙ⟩\)</span> is a member of <span class="math inline">\(R\)</span>, we can indicate this by writing <span class="math display">\[R(a₁, ..., aₙ)\]</span></p>
-<!-- Some properties of relations are useful to be able to describe. A relation -->
-<!-- $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be /reflexive/ if $⟨x, -->
-<!-- x⟩ ∈ R$ for every $x ∈ A$. That is, $R$ relates everything in $A$ to -->
-<!-- itself. A relation $R$ on $A$ is said to be /symmetric/ if $⟨y, x⟩ ∈ R$ -->
-<!-- whenever $⟨x, y⟩ ∈ R$. It is said to be /antisymmetric/ if the only case in -->
-<!-- which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$. $R$ is said to be -->
-<!-- /transitive/ if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$. A relation -->
-<!-- $R$ on $A$ which is reflexive, transitive, and symmetric is said to be an -->
-<!-- /equivalence relation/. -->
-<p>An important operation on relations is <em>relation composition</em>. Given a relation <span class="math inline">\(R_{1} ⊂ A × B\)</span> and a relation <span class="math inline">\(R_{2} ⊆ B × C\)</span>, their composition <span class="math inline">\(R_{2} ∘ R_{1} ⊆ A × C\)</span> is defined as <span class="math display">\[R_{2} ∘ R_{1} = \{⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}\}\]</span> That is, <span class="math inline">\(R_{2} ∘ R_{1}\)</span> is gotten by relating an element of <span class="math inline">\(A\)</span> to an element of <span class="math inline">\(C\)</span> just in case there is some element of <span class="math inline">\(B\)</span> related to the first element by <span class="math inline">\(R_{1}\)</span> and to the second element by <span class="math inline">\(R_{2}\)</span>.</p>
-<!-- If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result -->
-<!-- of composing $R$ with itself $n$ times. -->
-<!-- By convention: -->
-<!-- $$\begin{align*} -->
-<!-- R^{0} &= \{⟨x, x⟩ ∣ x ∈ A\}\\ -->
-<!-- R^{} &= R\\ -->
-<!-- Rⁿ &= R^{n - 1} ∘ R -->
-<!-- \end{align*}$$ -->
-<!-- If $R ⊆ A × B$, we may define its /inverse/ as the relation $R^{-1} ⊆ B × A$ -->
-<!-- such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$. That is, $R^{-1}$ is -->
-<!-- just like $R$, but ``flipped around''. -->
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\expr}[3]{\begin{array}{c}
+#1 \\
+\bbox[lightblue,5px]{#2}
+\end{array} ⊢ #3}
+\newcommand{\ct}[1]{\bbox[font-size: 0.8em]{\mathsf{#1}}}
+\newcommand{\abbr}[1]{\bbox[transform: scale(0.95)]{\mathtt{#1}}}
+\def\true{\ct{T}}
+\def\false{\ct{F}}
+\]</span></p>
+</div>
+<p>Due on Wednesday, November 12th.</p>
+<section id="part-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
+<p>Provide a lexical entry for <em>or</em> that accounts for its occurrence in the sentence in (1), and give a derivation for (1).</p>
+<ol class="example" type="1">
+<li>Tigress or Po jumped.</li>
+</ol>
+<p>Make sure that you unfold any relevant definitions gotten from the scheme discussed in <a href="general_rule.html">A general rule</a>, and that you end up with a representation of a truth value as the meaning of (1).</p>
+</section>
+<section id="part-2" class="level3">
+<h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
+<p>In addition to subject noun phrases, we can also coordinate object noun phrases, as in (2).</p>
+<ol start="2" class="example" type="1">
+<li>Mantis punched Tigress and Po.</li>
+</ol>
+<p>Provide lexical entries for <em>Tigress</em> and <em>Po</em> that account for this fact, as well as the fact that this (2) entails (3), and vice versa.</p>
+<ol start="3" class="example" type="1">
+<li>Mantis punched Tigress and Mantis punched Po.</li>
+</ol>
+<p>The basic idea here is that you want an object noun phrase to take a transitive verb and give something back.</p>
+<p>You don’t need to provide a derivation of (2) for this exercise, but it might help to!</p>
+</section>
+<section id="part-3" class="level3">
+<h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
+<p>The sentence in (4) is ambiguous; that is, it has two possible interpretations, or <em>readings</em>.</p>
+<ol start="4" class="example" type="1">
+<li>Tigress and Po jumped or slept.</li>
+</ol>
+<p>On one reading, both Tigress and Po have to have done the same thing—that is, they both jumped <em>or</em> they both slept. To get at this reading, you might follow up (4) by saying, “Tigress and Po jumped or slept—but I don’t know which one they both did.” Call this reading of the sentence in (4) <em>Reading A</em>.</p>
+<p>There is another reading of (4), however, which is <em>weaker</em> than Reading A. On this other reading, (4) can be true if Tigress and Po both did one of the two activities of jumping and sleeping, but not necessarily the same one. For example, maybe Tigress only jumped, while Po only slept. It seems like (4) can still be true in this scenario—it just means something different. Call this <em>Reading B</em>.</p>
+<p>Do the assumptions we have made about the meanings of <em>and</em>, <em>or</em>, and subject noun phrases allow us to account for the existence of both Reading A and Reading B? Or can we only explain one or the other? One way to figure out an answer to this question is by providing a derivation for (4).</p>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1026,53 +1055,84 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../formal_preliminaries/products.html" class="pagination-link" aria-label="Products">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Products</span>
+      <a href="../coordinators/coordinating_nps.html" class="pagination-link" aria-label="Coordinating subject noun phrases">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Coordinating subject noun phrases</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../formal_preliminaries/functions.html" class="pagination-link" aria-label="Functions">
-        <span class="nav-page-text">Functions</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Relations"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Assignment"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>If we have a collection of sets $A_{1}$ through $A_{n}$, then we can take an $n$-ary *relation* on those sets. </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>An $n$-ary *relation* on the sets $A_{1}, ..., A_{n}$ is a set $R$ such that $R ⊆ A_{1} × ... × A_{n}$.</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>In the special case of a binary relation on two sets $A$ and $B$, $R$ is a set of pairs $⟨a, b⟩$, such that $a ∈ A$ and $b ∈ B$.</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>That is, $R ⊆ A × B$.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>For $n$-ary relations $R$, if the $n$-tuple $⟨a₁, ..., aₙ⟩$ is a member of $R$, we can indicate this by writing $$R(a₁, ..., aₙ)$$</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Some properties of relations are useful to be able to describe. A relation --&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be /reflexive/ if $⟨x, --&gt;</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- x⟩ ∈ R$ for every $x ∈ A$. That is, $R$ relates everything in $A$ to --&gt;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- itself. A relation $R$ on $A$ is said to be /symmetric/ if $⟨y, x⟩ ∈ R$ --&gt;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- whenever $⟨x, y⟩ ∈ R$. It is said to be /antisymmetric/ if the only case in --&gt;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$. $R$ is said to be --&gt;</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- /transitive/ if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$. A relation --&gt;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $R$ on $A$ which is reflexive, transitive, and symmetric is said to be an --&gt;</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- /equivalence relation/. --&gt;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>An important operation on relations is *relation composition*.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Given a relation $R_{1} ⊂ A × B$ and a relation $R_{2} ⊆ B × C$, their composition $R_{2} ∘ R_{1} ⊆ A × C$ is defined as $$R_{2} ∘ R_{1} = <span class="sc">\{</span>⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}<span class="sc">\}</span>$$</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>That is, $R_{2} ∘ R_{1}$ is gotten by relating an element of $A$ to an element of $C$ just in case there is some element of $B$ related to the first element by $R_{1}$ and to the second element by $R_{2}$.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result --&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- of composing $R$ with itself $n$ times. --&gt;</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- By convention: --&gt;</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $$\begin{align*} --&gt;</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- R^{0} &amp;= \{⟨x, x⟩ ∣ x ∈ A\}\\ --&gt;</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- R^{} &amp;= R\\ --&gt;</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Rⁿ &amp;= R^{n - 1} ∘ R --&gt;</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- \end{align*}$$ --&gt;</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- If $R ⊆ A × B$, we may define its /inverse/ as the relation $R^{-1} ⊆ B × A$ --&gt;</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$. That is, $R^{-1}$ is --&gt;</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- just like $R$, but ``flipped around''. --&gt;</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: ../styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: mathjax</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    mathjax-config:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">      loader: {load: ['[tex]/bussproofs','[tex]/bbox','[tex]/colorbox']}</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">      tex:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        packages: {'[+]': ['bussproofs','bbox','colorbox']}</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>::: {.hidden}</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>\newcommand{\expr}<span class="co">[</span><span class="ot">3</span><span class="co">]</span>{\begin{array}{c}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>#1 <span class="sc">\\</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>\bbox<span class="co">[</span><span class="ot">lightblue,5px</span><span class="co">]</span>{#2}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>\end{array} ⊢ #3}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>\newcommand{\ct}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">font-size: 0.8em</span><span class="co">]</span>{\mathsf{#1}}}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>\newcommand{\abbr}<span class="co">[</span><span class="ot">1</span><span class="co">]</span>{\bbox<span class="co">[</span><span class="ot">transform: scale(0.95)</span><span class="co">]</span>{\mathtt{#1}}}</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>\def\true{\ct{T}}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\def\false{\ct{F}}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Due on Wednesday, November 12th.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 1</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for *or* that accounts for its occurrence in the sentence in (@ex-or-nps), and give a derivation for (@ex-or-nps).</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>(@ex-or-nps) Tigress or Po jumped.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Make sure that you unfold any relevant definitions gotten from the scheme discussed in <span class="co">[</span><span class="ot">A general rule</span><span class="co">](general_rule.html)</span>, and that you end up with a representation of a truth value as the meaning of (@ex-or-nps).</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>In addition to subject noun phrases, we can also coordinate object noun phrases, as in (@ex-and-obj).</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>(@ex-and-obj) Mantis punched Tigress and Po.</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Provide lexical entries for *Tigress* and *Po* that account for this fact, as well as the fact that this (@ex-and-obj) entails (@ex-and-obj-full), and vice versa.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>(@ex-and-obj-full) Mantis punched Tigress and Mantis punched Po.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>The basic idea here is that you want an object noun phrase to take a transitive verb and give something back.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>You don't need to provide a derivation of (@ex-and-obj) for this exercise, but it might help to!</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>The sentence in (@ex-two-readings) is ambiguous;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>that is, it has two possible interpretations, or *readings*.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>(@ex-two-readings) Tigress and Po jumped or slept.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>On one reading, both Tigress and Po have to have done the same thing---that is, they both jumped *or* they both slept.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>To get at this reading, you might follow up (@ex-two-readings) by saying, "Tigress and Po jumped or slept---but I don't know which one they both did."</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Call this reading of the sentence in (@ex-two-readings) *Reading A*.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>There is another reading of (@ex-two-readings), however, which is *weaker* than Reading A.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>On this other reading, (@ex-two-readings) can be true if Tigress and Po both did one of the two activities of jumping and sleeping, but not necessarily the same one.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>For example, maybe Tigress only jumped, while Po only slept.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>It seems like (@ex-two-readings) can still be true in this scenario---it just means something different.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Call this *Reading B*.</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Do the assumptions we have made about the meanings of *and*, *or*, and subject noun phrases allow us to account for the existence of both Reading A and Reading B?</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>Or can we only explain one or the other?</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>One way to figure out an answer to this question is by providing a derivation for (@ex-two-readings).</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

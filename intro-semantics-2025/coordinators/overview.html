@@ -65,6 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../coordinators/examples.html" rel="next">
+<link href="../verbs/assignment.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -145,9 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Introduction to semantics
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../coordinators/overview.html">Coordinators</a></li><li class="breadcrumb-item"><a href="../coordinators/overview.html">Overview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -464,8 +464,45 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Coordinators</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Coordinators</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coordinators/overview.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coordinators/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Some examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coordinators/general_rule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A general rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coordinators/coordinating_nps.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coordinating subject noun phrases</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coordinators/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -490,7 +527,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../coordinators/overview.html">Coordinators</a></li><li class="breadcrumb-item"><a href="../coordinators/overview.html">Overview</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Overview</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -521,14 +558,14 @@ window.Quarto = {
 \def\false{\ct{F}}
 \]</span></p>
 </div>
-<p>These notes aim to get a better handle on the syntax and semantics of coordinators, like <em>and</em> and <em>or</em>. Something special about coordinators, at least in English, is their apparent ability to coordinate expressions of any category. For example, while we can coordinate sentences and verb phrases, like in (1)</p>
+<p>These notes aim to get a better handle on the syntax and semantics of coordinators, like <em>and</em> and <em>or</em>. Something special about coordinators, at least in English, is that (at least, apparently) they can coordinate expressions of any category. For example, while we can coordinate sentences and verb phrases, as in (1)</p>
 <ol class="example" type="1">
 <li><ol type="a">
 <li>Po slept {and, or} Tigress jumped.</li>
 <li>Po slept {and, or} jumped.</li>
 </ol></li>
 </ol>
-<p>we can also coordinate noun phrases, transitive verbs, prepositional phrases, and perhaps even other categories like prepositions, like in (2).</p>
+<p>we can also coordinate noun phrases, transitive verbs, prepositional phrases, and perhaps even other categories like prepositions, as in (2).</p>
 <ol start="2" class="example" type="1">
 <li><ol type="a">
 <li>Po {and, or} Tigress slept.</li>
@@ -537,7 +574,7 @@ window.Quarto = {
 <li>Po cooked noodles inside {and, or} outside the kitchen.</li>
 </ol></li>
 </ol>
-<p>Not only is it possible to coordinate strings of various categories, but when we do, a systematic pattern of inference seems arise. Specifically: when we coordinate constituents smaller than sentences, what’s produced is a sentence which seems to <em>mean the same thing</em> as a sentence-level coordination. For example, the sentences in (2) appear to mean the same things as the sentences in (3), respectively, when the same coordinator occurs in both.</p>
+<p>Not only is it possible to coordinate strings of various categories, but when we do, a systematic pattern of inference arises. Specifically: when we coordinate constituents smaller than sentences, what’s produced is a sentence which seems to <em>mean the same thing</em> as a sentence-level coordination. For example, the sentences in (2) appear to mean the same things as the sentences in (3), respectively, when the same coordinator occurs in both.</p>
 <ol start="3" class="example" type="1">
 <li><ol type="a">
 <li>Po slept {and, or} Tigress slept.</li>
@@ -1002,7 +1039,19 @@ window.Quarto = {
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../verbs/assignment.html" class="pagination-link" aria-label="Assignment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../coordinators/examples.html" class="pagination-link" aria-label="Some examples">
+        <span class="nav-page-text">Some examples</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Overview"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
@@ -1031,20 +1080,20 @@ window.Quarto = {
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>These notes aim to get a better handle on the syntax and semantics of coordinators, like *and* and *or*.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Something special about coordinators, at least in English, is their apparent ability to coordinate expressions of any category.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>For example, while we can coordinate sentences and verb phrases, like in (@ex-and-or-s-vp)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Something special about coordinators, at least in English, is that (at least, apparently) they can coordinate expressions of any category.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>For example, while we can coordinate sentences and verb phrases, as in (@ex-and-or-s-vp)</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>(@ex-and-or-s-vp) a. Po slept {and, or} Tigress jumped.</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    a. Po slept {and, or} jumped.</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>we can also coordinate noun phrases, transitive verbs, prepositional phrases, and perhaps even other categories like prepositions, like in (@ex-and-or-others).</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>we can also coordinate noun phrases, transitive verbs, prepositional phrases, and perhaps even other categories like prepositions, as in (@ex-and-or-others).</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>(@ex-and-or-others) a. Po {and, or} Tigress slept.</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    b. Tigress punched {and, or} helped Po.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    c. Po cooked noodles in the kitchen {and, or} for Tigress.</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    d. Po cooked noodles inside {and, or} outside the kitchen.</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Not only is it possible to coordinate strings of various categories, but when we do, a systematic pattern of inference seems arise.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Not only is it possible to coordinate strings of various categories, but when we do, a systematic pattern of inference arises.</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Specifically:</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>when we coordinate constituents smaller than sentences, what's produced is a sentence which seems to *mean the same thing* as a sentence-level coordination.</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>For example, the sentences in (@ex-and-or-others) appear to mean the same things as the sentences in (@ex-and-or-paraphrases), respectively, when the same coordinator occurs in both.</span>
