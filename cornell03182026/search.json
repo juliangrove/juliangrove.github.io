@@ -1,0 +1,807 @@
+[
+  {
+    "objectID": "talk/talk.html#joint-work",
+    "href": "talk/talk.html#joint-work",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Joint work",
+    "text": "Joint work\nwith Aaron Steven White (U. Rochester) https://aaronstevenwhite.io/"
+  },
+  {
+    "objectID": "talk/talk.html#the-bridge-from-theory-to-data",
+    "href": "talk/talk.html#the-bridge-from-theory-to-data",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The bridge from theory to data",
+    "text": "The bridge from theory to data\nSemantic theory has achieved remarkable success in characterizing the compositional structure of meaning.\n\nOpportunity: connect elegant formal theories to messy, gradient patterns from large-scale experiments\n\n\nGoal: maintain theoretical insights while extending to account for empirical richness\n\n\nProbabilistic Dynamic Semantics as systematic bridge\n\n\nWelcome everyone. Today we’re starting our journey into Probabilistic Dynamic Semantics by first understanding the motivation - why do we need a new framework?\nSemantic theory has given us elegant tools for understanding how meaning works compositionally. Think of how we can understand “Every linguist saw a student” by understanding the parts and how they combine. This has been incredibly successful.\nBut now we face an exciting opportunity. With large-scale experimental methods, we’re collecting thousands of judgments from hundreds of speakers. And what we find is messy - gradience everywhere, even where theory predicts categorical distinctions.\nOur goal with PDS is not to replace traditional semantics but to extend it. We want to maintain those hard-won theoretical insights while being able to account for and predict the patterns we see in experimental data.\nPDS will be our systematic bridge - taking compositional analyses from traditional Montagovian semantics and mapping them to probabilistic models we can test quantitatively."
+  },
+  {
+    "objectID": "talk/talk.html#semantic-theorys-success",
+    "href": "talk/talk.html#semantic-theorys-success",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Semantic theory’s success",
+    "text": "Semantic theory’s success\nElegant formal systems capturing how complex meanings arise from systematic combination\n\n\nDecades of careful theoretical work\nExplains acceptability and inference judgments\nCompositional analyses via Montagovian methods\n\n\n\nThe challenge\nHow to test theoretical predictions at unprecedented scale while maintaining formal rigor?\n\n\nLet’s appreciate what semantic theory has accomplished. Over decades, semanticists have developed formal systems that elegantly capture compositionality - how complex meanings arise from simpler parts.\nThese theories explain two fundamental types of judgments speakers make: whether sentences are acceptable in context, and what inferences follow from what we say. The Montagovian tradition gave us tools to be precise about these intuitions.\nBut here’s our challenge: How do we test these theories when we move from a handful of carefully constructed examples to thousands of judgments across hundreds of predicates? How do we maintain formal rigor while engaging with messy empirical reality?\nThis is what motivates PDS - we need a framework that respects the insights of formal semantics while enabling quantitative evaluation against large-scale data."
+  },
+  {
+    "objectID": "talk/talk.html#dynamic-semantics",
+    "href": "talk/talk.html#dynamic-semantics",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Dynamic semantics",
+    "text": "Dynamic semantics\n\nSome linguist walked in. They gave a lecture.\n\n\nPopular idea\nMany frameworks for dynamic semantics model sentence meanings as maps from input states to sets of output states (e.g., Groenendijk and Stokhof 1991; Muskens 1996; de Groote 2006, i.a.).\n\n\n\n1st sentence: \\(λs.\\{ x{::}s^{\\prime} ∣ s^{\\prime} = s ∧ \\ct{ling}(x) ∧ \\ct{walk}(x)\\}\\)\n2nd sentence: \\(λs.\\{ s^{\\prime} ∣ s^{\\prime} = s ∧ \\ct{lecture}(\\ct{sel}(s))\\}\\)"
+  },
+  {
+    "objectID": "talk/talk.html#formal-pragmatics",
+    "href": "talk/talk.html#formal-pragmatics",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Formal pragmatics",
+    "text": "Formal pragmatics\nMuch work has built on these ideas by enriching the notion of a state to countenance broader aspects of discourse structure.\n\nBesides entities for anaphora:\n\nCommon grounds (Stalnaker 1978, et seq.).\nQuestions under discussion (QUDs, Roberts 2012; Ginzburg 1996).\nContexts combining these and other structures (Farkas and Bruce 2010).\n\n\n\n\nEnriched states: central to PDS."
+  },
+  {
+    "objectID": "talk/talk.html#standard-methodology",
+    "href": "talk/talk.html#standard-methodology",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Standard methodology",
+    "text": "Standard methodology\n\nTraditional semantic methodology centers on two types of judgments. First, acceptability judgments - is a string well-formed in a given context?\nConsider these examples. In a context where a host asks what a guest wants with coffee, the first is clearly acceptable - using “with” to indicate accompaniment. But the second, trying to coordinate “what” and “your coffee”, is unacceptable. This follows from Ross’s coordinate structure constraint.\nThese judgments have been the bread and butter of linguistic theory. They’re usually quite clear - speakers have strong intuitions about what’s acceptable and what isn’t. This clarity has allowed theorists to build elegant accounts of linguistic constraints.\nBut as we’ll see, when we scale up to hundreds of predicates and thousands of judgments, things get more complex."
+  },
+  {
+    "objectID": "talk/talk.html#standard-methodology-1",
+    "href": "talk/talk.html#standard-methodology-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Standard methodology",
+    "text": "Standard methodology\nInference judgments: assess relationships between strings (see Davis and Gillon 2004 and references therein)\n\n\nExample: factivity (see White 2019 and references therein)\n\nJo {loves, doesn’t love} that Mo left. ↝ Mo left.\n\n\n\nThe second pillar of semantic methodology is inference judgments - what follows from what speakers say?\nHere’s a classic example. When speakers hear “Jo loved that Mo left,” they typically infer that Mo actually left. This inference is particularly interesting because it survives under negation and questioning - “Jo didn’t love that Mo left” and “Did Jo love that Mo left?” both still suggest Mo left.\nThis pattern led theorists to identify a class of predicates - factives - that trigger presuppositions about their complements being true. We’ll return to factivity as one of our main case studies, because it presents a fascinating puzzle when we look at experimental data.\nThese inference judgments are central to semantic theory, but they also reveal complexities we need to address."
+  },
+  {
+    "objectID": "talk/talk.html#our-approach",
+    "href": "talk/talk.html#our-approach",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Our approach",
+    "text": "Our approach\nProbabilistic Dynamic Semantics aims to:\n\nProvide a relatively unconstrained formalism\nState testable hypotheses about distributions of judgments\nTest hypotheses using behavioral data\n\n\nKey innovation\nDelineate phenomena through representational constraints while enabling quantitative evaluation\n\n\nSo what’s our approach with PDS? We aim to provide a formalism that’s relatively unconstrained - flexible enough to encode different theoretical positions - while still being principled and compositional.\nThe key is that we can state testable hypotheses about the distributios of judgments, not just individual data points. When hundreds of people judge whether “Jo knows that Mo left” implies Mo left, we get a distribution of responses. PDS lets us predict these distributions from our semantic theory.\nOur key innovation is maintaining the delineation of phenomena through representational constraints - the hallmark of the hypothesis-driven approach - while enabling quantitative evaluation against behavioral data.\nAs we’ll see in the implementation, this means building probability distributions into the semantics compositionally, so that when meanings combine, the uncertainty combines too. This lets us maintain theoretical commitments while engaging with empirical complexity."
+  },
+  {
+    "objectID": "talk/talk.html#standard-methods",
+    "href": "talk/talk.html#standard-methods",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Standard methods",
+    "text": "Standard methods\nProfound insights achieved:\n\nSemantic composition\nScope phenomena\n\nDiscourse dynamics\n\n\nLet’s acknowledge what traditional methods have achieved - profound insights into how meaning works. We understand semantic composition, how scope ambiguities arise, how discourse context affects interpretation, and the delicate dance between semantics and pragmatics."
+  },
+  {
+    "objectID": "talk/talk.html#standard-methods-1",
+    "href": "talk/talk.html#standard-methods-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Standard methods",
+    "text": "Standard methods\n\nNatural boundaries:\n\nHow well do generalizations from 5-10 predicates extend to thousands?\nWhat factors beyond semantic knowledge influence judgments?\nHow does abstract knowledge produce concrete behavioral responses?\n\n\n\nBut every methodology has natural boundaries. Traditional methods excel at deep analysis of carefully chosen examples, but face constraints when we scale up.\nFirst, how well do generalizations from examining 5-10 predicates extend to the thousands in the lexicon? When we test 300 attitude predicates, do we find the neat categories theory predicts?\nSecond, what factors beyond pure semantic knowledge influence judgments? When people rate inferences, they’re using world knowledge, contextual reasoning, and response strategies alongside semantic competence.\nThird, how exactly does abstract semantic knowledge produce concrete behavioral responses? What cognitive processes intervene between computing a meaning and moving a slider on a scale?\nThese aren’t failures of traditional methods - they’re opportunities for extension. And that’s where experimental semantics comes in."
+  },
+  {
+    "objectID": "talk/talk.html#experimental-semantics-and-pragmatics",
+    "href": "talk/talk.html#experimental-semantics-and-pragmatics",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Experimental semantics and pragmatics",
+    "text": "Experimental semantics and pragmatics\nMethodologies like inference judgment tasks can study larger areas of lexicon.\nExisting challenges:\n\nUnclear how modeling constructs relate to semantic theory.\nWhat lexical properties are implicated?\nHow do they interact with language-external factors?\n\n\nThe gradience question: What theoretical constructs underlie distributions of judgments?\n\n\nExperimental semantics and pragmatics have made great strides in scaling up semantic investigation. Using inference judgment tasks and other methodologies, we can study entire lexical domains rather than handfuls of examples.\nBut challenges remain. Often it’s unclear how the constructs in our statistical models relate to semantic theory. When we find that some predicates cluster together in their inference patterns, what lexical semantic properties are we actually discovering? And how do these properties interact with language-external factors like world knowledge?\nThe central challenge is the gradience question: when we get distributions of judgments rather than categorical patterns, what theoretical constructs underlie these distributions? Traditional semantic theory often assumes categorical distinctions, but the data shows continuity.\nThis is where PDS comes in - providing a framework where gradience can emerge from principled semantic sources while maintaining theoretical clarity about what those sources are."
+  },
+  {
+    "objectID": "talk/talk.html#the-experimental-turn",
+    "href": "talk/talk.html#the-experimental-turn",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The experimental turn",
+    "text": "The experimental turn\nBehavioral experimentation → questions about meaning\n\nScaling semantic investigation\n\nTraditional: handful of predicates\nExperimental: entire lexical domains\n\n\n\nThe experimental turn in semantics represents a methodological revolution. We’re bringing the tools of behavioral experimentation - controlled stimuli, statistical analysis, large participant samples - to questions about meaning.\nThe scale difference is dramatic. Where traditional methods might examine 5-10 predicates in detail, experimental approaches can investigate entire lexical domains. This isn’t just more of the same - at scale, new patterns emerge that are invisible in small samples.\nLet me give you a concrete example with the MegaAttitude project, which we’ll look at next. This project studies hundreds of clause-embedding predicates - virtually the entire lexical class. At this scale, we can see gradience and clustering patterns that would be invisible looking at just “know,” “believe,” and “think.”\nThis scaling reveals both the power of traditional generalizations and their limits. Some patterns hold beautifully; others reveal unexpected complexity."
+  },
+  {
+    "objectID": "talk/talk.html#inferential-uncertainty",
+    "href": "talk/talk.html#inferential-uncertainty",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "talk/talk.html#inferential-uncertainty-1",
+    "href": "talk/talk.html#inferential-uncertainty-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "talk/talk.html#inferential-uncertainty-2",
+    "href": "talk/talk.html#inferential-uncertainty-2",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "talk/talk.html#inferential-uncertainty-3",
+    "href": "talk/talk.html#inferential-uncertainty-3",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "talk/talk.html#inferential-uncertainty-4",
+    "href": "talk/talk.html#inferential-uncertainty-4",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?"
+  },
+  {
+    "objectID": "talk/talk.html#inferential-uncertainty-5",
+    "href": "talk/talk.html#inferential-uncertainty-5",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?\n\n\nAverage response:"
+  },
+  {
+    "objectID": "talk/talk.html#inferential-uncertainty-6",
+    "href": "talk/talk.html#inferential-uncertainty-6",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Inferential uncertainty",
+    "text": "Inferential uncertainty\n\nThe magician’s assistant won’t admit that they laughed during the trick.\nDid the magician’s assistant laugh?\n\n\nAverage response:"
+  },
+  {
+    "objectID": "talk/talk.html#teasing-apart-contributing-factors",
+    "href": "talk/talk.html#teasing-apart-contributing-factors",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Teasing apart contributing factors",
+    "text": "Teasing apart contributing factors\nMultiple factors influence inference judgments:\n\nSemantic knowledge: core meanings of expressions\nWorld knowledge: prior beliefs about plausibility (Degen and Tonhauser 2021 among others)\nContextual factors: discourse context and QUD (Simons et al. 2017 among others)\n\n\nOne major advantage of experimental methods is the ability to tease apart different factors that influence inference judgments. When someone judges whether “Jo knows that Mo left” implies Mo left, multiple cognitive systems are at play.\nFirst, semantic knowledge - the core meaning of “know” and how it composes with its complement. This is what traditional semantics focuses on.\nSecond, world knowledge. If Mo leaving is highly plausible given the context, people are more likely to infer it’s true. Degen and Tonhauser showed this beautifully by manipulating prior probabilities while holding predicates constant. Even canonical factives like “know” show gradient behavior when world knowledge varies.\nThird, contextual factors like the discourse context and question under discussion. What’s at-issue can affect which inferences project.\n[Continue to next slide for remaining factors]"
+  },
+  {
+    "objectID": "talk/talk.html#teasing-apart-contributing-factors-1",
+    "href": "talk/talk.html#teasing-apart-contributing-factors-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Teasing apart contributing factors",
+    "text": "Teasing apart contributing factors\n\nIndividual differences: variation in interpretation\nResponse strategies: how participants use rating scales\n\n\nThese can be windows into cognitive processes!\n\n\n[Continuing from previous slide]\nFourth, individual differences. Different speakers may have slightly different lexical entries or interpretation strategies. What looks like gradience at the population level might reflect discrete differences between individuals.\nFifth, response strategies - how participants map their internal judgments onto the response scale. A 7 on a slider might mean different things to different people.\nCrucially, these aren’t confounds to be eliminated - they’re windows into the cognitive processes underlying semantic interpretation. PDS provides a framework where each factor can be modeled explicitly and their interactions studied systematically.\nThis multiplicity of factors is why we need sophisticated frameworks. Simple models that ignore this complexity will miss crucial patterns in the data. But we also need principled ways to separate semantic from non-semantic factors, which is what PDS provides through its modular architecture."
+  },
+  {
+    "objectID": "talk/talk.html#making-linking-hypotheses-explicit",
+    "href": "talk/talk.html#making-linking-hypotheses-explicit",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Making linking hypotheses explicit",
+    "text": "Making linking hypotheses explicit\nExperimental approaches force explicit theorizing about the following (Jasbi, Waldon, and Degen 2019; Waldon and Degen 2020; Phillips et al. 2021)…\n\nHow are semantic representations linked to behavioral responses?\n\nWhat cognitive processes produce judgments?\nHow do abstract representations map onto scale responses?\n\n\n\nKey insight: linking hypothesis → prediction about response patterns\n\n\nOne of the most important contributions of experimental semantics is forcing us to be explicit about linking hypotheses - how abstract semantic representations connect to concrete behavioral responses.\nTraditional semantics can remain agnostic about this link. We say “know” triggers a presupposition, but how does that abstract property produce a slider response? What cognitive processes intervene?\nDifferent linking hypotheses make different predictions. Maybe people directly report their certainty about inferences. Or maybe they perform pragmatic reasoning first. Maybe they’re influenced by task demands or response biases.\nThe key insight is that we can’t ignore this linking problem if we want to test theories against data. Even if our real interest is in semantic representations, we need theories of how those representations produce behavior.\nPDS makes linking hypotheses explicit through response functions that map semantic computations to response distributions. As we’ll see in the implementation, different response functions embody different assumptions about this crucial link."
+  },
+  {
+    "objectID": "talk/talk.html#understanding-gradience",
+    "href": "talk/talk.html#understanding-gradience",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Understanding gradience",
+    "text": "Understanding gradience\nStriking finding: Pervasive gradient judgments\n\nEven where theory assumes categorical distinctions\nExamples: gradable adjectives (expected) vs. factivity (puzzling)\n\n\nUnderstanding gradience crucial for connecting semantics to behavioral data\n\n\nThe most striking finding from experimental semantics is the pervasiveness of gradient judgments. This isn’t just in domains where we expect it, like gradable adjectives where “tall” has no sharp boundary. We find gradience even where traditional theory assumes categorical distinctions.\nFactivity is the perfect example. Theory says predicates either trigger presuppositions or they don’t - “know” is factive, “think” isn’t. But experiments reveal continuous variation. Mean projection ratings vary smoothly from “pretend” at the bottom to “be annoyed” at the top, with no clear categorical break.\nMultiple studies have found these gradient patterns. Whether using projection tasks, prosodic manipulations, or other paradigms, the gradience persists. This isn’t measurement noise - it’s a systematic phenomenon demanding theoretical explanation.\nUnderstanding this gradience is crucial for connecting semantic theory to behavioral data. We need frameworks that can generate gradient predictions while maintaining theoretical clarity about what produces the gradience. That’s a core goal of PDS."
+  },
+  {
+    "objectID": "talk/talk.html#example-of-unexpected-gradience",
+    "href": "talk/talk.html#example-of-unexpected-gradience",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Example of unexpected gradience",
+    "text": "Example of unexpected gradience\nLarge-scale datasets reveal gradience where theory might predict sharper distinctions (White and Rawlins 2018)\n\n\n\n\nLet’s look at some concrete examples of unexpected gradience from the MegaAttitude datasets. These large-scale studies reveal patterns that aren’t readily apparent when examining just a few predicates.\nThis plot shows veridicality judgments from White and colleagues’ MegaVeridicality dataset. Each point represents a predicate’s mean inference strength under positive and negative embeddings. If factivity were a discrete property, we’d expect to see clear clusters - factive predicates in one region, non-factives in another.\nInstead, we see continuous variation across both dimensions. There’s no natural boundary where we could draw a line between factive and non-factive predicates. This gradience presents a real challenge for theories that assume categorical distinctions.\nBut the challenge goes deeper when we start looking at relationships between different properties…"
+  },
+  {
+    "objectID": "talk/talk.html#key-points-about-gradience",
+    "href": "talk/talk.html#key-points-about-gradience",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Key points about gradience",
+    "text": "Key points about gradience\n\nGradience is pervasive - even where theory assumes categories\nNeed new theoretical tools - to understand continuous and (possibly) non-monotonic relationships\n\n\nThis motivates our taxonomy of uncertainty types…\n\n\nThese examples illustrate three key points about gradience in semantic judgments.\nFirst, gradience is pervasive. We find it not just in obviously gradient domains like adjectives, but even where theory has assumed categorical distinctions like factivity.\nSecond, relationships between gradient measures vary dramatically. The belief/desire trade-off is clean and systematic. The factivity/neg-raising relationship is noisy and probabilistic. These different patterns suggest different underlying mechanisms.\nThird, we need new theoretical tools. Traditional semantic theory was developed for categorical distinctions. When everything is gradient, how do we state and test theoretical claims? How do we distinguish noise from systematic variation?\nThis is why we need a principled taxonomy of uncertainty types. Different sources of gradience make different predictions about data patterns. Let’s turn to that taxonomy now…"
+  },
+  {
+    "objectID": "talk/talk.html#a-taxonomy-of-uncertainty",
+    "href": "talk/talk.html#a-taxonomy-of-uncertainty",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "A taxonomy of uncertainty",
+    "text": "A taxonomy of uncertainty\nTwo fundamental kinds of sources of gradience:\n\nSources of Gradience\n├── Resolved (Type-Level) Uncertainty\n│   ├── Ambiguity\n│   │   ├── Lexical (e.g., \"run\" = locomote vs. manage)\n│   │   ├── Syntactic (e.g., attachment ambiguities)\n│   │   └── Semantic (e.g., scope ambiguities)\n│   └── Discourse Status\n│       └── QUD (Question Under Discussion)\n└── Unresolved (Token-Level) Uncertainty\n    ├── World knowledge (e.g., likelihood of facts)\n    └── Task effects\n        ├── Response strategies\n        └── Response error\n\n\nTo understand gradience, we need a taxonomy of uncertainty. I’ll argue there are two fundamental types, and this distinction is crucial for building adequate models.\nResolved or type-level uncertainty involves discrete choices. There are multiple possible interpretations, and uncertainty about which one applies. This includes lexical ambiguity (run as locomotion vs. management), syntactic ambiguity (attachment sites), semantic ambiguity (scope), and discourse ambiguity (what’s the QUD).\nUnresolved or token-level uncertainty persists even after all ambiguities are resolved. This includes vagueness (where exactly is the threshold for “tall”?), world knowledge (how likely is it that Mo actually left?), and task effects (how do I use this slider scale?).\nThis distinction matters theoretically. Resolved uncertainty suggests discrete representations with probabilistic selection - mixture models. Unresolved uncertainty suggests gradient representations or continuous parameters.\nDifferent phenomena may involve different types, and PDS can model both. The framework’s power is in letting data adjudicate which type of uncertainty explains which patterns."
+  },
+  {
+    "objectID": "talk/talk.html#resolved-uncertainty",
+    "href": "talk/talk.html#resolved-uncertainty",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Resolved uncertainty",
+    "text": "Resolved uncertainty\nMultiple discrete possibilities—speakers choose among interpretations\nExample: “My uncle is running the race”\n\nrun = locomotion or management?\n“How likely is it that my uncle has good managerial skills?”\n\nLocomotion interpretation → ~0.2\nManagement interpretation → ~0.8\nPopulation average → ~0.5 (mixture of discrete interpretations)\n\n\n\nLet’s look at resolved uncertainty in detail. The key characteristic is that there are multiple discrete possibilities, and speakers must choose among them.\nTake “My uncle is running the race.” The verb “run” is ambiguous between locomotion and management senses. If asked about the uncle’s managerial skills, people who interpret “run” as locomotion might respond around 0.2 - runners don’t necessarily have management skills. Those interpreting it as management might respond around 0.8 - race organizers likely have such skills.\nThe population average might be 0.5, but this is a mixture of discrete interpretations, not genuine gradience. No individual thinks the uncle is simultaneously sort-of-running and sort-of-managing.\nThis uncertainty is “resolved” because once we fix the interpretation, the inference follows determinately. If running means locomotion, the managerial inference is weak. If it means managing, the inference is strong. The gradience emerges from averaging across resolutions, not from uncertainty within any single interpretation.\nThis pattern - bimodal or multimodal response distributions - is a signature of resolved uncertainty."
+  },
+  {
+    "objectID": "talk/talk.html#unresolved-uncertainty",
+    "href": "talk/talk.html#unresolved-uncertainty",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Unresolved uncertainty",
+    "text": "Unresolved uncertainty\nPersists even after fixing all ambiguities\nExample: “My uncle is tall”\n\nNo ambiguity about tall’s meaning\nSpeakers uncertain about uncle’s height\nClassic vagueness—inherently gradient inferences (Fine 1975; Graff 2000; Kennedy 2007; Rooij 2011; Sorensen 2023)\n\n\nAnother example: even knowing someone runs races, uncertainty about speed, endurance, etc. remains.\n\n\nUnresolved uncertainty contrasts sharply with resolved uncertainty - it persists even after we’ve fixed all ambiguities.\nConsider “My uncle is tall.” There’s no ambiguity about what “tall” means - it’s about height exceeding some threshold. But speakers remain uncertain about exactly where that threshold is. Is 5’11” tall? 6’0”? 6’1”? This is classic vagueness - the predicate’s application conditions are inherently gradient.\nThe philosophical literature on vagueness is vast because it’s genuinely puzzling. Unlike ambiguity, we can’t just pick an interpretation and be done. The uncertainty is baked into the meaning itself.\nWorld knowledge creates additional layers of unresolved uncertainty. Even knowing someone runs races (locomotion sense, ambiguity resolved), we remain uncertain about their speed, endurance, likelihood of finishing. These uncertainties appear within individual trials, not just across participants.\nThis type of uncertainty typically produces unimodal, continuous response distributions - very different from the multimodal patterns of resolved uncertainty."
+  },
+  {
+    "objectID": "talk/talk.html#why-this-distinction-matters",
+    "href": "talk/talk.html#why-this-distinction-matters",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Why this distinction matters",
+    "text": "Why this distinction matters\nType of uncertainty has profound implications:\n\nResolved uncertainty → discrete representations with probabilistic selection\nUnresolved uncertainty → gradient representations or probabilistic reasoning within fixed meanings\n\n\nDifferent phenomena may involve different types:\n\nVagueness: unresolved (inherently uncertain inferences).\nFactivity: puzzling—resolved ambiguity or unresolved projection?\n\n\n\nThis distinction between resolved and unresolved uncertainty isn’t just taxonomic - it has profound implications for semantic theory and how we model behavioral data.\nIf gradience comes from resolved uncertainty, we need discrete semantic representations with probabilistic selection mechanisms. Think mixture models where people probabilistically choose among interpretations. The semantics stays discrete; the probability is in the selection.\nIf gradience comes from unresolved uncertainty, we need gradient representations or probabilistic reasoning within fixed meanings. The uncertainty is in the semantics itself, not just in choosing between options.\nDifferent phenomena may involve different types. Vagueness seems clearly to involve unresolved uncertainty - there’s no discrete set of “tall” meanings to choose from. But factivity is puzzling. Is the gradience from resolved uncertainty (ambiguous predicates, variable discourse conditions) or unresolved uncertainty (gradient projection mechanisms)?\nPDS lets us implement both possibilities and test them against data. As we’ll see in our case studies, the empirical patterns can distinguish these theoretical alternatives."
+  },
+  {
+    "objectID": "talk/talk.html#uncertainty-in-pds",
+    "href": "talk/talk.html#uncertainty-in-pds",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Uncertainty in PDS",
+    "text": "Uncertainty in PDS\n\nProbability distributions may be “stacked”; this stacking is reflected in the types of semantic values.\n\nE.g., \\(\\P e\\) vs. \\(\\P (\\P e)\\).\n\nResolved uncertainty: about the state of some discourse.\n\n\\(\\P σ\\)\n\nUnresolved uncertainty: encoded in the common ground.\n\n\\(\\P ι\\) (\\(ι\\) the type of possible worlds)\nThe common ground is an aspect of the state! \\(\\P σ = \\P (… \\P ι …)\\)"
+  },
+  {
+    "objectID": "talk/talk.html#discourse-states",
+    "href": "talk/talk.html#discourse-states",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Discourse states",
+    "text": "Discourse states\n\nLists of parameters - can be arbitrarily complex.\n\nThe common ground (or context set; Stalnaker (1978))\nThe question under discussion (Roberts 2012; Ginzburg 1996)\nFarkas and Bruce (2010) stuff (e.g., projected sets)\n(Whatever you want)"
+  },
+  {
+    "objectID": "talk/talk.html#common-grounds",
+    "href": "talk/talk.html#common-grounds",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Common grounds",
+    "text": "Common grounds\n\nProbability distributions over indices of some type\n\nencode what is true “in the world” \nmaybe certain linguistic parameters\n\n\n\nStates vs. indices of the common ground\nWhat kind of thing goes where?\n\nUltimately, an empirical question."
+  },
+  {
+    "objectID": "talk/talk.html#expressions-and-discourses",
+    "href": "talk/talk.html#expressions-and-discourses",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Expressions and discourses",
+    "text": "Expressions and discourses\n\nmap discourse states onto probability distributions over new discourse states: \\(σ → \\P (α × σ^{\\prime})\\)\ncomplex linguistic acts may be sequenced\n\nan operation, bind, native to the probability monad\n\n\n\nFor instance\n\n\\(\\abbr{assert}(⟦\\textit{Jo is tall}⟧) : σ → \\P (⋄ × σ)\\)\n\\(\\abbr{ask}(⟦\\textit{how tall?}⟧) : σ → \\P (⋄ × \\Q ι r σ)\\)\n\\(\\abbr{assert}(⟦\\textit{Jo is tall}⟧) &gt;&gt; \\abbr{ask}(⟦\\textit{how tall?}⟧) : σ → \\P (⋄ × \\Q ι r σ)\\)"
+  },
+  {
+    "objectID": "talk/talk.html#response-functionslinking-models",
+    "href": "talk/talk.html#response-functionslinking-models",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Response functions/linking models",
+    "text": "Response functions/linking models\n\nTake a discourse, together with a prior distribution over states…\nGive back a distribution over responses to the last question asked (given some testing instrument).\n\n\n\\[\n\\begin{align*}\n\\ct{respond} &: \\P σ → (σ → \\P (⋄ × \\Q ι α σ^{\\prime})) → \\P ρ\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#examples-of-linking-models",
+    "href": "talk/talk.html#examples-of-linking-models",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Examples of linking models",
+    "text": "Examples of linking models\n\\[\n\\begin{align*}\n\\ct{respond} &: \\P σ → (σ → \\P (⋄ × \\Q ι α σ^{\\prime})) → \\P ρ\n\\end{align*}\n\\]\n\nLikert scale (categorical distribution); e.g., \\(ρ = \\{\\textit{yes}, \\textit{maybe}, \\textit{no}\\}\\)\nSlider scale (truncated normal distribution);  \\(ρ = r\\)\nBinary forced choice (Bernoulli distribution);  \\(ρ = t\\)"
+  },
+  {
+    "objectID": "talk/talk.html#ccg",
+    "href": "talk/talk.html#ccg",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "CCG",
+    "text": "CCG\nAtomic types\n\\[\n\\begin{align*}\n\\mathcal{A} &\\Coloneqq np ∣ n ∣ s ∣\\,\\,...\n\\end{align*}\n\\] Noun phrases (\\(np\\)), nouns (\\(n\\)), and sentences (\\(s\\)).\n\nComplex types\n\\[\n\\begin{align*}\n\\mathcal{C}_{\\mathcal{A}} &\\Coloneqq \\mathcal{A} ∣ \\mathcal{C}_{\\mathcal{A}}/\\mathcal{C}_{\\mathcal{A}} ∣ \\mathcal{C}_{\\mathcal{A}}\\backslash\\mathcal{C}_{\\mathcal{A}}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#haskell",
+    "href": "talk/talk.html#haskell",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell",
+    "text": "Haskell\n\ndata Cat = Base String  -- atomic categories\n         | Cat :/: Cat  -- the forward slash\n         | Cat :\\: Cat  -- the backward slash\n  deriving (Eq)"
+  },
+  {
+    "objectID": "talk/talk.html#ccg-expressions",
+    "href": "talk/talk.html#ccg-expressions",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "CCG expressions",
+    "text": "CCG expressions\nAn expression:\n\\[\\Large\n\\begin{align*}\n  \\expr{\\textit{dog}}{λx, i.\\ct{dog}(i)(x)}{n}\n\\end{align*}\n\\]\n\n\\(\\textit{dog}\\) is a string.\n\\(λx, i.\\ct{dog}(i)(x)\\) is a meaning (reprented in the λ-calculus).\n\nIts type is \\(e → ι → t\\).\n\n\\(n\\) is a CCG category."
+  },
+  {
+    "objectID": "talk/talk.html#semantic-types-in-detail",
+    "href": "talk/talk.html#semantic-types-in-detail",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Semantic types (in detail)",
+    "text": "Semantic types (in detail)\n\nAtomic types\n\\[\n\\begin{align*}\nA \\Coloneqq e ∣ t ∣\\,\\,...\n\\end{align*}\n\\]\n\n\nComplex types\n\\[\n\\begin{align*}\n   \\mathcal{T}_{A} \\Coloneqq A ∣ \\mathcal{T}_{A} → \\mathcal{T}_{A} ∣ \\mathcal{T}_{A} × \\mathcal{T}_{A} ∣ ⋄\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#haskell-1",
+    "href": "talk/talk.html#haskell-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell",
+    "text": "Haskell\ndata Type = Atom String  -- atomic types\n          | Type :→ Type -- arrows\n          | Unit         -- unit type\n          | Type :× Type -- products\n          | TyVar String -- type variables\n  deriving (Eq)\n\nNote the type variables!"
+  },
+  {
+    "objectID": "talk/talk.html#typing-rules",
+    "href": "talk/talk.html#typing-rules",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Typing rules",
+    "text": "Typing rules\n \\[ \\scriptsize\n\\begin{array}{c}\n\\begin{prooftree}\n\\AxiomC{}\n\\RightLabel{$\\mathtt{Ax}$}\\UnaryInfC{$Γ, x : α ⊢ x : α$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ, x : α ⊢ t : β$}\n\\RightLabel{${→}\\mathtt{I}$}\\UnaryInfC{$Γ ⊢ λx.t : α → β$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α → β$}\n\\AxiomC{$Γ ⊢ u : α$}\n\\RightLabel{${→}\\mathtt{E}$}\\BinaryInfC{$Γ ⊢ t(u) : β$}\n\\end{prooftree} \\\\[2mm]\n\\begin{prooftree}\n\\AxiomC{}\n\\RightLabel{$⋄\\mathtt{I}$}\\UnaryInfC{$Γ ⊢ ⋄ : ⋄$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α$}\n\\AxiomC{$Γ ⊢ u : β$}\n\\RightLabel{$×\\mathtt{I}$}\\BinaryInfC{$Γ ⊢ ⟨t, u⟩ : α × β$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α_1 × α_2$}\n\\RightLabel{$×\\mathtt{E}_{j}$}\\UnaryInfC{$Γ ⊢ π_{j}(t) : α_{j}$}\n\\end{prooftree}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#typing-rules-1",
+    "href": "talk/talk.html#typing-rules-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Typing rules",
+    "text": "Typing rules\n\\(→\\mathtt{E}\\)\n \\[\n\\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α → β$}\n\\AxiomC{$Γ ⊢ u : α$}\n\\RightLabel{${→}\\mathtt{E}$}\\BinaryInfC{$Γ ⊢ t(u) : β$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#haskell-vanilla-terms",
+    "href": "talk/talk.html#haskell-vanilla-terms",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell: vanilla terms",
+    "text": "Haskell: vanilla terms\n-- | Untyped λ-terms. Types are assigned separately (i.e., \"extrinsically\").\ndata Term = Var VarName           -- Variables.\n          | Con Constant          -- Constants.\n          | Lam VarName Term      -- Abstractions.\n          | App Term Term         -- Applications.\n          | TT                    -- The 0-tuple.\n          | Pair Term Term        -- Pairing.\n          | Pi1 Term              -- First projection.\n          | Pi2 Term              -- Second projection.\n\nConstants:\n-- | Constants are indexed by either strings or real numbers.\ntype Constant = Either String Double"
+  },
+  {
+    "objectID": "talk/talk.html#deriving-meanings",
+    "href": "talk/talk.html#deriving-meanings",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Deriving meanings",
+    "text": "Deriving meanings\n\nType homomorphism\n\n\\(\\small ⟦np⟧ = e \\hspace{2cm} ⟦n⟧ = e → ι → t \\hspace{2cm} ⟦s⟧ = ι → t\\) \n\\(\\small ⟦b / a⟧ = ⟦b \\backslash a⟧ = ⟦a⟧ → ⟦b⟧\\)\n\n\n\nExample: application\n\n\\[\\scriptsize\n\\frac{\\expr{\\textit{every}}{λp^{e → ι → t}, q^{e → ι → t}, i^{ι}.(∀y.p(y)(i) → q(y)(i))^{t}}{s}/(s\\backslash np)/ n \\hspace{1cm} \\expr{\\textit{linguist}}{λx^{e}, i^{ι}.(\\ct{ling}(i)(x))^{t}}{n}}{\n\\expr{\\textit{every linguist}}{λq^{e → ι → t}, i^{ι}.(∀y.\\ct{ling}(i)(y) → q(y)(i))^{t}}{s}/(s\\backslash np)\n}&gt;\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#adding-probabilistic-types",
+    "href": "talk/talk.html#adding-probabilistic-types",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Adding probabilistic types",
+    "text": "Adding probabilistic types\n\nNew atomic types\n\\[\nA \\Coloneqq e ∣ t ∣ r ∣\\,\\,...\n\\]\n\n\nNew complex types\n\\[\n\\mathcal{T}_{A} \\Coloneqq A ∣ \\mathcal{T}_{A} → \\mathcal{T}_{A} ∣ \\mathcal{T}_{A} × \\mathcal{T}_{A} ∣ ⋄ ∣ \\P \\mathcal{T}_{A}\n\\]\n\n\\(\\P t\\): a Bernoulli distribution—probabilistically True or False.\n\\(\\P r\\): e.g., a normal distribution."
+  },
+  {
+    "objectID": "talk/talk.html#haskell-2",
+    "href": "talk/talk.html#haskell-2",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell",
+    "text": "Haskell\ndata Type = Atom String  -- atomic types\n          | Type :→ Type -- arrows\n          | Unit         -- unit type\n          | Type :× Type -- products\n          | P Type       -- probabilistic types\n          | TyVar String -- type variables\n  deriving (Eq)"
+  },
+  {
+    "objectID": "talk/talk.html#probabilistic-typing-rules",
+    "href": "talk/talk.html#probabilistic-typing-rules",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Probabilistic typing rules",
+    "text": "Probabilistic typing rules\n \\[\n\\begin{array}{c}\n\\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : α$}\n\\RightLabel{$\\mathtt{Return}$}\\UnaryInfC{$Γ ⊢ \\pure{t} : \\P α$}\n\\end{prooftree}\n& \\begin{prooftree}\n\\AxiomC{$Γ ⊢ t : \\P α$}\n\\AxiomC{$Γ, x : α ⊢ u : \\P β$}\n\\RightLabel{$\\mathtt{Bind}$}\\BinaryInfC{$Γ ⊢ \\left(\\begin{array}{l} x ∼ t \\\\ u\\end{array}\\right) : \\P β$}\n\\end{prooftree}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#haskell-probabilistic-programs",
+    "href": "talk/talk.html#haskell-probabilistic-programs",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell: probabilistic programs",
+    "text": "Haskell: probabilistic programs\n-- | Untyped λ-terms. Types are assigned separately (i.e., \"extrinsically\").\ndata Term = Var VarName           -- Variables.\n          | Con Constant          -- Constants.\n          | Lam VarName Term      -- Abstractions.\n          | App Term Term         -- Applications.\n          | TT                    -- The 0-tuple.\n          | Pair Term Term        -- Pairing.\n          | Pi1 Term              -- First projection.\n          | Pi2 Term              -- Second projection.\n          | Return Term           -- Construct a degenerate distribution.\n          | Let VarName Term Term -- Sample from a distribution and continue.\n\nLet x t u    =    \\(\\begin{array}[t]{l}\nx ∼ t \\\\\nu\n\\end{array}\\)\nReturn t    =    \\(\\pure{t}\\)"
+  },
+  {
+    "objectID": "talk/talk.html#making-observations",
+    "href": "talk/talk.html#making-observations",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Making observations",
+    "text": "Making observations\n\\[\n\\begin{align*}\n\\ct{observe}\\ \\ &:\\ \\ t → \\P ⋄ \\\\\n\\end{align*}\n\\]\n\n\\[\n\\begin{array}[t]{l}\nx ∼ \\ct{Normal}(0, 1) \\\\\n\\ct{observe}(-1 ≤ x ≤ 1) \\\\\n\\pure{x}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#making-observations-1",
+    "href": "talk/talk.html#making-observations-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Making observations",
+    "text": "Making observations\n\\[\n\\begin{align*}\n\\ct{observe}\\ \\ &:\\ \\ t → \\P ⋄ \\\\\n\\end{align*}\n\\]\n\\[\n\\begin{array}[t]{l}\nx ∼ \\ct{Normal}(0, 1) \\\\\n\\ct{observe}(-1 ≤ x ≤ 1) \\\\\n\\pure{x}\n\\end{array}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#haskell-typing-constants",
+    "href": "talk/talk.html#haskell-typing-constants",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell: typing constants",
+    "text": "Haskell: typing constants\n-- | Assign types to constants.\ntype Sig = Constant -&gt; Maybe Type\n\n\nAn example signature\ne, t, r :: Type\ne = At E\nt = At T\nr = At R\n\ntau :: Sig\ntau = \\case\n  Left  \"observe\"   -&gt; Just (t :→ P Unit)\n  Left  \"Normal\"    -&gt; Just (r :× r → P r)\n  Left  \"Bernoulli\" -&gt; Just (r :→ P t)\n  Left  \"mother\"    -&gt; Just (e :→ e)\n  Right _           -&gt; Just r"
+  },
+  {
+    "objectID": "talk/talk.html#types-of-expressions",
+    "href": "talk/talk.html#types-of-expressions",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Types of expressions",
+    "text": "Types of expressions\n\\[\\Large\nσ → \\P (α × σ^{\\prime})\n\\]\n\n\\(α\\) could be:\n\n\\(e → ι → t \\hspace{2cm}\\) (a predicate meaning)\n\\(e \\hspace{7cm}\\) (a np meaning)\netc."
+  },
+  {
+    "objectID": "talk/talk.html#an-interface-for-meaning-composition",
+    "href": "talk/talk.html#an-interface-for-meaning-composition",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "An interface for meaning composition",
+    "text": "An interface for meaning composition\n\\[\n\\begin{align*}\nℙ^{σ}_{σ^{\\prime}} α\\ \\ &=\\ \\ σ → \\P (α × σ^{\\prime})\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\return{v}\\ \\ &=\\ \\ λs.\\pure{⟨v, s⟩} : ℙ^{σ}_{σ}\n\\end{align*}\n\\]\n\n\n\\[\n\\begin{align*}\n\\begin{array}{rl}\n\\Do & x ← m : ℙ^{σ}_{σ^{\\prime}} \\\\\n& k(x) : ℙ^{σ^{\\prime}}_{σ^{\\prime\\prime}}\n\\end{array}\\ \\\n&=\\ \\ λs.\\left(\\begin{array}{l}\n⟨x, s^{\\prime}⟩ ∼ m(s) \\\\\nk(x)(s^{\\prime})\n\\end{array}\\right) : ℙ^{σ}_{σ^{\\prime\\prime}}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#types-of-expressions-1",
+    "href": "talk/talk.html#types-of-expressions-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Types of expressions",
+    "text": "Types of expressions\n\nJo ran a race.\n\n\n\\(⟦\\textit{run}⟧ : ℙ^{σ}_{σ} (e → ι → t)\\)\n\n\n\\[\n\\expr{\\textit{run}}{λs.\\pure{⟨λx, i.\\ct{if\\_then\\_else}(τ_{\\textit{run}}(s))(\\ct{run}_{loc.}(i)(x), \\ct{run}_{org.}(i)(x)), s⟩}}{s \\backslash np}\n\\]\n\n\nDepends on the state.\nDoesn’t update it.\nNot very probabilistic."
+  },
+  {
+    "objectID": "talk/talk.html#pds-rules",
+    "href": "talk/talk.html#pds-rules",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "PDS Rules",
+    "text": "PDS Rules\nExample: leftward application\n\\[\n\\begin{prooftree}\n\\AxiomC{$\\expr{s_{1}}{M_{1}}{b}$}\n\\AxiomC{$\\expr{s_{2}}{M_{2}}{c\\backslash b}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{s_{1}\\,s_{2}}{\n\\begin{array}{rl}\n\\Do & m_{1} ← M_{1} \\\\\n& m_{2} ← M_{2}; \\\\\n& \\return{m_{2}(m_{1})}\n\\end{array}\n}{c}$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#a-sentence-meaning",
+    "href": "talk/talk.html#a-sentence-meaning",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "A sentence meaning",
+    "text": "A sentence meaning\n\nA linguist saw a philosopher.\n\n\n\\[\\tiny\\hspace{-6cm}\n\\begin{prooftree}\n\\AxiomC{$\\expr{\\textit{a ling.}}{λs.\\pure{⟨λi, k.∃x.\\ct{ling}(i)(x) ∧ k(i)(x), s⟩}}{s/(s\\backslash np)}$}\n\\AxiomC{$\\expr{\\textit{saw}}{λs.\\pure{⟨λi, y, x.\\ct{see}(i)(y)(x), s⟩}}{s\\backslash np/ np}$}\n\\AxiomC{$\\expr{\\textit{a phil.}}{λs.\\pure{⟨λi, k, x.∃y.\\ct{phil}(i)(y) ∧ k(i)(y)(x), s⟩}}{s\\backslash np/(s\\backslash np/np)}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{\\textit{saw a phil.}}{λs.\\pure{⟨λx, i.∃y.\\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s \\backslash np}$}\n\\RightLabel{$&lt;$}\\BinaryInfC{$\\expr{\\textit{a linguist saw a philosopher}}{λs.\\pure{⟨λi.∃x, y.\\ct{ling}(i)(x) ∧ \\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s}$}\n\\end{prooftree}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#a-sentence-meaning-1",
+    "href": "talk/talk.html#a-sentence-meaning-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "A sentence meaning",
+    "text": "A sentence meaning\n\n\\[\n\\expr{\\textit{a linguist saw a philosopher}}{λs.\\pure{⟨λi.∃x, y.\\ct{ling}(i)(x) ∧ \\ct{phil}(i)(y) ∧ \\ct{see}(i)(y)(x), s⟩}}{s}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#intensionality",
+    "href": "talk/talk.html#intensionality",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Intensionality",
+    "text": "Intensionality\nIntensional constants:\n\\[\n\\begin{align*}\n\\ct{see} &: ι → e → e → t \\\\\n\\ct{ling} &: ι → e → t\n\\end{align*}\n\\]\n\nWe require other constants:\n\\[\n\\begin{align*}\n\\updct{see} &: (e → e → t) → ι → ι \\\\\n\\updct{ling} &: (e → t) → ι → ι\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#how-intensional-constants-interact",
+    "href": "talk/talk.html#how-intensional-constants-interact",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "How intensional constants interact",
+    "text": "How intensional constants interact\n\n\\[\n\\ct{see}(\\updct{see}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{see}(\\updct{ling}(p)(i)) = \\ct{see}(i)\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{ling}(p)(i)) = p \\\\\n\\]\n\n\n\\[\n\\ct{ling}(\\updct{see}(p)(i)) = \\ct{ling}(i)\n\\]\n\nCan be seen as a theory of states and locations.\n\nIndices are “states”.\n(Pairs of) constants correspond to “locations”."
+  },
+  {
+    "objectID": "talk/talk.html#the-common-ground",
+    "href": "talk/talk.html#the-common-ground",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The common ground",
+    "text": "The common ground\nDefinition\nA common ground is a probabilistic program of type \\(\\P ι\\).\n\n\\(ι\\), a variable over types.\n\n\nA “starting” index\n\\[\\ct{@} : ι\\]\n\nConstants that update indices can add information, to be later retrieved by intensional constants."
+  },
+  {
+    "objectID": "talk/talk.html#states",
+    "href": "talk/talk.html#states",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "States",
+    "text": "States\nSome state-sensitive constants:\n\n\\[\n\\ct{CG} : σ → \\P ι \\\\\n\\]\n\n\n\\[\n\\updct{CG} : \\P ι → σ → σ \\\\\n\\]\n\n\n\\[\n\\ct{QUD} : \\Q ι α σ → α → ι → t\n\\]\n\n\n\\[\n\\updct{QUD} : (α → ι → t) → σ → \\Q ι α σ\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#haskell-the-q-constructor",
+    "href": "talk/talk.html#haskell-the-q-constructor",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell: the \\(\\Q\\) constructor",
+    "text": "Haskell: the \\(\\Q\\) constructor\n\n-- | Arrows, products, and probabilistic types, as well as (a) abstract types\n-- representing the addition of a new Q, and (b) type variables for encoding\n-- polymorphism.\ndata Type = At Atom\n          | Type :→ Type\n          | Unit\n          | Type :× Type\n          | P Type\n          | Q Type Type Type\n          | TyVar String\n  deriving (Eq)"
+  },
+  {
+    "objectID": "talk/talk.html#how-stateful-constants-interact",
+    "href": "talk/talk.html#how-stateful-constants-interact",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "How stateful constants interact",
+    "text": "How stateful constants interact\n\\[\n\\ct{CG}(\\updct{CG}(cg)(s)) = cg\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#manipulating-stateful-programs",
+    "href": "talk/talk.html#manipulating-stateful-programs",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Manipulating stateful programs",
+    "text": "Manipulating stateful programs\n\\(\\ct{get}\\) and \\(\\ct{put}\\)\n\\[\n\\begin{align*}\n\\abbr{get} &: ℙ^{σ}_{σ} σ\n\\end{align*}\n\\]\n\nGets the current state.\n\n\n\\[\n\\begin{align*}\n\\abbr{put} &: σ^{\\prime} → ℙ^{σ}_{σ^{\\prime}} ⋄ \\\\\n\\end{align*}\n\\]\n\nOverwrites the current state with a new one."
+  },
+  {
+    "objectID": "talk/talk.html#haskell-3",
+    "href": "talk/talk.html#haskell-3",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Haskell",
+    "text": "Haskell\n\ngetPP :: Term\ngetPP = lam' s (Return (s & s))\n\nputPP :: Term -&gt; Term\nputPP s = Lam fr (Return (TT & s))\n  where fr:esh = fresh [s]"
+  },
+  {
+    "objectID": "talk/talk.html#asking-a-question",
+    "href": "talk/talk.html#asking-a-question",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Asking a question",
+    "text": "Asking a question\n\\[\n\\begin{align*}\n\\abbr{ask} &: ℙ^{σ}_{σ^{\\prime}} (α → ι → t) → ℙ^{σ}_{\\Q ι α σ^{\\prime}} ⋄\n\\end{align*}\n\\]\n\n\\[\n\\begin{align*}\n\\abbr{ask}(⟦\\textit{how tall?}⟧) &= \\begin{array}[t]{rl}\n\\Do & q^{r → ι → t} ← ⟦\\textit{how tall?}⟧^{ℙ^{σ}_{σ}(r → ι → t)} \\\\\n& s ← \\abbr{get} \\\\\n& \\abbr{put}(\\updct{QUD}(q)(s))\n\\end{array}\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#responding-to-a-question",
+    "href": "talk/talk.html#responding-to-a-question",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Responding to a question",
+    "text": "Responding to a question\n\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ} &: \\P σ → ℙ^{σ}_{\\Q ι r σ^{\\prime}} ⋄ → \\P ρ\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#responding-to-a-question-1",
+    "href": "talk/talk.html#responding-to-a-question-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Responding to a question",
+    "text": "Responding to a question\n\\[\n\\begin{align*}\n&\\abbr{respond}^{f_Φ : r → \\P ρ}(prior)(discourse) \\\\[5mm]\n&= \\begin{array}[t]{l}\ns ∼ prior \\\\\n⟨⋄, s^{\\prime}⟩ ∼ discourse(s)\\\\\ni ∼ \\ct{CG}(s^{\\prime}) \\\\\nf(\\ct{max}(λd.\\ct{QUD}(s^{\\prime})(d)(i)), Φ)\n\\end{array}\n\\end{align*}\n\\]\n\nExample \\(f_{Φ}\\)\n\n\\(f(x, Φ) = \\ct{Normal}(x, 1)\\)"
+  },
+  {
+    "objectID": "talk/talk.html#a-probabilistic-model",
+    "href": "talk/talk.html#a-probabilistic-model",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "A probabilistic model",
+    "text": "A probabilistic model\n\\[\n\\begin{align*}\n\\abbr{respond}^{f_Φ : r → \\P ρ} &: \\P σ → ℙ^{σ}_{\\Q ι r σ^{\\prime}} ⋄ → \\P ρ\n\\end{align*}\n\\]\n\\[\n\\abbr{respond}^{λx.\\ct{Normal}(x, 1)}(prior)\\left(\n\\begin{array}{rl}\n\\Do & \\abbr{assert}(⟦\\textit{Jo is tall}⟧) \\\\\n& \\abbr{ask}(⟦\\textit{how tall?}⟧)\n\\end{array}\n\\right)\n\\]"
+  },
+  {
+    "objectID": "talk/talk.html#how-do-we-actually-compute-this-stuff",
+    "href": "talk/talk.html#how-do-we-actually-compute-this-stuff",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "How do we actually compute this stuff?",
+    "text": "How do we actually compute this stuff?\n\n\nDelta-rules.\n-- | The type of Delta-rules.\ntype DeltaRule = Term -&gt; Maybe Term"
+  },
+  {
+    "objectID": "talk/talk.html#the-phenomenon",
+    "href": "talk/talk.html#the-phenomenon",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The phenomenon",
+    "text": "The phenomenon\nFactivity presents a puzzle.\n\nTraditional view: Predicates either trigger presuppositions or they don’t\nEmpirical reality: Pervasive gradience in projection judgments\nThe challenge: What explains this gradience?"
+  },
+  {
+    "objectID": "talk/talk.html#factivity-1",
+    "href": "talk/talk.html#factivity-1",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Factivity",
+    "text": "Factivity\n\nFactive:\n\nJo loved that Mo left. ↝ Mo left.\nJo didn’t love that Mo left. ↝ Mo left.\nDid Jo love that Mo left? ↝ Mo left.\n\n\n\nNon-factive:\n\nJo thinks that Mo left.\nJo doesn’t think that Mo left."
+  },
+  {
+    "objectID": "talk/talk.html#the-empirical-landscape",
+    "href": "talk/talk.html#the-empirical-landscape",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The empirical landscape",
+    "text": "The empirical landscape\n\n\n\nMegaVeridicality dataset (White and Rawlins (2018)): continuous gradient, not discrete clusters"
+  },
+  {
+    "objectID": "talk/talk.html#an-important-distinction",
+    "href": "talk/talk.html#an-important-distinction",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "An important distinction",
+    "text": "An important distinction\nThere are two importantly distinct questions that we need to disentangle:\n\nWhether the gradience suggests that there is no class (or subclasses) of factive predicates\nWhether the veridicality inferences triggered by a particular expression containing a particular clause-embedding predicate are themselves gradient\n\n\nWe’ll focus on the latter question—PDS is uniquely positioned to ask it"
+  },
+  {
+    "objectID": "talk/talk.html#two-competing-hypotheses",
+    "href": "talk/talk.html#two-competing-hypotheses",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Two competing hypotheses",
+    "text": "Two competing hypotheses\nDiscrete-factivity hypothesis\n\nFactivity is discrete—speakers either interpret as factive or not\nGradience reflects uncertainty about interpretation\nAnalogous to lexical ambiguity\n\n\nWholly-gradient hypothesis\n\nNo discrete factivity property exists\nPredicates make gradient contributions to complement truth\nAligned with Gradient Projection Principle"
+  },
+  {
+    "objectID": "talk/talk.html#experimental-paradigms",
+    "href": "talk/talk.html#experimental-paradigms",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Experimental paradigms",
+    "text": "Experimental paradigms\nThe challenge\nJudgments about certainty depend on:\n\nProperties of the predicate (factivity)\nWorld knowledge about proposition likelihood\n\n\nDegen and Tonhauser (2021) developed a two-stage design to tease these apart"
+  },
+  {
+    "objectID": "talk/talk.html#stage-1-norming-study",
+    "href": "talk/talk.html#stage-1-norming-study",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Stage 1: Norming study",
+    "text": "Stage 1: Norming study\nMeasure world knowledge independent of embedding predicates:\n\nFact: Sophia is a hipster.\nQuestion: How likely is it that Sophia got a tattoo?\nResponse:\n\n\n\nimpossible \\(\\hspace{17cm}\\) definitely\n\n\nCreated high/low likelihood contexts for each proposition"
+  },
+  {
+    "objectID": "talk/talk.html#stage-2-projection-study",
+    "href": "talk/talk.html#stage-2-projection-study",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Stage 2: Projection study",
+    "text": "Stage 2: Projection study\nEmbed propositions under predicates, ask about speaker certainty:\n\nContext: Isabella said that Sophia is a hipster.\nUtterance: Noah knows that Sophia got a tattoo.\nQuestion: Is Noah certain that Sophia got a tattoo?\nResponse:\n\n\n\nno \\(\\hspace{23cm}\\) yes"
+  },
+  {
+    "objectID": "talk/talk.html#predicates-tested",
+    "href": "talk/talk.html#predicates-tested",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Predicates tested",
+    "text": "Predicates tested\n20 predicates spanning theoretical categories:\n\n\nCanonical factives: know, discover, realize, be aware\nNon-factives: think, believe, say, suggest\n\n“Semifactives”: see, hear, notice, find out\nVariable behavior: confirm, admit, be right"
+  },
+  {
+    "objectID": "talk/talk.html#the-empirical-challenge",
+    "href": "talk/talk.html#the-empirical-challenge",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The empirical challenge",
+    "text": "The empirical challenge\n\n\nContinuous gradient of projection behavior"
+  },
+  {
+    "objectID": "talk/talk.html#world-knowledge-gradient-discrete",
+    "href": "talk/talk.html#world-knowledge-gradient-discrete",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "World knowledge: gradient? discrete?",
+    "text": "World knowledge: gradient? discrete?\nNorming data: fit a discrete model and gradient model…\n\n\nGradient model better (ΔELPD = 442.3)!"
+  },
+  {
+    "objectID": "talk/talk.html#discrete-factivity-in-pds",
+    "href": "talk/talk.html#discrete-factivity-in-pds",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Discrete-factivity in PDS",
+    "text": "Discrete-factivity in PDS\n-- From Grammar.Lexica.SynSem.Factivity\n\"knows\" -&gt; [ SynSem {\n    syn = S :\\: NP :/: S,\n    sem = ty tau (lam s (purePP (lam p (lam x (lam i \n      (ITE (TauKnow s) \n           (And (epi i @@ x @@ p) (p @@ i))  -- factive\n           (epi i @@ x @@ p))))))            -- non-factive\n      @@ s)\n} ]\n\nITE creates discrete choice based on TauKnow parameter"
+  },
+  {
+    "objectID": "talk/talk.html#pds-compilation-process",
+    "href": "talk/talk.html#pds-compilation-process",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "PDS compilation process",
+    "text": "PDS compilation process\n-- From Grammar.Parser and Grammar.Lexica.SynSem.Factivity\nexpr1 = [\"jo\", \"knows\", \"that\", \"bo\", \"is\", \"a\", \"linguist\"]\nexpr2 = [\"how\", \"likely\", \"that\", \"bo\", \"is\", \"a\", \"linguist\"]\ns1 = getSemantics @Factivity 0 expr1\nq1 = getSemantics @Factivity 0 expr2\ndiscourse = ty tau $ assert s1 &gt;&gt;&gt; ask q1\n\n-- Compile to Stan using factivityPrior and factivityRespond\nfactivityExample = asTyped tau (betaDeltaNormal deltaRules . factivityRespond factivityPrior) discourse\n\n…transforms compositional semantics into Stan kernel models (models representing a single trial)."
+  },
+  {
+    "objectID": "talk/talk.html#the-discrete-factivity-kernel",
+    "href": "talk/talk.html#the-discrete-factivity-kernel",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The discrete-factivity kernel",
+    "text": "The discrete-factivity kernel\nPDS outputs this kernel model:\nmodel {\n  // FIXED EFFECTS\n  v ~ logit_normal(0.0, 1.0);  // probability of factive interpretation\n  w ~ logit_normal(0.0, 1.0);  // world knowledge (from norming)\n  \n  // LIKELIHOOD\n  target += log_mix(v, \n                    truncated_normal_lpdf(y | 1.0, sigma, 0.0, 1.0),     // factive branch\n                    truncated_normal_lpdf(y | w, sigma, 0.0, 1.0));      // non-factive branch\n}\n\nThis captures discrete branching: with probability v, response is near 1.0; otherwise, it depends on world knowledge w"
+  },
+  {
+    "objectID": "talk/talk.html#the-full-stan-implementation",
+    "href": "talk/talk.html#the-full-stan-implementation",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "The full Stan implementation",
+    "text": "The full Stan implementation\nKey factivity-specific components:\nmodel {\n  // ... priors and hierarchical structure ...\n  \n  for (n in 1:N) {\n    // Probability of factive interpretation\n    real verb_prob = inv_logit(verb_intercept[verb[n]] + \n                               subj_intercept_verb[subj[n], verb[n]]);\n    \n    // World knowledge probability  \n    real context_prob = inv_logit(context_intercept[context[n]] + \n                                  subj_intercept_context[subj[n], context[n]]);\n    \n    // MIXTURE LIKELIHOOD\n    target += log_mix(verb_prob,\n                      truncated_normal_lpdf(y[n] | 1.0, sigma_e, 0.0, 1.0),\n                      truncated_normal_lpdf(y[n] | context_prob, sigma_e, 0.0, 1.0));\n  }\n}"
+  },
+  {
+    "objectID": "talk/talk.html#hierarchical-structure",
+    "href": "talk/talk.html#hierarchical-structure",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Hierarchical structure",
+    "text": "Hierarchical structure\nThe kernel is augmented with statistical machinery for real data:\n\nHierarchical priors: Verb-specific and context-specific effects\nIntegration with norming: mu_omega and sigma_omega from norming study\nSubject-level variation: Random effects for individual differences\nMixture likelihood: Core discrete-factivity structure (highlighted lines)"
+  },
+  {
+    "objectID": "talk/talk.html#wholly-gradient-factivity-in-pds",
+    "href": "talk/talk.html#wholly-gradient-factivity-in-pds",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Wholly-gradient factivity in PDS",
+    "text": "Wholly-gradient factivity in PDS\nAlternative lexical entry branches on common ground indices:\n-- From Grammar.Lexica.SynSem.Factivity\n\"knows\" -&gt; [ SynSem {\n    syn = S :\\: NP :/: S,\n    sem = ty tau (lam s (purePP (lam p (lam x (lam i\n      (ITE (TauKnow i)\n           (And (epi i @@ x @@ p) (p @@ i)) -- factive\n           (epi i @@ x @@ p))))) @@ s))     -- non-factive\n    } ]\n\nNow TauKnow parameter varies by index rather than discourse state"
+  },
+  {
+    "objectID": "talk/talk.html#gradient-pds-compilation",
+    "href": "talk/talk.html#gradient-pds-compilation",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Gradient PDS compilation",
+    "text": "Gradient PDS compilation\nThe alternative implementation requires different prior structure:\n-- Prior over indices encoded in common ground\nfactivityPrior = let' x (LogitNormal 0 1) (let' y (LogitNormal 0 1) \n  (let' z (LogitNormal 0 1) (Return (UpdCG (let' b (Bern x) \n    (let' c (Bern y) (let' d (Bern z) (Return (UpdTauKnow b \n      (UpdLing (lam x c) (UpdEpi (lam x (lam p d)) _0))))))) ϵ))))\n\nBernoulli statement regulating factivity is part of the common ground definition"
+  },
+  {
+    "objectID": "talk/talk.html#gradient-stan-kernel",
+    "href": "talk/talk.html#gradient-stan-kernel",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Gradient Stan kernel",
+    "text": "Gradient Stan kernel\nmodel {\n  // FIXED EFFECTS\n  v ~ logit_normal(0.0, 1.0);  // degree of factivity\n  w ~ logit_normal(0.0, 1.0);  // world knowledge\n  \n  // GRADIENT LIKELIHOOD\n  target += truncated_normal_lpdf(y | v + (1.0 - v) * w, sigma, 0.0, 1.0);\n}\n\nContinuous computation: response = v + (1-v) * w"
+  },
+  {
+    "objectID": "talk/talk.html#understanding-the-gradient-computation",
+    "href": "talk/talk.html#understanding-the-gradient-computation",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Understanding the gradient computation",
+    "text": "Understanding the gradient computation\nLet’s trace through this computation:\n\nIf v = 0 (no factivity): response = 0 + 1 * w = w (pure world knowledge)\nIf v = 1 (full factivity): response = 1 + 0 * w = 1 (certain)\nIf v = 0.5 (partial factivity): response = 0.5 + 0.5 * w (boosted world knowledge)\n\n\nThis provides a “boost” to world knowledge but never forces certainty"
+  },
+  {
+    "objectID": "talk/talk.html#delta-rules-implementation",
+    "href": "talk/talk.html#delta-rules-implementation",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Delta rules implementation",
+    "text": "Delta rules implementation\nBoth models require modifications to handle factivity parameters:\n-- From Lambda.Delta: Computes functions on states\nstates :: DeltaRule\nstates = \\case\n  TauKnow (UpdTauKnow b _) -&gt; Just b\n  TauKnow (UpdCG _ s)      -&gt; Just (TauKnow s)\n  TauKnow (UpdQUD _ s)     -&gt; Just (TauKnow s)\n  -- ... other cases\n\nDiscrete model: TauKnow varies by discourse state\n\n\nGradient model: TauKnow varies by common ground indices"
+  },
+  {
+    "objectID": "talk/talk.html#alternative-models-for-comparison",
+    "href": "talk/talk.html#alternative-models-for-comparison",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Alternative models for comparison",
+    "text": "Alternative models for comparison\nWe also consider two models created by directly manipulating Stan code:\nWholly-discrete model\nBoth factivity and world knowledge are discrete\nDiscrete-world model\nWorld knowledge discrete, factivity gradient\n\nThese serve as computational experiments but don’t correspond to theoretical proposals"
+  },
+  {
+    "objectID": "talk/talk.html#model-summary",
+    "href": "talk/talk.html#model-summary",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Model summary",
+    "text": "Model summary\nFour models tested:\n\nDiscrete-factivity: Factivity discrete, world knowledge gradient\nWholly-gradient: Both factivity and world gradient\nDiscrete-world: World knowledge discrete, factivity gradient\nWholly-discrete: Both discrete\n\n\nPDS derives the first two from theoretical commitments; the others are computational experiments"
+  },
+  {
+    "objectID": "talk/talk.html#quantitative-results",
+    "href": "talk/talk.html#quantitative-results",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Quantitative results",
+    "text": "Quantitative results\n\n\nDiscrete-factivity dramatically outperforms alternatives"
+  },
+  {
+    "objectID": "talk/talk.html#posterior-predictive-checks",
+    "href": "talk/talk.html#posterior-predictive-checks",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Posterior predictive checks",
+    "text": "Posterior predictive checks\n\n\nHow well do models capture response distributions?\n\n\nDiscrete-factivity captures characteristic dips mid-scale—mixture of factive (≈1) and non-factive (varies) interpretations"
+  },
+  {
+    "objectID": "talk/talk.html#why-discrete-factivity-succeeds",
+    "href": "talk/talk.html#why-discrete-factivity-succeeds",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Why discrete-factivity succeeds",
+    "text": "Why discrete-factivity succeeds\nThe discrete-factivity model captures non-monotonic response patterns:\n\nCanonical factives (know, discover): High probability of factive interpretation\nNon-factives (think, say): Low probability of factive interpretation\n\nVariable predicates (confirm, prove): Intermediate probabilities\n\n\nWholly-gradient model produces smooth, unimodal distributions—missing the bimodality"
+  },
+  {
+    "objectID": "talk/talk.html#robustness-checks",
+    "href": "talk/talk.html#robustness-checks",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Robustness checks",
+    "text": "Robustness checks\nAnti-veridicality\n\n\nPattern holds even with anti-veridicality component"
+  },
+  {
+    "objectID": "talk/talk.html#cross-experimental-validation",
+    "href": "talk/talk.html#cross-experimental-validation",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Cross-experimental validation",
+    "text": "Cross-experimental validation\n\n\nDiscrete-factivity advantage persists in replication"
+  },
+  {
+    "objectID": "talk/talk.html#replication-success",
+    "href": "talk/talk.html#replication-success",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Replication success",
+    "text": "Replication success\n\n\nNear-perfect correlation at verb level (r = 0.98)"
+  },
+  {
+    "objectID": "talk/talk.html#non-contentful-experiments",
+    "href": "talk/talk.html#non-contentful-experiments",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Non-contentful experiments",
+    "text": "Non-contentful experiments\nTest with minimal contexts:\n\n\nBleached: “a particular thing happened”\nTemplatic: “X happened”\n\n\n\n\nFactivity patterns persist even without rich content!"
+  },
+  {
+    "objectID": "talk/talk.html#context-effects",
+    "href": "talk/talk.html#context-effects",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Context effects",
+    "text": "Context effects\nThe norming study reveals how world knowledge varies:\n\n\nClear separation between high/low prior contexts validates experimental manipulation"
+  },
+  {
+    "objectID": "talk/talk.html#predicate-specific-patterns",
+    "href": "talk/talk.html#predicate-specific-patterns",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Predicate-specific patterns",
+    "text": "Predicate-specific patterns\n\n\nVariation in propensity to trigger factive interpretations\n\n\nKey insight: Canonical factives (know, discover) show high probability; variable predicates (confirm, prove) show intermediate probabilities with high uncertainty"
+  },
+  {
+    "objectID": "talk/talk.html#complete-posterior-predictive-distributions",
+    "href": "talk/talk.html#complete-posterior-predictive-distributions",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Complete posterior predictive distributions",
+    "text": "Complete posterior predictive distributions\n\n\n\n\n\n\n\nClick to see all 20 predicates\n\n\n\n\nPosterior predictive distributions for all predicates"
+  },
+  {
+    "objectID": "talk/talk.html#identifiability-issues",
+    "href": "talk/talk.html#identifiability-issues",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Identifiability issues",
+    "text": "Identifiability issues\nIn mixture models, components can sometimes “trade off”—different parameter combinations yield identical predictions.\n\nSolutions: - Informative priors using norming data to constrain world knowledge parameters - Hierarchical structure with partial pooling across predicates and contexts - Multiple contexts per predicate"
+  },
+  {
+    "objectID": "talk/talk.html#computational-efficiency",
+    "href": "talk/talk.html#computational-efficiency",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Computational efficiency",
+    "text": "Computational efficiency\nMixture models can be slow to fit or fail to converge.\n\nImprovements: - Non-centered parameterizations (as shown in transformed parameters blocks) - Vectorization (operating on arrays rather than loops where possible)\n- Warm starts (initializing chains near reasonable values)"
+  },
+  {
+    "objectID": "talk/talk.html#model-validation",
+    "href": "talk/talk.html#model-validation",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Model validation",
+    "text": "Model validation\nBeyond posterior predictive checks:\n\nPrior predictive checks: Ensuring priors generate reasonable data\nResidual analysis: Checking for systematic deviations\nCross-validation: Using held-out data to assess generalization"
+  },
+  {
+    "objectID": "talk/talk.html#alternative-response-distributions",
+    "href": "talk/talk.html#alternative-response-distributions",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Alternative response distributions",
+    "text": "Alternative response distributions\nTo ensure robustness, we tested ordered beta distributions:\n\n\n\n\n\n\n\nRobustness to response distribution choice\n\n\n\n\nLeft: ELPDs for ordered beta models. Right: Truncated normal vs. ordered beta comparison\n\nDiscrete-factivity maintains advantage regardless of response distribution"
+  },
+  {
+    "objectID": "talk/talk.html#for-semantic-theory",
+    "href": "talk/talk.html#for-semantic-theory",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "For semantic theory",
+    "text": "For semantic theory\nFactivity involves categorical semantic properties\n\nGradience emerges from uncertainty about interpretation\nNot from gradient truth conditions\nSupports traditional presuppositional approaches\n\n\nEvidence against wholly-gradient theories\n\nGradient Projection Principle (Tonhauser, Beaver, and Degen (2018)) not supported\nContent doesn’t project “to the extent it is not at-issue”"
+  },
+  {
+    "objectID": "talk/talk.html#for-projection-theories",
+    "href": "talk/talk.html#for-projection-theories",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "For projection theories",
+    "text": "For projection theories\nUnderlying mechanisms operate discretely\nWhether QUD-based, at-issueness, or commitment-based:\n\nCategorical inclusion/exclusion of content\nBinary decisions about presupposition accommodation\nDiscrete contextual factors determining interpretation\n\n\nImplication: Projection mechanisms involve binary operations, not continuous scales"
+  },
+  {
+    "objectID": "talk/talk.html#methodological-implications",
+    "href": "talk/talk.html#methodological-implications",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Methodological implications",
+    "text": "Methodological implications\n\nAggregate ≠ individual gradience\n\nPopulation patterns can emerge from discrete processes\n\nTheory-driven models matter\n\nPDS maintains theoretical commitments\nEnables quantitative tests of linguistic hypotheses\n\nMultiple paradigms strengthen conclusions\n\nConvergent results across experiments\nRobust evidence for theoretical claims"
+  },
+  {
+    "objectID": "talk/talk.html#connections-across-phenomena",
+    "href": "talk/talk.html#connections-across-phenomena",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Connections across phenomena",
+    "text": "Connections across phenomena\nAdjectives vs. Factivity\n\nAdjectives: - Gradient uncertainty from vagueness - Unresolved indeterminacy - Continuous threshold parameters\nFactivity: - Discrete uncertainty from interpretation - Resolved indeterminacy\n- Mixture model components\n\n\nPDS compilation naturally reflects these theoretical distinctions"
+  },
+  {
+    "objectID": "talk/talk.html#summary",
+    "href": "talk/talk.html#summary",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Summary",
+    "text": "Summary\nEmpirically\nDiscrete-factivity models dramatically outperform gradient alternatives\n\nTheoretically\nFactivity involves categorical interpretation selection\n\n\nMethodologically\nPDS enables principled theory comparison through compositional semantics → statistical models\n\n\nThe framework provides a template for investigating similar questions across semantic phenomena"
+  },
+  {
+    "objectID": "talk/talk.html#looking-forward",
+    "href": "talk/talk.html#looking-forward",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Looking forward",
+    "text": "Looking forward\nFuture directions\n\nExtend to other projection phenomena (conventional implicatures, definite descriptions)\nInvestigate individual differences in interpretation strategies\nExplore developmental and cross-linguistic variation\nApply to real-world language understanding systems\n\n\nThe broader vision: Probabilistic semantics as a bridge between theoretical linguistics and computational modeling"
+  },
+  {
+    "objectID": "talk/talk.html#thank-you",
+    "href": "talk/talk.html#thank-you",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "Thank you",
+    "text": "Thank you\nQuestions and discussion…"
+  },
+  {
+    "objectID": "talk/talk.html#references",
+    "href": "talk/talk.html#references",
+    "title": "PDS: intro., factivity, and some code  Julian Grove (U. Florida)  Cornell U., March 18th",
+    "section": "",
+    "text": "References\n\n\n\n\nDavis, Steven, and Brendan S Gillon. 2004. Semantics: A Reader. New York: Oxford University Press.\n\n\nde Groote, Philippe. 2006. “Towards a Montagovian Account of Dynamics.” Semantics and Linguistic Theory 16 (0): 1–16. https://doi.org/10.3765/salt.v16i0.2952.\n\n\nDegen, Judith, and Judith Tonhauser. 2021. “Prior Beliefs Modulate Projection.” Open Mind 5 (September): 59–70. https://doi.org/10.1162/opmi_a_00042.\n\n\nFarkas, Donka F., and Kim B. Bruce. 2010. “On Reacting to Assertions and Polar Questions.” Journal of Semantics 27 (1): 81–118. https://doi.org/10.1093/jos/ffp010.\n\n\nFine, Kit. 1975. “Vagueness, Truth and Logic.” Synthese 30 (3/4): 265–300. https://www.jstor.org/stable/20115033.\n\n\nGinzburg, Jonathan. 1996. “Dynamics and the Semantics of Dialogue.” In Logic, Language, and Computation, edited by Jerry Seligman and Dag Westerståhl, 1:221–37. Stanford: CSLI Publications.\n\n\nGraff, Delia. 2000. “Shifting Sands: An Interest-Relative Theory of Vagueness.” Philosophical Topics 28 (1): 45–81. https://www.jstor.org/stable/43154331.\n\n\nGroenendijk, Jeroen A., and Martin B. J. Stokhof. 1991. “Dynamic Predicate Logic.” Linguistics and Philosophy 14 (1): 39–100. https://doi.org/10.1007/BF00628304.\n\n\nJasbi, Masoud, Brandon Waldon, and Judith Degen. 2019. “Linking Hypothesis and Number of Response Options Modulate Inferred Scalar Implicature Rate.” Frontiers in Psychology 10 (February). https://doi.org/10.3389/fpsyg.2019.00189.\n\n\nKennedy, Christopher. 2007. “Vagueness and Grammar: The Semantics of Relative and Absolute Gradable Adjectives.” Linguistics and Philosophy 30 (1): 1–45. https://doi.org/10.1007/s10988-006-9008-0.\n\n\nMuskens, Reinhard. 1996. “Combining Montague Semantics and Discourse Representation.” Linguistics and Philosophy 19 (2): 143–86. https://doi.org/10.1007/BF00635836.\n\n\nPhillips, Colin, Phoebe Gaston, Nick Huang, and Hanna Muller. 2021. “Theories All the Way Down: Remarks on ‘Theoretical’ and ‘Experimental’ Linguistics.” In The Cambridge Handbook of Experimental Syntax, edited by Grant Goodall, 587–616. Cambridge Handbooks in Language and Linguistics. Cambridge: Cambridge University Press. https://doi.org/10.1017/9781108569620.023.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6.\n\n\nRooij, Robert van. 2011. “Vagueness and Linguistics.” In Vagueness: A Guide, edited by Giuseppina Ronzitti, 123–70. Dordrecht: Springer Netherlands. https://doi.org/10.1007/978-94-007-0375-9_6.\n\n\nSimons, Mandy, David Beaver, Craige Roberts, and Judith Tonhauser. 2017. “The Best Question: Explaining the Projection Behavior of Factives.” Discourse Processes 54 (3): 187–206.\n\n\nSorensen, Roy. 2023. “Vagueness.” In The Stanford Encyclopedia of Philosophy, edited by Edward N. Zalta and Uri Nodelman, Winter 2023. Metaphysics Research Lab, Stanford University. https://plato.stanford.edu/archives/win2023/entries/vagueness/.\n\n\nStalnaker, Robert. 1978. “Assertion.” In Pragmatics, edited by Peter Cole, 9:315–32. New York: Academic Press.\n\n\nTonhauser, Judith, David I. Beaver, and Judith Degen. 2018. “How Projective Is Projective Content? Gradience in Projectivity and At-Issueness.” Journal of Semantics 35 (3): 495–542. https://doi.org/10.1093/jos/ffy007.\n\n\nWaldon, Brandon, and Judith Degen. 2020. “Modeling Behavior in Truth Value Judgment Task Experiments.” In Proceedings of the Society for Computation in Linguistics 2020, edited by Allyson Ettinger, Gaja Jarosz, and Joe Pater, 238–47. New York, New York: Association for Computational Linguistics. https://aclanthology.org/2020.scil-1.29/.\n\n\nWhite, Aaron Steven. 2019. “Lexically Triggered Veridicality Inferences.” In Handbook of Pragmatics, 22:115–48. John Benjamins Publishing Company. https://doi.org/10.1075/hop.22.lex4.\n\n\nWhite, Aaron Steven, and Kyle Rawlins. 2018. “The Role of Veridicality and Factivity in Clause Selection.” In NELS 48: Proceedings of the Forty-Eighth Annual Meeting of the North East Linguistic Society, edited by Sherry Hucklebridge and Max Nelson, 48:221–34. University of Iceland: GLSA (Graduate Linguistics Student Association), Department of Linguistics, University of Massachusetts."
+  }
+]
