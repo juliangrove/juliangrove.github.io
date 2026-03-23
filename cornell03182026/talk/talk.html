@@ -9,7 +9,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-60894e5ca26aaca91341ef9d74312a65.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.26">
 
-  <title>PDS: intro., factivity, and some code   Julian Grove (U. Florida)   Cornell U., March 18th</title>
+  <title>PDS: intro., factivity, and some code   Julian Grove (U. Florida)   Cornell U., March 18th/23rd</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -215,7 +215,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">PDS: intro., factivity, and some code <br><br> <small>Julian Grove (U. Florida) <br> Cornell U., March 18th</small></h1>
+  <h1 class="title">PDS: intro., factivity, and some code <br><br> <small>Julian Grove (U. Florida) <br> Cornell U., March 18th/23rd</small></h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -1520,66 +1520,6 @@ h_{b} ∼ \abbr{Normal}(0, 1) \\
 </ul>
 </div>
 </section>
-<section id="states" class="slide level2">
-<h2>States</h2>
-<p>Some state-sensitive constants:</p>
-<div class="fragment">
-<p><span class="math display">\[
-\ct{CG} : σ → \P ι \\
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\updct{CG} : \P ι → σ → σ \\
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\ct{QUD} : \Q ι α σ → α → ι → t
-\]</span></p>
-</div>
-<div class="fragment">
-<p><span class="math display">\[
-\updct{QUD} : (α → ι → t) → σ → \Q ι α σ
-\]</span></p>
-</div>
-</section>
-<section id="haskell-the-q-constructor" class="slide level2">
-<h2>Haskell: the <span class="math inline">\(\Q\)</span> constructor</h2>
-<p><br><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb10-1"><a></a><span class="co">-- | Arrows, products, and probabilistic types, as well as (a) abstract types</span></span>
-<span id="cb10-2"><a></a><span class="co">-- representing the addition of a new Q, and (b) type variables for encoding</span></span>
-<span id="cb10-3"><a></a><span class="co">-- polymorphism.</span></span>
-<span id="cb10-4"><a></a><span class="kw">data</span> <span class="dt">Type</span> <span class="ot">=</span> <span class="dt">At</span> <span class="dt">Atom</span></span>
-<span id="cb10-5"><a></a>          <span class="op">|</span> <span class="dt">Type</span> <span class="op">:</span>→ <span class="dt">Type</span></span>
-<span id="cb10-6"><a></a>          <span class="op">|</span> <span class="dt">Unit</span></span>
-<span id="cb10-7"><a></a>          <span class="op">|</span> <span class="dt">Type</span> <span class="op">:</span>× <span class="dt">Type</span></span>
-<span id="cb10-8"><a></a>          <span class="op">|</span> <span class="dt">P</span> <span class="dt">Type</span></span>
-<span id="cb10-9"><a></a>          <span class="op">|</span> <span class="dt">Q</span> <span class="dt">Type</span> <span class="dt">Type</span> <span class="dt">Type</span></span>
-<span id="cb10-10"><a></a>          <span class="op">|</span> <span class="dt">TyVar</span> <span class="dt">String</span></span>
-<span id="cb10-11"><a></a>  <span class="kw">deriving</span> (<span class="dt">Eq</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="how-stateful-constants-interact" class="slide level2">
-<h2>How stateful constants interact</h2>
-<p><span class="math display">\[
-\ct{CG}(\updct{CG}(cg)(s)) = cg
-\]</span></p>
-<!-- ::: {.fragment} -->
-<!-- $$ -->
-<!-- \ct{CG}(\updct{QUD}(q)(s)) = \ct{CG}(s) -->
-<!-- $$ -->
-<!-- ::: -->
-<!-- ::: {.fragment} -->
-<!-- $$ -->
-<!-- \ct{QUD}(\updct{QUD}(q)(s)) = q \\ -->
-<!-- $$ -->
-<!-- ::: -->
-<!-- ::: {.fragment} -->
-<!-- $$ -->
-<!-- \ct{QUD}(\updct{CG}(cg)(s)) = \ct{QUD}(s) -->
-<!-- $$ -->
-<!-- ::: -->
-</section>
 <section id="manipulating-stateful-programs" class="slide level2">
 <h2>Manipulating stateful programs</h2>
 <h3 id="ctget-and-ctput"><span class="math inline">\(\ct{get}\)</span> and <span class="math inline">\(\ct{put}\)</span></h3>
@@ -1605,12 +1545,12 @@ h_{b} ∼ \abbr{Normal}(0, 1) \\
 <section id="haskell-3" class="slide level2">
 <h2>Haskell</h2>
 <p><br><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb11-1"><a></a><span class="ot">getPP ::</span> <span class="dt">Term</span></span>
-<span id="cb11-2"><a></a>getPP <span class="ot">=</span> lam' s (<span class="dt">Return</span> (s <span class="op">&amp;</span> s))</span>
-<span id="cb11-3"><a></a></span>
-<span id="cb11-4"><a></a><span class="ot">putPP ::</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span></span>
-<span id="cb11-5"><a></a>putPP s <span class="ot">=</span> <span class="dt">Lam</span> fr (<span class="dt">Return</span> (<span class="dt">TT</span> <span class="op">&amp;</span> s))</span>
-<span id="cb11-6"><a></a>  <span class="kw">where</span> fr<span class="op">:</span>esh <span class="ot">=</span> fresh [s]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb10-1"><a></a><span class="ot">getPP ::</span> <span class="dt">Term</span></span>
+<span id="cb10-2"><a></a>getPP <span class="ot">=</span> lam' s (<span class="dt">Return</span> (s <span class="op">&amp;</span> s))</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="ot">putPP ::</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Term</span></span>
+<span id="cb10-5"><a></a>putPP s <span class="ot">=</span> <span class="dt">Lam</span> fr (<span class="dt">Return</span> (<span class="dt">TT</span> <span class="op">&amp;</span> s))</span>
+<span id="cb10-6"><a></a>  <span class="kw">where</span> fr<span class="op">:</span>esh <span class="ot">=</span> fresh [s]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -1633,25 +1573,6 @@ i ∼ c \\
 \pure{i}
 \end{array}\right)} \\
 &amp; \abbr{put}(\updct{CG}(c^{\prime})(s))
-\end{array}
-\end{align*}
-\]</span></p>
-</div>
-</section>
-<section id="asking-a-question" class="slide level2">
-<h2>Asking a question</h2>
-<p><span class="math display">\[
-\begin{align*}
-\abbr{ask} &amp;: ℙ^{σ}_{σ^{\prime}} (α → ι → t) → ℙ^{σ}_{\Q ι α σ^{\prime}} ⋄
-\end{align*}
-\]</span></p>
-<div class="fragment">
-<p><span class="math display">\[
-\begin{align*}
-\abbr{ask}(⟦\textit{how tall?}⟧) &amp;= \begin{array}[t]{rl}
-\Do &amp; q^{r → ι → t} ← ⟦\textit{how tall?}⟧^{ℙ^{σ}_{σ}(r → ι → t)} \\
-&amp; s ← \abbr{get} \\
-&amp; \abbr{put}(\updct{QUD}(q)(s))
 \end{array}
 \end{align*}
 \]</span></p>
@@ -1707,53 +1628,53 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <p><br></p>
 <div class="fragment">
 <p>Delta-rules.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb12-1"><a></a><span class="co">-- | The type of Delta-rules.</span></span>
-<span id="cb12-2"><a></a><span class="kw">type</span> <span class="dt">DeltaRule</span> <span class="ot">=</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Maybe</span> <span class="dt">Term</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb11-1"><a></a><span class="co">-- | The type of Delta-rules.</span></span>
+<span id="cb11-2"><a></a><span class="kw">type</span> <span class="dt">DeltaRule</span> <span class="ot">=</span> <span class="dt">Term</span> <span class="ot">-&gt;</span> <span class="dt">Maybe</span> <span class="dt">Term</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 
 <h3 id="indices">Indices</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb13-1"><a></a><span class="co">-- | Computes functions on indices.</span></span>
-<span id="cb13-2"><a></a><span class="ot">indices ::</span> <span class="dt">DeltaRule</span></span>
-<span id="cb13-3"><a></a>indices <span class="ot">=</span> \<span class="kw">case</span></span>
-<span id="cb13-4"><a></a>  <span class="dt">Ling</span>   (<span class="dt">UpdLing</span>   p _) <span class="ot">-&gt;</span> <span class="dt">Just</span> p</span>
-<span id="cb13-5"><a></a>  <span class="dt">Ling</span>   (<span class="dt">UpdSocPla</span> _ i) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">Ling</span> i)</span>
-<span id="cb13-6"><a></a>  <span class="dt">SocPla</span> (<span class="dt">UpdSocPla</span> p _) <span class="ot">-&gt;</span> <span class="dt">Just</span> p</span>
-<span id="cb13-7"><a></a>  <span class="dt">SocPla</span> (<span class="dt">UpdLing</span>   _ i) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">SocPla</span> i)</span>
-<span id="cb13-8"><a></a>  _                      <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb12-1"><a></a><span class="co">-- | Computes functions on indices.</span></span>
+<span id="cb12-2"><a></a><span class="ot">indices ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb12-3"><a></a>indices <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb12-4"><a></a>  <span class="dt">Ling</span>   (<span class="dt">UpdLing</span>   p _) <span class="ot">-&gt;</span> <span class="dt">Just</span> p</span>
+<span id="cb12-5"><a></a>  <span class="dt">Ling</span>   (<span class="dt">UpdSocPla</span> _ i) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">Ling</span> i)</span>
+<span id="cb12-6"><a></a>  <span class="dt">SocPla</span> (<span class="dt">UpdSocPla</span> p _) <span class="ot">-&gt;</span> <span class="dt">Just</span> p</span>
+<span id="cb12-7"><a></a>  <span class="dt">SocPla</span> (<span class="dt">UpdLing</span>   _ i) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">SocPla</span> i)</span>
+<span id="cb12-8"><a></a>  _                      <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<h3 id="states-1">States</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb14-1"><a></a><span class="co">-- | Computes functions on states.</span></span>
-<span id="cb14-2"><a></a><span class="ot">states ::</span> <span class="dt">DeltaRule</span></span>
-<span id="cb14-3"><a></a>states <span class="ot">=</span> \<span class="kw">case</span></span>
-<span id="cb14-4"><a></a>  <span class="dt">CG</span>      (<span class="dt">UpdCG</span>      cg _) <span class="ot">-&gt;</span> <span class="dt">Just</span> cg</span>
-<span id="cb14-5"><a></a>  <span class="dt">CG</span>      (<span class="dt">UpdTauKnow</span> _  s) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">CG</span> s)</span>
-<span id="cb14-6"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdTauKnow</span> b  _) <span class="ot">-&gt;</span> <span class="dt">Just</span> b</span>
-<span id="cb14-7"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdCG</span>      _  s) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">TauKnow</span> s)</span>
-<span id="cb14-8"><a></a>  _                         <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 id="states">States</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb13-1"><a></a><span class="co">-- | Computes functions on states.</span></span>
+<span id="cb13-2"><a></a><span class="ot">states ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb13-3"><a></a>states <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb13-4"><a></a>  <span class="dt">CG</span>      (<span class="dt">UpdCG</span>      cg _) <span class="ot">-&gt;</span> <span class="dt">Just</span> cg</span>
+<span id="cb13-5"><a></a>  <span class="dt">CG</span>      (<span class="dt">UpdTauKnow</span> _  s) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">CG</span> s)</span>
+<span id="cb13-6"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdTauKnow</span> b  _) <span class="ot">-&gt;</span> <span class="dt">Just</span> b</span>
+<span id="cb13-7"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdCG</span>      _  s) <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">TauKnow</span> s)</span>
+<span id="cb13-8"><a></a>  _                         <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
 
 <h3 id="if-then-else">If then else</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb15-1"><a></a><span class="co">-- | Computes /if then else/.</span></span>
-<span id="cb15-2"><a></a><span class="ot">ite ::</span> <span class="dt">DeltaRule</span></span>
-<span id="cb15-3"><a></a>ite <span class="ot">=</span> \<span class="kw">case</span></span>
-<span id="cb15-4"><a></a>  <span class="dt">ITE</span> <span class="dt">Tr</span> x y <span class="ot">-&gt;</span> <span class="dt">Just</span> x</span>
-<span id="cb15-5"><a></a>  <span class="dt">ITE</span> <span class="dt">Fa</span> x y <span class="ot">-&gt;</span> <span class="dt">Just</span> y</span>
-<span id="cb15-6"><a></a>  _          <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb14-1"><a></a><span class="co">-- | Computes /if then else/.</span></span>
+<span id="cb14-2"><a></a><span class="ot">ite ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb14-3"><a></a>ite <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb14-4"><a></a>  <span class="dt">ITE</span> <span class="dt">Tr</span> x y <span class="ot">-&gt;</span> <span class="dt">Just</span> x</span>
+<span id="cb14-5"><a></a>  <span class="dt">ITE</span> <span class="dt">Fa</span> x y <span class="ot">-&gt;</span> <span class="dt">Just</span> y</span>
+<span id="cb14-6"><a></a>  _          <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="making-observations-2">Making observations</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb16-1"><a></a><span class="co">-- | Observing @Tr@ is trivial, while observing @Fa@ yields an undefined</span></span>
-<span id="cb16-2"><a></a><span class="co">-- probability distribution.</span></span>
-<span id="cb16-3"><a></a><span class="ot">observations ::</span> <span class="dt">DeltaRule</span></span>
-<span id="cb16-4"><a></a>observations <span class="ot">=</span> \<span class="kw">case</span></span>
-<span id="cb16-5"><a></a>  <span class="dt">Let</span> _ (<span class="dt">Observe</span> <span class="dt">Tr</span>) k <span class="ot">-&gt;</span> <span class="dt">Just</span> k</span>
-<span id="cb16-6"><a></a>  <span class="dt">Let</span> _ (<span class="dt">Observe</span> <span class="dt">Fa</span>) k <span class="ot">-&gt;</span> <span class="dt">Just</span> <span class="dt">Undefined</span></span>
-<span id="cb16-7"><a></a>  _                    <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb15-1"><a></a><span class="co">-- | Observing @Tr@ is trivial, while observing @Fa@ yields an undefined</span></span>
+<span id="cb15-2"><a></a><span class="co">-- probability distribution.</span></span>
+<span id="cb15-3"><a></a><span class="ot">observations ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb15-4"><a></a>observations <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb15-5"><a></a>  <span class="dt">Let</span> _ (<span class="dt">Observe</span> <span class="dt">Tr</span>) k <span class="ot">-&gt;</span> <span class="dt">Just</span> k</span>
+<span id="cb15-6"><a></a>  <span class="dt">Let</span> _ (<span class="dt">Observe</span> <span class="dt">Fa</span>) k <span class="ot">-&gt;</span> <span class="dt">Just</span> <span class="dt">Undefined</span></span>
+<span id="cb15-7"><a></a>  _                    <span class="ot">-&gt;</span> <span class="dt">Nothing</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -1767,8 +1688,8 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <h2>The phenomenon</h2>
 <p><strong>Factivity</strong> presents a puzzle.</p>
 <ul>
-<li class="fragment"><strong>Traditional view</strong>: Predicates either trigger presuppositions or they don’t</li>
-<li class="fragment"><strong>Empirical reality</strong>: Pervasive gradience in projection judgments</li>
+<li class="fragment"><strong>Traditional view</strong>: Predicates either trigger presuppositions or they don’t.</li>
+<li class="fragment"><strong>Empirical reality</strong>: Pervasive gradience in projection judgments.</li>
 <li class="fragment"><strong>The challenge</strong>: What explains this gradience?</li>
 </ul>
 </section>
@@ -1795,7 +1716,7 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <div style="text-align: center;">
 <p><img data-src="plots/veridicality_factivity.png" width="500"></p>
 <div style="font-size: 85%;">
-<p>MegaVeridicality dataset (<span class="citation" data-cites="white_role_2018">White and Rawlins (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span>): continuous gradient, not discrete clusters</p>
+<p>MegaVeridicality dataset (<span class="citation" data-cites="white_role_2018">White and Rawlins (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span>): continuous, gradient (not discrete) clusters</p>
 </div>
 </div>
 </section>
@@ -1807,7 +1728,7 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <li class="fragment">Whether the veridicality inferences triggered by a particular expression containing a particular clause-embedding predicate are themselves gradient</li>
 </ol>
 <div class="fragment">
-<p>We’ll focus on the latter question—PDS is uniquely positioned to ask it</p>
+<p>PDS is uniquely positioned to help answer 2.</p>
 </div>
 </section>
 <section id="two-competing-hypotheses" class="slide level2">
@@ -1894,7 +1815,7 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <p>Norming data: fit a discrete model and gradient model…</p>
 <div style="text-align: center;">
 <p><img data-src="plots/norming_elpd.png" width="600"></p>
-<p>Gradient model better (ΔELPD = 442.3)!</p>
+<p>Gradient model better!</p>
 </div>
 </section>
 <section class="slide level2">
@@ -1907,30 +1828,30 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 </section>
 <section id="discrete-factivity-in-pds" class="slide level2">
 <h2>Discrete-factivity in PDS</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb17-1"><a></a><span class="co">-- From Grammar.Lexica.SynSem.Factivity</span></span>
-<span id="cb17-2"><a></a><span class="st">"knows"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
-<span id="cb17-3"><a></a>    syn <span class="ot">=</span> <span class="dt">S</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">NP</span> <span class="op">:/:</span> <span class="dt">S</span>,</span>
-<span id="cb17-4"><a></a>    sem <span class="ot">=</span> ty tau (lam s (purePP (lam p (lam x (lam i </span>
-<span id="cb17-5"><a></a>      (<span class="dt">ITE</span> (<span class="dt">TauKnow</span> s) </span>
-<span id="cb17-6"><a></a>           (<span class="dt">And</span> (epi i <span class="op">@@</span> x <span class="op">@@</span> p) (p <span class="op">@@</span> i))  <span class="co">-- factive</span></span>
-<span id="cb17-7"><a></a>           (epi i <span class="op">@@</span> x <span class="op">@@</span> p))))))            <span class="co">-- non-factive</span></span>
-<span id="cb17-8"><a></a>      <span class="op">@@</span> s)</span>
-<span id="cb17-9"><a></a>} ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb16-1"><a></a><span class="co">-- From Grammar.Lexica.SynSem.Factivity</span></span>
+<span id="cb16-2"><a></a><span class="st">"knows"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
+<span id="cb16-3"><a></a>    syn <span class="ot">=</span> <span class="dt">S</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">NP</span> <span class="op">:/:</span> <span class="dt">S</span>,</span>
+<span id="cb16-4"><a></a>    sem <span class="ot">=</span> ty tau (lam s (purePP (lam p (lam x (lam i </span>
+<span id="cb16-5"><a></a>      (<span class="dt">ITE</span> (<span class="dt">TauKnow</span> s) </span>
+<span id="cb16-6"><a></a>           (<span class="dt">And</span> (epi i <span class="op">@@</span> x <span class="op">@@</span> p) (p <span class="op">@@</span> i))  <span class="co">-- factive</span></span>
+<span id="cb16-7"><a></a>           (epi i <span class="op">@@</span> x <span class="op">@@</span> p))))))            <span class="co">-- non-factive</span></span>
+<span id="cb16-8"><a></a>      <span class="op">@@</span> s)</span>
+<span id="cb16-9"><a></a>} ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><code>ITE</code> creates discrete choice based on <code>TauKnow</code> parameter</p>
 </div>
 </section>
 <section id="pds-compilation-process" class="slide level2">
 <h2>PDS compilation process</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb18-1"><a></a><span class="co">-- From Grammar.Parser and Grammar.Lexica.SynSem.Factivity</span></span>
-<span id="cb18-2"><a></a>expr1 <span class="ot">=</span> [<span class="st">"jo"</span>, <span class="st">"knows"</span>, <span class="st">"that"</span>, <span class="st">"bo"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"linguist"</span>]</span>
-<span id="cb18-3"><a></a>expr2 <span class="ot">=</span> [<span class="st">"how"</span>, <span class="st">"likely"</span>, <span class="st">"that"</span>, <span class="st">"bo"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"linguist"</span>]</span>
-<span id="cb18-4"><a></a>s1 <span class="ot">=</span> getSemantics <span class="op">@</span><span class="dt">Factivity</span> <span class="dv">0</span> expr1</span>
-<span id="cb18-5"><a></a>q1 <span class="ot">=</span> getSemantics <span class="op">@</span><span class="dt">Factivity</span> <span class="dv">0</span> expr2</span>
-<span id="cb18-6"><a></a>discourse <span class="ot">=</span> ty tau <span class="op">$</span> assert s1 <span class="op">&gt;&gt;&gt;</span> ask q1</span>
-<span id="cb18-7"><a></a></span>
-<span id="cb18-8"><a></a><span class="co">-- Compile to Stan using factivityPrior and factivityRespond</span></span>
-<span id="cb18-9"><a></a>factivityExample <span class="ot">=</span> asTyped tau (betaDeltaNormal deltaRules <span class="op">.</span> factivityRespond factivityPrior) discourse</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb17-1"><a></a><span class="co">-- From Grammar.Parser and Grammar.Lexica.SynSem.Factivity</span></span>
+<span id="cb17-2"><a></a>expr1 <span class="ot">=</span> [<span class="st">"jo"</span>, <span class="st">"knows"</span>, <span class="st">"that"</span>, <span class="st">"bo"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"linguist"</span>]</span>
+<span id="cb17-3"><a></a>expr2 <span class="ot">=</span> [<span class="st">"how"</span>, <span class="st">"likely"</span>, <span class="st">"that"</span>, <span class="st">"bo"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"linguist"</span>]</span>
+<span id="cb17-4"><a></a>s1 <span class="ot">=</span> getSemantics <span class="op">@</span><span class="dt">Factivity</span> <span class="dv">0</span> expr1</span>
+<span id="cb17-5"><a></a>q1 <span class="ot">=</span> getSemantics <span class="op">@</span><span class="dt">Factivity</span> <span class="dv">0</span> expr2</span>
+<span id="cb17-6"><a></a>discourse <span class="ot">=</span> ty tau <span class="op">$</span> assert s1 <span class="op">&gt;&gt;&gt;</span> ask q1</span>
+<span id="cb17-7"><a></a></span>
+<span id="cb17-8"><a></a><span class="co">-- Compile to Stan using factivityPrior and factivityRespond</span></span>
+<span id="cb17-9"><a></a>factivityExample <span class="ot">=</span> asTyped tau (betaDeltaNormal deltaRules <span class="op">.</span> factivityRespond factivityPrior) discourse</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>…transforms compositional semantics into Stan <strong>kernel models</strong> (models representing a single trial).</p>
 </div>
@@ -1938,89 +1859,57 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <section id="the-discrete-factivity-kernel" class="slide level2">
 <h2>The discrete-factivity kernel</h2>
 <p>PDS outputs this kernel model:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb19-1"><a></a><span class="kw">model</span> {</span>
-<span id="cb19-2"><a></a>  <span class="co">// FIXED EFFECTS</span></span>
-<span id="cb19-3"><a></a>  v ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// probability of factive interpretation</span></span>
-<span id="cb19-4"><a></a>  w ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// world knowledge (from norming)</span></span>
-<span id="cb19-5"><a></a>  </span>
-<span id="cb19-6"><a></a>  <span class="co">// LIKELIHOOD</span></span>
-<span id="cb19-7"><a></a>  <span class="kw">target +=</span> log_mix(v, </span>
-<span id="cb19-8"><a></a>                    truncated_normal_lpdf(y | <span class="fl">1.0</span>, sigma, <span class="fl">0.0</span>, <span class="fl">1.0</span>),     <span class="co">// factive branch</span></span>
-<span id="cb19-9"><a></a>                    truncated_normal_lpdf(y | w, sigma, <span class="fl">0.0</span>, <span class="fl">1.0</span>));      <span class="co">// non-factive branch</span></span>
-<span id="cb19-10"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb18-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb18-2"><a></a>  <span class="co">// FIXED EFFECTS</span></span>
+<span id="cb18-3"><a></a>  v ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// probability of factive interpretation</span></span>
+<span id="cb18-4"><a></a>  w ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// world knowledge (from norming)</span></span>
+<span id="cb18-5"><a></a>  </span>
+<span id="cb18-6"><a></a>  <span class="co">// LIKELIHOOD</span></span>
+<span id="cb18-7"><a></a>  <span class="kw">target +=</span> log_mix(v, </span>
+<span id="cb18-8"><a></a>                    truncated_normal_lpdf(y | <span class="fl">1.0</span>, sigma, <span class="fl">0.0</span>, <span class="fl">1.0</span>),     <span class="co">// factive branch</span></span>
+<span id="cb18-9"><a></a>                    truncated_normal_lpdf(y | w, sigma, <span class="fl">0.0</span>, <span class="fl">1.0</span>));      <span class="co">// non-factive branch</span></span>
+<span id="cb18-10"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<p>This captures discrete branching: with probability <code>v</code>, response is near 1.0; otherwise, it depends on world knowledge <code>w</code></p>
+<p>This captures discrete branching: with probability <code>v</code>, response is near 1.0; otherwise, it depends on world knowledge <code>w</code>.</p>
 </div>
-</section>
-<section id="the-full-stan-implementation" class="slide level2">
-<h2>The full Stan implementation</h2>
-<p>Key factivity-specific components:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20" data-highlight="17-18,21-22,25-27"><pre class="sourceCode numberSource stan line-numbers number-lines code-with-copy"><code class="sourceCode stan"><span id="cb20-1"><a></a><span class="kw">model</span> {</span>
-<span id="cb20-2"><a></a>  <span class="co">// ... priors and hierarchical structure ...</span></span>
-<span id="cb20-3"><a></a>  </span>
-<span id="cb20-4"><a></a>  <span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span>:N) {</span>
-<span id="cb20-5"><a></a>    <span class="co">// Probability of factive interpretation</span></span>
-<span id="cb20-6"><a></a>    <span class="dt">real</span> verb_prob = inv_logit(verb_intercept[verb[n]] + </span>
-<span id="cb20-7"><a></a>                               subj_intercept_verb[subj[n], verb[n]]);</span>
-<span id="cb20-8"><a></a>    </span>
-<span id="cb20-9"><a></a>    <span class="co">// World knowledge probability  </span></span>
-<span id="cb20-10"><a></a>    <span class="dt">real</span> context_prob = inv_logit(context_intercept[context[n]] + </span>
-<span id="cb20-11"><a></a>                                  subj_intercept_context[subj[n], context[n]]);</span>
-<span id="cb20-12"><a></a>    </span>
-<span id="cb20-13"><a></a>    <span class="co">// MIXTURE LIKELIHOOD</span></span>
-<span id="cb20-14"><a></a>    <span class="kw">target +=</span> log_mix(verb_prob,</span>
-<span id="cb20-15"><a></a>                      truncated_normal_lpdf(y[n] | <span class="fl">1.0</span>, sigma_e, <span class="fl">0.0</span>, <span class="fl">1.0</span>),</span>
-<span id="cb20-16"><a></a>                      truncated_normal_lpdf(y[n] | context_prob, sigma_e, <span class="fl">0.0</span>, <span class="fl">1.0</span>));</span>
-<span id="cb20-17"><a></a>  }</span>
-<span id="cb20-18"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="hierarchical-structure" class="slide level2">
-<h2>Hierarchical structure</h2>
-<p>The kernel is augmented with statistical machinery for real data:</p>
-<ul>
-<li class="fragment"><strong>Hierarchical priors</strong>: Verb-specific and context-specific effects</li>
-<li class="fragment"><strong>Integration with norming</strong>: <code>mu_omega</code> and <code>sigma_omega</code> from norming study</li>
-<li class="fragment"><strong>Subject-level variation</strong>: Random effects for individual differences</li>
-<li class="fragment"><strong>Mixture likelihood</strong>: Core discrete-factivity structure (highlighted lines)</li>
-</ul>
 </section>
 <section id="wholly-gradient-factivity-in-pds" class="slide level2">
 <h2>Wholly-gradient factivity in PDS</h2>
 <p>Alternative lexical entry branches on common ground indices:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb21-1"><a></a><span class="co">-- From Grammar.Lexica.SynSem.Factivity</span></span>
-<span id="cb21-2"><a></a><span class="st">"knows"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
-<span id="cb21-3"><a></a>    syn <span class="ot">=</span> <span class="dt">S</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">NP</span> <span class="op">:/:</span> <span class="dt">S</span>,</span>
-<span id="cb21-4"><a></a>    sem <span class="ot">=</span> ty tau (lam s (purePP (lam p (lam x (lam i</span>
-<span id="cb21-5"><a></a>      (<span class="dt">ITE</span> (<span class="dt">TauKnow</span> i)</span>
-<span id="cb21-6"><a></a>           (<span class="dt">And</span> (epi i <span class="op">@@</span> x <span class="op">@@</span> p) (p <span class="op">@@</span> i)) <span class="co">-- factive</span></span>
-<span id="cb21-7"><a></a>           (epi i <span class="op">@@</span> x <span class="op">@@</span> p))))) <span class="op">@@</span> s))     <span class="co">-- non-factive</span></span>
-<span id="cb21-8"><a></a>    } ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb19-1"><a></a><span class="co">-- From Grammar.Lexica.SynSem.Factivity</span></span>
+<span id="cb19-2"><a></a><span class="st">"knows"</span> <span class="ot">-&gt;</span> [ <span class="dt">SynSem</span> {</span>
+<span id="cb19-3"><a></a>    syn <span class="ot">=</span> <span class="dt">S</span> <span class="op">:</span>\<span class="op">:</span> <span class="dt">NP</span> <span class="op">:/:</span> <span class="dt">S</span>,</span>
+<span id="cb19-4"><a></a>    sem <span class="ot">=</span> ty tau (lam s (purePP (lam p (lam x (lam i</span>
+<span id="cb19-5"><a></a>      (<span class="dt">ITE</span> (<span class="dt">TauKnow</span> i)</span>
+<span id="cb19-6"><a></a>           (<span class="dt">And</span> (epi i <span class="op">@@</span> x <span class="op">@@</span> p) (p <span class="op">@@</span> i)) <span class="co">-- factive</span></span>
+<span id="cb19-7"><a></a>           (epi i <span class="op">@@</span> x <span class="op">@@</span> p))))) <span class="op">@@</span> s))     <span class="co">-- non-factive</span></span>
+<span id="cb19-8"><a></a>    } ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<p>Now <code>TauKnow</code> parameter varies by <em>index</em> rather than discourse state</p>
+<p>Now <code>TauKnow</code> parameter varies by <em>index</em> rather than discourse state.</p>
 </div>
 </section>
 <section id="gradient-pds-compilation" class="slide level2">
 <h2>Gradient PDS compilation</h2>
 <p>The alternative implementation requires different prior structure:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb22-1"><a></a><span class="co">-- Prior over indices encoded in common ground</span></span>
-<span id="cb22-2"><a></a>factivityPrior <span class="ot">=</span> let' x (<span class="dt">LogitNormal</span> <span class="dv">0</span> <span class="dv">1</span>) (let' y (<span class="dt">LogitNormal</span> <span class="dv">0</span> <span class="dv">1</span>) </span>
-<span id="cb22-3"><a></a>  (let' z (<span class="dt">LogitNormal</span> <span class="dv">0</span> <span class="dv">1</span>) (<span class="dt">Return</span> (<span class="dt">UpdCG</span> (let' b (<span class="dt">Bern</span> x) </span>
-<span id="cb22-4"><a></a>    (let' c (<span class="dt">Bern</span> y) (let' d (<span class="dt">Bern</span> z) (<span class="dt">Return</span> (<span class="dt">UpdTauKnow</span> b </span>
-<span id="cb22-5"><a></a>      (<span class="dt">UpdLing</span> (lam x c) (<span class="dt">UpdEpi</span> (lam x (lam p d)) _0))))))) ϵ))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb20-1"><a></a><span class="co">-- Prior over indices encoded in common ground</span></span>
+<span id="cb20-2"><a></a>factivityPrior <span class="ot">=</span> let' x (<span class="dt">LogitNormal</span> <span class="dv">0</span> <span class="dv">1</span>) (let' y (<span class="dt">LogitNormal</span> <span class="dv">0</span> <span class="dv">1</span>) </span>
+<span id="cb20-3"><a></a>  (let' z (<span class="dt">LogitNormal</span> <span class="dv">0</span> <span class="dv">1</span>) (<span class="dt">Return</span> (<span class="dt">UpdCG</span> (let' b (<span class="dt">Bern</span> x) </span>
+<span id="cb20-4"><a></a>    (let' c (<span class="dt">Bern</span> y) (let' d (<span class="dt">Bern</span> z) (<span class="dt">Return</span> (<span class="dt">UpdTauKnow</span> b </span>
+<span id="cb20-5"><a></a>      (<span class="dt">UpdLing</span> (lam x c) (<span class="dt">UpdEpi</span> (lam x (lam p d)) _0))))))) ϵ))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Bernoulli statement regulating factivity is part of the common ground definition</p>
 </div>
 </section>
 <section id="gradient-stan-kernel" class="slide level2">
 <h2>Gradient Stan kernel</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb23-1"><a></a><span class="kw">model</span> {</span>
-<span id="cb23-2"><a></a>  <span class="co">// FIXED EFFECTS</span></span>
-<span id="cb23-3"><a></a>  v ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// degree of factivity</span></span>
-<span id="cb23-4"><a></a>  w ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// world knowledge</span></span>
-<span id="cb23-5"><a></a>  </span>
-<span id="cb23-6"><a></a>  <span class="co">// GRADIENT LIKELIHOOD</span></span>
-<span id="cb23-7"><a></a>  <span class="kw">target +=</span> truncated_normal_lpdf(y | v + (<span class="fl">1.0</span> - v) * w, sigma, <span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
-<span id="cb23-8"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource stan number-lines code-with-copy"><code class="sourceCode stan"><span id="cb21-1"><a></a><span class="kw">model</span> {</span>
+<span id="cb21-2"><a></a>  <span class="co">// FIXED EFFECTS</span></span>
+<span id="cb21-3"><a></a>  v ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// degree of factivity</span></span>
+<span id="cb21-4"><a></a>  w ~ logit_normal(<span class="fl">0.0</span>, <span class="fl">1.0</span>);  <span class="co">// world knowledge</span></span>
+<span id="cb21-5"><a></a>  </span>
+<span id="cb21-6"><a></a>  <span class="co">// GRADIENT LIKELIHOOD</span></span>
+<span id="cb21-7"><a></a>  <span class="kw">target +=</span> truncated_normal_lpdf(y | v + (<span class="fl">1.0</span> - v) * w, sigma, <span class="fl">0.0</span>, <span class="fl">1.0</span>);</span>
+<span id="cb21-8"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p>Continuous computation: <code>response = v + (1-v) * w</code></p>
 </div>
@@ -2034,19 +1923,19 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <li class="fragment">If <code>v = 0.5</code> (partial factivity): <code>response = 0.5 + 0.5 * w</code> (boosted world knowledge)</li>
 </ul>
 <div class="fragment">
-<p>This provides a “boost” to world knowledge but never forces certainty</p>
+<p>This provides a “boost” to world knowledge but never forces certainty.</p>
 </div>
 </section>
 <section id="delta-rules-implementation" class="slide level2">
 <h2>Delta rules implementation</h2>
 <p>Both models require modifications to handle factivity parameters:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb24-1"><a></a><span class="co">-- From Lambda.Delta: Computes functions on states</span></span>
-<span id="cb24-2"><a></a><span class="ot">states ::</span> <span class="dt">DeltaRule</span></span>
-<span id="cb24-3"><a></a>states <span class="ot">=</span> \<span class="kw">case</span></span>
-<span id="cb24-4"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdTauKnow</span> b _) <span class="ot">-&gt;</span> <span class="dt">Just</span> b</span>
-<span id="cb24-5"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdCG</span> _ s)      <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">TauKnow</span> s)</span>
-<span id="cb24-6"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdQUD</span> _ s)     <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">TauKnow</span> s)</span>
-<span id="cb24-7"><a></a>  <span class="co">-- ... other cases</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource haskell number-lines code-with-copy"><code class="sourceCode haskell"><span id="cb22-1"><a></a><span class="co">-- From Lambda.Delta: Computes functions on states</span></span>
+<span id="cb22-2"><a></a><span class="ot">states ::</span> <span class="dt">DeltaRule</span></span>
+<span id="cb22-3"><a></a>states <span class="ot">=</span> \<span class="kw">case</span></span>
+<span id="cb22-4"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdTauKnow</span> b _) <span class="ot">-&gt;</span> <span class="dt">Just</span> b</span>
+<span id="cb22-5"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdCG</span> _ s)      <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">TauKnow</span> s)</span>
+<span id="cb22-6"><a></a>  <span class="dt">TauKnow</span> (<span class="dt">UpdQUD</span> _ s)     <span class="ot">-&gt;</span> <span class="dt">Just</span> (<span class="dt">TauKnow</span> s)</span>
+<span id="cb22-7"><a></a>  <span class="co">-- ... other cases</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
 <p><strong>Discrete model</strong>: <code>TauKnow</code> varies by discourse state</p>
 </div>
@@ -2169,8 +2058,8 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <section id="replication-success" class="slide level2">
 <h2>Replication success</h2>
 <div style="text-align: center;">
-<p><img data-src="plots/projection_item_means.png" width="700"></p>
-<p>Near-perfect correlation at verb level (r = 0.98)</p>
+<p><img data-src="plots/projection_verb_means.png" width="500"></p>
+<p>r = 0.98</p>
 </div>
 </section>
 <section id="non-contentful-experiments" class="slide level2">
@@ -2187,100 +2076,6 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <p>Factivity patterns persist even without rich content!</p>
 </div>
 </section>
-<section id="context-effects" class="slide level2">
-<h2>Context effects</h2>
-<p>The norming study reveals how world knowledge varies:</p>
-<div style="text-align: center;">
-<p><img data-src="plots/norming_3_thetas.png" width="600"></p>
-<p>Clear separation between high/low prior contexts validates experimental manipulation</p>
-</div>
-</section>
-<section id="predicate-specific-patterns" class="slide level2">
-<h2>Predicate-specific patterns</h2>
-<div style="text-align: center;">
-<p><img data-src="plots/fit_6_thetas.png" width="700"></p>
-<p>Variation in propensity to trigger factive interpretations</p>
-</div>
-<div class="fragment">
-<p><strong>Key insight</strong>: Canonical factives (<em>know</em>, <em>discover</em>) show high probability; variable predicates (<em>confirm</em>, <em>prove</em>) show intermediate probabilities with high uncertainty</p>
-</div>
-</section>
-<section id="complete-posterior-predictive-distributions" class="slide level2">
-<h2>Complete posterior predictive distributions</h2>
-<div title="Click to see all 20 predicates">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Click to see all 20 predicates</strong></p>
-</div>
-<div class="callout-content">
-<div style="text-align: center;">
-<p><img data-src="plots/fits_all_full_pp.png" width="700"></p>
-<p>Posterior predictive distributions for all predicates</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-</section></section>
-<section>
-<section id="implementation-challenges" class="title-slide slide level1 center">
-<h1>Implementation Challenges</h1>
-
-</section>
-<section id="identifiability-issues" class="slide level2">
-<h2>Identifiability issues</h2>
-<p>In mixture models, components can sometimes “trade off”—different parameter combinations yield identical predictions.</p>
-<div class="fragment">
-<p><strong>Solutions</strong>: - Informative priors using norming data to constrain world knowledge parameters - Hierarchical structure with partial pooling across predicates and contexts - Multiple contexts per predicate</p>
-</div>
-</section>
-<section id="computational-efficiency" class="slide level2">
-<h2>Computational efficiency</h2>
-<p>Mixture models can be slow to fit or fail to converge.</p>
-<div class="fragment">
-<p><strong>Improvements</strong>: - Non-centered parameterizations (as shown in transformed parameters blocks) - Vectorization (operating on arrays rather than loops where possible)<br>
-- Warm starts (initializing chains near reasonable values)</p>
-</div>
-</section>
-<section id="model-validation" class="slide level2">
-<h2>Model validation</h2>
-<p>Beyond posterior predictive checks:</p>
-<ul>
-<li class="fragment"><strong>Prior predictive checks</strong>: Ensuring priors generate reasonable data</li>
-<li class="fragment"><strong>Residual analysis</strong>: Checking for systematic deviations</li>
-<li class="fragment"><strong>Cross-validation</strong>: Using held-out data to assess generalization</li>
-</ul>
-</section>
-<section id="alternative-response-distributions" class="slide level2">
-<h2>Alternative response distributions</h2>
-<p>To ensure robustness, we tested ordered beta distributions:</p>
-<div title="Robustness to response distribution choice">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Robustness to response distribution choice</strong></p>
-</div>
-<div class="callout-content">
-<div style="text-align: center;">
-<p><img data-src="plots/ordered_beta_elpd.png" width="600"></p>
-<p>Left: ELPDs for ordered beta models. Right: Truncated normal vs.&nbsp;ordered beta comparison</p>
-</div>
-<p>Discrete-factivity maintains advantage regardless of response distribution</p>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section class="slide level2">
 
 </section></section>
@@ -2289,21 +2084,22 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <h1>Theoretical Implications</h1>
 
 </section>
-<section id="for-semantic-theory" class="slide level2">
-<h2>For semantic theory</h2>
+<section class="slide level2">
+
 <h3 id="factivity-involves-categorical-semantic-properties">Factivity involves categorical semantic properties</h3>
 <ul>
 <li class="fragment">Gradience emerges from uncertainty about interpretation</li>
 <li class="fragment">Not from gradient truth conditions</li>
-<li class="fragment">Supports traditional presuppositional approaches</li>
+<li class="fragment">Supports traditional understanding of presupposition projection</li>
 </ul>
-<div class="fragment">
+</section>
+<section class="slide level2">
+
 <h3 id="evidence-against-wholly-gradient-theories">Evidence against wholly-gradient theories</h3>
 <ul>
 <li class="fragment">Gradient Projection Principle (<span class="citation" data-cites="tonhauser_how_2018">Tonhauser, Beaver, and Degen (<a href="#/references" role="doc-biblioref" onclick="">2018</a>)</span>) not supported</li>
 <li class="fragment">Content doesn’t project “to the extent it is not at-issue”</li>
 </ul>
-</div>
 </section>
 <section id="for-projection-theories" class="slide level2">
 <h2>For projection theories</h2>
@@ -2336,18 +2132,6 @@ f(\ct{max}(λd.\ct{QUD}(s^{\prime})(d)(i)), Φ)
 <li class="fragment">Robust evidence for theoretical claims</li>
 </ul></li>
 </ol>
-</section>
-<section id="connections-across-phenomena" class="slide level2">
-<h2>Connections across phenomena</h2>
-<h3 id="adjectives-vs.-factivity">Adjectives vs.&nbsp;Factivity</h3>
-<div style="font-size: 90%;">
-<p><strong>Adjectives</strong>: - Gradient uncertainty from vagueness - Unresolved indeterminacy - Continuous threshold parameters</p>
-<p><strong>Factivity</strong>: - Discrete uncertainty from interpretation - Resolved indeterminacy<br>
-- Mixture model components</p>
-</div>
-<div class="fragment">
-<p>PDS compilation naturally reflects these theoretical distinctions</p>
-</div>
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
