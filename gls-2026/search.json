@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "talk/talk.html#joint-work",
+    "href": "talk/talk.html#joint-work",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Joint work",
+    "text": "Joint work\n\n\n\n\n\n\nYifan Wu (Cornell U.)\n\n\n\n\n \n\n\n\n\n\n                   Helena Aparicio (Cornell U.)\n\n\n\n\n\nThanks in advance to Yifan for making many of the following plots/figures."
+  },
+  {
+    "objectID": "talk/talk.html#develops-some-previous-work-wu_disagreements_2025",
+    "href": "talk/talk.html#develops-some-previous-work-wu_disagreements_2025",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Develops some previous work (Wu and Aparicio (2025))",
+    "text": "Develops some previous work (Wu and Aparicio (2025))"
+  },
+  {
+    "objectID": "talk/talk.html#time",
+    "href": "talk/talk.html#time",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Time",
+    "text": "Time\n\nWow, it’s already five!\n\n\n\n\n\n\n\n\nTrue or false?"
+  },
+  {
+    "objectID": "talk/talk.html#more-examples",
+    "href": "talk/talk.html#more-examples",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "More examples",
+    "text": "More examples\n\nContext: Entering a large movie theater with two people seated.  “The theater is empty.”\n\n\n\nContext: You get out of the shower and dry yourself off with a towel, but you miss one droplet.  “Okay, I’m dry.”"
+  },
+  {
+    "objectID": "talk/talk.html#imprecision",
+    "href": "talk/talk.html#imprecision",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Imprecision",
+    "text": "Imprecision\n\nImprecise (uses of) expressions: a little like vague expressions, e.g., tall.\n\nThe Empire State Building is tall.\n\n\ntall doesn’t let us know exactly how tall the ESB is.\nSort of like dry doesn’t always let us know exactly how dry someone is."
+  },
+  {
+    "objectID": "talk/talk.html#sorites",
+    "href": "talk/talk.html#sorites",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Sorites",
+    "text": "Sorites\n\nBut imprecision is different.\n\nSorites paradox:\n\n\nThe ESB is tall.\nA building 1 mm shorter than a tall building is tall.\nTherefore, a one-story house is tall.\n\n\nCompare:\n\n\nA theater with no people in it is empty.\nA theater with one more person in it than an empty theater is empty."
+  },
+  {
+    "objectID": "talk/talk.html#pragmatic-halos",
+    "href": "talk/talk.html#pragmatic-halos",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Pragmatic halos",
+    "text": "Pragmatic halos\nLasersohn proposes to understand imprecision in terms of a pragmatic halo (Lasersohn (1999)).\n\n\n\n\n⟦five⟧ = {4:55, 4:56, …, 5:00, … 5:04, 5:05}\n⟦X is dry⟧ = {True if 0 droplets, True if at most 1 droplet, …, True if at most 20 droplets}\n⟦X is empty⟧ = {True if 0 seats filled, True if at most 1 seat filled, …}"
+  },
+  {
+    "objectID": "talk/talk.html#shrinkingwidening-the-halo",
+    "href": "talk/talk.html#shrinkingwidening-the-halo",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Shrinking/widening the halo",
+    "text": "Shrinking/widening the halo\nSlack regulators shrink or widen the halo.\n\nWow, it’s already about five!\nThe theater is completely empty."
+  },
+  {
+    "objectID": "talk/talk.html#changing-the-standard-of-precision",
+    "href": "talk/talk.html#changing-the-standard-of-precision",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Changing the standard of precision",
+    "text": "Changing the standard of precision\nThe standard of precision (SOP) can change (Lewis (1979)).\n\nJo: It’s already five.      \n\nBo: No, it’s 4:58!\n\nJo: The theater is empty. \n\nBo: No, someone’s sitting in the corner!\n\nJo: Okay, I’m dry. \n\nBo: No, you have a few drops on your arm."
+  },
+  {
+    "objectID": "talk/talk.html#unidirectionality",
+    "href": "talk/talk.html#unidirectionality",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Unidirectionality",
+    "text": "Unidirectionality\nCompare:\n\nJo: It’s already five. Bo: No, it’s 4:58! \n\nJo: # Okay, but it’s still five!\n\nJo: The theater is empty. Bo: No, someone’s in the corner. \n\nJo: # Sure, but it’s empty.\n\nJo: Okay, I’m dry. Bo: No, you have a few drops on your arm. \n\nBo: # Sure, but I’m dry.\n\n\n\n↝ Only possible to shrink the pragmatic halo?"
+  },
+  {
+    "objectID": "talk/talk.html#plan",
+    "href": "talk/talk.html#plan",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Plan",
+    "text": "Plan\n\nTest of unidirectionality (Wu and Aparicio, newer work)\nDevelop two statistical models of Wu and Aparicio’s data\n\nModel 1: uses the probabilistic structure of pragmatic halos\nModel 2: regards imprecision as a kind of vagueness\n\nCompare models using standard model comparison metrics (ELPD)"
+  },
+  {
+    "objectID": "talk/talk.html#testing-unidirectionality",
+    "href": "talk/talk.html#testing-unidirectionality",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Testing unidirectionality",
+    "text": "Testing unidirectionality\nWu and Aparicio collect judgments about the application of adjectives like empty.\n\n\n\n(They look at S1, S4, and S5.)"
+  },
+  {
+    "objectID": "talk/talk.html#three-blocks",
+    "href": "talk/talk.html#three-blocks",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Three blocks",
+    "text": "Three blocks\nExperimental participants told that they interact with someone else (in reality, a bot). The bot might disagree with them."
+  },
+  {
+    "objectID": "talk/talk.html#two-kinds-of-bot",
+    "href": "talk/talk.html#two-kinds-of-bot",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Two kinds of bot",
+    "text": "Two kinds of bot\nYou could be paired with either a imprecise bot (Experiment 1) or an precise bot (Experiment 2)."
+  },
+  {
+    "objectID": "talk/talk.html#experiment-1-imprecise-bot",
+    "href": "talk/talk.html#experiment-1-imprecise-bot",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Experiment 1 (imprecise bot)",
+    "text": "Experiment 1 (imprecise bot)\n\n\n\n\n  \n\n\nDisagreement seems to lower the standard (a little)!"
+  },
+  {
+    "objectID": "talk/talk.html#imprecise-bot-dialogue-perception",
+    "href": "talk/talk.html#imprecise-bot-dialogue-perception",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Imprecise bot: dialogue perception",
+    "text": "Imprecise bot: dialogue perception"
+  },
+  {
+    "objectID": "talk/talk.html#experiment-2-precise-bot",
+    "href": "talk/talk.html#experiment-2-precise-bot",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Experiment 2 (precise bot)",
+    "text": "Experiment 2 (precise bot)"
+  },
+  {
+    "objectID": "talk/talk.html#experiment-2-precise-bot-1",
+    "href": "talk/talk.html#experiment-2-precise-bot-1",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Experiment 2 (precise bot)",
+    "text": "Experiment 2 (precise bot)\n\n\n\n\n  \n\n\nDisagreement seems to raise the standard."
+  },
+  {
+    "objectID": "talk/talk.html#precise-bot-dialogue-perception",
+    "href": "talk/talk.html#precise-bot-dialogue-perception",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Precise bot: dialogue perception",
+    "text": "Precise bot: dialogue perception"
+  },
+  {
+    "objectID": "talk/talk.html#summary",
+    "href": "talk/talk.html#summary",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Summary",
+    "text": "Summary\n\nA precise bot raises the SOP.\nBut an imprecise bot can lower it (a little)!\nWe have:\n\nbidirectionality\nbias toward raising the SOP/shrinking the pragmatic halo"
+  },
+  {
+    "objectID": "talk/talk.html#modeling-pragmatic-halos",
+    "href": "talk/talk.html#modeling-pragmatic-halos",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Modeling pragmatic halos",
+    "text": "Modeling pragmatic halos\n\n\n\nHypothesis: biased bidirectionality arises from our probabilistic knowledge about pragmatic halos.\n\nHigher standards of precision are more likely;\nbut lower standard of precision are still possible."
+  },
+  {
+    "objectID": "talk/talk.html#detour-scale-structure",
+    "href": "talk/talk.html#detour-scale-structure",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Detour: scale structure",
+    "text": "Detour: scale structure\n\nMaximum standard absolute adjectives: empty, full, clean\n\nthese can be used imprecisely\n\nRelative adjectives: tall, wide, long\n\nthese are vague\n\n\n\nThis difference is reflected in scale structure."
+  },
+  {
+    "objectID": "talk/talk.html#two-models",
+    "href": "talk/talk.html#two-models",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Two models",
+    "text": "Two models\nAbsolute model: there is an upper endpoint on the scale, and we model the SOP as departing from this endpoint."
+  },
+  {
+    "objectID": "talk/talk.html#two-models-1",
+    "href": "talk/talk.html#two-models-1",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Two models",
+    "text": "Two models\nRelative model: there is no upper endpoint - the adjectival standard is vague."
+  },
+  {
+    "objectID": "talk/talk.html#schematically",
+    "href": "talk/talk.html#schematically",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Schematically…",
+    "text": "Schematically…\n\nWe design hierarchical Bayesian mixed effects models.\nOrdered logistic likelihoods.\nAcceptance of the adjective and judgments about the dialogue are predicted using:\n\nparameters sensitive to adjectival scale structure;\nprobabilities computed in terms of these parameters.\n\nWe fit both models to Block 1 only, as well jointly to all three blocks."
+  },
+  {
+    "objectID": "talk/talk.html#model-comparisons",
+    "href": "talk/talk.html#model-comparisons",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Model comparisons",
+    "text": "Model comparisons\nExpected log pointwise predictive density (ELPD).\n\nMeasures goodness of fit to data.\nPenalizes model complexity.\nEstimates out-of-sample performance.\n\n\nELPD difference (s.e. of the difference):"
+  },
+  {
+    "objectID": "talk/talk.html#summary-and-future",
+    "href": "talk/talk.html#summary-and-future",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Summary and future",
+    "text": "Summary and future\nWe have some preliminary evidence that the apparent unidirectionality of precisification arises from:\n\nlexical meaning (adjectival scale structure), combined with\nprior probabilistic knowledge about pragmatic halos.\n\n\nOngoing:\n\nWe need similar data involving vague (rather than imprecise) adjectives. This would:\ntest the prediction that the relative model would perform better than the absolute model in this case."
+  },
+  {
+    "objectID": "talk/talk.html#thank-you",
+    "href": "talk/talk.html#thank-you",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "Thank you",
+    "text": "Thank you\nQuestions and discussion? …"
+  },
+  {
+    "objectID": "talk/talk.html#references",
+    "href": "talk/talk.html#references",
+    "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
+    "section": "",
+    "text": "References\n\n\n\n\nLasersohn, Peter. 1999. “Pragmatic Halos.” Language 75 (3): 522–51. https://doi.org/10.2307/417059.\n\n\nLewis, David. 1979. “Scorekeeping in a Language Game.” In Semantics from Different Points of View, edited by Rainer Bäurele and Arnim von Stechow, 6:172–87. Springer Series in Language and Communication. Berlin: Springer. https://doi.org/10.1007/978-3-642-67458-7_12.\n\n\nWu, Yifan, and Helena Aparicio. 2025. “Disagreements Do Not Automatically Raise the Standard of Precision.” Experiments in Linguistic Meaning 3 (January): 435–46. https://doi.org/10.3765/elm.3.5835."
+  }
+]
