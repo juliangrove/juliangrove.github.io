@@ -46,14 +46,14 @@
     "href": "talk/talk.html#pragmatic-halos",
     "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
     "section": "Pragmatic halos",
-    "text": "Pragmatic halos\nLasersohn proposes to understand imprecision in terms of a pragmatic halo (Lasersohn (1999)).\n\n\n\n\n⟦five⟧ = {4:55, 4:56, …, 5:00, … 5:04, 5:05}\n⟦X is dry⟧ = {True if 0 droplets, True if at most 1 droplet, …, True if at most 20 droplets}\n⟦X is empty⟧ = {True if 0 seats filled, True if at most 1 seat filled, …}"
+    "text": "Pragmatic halos\nLasersohn proposes to understand imprecision in terms of a pragmatic halo (Lasersohn (1999)).\n\n\n\n\n⟦five⟧ = {4:55, 4:56, …, 5:00, … 5:04, 5:05}\n⟦X is dry⟧ = {True if 0 droplets, True if at most 1 droplet, …,                          True if at most 20 droplets}\n⟦X is empty⟧ = {True if 0 seats filled, True if at most 1 seat                                 filled, …}"
   },
   {
     "objectID": "talk/talk.html#shrinkingwidening-the-halo",
     "href": "talk/talk.html#shrinkingwidening-the-halo",
     "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
     "section": "Shrinking/widening the halo",
-    "text": "Shrinking/widening the halo\nSlack regulators shrink or widen the halo.\n\nWow, it’s already about five!\nThe theater is completely empty."
+    "text": "Shrinking/widening the halo\nSlack regulators shrink or widen the halo.\n\nWidening: Wow, it’s already about five!\nShrinking: Wow, it’s already exactly five!\nShrinking: The theater is completely empty."
   },
   {
     "objectID": "talk/talk.html#changing-the-standard-of-precision",
@@ -88,14 +88,14 @@
     "href": "talk/talk.html#three-blocks",
     "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
     "section": "Three blocks",
-    "text": "Three blocks\nExperimental participants told that they interact with someone else (in reality, a bot). The bot might disagree with them."
+    "text": "Three blocks\nExperimental participants were told that they’d interact with someone (in reality, a bot). The bot might disagree with them."
   },
   {
     "objectID": "talk/talk.html#two-kinds-of-bot",
     "href": "talk/talk.html#two-kinds-of-bot",
     "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
     "section": "Two kinds of bot",
-    "text": "Two kinds of bot\nYou could be paired with either a imprecise bot (Experiment 1) or an precise bot (Experiment 2)."
+    "text": "Two kinds of bot\nYou could be paired with either an imprecise bot (Experiment 1) or a precise bot (Experiment 2)."
   },
   {
     "objectID": "talk/talk.html#experiment-1-imprecise-bot",
@@ -144,7 +144,7 @@
     "href": "talk/talk.html#modeling-pragmatic-halos",
     "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
     "section": "Modeling pragmatic halos",
-    "text": "Modeling pragmatic halos\n\n\n\nHypothesis: biased bidirectionality arises from our probabilistic knowledge about pragmatic halos.\n\nHigher standards of precision are more likely;\nbut lower standard of precision are still possible."
+    "text": "Modeling pragmatic halos\n\n\n\n\nHypothesis: biased bidirectionality arises from our probabilistic knowledge about pragmatic halos.\n\nHigher standards of precision are more likely;\nbut lower standard of precision are still possible."
   },
   {
     "objectID": "talk/talk.html#detour-scale-structure",
@@ -172,7 +172,7 @@
     "href": "talk/talk.html#schematically",
     "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
     "section": "Schematically…",
-    "text": "Schematically…\n\nWe design hierarchical Bayesian mixed effects models.\nOrdered logistic likelihoods.\nAcceptance of the adjective and judgments about the dialogue are predicted using:\n\nparameters sensitive to adjectival scale structure;\nprobabilities computed in terms of these parameters.\n\nWe fit both models to Block 1 only, as well jointly to all three blocks."
+    "text": "Schematically…\n\nWe design Bayesian hierarchical mixed effects models.\nOrdered logistic likelihoods\nAcceptance of the adjective and judgments about the dialogue are predicted using:\n\nparameters sensitive to adjectival scale structure;\nprobabilities computed in terms of these parameters.\n\nWe fit both models to Block 1 only, as well jointly to all three blocks."
   },
   {
     "objectID": "talk/talk.html#model-comparisons",
@@ -192,8 +192,8 @@
     "objectID": "talk/talk.html#thank-you",
     "href": "talk/talk.html#thank-you",
     "title": "Adjectival scale structure and the discourse dynamics of imprecision  Julian Grove (U. Florida)  April 15 (tax day), 2026",
-    "section": "Thank you",
-    "text": "Thank you\nQuestions and discussion? …"
+    "section": "Thank you!",
+    "text": "Thank you!\n\nQuestions? Discussion?"
   },
   {
     "objectID": "talk/talk.html#references",
