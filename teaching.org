@@ -4,9 +4,16 @@ pagetitle: teaching
 ---
 
 * Teaching
+** 2026
+*** Fall
+    Semantics 1 (University of Florida) \\
+    Formal complexity (University of Florida)
+*** Spring
+    Introduction to pragmatics (University of Florida) \\
+    Advanced statistics for linguists (University of Florida)
 ** 2025
 *** Fall
-    [[https://juliangrove.github.io/intro-semantics-2025/][Semantics 1]] (University of Florida)
+    Semantics 1 (University of Florida)
 *** Summer
     [[https://juliangrove.github.io/esslli-2025/notes/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]] at [[https://2025.esslli.eu/][ESSLLI '25]]) \\
     [[https://juliangrove.github.io/nasslli-2025/][Probabilistic dynamic semantics]] (with [[https://aaronstevenwhite.io/][Aaron Steven White]] at [[https://nasslli25.shane.st/][NASSLLI '25]])

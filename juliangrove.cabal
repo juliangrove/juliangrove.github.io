@@ -7,7 +7,7 @@ executable site
   hs-source-dirs:   src
   main-is:          site.hs
   build-depends:    base
-                  , hakyll
+                  , hakyll >= 4.17
                   , pandoc
                   , pandoc-types
   ghc-options:      -threaded
