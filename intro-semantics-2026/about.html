@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Formal complexity</title>
+<title>About – Introduction to semantics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -138,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Formal complexity</a> 
+      <a href="./">Introduction to semantics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -162,27 +162,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Convention</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Speech acts</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Speaker meaning</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Diagnosing inference</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
  <span class="menu-text">Formal preliminaries</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Regular languages</span></span>
+ <span class="menu-text">Models</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Context-free languages</span></span>
+ <span class="menu-text">Applicative categorial grammar</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Context-sensitivity</span></span>
+ <span class="menu-text">Verbs</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Mild context-sensitivity</span></span>
+ <span class="menu-text">Coordinators</span></span>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Recursive and recursively enumerable languages</span></span>
+ <span class="menu-text">Adjectives</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Quantification</span></span>
   </li>
     </ul>
     </div>
@@ -222,18 +242,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This site contains materials the course <em>Formal Complexity</em> given by <a href="http://juliangrove.github.io/">Julian Grove</a> at the <a href="https://lin.ufl.edu/">University of Florida</a> during the Fall 2026 semester.</p>
+<p>This site contains materials the course <em>Introduction to Semantics</em> given by <a href="http://juliangrove.github.io/">Julian Grove</a> at the <a href="https://lin.ufl.edu/">University of Florida</a> during the Fall 2026 semester.</p>
 <section id="about-the-instructor" class="level2">
 <h2 class="anchored" data-anchor-id="about-the-instructor">About the instructor</h2>
 <p><a href="http://juliangrove.github.io/">Julian Grove</a> is an Assistant Professor in the <a href="https://lin.ufl.edu/">Linguistics Department</a>. He is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics. You can find out more about his research interests by checking out his <a href="https://juliangrove.github.io/papers.html">papers</a>, <a href="https://juliangrove.github.io/slides.html">slides</a>, or perhaps even his <a href="https://juliangrove.github.io/cv.html">cv</a>.</p>
 </section>
 <section id="about-the-site" class="level2">
 <h2 class="anchored" data-anchor-id="about-the-site">About the site</h2>
-<p>The site itself is built using <a href="https://quarto.org/">Quarto</a>. The source files for this site are available on github at <a href="https://github.com/juliangrove/formal-complexity.git"><code>juliangrove/formal-complexity</code></a>.</p>
+<p>The site itself is built using <a href="https://quarto.org/">Quarto</a>. The source files for this site are available on github at <a href="https://github.com/juliangrove/intro-semantics.git"><code>juliangrove/intro-semantics</code></a>.</p>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></a></h2>
-<p><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Formal Complexity</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://juliangrove.github.io" property="cc:attributionName" rel="cc:attributionURL">Julian Grove</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Based on materials at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/juliangrove/formal-complexity" rel="dct:source">https://github.com/juliangrove/formal-complexity</a>.</p>
+<p><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Introduction to Semantics</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://juliangrove.github.io" property="cc:attributionName" rel="cc:attributionURL">Julian Grove</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Based on materials at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/juliangrove/intro-semantics" rel="dct:source">https://github.com/juliangrove/intro-semantics</a>.</p>
 
 
 <!-- -->
@@ -705,7 +725,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "About"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>This site contains materials the course *Formal Complexity* given by <span class="co">[</span><span class="ot">Julian Grove</span><span class="co">](http://juliangrove.github.io/)</span> at the <span class="co">[</span><span class="ot">University of Florida</span><span class="co">](https://lin.ufl.edu/)</span> during the Fall 2026 semester.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>This site contains materials the course *Introduction to Semantics* given by <span class="co">[</span><span class="ot">Julian Grove</span><span class="co">](http://juliangrove.github.io/)</span> at the <span class="co">[</span><span class="ot">University of Florida</span><span class="co">](https://lin.ufl.edu/)</span> during the Fall 2026 semester.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## About the instructor</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -716,12 +736,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## About the site</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The site itself is built using <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span>.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The source files for this site are available on github at <span class="co">[</span><span class="ot">`juliangrove/formal-complexity`</span><span class="co">](https://github.com/juliangrove/formal-complexity.git)</span>.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The source files for this site are available on github at <span class="co">[</span><span class="ot">`juliangrove/intro-semantics`</span><span class="co">](https://github.com/juliangrove/intro-semantics.git)</span>.</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## License &lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /&gt;&lt;/a&gt;</span></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> xmlns:dct</span><span class="op">=</span><span class="st">"http://purl.org/dc/terms/"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://purl.org/dc/dcmitype/Text"</span><span class="ot"> property</span><span class="op">=</span><span class="st">"dct:title"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"dct:type"</span><span class="dt">&gt;</span>Formal Complexity<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> by <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://juliangrove.github.io"</span><span class="ot"> property</span><span class="op">=</span><span class="st">"cc:attributionName"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"cc:attributionURL"</span><span class="dt">&gt;</span>Julian Grove<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> is licensed under a <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://creativecommons.org/licenses/by-sa/4.0/"</span><span class="dt">&gt;</span>Creative Commons Attribution-ShareAlike 4.0 International License<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Based on materials at <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> xmlns:dct</span><span class="op">=</span><span class="st">"http://purl.org/dc/terms/"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://github.com/juliangrove/formal-complexity"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"dct:source"</span><span class="dt">&gt;</span>https://github.com/juliangrove/formal-complexity<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> xmlns:dct</span><span class="op">=</span><span class="st">"http://purl.org/dc/terms/"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://purl.org/dc/dcmitype/Text"</span><span class="ot"> property</span><span class="op">=</span><span class="st">"dct:title"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"dct:type"</span><span class="dt">&gt;</span>Introduction to Semantics<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> by <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://juliangrove.github.io"</span><span class="ot"> property</span><span class="op">=</span><span class="st">"cc:attributionName"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"cc:attributionURL"</span><span class="dt">&gt;</span>Julian Grove<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> is licensed under a <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://creativecommons.org/licenses/by-sa/4.0/"</span><span class="dt">&gt;</span>Creative Commons Attribution-ShareAlike 4.0 International License<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Based on materials at <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> xmlns:dct</span><span class="op">=</span><span class="st">"http://purl.org/dc/terms/"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://github.com/juliangrove/intro-semantics"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"dct:source"</span><span class="dt">&gt;</span>https://github.com/juliangrove/intro-semantics<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
