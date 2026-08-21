@@ -1,0 +1,152 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Welcome to Formal Complexity!1\nI’m Julian Grove - I’m an Assistant Professor in the Linguistics Department (where this course is offered).\nHere is my contact info:\nCheck out the About page for more info about me and this site.\nHere are some facts about this course:",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#birds-eye-view",
+    "href": "index.html#birds-eye-view",
+    "title": "Syllabus",
+    "section": "Bird’s-eye view",
+    "text": "Bird’s-eye view\nThe goal of this course is to acquaint you with the study of formal linguistic complexity. Specifically, we will cover complexity classes of languages, focusing on regular, context-free, context-sensitive, recursive, and recursively enumerable languages. We’ll explore each class of languages in terms of: (a) the formal grammars that generate languages in that class; and (b) the abstract machines that recognize languages in the class. Along the way, we’ll discuss hypotheses about the complexity of natural language (e.g., the subregular hypothesis in phonology, and the hypothesis that natural language syntax is mildly context-sensitive), as well as some grammar formalisms which have been proposed to capture these hypotheses.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#attendance-and-class-participation",
+    "href": "index.html#attendance-and-class-participation",
+    "title": "Syllabus",
+    "section": "Attendance and class participation",
+    "text": "Attendance and class participation\nCome to class! You’re likely to do better in the course if you come than if you don’t.\nWhen you’re here, participate! You’ll get more out of the class if you do, and it’ll be more fun.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#assignments-and-grading",
+    "href": "index.html#assignments-and-grading",
+    "title": "Syllabus",
+    "section": "Assignments and grading",
+    "text": "Assignments and grading\n\nGrading\nYour work in this course will consist of seven (7) problem sets—sometimes based on assigned readings—as well as a take-home final exam. The problem sets will be due every other week (see the calendar). Each assignment will be available on this site and will typically feature problems selected from Partee et al. (1993) / Partee et al. (1990). Please either turn in a physical copy of your responses the beginning of the class on which the assignment is due, or upload them to Canvas before class starts.\nThe problem sets will be graded on a 100-point scale. Each problem set will provide a precise breakdown of how points are allocated.\nThese will account for 70% of your grade, and a take-home final exam, for 30%. The take-home final will be due on December 9th at 5pm. It will be formatted similarly to the assignments, but it will be a little more substantial.\nThe following grading scale will be used to determine course grades:\n\n\n\n93.5 ≤ A ≤ 100\n89.5 ≤ A- &lt; 93.5\n\n\n\n86.5 ≤ B+ &lt; 89.5\n83.5 ≤ B &lt; 86.5\n79.5 ≤ B- &lt; 83.5\n\n\n76.5 ≤ C+ &lt; 79.5\n74.5 ≤ C &lt; 76.5\n69.5 ≤ C- &lt; 74.5\n\n\n66.5 ≤ D+ &lt; 69.5\n64.5 ≤ D &lt; 66.5\n59.5 ≤ D- &lt; 64.5\n\n\n\n\n\nCollaboration (including with chatbots)\nWe’ll talk about this in class. Basically:\n\nComplete the assignments yourself.\nIf you worked with someone else in the class (or a chatbot) on an assignment, please indicate that you did. If you used a chatbot, include a note with your assignment describing how you used it. Please specify:\n\nthe prompt you used;\nthe output produced. Please don’t use a chatbot to extract an answer to a problem.\n\n\n\n\nMissed or late work\nLate work will be docked 10 points each day it is late. It will not be accepted once it is four days late. If you need an extension, ask for one—just do it prior to the due date.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#zulip",
+    "href": "index.html#zulip",
+    "title": "Syllabus",
+    "section": "Zulip",
+    "text": "Zulip\nThere is a Zulip site for this course at uf-formal-complexity-2026.zulipchat.com. All communication about the course should be done through Zulip. For example, rather than email me, please send me a message there. We’ll also use Zulip to host discussions of the course material. You can post (and answer!) questions there. (I may chime in, as well.)",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#university-honesty-policy",
+    "href": "index.html#university-honesty-policy",
+    "title": "Syllabus",
+    "section": "University Honesty Policy",
+    "text": "University Honesty Policy\nUF students are bound by The Honor Pledge which states, “We, the members of the University of Florida community, pledge to hold ourselves and our peers to the highest standards of honor and integrity by abiding by the Honor Code.” On all work submitted for credit by students at the University of Florida, the following pledge is either required or implied: “On my honor, I have neither given nor received unauthorized aid in doing this assignment.” The Honor Code (policy.ufl.edu/regulation/4-040/) specifies a number of behaviors that are in violation of this code and the possible sanctions. Furthermore, you are obligated to report any condition that facilitates academic misconduct to appropriate personnel. If you have any questions or concerns, please consult with the instructor.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#counseling-and-wellness-center",
+    "href": "index.html#counseling-and-wellness-center",
+    "title": "Syllabus",
+    "section": "Counseling and Wellness Center",
+    "text": "Counseling and Wellness Center\nContact information for the Counseling and Wellness Center:\n\ncounseling.ufl.edu\nPhone: 352.392.1575\n\nContact information for the University Police Department:\n\npolice.ufl.edu\nPhone: 352.392.1111",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#accommodations-for-students-with-disabilities",
+    "href": "index.html#accommodations-for-students-with-disabilities",
+    "title": "Syllabus",
+    "section": "Accommodations for Students with Disabilities",
+    "text": "Accommodations for Students with Disabilities\nStudents with disabilities requesting accommodations should first register with the Disability Resource Center (352.392.8565, disability.ufl.edu) by providing appropriate documentation. Once registered, students will receive an accommodation letter which must be presented to the instructor when requesting accommodation. Students with disabilities should follow this procedure as early as possible in the semester.",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#academic-polices-and-resources",
+    "href": "index.html#academic-polices-and-resources",
+    "title": "Syllabus",
+    "section": "Academic polices and resources",
+    "text": "Academic polices and resources\nAvailable here:\n\nsyllabus.ufl.edu/syllabus-policy/uf-syllabus-policy-links/",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#sec-calendar",
+    "href": "index.html#sec-calendar",
+    "title": "Syllabus",
+    "section": "Calendar",
+    "text": "Calendar\n\n\n\n\n\n\n\n\n\nDate\nTopic\nReading\nAssignment\n\n\n\n\nFri., Aug. 21\nIntroduction\n\n\n\n\nMon., Aug. 24\nSet-theoretic foundations and languages\n\nView\n\n\nWed., Aug. 26\nSet-theoretic foundations and languages\n\n\n\n\nFri., Aug. 28\nSet-theoretic foundations and languages\n\n\n\n\nMon., Aug. 31\nFinite languages and regular languages\n\n\n\n\nWed., Sept. 2\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 4\nRegular languages, expressions, and grammars\n\n\n\n\nMon., Sept. 7\nNo class: Labor Day\n\nView\n\n\nWed., Sept. 9\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 11\nfinite-state automata\n\n\n\n\nMon., Sept. 14\nfinite-state automata\n\n\n\n\nWed., Sept. 16\nThe pumping lemma for regular languages\n\n\n\n\nFri., Sept. 18\nNo class: Julian away\n\n\n\n\nMon., Sept. 21\nThe pumping lemma for regular languages\n\nView\n\n\nWed., Sept. 23\nRegular languages and natural language phonology\n\n\n\n\nFri., Sept. 25\nRegular languages and natural language morphology\n\n\n\n\nMon., Sept. 28\nContext-free languages\n\n\n\n\nWed., Sept. 30\nContext-free languages\n\n\n\n\nFri., Oct. 2\nPushdown automata\n\n\n\n\nMon., Oct. 5\nPushdown automata\n\nView\n\n\nWed., Oct. 7\nContext-sensitive languages\n\n\n\n\nMon., Oct. 12\nContext-sensitive languages\n\n\n\n\nWed., Oct. 14\nLinear bounded automata\n\n\n\n\nFri., Oct. 16\nNo class: Julian away\n\n\n\n\nMon., Oct. 19\nLinear bounded automata\n\nView\n\n\nWed., Oct. 21\nIs natural language syntax context-free?\n\n\n\n\nFri., Oct. 23\nIs natural language syntax context-free?\n\n\n\n\nMon., Oct. 26\nMinimalist grammars\n\n\n\n\nWed., Oct. 28\nMinimalist grammars\n\n\n\n\nFri., Oct. 30\nMinimalist grammars\n\n\n\n\nMon., Nov. 2\nMultiple context-free grammars\n\nView\n\n\nWed., Nov. 4\nMultiple context-free grammars\n\n\n\n\nFri., Nov. 6\nMultiple context-free categorial grammars\n\n\n\n\nMon., Nov. 9\nCombinatory categorial grammars\n\n\n\n\nFri., Nov. 13\nCombinatory categorial grammars\n\n\n\n\nMon., Nov. 16\nCombinatory categorial grammars\n\nView\n\n\nWed., Nov. 18\nRecursive languages and Turing machines\n\n\n\n\nFri., Nov. 20\nRecursive languages and Turing machines\n\n\n\n\nMon., Nov. 30\nRecursively enumerable languages / wrap-up\n\n\n\n\nWed., Dec. 2\nRecursively enumerable languages / wrap-up",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Syllabus",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nListed as both LIN4930 and LIN6932 at one.uf.edu.↩︎",
+    "crumbs": [
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This site contains materials the course Introduction to Semantics given by Julian Grove at the University of Florida during the Fall 2026 semester.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-instructor",
+    "href": "about.html#about-the-instructor",
+    "title": "About",
+    "section": "About the instructor",
+    "text": "About the instructor\nJulian Grove is an Assistant Professor in the Linguistics Department. He is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics. You can find out more about his research interests by checking out his papers, slides, or perhaps even his cv.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-site",
+    "href": "about.html#about-the-site",
+    "title": "About",
+    "section": "About the site",
+    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/intro-semantics.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#license",
+    "href": "about.html#license",
+    "title": "About",
+    "section": "License ",
+    "text": "License \nIntroduction to Semantics by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/intro-semantics.",
+    "crumbs": [
+      "About"
+    ]
+  }
+]
