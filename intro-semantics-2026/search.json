@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Welcome to Intro to Semantics!1\nI’m Julian Grove - I’m an Assistant Professor in the Linguistics Department (where this course is offered).\nHere is my contact info:\nCheck out the About page for more info about me and this site.\nHere are some facts about this course:",
+    "text": "Welcome to Formal Complexity!1\nI’m Julian Grove - I’m an Assistant Professor in the Linguistics Department (where this course is offered).\nHere is my contact info:\nCheck out the About page for more info about me and this site.\nHere are some facts about this course:",
     "crumbs": [
       "Syllabus"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#birds-eye-view",
     "title": "Syllabus",
     "section": "Bird’s-eye view",
-    "text": "Bird’s-eye view\nThe goals of this course are to acquaint you with the study of meaning in natural language; specifically, to equip you with a certain vocabulary of concepts, as well as a certain collection of theoretical and methodological tools. This vocabulary and these tools will allow you to:\n\ncollect linguistic data and determine whether and how it is relevant to meaning;\nformulate and test hypotheses and theoretical claims about linguistic meaning; and\napproach questions about how linguistic meaning is situated within the broader scientific study of natural language and the human mind.\n\nThe first few weeks of the course will be more-or-less stage setting. Natural language semantics is a young field whose basic aims and guiding principles are somewhat in flux; so it will be useful to have this part of the course be dedicated to making these aims and principles fairly explicit. After these introductory weeks, we will get deep into the practice of doing semantics by focusing on a variety of empirical phenomena. The main acts will be verbs and their arguments, coordination, modification, anaphora, and quantification.",
+    "text": "Bird’s-eye view\nThe goal of this course is to acquaint you with the study of formal linguistic complexity. Specifically, we will cover complexity classes of languages, focusing on regular, context-free, context-sensitive, recursive, and recursively enumerable languages. We’ll explore each class of languages in terms of: (a) the formal grammars that generate languages in that class; and (b) the abstract machines that recognize languages in the class. Along the way, we’ll discuss hypotheses about the complexity of natural language (e.g., the subregular hypothesis in phonology, and the hypothesis that natural language syntax is mildly context-sensitive), as well as some grammar formalisms which have been proposed to capture these hypotheses.",
     "crumbs": [
       "Syllabus"
     ]
@@ -34,7 +34,7 @@
     "href": "index.html#assignments-and-grading",
     "title": "Syllabus",
     "section": "Assignments and grading",
-    "text": "Assignments and grading\n\nGrading\nYour work in this course will consist of nine (9) short written assignments—sometimes based on assigned readings—as well as an in-person final exam. Each written assignments will be a collection of responses to questions: some of these responses will have a mini-essay format, and some will be more like answers to problem sets (it’ll be clear in any given case what the expectation is). Each assignment will be available on this site, at the end of the set of notes to which the assignment corresponds. Please either turn in a physical copy of your responses the beginning of the class on which the assignment is due, or upload them to Canvas before class starts.\nThe written assignments will be graded on a 100-point scale, using the following rough rubric:\n\n81-100: you thoroughly engage with each question on the assignment. This means that you justify each of your responses, as well point out its implications, if appropriate. For example, if the truth of your response is likely to have any unintuitive consequences, you should note and explain these. Doing this well will sometimes be challenging and require you to think a lot.\nIf the assignment has questions requiring the application of analytical techniques that we have introduced in the course, “thorough engagement”, for current purposes, means applying these techniques in the right way.\n61-80: you thoroughly engage with most, but not all, of the questions.\n41-60: you thoroughly engage with only a small part of the assignment and give shallow or cursory answers to most of it.\n21-40: you give shallow or cursory answers to all of the questions on the assignment.\n1-20: you barely do the assignment.\n0: you don’t even barely do the assignment.\n\nThe assignments themselves will have a more precise points breakdown.\nThe written assignments will account for 90% of your grade, and the final exam, for 10%. The final will take place from 3pm-5pm on December 8th (place TBD). It will be formatted similarly to the assignments.\nThe following grading scale will be used to determine course grades:\n\n\n\n93.5 ≤ A ≤ 100\n89.5 ≤ A- &lt; 93.5\n\n\n\n86.5 ≤ B+ &lt; 89.5\n83.5 ≤ B &lt; 86.5\n79.5 ≤ B- &lt; 83.5\n\n\n76.5 ≤ C+ &lt; 79.5\n74.5 ≤ C &lt; 76.5\n69.5 ≤ C &lt; 74.5\n\n\n66.5 ≤ D+ &lt; 69.5\n64.5 ≤ D &lt; 66.5\n59.5 ≤ D- &lt; 64.5\n\n\n\n\n\nCollaboration (including with chatbots)\nWe’ll talk about this in class. Basically:\n\nActually do the readings yourself.\nComplete the assignments yourself.\nIf you worked with someone else in the class (or a chatbot) on an assignment, please indicate that you did. If you used a chatbot, include a note with your assignment describing how you used it. Please specify:\n\nthe prompt you used;\nthe output that the model produced.\n\n\n\n\nMissed or late work\nLate work will be docked 10 points each day it is late. It will not be accepted once it is four days late. If you need an extension, ask for one—just do it prior to the due date.\n\n\nExtra credit\nIf you like, you can get extra credit, accounting for up to an additional 2% of your course grade, in one of two ways:\n\nYou can earn up to two credits by participating in linguistics studies through the Linguistics Department’s SONA account (so, one percentage point of your grade per credit). This document has more information; so does this video. If you go this route, please participate in the studies before November 22.\nYou can read and summarize the main arguments of a (short) semantics paper, i.e., published in a journal, collection, or conference proceedings. Here are some paper suggestions (which I will continue to add to during the semester), but note that you can also summarize a paper of your choosing, so long as you consult with me about it first.\n\nGlass (2025)\nKarttunen (1971)\nKlecha (2014)\nSteinert-Threlkeld et al. (2023)",
+    "text": "Assignments and grading\n\nGrading\nYour work in this course will consist of seven (7) problem sets—sometimes based on assigned readings—as well as a take-home final exam. The problem sets will be due every other week (see the calendar). Each assignment will be available on this site and will typically feature problems selected from Partee et al. (1993) / Partee et al. (1990). Please either turn in a physical copy of your responses the beginning of the class on which the assignment is due, or upload them to Canvas before class starts.\nThe problem sets will be graded on a 100-point scale. Each problem set will provide a precise breakdown of how points are allocated.\nThese will account for 70% of your grade, and a take-home final exam, for 30%. The take-home final will be due on December 9th at 5pm. It will be formatted similarly to the assignments, but it will be a little more substantial.\nThe following grading scale will be used to determine course grades:\n\n\n\n93.5 ≤ A ≤ 100\n89.5 ≤ A- &lt; 93.5\n\n\n\n86.5 ≤ B+ &lt; 89.5\n83.5 ≤ B &lt; 86.5\n79.5 ≤ B- &lt; 83.5\n\n\n76.5 ≤ C+ &lt; 79.5\n74.5 ≤ C &lt; 76.5\n69.5 ≤ C- &lt; 74.5\n\n\n66.5 ≤ D+ &lt; 69.5\n64.5 ≤ D &lt; 66.5\n59.5 ≤ D- &lt; 64.5\n\n\n\n\n\nCollaboration (including with chatbots)\nWe’ll talk about this in class. Basically:\n\nComplete the assignments yourself.\nIf you worked with someone else in the class (or a chatbot) on an assignment, please indicate that you did. If you used a chatbot, include a note with your assignment describing how you used it. Please specify:\n\nthe prompt you used;\nthe output produced. Please don’t use a chatbot to extract an answer to a problem.\n\n\n\n\nMissed or late work\nLate work will be docked 10 points each day it is late. It will not be accepted once it is four days late. If you need an extension, ask for one—just do it prior to the due date.",
     "crumbs": [
       "Syllabus"
     ]
@@ -44,7 +44,7 @@
     "href": "index.html#zulip",
     "title": "Syllabus",
     "section": "Zulip",
-    "text": "Zulip\nThere is a Zulip site for this course at uf-semantics-2026.zulipchat.com. All communication about the course should be done through Zulip. For example, rather than email me, please send me a message there. We’ll also use Zulip to host discussions of the course material. You can post (and answer!) questions there. (I may chime in, as well.)",
+    "text": "Zulip\nThere is a Zulip site for this course at uf-formal-complexity-2026.zulipchat.com. All communication about the course should be done through Zulip. For example, rather than email me, please send me a message there. We’ll also use Zulip to host discussions of the course material. You can post (and answer!) questions there. (I may chime in, as well.)",
     "crumbs": [
       "Syllabus"
     ]
@@ -90,11 +90,11 @@
     ]
   },
   {
-    "objectID": "index.html#calendar",
-    "href": "index.html#calendar",
+    "objectID": "index.html#sec-calendar",
+    "href": "index.html#sec-calendar",
     "title": "Syllabus",
     "section": "Calendar",
-    "text": "Calendar\n\n\n\n\n\n\n\n\n\nDate\nTopic\nReading\nAssignment\n\n\n\n\nFri., Aug. 21\nIntroduction\n\n\n\n\nMon., Aug. 24\nConvention\nLewis (1975) (pp. 3–10)\n\n\n\nWed., Aug. 26\nConvention\nGrice (1957)\nView\n\n\nFri., Aug. 28\nSpeech acts\nBach (2006b) (pp. 147–155)\n\n\n\nMon., Aug. 31\nSpeech acts\n\n\n\n\nWed., Sept. 2\nSpeaker meaning\nGrice (1975)\n\n\n\nFri., Sept. 4\nSpeaker meaning\n\n\n\n\nWed., Sept. 9\nDiagnosing inference\nWinter (2016) (Ch. 2, pp. 12–16)\n\n\n\nFri., Sept. 11\nDiagnosing inference\nCoppock and Champollion (2025) (Ch. 1, pp. 13–41; Ch. 8, pp. 315–322)\nView\n\n\nMon., Sept. 14\nSets and set theory\n\n\n\n\nWed., Sept. 16\nFunctions, relations, and languages\n\n\n\n\nFri., Sept. 18\nNo class: Julian away\n\n\n\n\nMon., Sept. 21\nModels\nWinter (2016) (Ch. 2, pp. 17–27)\nView\n\n\nWed., Sept. 23\nArabic numeral arithmetic\n\n\n\n\nFri., Sept. 25\nIntransitive verbs\nWinter (2016) (Ch. 3, pp. 44–64)\n\n\n\nMon., Sept. 28\nIntransitive verbs\nWinter (2016) (Ch. 3, pp. 64-72)\n\n\n\nWed., Sept. 30\nWhat should go into a theory of meaning?\nBach (2006a); Szabó (2020) (§§3–4)\nView\n\n\nFri., Oct. 2\nLambda notation and types\n\n\n\n\nMon., Oct. 5\nLambda notation and types\n\n\n\n\nWed., Oct. 7\nTransitive verbs\n\n\n\n\nMon., Oct. 12\nTransitive verbs\n\n\n\n\nWed., Oct. 14\nApplicative categorial grammar\nJurafsky and Martin (2025) (Appendix E)\n\n\n\nFri., Oct. 16\nNo class: Julian away\n\n\n\n\nMon., Oct. 19\nGrammars and models\n\nView\n\n\nWed., Oct. 21\nVerbs and arguments redux\n\n\n\n\nFri., Oct. 23\nVerbs and arguments redux\n\n\n\n\nMon., Oct. 26\nCoordinators\nWinter (2016) (Ch. 3, pp. 74–80)\n\n\n\nWed., Oct. 28\nCoordinators\n\nView\n\n\nFri., Oct. 30\nAdjectives\nKennedy (2012)\n\n\n\nMon., Nov. 2\nAdjectives\n\n\n\n\nWed., Nov. 4\nAdjectives\n\nView\n\n\nFri., Nov. 6\nPronouns\n\n\n\n\nMon., Nov. 9\nPronouns\n\n\n\n\nFri., Nov. 13\nPronouns\n\n\n\n\nMon., Nov. 16\nQuantifiers\nWinter (2016) (Ch. 4, pp. 99–108)\nView\n\n\nWed., Nov. 18\nQuantifiers\n\n\n\n\nFri., Nov. 20\nQuantifiers\n\n\n\n\nMon., Nov. 30\nNegative polarity items\n\nView\n\n\nWed., Dec. 2\nQuantifiers and scope",
+    "text": "Calendar\n\n\n\n\n\n\n\n\n\nDate\nTopic\nReading\nAssignment\n\n\n\n\nFri., Aug. 21\nIntroduction\n\n\n\n\nMon., Aug. 24\nSet-theoretic foundations and languages\n\nView\n\n\nWed., Aug. 26\nSet-theoretic foundations and languages\n\n\n\n\nFri., Aug. 28\nSet-theoretic foundations and languages\n\n\n\n\nMon., Aug. 31\nFinite languages and regular languages\n\n\n\n\nWed., Sept. 2\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 4\nRegular languages, expressions, and grammars\n\n\n\n\nMon., Sept. 7\nNo class: Labor Day\n\nView\n\n\nWed., Sept. 9\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 11\nFinite-state automata\n\n\n\n\nMon., Sept. 14\nFinite-state automata\n\n\n\n\nWed., Sept. 16\nThe pumping lemma for regular languages\n\n\n\n\nFri., Sept. 18\nNo class: Julian away\n\n\n\n\nMon., Sept. 21\nThe pumping lemma for regular languages\n\nView\n\n\nWed., Sept. 23\nRegular languages and natural language phonology\n\n\n\n\nFri., Sept. 25\nRegular languages and natural language morphology\n\n\n\n\nMon., Sept. 28\nContext-free languages\n\n\n\n\nWed., Sept. 30\nContext-free languages\n\n\n\n\nFri., Oct. 2\nPushdown automata\n\n\n\n\nMon., Oct. 5\nPushdown automata\n\nView\n\n\nWed., Oct. 7\nContext-sensitive languages\n\n\n\n\nMon., Oct. 12\nContext-sensitive languages\n\n\n\n\nWed., Oct. 14\nLinear bounded automata\n\n\n\n\nFri., Oct. 16\nNo class: Julian away\n\n\n\n\nMon., Oct. 19\nLinear bounded automata\n\nView\n\n\nWed., Oct. 21\nIs natural language syntax context-free?\n\n\n\n\nFri., Oct. 23\nIs natural language syntax context-free?\n\n\n\n\nMon., Oct. 26\nMinimalist grammars\n\n\n\n\nWed., Oct. 28\nMinimalist grammars\n\n\n\n\nFri., Oct. 30\nMinimalist grammars\n\n\n\n\nMon., Nov. 2\nMultiple context-free grammars\n\nView\n\n\nWed., Nov. 4\nMultiple context-free grammars\n\n\n\n\nFri., Nov. 6\nMultiple context-free categorial grammars\n\n\n\n\nMon., Nov. 9\nCombinatory categorial grammars\n\n\n\n\nFri., Nov. 13\nCombinatory categorial grammars\n\n\n\n\nMon., Nov. 16\nCombinatory categorial grammars\n\nView\n\n\nWed., Nov. 18\nRecursive languages and Turing machines\n\n\n\n\nFri., Nov. 20\nRecursive languages and Turing machines\n\n\n\n\nMon., Nov. 30\nRecursively enumerable languages / wrap-up\n\n\n\n\nWed., Dec. 2\nRecursively enumerable languages / wrap-up",
     "crumbs": [
       "Syllabus"
     ]
@@ -104,7 +104,7 @@
     "href": "index.html#footnotes",
     "title": "Syllabus",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nListed as both LIN4803 and LIN6804 at one.uf.edu.↩︎",
+    "text": "Footnotes\n\n\nListed as both LIN4930 and LIN6932 at one.uf.edu.↩︎",
     "crumbs": [
       "Syllabus"
     ]
@@ -114,7 +114,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This site contains materials the course Introduction to Semantics given by Julian Grove at the University of Florida during the Fall 2026 semester.",
+    "text": "This site contains materials the course Formal Complexity given by Julian Grove at the University of Florida during the Fall 2026 semester.",
     "crumbs": [
       "About"
     ]
@@ -134,7 +134,7 @@
     "href": "about.html#about-the-site",
     "title": "About",
     "section": "About the site",
-    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/intro-semantics.",
+    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/formal-complexity.",
     "crumbs": [
       "About"
     ]
@@ -144,7 +144,7 @@
     "href": "about.html#license",
     "title": "About",
     "section": "License ",
-    "text": "License \nIntroduction to Semantics by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/intro-semantics.",
+    "text": "License \nFormal Complexity by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/formal-complexity.",
     "crumbs": [
       "About"
     ]
