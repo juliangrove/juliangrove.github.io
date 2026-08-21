@@ -114,7 +114,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This site contains materials the course Introduction to Semantics given by Julian Grove at the University of Florida during the Fall 2026 semester.",
+    "text": "This site contains materials the course Formal Complexity given by Julian Grove at the University of Florida during the Fall 2026 semester.",
     "crumbs": [
       "About"
     ]
@@ -134,7 +134,7 @@
     "href": "about.html#about-the-site",
     "title": "About",
     "section": "About the site",
-    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/intro-semantics.",
+    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/formal-complexity.",
     "crumbs": [
       "About"
     ]
@@ -144,7 +144,7 @@
     "href": "about.html#license",
     "title": "About",
     "section": "License ",
-    "text": "License \nIntroduction to Semantics by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/intro-semantics.",
+    "text": "License \nFormal Complexity by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/formal-complexity.",
     "crumbs": [
       "About"
     ]
