@@ -1,37 +1,156 @@
 [
   {
-    "objectID": "aug21.html#meaning",
-    "href": "aug21.html#meaning",
+    "objectID": "aug24.html#e.g.-traffic-signals",
+    "href": "aug24.html#e.g.-traffic-signals",
     "title": "Intro. to Semantics",
-    "section": "Meaning",
-    "text": "Meaning\n\nIt’s raining.\n\n\n\n⇒\nSomething in the world…"
+    "section": "E.g., traffic signals",
+    "text": "E.g., traffic signals"
   },
   {
-    "objectID": "aug21.html#meaning-1",
-    "href": "aug21.html#meaning-1",
+    "objectID": "aug24.html#lewis_languages_1975-on-convention",
+    "href": "aug24.html#lewis_languages_1975-on-convention",
     "title": "Intro. to Semantics",
-    "section": "Meaning",
-    "text": "Meaning\n\nIt’s raining.\n\n\n⇒\nA property of something that can be verified…"
+    "section": "Lewis (1975) on convention",
+    "text": "Lewis (1975) on convention\nSome criteria:\n\nEveryone conforms.\nEveryone believes the others conform.\nThe others conforming provides a reason to conform.\nPreference for conformity (as opposed to non-conformity).\nOptional or arbitrary—there are possible alternatives.\nCommon knowledge of the above.\n\n\nPossible to be unaware of any or all of these."
   },
   {
-    "objectID": "aug21.html#meaning-2",
-    "href": "aug21.html#meaning-2",
+    "objectID": "aug24.html#different-from-rules",
+    "href": "aug24.html#different-from-rules",
     "title": "Intro. to Semantics",
-    "section": "Meaning",
-    "text": "Meaning\n\nIt’s raining.\n\n\n⇒"
+    "section": "Different from “rules”",
+    "text": "Different from “rules”\nRules (according to Lewis):\n\nPromulgated by an authority\nEnforced by means of sanctions\nCodified somewhere"
   },
   {
-    "objectID": "aug21.html#meaning-as-distribution",
-    "href": "aug21.html#meaning-as-distribution",
+    "objectID": "aug24.html#tipping",
+    "href": "aug24.html#tipping",
     "title": "Intro. to Semantics",
-    "section": "Meaning as distribution",
-    "text": "Meaning as distribution\n“To the extent that formal (distributional) structure can be discovered in discourse, it correlates in some way with the substance of what is being said…” (Harris 1954)\n\nThe meaning of a linguistic expression can be understood as (some representation of) the contexts in which it occurs.\n\nE.g., dog ≈ cat"
+    "section": "Tipping?",
+    "text": "Tipping?"
   },
   {
-    "objectID": "aug21.html#references",
-    "href": "aug21.html#references",
+    "objectID": "aug24.html#other-candidates",
+    "href": "aug24.html#other-candidates",
+    "title": "Intro. to Semantics",
+    "section": "Other candidates…",
+    "text": "Other candidates…\n\nBrushing your teeth?\nKnocking on the door before you enter a room?\nLooking both ways before crossing the street?\nUsing an umbrella when it’s raining?\nMaking WiFi available at coffee shops?"
+  },
+  {
+    "objectID": "aug24.html#lewis_languages_1975-on-language",
+    "href": "aug24.html#lewis_languages_1975-on-language",
+    "title": "Intro. to Semantics",
+    "section": "Lewis (1975) on language",
+    "text": "Lewis (1975) on language\nWhat are languages?\n\nLewis: collections of pairs of forms and meanings\n\nForm: sign, sound, mark, etc.\nMeaning: set (i.e., collection) of possible states of affairs, things in the world, etc.\n\n\n\nWhat is language?\n\nA human social activity in which people produce certain forms."
+  },
+  {
+    "objectID": "aug24.html#relating-them",
+    "href": "aug24.html#relating-them",
+    "title": "Intro. to Semantics",
+    "section": "Relating them",
+    "text": "Relating them\nLewis introduces a convention to define language use:\n\n“…the convention whereby a population P uses a language ξ is a convention of truthfulness and trust in ξ.”\n\nTruthfulness: try never to utter sentences of ξ that are not true in ξ.\nTrust in ξ: impute truthfulness in ξ to others. Believe the things that others tell you."
+  },
+  {
+    "objectID": "aug24.html#language-use",
+    "href": "aug24.html#language-use",
+    "title": "Intro. to Semantics",
+    "section": "“Language use”",
+    "text": "“Language use”\nThese are pragmatic conventions.\n\nWhat about conventions relating to form?\n\nsyntax, morphology, phonology, phonetics, etc.\nsociolinguistic conventions: using a particular register/dialect in particular social setting"
+  },
+  {
+    "objectID": "aug24.html#communication-and-meaning",
+    "href": "aug24.html#communication-and-meaning",
+    "title": "Intro. to Semantics",
+    "section": "Communication and meaning",
+    "text": "Communication and meaning\nGrice (1957): conceptual analysis of the word ‘mean’.\n\nThis rainy weather means we’ll probably be taxiing for a while.\nJo’s gesture means that she wants you to walk over.\n“Bo devoured the beans” means that Bo ate the beans aggressively."
+  },
+  {
+    "objectID": "aug24.html#test-1",
+    "href": "aug24.html#test-1",
+    "title": "Intro. to Semantics",
+    "section": "Test 1",
+    "text": "Test 1\n\nThis rainy weather means we’ll probably be taxiing for a while, but in fact, we won’t be taxiing for a while.\nJo’s gesture means that she wants you to walk over, but in fact, she doesn’t want you to walk over.\n“Bo devoured the beans” means that Bo ate the beans aggressively, but in fact, Bo didn’t eat the beans aggressively."
+  },
+  {
+    "objectID": "aug24.html#test-2",
+    "href": "aug24.html#test-2",
+    "title": "Intro. to Semantics",
+    "section": "Test 2",
+    "text": "Test 2\n\nWhat is meant by this rainy weather is that we’ll be taxiing for a while.\nWhat is meant by Jo’s gesture is that she wants you to walk over.\nWhat is meant by “Bo devoured the beans” is that Bo ate the beans aggressively."
+  },
+  {
+    "objectID": "aug24.html#test-3",
+    "href": "aug24.html#test-3",
+    "title": "Intro. to Semantics",
+    "section": "Test 3",
+    "text": "Test 3\n\nSomeone meant by this rainy weather that we’ll probably be taxiing for a while.\nJo meant by her gesture that she wants you to walk over.\nSomeone meant by “Bo devoured the beans” that Bo ate the beans aggressively."
+  },
+  {
+    "objectID": "aug24.html#natural-and-non-natural-meaning",
+    "href": "aug24.html#natural-and-non-natural-meaning",
+    "title": "Intro. to Semantics",
+    "section": "Natural and non-natural meaning",
+    "text": "Natural and non-natural meaning\n\n‘mean’ in the 1 examples: describes a consequence relation\n‘mean’ in the 2 and 3 examples: some other kind of relation\n\n\nGrice (1957): natural meaning vs. non-natural meaning."
+  },
+  {
+    "objectID": "aug24.html#non-natural-meaning",
+    "href": "aug24.html#non-natural-meaning",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nHypothesis 1\nSomething means\\(_{NN}\\) that \\(p\\) if things of its kind tend to produce a belief in an observer that \\(p\\) is true.\n\nsun being out makes people believe it’s daytime…"
+  },
+  {
+    "objectID": "aug24.html#non-natural-meaning-1",
+    "href": "aug24.html#non-natural-meaning-1",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nHypothesis 2\nMaybe we should factor in intention.\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend to use that thing to produce the belief in an audience that \\(p\\) is true."
+  },
+  {
+    "objectID": "aug24.html#counterexample",
+    "href": "aug24.html#counterexample",
+    "title": "Intro. to Semantics",
+    "section": "Counterexample",
+    "text": "Counterexample"
+  },
+  {
+    "objectID": "aug24.html#non-natural-meaning-2",
+    "href": "aug24.html#non-natural-meaning-2",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nHypothesis 3\nMaybe we should factor in an intention for one’s intention to be recognized.\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend to produce the belief that \\(p\\) in their audience by that thing, and they intend for their intention to be recognized."
+  },
+  {
+    "objectID": "aug24.html#counterexample-1",
+    "href": "aug24.html#counterexample-1",
+    "title": "Intro. to Semantics",
+    "section": "Counterexample",
+    "text": "Counterexample\nCutting someone off in traffic to make them think you’re aggressive and to get them to get out of your way."
+  },
+  {
+    "objectID": "aug24.html#non-natural-meaning-3",
+    "href": "aug24.html#non-natural-meaning-3",
+    "title": "Intro. to Semantics",
+    "section": "Non-natural meaning",
+    "text": "Non-natural meaning\nWhat it actually is (according to Grice)\n\nSomeone means\\(_{NN}\\) that \\(p\\) by something if they intend that:\n\ntheir audience comes to believe \\(p\\) because of it,\ntheir audience recognizes their intention, and\ntheir audience comes to believe that \\(p\\) specifically because of the intention."
+  },
+  {
+    "objectID": "aug24.html#question-1",
+    "href": "aug24.html#question-1",
+    "title": "Intro. to Semantics",
+    "section": "Question 1",
+    "text": "Question 1\nHow to go from “someone meant that \\(p\\) by \\(X\\)” to “\\(p\\) means \\(X\\) in a particular linguistic community”?\n\nTie in Lewis (1975)?"
+  },
+  {
+    "objectID": "aug24.html#question-2",
+    "href": "aug24.html#question-2",
+    "title": "Intro. to Semantics",
+    "section": "Question 2",
+    "text": "Question 2\nHow do we characterize meanings for things which aren’t statements?\n\nCommands?\nQuestions?"
+  },
+  {
+    "objectID": "aug24.html#references",
+    "href": "aug24.html#references",
     "title": "Intro. to Semantics",
     "section": "",
-    "text": "References\n\n\n\n\nHarris, Zellig S. 1954. “Distributional Structure.” WORD 10 (2-3): 146–62. https://doi.org/10.1080/00437956.1954.11659520."
+    "text": "References\n\n\n\n\nGrice, H. P. 1957. “Meaning.” The Philosophical Review 66 (3): 377–88. https://doi.org/10.2307/2182440.\n\n\nLewis, David K. 1975. “Languages and Language.” In Arguing about Language, edited by Darragh Byrne and Max Kölbel. Arguing about Philosophy. Routledge."
   }
 ]
