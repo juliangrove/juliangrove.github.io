@@ -1,5 +1,100 @@
 [
   {
+    "objectID": "formal_preliminaries/assignment1.html",
+    "href": "formal_preliminaries/assignment1.html",
+    "title": "Assignment 1",
+    "section": "",
+    "text": "Due on Monday, September 9th.",
+    "crumbs": [
+      "Formal preliminaries",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/assignment1.html#part-1",
+    "href": "formal_preliminaries/assignment1.html#part-1",
+    "title": "Assignment 1",
+    "section": "Part 1",
+    "text": "Part 1\nRead Partee et al. (1990), Chapter 1, and do exercises 1, 2, 4, 5, and 8, and 9.",
+    "crumbs": [
+      "Formal preliminaries",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/assignment1.html#part-2",
+    "href": "formal_preliminaries/assignment1.html#part-2",
+    "title": "Assignment 1",
+    "section": "Part 2",
+    "text": "Part 2\nRead Partee et al. (1990), Chapter 2, and do exercises 3 and 4.",
+    "crumbs": [
+      "Formal preliminaries",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/assignment1.html#part-3",
+    "href": "formal_preliminaries/assignment1.html#part-3",
+    "title": "Assignment 1",
+    "section": "Part 3",
+    "text": "Part 3\nRead Partee et al. (1990), Chapter 3, up to page 47 (§3.5),1 and do exercises 2 and 3.",
+    "crumbs": [
+      "Formal preliminaries",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/assignment1.html#footnotes",
+    "href": "formal_preliminaries/assignment1.html#footnotes",
+    "title": "Assignment 1",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n Feel free to also read the rest of the chapter, if you like!↩︎",
+    "crumbs": [
+      "Formal preliminaries",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This site contains materials the course Formal Complexity given by Julian Grove at the University of Florida during the Fall 2026 semester.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-instructor",
+    "href": "about.html#about-the-instructor",
+    "title": "About",
+    "section": "About the instructor",
+    "text": "About the instructor\nJulian Grove is an Assistant Professor in the Linguistics Department. He is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics. You can find out more about his research interests by checking out his papers, slides, or perhaps even his cv.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#about-the-site",
+    "href": "about.html#about-the-site",
+    "title": "About",
+    "section": "About the site",
+    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/formal-complexity.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "about.html#license",
+    "href": "about.html#license",
+    "title": "About",
+    "section": "License ",
+    "text": "License \nFormal Complexity by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/formal-complexity.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Syllabus",
@@ -94,7 +189,7 @@
     "href": "index.html#sec-calendar",
     "title": "Syllabus",
     "section": "Calendar",
-    "text": "Calendar\n\n\n\n\n\n\n\n\n\nDate\nTopic\nReading\nAssignment\n\n\n\n\nFri., Aug. 21\nIntroduction\n\n\n\n\nMon., Aug. 24\nSet-theoretic foundations and languages\n\nView\n\n\nWed., Aug. 26\nSet-theoretic foundations and languages\n\n\n\n\nFri., Aug. 28\nSet-theoretic foundations and languages\n\n\n\n\nMon., Aug. 31\nFinite languages and regular languages\n\n\n\n\nWed., Sept. 2\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 4\nRegular languages, expressions, and grammars\n\n\n\n\nMon., Sept. 7\nNo class: Labor Day\n\nView\n\n\nWed., Sept. 9\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 11\nFinite-state automata\n\n\n\n\nMon., Sept. 14\nFinite-state automata\n\n\n\n\nWed., Sept. 16\nThe pumping lemma for regular languages\n\n\n\n\nFri., Sept. 18\nNo class: Julian away\n\n\n\n\nMon., Sept. 21\nThe pumping lemma for regular languages\n\nView\n\n\nWed., Sept. 23\nRegular languages and natural language phonology\n\n\n\n\nFri., Sept. 25\nRegular languages and natural language morphology\n\n\n\n\nMon., Sept. 28\nContext-free languages\n\n\n\n\nWed., Sept. 30\nContext-free languages\n\n\n\n\nFri., Oct. 2\nPushdown automata\n\n\n\n\nMon., Oct. 5\nPushdown automata\n\nView\n\n\nWed., Oct. 7\nContext-sensitive languages\n\n\n\n\nMon., Oct. 12\nContext-sensitive languages\n\n\n\n\nWed., Oct. 14\nLinear bounded automata\n\n\n\n\nFri., Oct. 16\nNo class: Julian away\n\n\n\n\nMon., Oct. 19\nLinear bounded automata\n\nView\n\n\nWed., Oct. 21\nIs natural language syntax context-free?\n\n\n\n\nFri., Oct. 23\nIs natural language syntax context-free?\n\n\n\n\nMon., Oct. 26\nMinimalist grammars\n\n\n\n\nWed., Oct. 28\nMinimalist grammars\n\n\n\n\nFri., Oct. 30\nMinimalist grammars\n\n\n\n\nMon., Nov. 2\nMultiple context-free grammars\n\nView\n\n\nWed., Nov. 4\nMultiple context-free grammars\n\n\n\n\nFri., Nov. 6\nMultiple context-free categorial grammars\n\n\n\n\nMon., Nov. 9\nCombinatory categorial grammars\n\n\n\n\nFri., Nov. 13\nCombinatory categorial grammars\n\n\n\n\nMon., Nov. 16\nCombinatory categorial grammars\n\nView\n\n\nWed., Nov. 18\nRecursive languages and Turing machines\n\n\n\n\nFri., Nov. 20\nRecursive languages and Turing machines\n\n\n\n\nMon., Nov. 30\nRecursively enumerable languages / wrap-up\n\n\n\n\nWed., Dec. 2\nRecursively enumerable languages / wrap-up",
+    "text": "Calendar\n\n\n\nDate\nTopic\nReading\nAssignment\n\n\n\n\nFri., Aug. 21\nIntroduction\n\n\n\n\nMon., Aug. 24\nSet-theoretic foundations and languages\nPartee et al. (1990), Chapters 1-3\nView\n\n\nWed., Aug. 26\nSet-theoretic foundations and languages\n\n\n\n\nFri., Aug. 28\nSet-theoretic foundations and languages\n\n\n\n\nMon., Aug. 31\nFinite languages and regular languages\n\n\n\n\nWed., Sept. 2\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 4\nRegular languages, expressions, and grammars\n\n\n\n\nMon., Sept. 7\nNo class: Labor Day\n\nView\n\n\nWed., Sept. 9\nRegular languages, expressions, and grammars\n\n\n\n\nFri., Sept. 11\nFinite-state automata\n\n\n\n\nMon., Sept. 14\nFinite-state automata\n\n\n\n\nWed., Sept. 16\nThe pumping lemma for regular languages\n\n\n\n\nFri., Sept. 18\nNo class: Julian away\n\n\n\n\nMon., Sept. 21\nThe pumping lemma for regular languages\n\nView\n\n\nWed., Sept. 23\nRegular languages and natural language phonology\n\n\n\n\nFri., Sept. 25\nRegular languages and natural language morphology\n\n\n\n\nMon., Sept. 28\nContext-free languages\n\n\n\n\nWed., Sept. 30\nContext-free languages\n\n\n\n\nFri., Oct. 2\nPushdown automata\n\n\n\n\nMon., Oct. 5\nPushdown automata\n\nView\n\n\nWed., Oct. 7\nContext-sensitive languages\n\n\n\n\nMon., Oct. 12\nContext-sensitive languages\n\n\n\n\nWed., Oct. 14\nLinear bounded automata\n\n\n\n\nFri., Oct. 16\nNo class: Julian away\n\n\n\n\nMon., Oct. 19\nLinear bounded automata\n\nView\n\n\nWed., Oct. 21\nIs natural language syntax context-free?\n\n\n\n\nFri., Oct. 23\nIs natural language syntax context-free?\n\n\n\n\nMon., Oct. 26\nMinimalist grammars\n\n\n\n\nWed., Oct. 28\nMinimalist grammars\n\n\n\n\nFri., Oct. 30\nMinimalist grammars\n\n\n\n\nMon., Nov. 2\nMultiple context-free grammars\n\nView\n\n\nWed., Nov. 4\nMultiple context-free grammars\n\n\n\n\nFri., Nov. 6\nMultiple context-free categorial grammars\n\n\n\n\nMon., Nov. 9\nCombinatory categorial grammars\n\n\n\n\nFri., Nov. 13\nCombinatory categorial grammars\n\n\n\n\nMon., Nov. 16\nCombinatory categorial grammars\n\nView\n\n\nWed., Nov. 18\nRecursive languages and Turing machines\n\n\n\n\nFri., Nov. 20\nRecursive languages and Turing machines\n\n\n\n\nMon., Nov. 30\nRecursively enumerable languages / wrap-up\n\n\n\n\nWed., Dec. 2\nRecursively enumerable languages / wrap-up",
     "crumbs": [
       "Syllabus"
     ]
@@ -107,46 +202,6 @@
     "text": "Footnotes\n\n\nListed as both LIN4930 and LIN6932 at one.uf.edu.↩︎",
     "crumbs": [
       "Syllabus"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This site contains materials the course Formal Complexity given by Julian Grove at the University of Florida during the Fall 2026 semester.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#about-the-instructor",
-    "href": "about.html#about-the-instructor",
-    "title": "About",
-    "section": "About the instructor",
-    "text": "About the instructor\nJulian Grove is an Assistant Professor in the Linguistics Department. He is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics. You can find out more about his research interests by checking out his papers, slides, or perhaps even his cv.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#about-the-site",
-    "href": "about.html#about-the-site",
-    "title": "About",
-    "section": "About the site",
-    "text": "About the site\nThe site itself is built using Quarto. The source files for this site are available on github at juliangrove/formal-complexity.",
-    "crumbs": [
-      "About"
-    ]
-  },
-  {
-    "objectID": "about.html#license",
-    "href": "about.html#license",
-    "title": "About",
-    "section": "License ",
-    "text": "License \nFormal Complexity by Julian Grove is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Based on materials at https://github.com/juliangrove/formal-complexity.",
-    "crumbs": [
-      "About"
     ]
   }
 ]
