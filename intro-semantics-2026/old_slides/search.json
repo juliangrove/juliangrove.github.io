@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "aug28.html#some-things-you-can-do-with-words",
+    "href": "aug28.html#some-things-you-can-do-with-words",
+    "title": "Intro. to Semantics",
+    "section": "Some things you can do with words",
+    "text": "Some things you can do with words\n\nMake assertions:\n\nJohn devoured the beans.\n\n\n\nAsk questions:\n\nHow many beans did John devour?\n\n\n\nIssue commands:\n\n(Looking John dead in the eye:) Devour the beans!"
+  },
+  {
+    "objectID": "aug28.html#construction-types",
+    "href": "aug28.html#construction-types",
+    "title": "Intro. to Semantics",
+    "section": "Construction types",
+    "text": "Construction types\n\nJohn devoured the beans.\n\ndeclarative sentence\nassertion\n\nHow many beans did John devour?\n\ninterrogative sentence\nquestion\n\nDevour the beans!\n\nimperative sentence\ncommand"
+  },
+  {
+    "objectID": "aug28.html#switching-up-construction-types",
+    "href": "aug28.html#switching-up-construction-types",
+    "title": "Intro. to Semantics",
+    "section": "Switching up construction types",
+    "text": "Switching up construction types\n\nI command you to help me cook the beans!\n\ndeclarative sentence\ncommand\n\nPlease, help me cook the beans…\n\nimperative sentence\nrequest\n\nCould you please help me cook the beans?\n\ninterrogative sentence\nrequest"
+  },
+  {
+    "objectID": "aug28.html#distinguishing-types-of-act",
+    "href": "aug28.html#distinguishing-types-of-act",
+    "title": "Intro. to Semantics",
+    "section": "Distinguishing types of act",
+    "text": "Distinguishing types of act\nAustin (1962) classified speech acts at distinct levels.\n\nLocutionary act: an act of uttering a particular expression.\n\ne.g., interrogative vs. imperative vs. declarative\n\nIllocutionary act: an an act of uttering something with a particular intended discourse effect.\n\ne.g., question vs. comamand vs. assertion\n\nPerlocutionary effects: the worldly effects an utterance actually has.\n\ne.g., question answered, command fulfilled, assertion believed"
+  },
+  {
+    "objectID": "aug28.html#illocutionary-uptake",
+    "href": "aug28.html#illocutionary-uptake",
+    "title": "Intro. to Semantics",
+    "section": "Illocutionary uptake",
+    "text": "Illocutionary uptake\nAn illocutionary act may be successful or unsuccessful.\n\nSuccessful if it has the intended social consequence (it has uptake).\nUnsuccessful if it does not have this consequence (it does not have uptake)."
+  },
+  {
+    "objectID": "aug28.html#uptakes-for-different-acts",
+    "href": "aug28.html#uptakes-for-different-acts",
+    "title": "Intro. to Semantics",
+    "section": "Uptakes for different acts",
+    "text": "Uptakes for different acts\n\nI bet you $300 that it will rain tomorrow.\n\nthe bet is accepted\n\nOpen the window!\n\naddressee accepts the obligation to act\n\nWhat time is it?\n\naddressee accepts the obligation to answer\n\nIt’s 1:20pm.\n\naddressee accepts (in some sense) the truth of the sentence"
+  },
+  {
+    "objectID": "aug28.html#assertions",
+    "href": "aug28.html#assertions",
+    "title": "Intro. to Semantics",
+    "section": "Assertions",
+    "text": "Assertions\nStalnaker (1978) introduces the notion of the common ground.\n\nset of propositions\n\n\nUptake of an assertion:\n\naddressee accepts the meaning of the sentence into the common ground."
+  },
+  {
+    "objectID": "aug28.html#force-and-content",
+    "href": "aug28.html#force-and-content",
+    "title": "Intro. to Semantics",
+    "section": "Force and content",
+    "text": "Force and content\nIllocutionary acts can be characterized along at least two dimensions:\n\nillocutionary force: what kind of intended social effect is involved?\n\nassertoric force, imperative force, interrogative force\n\ncontent: utterance-specific aspects of conveyed meaning\n\nassertions: sets of possible worlds (“truth conditions”)\ncommands: “satisfaction conditions”\nquestions: “answerhood conditions”"
+  },
+  {
+    "objectID": "aug28.html#question-about-content",
+    "href": "aug28.html#question-about-content",
+    "title": "Intro. to Semantics",
+    "section": "Question about content",
+    "text": "Question about content\nWhere in the taxonomy of acts does content fall?\n\nJust the illocutionary act?\nAlso locutionary effect?\n(Also perlocutionary effect?)"
+  },
+  {
+    "objectID": "aug28.html#performatives",
+    "href": "aug28.html#performatives",
+    "title": "Intro. to Semantics",
+    "section": "Performatives",
+    "text": "Performatives\n\nI command you to help me cook the beans!\nI hereby name this ship the R.M.S. Titanic!\n\nlocutionary act: declarative sentence\nillocutionary act: naming\nuptake: ship’s name is now ‘R.M.S. Titanic’\n\nI promise to stop moving furniture while you’re sleeping.\n\nlocutionary act: declarative sentence\nillocutionary act: promise\nuptake: promise accepted, obligation registered"
+  },
+  {
+    "objectID": "aug28.html#peformatives-contd",
+    "href": "aug28.html#peformatives-contd",
+    "title": "Intro. to Semantics",
+    "section": "Peformatives (cont’d)",
+    "text": "Peformatives (cont’d)\n\nI apologize.\n\napology\nuptake: apology accepted\n\nI do.\n\nillocutionary act: vow\nuptake: obligation registered\n\nI bet you $300 that it will rain tomorrow.\n\nillocutionary act: bet\nuptake: bet accepted"
+  },
+  {
+    "objectID": "aug28.html#references",
+    "href": "aug28.html#references",
+    "title": "Intro. to Semantics",
+    "section": "",
+    "text": "References\n\n\n\n\nAustin, J. L. 1962. How to Do Things with Words. Oxford University Press.\n\n\nStalnaker, Robert. 1978. “Assertion.” In Pragmatics, edited by Peter Cole, vol. 9. Academic Press."
+  }
+]
