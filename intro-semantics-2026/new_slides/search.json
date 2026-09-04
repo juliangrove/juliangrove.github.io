@@ -1,149 +1,191 @@
 [
   {
-    "objectID": "sept2.html#last-couple-classes",
-    "href": "sept2.html#last-couple-classes",
+    "objectID": "sept4.html#last-couple-classes",
+    "href": "sept4.html#last-couple-classes",
     "title": "Intro. to Semantics",
     "section": "Last couple classes",
     "text": "Last couple classes\nHow Austin (1962) classifies speech acts:\n\nas locutionary acts\nin terms of their illocutionary effects\nin terms of their perlocutionary effects\n\n\nExample:\n\nJo ate the chicken salad. (decl., assertion)\nDid Jo eat the chicken salad? (inter., question)\nEat the chicken salad! (imper., command)"
   },
   {
-    "objectID": "sept2.html#last-couple-classes-1",
-    "href": "sept2.html#last-couple-classes-1",
+    "objectID": "sept4.html#last-couple-classes-1",
+    "href": "sept4.html#last-couple-classes-1",
     "title": "Intro. to Semantics",
     "section": "Last couple classes",
     "text": "Last couple classes\nUptake:\n\nAn illocutionary act has uptake when it has the “intended social consequence”.\n\n\nExample:\n\nI bet you $300 that it’s raining."
   },
   {
-    "objectID": "sept2.html#last-couple-classes-2",
-    "href": "sept2.html#last-couple-classes-2",
+    "objectID": "sept4.html#last-couple-classes-2",
+    "href": "sept4.html#last-couple-classes-2",
     "title": "Intro. to Semantics",
     "section": "Last couple classes",
     "text": "Last couple classes\nThose were direct speech acts.\n\n\nIndirect speech acts: illocutionary act arises as a consequence of some other some other, more basic illocutionary act.\n\nCould you please pass the salt? (inter., request)\nI still haven’t gotten my reimbursement. (decl., request)"
   },
   {
-    "objectID": "sept2.html#overview",
-    "href": "sept2.html#overview",
+    "objectID": "sept4.html#overview",
+    "href": "sept4.html#overview",
     "title": "Intro. to Semantics",
     "section": "Overview",
     "text": "Overview\nThings we’ve looked at:\n\nThings that people do: use expressions of their language to create certain (conventional) social effects.\n\nCategorization of illocutionary effects:\n\nperformative, assertion, question, …\n\n\n\n\nThings we haven’t looked at:\n\nHow they do it: locutionary act → illocutionary act (?)"
   },
   {
-    "objectID": "sept2.html#strategy",
-    "href": "sept2.html#strategy",
+    "objectID": "sept4.html#strategy",
+    "href": "sept4.html#strategy",
     "title": "Intro. to Semantics",
     "section": "Strategy",
     "text": "Strategy\nWhat we need:\n\na (systematic, predictive, comprehensive) story about how people use expressions to perform illocutionary acts\n\n\nWe can work backwards.\n\nIllocutionary act ↓\n\nLocutionary act\n\nsyntax\nsemantics"
   },
   {
-    "objectID": "sept2.html#some-illocutionary-acts",
-    "href": "sept2.html#some-illocutionary-acts",
+    "objectID": "sept4.html#some-illocutionary-acts",
+    "href": "sept4.html#some-illocutionary-acts",
     "title": "Intro. to Semantics",
     "section": "Some illocutionary acts",
     "text": "Some illocutionary acts\n\n\n\nContext: Jo and Bo are outside Pascal’s, looking in the window.  Jo: No one’s at the cash register.  Bo: The lights are on. \n\nBo’s response:\n\nForce: assertion\nContent, Part 1: Pascal’s lights are on\nContent, Part 2: Pascal’s is open"
   },
   {
-    "objectID": "sept2.html#some-illocutionary-acts-1",
-    "href": "sept2.html#some-illocutionary-acts-1",
+    "objectID": "sept4.html#some-illocutionary-acts-1",
+    "href": "sept4.html#some-illocutionary-acts-1",
     "title": "Intro. to Semantics",
     "section": "Some illocutionary acts",
     "text": "Some illocutionary acts\n\n\n\nContext: Jo and Bo get inside Pascal’s and are now in line.  Jo: What do you want?  Bo: Something with lots of caffeine.\n\n\n↝ Bo isn’t sure what he wants."
   },
   {
-    "objectID": "sept2.html#some-illocutionary-acts-2",
-    "href": "sept2.html#some-illocutionary-acts-2",
+    "objectID": "sept4.html#some-illocutionary-acts-2",
+    "href": "sept4.html#some-illocutionary-acts-2",
     "title": "Intro. to Semantics",
     "section": "Some illocutionary acts",
     "text": "Some illocutionary acts\n\n\n\nContext: Bo got an iced matcha latte.  Jo: How is it?  Bo: I think it needs at least ten more pumps of syrup.\n\n\n↝ Bo’s thinks his latte is too sweet."
   },
   {
-    "objectID": "sept2.html#explaining-illocutionary-effects",
-    "href": "sept2.html#explaining-illocutionary-effects",
+    "objectID": "sept4.html#explaining-illocutionary-effects",
+    "href": "sept4.html#explaining-illocutionary-effects",
     "title": "Intro. to Semantics",
     "section": "Explaining illocutionary effects",
     "text": "Explaining illocutionary effects\nHas two parts:\n\nthe semantics of the expressions\ngeneral rules for mapping the semantics of expressions onto meanings in context"
   },
   {
-    "objectID": "sept2.html#an-extremely-general-rule",
-    "href": "sept2.html#an-extremely-general-rule",
+    "objectID": "sept4.html#an-extremely-general-rule",
+    "href": "sept4.html#an-extremely-general-rule",
     "title": "Intro. to Semantics",
     "section": "An extremely general rule",
     "text": "An extremely general rule\nGrice (1975) proposes the Cooperative Principle:\n\n“Make your conversational contribution, such as is required, at the stage at which is occurs, by the accepted purpose or direction of the talk exchange in which you are engaged.”\n\n\nBasic hypotheses:\n\nHumans are rational agents.\nThey are cooperative.\nMeaning arises from principles of rational cooperation."
   },
   {
-    "objectID": "sept2.html#maxims",
-    "href": "sept2.html#maxims",
+    "objectID": "sept4.html#maxims",
+    "href": "sept4.html#maxims",
     "title": "Intro. to Semantics",
     "section": "Maxims",
     "text": "Maxims\nGrice describe four maxims:\n\nQuality\nQuantity\nRelation\nManner"
   },
   {
-    "objectID": "sept2.html#quality",
-    "href": "sept2.html#quality",
+    "objectID": "sept4.html#quality",
+    "href": "sept4.html#quality",
     "title": "Intro. to Semantics",
     "section": "Quality",
     "text": "Quality\nPart 1: only say that which you believe to be true.\n\nPart 2: only say that which you have enough evidence for.\n\n\n\nWho else said something like this?"
   },
   {
-    "objectID": "sept2.html#quantity",
-    "href": "sept2.html#quantity",
+    "objectID": "sept4.html#quantity",
+    "href": "sept4.html#quantity",
     "title": "Intro. to Semantics",
     "section": "Quantity",
     "text": "Quantity\nPart 1: make your contribution as informative as necessary.\n\nPart 2: don’t overdo it."
   },
   {
-    "objectID": "sept2.html#relation",
-    "href": "sept2.html#relation",
+    "objectID": "sept4.html#relation",
+    "href": "sept4.html#relation",
     "title": "Intro. to Semantics",
     "section": "Relation",
     "text": "Relation\nMake your contribution relevant."
   },
   {
-    "objectID": "sept2.html#manner",
-    "href": "sept2.html#manner",
+    "objectID": "sept4.html#manner",
+    "href": "sept4.html#manner",
     "title": "Intro. to Semantics",
     "section": "Manner",
     "text": "Manner\nFour parts:\n\nAvoid obscurity.\nAvoid ambiguity.\nBe brief.\nBe orderly."
   },
   {
-    "objectID": "sept2.html#first-example",
-    "href": "sept2.html#first-example",
+    "objectID": "sept4.html#first-example",
+    "href": "sept4.html#first-example",
     "title": "Intro. to Semantics",
     "section": "First example",
     "text": "First example\n\n\n\nContext: Jo and Bo are outside Pascal’s, looking in the window.  Jo: No one’s at the cash register.  Bo: The lights are on.\n\nImplicature: Pascal’s is open.\n\nrelation\n\n\nHow? Followed."
   },
   {
-    "objectID": "sept2.html#second-example",
-    "href": "sept2.html#second-example",
+    "objectID": "sept4.html#second-example",
+    "href": "sept4.html#second-example",
     "title": "Intro. to Semantics",
     "section": "Second example",
     "text": "Second example\n\n\n\nContext: Jo and Bo get inside Pascal’s and are now in line.  Jo: What do you want?  Bo: Something with lots of caffeine.\n\nImplicature: Bo doesn’t know what he wants.\n\nquality\nquantity\n\n\nHow? Clash."
   },
   {
-    "objectID": "sept2.html#third-example",
-    "href": "sept2.html#third-example",
+    "objectID": "sept4.html#third-example",
+    "href": "sept4.html#third-example",
     "title": "Intro. to Semantics",
     "section": "Third example",
     "text": "Third example\n\n\n\nContext: Bo got an iced matcha latte.  Jo: How is it?  Bo: I think it needs at least ten more pumps of syrup.\n\nImplicature: Bo thinks his latte is too sweet.\n\nquality\n\n\nHow? Flouted."
   },
   {
-    "objectID": "sept2.html#a-few-more",
-    "href": "sept2.html#a-few-more",
+    "objectID": "sept4.html#a-few-more",
+    "href": "sept4.html#a-few-more",
     "title": "Intro. to Semantics",
     "section": "A few more",
     "text": "A few more\n\nJohn devoured some of the beans.\n\n\n\nBo walked to his desk, sat down, and got up.\n\n\n\nJo got the car to start."
   },
   {
-    "objectID": "sept2.html#questions",
-    "href": "sept2.html#questions",
+    "objectID": "sept4.html#questions",
+    "href": "sept4.html#questions",
     "title": "Intro. to Semantics",
     "section": "Questions",
     "text": "Questions\n\nHow should we understand the CP and the maxims?\n\nDo they tell us how to behave?\n\nHow do they fit into Grice’s notion of meaning\\(_{NN}\\)?\n\nImplicatures: just inferred, or genuinely communicated?\n\nVariation?"
   },
   {
-    "objectID": "sept2.html#references",
-    "href": "sept2.html#references",
+    "objectID": "sept4.html#example-from-last-time",
+    "href": "sept4.html#example-from-last-time",
+    "title": "Intro. to Semantics",
+    "section": "Example from last time",
+    "text": "Example from last time\n\nJo did some of the readings.\n\n\nQuantity implicature: Jo didn’t do all of the readings.\nBut why not: Jo didn’t do only some of the readings?\n\n\nWhat we need: some notion of “possible alternative”."
+  },
+  {
+    "objectID": "sept4.html#questions-under-discussion",
+    "href": "sept4.html#questions-under-discussion",
+    "title": "Intro. to Semantics",
+    "section": "Questions under discussion",
+    "text": "Questions under discussion\nAsking a question: add the question onto an ongoing record of questions that need to be answered.\n\n\nDiscourse—at least involving assertions—always has the goal of answering some question (Roberts 2012).\n\nThere is always a Question Under Discussion (QUD)."
+  },
+  {
+    "objectID": "sept4.html#example-from-last-time-1",
+    "href": "sept4.html#example-from-last-time-1",
+    "title": "Intro. to Semantics",
+    "section": "Example from last time",
+    "text": "Example from last time\n\n\n\nContext: Jo and Bo are outside Pascal’s, looking in the window.  Jo: No one’s at the cash register.  Bo: The lights are on.\n\n\nQUD?\n\nIs Pascal’s open?"
+  },
+  {
+    "objectID": "sept4.html#does-this-help-with-evaluating-the-maxims",
+    "href": "sept4.html#does-this-help-with-evaluating-the-maxims",
+    "title": "Intro. to Semantics",
+    "section": "Does this help with evaluating the maxims?",
+    "text": "Does this help with evaluating the maxims?\n\nRelation:\n\nHelp resolve the QUD.\n\n\n\nQuantity (Part 1):\n\nResolve it as much as possible."
+  },
+  {
+    "objectID": "sept4.html#on-the-right-track",
+    "href": "sept4.html#on-the-right-track",
+    "title": "Intro. to Semantics",
+    "section": "On the right track?",
+    "text": "On the right track?\n\nJo: How many cookies did Mary eat?  Bo: Mary ate some of the cookies.\n\n\n\nJo: Is there any evidence against them?  Bo: Some of their identity documents are forgeries.\n\n(Based on example from Levinson (2000).)"
+  },
+  {
+    "objectID": "sept4.html#dealing-with-the-symmetry-problem",
+    "href": "sept4.html#dealing-with-the-symmetry-problem",
+    "title": "Intro. to Semantics",
+    "section": "Dealing with the symmetry problem",
+    "text": "Dealing with the symmetry problem\nPossibility: certain lexical items are associated with scales (Horn 1972).\n\nnone &lt; some &lt; all, every\none &lt; two &lt; three\ndecent &lt; great &lt; fantastic!\n\n\nHow might this help with the symmetry problem?"
+  },
+  {
+    "objectID": "sept4.html#references",
+    "href": "sept4.html#references",
     "title": "Intro. to Semantics",
     "section": "References",
-    "text": "References\n\n\n\n\nAustin, J. L. 1962. How to Do Things with Words. Oxford University Press.\n\n\nGrice, H. P. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts. Academic Press."
+    "text": "References\n\n\n\n\nAustin, J. L. 1962. How to Do Things with Words. Oxford University Press.\n\n\nGrice, H. P. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts. Academic Press.\n\n\nHorn, Laurence Robert. 1972. “On the Semantic Properties of Logical Operators in English.” PhD thesis, UCLA.\n\n\nLevinson, Stephen C. 2000. Presumptive Meanings: The Theory of Generalized Conversational Implicature. MIT Press. https://direct.mit.edu/books/monograph/2629/Presumptive-MeaningsThe-Theory-of-Generalized.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6."
   }
 ]
