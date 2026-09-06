@@ -1,5 +1,16 @@
 [
   {
+    "objectID": "speaker_meaning/maxims.html",
+    "href": "speaker_meaning/maxims.html",
+    "title": "The Gricean maxims",
+    "section": "",
+    "text": "Our general goal is to provide an account of conventional meaning—the type of meaning that users of a language associate with expressions by convention, in a way that allows them to deploy those expressions to communicate in real conversational settings. It would therefore be useful to get a handle on some general conversational principles about how expressions with certain meanings are deployed. Having observed inferences in real-life language use, we can hopefully then work out which of those inferences are related to conventional meaning and which are related to general (and perhaps, to some extent, non-linguistic) social conventions about conversation itself.\nWith this aim partly in mind, Grice (1975) proposes a principle that he takes to regulate real-life conversation: the Cooperative Principle.\n\nThe Cooperative Principle:  “Make your conversational contribution, such as is required, at the stage at which it occurs, by the accepted purpose or direction of the talk exchange in which you are engaged” (Grice (1975), p. 45).\n\nAccording to Grice, this principle should be seen as implicitly regulating what people decide to say to one another. He tries to give the principle a little bit of heft by saying what maxims people appear to follow in order to adhere to it.\nHe proposes four general maxims:\n\nQuality\nQuantity\nRelation\nManner\n\n\nQuality\nThe maxim of Quality has two parts: first, don’t say things that you think are false; and second, only say things that you have enough evidence for.\nGrice doesn’t say much about what, in general, constitutes “enough evidence”—presumably this is meant to be understood as somewhat context-dependent. For example, if you’re a surgeon in an operating room, the standard of evidence for certain kinds of assertions would likely be pretty high (“The tibial plateau is misaligned by three degrees.”), whereas if you’re a contestant on Jeopardy, it’s generally likely to be lower. Indeed—as is the case for all of Grice’s maxims—there are many details to fill in here! But we still might be able to get a certain amount of reasoning off the ground about why certain utterances mean what they do, even if we leave some things unspecified.\n\n\nQuantity\nThe maxim of Quantity is also presented by Grice as having two parts: first, be as informative as necessary; second, don’t overdo it.\nAgain, Grice leaves out crucial information about how this maxim ought to be evaluated—what counts as “as informative as necessary” or “overdo[ing] it”? It’s possible to give a more systematic account of what counts as too little information or too much information if we have access to the notion of a question under discussion (QUD; Roberts (2012)). For example, if the question is how many children does John have?, an answer which is under-informative might be John has between three and five children, while an answer that might be over-informative might be John has exactly three children, and they all go to the same high school. It is perhaps also possible for an answer to both under- and over-informative, e.g., John has between three and five children, and they all go to the same high school. An answer which is just right, given the question, might then be John has exactly three children.\nIt’s important to note that a QUD only helps if we have two other things. First, we need a way of knowing when some question is the QUD of a particular conversation or discourse; and second, we need a definition of when a given statement answers a question, either partially or completely. The problem of identifying QUDs is a matter of ongoing research in both computational and experimental pragmatics—it’s a hard problem (though language users might generally seem to solve it fairly effortlessly).\nMeanwhile, the problem of defining when a statement answers a question is perhaps somewhat easier, insofar as there are several theories of question meanings on the market, and any of them might in principle tell us what the possible complete and partial answers to the QUD are, once a QUD has been identified.\n\n\nRelation\nThe maxim of Relation is stated as follows: be relevant.\nOr, don’t be like zombie kid. This maxim can also be made a little more systematic by understanding it as constraining the relationship between statements made in some conversation and the QUD of the conversation. It seems to say that one should make statements that answer the QUD, or at least that partially answer the QUD.\n\n\nManner\nThe maxim of Manner is taken by Grice to dictate that one should be clear, unambiguous, brief, and orderly.\nWhether or not a particular utterance adheres to this maxim might seem to be somewhat in the eye of the beholder. For example, what counts as “brief”—should we count the number of segments, syllables, words, constituent phrases used (or does it depend on context?)?\n\n\n\n\n\n\n\nReferences\n\nGrice, H. P. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts. Academic Press.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6.",
+    "crumbs": [
+      "Speaker meaning",
+      "The Gricean maxims"
+    ]
+  },
+  {
     "objectID": "convention/defining_meaning.html",
     "href": "convention/defining_meaning.html",
     "title": "Defining meaning",
@@ -202,6 +213,28 @@
     "crumbs": [
       "Convention",
       "Defining convention"
+    ]
+  },
+  {
+    "objectID": "speaker_meaning/applying_maxims.html",
+    "href": "speaker_meaning/applying_maxims.html",
+    "title": "Applying the maxims",
+    "section": "",
+    "text": "Grice (1975) gives several examples of inferences that appear to result from the maxims, given particular utterances. These inferences are called conversational implicatures. Here, I’ll give a few of my own.",
+    "crumbs": [
+      "Speaker meaning",
+      "Applying the maxims"
+    ]
+  },
+  {
+    "objectID": "speaker_meaning/applying_maxims.html#footnotes",
+    "href": "speaker_meaning/applying_maxims.html#footnotes",
+    "title": "Applying the maxims",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n Meanwhile, the Maxim of Quality dictates that the speaker should say that Jo did all of the readings only if they believe it to be true. Thus even if Quantity produces a preference for ‘all’ over ‘some’, this preference can only be indulged if Quality isn’t violated in the process. ↩︎",
+    "crumbs": [
+      "Speaker meaning",
+      "Applying the maxims"
     ]
   }
 ]
