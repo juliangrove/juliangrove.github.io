@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Assignment 1 – Formal complexity</title>
+<title>Relations – Formal complexity</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -61,26 +61,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -90,7 +71,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../formal_preliminaries/examples.html" rel="prev">
+<link href="../formal_preliminaries/functions.html" rel="next">
+<link href="../formal_preliminaries/products.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -129,6 +111,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -142,7 +153,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/assignment1.html">Assignment 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/relations.html">Relations</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -202,7 +213,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/relations.html" class="sidebar-item-text sidebar-link">
+  <a href="../formal_preliminaries/relations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Relations</span></a>
   </div>
 </li>
@@ -226,7 +237,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formal_preliminaries/assignment1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../formal_preliminaries/assignment1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment 1</span></a>
   </div>
 </li>
@@ -262,18 +273,16 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1" id="toc-part-1" class="nav-link active" data-scroll-target="#part-1">Part 1</a></li>
-  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2">Part 2</a></li>
-  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3">Part 3</a></li>
+  <li><a href="#some-possible-properties-of-relations" id="toc-some-possible-properties-of-relations" class="nav-link active" data-scroll-target="#some-possible-properties-of-relations">Some possible properties of relations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/assignment1.html">Assignment 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formal_preliminaries/sets.html">Formal preliminaries</a></li><li class="breadcrumb-item"><a href="../formal_preliminaries/relations.html">Relations</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Assignment 1</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Relations</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -290,34 +299,27 @@ div.csl-indent {
 </header>
 
 
-<p>Due on Wednesday, September 9th.</p>
-<section id="part-1" class="level2">
-<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
-<p>Read <span class="citation" data-cites="partee_mathematical_1990">Partee et al. (<a href="#ref-partee_mathematical_1990" role="doc-biblioref">1990</a>)</span>, Chapter 1, and do exercises 1, 2, 4, 5, and 8, and 9.</p>
-</section>
-<section id="part-2" class="level2">
-<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
-<p>Read <span class="citation" data-cites="partee_mathematical_1990">Partee et al. (<a href="#ref-partee_mathematical_1990" role="doc-biblioref">1990</a>)</span>, Chapter 2, and do exercises 3 and 4.</p>
-</section>
-<section id="part-3" class="level2">
-<h2 class="anchored" data-anchor-id="part-3">Part 3</h2>
-<p>Read <span class="citation" data-cites="partee_mathematical_1990">Partee et al. (<a href="#ref-partee_mathematical_1990" role="doc-biblioref">1990</a>)</span>, Chapter 3, up to page 47 (§3.5),<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and do exercises 2 and 3.</p>
+<p>If we have a collection of sets <span class="math inline">\(A_{1}\)</span> through <span class="math inline">\(A_{n}\)</span>, then we can take an <span class="math inline">\(n\)</span>-ary <em>relation</em> on those sets. An <span class="math inline">\(n\)</span>-ary <em>relation</em> on the sets <span class="math inline">\(A_{1}, ..., A_{n}\)</span> is a set <span class="math inline">\(R\)</span> such that <span class="math inline">\(R ⊆ A_{1} × ... × A_{n}\)</span>. In the special case of a binary relation on two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, <span class="math inline">\(R\)</span> is a set of pairs <span class="math inline">\(⟨a, b⟩\)</span>, such that <span class="math inline">\(a ∈ A\)</span> and <span class="math inline">\(b ∈ B\)</span>. That is, <span class="math inline">\(R ⊆ A × B\)</span>. For <span class="math inline">\(n\)</span>-ary relations <span class="math inline">\(R\)</span>, if the <span class="math inline">\(n\)</span>-tuple <span class="math inline">\(⟨a₁, ..., aₙ⟩\)</span> is a member of <span class="math inline">\(R\)</span>, we can indicate this by writing <span class="math display">\[R(a₁, ..., aₙ)\]</span></p>
+<p>An important operation on relations is <em>relation composition</em>. Given a relation <span class="math inline">\(R_{1} ⊂ A × B\)</span> and a relation <span class="math inline">\(R_{2} ⊆ B × C\)</span>, their composition <span class="math display">\[R_{2} ∘ R_{1}\]</span> which is a subset of <span class="math inline">\(A × C\)</span>, is defined as <span class="math display">\[R_{2} ∘ R_{1} = \{⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}\}\]</span> That is, <span class="math inline">\(R_{2} ∘ R_{1}\)</span> is gotten by relating an element of <span class="math inline">\(A\)</span> to an element of <span class="math inline">\(C\)</span> just in case there is some element of <span class="math inline">\(B\)</span> related to the first element by <span class="math inline">\(R_{1}\)</span> and to the second element by <span class="math inline">\(R_{2}\)</span>.</p>
+<p>If <span class="math inline">\(R\)</span> is a relation on <span class="math inline">\(A\)</span>, then we will write <span class="math inline">\(R^{n}\)</span> to refer to the result of composing <span class="math inline">\(R\)</span> with itself <span class="math inline">\(n\)</span> times. By convention: <span class="math display">\[\begin{align*}
+R^{0} &amp;= \{⟨x, x⟩ ∣ x ∈ A\}\\
+R^{} &amp;= R\\
+Rⁿ &amp;= R^{n - 1} ∘ R
+\end{align*}\]</span> If <span class="math inline">\(R ⊆ A × B\)</span>, we may define its <em>inverse</em> as the relation <span class="math inline">\(R^{-1} ⊆ B × A\)</span> such that <span class="math inline">\(⟨y, x⟩ ∈ R^{-1}\)</span> just in case <span class="math inline">\(⟨x, y⟩ ∈ R\)</span>. That is, <span class="math inline">\(R^{-1}\)</span> is just like <span class="math inline">\(R\)</span>, but “flipped around”.</p>
+<section id="some-possible-properties-of-relations" class="level3">
+<h3 class="anchored" data-anchor-id="some-possible-properties-of-relations">Some possible properties of relations</h3>
+<p>Some properties of relations are useful to be able to describe.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> A relation <span class="math inline">\(R ⊆ A × A\)</span> (that, is a relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span>) is said to be <em>reflexive</em> if <span class="math inline">\(⟨x, x⟩ ∈ R\)</span> for every <span class="math inline">\(x ∈ A\)</span>. That is, <span class="math inline">\(R\)</span> relates everything in <span class="math inline">\(A\)</span> to itself. A relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span> is said to be <em>symmetric</em> if <span class="math inline">\(⟨y, x⟩ ∈ R\)</span> whenever <span class="math inline">\(⟨x, y⟩ ∈ R\)</span>. It is said to be <em>antisymmetric</em> if the only case in which both <span class="math inline">\(⟨x, y⟩ ∈ R\)</span> and <span class="math inline">\(⟨y, x⟩ ∈ R\)</span> is when <span class="math inline">\(x = y\)</span>. <span class="math inline">\(R\)</span> is said to be <em>transitive</em> if whenever <span class="math inline">\(⟨x, y⟩, ⟨y, z⟩ ∈ R\)</span>, then <span class="math inline">\(⟨x, z⟩ ∈ R\)</span>. A relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span> which has all three of these properties—that is, it is reflexive, transitive, and symmetric—is said to be an <em>equivalence relation</em>.</p>
 
 
 <!-- -->
 
-
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-partee_mathematical_1990" class="csl-entry" role="listitem">
-Partee, Barbara H., Alice ter Meulen, and Robert E. Wall. 1990. <em>Mathematical <span>Methods</span> in <span>Linguistics</span></em>. Vol. 30. Studies in <span>Linguistics</span> and <span>Philosophy</span>. Kluwer Academic Publishers.
-</div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p> Feel free to also read the rest of the chapter, if you like!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p> Note that we didn’t discuss these in class.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -773,33 +775,54 @@ Partee, Barbara H., Alice ter Meulen, and Robert E. Wall. 1990. <em>Mathematical
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../formal_preliminaries/examples.html" class="pagination-link" aria-label="Examples">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Examples</span>
+      <a href="../formal_preliminaries/products.html" class="pagination-link" aria-label="Products">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Products</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../formal_preliminaries/functions.html" class="pagination-link" aria-label="Functions">
+        <span class="nav-page-text">Functions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Assignment 1"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Relations"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../formal_complexity.bib</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Due on Wednesday, September 9th.</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 1</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Read @partee_mathematical_1990, Chapter 1, and do exercises 1, 2, 4, 5, and 8, and 9.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 2</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Read @partee_mathematical_1990, Chapter 2, and do exercises 3 and 4.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 3</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Read @partee_mathematical_1990, Chapter 3, up to page 47 (§3.5),^[</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    Feel free to also read the rest of the chapter, if you like!</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>] and do exercises 2 and 3.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>If we have a collection of sets $A_{1}$ through $A_{n}$, then we can take an $n$-ary *relation* on those sets. </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>An $n$-ary *relation* on the sets $A_{1}, ..., A_{n}$ is a set $R$ such that $R ⊆ A_{1} × ... × A_{n}$.</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>In the special case of a binary relation on two sets $A$ and $B$, $R$ is a set of pairs $⟨a, b⟩$, such that $a ∈ A$ and $b ∈ B$.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>That is, $R ⊆ A × B$.</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>For $n$-ary relations $R$, if the $n$-tuple $⟨a₁, ..., aₙ⟩$ is a member of $R$, we can indicate this by writing $$R(a₁, ..., aₙ)$$</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>An important operation on relations is *relation composition*.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Given a relation $R_{1} ⊂ A × B$ and a relation $R_{2} ⊆ B × C$, their composition</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$$R_{2} ∘ R_{1}$$</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>which is a subset of $A × C$, is defined as $$R_{2} ∘ R_{1} = <span class="sc">\{</span>⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}<span class="sc">\}</span>$$</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>That is, $R_{2} ∘ R_{1}$ is gotten by relating an element of $A$ to an element of $C$ just in case there is some element of $B$ related to the first element by $R_{1}$ and to the second element by $R_{2}$.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result of composing $R$ with itself $n$ times.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>By convention:</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>$$\begin{align*}</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>R^{0} &amp;= <span class="sc">\{</span>⟨x, x⟩ ∣ x ∈ A<span class="sc">\}\\</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>R^{} &amp;= R<span class="sc">\\</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Rⁿ &amp;= R^{n - 1} ∘ R</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\end{align*}$$</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>If $R ⊆ A × B$, we may define its *inverse* as the relation $R^{-1} ⊆ B × A$ such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>That is, $R^{-1}$ is just like $R$, but "flipped around".</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Some possible properties of relations</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Some properties of relations are useful to be able to describe.^[</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    Note that we didn't discuss these in class.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>A relation $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be *reflexive* if $⟨x, x⟩ ∈ R$ for every $x ∈ A$.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>That is, $R$ relates everything in $A$ to itself.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>A relation $R$ on $A$ is said to be *symmetric* if $⟨y, x⟩ ∈ R$ whenever $⟨x, y⟩ ∈ R$.</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>It is said to be *antisymmetric* if the only case in which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>$R$ is said to be *transitive* if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>A relation $R$ on $A$ which has all three of these properties---that is, it is reflexive, transitive, and symmetric---is said to be an *equivalence relation*.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
