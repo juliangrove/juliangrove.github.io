@@ -1,5 +1,74 @@
 [
   {
+    "objectID": "regular_languages/definition.html",
+    "href": "regular_languages/definition.html",
+    "title": "Defining regular languages",
+    "section": "",
+    "text": "From Partee et al. (1990), p. 465:\n\nGiven an alphabet Σ:\n\n∅ is a regular language.\nFor any string s ∈ Σ*, {s} is a regular language.\nIf A and B are regular languages, then so is A ∪ B.\nIf A and B are regular languages, then so is AB.\nIf A is a regular language, then so is A*.\nNothing else is a regular language, unless it being so follows from 1-5.\n\n\n\n\nFor all, Σ = {a, b, c}\n\nSome finite language.\nStrings in L consist of any number of as.\nStrings in L consist of any number of as or bs.\nStrings in L consist of any number of as, followed by any number of bs.\nStrings in L begin with an a and end with a c.\nStrings in L have ab as a substring.\nStrings in L have exactly one a."
+  },
+  {
+    "objectID": "regular_languages/definition.html#regular-languages",
+    "href": "regular_languages/definition.html#regular-languages",
+    "title": "Defining regular languages",
+    "section": "",
+    "text": "From Partee et al. (1990), p. 465:\n\nGiven an alphabet Σ:\n\n∅ is a regular language.\nFor any string s ∈ Σ*, {s} is a regular language.\nIf A and B are regular languages, then so is A ∪ B.\nIf A and B are regular languages, then so is AB.\nIf A is a regular language, then so is A*.\nNothing else is a regular language, unless it being so follows from 1-5.\n\n\n\n\nFor all, Σ = {a, b, c}\n\nSome finite language.\nStrings in L consist of any number of as.\nStrings in L consist of any number of as or bs.\nStrings in L consist of any number of as, followed by any number of bs.\nStrings in L begin with an a and end with a c.\nStrings in L have ab as a substring.\nStrings in L have exactly one a."
+  },
+  {
+    "objectID": "formal_preliminaries/sets.html",
+    "href": "formal_preliminaries/sets.html",
+    "title": "Sets",
+    "section": "",
+    "text": "A set is, intuitively speaking, a collection of objects, which we call the elements or members of the set. Any talk about sets is understood in the context of some universe of discourse. All sets inhabit this universe, as do any of the objects which we may consider to be members of a set. We may, for example, want to have things like words or natural numbers inhabit this universe. When analyzing languages, we may want to include other things too, like the words of some alphabet.\nFor any set \\(A\\) and any object \\(a\\) in the universe, either one of the following two things is true. \\[\\begin{align*}\na ∈ A \\tag{$a$ is a member of $A$}\\\\\na ∉ A \\tag{$a$ is not a member of $A$}\n\\end{align*}\\] Crucially, sets are defined by their members. That means that, for every \\(a\\) in the universe, if \\(a ∈ A\\) if and only if \\(a ∈ B\\), then \\(A\\) and \\(B\\) are the same set. This is the principle of extensionality for sets.\nWe will generally help ourselves to two kinds of notation for specifying sets: list notation and predicate (or “set-comprehension”, or “set-builder”) notation. In list notation, we define a set by enumerating its elements between curly braces. For example, \\[\\{1, 2, 3, George Washington\\}\\] is just the set \\(A\\) such that \\(1 ∈ A\\), \\(2 ∈ A\\), \\(3 ∈ A\\), and nothing else is \\(∈ A\\). Because of extensionality, \\(\\{1, 2, 3, GW\\}\\) is the same set as \\(\\{1, 1, 2, 3, GW\\}\\) is the same set as \\(\\{3, GW, 2, 2, 1\\}\\), etc. Using predicate notation, we can specify the very same set as \\[\\{x ∣ x = 1 \\text{ or } x = 2 \\text{ or } x = 3 \\text{ or } x = GW\\}\\] In general, in writing ‘\\(\\{a\\) \\(|\\) \\(φ\\}\\)’, \\(a\\) will be an expression with some number of variables occurring in it (things like \\(x\\), \\(y\\), \\(z\\), and so on), and \\(φ\\) will be a sentence expressing a condition on the values of these variables. Any number of the variables in \\(a\\), and generally only these, can occur in \\(φ\\). In the example above, \\(a\\) just was the variable \\(x\\), and the condition expressed was that the value of \\(x\\) be either 1, 2, 3, or George.\nBut we could also use predicate notation, as in \\[\\{x + 1 ∣ x = 1 \\text{ or } x = 2 \\text{ or } x = 3\\}\\] where \\(a\\) is the complex expression ‘\\(x +\n1\\)’, to specify the set \\(\\{2, 3, 4\\}\\).\nImportantly, there is an empty set, which we’ll write ‘\\(\\varnothing\\)’. It has no members. As a result, \\(a ∉ \\varnothing\\) for every \\(a\\) in the universe. The empty set can also be written using list notation, as ‘\\(\\{\\}\\)’.",
+    "crumbs": [
+      "Formal preliminaries",
+      "Sets"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/sets.html#footnotes",
+    "href": "formal_preliminaries/sets.html#footnotes",
+    "title": "Sets",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n Note that Partee et al. (1990) use the notation \\(\\mathcal{P}(A)\\).↩︎",
+    "crumbs": [
+      "Formal preliminaries",
+      "Sets"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/products.html",
+    "href": "formal_preliminaries/products.html",
+    "title": "Products",
+    "section": "",
+    "text": "Given two sets \\(A\\) and \\(B\\), we take their binary Cartesian product \\[(A × B)\\] to be the set of pairs of elements \\(⟨a, b⟩\\), where \\(a ∈ A\\) and \\(b ∈ B\\). We call \\(a\\) the first component (or projection) of such a pair and \\(b\\) the second component. Given a pair \\(p\\), we will sometimes write ‘\\(p_{1}\\)’ to refer to its first component and ‘\\(p_{2}\\)’ to refer to its second component. In particular: \\[⟨x, y⟩_{1} = x\\] \\[⟨x, y⟩_{2} = y\\]\nThe following statement is also true: \\[⟨x_{1}, x_{2}⟩ = x\\] That is, if you take the first and second components of a pair and then pair them back up, you haven’t created anything new!\nWe can generalize binary products to \\(n\\)-ary products by considering the former to correspond to the special case where \\(n = 2\\). For the general case \\[A₁ × ... × A_{n-1} × Aₙ\\] we can encode this product as \\[(...(A₁ × ... × A_{n-1}) × Aₙ)\\] For example, \\(A × B × C\\) is just \\(((A × B) × C)\\); its members are, therefore, pairs \\(⟨⟨a, b⟩, c⟩\\), which is just how we can encode 3-tuples \\(⟨a, b, c⟩\\).",
+    "crumbs": [
+      "Formal preliminaries",
+      "Products"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/functions.html",
+    "href": "formal_preliminaries/functions.html",
+    "title": "Functions",
+    "section": "",
+    "text": "A function from a set \\(A\\) to a set \\(B\\) is a map from elements of \\(A\\) to elements of \\(B\\) which pairs each element of \\(A\\) with exactly one element of \\(B\\). If \\(f\\) is such a function, we write \\[f : A → B\\] to indicate this. We call \\(A\\) the domain of the function, and we call \\(B\\) the codomain of the function. If \\(a ∈ A\\), then we write \\[f(a)\\] to pick out the unique \\(b ∈ B\\) that \\(f\\) pairs \\(a\\) up with. In case \\(f(a) = b\\) (for some \\(a\\) and \\(b\\)), we call \\(a\\) the argument of the function \\(f\\), and we call \\(b\\) the value of the function \\(f\\) on \\(a\\).\nKind of like with relations, the definition of (unary) functions can be generalized to that for n-ary functions by considering the latter to be a map from the product of \\(n\\) sets \\(A₁, ..., Aₙ\\) to a set \\(B\\). If \\(f\\) is such an \\(n\\)-ary function, we write \\[f : A_1 × ... × A_n → B\\] to indicate this. Given \\(n\\) arguments \\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\\), we write \\[f(a_1, ..., a_n)\\] to pick out out the \\(b ∈ B\\) that \\(f\\) maps \\(a₁, ..., aₙ\\) to.1\nTwo properties of functions are sometimes important for certain purposes: if a function \\(f\\) from \\(A\\) (or \\(A₁, ..., Aₙ\\)) to \\(B\\) pairs each element \\(a ∈ A\\) (or (n)-tuple \\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\\)) with a different element \\(b ∈ B\\), we call \\(f\\) an injection (or a one-to-one function). If for each \\(b ∈ B\\), \\(f\\) pairs some or other \\(a ∈ A\\) (or \\(n\\)-tuple \\(a₁, ..., aₙ\\)) with it, we call \\(f\\) a surjection (or an onto function). If \\(f\\) is both an injection and a surjection, we call it a bijection from \\(A\\) (or \\(A₁, ..., Aₙ\\)) to \\(B\\).\nImportantly, there is a corresponding notion of function composition. We need only consider functions from \\(A\\) to \\(B\\) a type of relation on \\(A\\) and \\(B\\)—one that relations every element in \\(A\\) to exactly one element in \\(B\\). Given functions \\(f : A → B\\) and \\(g : B → C\\), their composition \\[g ∘ f : A → C\\] is such that \\((g ∘ f)(x) = g(f(x))\\), for any \\(x ∈ A\\). In the same vein, if \\[f : A → A\\] then we may write ‘\\(f^{n}\\)’ to denote the function which “applies \\(f\\) to an element of \\(A\\) \\(n\\) times”. For example, \\(f^{3}(a) = f(f(f(a)))\\).",
+    "crumbs": [
+      "Formal preliminaries",
+      "Functions"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/functions.html#footnotes",
+    "href": "formal_preliminaries/functions.html#footnotes",
+    "title": "Functions",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n Note that a function \\(f : A → B\\) can be considered to be a relation on \\(A\\) and \\(B\\) where, for each \\(a ∈ A\\), there is exactly one \\(b ∈ B\\) such that \\(⟨a, b⟩ ∈ f\\). More generally, an \\(n\\)-ary function can be considered an \\((n+1)\\)-ary relation. This is just a particular way of encoding functions as relations—it isn’t the definition of a function, i.e., a map between sets, as above.↩︎",
+    "crumbs": [
+      "Formal preliminaries",
+      "Functions"
+    ]
+  },
+  {
     "objectID": "formal_preliminaries/assignment1.html",
     "href": "formal_preliminaries/assignment1.html",
     "title": "Assignment 1",
@@ -52,61 +121,6 @@
     "crumbs": [
       "Formal preliminaries",
       "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "formal_preliminaries/languages.html",
-    "href": "formal_preliminaries/languages.html",
-    "title": "Languages",
-    "section": "",
-    "text": "We write ‘\\(A^{n}\\)’ to refer to the result of taking the product of the set \\(A\\) with itself \\(n\\) times. As a matter of convention, we will adopt the following equivalences. \\[\\begin{align*}\nA^0 &=_{def} \\{ϵ\\} \\tag{$ϵ$ is the empty string} \\\\\nA^1 &=_{def} A \\\\\nA^n &=_{def} A^{n-1} × A\n\\end{align*}\\] To define a language, we first define a set \\(Σ\\), which we call the alphabet, words, or lexicon of the language. These can be anything, in principle (phonetic forms, sets of syntactic features, blades of grass, etc.). Then, a language over the alphabet \\(Σ\\) is some set \\(L\\) such that \\[L ⊆ Σ^{*}\\] where \\[Σ^{*} ≝ ⋃_{i ∈ ℕ} Σ^{i}\\] Thus \\(L\\) is a set of \\(n\\)-tuples of words from \\(Σ\\) of any length \\(n\\). When we talk about languages, we will refer to tuples as strings and adopt the convention of writing, e.g., the string ⟨ the, dog, is, friendly ⟩ simply as the dog is friendly.",
-    "crumbs": [
-      "Formal preliminaries",
-      "Languages"
-    ]
-  },
-  {
-    "objectID": "formal_preliminaries/relations.html",
-    "href": "formal_preliminaries/relations.html",
-    "title": "Relations",
-    "section": "",
-    "text": "If we have a collection of sets \\(A_{1}\\) through \\(A_{n}\\), then we can take an \\(n\\)-ary relation on those sets. An \\(n\\)-ary relation on the sets \\(A_{1}, ..., A_{n}\\) is a set \\(R\\) such that \\(R ⊆ A_{1} × ... × A_{n}\\). In the special case of a binary relation on two sets \\(A\\) and \\(B\\), \\(R\\) is a set of pairs \\(⟨a, b⟩\\), such that \\(a ∈ A\\) and \\(b ∈ B\\). That is, \\(R ⊆ A × B\\). For \\(n\\)-ary relations \\(R\\), if the \\(n\\)-tuple \\(⟨a₁, ..., aₙ⟩\\) is a member of \\(R\\), we can indicate this by writing \\[R(a₁, ..., aₙ)\\]\nAn important operation on relations is relation composition. Given a relation \\(R_{1} ⊂ A × B\\) and a relation \\(R_{2} ⊆ B × C\\), their composition \\[R_{2} ∘ R_{1}\\] which is a subset of \\(A × C\\), is defined as \\[R_{2} ∘ R_{1} = \\{⟨x, y⟩ ∣ \\text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \\text{ and } ⟨z, y⟩ ∈ R_{2}\\}\\] That is, \\(R_{2} ∘ R_{1}\\) is gotten by relating an element of \\(A\\) to an element of \\(C\\) just in case there is some element of \\(B\\) related to the first element by \\(R_{1}\\) and to the second element by \\(R_{2}\\).\nIf \\(R\\) is a relation on \\(A\\), then we will write \\(R^{n}\\) to refer to the result of composing \\(R\\) with itself \\(n\\) times. By convention: \\[\\begin{align*}\nR^{0} &= \\{⟨x, x⟩ ∣ x ∈ A\\}\\\\\nR^{} &= R\\\\\nRⁿ &= R^{n - 1} ∘ R\n\\end{align*}\\] If \\(R ⊆ A × B\\), we may define its inverse as the relation \\(R^{-1} ⊆ B × A\\) such that \\(⟨y, x⟩ ∈ R^{-1}\\) just in case \\(⟨x, y⟩ ∈ R\\). That is, \\(R^{-1}\\) is just like \\(R\\), but “flipped around”.",
-    "crumbs": [
-      "Formal preliminaries",
-      "Relations"
-    ]
-  },
-  {
-    "objectID": "formal_preliminaries/relations.html#footnotes",
-    "href": "formal_preliminaries/relations.html#footnotes",
-    "title": "Relations",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n Note that we didn’t discuss these in class.↩︎",
-    "crumbs": [
-      "Formal preliminaries",
-      "Relations"
-    ]
-  },
-  {
-    "objectID": "formal_preliminaries/sets.html",
-    "href": "formal_preliminaries/sets.html",
-    "title": "Sets",
-    "section": "",
-    "text": "A set is, intuitively speaking, a collection of objects, which we call the elements or members of the set. Any talk about sets is understood in the context of some universe of discourse. All sets inhabit this universe, as do any of the objects which we may consider to be members of a set. We may, for example, want to have things like words or natural numbers inhabit this universe. When analyzing languages, we may want to include other things too, like the words of some alphabet.\nFor any set \\(A\\) and any object \\(a\\) in the universe, either one of the following two things is true. \\[\\begin{align*}\na ∈ A \\tag{$a$ is a member of $A$}\\\\\na ∉ A \\tag{$a$ is not a member of $A$}\n\\end{align*}\\] Crucially, sets are defined by their members. That means that, for every \\(a\\) in the universe, if \\(a ∈ A\\) if and only if \\(a ∈ B\\), then \\(A\\) and \\(B\\) are the same set. This is the principle of extensionality for sets.\nWe will generally help ourselves to two kinds of notation for specifying sets: list notation and predicate (or “set-comprehension”, or “set-builder”) notation. In list notation, we define a set by enumerating its elements between curly braces. For example, \\[\\{1, 2, 3, George Washington\\}\\] is just the set \\(A\\) such that \\(1 ∈ A\\), \\(2 ∈ A\\), \\(3 ∈ A\\), and nothing else is \\(∈ A\\). Because of extensionality, \\(\\{1, 2, 3, GW\\}\\) is the same set as \\(\\{1, 1, 2, 3, GW\\}\\) is the same set as \\(\\{3, GW, 2, 2, 1\\}\\), etc. Using predicate notation, we can specify the very same set as \\[\\{x ∣ x = 1 \\text{ or } x = 2 \\text{ or } x = 3 \\text{ or } x = GW\\}\\] In general, in writing ‘\\(\\{a\\) \\(|\\) \\(φ\\}\\)’, \\(a\\) will be an expression with some number of variables occurring in it (things like \\(x\\), \\(y\\), \\(z\\), and so on), and \\(φ\\) will be a sentence expressing a condition on the values of these variables. Any number of the variables in \\(a\\), and generally only these, can occur in \\(φ\\). In the example above, \\(a\\) just was the variable \\(x\\), and the condition expressed was that the value of \\(x\\) be either 1, 2, 3, or George.\nBut we could also use predicate notation, as in \\[\\{x + 1 ∣ x = 1 \\text{ or } x = 2 \\text{ or } x = 3\\}\\] where \\(a\\) is the complex expression ‘\\(x +\n1\\)’, to specify the set \\(\\{2, 3, 4\\}\\).\nImportantly, there is an empty set, which we’ll write ‘\\(\\varnothing\\)’. It has no members. As a result, \\(a ∉ \\varnothing\\) for every \\(a\\) in the universe. The empty set can also be written using list notation, as ‘\\(\\{\\}\\)’.",
-    "crumbs": [
-      "Formal preliminaries",
-      "Sets"
-    ]
-  },
-  {
-    "objectID": "formal_preliminaries/sets.html#footnotes",
-    "href": "formal_preliminaries/sets.html#footnotes",
-    "title": "Sets",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n Note that Partee et al. (1990) use the notation \\(\\mathcal{P}(A)\\).↩︎",
-    "crumbs": [
-      "Formal preliminaries",
-      "Sets"
     ]
   },
   {
@@ -260,39 +274,6 @@
     ]
   },
   {
-    "objectID": "formal_preliminaries/products.html",
-    "href": "formal_preliminaries/products.html",
-    "title": "Products",
-    "section": "",
-    "text": "Given two sets \\(A\\) and \\(B\\), we take their binary Cartesian product \\[(A × B)\\] to be the set of pairs of elements \\(⟨a, b⟩\\), where \\(a ∈ A\\) and \\(b ∈ B\\). We call \\(a\\) the first component (or projection) of such a pair and \\(b\\) the second component. Given a pair \\(p\\), we will sometimes write ‘\\(p_{1}\\)’ to refer to its first component and ‘\\(p_{2}\\)’ to refer to its second component. In particular: \\[⟨x, y⟩_{1} = x\\] \\[⟨x, y⟩_{2} = y\\]\nThe following statement is also true: \\[⟨x_{1}, x_{2}⟩ = x\\] That is, if you take the first and second components of a pair and then pair them back up, you haven’t created anything new!\nWe can generalize binary products to \\(n\\)-ary products by considering the former to correspond to the special case where \\(n = 2\\). For the general case \\[A₁ × ... × A_{n-1} × Aₙ\\] we can encode this product as \\[(...(A₁ × ... × A_{n-1}) × Aₙ)\\] For example, \\(A × B × C\\) is just \\(((A × B) × C)\\); its members are, therefore, pairs \\(⟨⟨a, b⟩, c⟩\\), which is just how we can encode 3-tuples \\(⟨a, b, c⟩\\).",
-    "crumbs": [
-      "Formal preliminaries",
-      "Products"
-    ]
-  },
-  {
-    "objectID": "formal_preliminaries/functions.html",
-    "href": "formal_preliminaries/functions.html",
-    "title": "Functions",
-    "section": "",
-    "text": "A function from a set \\(A\\) to a set \\(B\\) is a map from elements of \\(A\\) to elements of \\(B\\) which pairs each element of \\(A\\) with exactly one element of \\(B\\). If \\(f\\) is such a function, we write \\[f : A → B\\] to indicate this. We call \\(A\\) the domain of the function, and we call \\(B\\) the codomain of the function. If \\(a ∈ A\\), then we write \\[f(a)\\] to pick out the unique \\(b ∈ B\\) that \\(f\\) pairs \\(a\\) up with. In case \\(f(a) = b\\) (for some \\(a\\) and \\(b\\)), we call \\(a\\) the argument of the function \\(f\\), and we call \\(b\\) the value of the function \\(f\\) on \\(a\\).\nKind of like with relations, the definition of (unary) functions can be generalized to that for n-ary functions by considering the latter to be a map from the product of \\(n\\) sets \\(A₁, ..., Aₙ\\) to a set \\(B\\). If \\(f\\) is such an \\(n\\)-ary function, we write \\[f : A_1 × ... × A_n → B\\] to indicate this. Given \\(n\\) arguments \\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\\), we write \\[f(a_1, ..., a_n)\\] to pick out out the \\(b ∈ B\\) that \\(f\\) maps \\(a₁, ..., aₙ\\) to.1\nTwo properties of functions are sometimes important for certain purposes: if a function \\(f\\) from \\(A\\) (or \\(A₁, ..., Aₙ\\)) to \\(B\\) pairs each element \\(a ∈ A\\) (or (n)-tuple \\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\\)) with a different element \\(b ∈ B\\), we call \\(f\\) an injection (or a one-to-one function). If for each \\(b ∈ B\\), \\(f\\) pairs some or other \\(a ∈ A\\) (or \\(n\\)-tuple \\(a₁, ..., aₙ\\)) with it, we call \\(f\\) a surjection (or an onto function). If \\(f\\) is both an injection and a surjection, we call it a bijection from \\(A\\) (or \\(A₁, ..., Aₙ\\)) to \\(B\\).\nImportantly, there is a corresponding notion of function composition. We need only consider functions from \\(A\\) to \\(B\\) a type of relation on \\(A\\) and \\(B\\)—one that relations every element in \\(A\\) to exactly one element in \\(B\\). Given functions \\(f : A → B\\) and \\(g : B → C\\), their composition \\[g ∘ f : A → C\\] is such that \\((g ∘ f)(x) = g(f(x))\\), for any \\(x ∈ A\\). In the same vein, if \\[f : A → A\\] then we may write ‘\\(f^{n}\\)’ to denote the function which “applies \\(f\\) to an element of \\(A\\) \\(n\\) times”. For example, \\(f^{3}(a) = f(f(f(a)))\\).",
-    "crumbs": [
-      "Formal preliminaries",
-      "Functions"
-    ]
-  },
-  {
-    "objectID": "formal_preliminaries/functions.html#footnotes",
-    "href": "formal_preliminaries/functions.html#footnotes",
-    "title": "Functions",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n Note that a function \\(f : A → B\\) can be considered to be a relation on \\(A\\) and \\(B\\) where, for each \\(a ∈ A\\), there is exactly one \\(b ∈ B\\) such that \\(⟨a, b⟩ ∈ f\\). More generally, an \\(n\\)-ary function can be considered an \\((n+1)\\)-ary relation. This is just a particular way of encoding functions as relations—it isn’t the definition of a function, i.e., a map between sets, as above.↩︎",
-    "crumbs": [
-      "Formal preliminaries",
-      "Functions"
-    ]
-  },
-  {
     "objectID": "formal_preliminaries/examples.html",
     "href": "formal_preliminaries/examples.html",
     "title": "Examples",
@@ -301,6 +282,83 @@
     "crumbs": [
       "Formal preliminaries",
       "Examples"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/languages.html",
+    "href": "formal_preliminaries/languages.html",
+    "title": "Languages",
+    "section": "",
+    "text": "We write ‘\\(A^{n}\\)’ to refer to the result of taking the product of the set \\(A\\) with itself \\(n\\) times. As a matter of convention, we will adopt the following equivalences. \\[\\begin{align*}\nA^0 &=_{def} \\{ϵ\\} \\tag{$ϵ$ is the empty string} \\\\\nA^1 &=_{def} A \\\\\nA^n &=_{def} A^{n-1} × A\n\\end{align*}\\] To define a language, we first define a set \\(Σ\\), which we call the alphabet, words, or lexicon of the language. These can be anything, in principle (phonetic forms, sets of syntactic features, blades of grass, etc.). Then, a language over the alphabet \\(Σ\\) is some set \\(L\\) such that \\[L ⊆ Σ^{*}\\] where \\[Σ^{*} ≝ ⋃_{i ∈ ℕ} Σ^{i}\\] Thus \\(L\\) is a set of \\(n\\)-tuples of words from \\(Σ\\) of any length \\(n\\). When we talk about languages, we will refer to tuples as strings and adopt the convention of writing, e.g., the string ⟨ the, dog, is, friendly ⟩ simply as the dog is friendly.",
+    "crumbs": [
+      "Formal preliminaries",
+      "Languages"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/relations.html",
+    "href": "formal_preliminaries/relations.html",
+    "title": "Relations",
+    "section": "",
+    "text": "If we have a collection of sets \\(A_{1}\\) through \\(A_{n}\\), then we can take an \\(n\\)-ary relation on those sets. An \\(n\\)-ary relation on the sets \\(A_{1}, ..., A_{n}\\) is a set \\(R\\) such that \\(R ⊆ A_{1} × ... × A_{n}\\). In the special case of a binary relation on two sets \\(A\\) and \\(B\\), \\(R\\) is a set of pairs \\(⟨a, b⟩\\), such that \\(a ∈ A\\) and \\(b ∈ B\\). That is, \\(R ⊆ A × B\\). For \\(n\\)-ary relations \\(R\\), if the \\(n\\)-tuple \\(⟨a₁, ..., aₙ⟩\\) is a member of \\(R\\), we can indicate this by writing \\[R(a₁, ..., aₙ)\\]\nAn important operation on relations is relation composition. Given a relation \\(R_{1} ⊂ A × B\\) and a relation \\(R_{2} ⊆ B × C\\), their composition \\[R_{2} ∘ R_{1}\\] which is a subset of \\(A × C\\), is defined as \\[R_{2} ∘ R_{1} = \\{⟨x, y⟩ ∣ \\text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \\text{ and } ⟨z, y⟩ ∈ R_{2}\\}\\] That is, \\(R_{2} ∘ R_{1}\\) is gotten by relating an element of \\(A\\) to an element of \\(C\\) just in case there is some element of \\(B\\) related to the first element by \\(R_{1}\\) and to the second element by \\(R_{2}\\).\nIf \\(R\\) is a relation on \\(A\\), then we will write \\(R^{n}\\) to refer to the result of composing \\(R\\) with itself \\(n\\) times. By convention: \\[\\begin{align*}\nR^{0} &= \\{⟨x, x⟩ ∣ x ∈ A\\}\\\\\nR^{} &= R\\\\\nRⁿ &= R^{n - 1} ∘ R\n\\end{align*}\\] If \\(R ⊆ A × B\\), we may define its inverse as the relation \\(R^{-1} ⊆ B × A\\) such that \\(⟨y, x⟩ ∈ R^{-1}\\) just in case \\(⟨x, y⟩ ∈ R\\). That is, \\(R^{-1}\\) is just like \\(R\\), but “flipped around”.",
+    "crumbs": [
+      "Formal preliminaries",
+      "Relations"
+    ]
+  },
+  {
+    "objectID": "formal_preliminaries/relations.html#footnotes",
+    "href": "formal_preliminaries/relations.html#footnotes",
+    "title": "Relations",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n Note that we didn’t discuss these in class.↩︎",
+    "crumbs": [
+      "Formal preliminaries",
+      "Relations"
+    ]
+  },
+  {
+    "objectID": "regular_languages/assignment2.html",
+    "href": "regular_languages/assignment2.html",
+    "title": "Assignment 2",
+    "section": "",
+    "text": "Due on Monday, September 21st.",
+    "crumbs": [
+      "Regular languages",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "regular_languages/assignment2.html#part-1",
+    "href": "regular_languages/assignment2.html#part-1",
+    "title": "Assignment 2",
+    "section": "Part 1",
+    "text": "Part 1\nRead Partee et al. (1990), Chapter 16, pp. 433–438 (up to §16.3) and pp. 451–454 (starting at §16.5).",
+    "crumbs": [
+      "Regular languages",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "regular_languages/assignment2.html#part-2",
+    "href": "regular_languages/assignment2.html#part-2",
+    "title": "Assignment 2",
+    "section": "Part 2",
+    "text": "Part 2\nRead Partee et al. (1990), Chapter 17. Do exercises 1, 4, 5, 7, and 9.",
+    "crumbs": [
+      "Regular languages",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "regular_languages/assignment2.html#part-3",
+    "href": "regular_languages/assignment2.html#part-3",
+    "title": "Assignment 2",
+    "section": "Part 3",
+    "text": "Part 3\nShow that every finite language is regular. There are different ways one might do this. One way, for example, is to show that given a finite language \\[L = \\{s_{1}, ..., s_{n}\\}\\] you can construct a finite-state automaton which accepts exactly the strings in \\(L\\).\nNote that a simple way to show this uses the definition of regular languages, but constructing the finite-state automaton might be more fun!",
+    "crumbs": [
+      "Regular languages",
+      "Assignment 2"
     ]
   }
 ]
