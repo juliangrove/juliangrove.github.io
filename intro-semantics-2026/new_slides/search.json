@@ -1,149 +1,219 @@
 [
   {
-    "objectID": "sept9.html#example-from-last-time",
-    "href": "sept9.html#example-from-last-time",
-    "title": "Intro. to Semantics",
-    "section": "Example from last time",
-    "text": "Example from last time\n\nJo did some of the readings.\n\n\nQuantity implicature: Jo didn’t do all of the readings."
-  },
-  {
-    "objectID": "sept9.html#reasoning",
-    "href": "sept9.html#reasoning",
-    "title": "Intro. to Semantics",
-    "section": "Reasoning",
-    "text": "Reasoning\n\nIf (a) following Maxim of Quantity, and (b) believe that Jo did all of the readings, then (c) will say Jo did all of the readings.\nSpeaker did not say that Jo did all of the readings.\nThus either (a) speaker not following Maxim of Quantity, or (b) not the case that speaker believes Jo did all readings.\nBecause of Grice’s Cooperative Principle, assume speaker following Maxim of Quantity.\nTherefore (by 3 and 4), not the case that the speaker believes that Jo did all of the readings."
-  },
-  {
-    "objectID": "sept9.html#example-from-last-time-1",
-    "href": "sept9.html#example-from-last-time-1",
-    "title": "Intro. to Semantics",
-    "section": "Example from last time",
-    "text": "Example from last time\n\nJo did some of the readings.\n\n\nQuantity implicature: Jo didn’t do all of the readings.\nBut why not: Jo didn’t do only some of the readings?\n\n\nWhat we need: some notion of “possible alternative”."
-  },
-  {
-    "objectID": "sept9.html#questions-under-discussion",
-    "href": "sept9.html#questions-under-discussion",
-    "title": "Intro. to Semantics",
-    "section": "Questions under discussion",
-    "text": "Questions under discussion\nAsking a question: add the question onto an ongoing record of questions that need to be answered.\n\n\nDiscourse—at least involving assertions—always has the goal of answering some question (Roberts 2012).\n\nThere is always a Question Under Discussion (QUD)."
-  },
-  {
-    "objectID": "sept9.html#example-from-last-week",
-    "href": "sept9.html#example-from-last-week",
-    "title": "Intro. to Semantics",
-    "section": "Example from last week",
-    "text": "Example from last week\n\n\n\nContext: Jo and Bo are outside Pascal’s, looking in the window.  Jo: No one’s at the cash register.  Bo: The lights are on.\n\n\nQUD?\n\nIs Pascal’s open?"
-  },
-  {
-    "objectID": "sept9.html#does-this-help-with-evaluating-the-maxims",
-    "href": "sept9.html#does-this-help-with-evaluating-the-maxims",
-    "title": "Intro. to Semantics",
-    "section": "Does this help with evaluating the maxims?",
-    "text": "Does this help with evaluating the maxims?\n\nMaxim of Relation:\n\nHelp resolve the QUD.\n\n\n\nMaxim of Quantity (Part 1):\n\nResolve it as much as possible."
-  },
-  {
-    "objectID": "sept9.html#dealing-with-the-symmetry-problem",
-    "href": "sept9.html#dealing-with-the-symmetry-problem",
-    "title": "Intro. to Semantics",
-    "section": "Dealing with the symmetry problem",
-    "text": "Dealing with the symmetry problem\nOne possibility: certain lexical items are associated with scales (Horn 1972).\n\nnone &lt; some &lt; all, every\none &lt; two &lt; three\ndecent &lt; great &lt; fantastic!\n\n\nHow might this help with the symmetry problem?"
-  },
-  {
-    "objectID": "sept9.html#summary",
-    "href": "sept9.html#summary",
+    "objectID": "sept11.html#summary",
+    "href": "sept11.html#summary",
     "title": "Intro. to Semantics",
     "section": "Summary",
     "text": "Summary\n\nSpeech acts: utterances that use a particular locution with a conventional meaning to achieve a certain social effect.\nConversational implicatures: inferences tied to particular speech acts, based on:\n\ngeneral principles of rational, cooperative communication (Grice 1975);\nconventional meanings."
   },
   {
-    "objectID": "sept9.html#where-do-we-go-next",
-    "href": "sept9.html#where-do-we-go-next",
+    "objectID": "sept11.html#where-do-we-go-next",
+    "href": "sept11.html#where-do-we-go-next",
     "title": "Intro. to Semantics",
     "section": "Where do we go next?",
     "text": "Where do we go next?\n\n→ conventional meaning\n\n\n\nFirst, we need to develop methods for observing and classifying inference types.\nThen, we can focus on the conventional stuff:\n\nstudy how it is encoded in linguistic expressions."
   },
   {
-    "objectID": "sept9.html#defining-inference",
-    "href": "sept9.html#defining-inference",
+    "objectID": "sept11.html#defining-inference",
+    "href": "sept11.html#defining-inference",
     "title": "Intro. to Semantics",
     "section": "Defining inference",
     "text": "Defining inference\nWhat is an inference?\n\nA relation between expressions of a language.\n\n\\(E_{1} ↝ E_{2}\\)\n\nTypically, \\(E_{2}\\) is a declarative sentence.\n\n\n\n\nJo did some of the readings.  ↝ Jo didn’t do all of the readings.\nCould you bring the dog inside?  ↝ There is a dog."
   },
   {
-    "objectID": "sept9.html#data-collection",
-    "href": "sept9.html#data-collection",
+    "objectID": "sept11.html#data-collection",
+    "href": "sept11.html#data-collection",
     "title": "Intro. to Semantics",
     "section": "Data collection",
     "text": "Data collection\nWhere do inferences come from?\n\nSpeakers of the language!\n\nYour friends.\nLaboratory experiments.\nLarge crowd-sourced inference judgment studies."
   },
   {
-    "objectID": "sept9.html#this-class",
-    "href": "sept9.html#this-class",
+    "objectID": "sept11.html#this-class",
+    "href": "sept11.html#this-class",
     "title": "Intro. to Semantics",
     "section": "This class",
     "text": "This class\nSemantics is the study of conventional meaning in natural language.\n\nGoal: give a ridiculously precise account of the inferences that linguistic expressions trigger.\nIf we can do this, then we have captured what these expressions mean\\(_{NN}\\)."
   },
   {
-    "objectID": "sept9.html#a-taxonomy-of-inference-types",
-    "href": "sept9.html#a-taxonomy-of-inference-types",
+    "objectID": "sept11.html#a-taxonomy-of-inference-types",
+    "href": "sept11.html#a-taxonomy-of-inference-types",
     "title": "Intro. to Semantics",
     "section": "A taxonomy of inference types",
     "text": "A taxonomy of inference types\n\nSome types of inference observable in natural language:\n\nentailment\nconversational implicature\npresupposition\nconventional implicature"
   },
   {
-    "objectID": "sept9.html#entailment",
-    "href": "sept9.html#entailment",
+    "objectID": "sept11.html#entailment",
+    "href": "sept11.html#entailment",
     "title": "Intro. to Semantics",
     "section": "Entailment",
     "text": "Entailment\n\nA relationship between declarative sentences.\nIf \\(S_{1}\\) entails \\(S_{2}\\), then whenever \\(S_{1}\\) is true, \\(S_{2}\\) must be true.\n\nJo has at least three siblings.  ↝ Jo has at least two siblings.\n\nEntailments are non-defeasible."
   },
   {
-    "objectID": "sept9.html#non-defeasibility-of-entailments",
-    "href": "sept9.html#non-defeasibility-of-entailments",
+    "objectID": "sept11.html#non-defeasibility-of-entailments",
+    "href": "sept11.html#non-defeasibility-of-entailments",
     "title": "Intro. to Semantics",
     "section": "Non-defeasibility of entailments",
     "text": "Non-defeasibility of entailments\n\n#Jo has at least three siblings, {and, but} she doesn’t have at least two siblings.\n# Jo is Bo’s sibling, {and, but} Jo and Bo aren’t siblings.\n#No one came to class, {and, but} it’s not the case that Julian didn’t come to class."
   },
   {
-    "objectID": "sept9.html#conversational-implicature",
-    "href": "sept9.html#conversational-implicature",
+    "objectID": "sept11.html#conversational-implicature",
+    "href": "sept11.html#conversational-implicature",
     "title": "Intro. to Semantics",
     "section": "Conversational implicature",
     "text": "Conversational implicature\n\nTypically a relationship between utterances of declarative sentences.\nIf an utterance of \\(S_{1}\\) conversationally implicates \\(S_{2}\\), then the utterance means\\(_{NN}\\) \\(S_{2}\\).\nConversational implicatures are defeasible."
   },
   {
-    "objectID": "sept9.html#defeasibility-of-conversational-implicatures",
-    "href": "sept9.html#defeasibility-of-conversational-implicatures",
+    "objectID": "sept11.html#defeasibility-of-conversational-implicatures",
+    "href": "sept11.html#defeasibility-of-conversational-implicatures",
     "title": "Intro. to Semantics",
     "section": "Defeasibility of conversational implicatures",
     "text": "Defeasibility of conversational implicatures\n\nJo did some of the readings. In fact, she did all of them.\nI want something with lots of caffeine. In fact, I want a matcha latte.\nContext: Jo is writing a letter of rec. for Bo for the ling. instructor position.  Jo: Bo is very punctual. He has great handwriting. Last, but not least, he’d be a great ling. instructor!"
   },
   {
-    "objectID": "sept9.html#presupposition",
-    "href": "sept9.html#presupposition",
+    "objectID": "sept11.html#presupposition",
+    "href": "sept11.html#presupposition",
     "title": "Intro. to Semantics",
     "section": "Presupposition",
     "text": "Presupposition\n\nA relationship between an expression and a declarative sentence.\nIf \\(E\\) presupposes \\(S\\), then whenever an utterance of \\(E\\) is felicitous, \\(S\\) is true.\n\nJo stopped smoking.  ↝ Jo used to smoke.\n\nPresuppositions are non-defeasible."
   },
   {
-    "objectID": "sept9.html#non-defeasibility-of-presuppositions",
-    "href": "sept9.html#non-defeasibility-of-presuppositions",
+    "objectID": "sept11.html#non-defeasibility-of-presuppositions",
+    "href": "sept11.html#non-defeasibility-of-presuppositions",
     "title": "Intro. to Semantics",
     "section": "Non-defeasibility of presuppositions",
     "text": "Non-defeasibility of presuppositions\n\n#Jo stopped smoking, {and, but} she didn’t used to smoke.\n#Jo loves that it’s raining, {and, but} it’s not raining.\n#Bo failed the assignment, {and, but} there isn’t an assignment.\n#Bo failed the assignment again, {and, but} he hasn’t failed it before."
   },
   {
-    "objectID": "sept9.html#summary-1",
-    "href": "sept9.html#summary-1",
+    "objectID": "sept11.html#summary-1",
+    "href": "sept11.html#summary-1",
     "title": "Intro. to Semantics",
     "section": "Summary",
     "text": "Summary\n\n\n\n\nentailment\nconv. impl.\npresupposition\n\n\n\n\nbetween\nsentences\nutterances\nexpr. + sentence\n\n\ndefeasible?\nno\nyes\nno"
   },
   {
-    "objectID": "sept9.html#references",
-    "href": "sept9.html#references",
+    "objectID": "sept11.html#things-to-address",
+    "href": "sept11.html#things-to-address",
+    "title": "Intro. to Semantics",
+    "section": "Things to address",
+    "text": "Things to address\n\nDifference between entailment and presupposition.\nConventional implicature versus the other inference types."
+  },
+  {
+    "objectID": "sept11.html#entailment-vs.-presupposition",
+    "href": "sept11.html#entailment-vs.-presupposition",
+    "title": "Intro. to Semantics",
+    "section": "Entailment vs. presupposition",
+    "text": "Entailment vs. presupposition\nFirst pass:\n\nPresuppositions encode background information, needed to make sense of some expression.\n\nExpress what must already be in the common ground (Stalnaker 1978).\n\nEntailments encode information about what is said.\n\nExpress information, e.g., which is being added to the common ground."
+  },
+  {
+    "objectID": "sept11.html#the-negation-test",
+    "href": "sept11.html#the-negation-test",
+    "title": "Intro. to Semantics",
+    "section": "The negation test",
+    "text": "The negation test\nSecond pass:\n\nPresuppositions project, whereas entailments do not.\n\n\n\nJo demonstrated that she’s good at Go. \nJo loves that she’s good at Go.\n\n\nJo didn’t demonstrate that she’s good at Go. \nJo doesn’t love that she’s good at Go."
+  },
+  {
+    "objectID": "sept11.html#more",
+    "href": "sept11.html#more",
+    "title": "Intro. to Semantics",
+    "section": "More!",
+    "text": "More!\n\n\nBo brought a dog to his place of work. \nBo brought the dog to his place of work.\n\n\nBo didn’t bring a dog to his place of work. \nBo didn’t bring the dog to his place of work."
+  },
+  {
+    "objectID": "sept11.html#the-question-test",
+    "href": "sept11.html#the-question-test",
+    "title": "Intro. to Semantics",
+    "section": "The question test",
+    "text": "The question test\n\n\nDid Jo demonstrate that she’s good at Go?\nDoes Jo love that she’s good at Go?\n\n\nDid Jo bring a dog to his place of work? \nDid Jo bring the dog to his place of work?"
+  },
+  {
+    "objectID": "sept11.html#the-conditional-test",
+    "href": "sept11.html#the-conditional-test",
+    "title": "Intro. to Semantics",
+    "section": "The conditional test",
+    "text": "The conditional test\n\n\nIf Jo demonstrated that she’s good at Go, she’ll have to join the Go league. \nIf Jo loves that she’s good at Go, she’ll have to join the Go league.\n\n\nIf Bo brought a dog to his place of work, the boss will be mad. \nIf Bo brought the dog to his place of work, the boss will be mad."
+  },
+  {
+    "objectID": "sept11.html#families-of-sentences",
+    "href": "sept11.html#families-of-sentences",
+    "title": "Intro. to Semantics",
+    "section": "Families of sentences",
+    "text": "Families of sentences\nThese tests are known as family-of-sentence tests (Chierchia and McConnell-Ginet 1990).\n\nGiven a sentence \\(S_{1}\\), from which you can infer \\(S_{2}\\):\n\nnegate \\(S_{1}\\);\nquestion \\(S_{1}\\);\nput \\(S_{1}\\) into the antecedent of a conditional.\n\n\n\nIf \\(S_{2}\\) survives (i.e., projects), probably a presupposition."
+  },
+  {
+    "objectID": "sept11.html#hey-wait-a-minute",
+    "href": "sept11.html#hey-wait-a-minute",
+    "title": "Intro. to Semantics",
+    "section": "Hey, wait a minute!",
+    "text": "Hey, wait a minute!\nThe hey, wait a minute test (Fintel 2004).\n\nBo: You love that you’re good at Go.  Jo: Hey, wait a minute! I’m not good at Go!\nBo: You demonstrated that you’re good at Go!  Jo: #Hey, wait a minute! I’m not good at Go!  Jo: No, I didn’t!"
+  },
+  {
+    "objectID": "sept11.html#hey-wait-a-minute-1",
+    "href": "sept11.html#hey-wait-a-minute-1",
+    "title": "Intro. to Semantics",
+    "section": "Hey, wait a minute!",
+    "text": "Hey, wait a minute!\n\nJo: You brought the dog to your place of work!  Bo: Hey, wait a minute! There isn’t a dog!"
+  },
+  {
+    "objectID": "sept11.html#interim-summary",
+    "href": "sept11.html#interim-summary",
+    "title": "Intro. to Semantics",
+    "section": "Interim summary",
+    "text": "Interim summary\nDistinguishing entailments and presuppositions from conversational implicatures:\n\ndefeasibility/contradiction test\n\n\nDistinguishing entailments from presuppositions:\n\nfamily-of-sentence tests\n“hey wait a minute” test"
+  },
+  {
+    "objectID": "sept11.html#now-you-try-it",
+    "href": "sept11.html#now-you-try-it",
+    "title": "Intro. to Semantics",
+    "section": "Now you try it!",
+    "text": "Now you try it!\n\nMo forgot that he went to class.  ↝ Mo went to class.\n\n\n\nMo forgot to eat breakfast.  ↝ Mo didn’t eat breakfast."
+  },
+  {
+    "objectID": "sept11.html#question",
+    "href": "sept11.html#question",
+    "title": "Intro. to Semantics",
+    "section": "Question",
+    "text": "Question\n\nWhy do presuppositions “project”?"
+  },
+  {
+    "objectID": "sept11.html#disappearing-presuppositions",
+    "href": "sept11.html#disappearing-presuppositions",
+    "title": "Intro. to Semantics",
+    "section": "Disappearing presuppositions",
+    "text": "Disappearing presuppositions\n\nIf Bo has a dog, he brought the dog to his place of work.\nIf Jo is actually good at Go, she loves that she’s good at Go.\n\n\n\nIt’s not true that Bo has a dog and that he brought the dog to his place of work.\nIt’s not true that Jo is good at Go and that she loves that she’s good at Go."
+  },
+  {
+    "objectID": "sept11.html#changing-presuppositions",
+    "href": "sept11.html#changing-presuppositions",
+    "title": "Intro. to Semantics",
+    "section": "Changing presuppositions",
+    "text": "Changing presuppositions\n\nIf Jo has any friends in Gainesville, she loves that she gets to see them.  ↝ If Jo has any friends in Gainesville, she gets to see them."
+  },
+  {
+    "objectID": "sept11.html#conventional-implicatures",
+    "href": "sept11.html#conventional-implicatures",
+    "title": "Intro. to Semantics",
+    "section": "Conventional implicatures",
+    "text": "Conventional implicatures\n\nThe class is taught by Julian, who enjoys syntax.  ↝ Julian enjoys syntax.\nThe class isn’t taught by Julian, who enjoys syntax.  ↝ Julian enjoys syntax."
+  },
+  {
+    "objectID": "sept11.html#can-they-disappear",
+    "href": "sept11.html#can-they-disappear",
+    "title": "Intro. to Semantics",
+    "section": "Can they disappear?",
+    "text": "Can they disappear?\n\n#If Julian enjoys syntax, then the class is taught by Julian, who enjoys syntax."
+  },
+  {
+    "objectID": "sept11.html#summary-2",
+    "href": "sept11.html#summary-2",
+    "title": "Intro. to Semantics",
+    "section": "Summary",
+    "text": "Summary\nDistinguishing entailments/presuppositions from conv. implicatures:\n\ndefeasibility/contradiction test\n\nDistinguishing entailments from presuppositions:\n\nfamily-of-sentence tests\n“hey wait a minute” test\n\n\nDistinguishing presuppositions from conventional implicatures:\n\nconventional implicatures always project (?)"
+  },
+  {
+    "objectID": "sept11.html#references",
+    "href": "sept11.html#references",
     "title": "Intro. to Semantics",
     "section": "",
-    "text": "References\n\n\n\n\nGrice, H. P. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts. Academic Press.\n\n\nHorn, Laurence Robert. 1972. “On the Semantic Properties of Logical Operators in English.” PhD thesis, UCLA.\n\n\nRoberts, Craige. 2012. “Information Structure: Towards an Integrated Formal Theory of Pragmatics.” Semantics and Pragmatics 5 (December): 6:1–69. https://doi.org/10.3765/sp.5.6."
+    "text": "References\n\n\n\n\nChierchia, Gennaro, and Sally McConnell-Ginet. 1990. Meaning and Grammar: An Introduction to Semantics. MIT Press.\n\n\nFintel, Kai von. 2004. “Would You Believe It? The King of France Is Back! (Presuppositions and Truth-Value Intuitions).” In Descriptions and Beyond, edited by Marga Reimer and Anne Bezuidenhout. Oxford University Press.\n\n\nGrice, H. P. 1975. “Logic and Conversation.” In Syntax and Semantics, edited by Peter Cole and Jerry L. Morgan, 3, Speech Acts. Academic Press.\n\n\nStalnaker, Robert. 1978. “Assertion.” In Pragmatics, edited by Peter Cole, vol. 9. Academic Press."
   }
 ]
