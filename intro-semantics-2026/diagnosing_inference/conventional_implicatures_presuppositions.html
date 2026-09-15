@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Introduction to semantics</title>
+<title>Conventional implicatures versus presuppositions – Introduction to semantics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -64,24 +64,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./index.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-1c1815d0886522b660dbd358737c537f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-373211ce791fcc5edced5eab1454e309.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../diagnosing_inference/assignment.html" rel="next">
+<link href="../diagnosing_inference/presuppositions_entailments.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1c1815d0886522b660dbd358737c537f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-373211ce791fcc5edced5eab1454e309.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,8 +111,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked quarto-light">
@@ -123,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./about.html">About</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../diagnosing_inference/overview.html">Diagnosing inference</a></li><li class="breadcrumb-item"><a href="../diagnosing_inference/conventional_implicatures_presuppositions.html">Conventional implicatures versus presuppositions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -138,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Introduction to semantics</a> 
+      <a href="../">Introduction to semantics</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -150,13 +180,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link active">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
@@ -171,19 +201,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./convention/defining_convention.html" class="sidebar-item-text sidebar-link">
+  <a href="../convention/defining_convention.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Defining convention</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./convention/defining_meaning.html" class="sidebar-item-text sidebar-link">
+  <a href="../convention/defining_meaning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Defining meaning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./convention/assignment.html" class="sidebar-item-text sidebar-link">
+  <a href="../convention/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
 </li>
@@ -204,13 +234,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./speaker_meaning/maxims.html" class="sidebar-item-text sidebar-link">
+  <a href="../speaker_meaning/maxims.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Gricean maxims</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./speaker_meaning/applying_maxims.html" class="sidebar-item-text sidebar-link">
+  <a href="../speaker_meaning/applying_maxims.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Applying the maxims</span></a>
   </div>
 </li>
@@ -227,31 +257,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./diagnosing_inference/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../diagnosing_inference/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./diagnosing_inference/entailments_conv_impl.html" class="sidebar-item-text sidebar-link">
+  <a href="../diagnosing_inference/entailments_conv_impl.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Entailments and presuppositions versus conversational implicatures</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./diagnosing_inference/presuppositions_entailments.html" class="sidebar-item-text sidebar-link">
+  <a href="../diagnosing_inference/presuppositions_entailments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Presuppositions versus entailments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./diagnosing_inference/conventional_implicatures_presuppositions.html" class="sidebar-item-text sidebar-link">
+  <a href="../diagnosing_inference/conventional_implicatures_presuppositions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Conventional implicatures versus presuppositions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./diagnosing_inference/assignment.html" class="sidebar-item-text sidebar-link">
+  <a href="../diagnosing_inference/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
 </li>
@@ -295,18 +325,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-the-instructor" id="toc-about-the-instructor" class="nav-link active" data-scroll-target="#about-the-instructor">About the instructor</a></li>
-  <li><a href="#about-the-site" id="toc-about-the-site" class="nav-link" data-scroll-target="#about-the-site">About the site</a></li>
-  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License </a><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" class="nav-link" data-scroll-target="http\://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></a></li>
+  <li><a href="#disappearing-presuppositions" id="toc-disappearing-presuppositions" class="nav-link active" data-scroll-target="#disappearing-presuppositions">Disappearing presuppositions</a></li>
+  <li><a href="#conventional-implicatures-project" id="toc-conventional-implicatures-project" class="nav-link" data-scroll-target="#conventional-implicatures-project">Conventional implicatures project</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../diagnosing_inference/overview.html">Diagnosing inference</a></li><li class="breadcrumb-item"><a href="../diagnosing_inference/conventional_implicatures_presuppositions.html">Conventional implicatures versus presuppositions</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">About</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Conventional implicatures versus presuppositions</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -323,18 +352,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This site contains materials the course <em>Introduction to Semantics</em> given by <a href="http://juliangrove.github.io/">Julian Grove</a> at the <a href="https://lin.ufl.edu/">University of Florida</a> during the Fall 2026 semester.</p>
-<section id="about-the-instructor" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-instructor">About the instructor</h2>
-<p><a href="http://juliangrove.github.io/">Julian Grove</a> is an Assistant Professor in the <a href="https://lin.ufl.edu/">Linguistics Department</a>. He is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics. You can find out more about his research interests by checking out his <a href="https://juliangrove.github.io/papers.html">papers</a>, <a href="https://juliangrove.github.io/slides.html">slides</a>, or perhaps even his <a href="https://juliangrove.github.io/cv.html">cv</a>.</p>
+<section id="disappearing-presuppositions" class="level3">
+<h3 class="anchored" data-anchor-id="disappearing-presuppositions">Disappearing presuppositions</h3>
+<p>One well-studied feature of presuppositions is that, despite the fact that they tend to project, they can also be canceled (or sometimes, modified) under certain circumstances. For example, consider the following cases, in which sentences that normally display presuppositions are made to be the consequent clauses of certain conditional sentences:</p>
+<ol class="example" type="1">
+<li><p>If Bo has a dog, he brought <span class="gb-orange">the dog</span> to his place of work.</p></li>
+<li><p>If Jo is actually good at Go, she <span class="gb-orange">loves</span> that she’s good at Go.</p></li>
+</ol>
+<p>In (1), a sentence entailing that there is a dog (which is the usual presupposition of the consequent clause) is the antecedent of the conditional. In (2), the sentence which is usually the presupposition of the consequent clause is itself made to be the antecedent of the conditional. In each case, the entire conditionals themselves don’t appear to have the relevant presuppositions: (1), taken as a whole, does <em>not</em> imply that there is a dog; nor does (2) imply that Jo is good at Go.</p>
+<p>We obtain a similar pattern if we conjoin the antecedent sentences of these conditionals with the corresponding consequent sentences, and then negate the coordinate structure that result:</p>
+<ol start="3" class="example" type="1">
+<li><p>It’s not true that Bo has a dog and that he brought <span class="gb-orange">the dog</span> to his place of work.</p></li>
+<li><p>It’s not true that Jo is good at Go and that she <span class="gb-orange">loves</span> that she’s good at Go.</p></li>
+</ol>
 </section>
-<section id="about-the-site" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-site">About the site</h2>
-<p>The site itself is built using <a href="https://quarto.org/">Quarto</a>. The source files for this site are available on github at <a href="https://github.com/juliangrove/intro-semantics.git"><code>juliangrove/intro-semantics</code></a>.</p>
-</section>
-<section id="license" class="level2">
-<h2 class="anchored" data-anchor-id="license">License <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"></a></h2>
-<p><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Introduction to Semantics</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://juliangrove.github.io" property="cc:attributionName" rel="cc:attributionURL">Julian Grove</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>. Based on materials at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/juliangrove/intro-semantics" rel="dct:source">https://github.com/juliangrove/intro-semantics</a>.</p>
+<section id="conventional-implicatures-project" class="level3">
+<h3 class="anchored" data-anchor-id="conventional-implicatures-project">Conventional implicatures project</h3>
+<p>Like presuppositions, conventional implicatures show projection behavior when subjected to family-of-sentence tests. Consider the example in (4), which features a conventional implicature triggered by a non-restrictive relative clause.</p>
+<ol start="4" class="example" type="1">
+<li>The class is taught by Julian<span class="gb-red">, who enjoys syntax</span>.</li>
+</ol>
+<p>This sentence implies that Julian enjoys syntax. Like a presupposition, this inference appears to project under negation:</p>
+<ol start="5" class="example" type="1">
+<li>The class isn’t taught by Julian<span class="gb-red">, who enjoys syntax</span>.</li>
+</ol>
+<p>Same with questioning the sentence and placing it into the antecedent of a conditional, which you can check.</p>
+<p>What is notable about conventional implicatures is that if you try to cancel them using means similar to those described above, the result is a bit odd:</p>
+<ol start="6" class="example" type="1">
+<li>#If Julian enjoys syntax, then the class is taught by Julian<span class="gb-red">, who enjoys syntax</span>.</li>
+</ol>
+<p>This sounds weird—a fact suggesting that the conventional implicature is forced to project; that is, what may make this conditional sentence odd is that it triggers the inference that Julian enjoys syntax, due to the presence of the non-restrictive relative clause. At the same time, the fact that <em>Julian enjoys syntax</em> is the antecedent the conditional may trigger an ignorance implicature, i.e., that the utterer doesn’t know whether or not Julian enjoys syntax. So, on the one hand, the utterer believes Julian enjoys syntax (this is the conventional implicature), while on the other hand, they are conversationally implicating that they don’t know whether or not he does. (Or something along those lines :).)</p>
+<p>The point here is that there is an apparent difference between presuppositions and conventional implicatures. This difference, moreover, can provide a kind of test that helps distinguish between them. For a given candidate presupposition or conventional implicature <span class="math inline">\(S\)</span>, ask yourself, “Can I place <span class="math inline">\(S\)</span> into the consequent of a conditional sentence in the way described above, so that it is canceled?” If so, you may have a presupposition. If not (because the result sounds weird), you may have a conventional implicature.</p>
 
 
 <!-- -->
@@ -795,34 +843,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../diagnosing_inference/presuppositions_entailments.html" class="pagination-link" aria-label="Presuppositions versus entailments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Presuppositions versus entailments</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./index.html" class="pagination-link" aria-label="Syllabus">
-        <span class="nav-page-text">Syllabus</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../diagnosing_inference/assignment.html" class="pagination-link" aria-label="Assignment">
+        <span class="nav-page-text">Assignment</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "About"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>This site contains materials the course *Introduction to Semantics* given by <span class="co">[</span><span class="ot">Julian Grove</span><span class="co">](http://juliangrove.github.io/)</span> at the <span class="co">[</span><span class="ot">University of Florida</span><span class="co">](https://lin.ufl.edu/)</span> during the Fall 2026 semester.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## About the instructor</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Julian Grove</span><span class="co">](http://juliangrove.github.io/)</span> is an Assistant Professor in the <span class="co">[</span><span class="ot">Linguistics Department</span><span class="co">](https://lin.ufl.edu/)</span>.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>He is interested in combining computational tools from Bayesian data analysis and programming language theory and bringing them to semantics.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>You can find out more about his research interests by checking out his <span class="co">[</span><span class="ot">papers</span><span class="co">](https://juliangrove.github.io/papers.html)</span>, <span class="co">[</span><span class="ot">slides</span><span class="co">](https://juliangrove.github.io/slides.html)</span>, or perhaps even his <span class="co">[</span><span class="ot">cv</span><span class="co">](https://juliangrove.github.io/cv.html)</span>.</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Conventional implicatures versus presuppositions"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">### Disappearing presuppositions</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>One well-studied feature of presuppositions is that, despite the fact that they tend to project, they can also be canceled (or sometimes, modified) under certain circumstances.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>For example, consider the following cases, in which sentences that normally display presuppositions are made to be the consequent clauses of certain conditional sentences:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>(@ex-def-conditional) If Bo has a dog, he brought <span class="co">[</span><span class="ot">the dog</span><span class="co">]</span>{.gb-orange} to his place of work.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## About the site</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>(@ex-love-conditional) If Jo is actually good at Go, she <span class="co">[</span><span class="ot">loves</span><span class="co">]</span>{.gb-orange} that she's good at Go.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>The site itself is built using <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span>.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The source files for this site are available on github at <span class="co">[</span><span class="ot">`juliangrove/intro-semantics`</span><span class="co">](https://github.com/juliangrove/intro-semantics.git)</span>.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## License &lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"&gt;&lt;img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /&gt;&lt;/a&gt;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> xmlns:dct</span><span class="op">=</span><span class="st">"http://purl.org/dc/terms/"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://purl.org/dc/dcmitype/Text"</span><span class="ot"> property</span><span class="op">=</span><span class="st">"dct:title"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"dct:type"</span><span class="dt">&gt;</span>Introduction to Semantics<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> by <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://juliangrove.github.io"</span><span class="ot"> property</span><span class="op">=</span><span class="st">"cc:attributionName"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"cc:attributionURL"</span><span class="dt">&gt;</span>Julian Grove<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> is licensed under a <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://creativecommons.org/licenses/by-sa/4.0/"</span><span class="dt">&gt;</span>Creative Commons Attribution-ShareAlike 4.0 International License<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Based on materials at <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> xmlns:dct</span><span class="op">=</span><span class="st">"http://purl.org/dc/terms/"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://github.com/juliangrove/intro-semantics"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"dct:source"</span><span class="dt">&gt;</span>https://github.com/juliangrove/intro-semantics<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>In (@ex-def-conditional), a sentence entailing that there is a dog (which is the usual presupposition of the consequent clause) is the antecedent of the conditional.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>In (@ex-love-conditional), the sentence which is usually the presupposition of the consequent clause is itself made to be the antecedent of the conditional.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>In each case, the entire conditionals themselves don't appear to have the relevant presuppositions:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>(@ex-def-conditional), taken as a whole, does *not* imply that there is a dog;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>nor does (@ex-love-conditional) imply that Jo is good at Go.</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>We obtain a similar pattern if we conjoin the antecedent sentences of these conditionals with the corresponding consequent sentences, and then negate the coordinate structure that result:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>(@ex-def-negated) It's not true that Bo has a dog and that he brought <span class="co">[</span><span class="ot">the dog</span><span class="co">]</span>{.gb-orange} to his place of work.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>(@ex-love-conditional) It's not true that Jo is good at Go and that she <span class="co">[</span><span class="ot">loves</span><span class="co">]</span>{.gb-orange} that she's good at Go.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conventional implicatures project</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Like presuppositions, conventional implicatures show projection behavior when subjected to family-of-sentence tests.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Consider the example in (@ex-nrrc), which features a conventional implicature triggered by a non-restrictive relative clause.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>(@ex-nrrc) The class is taught by Julian<span class="co">[</span><span class="ot">, who enjoys syntax</span><span class="co">]</span>{.gb-red}.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>This sentence implies that Julian enjoys syntax.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Like a presupposition, this inference appears to project under negation:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>(@ex-nrrc-negated) The class isn't taught by Julian<span class="co">[</span><span class="ot">, who enjoys syntax</span><span class="co">]</span>{.gb-red}.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Same with questioning the sentence and placing it into the antecedent of a conditional, which you can check.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>What is notable about conventional implicatures is that if you try to cancel them using means similar to those described above, the result is a bit odd:</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>(@ex-nrrc-conditional) <span class="sc">\#</span>If Julian enjoys syntax, then the class is taught by Julian<span class="co">[</span><span class="ot">, who enjoys syntax</span><span class="co">]</span>{.gb-red}.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>This sounds weird---a fact suggesting that the conventional implicature is forced to project;</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>that is, what may make this conditional sentence odd is that it triggers the inference that Julian enjoys syntax, due to the presence of the non-restrictive relative clause.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>At the same time, the fact that *Julian enjoys syntax* is the antecedent the conditional may trigger an ignorance implicature, i.e., that the utterer doesn't know whether or not Julian enjoys syntax.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>So, on the one hand, the utterer believes Julian enjoys syntax (this is the conventional implicature), while on the other hand, they are conversationally implicating that they don't know whether or not he does.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>(Or something along those lines :).)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>The point here is that there is an apparent difference between presuppositions and conventional implicatures.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>This difference, moreover, can provide a kind of test that helps distinguish between them.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>For a given candidate presupposition or conventional implicature $S$, ask yourself, "Can I place $S$ into the consequent of a conditional sentence in the way described above, so that it is canceled?"</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>If so, you may have a presupposition.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>If not (because the result sounds weird), you may have a conventional implicature.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
