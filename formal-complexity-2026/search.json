@@ -70,7 +70,7 @@
     "href": "regular_languages/assignment3.html#part-2",
     "title": "Assignment 3",
     "section": "Part 2",
-    "text": "Part 2\n(40 points)\nConsider again the example state diagram used to illustrate \\(ϵ\\)-closure.\n\nSpecify the NFA (i.e., according to the definition of NFAs) that this state diagram depicts. (10 points)\nWhat language does this NFA characterize? (10 points)\nTranslate this NFA into a DFA using the procedure we discussed. (20 points)",
+    "text": "Part 2\n(40 points)\nConsider again the example state diagram used to illustrate \\(ϵ\\)-closure.\n\nSpecify the NFA (i.e., according to the alternative definition of NFAs discussed in class) that this state diagram depicts. (10 points)\nWhat language does this NFA characterize? (10 points)\nTranslate this NFA into a DFA using the procedure we discussed. (20 points)",
     "crumbs": [
       "Regular languages",
       "Assignment 3"
