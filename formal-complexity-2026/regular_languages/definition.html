@@ -90,6 +90,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../regular_languages/assignment2.html" rel="next">
+<link href="../formal_preliminaries/assignment1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -141,9 +143,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Formal complexity
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../regular_languages/definition.html">Regular languages</a></li><li class="breadcrumb-item"><a href="../regular_languages/definition.html">Defining regular languages</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -244,8 +244,32 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../regular_languages/definition.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Defining regular languages</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../regular_languages/assignment2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../regular_languages/dfas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Deterministic finite-state automata</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../regular_languages/nfas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-deterministic finite-state automata</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../regular_languages/equivalence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The equivalence between DFAs and NFAs</span></a>
   </div>
 </li>
       </ul>
@@ -276,9 +300,9 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#regular-languages" id="toc-regular-languages" class="nav-link active" data-scroll-target="#regular-languages">Regular languages</a>
+  <li><a href="#examples-of-regular-languages" id="toc-examples-of-regular-languages" class="nav-link active" data-scroll-target="#examples-of-regular-languages">Examples of regular languages</a>
   <ul class="collapse">
-  <li><a href="#examples-of-regular-languages" id="toc-examples-of-regular-languages" class="nav-link" data-scroll-target="#examples-of-regular-languages">Examples of regular languages</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -286,7 +310,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../regular_languages/definition.html">Regular languages</a></li><li class="breadcrumb-item"><a href="../regular_languages/definition.html">Defining regular languages</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Defining regular languages</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -305,11 +329,8 @@ div.csl-indent {
 </header>
 
 
-<section id="regular-languages" class="level2">
-<h2 class="anchored" data-anchor-id="regular-languages">Regular languages</h2>
-<p>From <span class="citation" data-cites="partee_mathematical_1990">Partee et al. (<a href="#ref-partee_mathematical_1990" role="doc-biblioref">1990</a>)</span>, p.&nbsp;465:</p>
-<ol class="example" type="1">
-<li>Given an alphabet Σ:
+<p>The following definition can be found in <span class="citation" data-cites="partee_mathematical_1990">Partee et al. (<a href="#ref-partee_mathematical_1990" role="doc-biblioref">1990</a>)</span>, Definition 17.10 (p.&nbsp;465).</p>
+<p>Given an alphabet Σ:</p>
 <ol type="1">
 <li>∅ is a regular language.</li>
 <li>For any string s ∈ Σ*, {s} is a regular language.</li>
@@ -317,13 +338,12 @@ div.csl-indent {
 <li>If A and B are regular languages, then so is AB.</li>
 <li>If A is a regular language, then so is A*.</li>
 <li>Nothing else is a regular language, unless it being so follows from 1-5.</li>
-</ol></li>
 </ol>
-<section id="examples-of-regular-languages" class="level3">
-<h3 class="anchored" data-anchor-id="examples-of-regular-languages">Examples of regular languages</h3>
+<section id="examples-of-regular-languages" class="level2">
+<h2 class="anchored" data-anchor-id="examples-of-regular-languages">Examples of regular languages</h2>
 <p>For all, Σ = {a, b, c}</p>
 <ol type="1">
-<li><p>Some finite language.</p></li>
+<li><p>Any finite language.</p></li>
 <li><p>Strings in L consist of any number of as.</p></li>
 <li><p>Strings in L consist of any number of as or bs.</p></li>
 <li><p>Strings in L consist of any number of as, followed by any number of bs.</p></li>
@@ -331,6 +351,9 @@ div.csl-indent {
 <li><p>Strings in L have ab as a substring.</p></li>
 <li><p>Strings in L have exactly one a.</p></li>
 </ol>
+<section id="exercise" class="level3">
+<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<p>Show that each of the languages in 1–7 is regular, according to the definition of a regular language.</p>
 
 
 <!-- -->
@@ -794,41 +817,56 @@ Partee, Barbara H., Alice ter Meulen, and Robert E. Wall. 1990. <em>Mathematical
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../formal_preliminaries/assignment1.html" class="pagination-link" aria-label="Assignment 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment 1</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../regular_languages/assignment2.html" class="pagination-link" aria-label="Assignment 2">
+        <span class="nav-page-text">Assignment 2</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Defining regular languages"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../formal_complexity.bib</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regular languages</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>The following definition can be found in @partee_mathematical_1990, Definition 17.10 (p. 465).</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>From @partee_mathematical_1990, p. 465:</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Given an alphabet Σ:</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>(@regular-lg-def) Given an alphabet Σ:</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    1. </span>∅ is a regular language.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">    2. </span>For any string s ∈ Σ*, {s} is a regular language.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">    3. </span>If A and B are regular languages, then so is A ∪ B.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">    4. </span>If A and B are regular languages, then so is AB.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">    5. </span>If A is a regular language, then so is A*.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">    6. </span>Nothing else is a regular language, unless it being so follows from 1-5.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Examples of regular languages</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>For all, Σ = {a, b, c}</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Some finite language.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Strings in L consist of any number of as.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Strings in L consist of any number of as or bs.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Strings in L consist of any number of as, followed by any number of bs.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Strings in L begin with an a and end with a c.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Strings in L have ab as a substring.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Strings in L have exactly one a.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>∅ is a regular language.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>For any string s ∈ Σ*, {s} is a regular language.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>If A and B are regular languages, then so is A ∪ B.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>If A and B are regular languages, then so is AB.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>If A is a regular language, then so is A*.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Nothing else is a regular language, unless it being so follows from 1-5.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Examples of regular languages</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>For all, Σ = {a, b, c}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Any finite language.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Strings in L consist of any number of as.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Strings in L consist of any number of as or bs.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Strings in L consist of any number of as, followed by any number of bs.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Strings in L begin with an a and end with a c.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Strings in L have ab as a substring.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Strings in L have exactly one a.</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Show that each of the languages in 1--7 is regular, according to the definition of a regular language.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
