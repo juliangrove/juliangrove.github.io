@@ -59,7 +59,7 @@
     "href": "regular_languages/assignment3.html#part-1",
     "title": "Assignment 3",
     "section": "Part 1",
-    "text": "Part 1\nDo exercise 10 of Partee et al. (1990), Chapter 17.",
+    "text": "Part 1\n(30 points)\nDo exercise 10 of Partee et al. (1990), Chapter 17.",
     "crumbs": [
       "Regular languages",
       "Assignment 3"
@@ -70,7 +70,7 @@
     "href": "regular_languages/assignment3.html#part-2",
     "title": "Assignment 3",
     "section": "Part 2",
-    "text": "Part 2\nConsider again the example state diagram used to illustrate \\(ϵ\\)-closure.\n\nSpecify the NFA (i.e., according to the definition of NFAs) that this state diagram depicts.\nWhat language does this NFA characterize?\nTranslate this NFA into a DFA using the procedure we discussed.",
+    "text": "Part 2\n(40 points)\nConsider again the example state diagram used to illustrate \\(ϵ\\)-closure.\n\nSpecify the NFA (i.e., according to the definition of NFAs) that this state diagram depicts. (10 points)\nWhat language does this NFA characterize? (10 points)\nTranslate this NFA into a DFA using the procedure we discussed. (20 points)",
     "crumbs": [
       "Regular languages",
       "Assignment 3"
@@ -81,7 +81,7 @@
     "href": "regular_languages/assignment3.html#part-3",
     "title": "Assignment 3",
     "section": "Part 3",
-    "text": "Part 3\nRecall exercise 4b of Partee et al. (1990), Chapter 17, which asked you to construct an NFA. Construct an NFA for 4b, again, but using the alternative definition. Translate this NFA into a DFA using the procedure we discussed.",
+    "text": "Part 3\n(30 points)\nRecall exercise 4b of Partee et al. (1990), Chapter 17, which asked you to construct an NFA. Construct an NFA for 4b, again, but using the alternative definition. Translate this NFA into a DFA using the procedure we discussed.",
     "crumbs": [
       "Regular languages",
       "Assignment 3"
