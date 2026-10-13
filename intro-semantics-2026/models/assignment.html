@@ -472,6 +472,7 @@ window.Quarto = {
 <!-- Does doing things the first way change the interpretation? -->
 <section id="part-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
+<p>(30 points)</p>
 <p>There is a planet orbiting <a href="https://en.wikipedia.org/wiki/Proxima_Centauri">Proxima Centauri</a> that has a population of organisms which are very human-like. As it happens, a group within the larger population uses a system a lot like Arabic numeral arithmetic to perform arithmetic calculations, except that the syntax and semantics are slightly different. This group uses a base-7 number system, and the atomic numerals have different meanings than they do in Arabic numeral arithmetic. We can call the language they use for arithmetic calculations <span class="math inline">\(L_{NANA}\)</span> (not Arabic numeral arithmetic).</p>
 <p>To be more precise, for this group within the population which lives on the planet orbiting Proxima Centauri, the set of <em>atomic</em> numerals is the following one:</p>
 <p><span class="math display">\[atom = \{⌜1⌝, ⌜2⌝, ⌜3⌝, ⌜4⌝, ⌜5⌝, ⌜6⌝, ⌜7⌝\}\]</span></p>
@@ -490,6 +491,7 @@ window.Quarto = {
 </section>
 <section id="part-2" class="level3">
 <h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
+<p>(35 points)</p>
 <p>Consider the sentence in (1).</p>
 <ol class="example" type="1">
 <li>Bo jumps without running.</li>
@@ -498,6 +500,7 @@ window.Quarto = {
 </section>
 <section id="part-3" class="level3">
 <h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
+<p>(35 points)</p>
 <p>As you know, English does not only have sentences in which <em>and</em> coordinates two verb phrases. It <em>also</em> has sentences like (2).</p>
 <ol start="2" class="example" type="1">
 <li>Bo jumps and Bo runs.</li>
@@ -1015,71 +1018,74 @@ window.Quarto = {
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Does doing things the first way change the interpretation? --&gt;</span></span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 1</span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>There is a planet orbiting <span class="co">[</span><span class="ot">Proxima Centauri</span><span class="co">](https://en.wikipedia.org/wiki/Proxima_Centauri)</span> that has a population of organisms which are very human-like.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>As it happens, a group within the larger population uses a system a lot like Arabic numeral arithmetic to perform arithmetic calculations, except that the syntax and semantics are slightly different.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>This group uses a base-7 number system, and the atomic numerals have different meanings than they do in Arabic numeral arithmetic.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>We can call the language they use for arithmetic calculations $L_{NANA}$ (not Arabic numeral arithmetic).</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>To be more precise, for this group within the population which lives on the planet orbiting Proxima Centauri, the set of *atomic* numerals is the following one:</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>$$atom = <span class="sc">\{</span>⌜1⌝, ⌜2⌝, ⌜3⌝, ⌜4⌝, ⌜5⌝, ⌜6⌝, ⌜7⌝<span class="sc">\}</span>$$</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Meanwhile, the interpretation function of the model employed by this group, $I_{NANA}$, is the following one:</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜1⌝) = 6$$</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜2⌝) = 5$$</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜3⌝) = 4$$</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜4⌝) = 3$$</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜5⌝) = 2$$</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜6⌝) = 1$$</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜7⌝) = 0$$</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>The full model of $L_{NANA}$ employed by this group is thus:</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>$$\mathcal{M}_{NANA} = ⟨ℕ, \{\True, \False\}, I_{NANA}⟩$$</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>One more thing.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>These guys use the following modification of the numeral concatenation rule (Rule 2) which we defined in <span class="co">[</span><span class="ot">Arabic numeral arithmetic: semantics</span><span class="co">](ana_semantics.html)</span>:</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>\RightLabel{Rule 2}\BinaryInfC{$⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}_{NANA}} * 7^{length(y)} + ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>The rules for generating strings of $L_{NANA}$ and their interpretations are otherwise identical to those for generating strings of $L_{ANA}$ and their interpretations.</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Show that $⌜((53 + 6) × 5) = 24⌝$ is a sentence (i.e., an $s$) of $L_{NANA}$, and show what its interpretation in $\mathcal{M}_{NANA}$ is.</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2</span></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Consider the sentence in (@ex-bo).</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>(30 points)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>There is a planet orbiting <span class="co">[</span><span class="ot">Proxima Centauri</span><span class="co">](https://en.wikipedia.org/wiki/Proxima_Centauri)</span> that has a population of organisms which are very human-like.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>As it happens, a group within the larger population uses a system a lot like Arabic numeral arithmetic to perform arithmetic calculations, except that the syntax and semantics are slightly different.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>This group uses a base-7 number system, and the atomic numerals have different meanings than they do in Arabic numeral arithmetic.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>We can call the language they use for arithmetic calculations $L_{NANA}$ (not Arabic numeral arithmetic).</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>To be more precise, for this group within the population which lives on the planet orbiting Proxima Centauri, the set of *atomic* numerals is the following one:</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>$$atom = <span class="sc">\{</span>⌜1⌝, ⌜2⌝, ⌜3⌝, ⌜4⌝, ⌜5⌝, ⌜6⌝, ⌜7⌝<span class="sc">\}</span>$$</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Meanwhile, the interpretation function of the model employed by this group, $I_{NANA}$, is the following one:</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜1⌝) = 6$$</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜2⌝) = 5$$</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜3⌝) = 4$$</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜4⌝) = 3$$</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜5⌝) = 2$$</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜6⌝) = 1$$</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>$$I_{NANA}(⌜7⌝) = 0$$</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>The full model of $L_{NANA}$ employed by this group is thus:</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>$$\mathcal{M}_{NANA} = ⟨ℕ, \{\True, \False\}, I_{NANA}⟩$$</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>One more thing.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>These guys use the following modification of the numeral concatenation rule (Rule 2) which we defined in <span class="co">[</span><span class="ot">Arabic numeral arithmetic: semantics</span><span class="co">](ana_semantics.html)</span>:</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>\RightLabel{Rule 2}\BinaryInfC{$⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}_{NANA}} * 7^{length(y)} + ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>The rules for generating strings of $L_{NANA}$ and their interpretations are otherwise identical to those for generating strings of $L_{ANA}$ and their interpretations.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Show that $⌜((53 + 6) × 5) = 24⌝$ is a sentence (i.e., an $s$) of $L_{NANA}$, and show what its interpretation in $\mathcal{M}_{NANA}$ is.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>(35 points)</span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>(@ex-bo) Bo jumps without running.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>Consider the sentence in (@ex-bo).</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Assume (contra actual fact) that the word *without* is a connective, like *and*.</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Assume also that *running* is a $vp$ with the same meaning as *runs*.</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for *without*, and use it---along with the grammar fragment defined in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span> and the model defined in <span class="co">[</span><span class="ot">An English model and example</span><span class="co">](english_examples.html)</span>---to give a derivation of (@ex-bo).</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>(@ex-bo) Bo jumps without running.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>Assume (contra actual fact) that the word *without* is a connective, like *and*.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>Assume also that *running* is a $vp$ with the same meaning as *runs*.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for *without*, and use it---along with the grammar fragment defined in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span> and the model defined in <span class="co">[</span><span class="ot">An English model and example</span><span class="co">](english_examples.html)</span>---to give a derivation of (@ex-bo).</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>As you know, English does not only have sentences in which *and* coordinates two verb phrases.</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>It *also* has sentences like (@ex-bo-two-clauses).</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>(35 points)</span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>(@ex-bo-two-clauses) Bo jumps and Bo runs.</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Let us assume that in addition to the word *and*, English has another word, *and2*, which is *pronounced* exactly the same way as *and* is pronounced (i.e., /ænd/), but which coordinates *sentences* instead of verb phrases.</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Thus *and* is the variant of the coordinator that appears earlier in the notes, while *and2* is the variant of the coordinator that appears in (@ex-bo-two-clauses).</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>As you know, English does not only have sentences in which *and* coordinates two verb phrases.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>It *also* has sentences like (@ex-bo-two-clauses).</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>(@ex-bo-two-clauses) Bo jumps and Bo runs.</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for the variant of the coordinator which appears in (@ex-bo-two-clauses)---something that can be added to the lexicon given in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span>.</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Add another rule, as well---a "Rule 3"---and a new syntactic category (if you need to) that lets you derive (@ex-bo-two-clauses) as an $s$.</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Give a derivation showing that (@ex-bo-two-clauses) is a sentence with a meaning, using this lexical entry.</span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Does your lexical entry ensure that (@ex-bo-two-clauses) and (@ex-bo2) entail each other (regardless of the particular meanings of $\textit{Bo}$, $\textit{jumps}$, and $\textit{runs}$)?</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>(@ex-bo2) Bo jumps and runs.</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>If so, how does it ensure this?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Let us assume that in addition to the word *and*, English has another word, *and2*, which is *pronounced* exactly the same way as *and* is pronounced (i.e., /ænd/), but which coordinates *sentences* instead of verb phrases.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Thus *and* is the variant of the coordinator that appears earlier in the notes, while *and2* is the variant of the coordinator that appears in (@ex-bo-two-clauses).</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for the variant of the coordinator which appears in (@ex-bo-two-clauses)---something that can be added to the lexicon given in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span>.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Add another rule, as well---a "Rule 3"---and a new syntactic category (if you need to) that lets you derive (@ex-bo-two-clauses) as an $s$.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Give a derivation showing that (@ex-bo-two-clauses) is a sentence with a meaning, using this lexical entry.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>Does your lexical entry ensure that (@ex-bo-two-clauses) and (@ex-bo2) entail each other (regardless of the particular meanings of $\textit{Bo}$, $\textit{jumps}$, and $\textit{runs}$)?</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>(@ex-bo2) Bo jumps and runs.</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>If so, how does it ensure this?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
