@@ -496,7 +496,7 @@ window.Quarto = {
 <ol class="example" type="1">
 <li>Bo jumps without running.</li>
 </ol>
-<p>Assume (contra actual fact) that the word <em>without</em> is a connective, like <em>and</em>. Assume also that <em>running</em> is a <span class="math inline">\(vp\)</span> with the same meaning as <em>runs</em>. Provide a lexical entry for <em>without</em>, and use it—along with the grammar fragment defined in <a href="english.html">A first approximation of English</a> and the model defined in <a href="english_examples.html">An English model and example</a>—to give a derivation of (1).</p>
+<p>Assume (contra actual fact) that the word <em>without</em> is a connective, like <em>and</em>. Assume also that <em>running</em> is a <span class="math inline">\(vp\)</span> with the same meaning as <em>runs</em>. Provide a lexical entry for <em>without</em>, and use it—along with the grammar fragment defined in <a href="english.html">A first approximation of English</a> and the model defined in <a href="english_examples.html">An English model and example</a>—to give a derivation of (1). Note that you are effectively modifying the model’s interpretation function (as well as the alphabet <span class="math inline">\(\Sigma_{\textit{Eng.}}\)</span>) by adding two new words.</p>
 </section>
 <section id="part-3" class="level3">
 <h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
@@ -1066,26 +1066,27 @@ window.Quarto = {
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>Assume (contra actual fact) that the word *without* is a connective, like *and*.</span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>Assume also that *running* is a $vp$ with the same meaning as *runs*.</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for *without*, and use it---along with the grammar fragment defined in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span> and the model defined in <span class="co">[</span><span class="ot">An English model and example</span><span class="co">](english_examples.html)</span>---to give a derivation of (@ex-bo).</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>(35 points)</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>As you know, English does not only have sentences in which *and* coordinates two verb phrases.</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>It *also* has sentences like (@ex-bo-two-clauses).</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>(@ex-bo-two-clauses) Bo jumps and Bo runs.</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Let us assume that in addition to the word *and*, English has another word, *and2*, which is *pronounced* exactly the same way as *and* is pronounced (i.e., /ænd/), but which coordinates *sentences* instead of verb phrases.</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Thus *and* is the variant of the coordinator that appears earlier in the notes, while *and2* is the variant of the coordinator that appears in (@ex-bo-two-clauses).</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for the variant of the coordinator which appears in (@ex-bo-two-clauses)---something that can be added to the lexicon given in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span>.</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Add another rule, as well---a "Rule 3"---and a new syntactic category (if you need to) that lets you derive (@ex-bo-two-clauses) as an $s$.</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Give a derivation showing that (@ex-bo-two-clauses) is a sentence with a meaning, using this lexical entry.</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>Does your lexical entry ensure that (@ex-bo-two-clauses) and (@ex-bo2) entail each other (regardless of the particular meanings of $\textit{Bo}$, $\textit{jumps}$, and $\textit{runs}$)?</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>(@ex-bo2) Bo jumps and runs.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>If so, how does it ensure this?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>Note that you are effectively modifying the model's interpretation function (as well as the alphabet $\Sigma_{\textit{Eng.}}$) by adding two new words.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>(35 points)</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>As you know, English does not only have sentences in which *and* coordinates two verb phrases.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>It *also* has sentences like (@ex-bo-two-clauses).</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>(@ex-bo-two-clauses) Bo jumps and Bo runs.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Let us assume that in addition to the word *and*, English has another word, *and2*, which is *pronounced* exactly the same way as *and* is pronounced (i.e., /ænd/), but which coordinates *sentences* instead of verb phrases.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Thus *and* is the variant of the coordinator that appears earlier in the notes, while *and2* is the variant of the coordinator that appears in (@ex-bo-two-clauses).</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for the variant of the coordinator which appears in (@ex-bo-two-clauses)---something that can be added to the lexicon given in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span>.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Add another rule, as well---a "Rule 3"---and a new syntactic category (if you need to) that lets you derive (@ex-bo-two-clauses) as an $s$.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>Give a derivation showing that (@ex-bo-two-clauses) is a sentence with a meaning, using this lexical entry.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Does your lexical entry ensure that (@ex-bo-two-clauses) and (@ex-bo2) entail each other (regardless of the particular meanings of $\textit{Bo}$, $\textit{jumps}$, and $\textit{runs}$)?</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>(@ex-bo2) Bo jumps and runs.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>If so, how does it ensure this?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
