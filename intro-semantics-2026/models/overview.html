@@ -71,6 +71,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../models/ana_syntax.html" rel="next">
+<link href="../formal_preliminaries/assignment.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -151,9 +153,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Introduction to semantics
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../models/overview.html">Models</a></li><li class="breadcrumb-item"><a href="../models/overview.html">Overview</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -351,6 +351,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../models/overview.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../models/ana_syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arabic numeral arithmetic: syntax</span></a>
   </div>
@@ -365,6 +371,24 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../models/ana_examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arabic numeral arithmetic: examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/english.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A first approximation of English</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/english_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">An English model and example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
   </div>
 </li>
       </ul>
@@ -400,7 +424,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../models/overview.html">Models</a></li><li class="breadcrumb-item"><a href="../models/overview.html">Overview</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Overview</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -432,13 +456,13 @@ window.Quarto = {
 \]</span></p>
 </div>
 <p>One of the central technical notions that we’ll rely on in this course is that of a model. A model is, in short, a way of associating the most basic expressions of whatever language we are studying with interpretations. It can be useful to think of a model as encoding a <em>way that things could be</em>, or—in the parlance of possible world semantics—a “possible world”. For example, if we are assigning meanings to a language that has the verb <em>runs</em> as one of its basic expressions, then we might associate this verb with a set—specifically, the set of people (or other entities) that run. In one model, Jo and Bo might be the ones who run (so that the set of people who run is <span class="math inline">\(\{\ct{j}, \ct{b}\}\)</span>); in another, the interpretation of <em>runs</em> might be the set containing Bo and Mo (<span class="math inline">\(\{\ct{b}, \ct{m}\}\)</span>); in yet another, maybe nobody runs (<span class="math inline">\(\varnothing\)</span>); and so on.</p>
-<p>Technically, a model <span class="math inline">\(\mathcal{M}\)</span> is a structure that consists of a pair of a <em>domain</em> <span class="math inline">\(D\)</span> and an interpretation function <span class="math inline">\(I\)</span>—something which takes <em>atoms</em> (i.e., the most basic expressions, whatever those are) of the language onto elements of a set <span class="math inline">\(M\)</span> (‘<span class="math inline">\(M\)</span>’ for “meanings”):</p>
+<p>Technically, a model <span class="math inline">\(\mathcal{M}\)</span> is a structure that consists of a tuple of: a <em>domain</em> <span class="math inline">\(D\)</span>; the set <span class="math inline">\(\{\True, \False\}\)</span> of truth values (‘True’ and ‘False’); and an interpretation function <span class="math inline">\(I\)</span>—something which takes <em>atoms</em> (i.e., the most basic expressions, whatever those are) of the language onto elements of a set <span class="math inline">\(M\)</span> (‘<span class="math inline">\(M\)</span>’ for “meanings”):</p>
 <ol class="example" type="1">
 <li>Definition: <br> a model <span class="math inline">\(\mathcal{M}\)</span> is a tuple <span class="math inline">\(⟨D, \{\True, \False\}, I⟩\)</span> of a non-empty set <span class="math inline">\(D\)</span>, the set of truth values <span class="math inline">\(\True\)</span> and <span class="math inline">\(\False\)</span>, and a function <span class="math inline">\(I : atom → M\)</span>.</li>
 </ol>
 <p>In (1), <span class="math inline">\(atom\)</span> is just whatever the set of atoms is chosen to be.</p>
 <p>Exactly how <span class="math inline">\(M\)</span> is chosen will vary by case—but in general, it is something “constructed” out of <span class="math inline">\(D\)</span>, the domain. For example, it might be <span class="math inline">\(D\)</span> itself; or it might be <span class="math inline">\(D ∪ 2^{D}\)</span> (the set containing as members both all of the elements of <span class="math inline">\(D\)</span> and all of the subsets of <span class="math inline">\(D\)</span>); or it might be something else more complicated.</p>
-<p>Further, the way the set <span class="math inline">\(atom\)</span> is chosen will also vary by case. For example, if we are defining a language <span class="math inline">\(L\)</span> over some alphaet <span class="math inline">\(Σ\)</span>, <span class="math inline">\(atom\)</span> might be chosen to be <span class="math inline">\(Σ\)</span> itself—or perhaps some subset of <span class="math inline">\(Σ\)</span>. The way we decide what <span class="math inline">\(atom\)</span> is depends on how we decide we want to construct the interpretations of more complex expressions of the language out of the meanings of more basic expressions.</p>
+<p>Further, the way the set <span class="math inline">\(atom\)</span> is chosen will also vary by case. For example, if we are defining a language <span class="math inline">\(L\)</span> over some alphabet <span class="math inline">\(Σ\)</span>, <span class="math inline">\(atom\)</span> might be chosen to be <span class="math inline">\(Σ\)</span> itself—or perhaps some subset of <span class="math inline">\(Σ\)</span>. The way we decide what <span class="math inline">\(atom\)</span> is depends on how we decide we want to construct the interpretations of more complex expressions of the language out of the meanings of more basic expressions.</p>
 
 
 <!-- -->
@@ -895,7 +919,19 @@ window.Quarto = {
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../formal_preliminaries/assignment.html" class="pagination-link" aria-label="Assignment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../models/ana_syntax.html" class="pagination-link" aria-label="Arabic numeral arithmetic: syntax">
+        <span class="nav-page-text">Arabic numeral arithmetic: syntax</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Overview"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
@@ -932,21 +968,24 @@ window.Quarto = {
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>in yet another, maybe nobody runs ($\varnothing$);</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>and so on.</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Technically, a model $\mathcal{M}$ is a structure that consists of a pair of a *domain* $D$ and an interpretation function $I$---something which takes *atoms* (i.e., the most basic expressions, whatever those are) of the language onto elements of a set $M$ ('$M$' for "meanings"):</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>(@ex-model-def) Definition: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> </span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    a model $\mathcal{M}$ is a tuple $⟨D, <span class="sc">\{</span>\True, \False<span class="sc">\}</span>, I⟩$ of a non-empty set $D$, the set of truth values $\True$ and $\False$, and a function $I : atom → M$.</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Technically, a model $\mathcal{M}$ is a structure that consists of a tuple of:</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>a *domain* $D$;</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>the set $<span class="sc">\{</span>\True, \False<span class="sc">\}</span>$ of truth values ('True' and 'False');</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>and an interpretation function $I$---something which takes *atoms* (i.e., the most basic expressions, whatever those are) of the language onto elements of a set $M$ ('$M$' for "meanings"):</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>In (@ex-model-def), $atom$ is just whatever the set of atoms is chosen to be.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Exactly how $M$ is chosen will vary by case---but in general, it is something "constructed" out of $D$, the domain.</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>For example, it might be $D$ itself;</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>or it might be $D ∪ 2^{D}$ (the set containing as members both all of the elements of $D$ and all of the subsets of $D$);</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>or it might be something else more complicated.</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Further, the way the set $atom$ is chosen will also vary by case.</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>For example, if we are defining a language $L$ over some alphaet $Σ$, $atom$ might be chosen to be $Σ$ itself---or perhaps some subset of $Σ$.</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>The way we decide what $atom$ is depends on how we decide we want to construct the interpretations of more complex expressions of the language out of the meanings of more basic expressions.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>(@ex-model-def) Definition: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    a model $\mathcal{M}$ is a tuple $⟨D, <span class="sc">\{</span>\True, \False<span class="sc">\}</span>, I⟩$ of a non-empty set $D$, the set of truth values $\True$ and $\False$, and a function $I : atom → M$.</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>In (@ex-model-def), $atom$ is just whatever the set of atoms is chosen to be.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Exactly how $M$ is chosen will vary by case---but in general, it is something "constructed" out of $D$, the domain.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>For example, it might be $D$ itself;</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>or it might be $D ∪ 2^{D}$ (the set containing as members both all of the elements of $D$ and all of the subsets of $D$);</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>or it might be something else more complicated.</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Further, the way the set $atom$ is chosen will also vary by case.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>For example, if we are defining a language $L$ over some alphabet $Σ$, $atom$ might be chosen to be $Σ$ itself---or perhaps some subset of $Σ$.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>The way we decide what $atom$ is depends on how we decide we want to construct the interpretations of more complex expressions of the language out of the meanings of more basic expressions.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

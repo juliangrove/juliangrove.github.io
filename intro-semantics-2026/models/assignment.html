@@ -71,6 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../models/english_examples.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -151,9 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Introduction to semantics
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../models/overview.html">Models</a></li><li class="breadcrumb-item"><a href="../models/assignment.html">Assignment</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -351,6 +350,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../models/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../models/ana_syntax.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arabic numeral arithmetic: syntax</span></a>
   </div>
@@ -365,6 +370,24 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../models/ana_examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Arabic numeral arithmetic: examples</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/english.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">A first approximation of English</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/english_examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">An English model and example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../models/assignment.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Assignment</span></a>
   </div>
 </li>
       </ul>
@@ -408,7 +431,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../models/overview.html">Models</a></li><li class="breadcrumb-item"><a href="../models/assignment.html">Assignment</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Assignment</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
@@ -439,7 +462,7 @@ window.Quarto = {
 \def\False{\ct{F}}
 \]</span></p>
 </div>
-<p>Due on Monday, October 13th.</p>
+<p>Due on Monday, October 19th.</p>
 <!-- ### Part 1 -->
 <!-- According to the collection of syntactic rules provided [here](ana_semantics.html) in (5) (with semantics) and [here](ana_syntax.html) in (2) (without semantics), the $np$ $⌜537⌝$ is syntactically ambiguous. -->
 <!-- Either (a) $⌜5⌝$ combines with $⌜3⌝$ first, and then $⌜53⌝$ combines with $⌜7⌝$; -->
@@ -456,30 +479,35 @@ window.Quarto = {
 <p><span class="math display">\[I_{NANA}(⌜1⌝) = 6\]</span> <span class="math display">\[I_{NANA}(⌜2⌝) = 5\]</span> <span class="math display">\[I_{NANA}(⌜3⌝) = 4\]</span> <span class="math display">\[I_{NANA}(⌜4⌝) = 3\]</span> <span class="math display">\[I_{NANA}(⌜5⌝) = 2\]</span> <span class="math display">\[I_{NANA}(⌜6⌝) = 1\]</span> <span class="math display">\[I_{NANA}(⌜7⌝) = 0\]</span></p>
 <p>The full model of <span class="math inline">\(L_{NANA}\)</span> employed by this group is thus:</p>
 <p><span class="math display">\[\mathcal{M}_{NANA} = ⟨ℕ, \{\True, \False\}, I_{NANA}⟩\]</span></p>
-<p>One more thing. Instead of the Rule 3 which we defined in <a href="ana_semantics.html">Arabic numeral arithmetic: semantics</a>, these guys use the following <em>alternative</em> Rule 3:</p>
+<p>One more thing. These guys use the following modification of the numeral concatenation rule (Rule 2) which we defined in <a href="ana_semantics.html">Arabic numeral arithmetic: semantics</a>:</p>
 <span class="math display">\[\begin{prooftree}
-\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}_{ANA}}⟩ ⊢ n$}
-\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}_{ANA}}⟩ ⊢ n$}
-\RightLabel{Rule 3}\BinaryInfC{$⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}_{ANA}} * 7^{length(y)} + ⟦y⟧_{\mathcal{M}_{ANA}}⟩ ⊢ n$}
+\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}
+\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}
+\RightLabel{Rule 2}\BinaryInfC{$⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}_{NANA}} * 7^{length(y)} + ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}
 \end{prooftree}\]</span>
-<p>The rules of for generating strings of <span class="math inline">\(L_{NANA}\)</span> and their interpretations are otherwise identical to those for generating strings of <span class="math inline">\(L_{ANA}\)</span> and their interpretations.</p>
+<p>The rules for generating strings of <span class="math inline">\(L_{NANA}\)</span> and their interpretations are otherwise identical to those for generating strings of <span class="math inline">\(L_{ANA}\)</span> and their interpretations.</p>
 <p>Show that <span class="math inline">\(⌜((53 + 6) × 5) = 24⌝\)</span> is a sentence (i.e., an <span class="math inline">\(s\)</span>) of <span class="math inline">\(L_{NANA}\)</span>, and show what its interpretation in <span class="math inline">\(\mathcal{M}_{NANA}\)</span> is.</p>
 </section>
 <section id="part-2" class="level3">
 <h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
-<p>Using the English grammar fragment defined in <a href="english.html">A first approximation of English</a> in conjunction with the model defined in <a href="english_examples.html">An English model and example</a>, show that the string in (1) is a sentence (i.e., an <span class="math inline">\(s\)</span>), and show what its interpretation is.</p>
+<p>Consider the sentence in (1).</p>
 <ol class="example" type="1">
-<li>Bella doesn’t jump and run.</li>
+<li>Bo jumps without running.</li>
 </ol>
+<p>Assume (contra actual fact) that the word <em>without</em> is a connective, like <em>and</em>. Assume also that <em>running</em> is a <span class="math inline">\(vp\)</span> with the same meaning as <em>runs</em>. Provide a lexical entry for <em>without</em>, and use it—along with the grammar fragment defined in <a href="english.html">A first approximation of English</a> and the model defined in <a href="english_examples.html">An English model and example</a>—to give a derivation of (1).</p>
 </section>
 <section id="part-3" class="level3">
 <h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
-<p>As you know, English does not only have sentences like (1). It <em>also</em> has sentences like (2).</p>
+<p>As you know, English does not only have sentences in which <em>and</em> coordinates two verb phrases. It <em>also</em> has sentences like (2).</p>
 <ol start="2" class="example" type="1">
-<li>Bella doesn’t jump and Bella doesn’t run.</li>
+<li>Bo jumps and Bo runs.</li>
 </ol>
-<p>Let us propose that in addition to the word <em>and</em>, English has another word, <em>and2</em>, which is <em>pronounced</em> exactly the same way as <em>and</em> is pronounced (i.e., [æːnd]), but which coordinates <em>sentences</em> instead of verb phrases. Thus <em>and</em> is the variant of the coordinator that appears in (1), while <em>and2</em> is the variant of the coordinator that appears in (2).</p>
-<p>Provide a lexical entry for the variant of the coordinator which appears in (2)—something that can be added to the lexicon given in <a href="english.html">A first approximation of English</a>. Give a derivation showing that (2) is a sentence with a meaning, using this lexical entry. Does your lexical entry ensure that (1) and (2) entail each other? If so, how does it ensure this?</p>
+<p>Let us assume that in addition to the word <em>and</em>, English has another word, <em>and2</em>, which is <em>pronounced</em> exactly the same way as <em>and</em> is pronounced (i.e., /ænd/), but which coordinates <em>sentences</em> instead of verb phrases. Thus <em>and</em> is the variant of the coordinator that appears earlier in the notes, while <em>and2</em> is the variant of the coordinator that appears in (2).</p>
+<p>Provide a lexical entry for the variant of the coordinator which appears in (2)—something that can be added to the lexicon given in <a href="english.html">A first approximation of English</a>. Add another rule, as well—a “Rule 3”—and a new syntactic category (if you need to) that lets you derive (2) as an <span class="math inline">\(s\)</span>. Give a derivation showing that (2) is a sentence with a meaning, using this lexical entry. Does your lexical entry ensure that (2) and (3) entail each other (regardless of the particular meanings of <span class="math inline">\(\textit{Bo}\)</span>, <span class="math inline">\(\textit{jumps}\)</span>, and <span class="math inline">\(\textit{runs}\)</span>)?</p>
+<ol start="3" class="example" type="1">
+<li>Bo jumps and runs.</li>
+</ol>
+<p>If so, how does it ensure this?</p>
 
 
 <!-- -->
@@ -937,7 +965,16 @@ window.Quarto = {
       }
     }
   });
-  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../models/english_examples.html" class="pagination-link" aria-label="An English model and example">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">An English model and example</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Assignment"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
@@ -965,7 +1002,7 @@ window.Quarto = {
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Due on Monday, October 13th.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Due on Monday, October 19th.</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span><span class="al">###</span><span class="co"> Part 1 --&gt;</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
@@ -1003,39 +1040,46 @@ window.Quarto = {
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>$$\mathcal{M}_{NANA} = ⟨ℕ, \{\True, \False\}, I_{NANA}⟩$$</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>One more thing.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Instead of the Rule 3 which we defined in <span class="co">[</span><span class="ot">Arabic numeral arithmetic: semantics</span><span class="co">](ana_semantics.html)</span>, these guys use the following *alternative* Rule 3:</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>These guys use the following modification of the numeral concatenation rule (Rule 2) which we defined in <span class="co">[</span><span class="ot">Arabic numeral arithmetic: semantics</span><span class="co">](ana_semantics.html)</span>:</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\begin{prooftree}</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}_{ANA}}⟩ ⊢ n$}</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}_{ANA}}⟩ ⊢ n$}</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>\RightLabel{Rule 3}\BinaryInfC{$⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}_{ANA}} * 7^{length(y)} + ⟦y⟧_{\mathcal{M}_{ANA}}⟩ ⊢ n$}</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>\RightLabel{Rule 2}\BinaryInfC{$⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}_{NANA}} * 7^{length(y)} + ⟦y⟧_{\mathcal{M}_{NANA}}⟩ ⊢ n$}</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>\end{prooftree}</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>The rules of for generating strings of $L_{NANA}$ and their interpretations are otherwise identical to those for generating strings of $L_{ANA}$ and their interpretations.</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>The rules for generating strings of $L_{NANA}$ and their interpretations are otherwise identical to those for generating strings of $L_{ANA}$ and their interpretations.</span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>Show that $⌜((53 + 6) × 5) = 24⌝$ is a sentence (i.e., an $s$) of $L_{NANA}$, and show what its interpretation in $\mathcal{M}_{NANA}$ is.</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2</span></span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Using the English grammar fragment defined in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span> in conjunction with the model defined in <span class="co">[</span><span class="ot">An English model and example</span><span class="co">](english_examples.html)</span>, show that the string in (@ex-bella) is a sentence (i.e., an $s$), and show what its interpretation is.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Consider the sentence in (@ex-bo).</span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>(@ex-bella) Bella doesn't jump and run.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>(@ex-bo) Bo jumps without running.</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>As you know, English does not only have sentences like (@ex-bella).</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>It *also* has sentences like (@ex-bella-two-clauses).</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Assume (contra actual fact) that the word *without* is a connective, like *and*.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Assume also that *running* is a $vp$ with the same meaning as *runs*.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for *without*, and use it---along with the grammar fragment defined in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span> and the model defined in <span class="co">[</span><span class="ot">An English model and example</span><span class="co">](english_examples.html)</span>---to give a derivation of (@ex-bo).</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 3</span></span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>(@ex-bella-two-clauses) Bella doesn't jump and Bella doesn't run.</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Let us propose that in addition to the word *and*, English has another word, *and2*, which is *pronounced* exactly the same way as *and* is pronounced (i.e., [æːnd]), but which coordinates *sentences* instead of verb phrases.</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>Thus *and* is the variant of the coordinator that appears in (@ex-bella), while *and2* is the variant of the coordinator that appears in (@ex-bella-two-clauses).</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>As you know, English does not only have sentences in which *and* coordinates two verb phrases.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>It *also* has sentences like (@ex-bo-two-clauses).</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>(@ex-bo-two-clauses) Bo jumps and Bo runs.</span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for the variant of the coordinator which appears in (@ex-bella-two-clauses)---something that can be added to the lexicon given in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span>.</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Give a derivation showing that (@ex-bella-two-clauses) is a sentence with a meaning, using this lexical entry.</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>Does your lexical entry ensure that (@ex-bella) and (@ex-bella-two-clauses) entail each other?</span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>If so, how does it ensure this?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>Let us assume that in addition to the word *and*, English has another word, *and2*, which is *pronounced* exactly the same way as *and* is pronounced (i.e., /ænd/), but which coordinates *sentences* instead of verb phrases.</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Thus *and* is the variant of the coordinator that appears earlier in the notes, while *and2* is the variant of the coordinator that appears in (@ex-bo-two-clauses).</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Provide a lexical entry for the variant of the coordinator which appears in (@ex-bo-two-clauses)---something that can be added to the lexicon given in <span class="co">[</span><span class="ot">A first approximation of English</span><span class="co">](english.html)</span>.</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Add another rule, as well---a "Rule 3"---and a new syntactic category (if you need to) that lets you derive (@ex-bo-two-clauses) as an $s$.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>Give a derivation showing that (@ex-bo-two-clauses) is a sentence with a meaning, using this lexical entry.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Does your lexical entry ensure that (@ex-bo-two-clauses) and (@ex-bo2) entail each other (regardless of the particular meanings of $\textit{Bo}$, $\textit{jumps}$, and $\textit{runs}$)?</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>(@ex-bo2) Bo jumps and runs.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>If so, how does it ensure this?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
