@@ -528,7 +528,7 @@
     "href": "applicative_cg/examples.html",
     "title": "Determining syntactic categories and semantic types from English descriptions",
     "section": "",
-    "text": "\\[\n\\newcommand{\\expr}[3]{\\begin{array}{c}\n#1 \\\\\n\\bbox[lightblue,5px]{#2}\n\\end{array} ⊢ #3}\n\\newcommand{\\ct}[1]{\\bbox[font-size: 0.8em]{\\mathsf{#1}}}\n\\newcommand{\\abbr}[1]{\\bbox[transform: scale(0.95)]{\\mathtt{#1}}}\n\\def\\true{\\ct{T}}\n\\def\\false{\\ct{F}}\n\\]\nThe assignment asks you to determine syntactic categories and their corresponding semantic types based on English descriptions of how expressions having those categories behave (and the general procedure we have for converting syntactic categories into their corresponding semantic types). Let’s look at a few examples of this.",
+    "text": "\\[\n\\newcommand{\\expr}[3]{\\begin{array}{c}\n#1 \\\\\n\\bbox[lightblue,5px]{#2}\n\\end{array} ⊢ #3}\n\\newcommand{\\ct}[1]{\\bbox[font-size: 0.8em]{\\mathsf{#1}}}\n\\newcommand{\\abbr}[1]{\\bbox[transform: scale(0.95)]{\\mathtt{#1}}}\n\\def\\true{\\ct{T}}\n\\def\\false{\\ct{F}}\n\\]\nThe assignment asks you to determine syntactic categories and their corresponding semantic types based on English descriptions of how expressions having those categories behave (and the general procedure we have for converting syntactic categories into their corresponding semantic types). Let’s look at a couple examples of this.",
     "crumbs": [
       "Applicative categorial grammar",
       "Determining syntactic categories and semantic types from English descriptions"
