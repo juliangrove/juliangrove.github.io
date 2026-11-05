@@ -409,6 +409,7 @@ window.Quarto = {
 <p>Due on Monday, November 16th.</p>
 <section id="part-1" class="level2">
 <h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<p>(30 points)</p>
 <p>Construct a context-sensitive grammar for the following language: <span class="math display">\[\{ss ∣ s ∈ \{a, b\}^{*}\}\]</span> This is the “copy language”. It is the language of strings over <span class="math inline">\(\{a, b\}\)</span> whose first half is some string <span class="math inline">\(s\)</span>, and whose second half is just <span class="math inline">\(s\)</span> again. Here are some examples of strings in this language: <span class="math inline">\(ϵ\)</span>, <span class="math inline">\(aa\)</span>, <span class="math inline">\(bb\)</span>, <span class="math inline">\(abab\)</span>, <span class="math inline">\(baba\)</span>, <span class="math inline">\(aabaab\)</span>, <span class="math inline">\(babbab\)</span>.</p>
 <p>Feel free to use the “non-contracting” definition of context-sensitive grammars. That is, all rules (besides <span class="math inline">\(S → ϵ\)</span>) are of the form <span class="math inline">\(γ_{1} → γ_{2}\)</span>, where <span class="math inline">\(|γ_{2}| ≥ |γ_{1}|\)</span> (the right-hand side of the rule has at least as many symbols as the left-hand side).</p>
 <p><span class="math inline">\(\textbf{Hint:}\)</span> start with the following grammar (which features the non-terminal symbols <span class="math inline">\(S\)</span>, <span class="math inline">\(T\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(A^{*}\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(B^{*}\)</span>):</p>
@@ -426,11 +427,13 @@ window.Quarto = {
 </section>
 <section id="part-2" class="level2">
 <h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
-<p>Read <span class="citation" data-cites="partee_mathematical_1990">Partee et al. (<a href="#ref-partee_mathematical_1990" role="doc-biblioref">1990</a>)</span>, Chapter 19, pp.&nbsp;507–520 (up to §19.6; feel free to read the whole chapter, of course!). Do exercises 1, 2.</p>
+<p>(30 points)</p>
+<p>Read <span class="citation" data-cites="partee_mathematical_1990">Partee et al. (<a href="#ref-partee_mathematical_1990" role="doc-biblioref">1990</a>)</span>, Chapter 19, pp.&nbsp;507–520 (up to §19.6; feel free to read the whole chapter, of course!). Do exercises 1 (15 points), 2 (15 points).</p>
 <p>Feel free to read Chapter 20 on linear bounded automata (also on Canvas)!</p>
 </section>
 <section id="part-3" class="level2">
 <h2 class="anchored" data-anchor-id="part-3">Part 3</h2>
+<p>(40 points)</p>
 <p>Specify a Turing machine that <u>decides</u> the language <span class="math inline">\(\{a^{n}b^{n}c^{n} ∣ n ≥ 0\}\)</span>.</p>
 
 
@@ -912,46 +915,49 @@ Partee, Barbara H., Alice ter Meulen, and Robert E. Wall. 1990. <em>Mathematical
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Due on Monday, November 16th.</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 1</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Construct a context-sensitive grammar for the following language:</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>ss ∣ s ∈ <span class="sc">\{</span>a, b<span class="sc">\}</span>^{*}<span class="sc">\}</span>$$</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>This is the "copy language".</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>It is the language of strings over $<span class="sc">\{</span>a, b<span class="sc">\}</span>$ whose first half is some string $s$, and whose second half is just $s$ again.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Here are some examples of strings in this language:</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>$ϵ$, $aa$, $bb$, $abab$, $baba$, $aabaab$, $babbab$.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Feel free to use the "non-contracting" definition of context-sensitive grammars.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>That is, all rules (besides $S → ϵ$) are of the form $γ_{1} → γ_{2}$, where $|γ_{2}| ≥ |γ_{1}|$ (the right-hand side of the rule has at least as many symbols as the left-hand side).</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>$\textbf{Hint:}$</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>start with the following grammar (which features the non-terminal symbols $S$, $T$, $A$, $A^{*}$, $B$, and $B^{*}$):</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>$\begin{align*}</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>&amp;S → T ∣ ϵ <span class="sc">\\</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>&amp;T → A\ T\ A^{*} ∣ B\ T\ B^{*} ∣ A\ A^{*} ∣ B\ B^{*}</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>\end{align*}$</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This grammar gives you strings like $ABABB^{*}A^{*}B^{*}A^{*}$, etc.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Add two more non-terminals to the grammar---$A^{<span class="sc">\#</span>}$ and $B^{<span class="sc">\#</span>}$---and introduce rules that use them to *reorder* the resulting sequence of $A^{*}$'s and $B^{*}$'s, so that it matches the order of the sequence of $A$'s and $B$'s.</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Finally, add the rules:</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$\begin{align*}</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>&amp;A → a <span class="sc">\\</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>&amp;B → b <span class="sc">\\</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>&amp;A^{<span class="sc">\#</span>} → a <span class="sc">\\</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>&amp;B^{<span class="sc">\#</span>} → b</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>\end{align*}$</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 2</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Read @partee_mathematical_1990, Chapter 19, pp. 507--520 (up to §19.6; feel free to read the whole chapter, of course!).</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>Do exercises 1, 2.</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Feel free to read Chapter 20 on linear bounded automata (also on Canvas)!</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>(30 points)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Construct a context-sensitive grammar for the following language:</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>ss ∣ s ∈ <span class="sc">\{</span>a, b<span class="sc">\}</span>^{*}<span class="sc">\}</span>$$</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>This is the "copy language".</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>It is the language of strings over $<span class="sc">\{</span>a, b<span class="sc">\}</span>$ whose first half is some string $s$, and whose second half is just $s$ again.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Here are some examples of strings in this language:</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$ϵ$, $aa$, $bb$, $abab$, $baba$, $aabaab$, $babbab$.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Feel free to use the "non-contracting" definition of context-sensitive grammars.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>That is, all rules (besides $S → ϵ$) are of the form $γ_{1} → γ_{2}$, where $|γ_{2}| ≥ |γ_{1}|$ (the right-hand side of the rule has at least as many symbols as the left-hand side).</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>$\textbf{Hint:}$</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>start with the following grammar (which features the non-terminal symbols $S$, $T$, $A$, $A^{*}$, $B$, and $B^{*}$):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>$\begin{align*}</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>&amp;S → T ∣ ϵ <span class="sc">\\</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>&amp;T → A\ T\ A^{*} ∣ B\ T\ B^{*} ∣ A\ A^{*} ∣ B\ B^{*}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>\end{align*}$</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>This grammar gives you strings like $ABABB^{*}A^{*}B^{*}A^{*}$, etc.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Add two more non-terminals to the grammar---$A^{<span class="sc">\#</span>}$ and $B^{<span class="sc">\#</span>}$---and introduce rules that use them to *reorder* the resulting sequence of $A^{*}$'s and $B^{*}$'s, so that it matches the order of the sequence of $A$'s and $B$'s.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Finally, add the rules:</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>$\begin{align*}</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>&amp;A → a <span class="sc">\\</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>&amp;B → b <span class="sc">\\</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>&amp;A^{<span class="sc">\#</span>} → a <span class="sc">\\</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>&amp;B^{<span class="sc">\#</span>} → b</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>\end{align*}$</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 2</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>(30 points)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Read @partee_mathematical_1990, Chapter 19, pp. 507--520 (up to §19.6; feel free to read the whole chapter, of course!).</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Do exercises 1 (15 points), 2 (15 points).</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 3</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Feel free to read Chapter 20 on linear bounded automata (also on Canvas)!</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Specify a Turing machine that <span class="co">[</span><span class="ot">decides</span><span class="co">]</span>{.underline} the language $<span class="sc">\{</span>a^{n}b^{n}c^{n} ∣ n ≥ 0<span class="sc">\}</span>$.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 3</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>(40 points)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Specify a Turing machine that <span class="co">[</span><span class="ot">decides</span><span class="co">]</span>{.underline} the language $<span class="sc">\{</span>a^{n}b^{n}c^{n} ∣ n ≥ 0<span class="sc">\}</span>$.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

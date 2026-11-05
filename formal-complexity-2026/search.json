@@ -15,7 +15,7 @@
     "href": "context-sensitive_languages/assignment6.html#part-1",
     "title": "Assignment 6",
     "section": "Part 1",
-    "text": "Part 1\nConstruct a context-sensitive grammar for the following language: \\[\\{ss ∣ s ∈ \\{a, b\\}^{*}\\}\\] This is the “copy language”. It is the language of strings over \\(\\{a, b\\}\\) whose first half is some string \\(s\\), and whose second half is just \\(s\\) again. Here are some examples of strings in this language: \\(ϵ\\), \\(aa\\), \\(bb\\), \\(abab\\), \\(baba\\), \\(aabaab\\), \\(babbab\\).\nFeel free to use the “non-contracting” definition of context-sensitive grammars. That is, all rules (besides \\(S → ϵ\\)) are of the form \\(γ_{1} → γ_{2}\\), where \\(|γ_{2}| ≥ |γ_{1}|\\) (the right-hand side of the rule has at least as many symbols as the left-hand side).\n\\(\\textbf{Hint:}\\) start with the following grammar (which features the non-terminal symbols \\(S\\), \\(T\\), \\(A\\), \\(A^{*}\\), \\(B\\), and \\(B^{*}\\)):\n\\(\\begin{align*}\n&S → T ∣ ϵ \\\\\n&T → A\\ T\\ A^{*} ∣ B\\ T\\ B^{*} ∣ A\\ A^{*} ∣ B\\ B^{*}\n\\end{align*}\\)\nThis grammar gives you strings like \\(ABABB^{*}A^{*}B^{*}A^{*}\\), etc. Add two more non-terminals to the grammar—\\(A^{\\#}\\) and \\(B^{\\#}\\)—and introduce rules that use them to reorder the resulting sequence of \\(A^{*}\\)’s and \\(B^{*}\\)’s, so that it matches the order of the sequence of \\(A\\)’s and \\(B\\)’s. Finally, add the rules:\n\\(\\begin{align*}\n&A → a \\\\\n&B → b \\\\\n&A^{\\#} → a \\\\\n&B^{\\#} → b\n\\end{align*}\\)",
+    "text": "Part 1\n(30 points)\nConstruct a context-sensitive grammar for the following language: \\[\\{ss ∣ s ∈ \\{a, b\\}^{*}\\}\\] This is the “copy language”. It is the language of strings over \\(\\{a, b\\}\\) whose first half is some string \\(s\\), and whose second half is just \\(s\\) again. Here are some examples of strings in this language: \\(ϵ\\), \\(aa\\), \\(bb\\), \\(abab\\), \\(baba\\), \\(aabaab\\), \\(babbab\\).\nFeel free to use the “non-contracting” definition of context-sensitive grammars. That is, all rules (besides \\(S → ϵ\\)) are of the form \\(γ_{1} → γ_{2}\\), where \\(|γ_{2}| ≥ |γ_{1}|\\) (the right-hand side of the rule has at least as many symbols as the left-hand side).\n\\(\\textbf{Hint:}\\) start with the following grammar (which features the non-terminal symbols \\(S\\), \\(T\\), \\(A\\), \\(A^{*}\\), \\(B\\), and \\(B^{*}\\)):\n\\(\\begin{align*}\n&S → T ∣ ϵ \\\\\n&T → A\\ T\\ A^{*} ∣ B\\ T\\ B^{*} ∣ A\\ A^{*} ∣ B\\ B^{*}\n\\end{align*}\\)\nThis grammar gives you strings like \\(ABABB^{*}A^{*}B^{*}A^{*}\\), etc. Add two more non-terminals to the grammar—\\(A^{\\#}\\) and \\(B^{\\#}\\)—and introduce rules that use them to reorder the resulting sequence of \\(A^{*}\\)’s and \\(B^{*}\\)’s, so that it matches the order of the sequence of \\(A\\)’s and \\(B\\)’s. Finally, add the rules:\n\\(\\begin{align*}\n&A → a \\\\\n&B → b \\\\\n&A^{\\#} → a \\\\\n&B^{\\#} → b\n\\end{align*}\\)",
     "crumbs": [
       "Context-sensitivity",
       "Assignment 6"
@@ -26,7 +26,7 @@
     "href": "context-sensitive_languages/assignment6.html#part-2",
     "title": "Assignment 6",
     "section": "Part 2",
-    "text": "Part 2\nRead Partee et al. (1990), Chapter 19, pp. 507–520 (up to §19.6; feel free to read the whole chapter, of course!). Do exercises 1, 2.\nFeel free to read Chapter 20 on linear bounded automata (also on Canvas)!",
+    "text": "Part 2\n(30 points)\nRead Partee et al. (1990), Chapter 19, pp. 507–520 (up to §19.6; feel free to read the whole chapter, of course!). Do exercises 1 (15 points), 2 (15 points).\nFeel free to read Chapter 20 on linear bounded automata (also on Canvas)!",
     "crumbs": [
       "Context-sensitivity",
       "Assignment 6"
@@ -37,7 +37,7 @@
     "href": "context-sensitive_languages/assignment6.html#part-3",
     "title": "Assignment 6",
     "section": "Part 3",
-    "text": "Part 3\nSpecify a Turing machine that decides the language \\(\\{a^{n}b^{n}c^{n} ∣ n ≥ 0\\}\\).",
+    "text": "Part 3\n(40 points)\nSpecify a Turing machine that decides the language \\(\\{a^{n}b^{n}c^{n} ∣ n ≥ 0\\}\\).",
     "crumbs": [
       "Context-sensitivity",
       "Assignment 6"
