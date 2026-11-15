@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,12 +511,80 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -555,7 +617,7 @@ window.Quarto = {
 
 
 <p>Given two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, we take their binary Cartesian product <span class="math display">\[(A × B)\]</span> to be the set of pairs of elements <span class="math inline">\(⟨a, b⟩\)</span>, where <span class="math inline">\(a ∈ A\)</span> and <span class="math inline">\(b ∈ B\)</span>. We call <span class="math inline">\(a\)</span> the first <em>component</em> (or <em>projection</em>) of such a pair and <span class="math inline">\(b\)</span> the second component. Given a pair <span class="math inline">\(p\)</span>, we will sometimes write ‘<span class="math inline">\(p_{1}\)</span>’ to refer to its first component and ‘<span class="math inline">\(p_{2}\)</span>’ to refer to its second component. In particular: <span class="math display">\[⟨x, y⟩_{1} = x\]</span> <span class="math display">\[⟨x, y⟩_{2} = y\]</span></p>
-<p>The following statement is also true: <span class="math display">\[⟨x_{1}, x_{2}⟩ = x\]</span> That is, if you take the first and second components of a pair and then pair them back up, you haven’t created anything new!</p>
+<p>The following statement is also true: <span class="math display">\[⟨x_{1}, x_{2}⟩ = x\]</span> That is, if you take the first and second components of a pair and pair them back up, you haven’t done anything!</p>
 <p>We can generalize binary products to <span class="math inline">\(n\)</span>-ary products by considering the former to correspond to the special case where <span class="math inline">\(n = 2\)</span>. For the general case <span class="math display">\[A₁ × ... × A_{n-1} × Aₙ\]</span> we can encode this product as <span class="math display">\[(...(A₁ × ... × A_{n-1}) × Aₙ)\]</span> For example, <span class="math inline">\(A × B × C\)</span> is just <span class="math inline">\(((A × B) × C)\)</span>; its members are, therefore, pairs <span class="math inline">\(⟨⟨a, b⟩, c⟩\)</span>, which is just how we can encode 3-tuples <span class="math inline">\(⟨a, b, c⟩\)</span>.</p>
 
 
@@ -1040,7 +1102,7 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>The following statement is also true:</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$$⟨x_{1}, x_{2}⟩ = x$$</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>That is, if you take the first and second components of a pair and then pair them back up, you haven't created anything new!</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>That is, if you take the first and second components of a pair and pair them back up, you haven't done anything!</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>We can generalize binary products to $n$-ary products by considering the former to correspond to the special case where $n = 2$.</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>For the general case $$A₁ × ... × A_{n-1} × Aₙ$$ we can encode this product as $$(...(A₁ × ... × A_{n-1}) × Aₙ)$$</span>

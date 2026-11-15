@@ -71,7 +71,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../applicative_cg/examples.html" rel="next">
+<link href="../applicative_cg/assignment.html" rel="next">
 <link href="../applicative_cg/sem_types.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,12 +511,80 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -566,50 +628,53 @@ window.Quarto = {
 \def\false{\ct{F}}
 \]</span></p>
 </div>
-<p>The collection of syntactic categories we’ve looked at so far in this class is pretty minimal. So far, there are only four categories: <span class="math inline">\(np\)</span>, <span class="math inline">\(vp\)</span>, <span class="math inline">\(s\)</span>, and <span class="math inline">\(con\)</span>. In addition to noun phrases, verb phrases, and sentences (and connectives), we would very much like to have syntactic categories for transitive verbs (like <em>see</em>, <em>eat</em>, <em>like</em>), ditransitive verbs (e.g., <em>give</em>, <em>send</em>, <em>show</em>)—you name it. So, let’s introduce a system that allows us to take a small collection of starting categories—which we can call <em>base</em> categories—and generate an infinite collection of <em>possible</em> syntactic categories. The base categories that we start with will just be the category of noun phrases—<span class="math inline">\(np\)</span>—and the category of sentences—<span class="math inline">\(s\)</span>. As we’ll see below, we’ll be able to <em>construct</em> the category <span class="math inline">\(vp\)</span> of verb phrases out of the other two categories.</p>
-<p>Each of these possible categories that our system makes available will encapsulate the syntactic distribution of whatever expression it is assigned to. Note that the way we treat syntactic categories here will be exactly analogous to what we did for semantic types, where we used <span class="math inline">\(e\)</span> and <span class="math inline">\(t\)</span> as our “base” (i.e., <em>atomic</em>) types and used the “arrow” operator to make new types out of old ones.</p>
+<p>The collection of syntactic categories introduced in the last section is pretty minimal. So far, there are only three categories: <span class="math inline">\(np\)</span>, <span class="math inline">\(pp\)</span>, and <span class="math inline">\(s\)</span>! In addition to noun phrases, prepositional phrases, and sentences, we would very much like to have syntactic categories for verb phrases, transitive verbs, ditranstive verbs—you name it. So, let’s introduce a system that allows us to take these three starting categories—which we can call <em>base</em> categories—and generate an infinite collection of <em>possible</em> syntactic categories. Each of these possible categories will encapsulate the syntactic distribution of whatever expression it is assigned to. Note that the way we treat syntactic categories here will be exactly analogous to what we did for semantic types, where we used <span class="math inline">\(e\)</span> and <span class="math inline">\(t\)</span> as our “base” (i.e., <em>atomic</em>) types and used the “arrow” operator to make new types out of old ones.</p>
 <p>So, just like we had a rule for forming “arrow” <em>types</em>, let’s have a rule for forming what we can call <em>“slash” categories</em>.</p>
 <ol class="example" type="1">
 <li>If <span class="math inline">\(α\)</span> and <span class="math inline">\(β\)</span> are syntactic categories, then <span class="math inline">\((α/β)\)</span> and <span class="math inline">\((β\backslash α)\)</span> are also syntactic categories.</li>
 </ol>
-<p>Thus in addition to the base categories <span class="math inline">\(np\)</span> and <span class="math inline">\(s\)</span>, we have categories like <span class="math inline">\((np/np)\)</span>, <span class="math inline">\((s\backslash np)\)</span>, <span class="math inline">\(((s\backslash np)/(s/s))\)</span>, and so on.</p>
-<p>The idea behind a slash category is that it represents either what kind of expression can occur to something’s right or what kind of expression can occur to something’s left. For example, a verb phrase (e.g., <em>runs</em>)—something whose category we have been calling <span class="math inline">\(vp\)</span>—allows a noun phrase (e.g., <em>Bo</em>) to occur to its left; and when this happens, the result is a sentence (e.g., <em>Bo runs</em>). To capture this fact about verb phrases, we should assign them the syntactic category <span class="math inline">\((np\backslash s)\)</span>. This category says: “if you stick an <span class="math inline">\(np\)</span> (the thing to the left of the ‘<span class="math inline">\(\backslash\)</span>’) to my left, then together, we can make an <span class="math inline">\(s\)</span>!” This scheme for assigning categories to expressions allows them to <em>announce</em> what things they can occur to the left or to the right of.</p>
-<!-- While a verb phrase takes an $np$ to its left and, with it, makes an $s$, a preposition (e.g., *to*) takes an $np$ to its *right* and, with it, makes a $pp$. -->
-<!-- Thus a preposition like *to* can be assigned the syntactic category $(pp/np)$. -->
-<!-- This category says: -->
-<!-- "if you stick an $np$ (the thing to the right of the '$/$') to my right, then together, we can make a $pp$!" -->
+<p>Thus in addition to the base categories <span class="math inline">\(np\)</span>, <span class="math inline">\(pp\)</span>, and <span class="math inline">\(s\)</span>, we have categories like <span class="math inline">\((pp/np)\)</span>, <span class="math inline">\((s\backslash pp)\)</span>, <span class="math inline">\(((pp\backslash np)/(s/s))\)</span>, and so on.</p>
+<p>The idea behind a slash category is that it represents either what kind of expression can occur to something’s right or what kind of expression can occur to something’s left. For example, a verb phrase (e.g., <em>runs</em>)—something whose category we have been calling <span class="math inline">\(vp\)</span>—allows a noun phrase (e.g., <em>Bella</em>) to occur to its left; and when this happens, the result is a sentence (e.g., <em>Bella runs</em>). To capture this fact about verb phrases, we should assign them the syntactic category <span class="math inline">\((np\backslash s)\)</span>. This category says: “if you stick an <span class="math inline">\(np\)</span> (the thing to the left of the ‘<span class="math inline">\(\backslash\)</span>’) to my left, then together, we can make an <span class="math inline">\(s\)</span>!”</p>
+<p>This scheme for assigning categories to expressions allows them to (so to speak) <em>announce</em> what things they can occur to the left or to the right of. While a verb phrase takes an <span class="math inline">\(np\)</span> to its left and, with it, makes an <span class="math inline">\(s\)</span>, a preposition (e.g., <em>to</em>) takes an <span class="math inline">\(np\)</span> to its <em>right</em> and, with it, makes a <span class="math inline">\(pp\)</span>. Thus a preposition like <em>to</em> can be assigned the syntactic category <span class="math inline">\((pp/np)\)</span>. This category says: “if you stick an <span class="math inline">\(np\)</span> (the thing to the right of the ‘<span class="math inline">\(/\)</span>’) to my right, then together, we can make a <span class="math inline">\(pp\)</span>!”</p>
 <section id="the-syntactic-structure-of-syntactic-categories" class="level4">
 <h4 class="anchored" data-anchor-id="the-syntactic-structure-of-syntactic-categories">The syntactic structure of syntactic categories</h4>
-<p>Syntactic categories formed with slashes (like <span class="math inline">\((np\backslash s)\)</span> and <span class="math inline">\((np/np)\)</span>) have an internal structure, which it is convenient to represent as a kind of syntactic tree structure (note that each slash annotating a node here is wrapped in parentheses for readability):</p>
+<p>Syntactic categories formed with slashes (like <span class="math inline">\((np\backslash s)\)</span> and <span class="math inline">\((pp/np)\)</span>) have an internal structure, which it is convenient to represent as a kind of syntactic tree structure (note that each slash annotating a node here is wrapped in parentheses for readability):</p>
 <pre><code>  (\)     (/)
   / \     / \
- np  s   np np</code></pre>
-<p>Categories featuring multiple slashes can be represented this way, as well. Take the transitive verb <em>saw</em> as an example, as in (2).</p>
+ np  s   pp np</code></pre>
+<p>Categories featuring multiple slashes can be represented this way, as well. Take the ditransitive verb <em>introduced</em> as an example, as in (2).</p>
 <ol start="2" class="example" type="1">
-<li>Jo saw Bo.</li>
+<li>Jo introduced Bo to Mo.</li>
 </ol>
-<p>This verb <u>first</u> takes a noun phrase to its right (<em>saw <u>Bo</u></em>); and <u>second</u>, it takes a noun phrase to its left (<em><u>Jo</u> saw Bo</em>). The verb <em>saw</em> therefore has the following syntactic category, in tree form:</p>
-<pre><code>    (/)
+<p>This verb <u>first</u> takes a noun phrase to its right (<em>introduced <u>Bo</u></em>); <a href=".underline">second</a>, it takes a prepositional phrase to its right (<em>introduced Bo <u>to Mo</u></em>); and <u>third</u>, it takes a noun phrase to its left (<em><u>Jo</u> introduced Bo to Mo</em>). The verb <em>introduced</em> therefore has the following syntactic category, in tree form:</p>
+<pre><code>      (/)
+      / \
+    (/)  np
     / \
-  (\) np
+  (\) pp
   / \
  np  s</code></pre>
-<p>The way to read this tree is by starting at the very top (or <em>root</em>) node and looking at the direction of the slash. If it is a right slash (<span class="math inline">\(/\)</span>), then the child node on the <em>right</em> is the category of the first argument of an expression with this category. If it is a left slash (<span class="math inline">\(\backslash\)</span>), then the child node on the <em>left</em> is the category of the first argument. Here, the root node is a right slash, so we look to the right child, which is <span class="math inline">\(np\)</span>—that’s the thing <em>saw</em> combines with first. Meanwhile, the <em>left</em> child is the category of the expression that results once you combine <em>saw</em> with this noun phrase. Hence, the string <em>saw Bo</em> has the category represented by the <em>following</em> tree:</p>
+<p>The way to read this tree is by starting at the very top (or <em>root</em>) node and looking at the direction of the slash. If it is a right slash (<span class="math inline">\(/\)</span>), then the child node on the <em>right</em> is the category of the first argument of an expression with this category. If it is a left slash (<span class="math inline">\(\backslash\)</span>), then the child node on the <em>left</em> is the category of the first argument. Here, the root node is a right slash, so we look to the right child, which is <span class="math inline">\(np\)</span>—that’s the thing <em>introduce</em> combines with first. Meanwhile, the <em>left</em> child is the category of the expression that results once you combine <em>introduced</em> with this noun phrase. Hence, the string <em>introduced Bo</em> has the category represented by the <em>following</em> tree:</p>
+<pre><code>    (/)
+    / \
+  (\) pp
+  / \
+ np  s</code></pre>
+<p>Likewise—assuming that <em>to Mo</em> has the category <span class="math inline">\(pp\)</span>—<em>introduced Bo to Mo</em> has the following category:</p>
 <pre><code>  (\)
   / \
  np  s</code></pre>
-<p>Finally—and in this case, we’re dealing with a left slash (<span class="math inline">\(\backslash\)</span>)—we can combine this expression with <em>Jo</em> to get <em>Jo saw Bo</em>, which therefore has the following category:</p>
-<pre><code> s</code></pre>
-<p>In the more usual notation, we would write this very same syntactic category out as <span class="math inline">\(((np\backslash s)/np)\)</span>. Both notations encode the <em>order</em> in which the verb takes its arguments, as well as whether each argument that it takes occurs to its left or to its right.</p>
+<p>Finally—and in this case, we’re dealing with a left slash (<span class="math inline">\(\backslash\)</span>)—we can combine this expression with <em>Jo</em> to get <em>Jo introduced Bo to Mo</em>, which therefore has the category <span class="math inline">\(s\)</span>.</p>
+<p>In the more usual notation, we would write this very same syntactic category out as <span class="math inline">\((((np\backslash s)/pp)/np)\)</span>. Both notations encode the <em>order</em> in which the verb takes its arguments, as well as whether each argument that it takes occurs to its left or to its right!</p>
 </section>
 <section id="the-correspondence-between-syntactic-categories-and-semantic-types" class="level4">
 <h4 class="anchored" data-anchor-id="the-correspondence-between-syntactic-categories-and-semantic-types">The correspondence between syntactic categories and semantic types</h4>
-<p>So now we have a whole <em>language</em> of syntactic categories, as well as a whole <em>language</em> of semantic types. Let’s keep developing the chart that we started in <a href="sem_types.html">Semantic types</a>, in order to incorporate a few more syntactic categories. Now, we will have not only noun phrases and sentences, but also verb phrases and transitive verbs. Respectively:</p>
+<p>So now we have a whole <em>language</em> of syntactic categories, as well as a whole <em>language</em> of semantic types. Let’s keep developing the chart that we started in <a href="sem_types.html">Semantic types</a>, in order to incorporate a few more syntactic categories. Now, we will have not only noun phrases, prepositional phrases, and sentences, but also: verb phrases, transitive verbs, ditransitive verbs that take two noun phrases (e.g., <em>show</em>), ditransitive verbs that take a noun phrase and a prepositional phrase (e.g., <em>introduce</em>), and prepositions. Respectively:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 51%">
-<col style="width: 17%">
-<col style="width: 30%">
+<col style="width: 21%">
+<col style="width: 27%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -625,42 +690,61 @@ window.Quarto = {
 <td><span class="math inline">\(D_{e} = D\)</span></td>
 </tr>
 <tr class="even">
+<td><span class="math inline">\(pp\)</span></td>
+<td><span class="math inline">\(e\)</span></td>
+<td><span class="math inline">\(D_{e} = D\)</span></td>
+</tr>
+<tr class="odd">
 <td><span class="math inline">\(s\)</span></td>
 <td><span class="math inline">\(t\)</span></td>
 <td><span class="math inline">\(D_{t} = \{\true, \false\}\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><span class="math inline">\((np\backslash s)\)</span> <br> (previously <span class="math inline">\(vp\)</span>)</td>
 <td><span class="math inline">\((e → t)\)</span></td>
 <td></td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(((np\backslash s)/np)\)</span> <br> (transitive verbs)</td>
+<tr class="odd">
+<td><span class="math inline">\(((np\backslash s)/np)\)</span> <br> (previously <span class="math inline">\(tv\)</span>)</td>
 <td><span class="math inline">\((e → (e → t))\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((((np\backslash s)/np)/np)\)</span> <br> (previously <span class="math inline">\(dtv\)</span>)</td>
+<td><span class="math inline">\((e → (e → (e → t)))\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\((((np\backslash s)/pp)/np)\)</span> <br> (previously <span class="math inline">\(datV\)</span>)</td>
+<td><span class="math inline">\((e → (e → (e → t)))\)</span></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\((pp/np)\)</span> <br> (previously <span class="math inline">\(p\)</span>)</td>
+<td><span class="math inline">\((e → e)\)</span></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 <p>By lining syntactic categories up with their semantic types, we can begin to see a correspondence. Specifically we have something like the following set of rules:</p>
 <ul>
-<li>Wherever there is an <span class="math inline">\(np\)</span> in the syntactic category, there is an <span class="math inline">\(e\)</span> in the corresponding semantic type.</li>
-<li>Wherever there is an <span class="math inline">\(s\)</span> in the syntactic category, there is a <span class="math inline">\(t\)</span> in the semantic type.</li>
+<li>Wherever there is an <span class="math inline">\(np\)</span> or <span class="math inline">\(pp\)</span> in the syntactic category, there is an <span class="math inline">\(e\)</span> in the corresponding semantic type. And wherever there is an <span class="math inline">\(s\)</span> in the syntactic category, there is a <span class="math inline">\(t\)</span> in the semantic type.</li>
 <li>Wherever there is a left slash (<span class="math inline">\(\backslash\)</span>) in the syntactic category, there is an arrow (<span class="math inline">\(→\)</span>) in the semantic type.</li>
 <li>Wherever there is a right slash (<span class="math inline">\(/\)</span>) in the syntactic category, there is an arrow (<span class="math inline">\(→\)</span>) in the semantic type; but this time, the arrow is “pointing the other way”—that is, the thing that goes to the <em>right</em> of the right slash goes to the <em>left</em> of the arrow.</li>
 </ul>
-<p>Let’s look at a couple of examples of this correspondence, one simple, and one slightly more complex.</p>
+<p>Let’s look at a couple of example of this correspondence, one simple, and one slightly more complex.</p>
 <section id="first-example" class="level5">
 <h5 class="anchored" data-anchor-id="first-example">First example</h5>
-<p>First, let’s look at the third line of the table—the one which relates the category of verb phrases to the semantic type <span class="math inline">\((e → t)\)</span>. In tree notation, the syntactic category and the semantic type can be rendered as follows:</p>
-<pre><code> (\)     ─&gt;
+<p>First, let’s look at the very last line of the table—the one which relates the category of prepositions to the semantic type <span class="math inline">\((e → e)\)</span>. In tree notation, the syntactic category and the semantic type can be rendered as follows:</p>
+<pre><code> (/)     ─&gt;
  / \    / \
-np s   e   t</code></pre>
-<p>Note that in this example, the <span class="math inline">\(e\)</span> which is the left child of the arrow corresponds to the <span class="math inline">\(np\)</span> which is the left child of the slash, since it is a left slash. Both correspond, in some sense, to an <em>argument</em>: while <span class="math inline">\(np\)</span> corresponds to the syntactic argument—the subject of the verb phrase—<span class="math inline">\(e\)</span> corresponds to the semantic argument of the function which is the <em>interpretation</em> of the verb phrase.</p>
-<p>Meanwhile, the <span class="math inline">\(t\)</span> which is the <em>right</em> child of the arrow corresponds to the <span class="math inline">\(s\)</span> which is the right child of the slash. Both correspond, in some sense, to the <em>result</em>—either the result of concatenating the two expressions (in the case of the syntactic category), or the result of applying the function (in the case of the semantic type).</p>
+pp np  e   e</code></pre>
+<p>Note that in this example, the <span class="math inline">\(e\)</span> which is the left child of the arrow corresponds to the <span class="math inline">\(np\)</span> which is the right child of the slash, since it is a right slash. Both correspond, in some sense, to an <em>argument</em>: while <span class="math inline">\(np\)</span> corresponds to the syntactic argument—the object of the preposition—<span class="math inline">\(e\)</span> corresponds to the semantic argument of the function <em>denoted</em> by the preposition.</p>
+<p>Meanwhile, the <span class="math inline">\(e\)</span> which is the <em>right</em> child of the arrow corresponds to the <span class="math inline">\(pp\)</span> which is the left child of the slash. Both correspond, in some sonse, to the <em>result</em>—either the result of concatenating the two expressions (in the case of the syntactic category), or the result of applying the function (in the case of the semantic type).</p>
 </section>
 <section id="second-example" class="level5">
 <h5 class="anchored" data-anchor-id="second-example">Second example</h5>
-<p>For a slightly more complex example, let’s look at the fourth line of the table—the one for transitive verbs. In tree notation, we have the following syntactic category and semantic type:</p>
+<p>For a slightly more complex example, let’s look at the fifth line of the table—the one for transitive verbs. In tree notation, we have the following syntactic category and semantic type:</p>
 <pre><code>   (/)         ─&gt;
    / \        / \
  (\) np      e  ─&gt;
@@ -675,32 +759,38 @@ np  s         e   t</code></pre>
 <p>We need just two rules: one for allowing an expression to combine with something to its right (Right Application), and one for allowing an expression to combine with something to its left (Left Application).</p>
 <ol start="3" class="example" type="1">
 <li>Right Application: <br><br> <span class="math inline">\(\begin{prooftree}
-\AxiomC{\(⟨x, m⟩ ⊢ (a/b)\)}
-\AxiomC{\(⟨y, n⟩ ⊢ b\)}
-\RightLabel{\(/\)}\BinaryInfC{\(⟨x^{⌢}y, m(n)⟩ ⊢ a\)}
+\AxiomC{\(⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ (a/b)\)}
+\AxiomC{\(⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ b\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}}(⟦y⟧_{\mathcal{M}})⟩ ⊢ a\)}
 \end{prooftree}\)</span> <br><br> Left application: <br><br> <span class="math inline">\(\begin{prooftree}
-\AxiomC{\(⟨x, n⟩ ⊢ b\)}
-\AxiomC{\(⟨y, m⟩ ⊢ (b\backslash a)\)}
-\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨x^{⌢}y, m(n)⟩ ⊢ a\)}
+\AxiomC{\(⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ b\)}
+\AxiomC{\(⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ (b\backslash a)\)}
+\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ a\)}
 \end{prooftree}\)</span></li>
 </ol>
 <p>In words, Right Application concatenates a string of category <span class="math inline">\((a/b)\)</span> with a string of category <span class="math inline">\(b\)</span> to form a string of category <span class="math inline">\(a\)</span>. At the same time, it applies the meaning of <span class="math inline">\(x\)</span>—a function—to the meaning of <span class="math inline">\(y\)</span>—its argument.</p>
-<p>Left Application goes the other way: it concatenates a string of category <span class="math inline">\(b\)</span> with a string of category <span class="math inline">\((b\backslash a)\)</span> to form a string of category <span class="math inline">\(a\)</span>. And it applies the meaning of <span class="math inline">\(y\)</span>—a function—to the meaning of <span class="math inline">\(x\)</span>—its argument.</p>
-<p>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually <em>guarantee</em> that in each case, the function is the correct kind of thing to apply to the argument. Thus if the function which is the interpretation of <span class="math inline">\(x\)</span> takes entity arguments (in the case of Right Application), then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be an entity; if it takes truth value arguments, then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be a truth value. The correspondence between syntactic categories and semantic types guarantees that these things will line up properly.</p>
+<p>Left Application goes the other way: it concatenates a string of category <span class="math inline">\(b\)</span> with a string of category <span class="math inline">\((b\backslash a)\)</span> to form a string of category <span class="math inline">\(a\)</span>. And it applies the meaning of <span class="math inline">\(y\)</span>—a function—to the mean of <span class="math inline">\(x\)</span>—its argument.</p>
+<p>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually <em>guarantee</em> that in each case, the function is the correct kind of thing to apply to the argument. That is, if the function denoted by <span class="math inline">\(x\)</span> takes entity arguments (in the case of Right Application), then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be an entity; if it takes truth value arguments, then the meaning of <span class="math inline">\(y\)</span> <em>has</em> to be a truth value. The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</p>
 <section id="example-derivation" class="level5">
 <h5 class="anchored" data-anchor-id="example-derivation">Example derivation</h5>
-<p>To illustrate these rules, let’s derive the sentence in (4), using a model similar to the one we used in <a href="../models/english_examples.html">An English model and example</a>. The difference here is that the interpretation of <em>jumps</em> is the characteristic function of the set <span class="math inline">\(\{\ct{j}\}\)</span>—<span class="math inline">\(\{\ct{j}\}_{CF}\)</span> (it maps <span class="math inline">\(\ct{j}\)</span> to <span class="math inline">\(\true\)</span> and <span class="math inline">\(\ct{b}\)</span> to <span class="math inline">\(\false\)</span>).</p>
+<p>To illustrate these rules, let’s derive the sentence in (4), which features the transitive verb <em>bites</em> (and allows Ziggy to get her revenge).</p>
 <ol start="4" class="example" type="1">
-<li>Jo jumps.</li>
+<li>Ziggy bites Bella.</li>
 </ol>
 <p><span class="math display">\[\begin{prooftree}
-\AxiomC{\(⟨\textit{Jo}, \ct{j}⟩ ⊢ np\)}
-\AxiomC{\(⟨\textit{jumps}, \{\ct{j}\}_{CF}⟩ ⊢ (np\backslash s)\)}
-\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Jo jumps}, \{\ct{j}\}_{CF}(\ct{j})⟩ ⊢ s\)}
+\AxiomC{\(⟨\textit{Ziggy}, \ct{z}⟩ ⊢ np\)}
+\AxiomC{\(⟨\textit{bites}, (λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(x, y)))⟩ ⊢ ((np\backslash s)/np)\)}
+\AxiomC{\(⟨\textit{Bella}, \ct{b}⟩ ⊢ np\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{bites Bella}, (λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩\}_{CF}(x, y)))(\ct{b})⟩ ⊢ (np\backslash s)\)}
+\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Ziggy bites Bella}, (λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩\}_{CF}(x, y)))(\ct{b})(\ct{z})⟩ ⊢ s\)}
 \end{prooftree}\]</span></p>
-<p>If we evaluate the resulting interpretation</p>
-<p><span class="math display">\[\{\ct{j}\}_{CF}(\ct{j})\]</span></p>
-<p>we get <span class="math inline">\(\true\)</span>.</p>
+<p>Note that I have assumed a denotation for <em>bites</em> here that makes it the case that Ziggy and Bella bite each other. Thus if we evaluate the resulting expression</p>
+<p><span class="math display">\[(λx.(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(x, y)))(\ct{b})(\ct{z})\]</span></p>
+<p>by first plugging <span class="math inline">\(\ct{b}\)</span> in for <span class="math inline">\(x\)</span>—</p>
+<p><span class="math display">\[(λy.\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(\ct{b}, y))(\ct{z})\]</span></p>
+<p>—and then plugging <span class="math inline">\(\ct{z}\)</span> in for <span class="math inline">\(y\)</span>—we end up with</p>
+<p><span class="math display">\[\{⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩\}_{CF}(\ct{b}, \ct{z})\]</span></p>
+<p>which is <span class="math inline">\(\true\)</span>!</p>
 
 
 <!-- -->
@@ -1167,8 +1257,8 @@ np  s         e   t</code></pre>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../applicative_cg/examples.html" class="pagination-link" aria-label="Determining syntactic categories and semantic types from English descriptions">
-        <span class="nav-page-text">Determining syntactic categories and semantic types from English descriptions</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../applicative_cg/assignment.html" class="pagination-link" aria-label="Assignment">
+        <span class="nav-page-text">Assignment</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -1199,190 +1289,211 @@ np  s         e   t</code></pre>
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>The collection of syntactic categories we've looked at so far in this class is pretty minimal.</span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>So far, there are only four categories:</span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>$np$, $vp$, $s$, and $con$.</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>In addition to noun phrases, verb phrases, and sentences (and connectives), we would very much like to have syntactic categories for transitive verbs (like *see*, *eat*, *like*), ditransitive verbs (e.g., *give*, *send*, *show*)---you name it.</span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>So, let's introduce a system that allows us to take a small collection of starting categories---which we can call *base* categories---and generate an infinite collection of *possible* syntactic categories.</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>The base categories that we start with will just be the category of noun phrases---$np$---and the category of sentences---$s$.</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>As we'll see below, we'll be able to *construct* the category $vp$ of verb phrases out of the other two categories.</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>The collection of syntactic categories introduced in the last section is pretty minimal.</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>So far, there are only three categories:</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>$np$, $pp$, and $s$!</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>In addition to noun phrases, prepositional phrases, and sentences, we would very much like to have syntactic categories for verb phrases, transitive verbs, ditranstive verbs---you name it.</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>So, let's introduce a system that allows us to take these three starting categories---which we can call *base* categories---and generate an infinite collection of *possible* syntactic categories.</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>Each of these possible categories will encapsulate the syntactic distribution of whatever expression it is assigned to.</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>Note that the way we treat syntactic categories here will be exactly analogous to what we did for semantic types, where we used $e$ and $t$ as our "base" (i.e., *atomic*) types and used the "arrow" operator to make new types out of old ones.</span>
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>Each of these possible categories that our system makes available will encapsulate the syntactic distribution of whatever expression it is assigned to.</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>Note that the way we treat syntactic categories here will be exactly analogous to what we did for semantic types, where we used $e$ and $t$ as our "base" (i.e., *atomic*) types and used the "arrow" operator to make new types out of old ones.</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>So, just like we had a rule for forming "arrow" *types*, let's have a rule for forming what we can call *"slash" categories*.</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>(@ex-slash-rule) If $α$ and $β$ are syntactic categories, then $(α/β)$ and $(β\backslash α)$ are also syntactic categories.</span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>Thus in addition to the base categories $np$ and $s$, we have categories like $(np/np)$, $(s\backslash np)$, $((s\backslash np)/(s/s))$, and so on.</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>The idea behind a slash category is that it represents either what kind of expression can occur to something's right or what kind of expression can occur to something's left.</span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>For example, a verb phrase (e.g., *runs*)---something whose category we have been calling $vp$---allows a noun phrase (e.g., *Bo*) to occur to its left;</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>and when this happens, the result is a sentence (e.g., *Bo runs*).</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>To capture this fact about verb phrases, we should assign them the syntactic category $(np\backslash s)$.</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>This category says:</span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>"if you stick an $np$ (the thing to the left of the '$\backslash$') to my left, then together, we can make an $s$!"</span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>This scheme for assigning categories to expressions allows them to *announce* what things they can occur to the left or to the right of. </span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- While a verb phrase takes an $np$ to its left and, with it, makes an $s$, a preposition (e.g., *to*) takes an $np$ to its *right* and, with it, makes a $pp$. --&gt;</span></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Thus a preposition like *to* can be assigned the syntactic category $(pp/np)$. --&gt;</span></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- This category says: --&gt;</span></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- "if you stick an $np$ (the thing to the right of the '$/$') to my right, then together, we can make a $pp$!" --&gt;</span></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The syntactic structure of syntactic categories</span></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>Syntactic categories formed with slashes (like $(np\backslash s)$ and $(np/np)$) have an internal structure, which it is convenient to represent as a kind of syntactic tree structure (note that each slash annotating a node here is wrapped in parentheses for readability):</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="in">  (\)     (/)</span></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="in">  / \     / \</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s   np np</span></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>So, just like we had a rule for forming "arrow" *types*, let's have a rule for forming what we can call *"slash" categories*.</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>(@ex-slash-rule) If $α$ and $β$ are syntactic categories, then $(α/β)$ and $(β\backslash α)$ are also syntactic categories.</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>Thus in addition to the base categories $np$, $pp$, and $s$, we have categories like $(pp/np)$, $(s\backslash pp)$, $((pp\backslash np)/(s/s))$, and so on.</span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>The idea behind a slash category is that it represents either what kind of expression can occur to something's right or what kind of expression can occur to something's left.</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>For example, a verb phrase (e.g., *runs*)---something whose category we have been calling $vp$---allows a noun phrase (e.g., *Bella*) to occur to its left;</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>and when this happens, the result is a sentence (e.g., *Bella runs*).</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>To capture this fact about verb phrases, we should assign them the syntactic category $(np\backslash s)$.</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>This category says:</span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>"if you stick an $np$ (the thing to the left of the '$\backslash$') to my left, then together, we can make an $s$!"</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>This scheme for assigning categories to expressions allows them to (so to speak) *announce* what things they can occur to the left or to the right of. </span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>While a verb phrase takes an $np$ to its left and, with it, makes an $s$, a preposition (e.g., *to*) takes an $np$ to its *right* and, with it, makes a $pp$.</span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>Thus a preposition like *to* can be assigned the syntactic category $(pp/np)$.</span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>This category says:</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>"if you stick an $np$ (the thing to the right of the '$/$') to my right, then together, we can make a $pp$!"</span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The syntactic structure of syntactic categories</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>Syntactic categories formed with slashes (like $(np\backslash s)$ and $(pp/np)$) have an internal structure, which it is convenient to represent as a kind of syntactic tree structure (note that each slash annotating a node here is wrapped in parentheses for readability):</span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a><span class="in">  (\)     (/)</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a><span class="in">  / \     / \</span></span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s   pp np</span></span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>Categories featuring multiple slashes can be represented this way, as well.</span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>Take the ditransitive verb *introduced* as an example, as in (@ex-introduced).</span>
 <span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>Categories featuring multiple slashes can be represented this way, as well.</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>Take the transitive verb *saw* as an example, as in (@ex-saw).</span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>(@ex-saw) Jo saw Bo.</span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>This verb <span class="co">[</span><span class="ot">first</span><span class="co">]</span>{.underline} takes a noun phrase to its right (*saw [Bo]{.underline}*);</span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>and <span class="co">[</span><span class="ot">second</span><span class="co">]</span>{.underline}, it takes a noun phrase to its left (*[Jo]{.underline} saw Bo*).</span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a>The verb *saw* therefore has the following syntactic category, in tree form:</span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="in">    (/)</span></span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>(@ex-introduced) Jo introduced Bo to Mo.</span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>This verb <span class="co">[</span><span class="ot">first</span><span class="co">]</span>{.underline} takes a noun phrase to its right (*introduced [Bo]{.underline}*);</span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">second</span><span class="co">](.underline)</span>, it takes a prepositional phrase to its right (*introduced Bo [to Mo]{.underline}*);</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>and <span class="co">[</span><span class="ot">third</span><span class="co">]</span>{.underline}, it takes a noun phrase to its left (*[Jo]{.underline} introduced Bo to Mo*).</span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>The verb *introduced* therefore has the following syntactic category, in tree form:</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="in">      (/)</span></span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="in">      / \</span></span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="in">    (/)  np</span></span>
 <span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="in">    / \</span></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="in">  (\) np</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="in">  (\) pp</span></span>
 <span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="in">  / \</span></span>
 <span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s</span></span>
 <span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>The way to read this tree is by starting at the very top (or *root*) node and looking at the direction of the slash.</span>
 <span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>If it is a right slash ($/$), then the child node on the *right* is the category of the first argument of an expression with this category.</span>
 <span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a>If it is a left slash ($\backslash$), then the child node on the *left* is the category of the first argument.</span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>Here, the root node is a right slash, so we look to the right child, which is $np$---that's the thing *saw* combines with first.</span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>Meanwhile, the *left* child is the category of the expression that results once you combine *saw* with this noun phrase.</span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>Hence, the string *saw Bo* has the category represented by the *following* tree:</span>
+<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>Here, the root node is a right slash, so we look to the right child, which is $np$---that's the thing *introduce* combines with first.</span>
+<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>Meanwhile, the *left* child is the category of the expression that results once you combine *introduced* with this noun phrase.</span>
+<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>Hence, the string *introduced Bo* has the category represented by the *following* tree:</span>
 <span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="in">  (\)</span></span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="in">  / \</span></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s</span></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>Finally---and in this case, we're dealing with a left slash ($\backslash$)---we can combine this expression with *Jo* to get *Jo saw Bo*, which therefore has the following category:</span>
+<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a><span class="in">    (/)</span></span>
+<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a><span class="in">    / \</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="in">  (\) pp</span></span>
+<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a><span class="in">  / \</span></span>
+<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s</span></span>
 <span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="in"> s</span></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a>In the more usual notation, we would write this very same syntactic category out as $((np\backslash s)/np)$.</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>Both notations encode the *order* in which the verb takes its arguments, as well as whether each argument that it takes occurs to its left or to its right.</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The correspondence between syntactic categories and semantic types</span></span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a>So now we have a whole *language* of syntactic categories, as well as a whole *language* of semantic types.</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>Let's keep developing the chart that we started in <span class="co">[</span><span class="ot">Semantic types</span><span class="co">](sem_types.html)</span>, in order to incorporate a few more syntactic categories.</span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>Now, we will have not only noun phrases and sentences, but also verb phrases and transitive verbs.</span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a>Respectively:</span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Syntactic category                              <span class="pp">|</span> Semantic type   <span class="pp">|</span> Domain                      <span class="pp">|</span></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------------------------------|-----------------|-----------------------------|</span></span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $np$                                            <span class="pp">|</span> $e$             <span class="pp">|</span> $D_{e} = D$                 <span class="pp">|</span></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $s$                                             <span class="pp">|</span> $t$             <span class="pp">|</span> $D_{t} = <span class="sc">\{</span>\true, \false<span class="sc">\}</span>$ <span class="pp">|</span></span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(np\backslash s)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $vp$)       <span class="pp">|</span> $(e → t)$       <span class="pp">|</span>                             <span class="pp">|</span></span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $((np\backslash s)/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (transitive verbs) <span class="pp">|</span> $(e → (e → t))$ <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a>Likewise---assuming that *to Mo* has the category $pp$---*introduced Bo to Mo* has the following category:</span>
+<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="in">  (\)</span></span>
+<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a><span class="in">  / \</span></span>
+<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a><span class="in"> np  s</span></span>
+<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a>Finally---and in this case, we're dealing with a left slash ($\backslash$)---we can combine this expression with *Jo* to get *Jo introduced Bo to Mo*, which therefore has the category $s$.</span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a>In the more usual notation, we would write this very same syntactic category out as $(((np\backslash s)/pp)/np)$.</span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a>Both notations encode the *order* in which the verb takes its arguments, as well as whether each argument that it takes occurs to its left or to its right!</span>
+<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="fu">#### The correspondence between syntactic categories and semantic types</span></span>
+<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>So now we have a whole *language* of syntactic categories, as well as a whole *language* of semantic types.</span>
+<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>Let's keep developing the chart that we started in <span class="co">[</span><span class="ot">Semantic types</span><span class="co">](sem_types.html)</span>, in order to incorporate a few more syntactic categories.</span>
+<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>Now, we will have not only noun phrases, prepositional phrases, and sentences, but also:</span>
+<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a>verb phrases, transitive verbs, ditransitive verbs that take two noun phrases (e.g., *show*), ditransitive verbs that take a noun phrase and a prepositional phrase (e.g., *introduce*), and prepositions.</span>
+<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>Respectively:</span>
 <span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>By lining syntactic categories up with their semantic types, we can begin to see a correspondence.</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>Specifically we have something like the following set of rules:</span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is an $np$ in the syntactic category, there is an $e$ in the corresponding semantic type.</span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is an $s$ in the syntactic category, there is a $t$ in the semantic type.</span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is a left slash ($\backslash$) in the syntactic category, there is an arrow ($→$) in the semantic type.</span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is a right slash ($/$) in the syntactic category, there is an arrow ($→$) in the semantic type;</span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a>  but this time, the arrow is "pointing the other way"---that is, the thing that goes to the *right* of the right slash goes to the *left* of the arrow.</span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>Let's look at a couple of examples of this correspondence, one simple, and one slightly more complex.</span>
+<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Syntactic category                                    <span class="pp">|</span> Semantic type         <span class="pp">|</span> Domain                      <span class="pp">|</span></span>
+<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------------------------------------------------|-----------------------|-----------------------------|</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $np$                                                  <span class="pp">|</span> $e$                   <span class="pp">|</span> $D_{e} = D$                 <span class="pp">|</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $pp$                                                  <span class="pp">|</span> $e$                   <span class="pp">|</span> $D_{e} = D$                 <span class="pp">|</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $s$                                                   <span class="pp">|</span> $t$                   <span class="pp">|</span> $D_{t} = <span class="sc">\{</span>\true, \false<span class="sc">\}</span>$ <span class="pp">|</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(np\backslash s)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $vp$)             <span class="pp">|</span> $(e → t)$             <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $((np\backslash s)/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $tv$)        <span class="pp">|</span> $(e → (e → t))$       <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(((np\backslash s)/np)/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $dtv$)  <span class="pp">|</span> $(e → (e → (e → t)))$ <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(((np\backslash s)/pp)/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $datV$) <span class="pp">|</span> $(e → (e → (e → t)))$ <span class="pp">|</span>                             <span class="pp">|</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> $(pp/np)$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> (previously $p$)                       <span class="pp">|</span> $(e → e)$             <span class="pp">|</span>                             <span class="pp">|</span></span>
 <span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="fu">##### First example</span></span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>First, let's look at the third line of the table---the one which relates the category of verb phrases to the semantic type $(e → t)$.</span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>In tree notation, the syntactic category and the semantic type can be rendered as follows:</span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="in"> (\)     ─&gt;</span></span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="in"> / \    / \</span></span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="in">np s   e   t</span></span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a>Note that in this example, the $e$ which is the left child of the arrow corresponds to the $np$ which is the left child of the slash, since it is a left slash.</span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a>Both correspond, in some sense, to an *argument*:</span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>while $np$ corresponds to the syntactic argument---the subject of the verb phrase---$e$ corresponds to the semantic argument of the function which is the *interpretation* of the verb phrase.</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>Meanwhile, the $t$ which is the *right* child of the arrow corresponds to the $s$ which is the right child of the slash.</span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>Both correspond, in some sense, to the *result*---either the result of concatenating the two expressions (in the case of the syntactic category), or the result of applying the function (in the case of the semantic type).</span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Second example</span></span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>For a slightly more complex example, let's look at the fourth line of the table---the one for transitive verbs.</span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>In tree notation, we have the following syntactic category and semantic type:</span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a><span class="in">   (/)         ─&gt;</span></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a><span class="in">   / \        / \</span></span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a><span class="in"> (\) np      e  ─&gt;</span></span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a><span class="in"> / \           / \</span></span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a><span class="in">np  s         e   t</span></span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a>In this example, the $e$ which is the left child of the arrow at the root corresponds to the $np$ which is the *right* child of the slash, since it is a right slash.</span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>Meanwhile, the left child of this same slash corresponds to the type $(e → t)$ which is the *right* child of the arrow at the root of the semantic type.</span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>Since this left child in the syntactic category is a category formed from a *left* slash, its left child---the $np$---corresponds to the $e$, while its right child---the $s$---corresponds to the $t$.</span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Rules</span></span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>Now that we have explored the structure of both syntactic categories and semantic types, as well as how these structures correspond to each other, let's formalize the way that syntactic categories may actually be *used*.</span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>That is, how do we use them to derive complex expressions?</span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>We need just two rules:</span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>one for allowing an expression to combine with something to its right (Right Application), and one for allowing an expression to combine with something to its left (Left Application).</span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>(@ex-applicative-cg-rules)</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>    Right Application: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>    $\begin{prooftree}</span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨x, m⟩ ⊢ (a/b)<span class="sc">\)</span>}</span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨y, n⟩ ⊢ b<span class="sc">\)</span>}</span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>    \RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨x^{⌢}y, m(n)⟩ ⊢ a<span class="sc">\)</span>}</span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>    \end{prooftree}$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>    Left application: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>    $\begin{prooftree}</span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨x, n⟩ ⊢ b<span class="sc">\)</span>}</span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨y, m⟩ ⊢ (b\backslash a)<span class="sc">\)</span>}</span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>    \RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨x^{⌢}y, m(n)⟩ ⊢ a<span class="sc">\)</span>}</span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>    \end{prooftree}$</span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>In words, Right Application concatenates a string of category $(a/b)$ with a string of category $b$ to form a string of category $a$.</span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>At the same time, it applies the meaning of $x$---a function---to the meaning of $y$---its argument.</span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>Left Application goes the other way:</span>
-<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>it concatenates a string of category $b$ with a string of category $(b\backslash a)$ to form a string of category $a$.</span>
-<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>And it applies the meaning of $y$---a function---to the meaning of $x$---its argument.</span>
-<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually *guarantee* that in each case, the function is the correct kind of thing to apply to the argument.</span>
-<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>Thus if the function which is the interpretation of $x$ takes entity arguments (in the case of Right Application), then the meaning of $y$ *has* to be an entity;</span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>if it takes truth value arguments, then the meaning of $y$ *has* to be a truth value.</span>
-<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a>The correspondence between syntactic categories and semantic types guarantees that these things will line up properly.</span>
-<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Example derivation</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>By lining syntactic categories up with their semantic types, we can begin to see a correspondence.</span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a>Specifically we have something like the following set of rules:</span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is an $np$ or $pp$ in the syntactic category, there is an $e$ in the corresponding semantic type.</span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a>  And wherever there is an $s$ in the syntactic category, there is a $t$ in the semantic type.</span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is a left slash ($\backslash$) in the syntactic category, there is an arrow ($→$) in the semantic type.</span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Wherever there is a right slash ($/$) in the syntactic category, there is an arrow ($→$) in the semantic type;</span>
+<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a>  but this time, the arrow is "pointing the other way"---that is, the thing that goes to the *right* of the right slash goes to the *left* of the arrow.</span>
+<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a>Let's look at a couple of example of this correspondence, one simple, and one slightly more complex.</span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="fu">##### First example</span></span>
+<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a>First, let's look at the very last line of the table---the one which relates the category of prepositions to the semantic type $(e → e)$.</span>
+<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>In tree notation, the syntactic category and the semantic type can be rendered as follows:</span>
+<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a><span class="in"> (/)     ─&gt;</span></span>
+<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a><span class="in"> / \    / \</span></span>
+<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a><span class="in">pp np  e   e</span></span>
+<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a>Note that in this example, the $e$ which is the left child of the arrow corresponds to the $np$ which is the right child of the slash, since it is a right slash.</span>
+<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>Both correspond, in some sense, to an *argument*:</span>
+<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>while $np$ corresponds to the syntactic argument---the object of the preposition---$e$ corresponds to the semantic argument of the function *denoted* by the preposition.</span>
+<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>Meanwhile, the $e$ which is the *right* child of the arrow corresponds to the $pp$ which is the left child of the slash.</span>
+<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a>Both correspond, in some sonse, to the *result*---either the result of concatenating the two expressions (in the case of the syntactic category), or the result of applying the function (in the case of the semantic type).</span>
+<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Second example</span></span>
+<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>For a slightly more complex example, let's look at the fifth line of the table---the one for transitive verbs.</span>
+<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a>In tree notation, we have the following syntactic category and semantic type:</span>
+<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a><span class="in">   (/)         ─&gt;</span></span>
+<span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a><span class="in">   / \        / \</span></span>
+<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="in"> (\) np      e  ─&gt;</span></span>
+<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="in"> / \           / \</span></span>
+<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a><span class="in">np  s         e   t</span></span>
+<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>In this example, the $e$ which is the left child of the arrow at the root corresponds to the $np$ which is the *right* child of the slash, since it is a right slash.</span>
+<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>Meanwhile, the left child of this same slash corresponds to the type $(e → t)$ which is the *right* child of the arrow at the root of the semantic type.</span>
+<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>Since this left child in the syntactic category is a category formed from a *left* slash, its left child---the $np$---corresponds to the $e$, while its right child---the $s$---corresponds to the $t$.</span>
+<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Rules</span></span>
+<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>Now that we have explored the structure of both syntactic categories and semantic types, as well as how these structures correspond to each other, let's formalize the way that syntactic categories may actually be *used*.</span>
+<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>That is, how do we use them to derive complex expressions?</span>
+<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>We need just two rules:</span>
+<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>one for allowing an expression to combine with something to its right (Right Application), and one for allowing an expression to combine with something to its left (Left Application).</span>
+<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a>(@ex-applicative-cg-rules)</span>
+<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a>    Right Application: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a>    $\begin{prooftree}</span>
+<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ (a/b)<span class="sc">\)</span>}</span>
+<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ b<span class="sc">\)</span>}</span>
+<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>    \RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨x^{⌢}y, ⟦x⟧_{\mathcal{M}}(⟦y⟧_{\mathcal{M}})⟩ ⊢ a<span class="sc">\)</span>}</span>
+<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a>    \end{prooftree}$ <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>    Left application: <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a>    $\begin{prooftree}</span>
+<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ b<span class="sc">\)</span>}</span>
+<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a>    \AxiomC{<span class="sc">\(</span>⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ (b\backslash a)<span class="sc">\)</span>}</span>
+<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a>    \RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ a<span class="sc">\)</span>}</span>
+<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>    \end{prooftree}$</span>
+<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a>In words, Right Application concatenates a string of category $(a/b)$ with a string of category $b$ to form a string of category $a$.</span>
+<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a>At the same time, it applies the meaning of $x$---a function---to the meaning of $y$---its argument.</span>
 <span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>To illustrate these rules, let's derive the sentence in (@ex-jumps), using a model similar to the one we used in <span class="co">[</span><span class="ot">An English model and example</span><span class="co">](../models/english_examples.html)</span>.</span>
-<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>The difference here is that the interpretation of *jumps* is the characteristic function of the set $<span class="sc">\{</span>\ct{j}<span class="sc">\}</span>$---$<span class="sc">\{</span>\ct{j}<span class="sc">\}</span>_{CF}$ (it maps $\ct{j}$ to $\true$ and $\ct{b}$ to $\false$).</span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>(@ex-jumps) Jo jumps.</span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Jo}, \ct{j}⟩ ⊢ np<span class="sc">\)</span>}</span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{jumps}, <span class="sc">\{</span>\ct{j}<span class="sc">\}</span>_{CF}⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
-<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Jo jumps}, <span class="sc">\{</span>\ct{j}<span class="sc">\}</span>_{CF}(\ct{j})⟩ ⊢ s<span class="sc">\)</span>}</span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a>Left Application goes the other way:</span>
+<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a>it concatenates a string of category $b$ with a string of category $(b\backslash a)$ to form a string of category $a$.</span>
+<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a>And it applies the meaning of $y$---a function---to the mean of $x$---its argument.</span>
+<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a>Importantly, because of the correspondence between syntactic categories and their associated semantic types, we can actually *guarantee* that in each case, the function is the correct kind of thing to apply to the argument.</span>
+<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a>That is, if the function denoted by $x$ takes entity arguments (in the case of Right Application), then the meaning of $y$ *has* to be an entity;</span>
+<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a>if it takes truth value arguments, then the meaning of $y$ *has* to be a truth value.</span>
+<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a>The correspondence between syntactic categories and semantic types guarantees that these things will line up properly!</span>
+<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Example derivation</span></span>
 <span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>If we evaluate the resulting interpretation</span>
+<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a>To illustrate these rules, let's derive the sentence in (@ex-bites), which features the transitive verb *bites* (and allows Ziggy to get her revenge).</span>
 <span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>\ct{j}<span class="sc">\}</span>_{CF}(\ct{j})$$</span>
+<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a>(@ex-bites) Ziggy bites Bella.</span>
 <span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>we get $\true$.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
+<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Ziggy}, \ct{z}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{bites}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))⟩ ⊢ ((np\backslash s)/np)<span class="sc">\)</span>}</span>
+<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Bella}, \ct{b}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
+<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Ziggy bites Bella}, (λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{b}, \ct{z}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})⟩ ⊢ s<span class="sc">\)</span>}</span>
+<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
+<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a>Note that I have assumed a denotation for *bites* here that makes it the case that Ziggy and Bella bite each other.</span>
+<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>Thus if we evaluate the resulting expression</span>
+<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(x, y)))(\ct{b})(\ct{z})$$</span>
+<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>by first plugging $\ct{b}$ in for $x$---</span>
+<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>$$(λy.<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, y))(\ct{z})$$</span>
+<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>---and then plugging $\ct{z}$ in for $y$---we end up with</span>
+<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\{</span>⟨\ct{b}, \ct{z}⟩, ⟨\ct{z}, \ct{b}⟩<span class="sc">\}</span>_{CF}(\ct{b}, \ct{z})$$</span>
+<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>which is $\true$!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

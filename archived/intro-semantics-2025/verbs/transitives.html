@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,12 +511,80 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -566,30 +628,30 @@ window.Quarto = {
 \def\false{\ct{F}}
 \]</span></p>
 </div>
-<p>Transitive verbs like <em>saw</em> increase the number of syntactic and semantic arguments of intransitives by one. To analyze the sentence in (1),</p>
+<p>Transitive verbs like <em>punches</em> increase the number of syntactic and semantic arguments of intransitives by one. To analyze the sentence in (1),</p>
 <ol class="example" type="1">
-<li>Sam saw Frodo.</li>
+<li>Tigress punches Po.</li>
 </ol>
 <p>we can assign a lexical entry like the one in (2) to this verb.</p>
 <ol start="2" class="example" type="1">
-<li><span class="math inline">\(⟨\textit{saw}, (λx.(λy.\ct{see}(y, x)))⟩ ⊢ ((np\backslash s)/np)\)</span></li>
+<li><span class="math inline">\(⟨\textit{punches}, (λx.(λy.\ct{punch}(y, x)))⟩ ⊢ ((np\backslash s)/np)\)</span></li>
 </ol>
 <p>In this case, we have a function of the following type:</p>
-<p><span class="math display">\[(λx.(λy.\ct{see}(y, x))) : (e → (e → t))\]</span></p>
-<p>This function is defined in terms of a relation on entities, <span class="math inline">\(\ct{see}\)</span>. That is, given two entities <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, <span class="math inline">\(\ct{see}(y, x)\)</span> is some truth value.</p>
-<p>Then, given the lexical entry for <em>Sam</em> on which its interpretation is <span class="math inline">\(\ct{s}\)</span>, we can derive the meaning and syntactic category of the sentence in (1):</p>
+<p><span class="math display">\[(λx.(λy.\ct{punch}(y, x))) : D_{e} → D_{e} → \{\true, \false\}\]</span></p>
+<p>This function is defined in terms of a relation on entities, <span class="math inline">\(\ct{punch}\)</span>. That is, given two entities <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, <span class="math inline">\(\ct{punch}(y, x)\)</span> is some truth value.</p>
+<p>Then, given the lexical entry for <em>Tigress</em> where it denotes <span class="math inline">\(\ct{ti}\)</span>, we can derive the meaning and syntactic category of the sentence in (1):</p>
 <p><span class="math display">\[\begin{prooftree}
-\AxiomC{\(⟨\textit{Sam}, \ct{s}⟩ ⊢ np\)}
-\AxiomC{\(⟨\textit{saw}, (λx.(λy.\ct{see}(y, x)))⟩ ⊢ (np\backslash s)/np\)}
-\AxiomC{\(⟨\textit{Frodo}, \ct{f}⟩ ⊢ np\)}
-\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{saw Frodo}, (λx.(λy.\ct{see}(y, x)))(\ct{f})⟩ ⊢ (np\backslash s)\)}
-\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Sam saw Frodo}, (λx.(λy.\ct{see}(y, x)))(\ct{f})(\ct{s})⟩ ⊢ s\)}
+\AxiomC{\(⟨\textit{Tigress}, \ct{ti}⟩ ⊢ np\)}
+\AxiomC{\(⟨\textit{punches}, (λx.(λy.\ct{punch}(y, x)))⟩ ⊢ (np\backslash s)/np\)}
+\AxiomC{\(⟨\textit{Po}, \ct{p}⟩ ⊢ np\)}
+\RightLabel{\(/\)}\BinaryInfC{\(⟨\textit{punches Po}, (λx.(λy.\ct{punch}(y, x)))(\ct{p})⟩ ⊢ (np\backslash s)\)}
+\RightLabel{\(\backslash\)}\BinaryInfC{\(⟨\textit{Tigress punches Po}, (λx.(λy.\ct{punch}(y, x)))(\ct{p})(\ct{ti})⟩ ⊢ s\)}
 \end{prooftree}\]</span></p>
-<p>Since <span class="math inline">\((λx.(λy.\ct{see}(y, x)))\)</span> takes two entities in order, we can obtain a function that takes <em>one</em> entity by applying it first to <span class="math inline">\(\ct{f}\)</span>:</p>
-<p><span class="math display">\[(λx.(λy.\ct{see}(y, x)))(\ct{f})\]</span> <span class="math display">\[⇒ (λy.\ct{see}(y, \ct{f}))\]</span></p>
-<p>The resulting function is a characteristic function of a set of entities. Thus if we apply the original function to <em>two</em> entities, we get a truth value:</p>
-<p><span class="math display">\[(λx.(λy.\ct{see}(y, x)))(\ct{f})(\ct{s})\]</span> <span class="math display">\[⇒ (λy.\ct{see}(y, \ct{f}))(\ct{s})\]</span> <span class="math display">\[⇒ \ct{see}(\ct{s}, \ct{f})\]</span></p>
-<p>This result, <span class="math inline">\(\ct{see}(\ct{s}, \ct{f})\)</span>, will be <span class="math inline">\(\true\)</span> or <span class="math inline">\(\false\)</span>, depending on the model.</p>
+<p>Since <span class="math inline">\((λx.(λy.\ct{punch}(y, x)))\)</span> takes two entities in order, we can get a function takes <em>one</em> entity by applying it first to <span class="math inline">\(\ct{p}\)</span>:</p>
+<p><span class="math display">\[(λx.(λy.\ct{punch}(y, x)))(\ct{p})\]</span> <span class="math display">\[⇒ (λy.\ct{punch}(y, \ct{p}))\]</span></p>
+<p>This function is itself a characteristic function of a set of entities in <span class="math inline">\(D_{e}\)</span>. As a result, if we apply it to <em>two</em> entities, we get a truth value:</p>
+<p><span class="math display">\[(λx.(λy.\ct{punch}(y, x)))(\ct{p})(\ct{ti})\]</span> <span class="math display">\[⇒ (λy.\ct{punch}(x, \ct{p}))(\ct{ti})\]</span> <span class="math display">\[⇒ \ct{punch}(\ct{ti}, \ct{p})\]</span></p>
+<p>This result, <span class="math inline">\(\ct{punch}(\ct{ti}, \ct{p})\)</span>, will be <span class="math inline">\(\true\)</span> or <span class="math inline">\(\false\)</span>, depending on the model.</p>
 
 
 <!-- -->
@@ -1086,45 +1148,45 @@ window.Quarto = {
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Transitive verbs like *saw* increase the number of syntactic and semantic arguments of intransitives by one.</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>To analyze the sentence in (@ex-saw),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Transitive verbs like *punches* increase the number of syntactic and semantic arguments of intransitives by one.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>To analyze the sentence in (@ex-punches),</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>(@ex-saw) Sam saw Frodo.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>(@ex-punches) Tigress punches Po.</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>we can assign a lexical entry like the one in (@ex-lexicon) to this verb.</span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>(@ex-lexicon) $⟨\textit{saw}, (λx.(λy.\ct{see}(y, x)))⟩ ⊢ ((np\backslash s)/np)$</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>(@ex-lexicon) $⟨\textit{punches}, (λx.(λy.\ct{punch}(y, x)))⟩ ⊢ ((np\backslash s)/np)$</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>In this case, we have a function of the following type:</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.\ct{see}(y, x))) : (e → (e → t))$$</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.\ct{punch}(y, x))) : D_{e} → D_{e} → <span class="sc">\{</span>\true, \false<span class="sc">\}</span>$$</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>This function is defined in terms of a relation on entities, $\ct{see}$.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>That is, given two entities $x$ and $y$, $\ct{see}(y, x)$ is some truth value.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>This function is defined in terms of a relation on entities, $\ct{punch}$.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>That is, given two entities $x$ and $y$, $\ct{punch}(y, x)$ is some truth value.</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Then, given the lexical entry for *Sam* on which its interpretation is $\ct{s}$, we can derive the meaning and syntactic category of the sentence in (@ex-saw):</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Then, given the lexical entry for *Tigress* where it denotes $\ct{ti}$, we can derive the meaning and syntactic category of the sentence in (@ex-punches):</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Sam}, \ct{s}⟩ ⊢ np<span class="sc">\)</span>}</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{saw}, (λx.(λy.\ct{see}(y, x)))⟩ ⊢ (np\backslash s)/np<span class="sc">\)</span>}</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Frodo}, \ct{f}⟩ ⊢ np<span class="sc">\)</span>}</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{saw Frodo}, (λx.(λy.\ct{see}(y, x)))(\ct{f})⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Sam saw Frodo}, (λx.(λy.\ct{see}(y, x)))(\ct{f})(\ct{s})⟩ ⊢ s<span class="sc">\)</span>}</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Tigress}, \ct{ti}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{punches}, (λx.(λy.\ct{punch}(y, x)))⟩ ⊢ (np\backslash s)/np<span class="sc">\)</span>}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>\AxiomC{<span class="sc">\(</span>⟨\textit{Po}, \ct{p}⟩ ⊢ np<span class="sc">\)</span>}</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>/<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{punches Po}, (λx.(λy.\ct{punch}(y, x)))(\ct{p})⟩ ⊢ (np\backslash s)<span class="sc">\)</span>}</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>\RightLabel{<span class="sc">\(</span>\backslash<span class="sc">\)</span>}\BinaryInfC{<span class="sc">\(</span>⟨\textit{Tigress punches Po}, (λx.(λy.\ct{punch}(y, x)))(\ct{p})(\ct{ti})⟩ ⊢ s<span class="sc">\)</span>}</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Since $(λx.(λy.\ct{see}(y, x)))$ takes two entities in order, we can obtain a function that takes *one* entity by applying it first to $\ct{f}$:</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Since $(λx.(λy.\ct{punch}(y, x)))$ takes two entities in order, we can get a function takes *one* entity by applying it first to $\ct{p}$:</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.\ct{see}(y, x)))(\ct{f})$$</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$⇒ (λy.\ct{see}(y, \ct{f}))$$</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.\ct{punch}(y, x)))(\ct{p})$$</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$⇒ (λy.\ct{punch}(y, \ct{p}))$$</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>The resulting function is a characteristic function of a set of entities.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Thus if we apply the original function to *two* entities, we get a truth value:</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>This function is itself a characteristic function of a set of entities in $D_{e}$.</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>As a result, if we apply it to *two* entities, we get a truth value:</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.\ct{see}(y, x)))(\ct{f})(\ct{s})$$</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>$$⇒ (λy.\ct{see}(y, \ct{f}))(\ct{s})$$</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>$$⇒ \ct{see}(\ct{s}, \ct{f})$$</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>$$(λx.(λy.\ct{punch}(y, x)))(\ct{p})(\ct{ti})$$</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>$$⇒ (λy.\ct{punch}(x, \ct{p}))(\ct{ti})$$</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>$$⇒ \ct{punch}(\ct{ti}, \ct{p})$$</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>This result, $\ct{see}(\ct{s}, \ct{f})$, will be $\true$ or $\false$, depending on the model.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>This result, $\ct{punch}(\ct{ti}, \ct{p})$, will be $\true$ or $\false$, depending on the model.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

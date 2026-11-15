@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,26 +511,88 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#some-possible-properties-of-relations" id="toc-some-possible-properties-of-relations" class="nav-link active" data-scroll-target="#some-possible-properties-of-relations">Some possible properties of relations</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -561,20 +617,31 @@ window.Quarto = {
 
 
 <p>If we have a collection of sets <span class="math inline">\(A_{1}\)</span> through <span class="math inline">\(A_{n}\)</span>, then we can take an <span class="math inline">\(n\)</span>-ary <em>relation</em> on those sets. An <span class="math inline">\(n\)</span>-ary <em>relation</em> on the sets <span class="math inline">\(A_{1}, ..., A_{n}\)</span> is a set <span class="math inline">\(R\)</span> such that <span class="math inline">\(R ⊆ A_{1} × ... × A_{n}\)</span>. In the special case of a binary relation on two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, <span class="math inline">\(R\)</span> is a set of pairs <span class="math inline">\(⟨a, b⟩\)</span>, such that <span class="math inline">\(a ∈ A\)</span> and <span class="math inline">\(b ∈ B\)</span>. That is, <span class="math inline">\(R ⊆ A × B\)</span>. For <span class="math inline">\(n\)</span>-ary relations <span class="math inline">\(R\)</span>, if the <span class="math inline">\(n\)</span>-tuple <span class="math inline">\(⟨a₁, ..., aₙ⟩\)</span> is a member of <span class="math inline">\(R\)</span>, we can indicate this by writing <span class="math display">\[R(a₁, ..., aₙ)\]</span></p>
-<p>An important operation on relations is <em>relation composition</em>. Given a relation <span class="math inline">\(R_{1} ⊂ A × B\)</span> and a relation <span class="math inline">\(R_{2} ⊆ B × C\)</span>, their composition <span class="math display">\[R_{2} ∘ R_{1}\]</span> which is a subset of <span class="math inline">\(A × C\)</span>, is defined as <span class="math display">\[R_{2} ∘ R_{1} = \{⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}\}\]</span> That is, <span class="math inline">\(R_{2} ∘ R_{1}\)</span> is gotten by relating an element of <span class="math inline">\(A\)</span> to an element of <span class="math inline">\(C\)</span> just in case there is some element of <span class="math inline">\(B\)</span> related to the first element by <span class="math inline">\(R_{1}\)</span> and to the second element by <span class="math inline">\(R_{2}\)</span>.</p>
-<p>If <span class="math inline">\(R\)</span> is a relation on <span class="math inline">\(A\)</span>, then we will write <span class="math inline">\(R^{n}\)</span> to refer to the result of composing <span class="math inline">\(R\)</span> with itself <span class="math inline">\(n\)</span> times. By convention: <span class="math display">\[\begin{align*}
-R^{0} &amp;= \{⟨x, x⟩ ∣ x ∈ A\}\\
-R^{} &amp;= R\\
-Rⁿ &amp;= R^{n - 1} ∘ R
-\end{align*}\]</span> If <span class="math inline">\(R ⊆ A × B\)</span>, we may define its <em>inverse</em> as the relation <span class="math inline">\(R^{-1} ⊆ B × A\)</span> such that <span class="math inline">\(⟨y, x⟩ ∈ R^{-1}\)</span> just in case <span class="math inline">\(⟨x, y⟩ ∈ R\)</span>. That is, <span class="math inline">\(R^{-1}\)</span> is just like <span class="math inline">\(R\)</span>, but “flipped around”.</p>
-<section id="some-possible-properties-of-relations" class="level3">
-<h3 class="anchored" data-anchor-id="some-possible-properties-of-relations">Some possible properties of relations</h3>
-<p>Some properties of relations are useful to be able to describe. A relation <span class="math inline">\(R ⊆ A × A\)</span> (that, is a relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span>) is said to be <em>reflexive</em> if <span class="math inline">\(⟨x, x⟩ ∈ R\)</span> for every <span class="math inline">\(x ∈ A\)</span>. That is, <span class="math inline">\(R\)</span> relates everything in <span class="math inline">\(A\)</span> to itself. A relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span> is said to be <em>symmetric</em> if <span class="math inline">\(⟨y, x⟩ ∈ R\)</span> whenever <span class="math inline">\(⟨x, y⟩ ∈ R\)</span>. It is said to be <em>antisymmetric</em> if the only case in which both <span class="math inline">\(⟨x, y⟩ ∈ R\)</span> and <span class="math inline">\(⟨y, x⟩ ∈ R\)</span> is when <span class="math inline">\(x = y\)</span>. <span class="math inline">\(R\)</span> is said to be <em>transitive</em> if whenever <span class="math inline">\(⟨x, y⟩, ⟨y, z⟩ ∈ R\)</span>, then <span class="math inline">\(⟨x, z⟩ ∈ R\)</span>. A relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span> which has all three of these properties—that is, it is reflexive, transitive, and symmetric—is said to be an <em>equivalence relation</em>.</p>
+<!-- Some properties of relations are useful to be able to describe. A relation -->
+<!-- $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be /reflexive/ if $⟨x, -->
+<!-- x⟩ ∈ R$ for every $x ∈ A$. That is, $R$ relates everything in $A$ to -->
+<!-- itself. A relation $R$ on $A$ is said to be /symmetric/ if $⟨y, x⟩ ∈ R$ -->
+<!-- whenever $⟨x, y⟩ ∈ R$. It is said to be /antisymmetric/ if the only case in -->
+<!-- which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$. $R$ is said to be -->
+<!-- /transitive/ if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$. A relation -->
+<!-- $R$ on $A$ which is reflexive, transitive, and symmetric is said to be an -->
+<!-- /equivalence relation/. -->
+<p>An important operation on relations is <em>relation composition</em>. Given a relation <span class="math inline">\(R_{1} ⊂ A × B\)</span> and a relation <span class="math inline">\(R_{2} ⊆ B × C\)</span>, their composition <span class="math inline">\(R_{2} ∘ R_{1} ⊆ A × C\)</span> is defined as <span class="math display">\[R_{2} ∘ R_{1} = \{⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}\}\]</span> That is, <span class="math inline">\(R_{2} ∘ R_{1}\)</span> is gotten by relating an element of <span class="math inline">\(A\)</span> to an element of <span class="math inline">\(C\)</span> just in case there is some element of <span class="math inline">\(B\)</span> related to the first element by <span class="math inline">\(R_{1}\)</span> and to the second element by <span class="math inline">\(R_{2}\)</span>.</p>
+<!-- If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result -->
+<!-- of composing $R$ with itself $n$ times. -->
+<!-- By convention: -->
+<!-- $$\begin{align*} -->
+<!-- R^{0} &= \{⟨x, x⟩ ∣ x ∈ A\}\\ -->
+<!-- R^{} &= R\\ -->
+<!-- Rⁿ &= R^{n - 1} ∘ R -->
+<!-- \end{align*}$$ -->
+<!-- If $R ⊆ A × B$, we may define its /inverse/ as the relation $R^{-1} ⊆ B × A$ -->
+<!-- such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$. That is, $R^{-1}$ is -->
+<!-- just like $R$, but ``flipped around''. -->
 
 
 <!-- -->
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1051,31 +1118,32 @@ Rⁿ &amp;= R^{n - 1} ∘ R
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>That is, $R ⊆ A × B$.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>For $n$-ary relations $R$, if the $n$-tuple $⟨a₁, ..., aₙ⟩$ is a member of $R$, we can indicate this by writing $$R(a₁, ..., aₙ)$$</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>An important operation on relations is *relation composition*.</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Given a relation $R_{1} ⊂ A × B$ and a relation $R_{2} ⊆ B × C$, their composition</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>$$R_{2} ∘ R_{1}$$</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>which is a subset of $A × C$, is defined as $$R_{2} ∘ R_{1} = <span class="sc">\{</span>⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}<span class="sc">\}</span>$$</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>That is, $R_{2} ∘ R_{1}$ is gotten by relating an element of $A$ to an element of $C$ just in case there is some element of $B$ related to the first element by $R_{1}$ and to the second element by $R_{2}$.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result of composing $R$ with itself $n$ times.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>By convention:</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>$$\begin{align*}</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>R^{0} &amp;= <span class="sc">\{</span>⟨x, x⟩ ∣ x ∈ A<span class="sc">\}\\</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>R^{} &amp;= R<span class="sc">\\</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Rⁿ &amp;= R^{n - 1} ∘ R</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>\end{align*}$$</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>If $R ⊆ A × B$, we may define its *inverse* as the relation $R^{-1} ⊆ B × A$ such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$.</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>That is, $R^{-1}$ is just like $R$, but "flipped around".</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">### Some possible properties of relations</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Some properties of relations are useful to be able to describe.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>A relation $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be *reflexive* if $⟨x, x⟩ ∈ R$ for every $x ∈ A$.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>That is, $R$ relates everything in $A$ to itself.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>A relation $R$ on $A$ is said to be *symmetric* if $⟨y, x⟩ ∈ R$ whenever $⟨x, y⟩ ∈ R$.</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>It is said to be *antisymmetric* if the only case in which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>$R$ is said to be *transitive* if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$.</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>A relation $R$ on $A$ which has all three of these properties---that is, it is reflexive, transitive, and symmetric---is said to be an *equivalence relation*.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Some properties of relations are useful to be able to describe. A relation --&gt;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $R ⊆ A × A$ (that, is a relation $R$ on $A$) is said to be /reflexive/ if $⟨x, --&gt;</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- x⟩ ∈ R$ for every $x ∈ A$. That is, $R$ relates everything in $A$ to --&gt;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- itself. A relation $R$ on $A$ is said to be /symmetric/ if $⟨y, x⟩ ∈ R$ --&gt;</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- whenever $⟨x, y⟩ ∈ R$. It is said to be /antisymmetric/ if the only case in --&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- which both $⟨x, y⟩ ∈ R$ and $⟨y, x⟩ ∈ R$ is when $x = y$. $R$ is said to be --&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- /transitive/ if whenever $⟨x, y⟩, ⟨y, z⟩ ∈ R$, then $⟨x, z⟩ ∈ R$. A relation --&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $R$ on $A$ which is reflexive, transitive, and symmetric is said to be an --&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- /equivalence relation/. --&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>An important operation on relations is *relation composition*.</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Given a relation $R_{1} ⊂ A × B$ and a relation $R_{2} ⊆ B × C$, their composition $R_{2} ∘ R_{1} ⊆ A × C$ is defined as $$R_{2} ∘ R_{1} = <span class="sc">\{</span>⟨x, y⟩ ∣ \text{there is some $z$ such that } ⟨x, z⟩ ∈ R_{1} \text{ and } ⟨z, y⟩ ∈ R_{2}<span class="sc">\}</span>$$</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>That is, $R_{2} ∘ R_{1}$ is gotten by relating an element of $A$ to an element of $C$ just in case there is some element of $B$ related to the first element by $R_{1}$ and to the second element by $R_{2}$.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- If $R$ is a relation on $A$, then we will write $R^{n}$ to refer to the result --&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- of composing $R$ with itself $n$ times. --&gt;</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- By convention: --&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $$\begin{align*} --&gt;</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- R^{0} &amp;= \{⟨x, x⟩ ∣ x ∈ A\}\\ --&gt;</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- R^{} &amp;= R\\ --&gt;</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Rⁿ &amp;= R^{n - 1} ∘ R --&gt;</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- \end{align*}$$ --&gt;</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- If $R ⊆ A × B$, we may define its /inverse/ as the relation $R^{-1} ⊆ B × A$ --&gt;</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- such that $⟨y, x⟩ ∈ R^{-1}$ just in case $⟨x, y⟩ ∈ R$. That is, $R^{-1}$ is --&gt;</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- just like $R$, but ``flipped around''. --&gt;</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="in">    </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

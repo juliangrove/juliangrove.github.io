@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,12 +511,80 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -566,20 +628,20 @@ window.Quarto = {
 \def\false{\ct{F}}
 \]</span></p>
 </div>
-<p>We’ve recently introduced syntactic and semantic rules for English that aim to characterize two things at once: (i) the <em>distributional properties</em> of English expressions (e.g., that the <span class="math inline">\(np\)</span> <em>Jo</em> can precede the <span class="math inline">\(vp\)</span> <em>jumps</em>, in order to make an <span class="math inline">\(s\)</span>); and (ii) the <em>semantic contributions</em> these expressions make to the meanings of the larger expressions that contain them. Further, our rules are stated to be sensitive to the <em>syntactic categories</em> of the expressions whose behavior they characterize. For example, the rule</p>
+<p>In the last few weeks, we’ve introduced syntactic and semantic rules for English that aim to characterize two things at once: (i) the <em>distributional properties</em> of English expressions (e.g., that the <span class="math inline">\(np\)</span> <em>Ziggy</em> can precede the <span class="math inline">\(vp\)</span> <em>meows</em>, in order to make an <span class="math inline">\(s\)</span>); and (ii) the <em>semantic contributions</em> these expressions make to the meanings of the larger expressions that contain them. Further, our rules are stated to be sensitive to the <em>syntactic categories</em> of the expressions whose behavior they characterize. For example, the rule</p>
 <p><span class="math display">\[\begin{prooftree}
-\AxiomC{$⟨x, m⟩ ⊢ np$}
-\AxiomC{$⟨y, n⟩ ⊢ vp$}
-\BinaryInfC{$⟨x^{⌢}y, n(m)⟩ ⊢ s$}
+\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ np$}
+\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ vp$}
+\BinaryInfC{$⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ s$}
 \end{prooftree}\]</span></p>
 <p>says:</p>
 <ul>
 <li>that you can form an <span class="math inline">\(s\)</span> by sticking an <span class="math inline">\(np\)</span> to the left of a <span class="math inline">\(vp\)</span>;</li>
-<li>that you can get the meaning of the <span class="math inline">\(s\)</span> by applying the meaning of the <span class="math inline">\(vp\)</span>—<span class="math inline">\(n\)</span>—as a function to the meaning of the <span class="math inline">\(np\)</span>—<span class="math inline">\(m\)</span>—as an argument.</li>
+<li>that you can get the meaning of the <span class="math inline">\(s\)</span> by applying the meaning of the <span class="math inline">\(vp\)</span> as a function to the meaning of the <span class="math inline">\(np\)</span> as an argument.</li>
 </ul>
 <p>So, syntactic categories have an important role: they say where things can go, and they also say what things can <em>do</em> (semantically) when they go there.</p>
-<p>These notes further develop this idea, in two directions. First, we introduce a language of <em>semantic types</em>. Semantic types tell us what kind of meaning an expression can have—for example, whether it is an entity, a truth value, or some type of function (and if so, what type). Second, we introduce a language of <em>syntactic categories</em> (or <em>syntactic types</em>, if you like). Syntactic categories tell us what an expression’s distributional properties are—that is, what kinds of expressions can appear to its left and to its right. As we’ll see, there is a close relationship between syntactic categories and semantic types. This relationship holds because of the fact that where an expression can go inside some larger expression <em>determines</em> what type of meaning it can have.</p>
-<p>We’ve already encoded a version of this idea in the system we developed in class with categories like <span class="math inline">\(np\)</span> and <span class="math inline">\(vp\)</span>, where we had a rule that was specific to these categories. Our new <em>language</em> of categories will make the idea completely general: we’ll have an <em>infinite</em> number of possible syntactic categories, as well as an infinite number of possible semantic types, and each syntactic category will be seen to be associated with a semantic type. At the same time, we’ll be able to keep the number of distinct syntactic/semantic rules in our system to only <em>two</em>!</p>
+<p>These notes further develop this idea, in two directions. First, we introduce a language of <em>semantic types</em>. Semantic types tell us what kind of meaning an expression can have—for example, whether it is an entity, a truth value, or some type of function (and if so, what type). Second, we introduce a language of <em>syntactic categories</em> (or <em>syntactic types</em>, if you like). Syntactic categories tell us what an expression’s distributional properties are—that is, what kinds of expressions can appear to its left and to its right. As we’ll see, there is a close relation between syntactic categories and semantic types. This relation holds because of the fact that where an expression can go inside some larger expression <em>determines</em> what type of meaning it can have.</p>
+<p>We’ve already encoded a version of this idea in our grammar with categories like <span class="math inline">\(np\)</span>, <span class="math inline">\(vp\)</span>, and <span class="math inline">\(tv\)</span>, where we had rules that were specific to these categories. Our new <em>language</em> of categories will make the idea completely general: we’ll have an <em>infinite</em> number of possible syntactic categories, as well as an infinite number of possible semantic types, and each syntactic category will be seen to be associated with a semantic type. At the same time, we’ll be able to pare down the number of rules we have to only two!</p>
 
 
 <!-- -->
@@ -1075,22 +1137,22 @@ window.Quarto = {
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>We've recently introduced syntactic and semantic rules for English that aim to characterize two things at once:</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>(i) the *distributional properties* of English expressions (e.g., that the $np$ *Jo* can precede the $vp$ *jumps*, in order to make an $s$);</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>In the last few weeks, we've introduced syntactic and semantic rules for English that aim to characterize two things at once:</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>(i) the *distributional properties* of English expressions (e.g., that the $np$ *Ziggy* can precede the $vp$ *meows*, in order to make an $s$);</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>and (ii) the *semantic contributions* these expressions make to the meanings of the larger expressions that contain them.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Further, our rules are stated to be sensitive to the *syntactic categories* of the expressions whose behavior they characterize.</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>For example, the rule</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>$$\begin{prooftree}</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨x, m⟩ ⊢ np$}</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨y, n⟩ ⊢ vp$}</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>\BinaryInfC{$⟨x^{⌢}y, n(m)⟩ ⊢ s$}</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨x, ⟦x⟧_{\mathcal{M}}⟩ ⊢ np$}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>\AxiomC{$⟨y, ⟦y⟧_{\mathcal{M}}⟩ ⊢ vp$}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>\BinaryInfC{$⟨x^{⌢}y, ⟦y⟧_{\mathcal{M}}(⟦x⟧_{\mathcal{M}})⟩ ⊢ s$}</span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>\end{prooftree}$$</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>says:</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can form an $s$ by sticking an $np$ to the left of a $vp$;</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can get the meaning of the $s$ by applying the meaning of the $vp$---$n$---as a function to the meaning of the $np$---$m$---as an argument.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can get the meaning of the $s$ by applying the meaning of the $vp$ as a function to the meaning of the $np$ as an argument.</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>So, syntactic categories have an important role:</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>they say where things can go, and they also say what things can *do* (semantically) when they go there.</span>
@@ -1100,13 +1162,13 @@ window.Quarto = {
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Semantic types tell us what kind of meaning an expression can have---for example, whether it is an entity, a truth value, or some type of function (and if so, what type).</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Second, we introduce a language of *syntactic categories* (or *syntactic types*, if you like).</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Syntactic categories tell us what an expression's distributional properties are---that is, what kinds of expressions can appear to its left and to its right.</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>As we'll see, there is a close relationship between syntactic categories and semantic types.</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>This relationship holds because of the fact that where an expression can go inside some larger expression *determines* what type of meaning it can have.</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>As we'll see, there is a close relation between syntactic categories and semantic types.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>This relation holds because of the fact that where an expression can go inside some larger expression *determines* what type of meaning it can have.</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>We've already encoded a version of this idea in the system we developed in class with categories like $np$ and $vp$, where we had a rule that was specific to these categories.</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>We've already encoded a version of this idea in our grammar with categories like $np$, $vp$, and $tv$, where we had rules that were specific to these categories.</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Our new *language* of categories will make the idea completely general:</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>we'll have an *infinite* number of possible syntactic categories, as well as an infinite number of possible semantic types, and each syntactic category will be seen to be associated with a semantic type.</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>At the same time, we'll be able to keep the number of distinct syntactic/semantic rules in our system to only *two*!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>At the same time, we'll be able to pare down the number of rules we have to only two!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

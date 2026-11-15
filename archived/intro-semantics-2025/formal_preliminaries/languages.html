@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,12 +511,80 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -554,11 +616,11 @@ window.Quarto = {
 </header>
 
 
-<p>We write ‘<span class="math inline">\(A^{n}\)</span>’ to refer to the result of taking the product of the set <span class="math inline">\(A\)</span> with itself <span class="math inline">\(n\)</span> times. As a matter of convention, we will adopt the following equivalences. <span class="math display">\[\begin{align*}
-A^0 &amp;=_{def} \{ϵ\} \tag{$ϵ$ is the empty string} \\
-A^1 &amp;=_{def} A \\
+<p>We write `<span class="math inline">\(A^n\)</span>’ to refer to the result of taking the product of the set <span class="math inline">\(A\)</span> with itself <span class="math inline">\(n\)</span> times. As a matter of convention, we will adopt the following equivalences. <span class="math display">\[\begin{align*}
+A^0 &amp;=_{def} \{\varnothing\}\\
+A^1 &amp;=_{def} A\\
 A^n &amp;=_{def} A^{n-1} × A
-\end{align*}\]</span> To define a language, we first define a set <span class="math inline">\(Σ\)</span>, which we call the <em>alphabet</em>, <em>words</em>, or <em>lexicon</em> of the language. These can be anything, in principle (phonetic forms, sets of syntactic features, blades of grass, etc.). Then, a <em>language</em> over the alphabet <span class="math inline">\(Σ\)</span> is some set <span class="math inline">\(L\)</span> such that <span class="math display">\[L ⊆ Σ^{*}\]</span> where <span class="math display">\[Σ^{*} ≝ ⋃_{i ∈ ℕ} Σ^{i}\]</span> Thus <span class="math inline">\(L\)</span> is a set of <span class="math inline">\(n\)</span>-tuples of words from <span class="math inline">\(Σ\)</span> of any length <span class="math inline">\(n\)</span>. When we talk about languages, we will refer to tuples as <em>strings</em> and adopt the convention of writing, e.g., the string ⟨ <em>the</em>, <em>dog</em>, <em>is</em>, <em>friendly</em> ⟩ simply as <em>the dog is friendly</em>.</p>
+\end{align*}\]</span> To define a language, we first define a set <span class="math inline">\(Σ\)</span>, which we call the <em>alphabet</em>, <em>words</em>, or <em>lexicon</em> of the language. These can be anything, in principle (phonetic forms, sets of syntactic features, blades of grass, etc.). Then, a <em>language</em> over the alphabet <span class="math inline">\(Σ\)</span> is some set <span class="math inline">\(L\)</span> such that <span class="math display">\[L ⊆ ⋃ \{Σ^{i} ∣ i ∈ ℕ\}\]</span> Thus <span class="math inline">\(L\)</span> is a set of <span class="math inline">\(n\)</span>-tuples of words from <span class="math inline">\(Σ\)</span> of any length <span class="math inline">\(n\)</span>. When we talk about languages, we will refer to tuples as <em>strings</em> and adopt the convention of writing, e.g., the string ⟨ <em>the</em>, <em>dog</em>, <em>is</em>, <em>friendly</em> ⟩ simply as <em>the dog is friendly</em> (or as “the dog is friendly” when I’m writing on the chalkboard). Note that <span class="math inline">\(L\)</span> may include <span class="math inline">\(\varnothing\)</span>, which we will regard as the empty string (the string of length 0), which we write ‘<span class="math inline">\(ϵ\)</span>’ in this context.</p>
 
 
 <!-- -->
@@ -1033,21 +1095,20 @@ A^n &amp;=_{def} A^{n-1} × A
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../semantics.bib</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>We write '$A^{n}$' to refer to the result of taking the product of the set $A$ with itself $n$ times.</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>We write `$A^n$' to refer to the result of taking the product of the set $A$ with itself $n$ times.</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>As a matter of convention, we will adopt the following equivalences.</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>$$\begin{align*}</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>A^0 &amp;=_{def} <span class="sc">\{</span>ϵ<span class="sc">\}</span> \tag{$ϵ$ is the empty string} <span class="sc">\\</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>A^1 &amp;=_{def} A <span class="sc">\\</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>A^0 &amp;=_{def} <span class="sc">\{</span>\varnothing<span class="sc">\}\\</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>A^1 &amp;=_{def} A<span class="sc">\\</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>A^n &amp;=_{def} A^{n-1} × A</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>\end{align*}$$</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>To define a language, we first define a set $Σ$, which we call the *alphabet*, *words*, or *lexicon* of the language.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>These can be anything, in principle (phonetic forms, sets of syntactic features, blades of grass, etc.).</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Then, a *language* over the alphabet $Σ$ is some set $L$ such that</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$L ⊆ Σ^{*}$$</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>where</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>$$Σ^{*} ≝ ⋃_{i ∈ ℕ} Σ^{i}$$</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Thus $L$ is a set of $n$-tuples of words from $Σ$ of any length $n$.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>When we talk about languages, we will refer to tuples as *strings* and adopt the convention of writing, e.g., the string ⟨ *the*, *dog*, *is*, *friendly* ⟩ simply as *the dog is friendly*.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>$$L ⊆ ⋃ <span class="sc">\{</span>Σ^{i} ∣ i ∈ ℕ<span class="sc">\}</span>$$</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Thus $L$ is a set of $n$-tuples of words from $Σ$ of any length $n$.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>When we talk about languages, we will refer to tuples as *strings* and adopt the convention of writing, e.g., the string ⟨ *the*, *dog*, *is*, *friendly* ⟩ simply as *the dog is friendly* (or as "the dog is friendly" when I'm writing on the chalkboard).</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Note that $L$ may include $\varnothing$, which we will regard as the empty string (the string of length 0), which we write '$ϵ$' in this context.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

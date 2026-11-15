@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,12 +511,80 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -555,21 +617,26 @@ window.Quarto = {
 
 
 <p>A function from a set <span class="math inline">\(A\)</span> to a set <span class="math inline">\(B\)</span> is a map from elements of <span class="math inline">\(A\)</span> to elements of <span class="math inline">\(B\)</span> which pairs each element of <span class="math inline">\(A\)</span> with exactly one element of <span class="math inline">\(B\)</span>. If <span class="math inline">\(f\)</span> is such a function, we write <span class="math display">\[f : A → B\]</span> to indicate this. We call <span class="math inline">\(A\)</span> the <em>domain</em> of the function, and we call <span class="math inline">\(B\)</span> the <em>codomain</em> of the function. If <span class="math inline">\(a ∈ A\)</span>, then we write <span class="math display">\[f(a)\]</span> to pick out the unique <span class="math inline">\(b ∈ B\)</span> that <span class="math inline">\(f\)</span> pairs <span class="math inline">\(a\)</span> up with. In case <span class="math inline">\(f(a) = b\)</span> (for some <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>), we call <span class="math inline">\(a\)</span> the <em>argument</em> of the function <span class="math inline">\(f\)</span>, and we call <span class="math inline">\(b\)</span> the <em>value</em> of the function <span class="math inline">\(f\)</span> on <span class="math inline">\(a\)</span>.</p>
-<p>Kind of like with relations, the definition of (unary) functions can be generalized to that for <em>n</em>-ary functions by considering the latter to be a map from the product of <span class="math inline">\(n\)</span> sets <span class="math inline">\(A₁, ..., Aₙ\)</span> to a set <span class="math inline">\(B\)</span>. If <span class="math inline">\(f\)</span> is such an <span class="math inline">\(n\)</span>-ary function, we write <span class="math display">\[f : A_1 × ... × A_n → B\]</span> to indicate this. Given <span class="math inline">\(n\)</span> arguments <span class="math inline">\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\)</span>, we write <span class="math display">\[f(a_1, ..., a_n)\]</span> to pick out out the <span class="math inline">\(b ∈ B\)</span> that <span class="math inline">\(f\)</span> maps <span class="math inline">\(a₁, ..., aₙ\)</span> to.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Two properties of functions are sometimes important for certain purposes: if a function <span class="math inline">\(f\)</span> from <span class="math inline">\(A\)</span> (or <span class="math inline">\(A₁, ..., Aₙ\)</span>) to <span class="math inline">\(B\)</span> pairs each element <span class="math inline">\(a ∈ A\)</span> (or (n)-tuple <span class="math inline">\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\)</span>) with a different element <span class="math inline">\(b ∈ B\)</span>, we call <span class="math inline">\(f\)</span> an <em>injection</em> (or a <em>one-to-one</em> function). If for each <span class="math inline">\(b ∈ B\)</span>, <span class="math inline">\(f\)</span> pairs some or other <span class="math inline">\(a ∈ A\)</span> (or <span class="math inline">\(n\)</span>-tuple <span class="math inline">\(a₁, ..., aₙ\)</span>) with it, we call <span class="math inline">\(f\)</span> a <em>surjection</em> (or an <em>onto</em> function). If <span class="math inline">\(f\)</span> is both an injection and a surjection, we call it a <em>bijection</em> from <span class="math inline">\(A\)</span> (or <span class="math inline">\(A₁, ..., Aₙ\)</span>) to <span class="math inline">\(B\)</span>.</p>
-<p>Importantly, there is a corresponding notion of <em>function composition</em>. We need only consider functions from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> a type of relation on <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>—one that relations <em>every</em> element in <span class="math inline">\(A\)</span> to exactly one element in <span class="math inline">\(B\)</span>. Given functions <span class="math inline">\(f : A → B\)</span> and <span class="math inline">\(g : B → C\)</span>, their composition <span class="math display">\[g ∘ f : A → C\]</span> is such that <span class="math inline">\((g ∘ f)(x) = g(f(x))\)</span>, for any <span class="math inline">\(x ∈ A\)</span>. In the same vein, if <span class="math display">\[f : A → A\]</span> then we may write ‘<span class="math inline">\(f^{n}\)</span>’ to denote the function which “applies <span class="math inline">\(f\)</span> to an element of <span class="math inline">\(A\)</span> <span class="math inline">\(n\)</span> times”. For example, <span class="math inline">\(f^{3}(a) = f(f(f(a)))\)</span>.</p>
+<p>Kind of like with relations, the definition of (unary) functions can be generalized to that for <em>n</em>-ary functions by considering the latter to be a map from the product of <span class="math inline">\(n\)</span> sets <span class="math inline">\(A₁, ..., Aₙ\)</span> to a set <span class="math inline">\(B\)</span>. If <span class="math inline">\(f\)</span> is such an <span class="math inline">\(n\)</span>-ary function, we write <span class="math display">\[f : A_1 × ... × A_n → B\]</span> to indicate this. Given <span class="math inline">\(n\)</span> arguments <span class="math inline">\(a₁ ∈ A₁, ..., aₙ ∈ Aₙ\)</span>, we write <span class="math display">\[f(a_1, ..., a_n)\]</span> to pick out out the <span class="math inline">\(b ∈ B\)</span> that <span class="math inline">\(f\)</span> maps <span class="math inline">\(a₁, ..., aₙ\)</span> to.</p>
+<!-- Two properties of functions are sometimes important for certain purposes: if -->
+<!-- a function $f$ from $A$ (or $A₁, ..., Aₙ$) to $B$ pairs each element $a ∈ A$ -->
+<!-- (or \(n\)-tuple $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$) with a different element $b ∈ B$, we -->
+<!-- call $f$ an /injection/ (or a /one-to-one/ function). If for each $b ∈ B$, $f$ -->
+<!-- pairs some or other $a ∈ A$ (or \(n\)-tuple $a₁, ..., aₙ$) with it, we call -->
+<!-- $f$ a /surjection/ (or an /onto/ function). If $f$ is both an injection and a -->
+<!-- surjection, we call it a /bijection/ from $A$ (or $A₁, ..., Aₙ$) to $B$.[fn::A -->
+<!-- function $f : A → B$ can be considered to be a relation on $A$ and $B$ where, -->
+<!-- for each $a ∈ A$, there is exactly one $b ∈ B$ such that $⟨a, b⟩ ∈ f$. More -->
+<!-- generally, an \(n\)-ary function can be considered an \((n+1)\)-ary relation. -->
+<!-- This is just a particular way of encoding functions as relations --- it isn't -->
+<!-- the /definition/ of a function, i.e., a map between sets, as above.] -->
+<p>Importantly, there is a corresponding notion of <em>function composition</em>. We need only consider functions from <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> a type of relation on <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>—one that relations <em>every</em> element in <span class="math inline">\(A\)</span> to exactly one element in <span class="math inline">\(B\)</span>. Given functions <span class="math inline">\(f : A → B\)</span> and <span class="math inline">\(g : B → C\)</span>, their composition <span class="math inline">\(g ∘ f : A → C\)</span> is such that <span class="math inline">\((g ∘ f)(x) = g(f(x))\)</span>, for any <span class="math inline">\(x ∈ A\)</span>. <!-- In the same vein, if $f : A → A$, then we may write `$fⁿ$' to denote the function which ``applies $f$ to an element of $A$ $n$ times''. --></p>
 
 
 <!-- -->
 
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p> Note that a function <span class="math inline">\(f : A → B\)</span> can be considered to be a relation on <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> where, for each <span class="math inline">\(a ∈ A\)</span>, there is exactly one <span class="math inline">\(b ∈ B\)</span> such that <span class="math inline">\(⟨a, b⟩ ∈ f\)</span>. More generally, an <span class="math inline">\(n\)</span>-ary function can be considered an <span class="math inline">\((n+1)\)</span>-ary relation. This is just a particular way of encoding functions as relations—it isn’t the <em>definition</em> of a function, i.e., a map between sets, as above.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1047,26 +1114,25 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Kind of like with relations, the definition of (unary) functions can be generalized to that for *n*-ary functions by considering the latter to be a map from the product of $n$ sets $A₁, ..., Aₙ$ to a set $B$.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>If $f$ is such an $n$-ary function, we write $$f : A_1 × ... × A_n → B$$ to indicate this.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Given $n$ arguments $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$, we write $$f(a_1, ..., a_n)$$ to pick out out the $b ∈ B$ that $f$ maps $a₁, ..., aₙ$ to.^[</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    Note that a function $f : A → B$ can be considered to be a relation on $A$ and $B$ where, for each $a ∈ A$, there is exactly one $b ∈ B$ such that $⟨a, b⟩ ∈ f$.</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    More generally, an $n$-ary function can be considered an $(n+1)$-ary relation.</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    This is just a particular way of encoding functions as relations---it isn't the *definition* of a function, i.e., a map between sets, as above.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Two properties of functions are sometimes important for certain purposes:</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>if a function $f$ from $A$ (or $A₁, ..., Aₙ$) to $B$ pairs each element $a ∈ A$ (or <span class="sc">\(</span>n<span class="sc">\)</span>-tuple $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$) with a different element $b ∈ B$, we call $f$ an *injection* (or a *one-to-one* function).</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>If for each $b ∈ B$, $f$ pairs some or other $a ∈ A$ (or $n$-tuple $a₁, ..., aₙ$) with it, we call $f$ a *surjection* (or an *onto* function).</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>If $f$ is both an injection and a surjection, we call it a *bijection* from $A$ (or $A₁, ..., Aₙ$) to $B$.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Importantly, there is a corresponding notion of *function composition*.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>We need only consider functions from $A$ to $B$ a type of relation on $A$ and $B$---one that relations *every* element in $A$ to exactly one element in $B$.</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Given functions $f : A → B$ and $g : B → C$, their composition</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>$$g ∘ f : A → C$$</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>is such that $(g ∘ f)(x) = g(f(x))$, for any $x ∈ A$.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>In the same vein, if</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>$$f : A → A$$</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>then we may write '$f^{n}$' to denote the function which "applies $f$ to an element of $A$ $n$ times".</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>For example, $f^{3}(a) = f(f(f(a)))$.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Given $n$ arguments $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$, we write $$f(a_1, ..., a_n)$$ to pick out out the $b ∈ B$ that $f$ maps $a₁, ..., aₙ$ to.</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Two properties of functions are sometimes important for certain purposes: if --&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- a function $f$ from $A$ (or $A₁, ..., Aₙ$) to $B$ pairs each element $a ∈ A$ --&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- (or \(n\)-tuple $a₁ ∈ A₁, ..., aₙ ∈ Aₙ$) with a different element $b ∈ B$, we --&gt;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- call $f$ an /injection/ (or a /one-to-one/ function). If for each $b ∈ B$, $f$ --&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- pairs some or other $a ∈ A$ (or \(n\)-tuple $a₁, ..., aₙ$) with it, we call --&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- $f$ a /surjection/ (or an /onto/ function). If $f$ is both an injection and a --&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- surjection, we call it a /bijection/ from $A$ (or $A₁, ..., Aₙ$) to $B$.[fn::A --&gt;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- function $f : A → B$ can be considered to be a relation on $A$ and $B$ where, --&gt;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- for each $a ∈ A$, there is exactly one $b ∈ B$ such that $⟨a, b⟩ ∈ f$. More --&gt;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- generally, an \(n\)-ary function can be considered an \((n+1)\)-ary relation. --&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- This is just a particular way of encoding functions as relations --- it isn't --&gt;</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- the /definition/ of a function, i.e., a map between sets, as above.] --&gt;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Importantly, there is a corresponding notion of *function composition*.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>We need only consider functions from $A$ to $B$ a type of relation on $A$ and $B$---one that relations *every* element in $A$ to exactly one element in $B$.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Given functions $f : A → B$ and $g : B → C$, their composition $g ∘ f : A → C$ is such that $(g ∘ f)(x) = g(f(x))$, for any $x ∈ A$.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- In the same vein, if $f : A → A$, then we may write `$fⁿ$' to denote the function which ``applies $f$ to an element of $A$ $n$ times''. --&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

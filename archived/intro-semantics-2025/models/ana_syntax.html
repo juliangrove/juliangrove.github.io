@@ -422,12 +422,6 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../applicative_cg/examples.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Determining syntactic categories and semantic types from English descriptions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../applicative_cg/assignment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment</span></a>
   </div>
@@ -517,12 +511,80 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Adjectives</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Adjectives</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsective adjectives</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../adjectives/non-subsectives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non-subsective adjectives</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Quantification</span></span>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Quantification</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Examples of generalized quantifiers</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/quantificational_determiners.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantificational determiners</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/conservativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Conservativity</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quantifiers/assignment2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -566,31 +628,33 @@ window.Quarto = {
 \def\False{\ct{F}}
 \]</span></p>
 </div>
-<p>As our first case study, we will look at the language of Arabic numeral arithmetic (‘<span class="math inline">\(L_{ANA}\)</span>’, for short). This language has expressions like <span class="math inline">\(⌜5⌝\)</span>, <span class="math inline">\(⌜(1 + 2)⌝\)</span>, <span class="math inline">\(⌜37 = 43⌝\)</span>, <span class="math inline">\(⌜(3 × 5) = 15⌝\)</span>, and so on.</p>
+<p>As our first case study, we will look at the language of Arabic numeral arithmetic (‘<span class="math inline">\(L_{ANA}\)</span>’, for short). This language has expressions like <span class="math inline">\(⌜5⌝\)</span>, <span class="math inline">\(⌜(1 + 2)⌝\)</span>, <span class="math inline">\(⌜(37 = 43)⌝\)</span>, <span class="math inline">\(⌜(3 × 5) = 15⌝\)</span>, and so on.</p>
 <p>Note that I’m using the corner brackets (<span class="math inline">\(⌜\)</span> and <span class="math inline">\(⌝\)</span>), here, in order to distinguish <em>object language</em> expressions (i.e., of Arabic numeral arithmetic) from actual numbers, like <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>. The first are just symbols, currently meaningless, while the second are elements of the set <span class="math inline">\(ℕ\)</span> of natural numbers. It’s important to keep these two distinct: while the former are things in the language—the set that we are trying to define and give an interpretation to—the latter will be elements of the domain of the <em>model</em> for the language.</p>
 <p><span class="math inline">\(L_{ANA}\)</span> has a few different kinds of expressions which are useful to distinguish. First, it has <em>numerals</em>. These are strings like <span class="math inline">\(⌜1⌝\)</span>, <span class="math inline">\(⌜2⌝\)</span>, <span class="math inline">\(⌜57⌝\)</span>, and so on. Second, it has <em>complex expressions</em>. These are strings containing the symbols for the addition and multiplication operators, like <span class="math inline">\(⌜(1 + 2)⌝\)</span>, <span class="math inline">\(⌜((3 × 4) + 7)⌝\)</span>, and so on. Finally, it has equations. These are strings containing the “equals” symbol, like <span class="math inline">\(⌜37 = (5 × 6)⌝\)</span>.</p>
-<p>The syntax of <span class="math inline">\(L_{ANA}\)</span> can be described by the rules in (2) (based on the alphabet in (1)). Note that we have four categories total: <span class="math inline">\(atom\)</span>, <span class="math inline">\(n\)</span>, <span class="math inline">\(exp\)</span>, and <span class="math inline">\(s\)</span>.</p>
+<p>The syntax of <span class="math inline">\(L_{ANA}\)</span> can be described by the rules in (2) (based on the alphabet in (1)). Note that we have four categories total: <span class="math inline">\(atom\)</span>, <span class="math inline">\(n\)</span>, <span class="math inline">\(np\)</span>, and <span class="math inline">\(s\)</span>.</p>
 <p>First, the alphabet:</p>
 <ol class="example" type="1">
-<li><span class="math inline">\(Σ_{ANA} = \{⌜0⌝, ..., ⌜9⌝, ⌜(⌝, ⌜)⌝, ⌜+⌝, ⌜×⌝, ⌜=⌝\}\)</span></li>
+<li><span class="math inline">\(Σ_{ANA} = \{⌜0⌝, ..., ⌜9⌝, ⌜(⌝, ⌜)⌝, ⌜+⌝, ⌜×⌝\}\)</span></li>
 </ol>
 <p>Now, for the syntax:</p>
 <ol start="2" class="example" type="1">
-<li>Rule 1. <span class="math inline">\(atom = \{⌜0⌝, ..., ⌜9⌝\}\)</span>. <br> Rule 2. <span class="math inline">\(atom ⊆ n\)</span>, <br> <span class="math inline">\(\hspace{1cm}\)</span> and if <span class="math inline">\(x ∈ n\)</span> and <span class="math inline">\(y ∈ n\)</span>, then <span class="math inline">\(x^{⌢}y ∈ n\)</span>. <br> Rule 3. <span class="math inline">\(n ⊆ exp\)</span>, <br> <span class="math inline">\(\hspace{1cm}\)</span> and if <span class="math inline">\(x ∈ exp\)</span> and <span class="math inline">\(y ∈ exp\)</span>, <br> <span class="math inline">\(\hspace{1cm}\)</span> then <span class="math inline">\(⌜(⌝^{⌢}x^{⌢}⌜+⌝^{⌢}y^{⌢}⌜)⌝ ∈ exp\)</span> and <span class="math inline">\(⌜(⌝^{⌢}x^{⌢}⌜×⌝^{⌢}y^{⌢}⌜)⌝ ∈ exp\)</span>. <br> Rule 4. If <span class="math inline">\(x ∈ exp\)</span> and <span class="math inline">\(y ∈ exp\)</span>, then <span class="math inline">\(x^{⌢}⌜{=}⌝^{⌢}y ∈ s\)</span>. <br> Rule 5. Closure clause: nothing else is in <span class="math inline">\(n\)</span>, <span class="math inline">\(exp\)</span>, or <span class="math inline">\(s\)</span>.</li>
+<li>Rule 1. <span class="math inline">\(atom = \{⌜0⌝, ..., ⌜9⌝\}\)</span>. <br> Rule 2. <span class="math inline">\(atom ⊆ n\)</span>. <br> Rule 3. If <span class="math inline">\(x, y ∈ n\)</span>, then <span class="math inline">\(x^{⌢}y ∈ n\)</span>. <br> Rule 4. <span class="math inline">\(n ⊆ np\)</span>. <br> Rule 5. If <span class="math inline">\(x, y ∈ np\)</span>, then <span class="math inline">\(⌜(⌝^{⌢}x^{⌢}⌜+⌝^{⌢}y^{⌢}⌜)⌝, ⌜(⌝^{⌢}x^{⌢}⌜×⌝^{⌢}y^{⌢}⌜)⌝ ∈ np\)</span>. <br> Rule 6. If <span class="math inline">\(x, y ∈ np\)</span>, then <span class="math inline">\(x^{⌢}⌜{=}⌝^{⌢}y ∈ s\)</span>. <br> Rule 7. Closure clause: nothing else is in <span class="math inline">\(n\)</span>, <span class="math inline">\(np\)</span>, or <span class="math inline">\(s\)</span>.</li>
 </ol>
 <p>In words, these rules say (respectively):</p>
 <ul>
-<li>that the atoms are <span class="math inline">\(⌜0⌝\)</span> through <span class="math inline">\(⌜9⌝\)</span>;</li>
-<li>that any atoms are also numerals and that you can always take two numerals and concatenate them to make another numeral;</li>
-<li>that any numerals are also expressions and that you can always take two expressions and concatenate them around the addition or multiplication symbol (with parentheses) to make another expression;</li>
-<li>that you can always take two expressions and concatenate them around the “equals” symbol to make a sentence;</li>
+<li>that the atoms are <span class="math inline">\(⌜1⌝\)</span> through <span class="math inline">\(⌜9⌝\)</span>;</li>
+<li>that any atoms are also numerals;</li>
+<li>that you can always take two numerals and concatenate them to make another numeral;</li>
+<li>that any numerals are also noun phrases;</li>
+<li>that you can always take two noun phrases and concatenate them around the addition or multiplication symbol (with parentheses) to make another noun phrase;</li>
+<li>that you can always take two noun phrases and concatenate them around the equals symbol to make a sentence;</li>
 <li>and finally (the closure clause), that those things <em>exhaust</em> what you’re allowed to do—nothing else is in the language!</li>
 </ul>
 <p>We can define the language of Arabic numeral arithmetic itself as follows:</p>
 <ul>
-<li><span class="math inline">\(L_{ANA} = s ∪ exp\)</span></li>
+<li><span class="math inline">\(L_{ANA} = s ∪ np\)</span>:</li>
 </ul>
-<p>So, it’s just the set of sentences unioned with the set of expressions; in plain English: something is in the language if and only if it is a sentence or an expression.</p>
+<p>So, it’s just the set of sentences unioned with the set of noun phrases; in plain English, something is in the language if and only if it is a sentence or a noun phrase.</p>
 
 
 <!-- -->
@@ -1088,7 +1152,7 @@ window.Quarto = {
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>As our first case study, we will look at the language of Arabic numeral arithmetic ('$L_{ANA}$', for short).</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>This language has expressions like $⌜5⌝$, $⌜(1 + 2)⌝$, $⌜37 = 43⌝$, $⌜(3 × 5) = 15⌝$, and so on.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>This language has expressions like $⌜5⌝$, $⌜(1 + 2)⌝$, $⌜(37 = 43)⌝$, $⌜(3 × 5) = 15⌝$, and so on.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Note that I'm using the corner brackets ($⌜$ and $⌝$), here, in order to distinguish *object language* expressions (i.e., of Arabic numeral arithmetic) from actual numbers, like $1$ and $2$.</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>The first are just symbols, currently meaningless, while the second are elements of the set $ℕ$ of natural numbers.</span>
@@ -1105,39 +1169,39 @@ window.Quarto = {
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>The syntax of $L_{ANA}$ can be described by the rules in (@ex-ana-syntax) (based on the alphabet in (@ex-ana-alphabet)).</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Note that we have four categories total:</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>$atom$, $n$, $exp$, and $s$.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>$atom$, $n$, $np$, and $s$.</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>First, the alphabet:</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>(@ex-ana-alphabet) $Σ_{ANA} = <span class="sc">\{</span>⌜0⌝, ..., ⌜9⌝, ⌜(⌝, ⌜)⌝, ⌜+⌝, ⌜×⌝, ⌜=⌝<span class="sc">\}</span>$</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>(@ex-ana-alphabet) $Σ_{ANA} = <span class="sc">\{</span>⌜0⌝, ..., ⌜9⌝, ⌜(⌝, ⌜)⌝, ⌜+⌝, ⌜×⌝<span class="sc">\}</span>$</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Now, for the syntax:</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>(@ex-ana-syntax) Rule 1. $atom = <span class="sc">\{</span>⌜0⌝, ..., ⌜9⌝<span class="sc">\}</span>$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    Rule 2. $atom ⊆ n$, <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        $\hspace{1cm}$ and if $x ∈ n$ and $y ∈ n$, then $x^{⌢}y ∈ n$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    Rule 3. $n ⊆ exp$, <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        $\hspace{1cm}$ and if $x ∈ exp$ and $y ∈ exp$, <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        $\hspace{1cm}$ then $⌜(⌝^{⌢}x^{⌢}⌜+⌝^{⌢}y^{⌢}⌜)⌝ ∈ exp$ and $⌜(⌝^{⌢}x^{⌢}⌜×⌝^{⌢}y^{⌢}⌜)⌝ ∈ exp$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    Rule 4. If $x ∈ exp$ and $y ∈ exp$, then $x^{⌢}⌜{=}⌝^{⌢}y ∈ s$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    Rule 5. Closure clause:</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        nothing else is in $n$, $exp$, or $s$.</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>In words, these rules say (respectively):</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that the atoms are $⌜0⌝$ through $⌜9⌝$;</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that any atoms are also numerals and that you can always take two numerals and concatenate them to make another numeral;</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that any numerals are also expressions and that you can always take two expressions and concatenate them around the addition or multiplication symbol (with parentheses) to make another expression;</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can always take two expressions and concatenate them around the "equals" symbol to make a sentence;</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>and finally (the closure clause), that those things *exhaust* what you're allowed to do---nothing else is in the language!</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>We can define the language of Arabic numeral arithmetic itself as follows:</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$L_{ANA} = s ∪ exp$</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>So, it's just the set of sentences unioned with the set of expressions;</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>in plain English:</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>something is in the language if and only if it is a sentence or an expression.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    Rule 2. $atom ⊆ n$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    Rule 3. If $x, y ∈ n$, then $x^{⌢}y ∈ n$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    Rule 4. $n ⊆ np$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    Rule 5. If $x, y ∈ np$, then $⌜(⌝^{⌢}x^{⌢}⌜+⌝^{⌢}y^{⌢}⌜)⌝, ⌜(⌝^{⌢}x^{⌢}⌜×⌝^{⌢}y^{⌢}⌜)⌝ ∈ np$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    Rule 6. If $x, y ∈ np$, then $x^{⌢}⌜{=}⌝^{⌢}y ∈ s$. <span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    Rule 7. Closure clause:</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        nothing else is in $n$, $np$, or $s$.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>In words, these rules say (respectively):</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that the atoms are $⌜1⌝$ through $⌜9⌝$;</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that any atoms are also numerals;</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can always take two numerals and concatenate them to make another numeral;</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that any numerals are also noun phrases;</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can always take two noun phrases and concatenate them around the addition or multiplication symbol (with parentheses) to make another noun phrase;</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>that you can always take two noun phrases and concatenate them around the equals symbol to make a sentence;</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>and finally (the closure clause), that those things *exhaust* what you're allowed to do---nothing else is in the language!</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>We can define the language of Arabic numeral arithmetic itself as follows:</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$L_{ANA} = s ∪ np$:</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>So, it's just the set of sentences unioned with the set of noun phrases;</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>in plain English, something is in the language if and only if it is a sentence or a noun phrase.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
